@@ -7,7 +7,7 @@ def load_data(local_file_paths):
     file_df_dict = {}
     for file_path in local_file_paths:
         file_df = pd.read_csv(file_path)
-        file_df_dict[os.path.basename(file_path)] = file_df
+        file_df_dict[os.path.basename(file_path).split('.')[0]] = file_df
     return file_df_dict
 
 # scraping data
@@ -20,4 +20,6 @@ def load_data(local_file_paths):
 
 local_file_paths = ['./ayurvedic_formulation.csv']
 file_df_dict = load_data(local_file_paths)
-print(file_df_dict['ayurvedic_formulation'])
+
+ayurveda_df = file_df_dict['ayurvedic_formulation']
+print(ayurveda_df)
