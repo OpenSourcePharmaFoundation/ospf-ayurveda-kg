@@ -44,8 +44,12 @@ def url_IMPPAT_to_json(url_list, json_path):
         phytochem_dict[plant_name]=phytochem_list
     
     # write json
+    d = [{ 
+    "plant": key,
+    "phytochemicals": value
+    } for key, value in phytochem_dict.items()]
     with open(json_path, "w") as file:
-        json.dump(phytochem_dict, file)
+        json.dump(d, file)
 # cleaning and processing data 
 
 # data structure
