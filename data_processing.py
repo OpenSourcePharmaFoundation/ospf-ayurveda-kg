@@ -141,18 +141,6 @@ def url_IMPPAT_ther_to_json(url_list, json_path):
     with open(json_path, "w") as file:
         json.dump(d, file)
 
-# scrape chemical-gene target interaction data based on list of urls from pubchem
-'''def url_pubchem_chem_target_json(url_path, csv_path):
-    file_df = pd.read_csv(url_path)
-    for row in file_df.iterrows():
-        r = requests.get(url) 
-        if r.status_code!=200:
-            print(url)
-        else:
-            print('success')
-            
-'''
-
 ## scraping IMPPAT phytochemical data based on taxonomical plant names
 '''url_list_chem = ayur_form_to_IMPPAT_url_chem('./ayurvedic_formulation.csv')
 url_IMPPAT_chem_to_json(url_list_chem, 'plant_phytochemicals.json', "phytochemicals")
@@ -198,5 +186,4 @@ with file:
         write.writerow([val])
 '''
         
-# get pubchem chemical-target interaction data based on pubchem url's
-#url_pubchem_chem_target_json('pubchem_urls.csv', 'phytochem_gene_interactions.csv')
+
