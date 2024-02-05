@@ -100,9 +100,19 @@ url_IMPPAT_chem_to_json(url_list_chem, 'plant_phytochemicals.json', "phytochemic
 '''
 
 ## scraping IMPPAT therapeutic use data based on taxonomical plant names
-url_list = ayur_form_to_IMPPAT_url_ther('./ayurvedic_formulation.csv')
+'''url_list = ayur_form_to_IMPPAT_url_ther('./ayurvedic_formulation.csv')
 url_IMPPAT_ther_to_json(url_list, 'plant_therapeutic_use.json')
+'''
 
 # local_file_paths = ['./ayurvedic_formulation.csv']
 
-
+# cleaning phytochemicals.csv
+'''
+df = pd.read_csv("phytochemicals.csv", header=None) 
+df_new = pd.DataFrame()
+for index, row in df.iterrows():
+    chem_name = row[0]
+    df_new.loc[index, 0]=chem_name[1:-1]
+    print(df_new.loc[index, 0])
+df_new.to_csv("phytochemicals_cleaned.csv", header=None, index=None) 
+'''
