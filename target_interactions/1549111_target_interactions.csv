@@ -1,0 +1,2 @@
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,1307879,1549111,Toxin and Toxin Target Database (T3DB),cis-Caffeic acid,T3D4201,Caffeic acid,http://www.t3db.ca/toxins/T3D4201,BE0001855,Macrophage migration inhibitory factor,http://www.t3db.ca/biodb/bio_entities/BE0001855,P14174,Macrophage migration inhibitory factor,4282,MIF,9606,Homo sapiens (human),,,,PMID:10592235,https://www.ncbi.nlm.nih.gov/pubmed/10592235,10592235,,
