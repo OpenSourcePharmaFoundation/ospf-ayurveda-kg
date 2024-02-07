@@ -96,7 +96,7 @@ pubchem_chem_target_csv(driver, 'pubchem_urls_new.csv', 'phytochem_gene_interact
 chem_tar_csv_from_url('pubchem_urls_new.csv')
 '''
 
-# create neo4j ready csv based on downloaded chemical-target interaction csv's from pubchem
+'''# create neo4j ready csv based on downloaded chemical-target interaction csv's from pubchem
 def pubchem_target_csv_compilation(csv_folder_path, output_path):
     dictionary_list=[]
     files = glob.glob(csv_folder_path + "/*.csv") 
@@ -127,4 +127,7 @@ def pubchem_target_csv_compilation(csv_folder_path, output_path):
     neo4j_df.to_csv(output_path)
 
 pubchem_target_csv_compilation('target_interactions', 'neo4j_target_interactions.csv')
+'''
 
+df = pd.read_csv('neo4j_target_interactions.csv')
+print(df['interaction_id'].nunique() )
