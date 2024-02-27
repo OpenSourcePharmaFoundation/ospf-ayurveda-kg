@@ -75,7 +75,7 @@ cService = webdriver.ChromeService(executable_path='/Users/smiti/Downloads/chrom
 driver = webdriver.Chrome(service = cService)
 pubchem_chem_target_csv(driver, 'pubchem_urls_new.csv', 'phytochem_gene_interactions.csv')
 '''
-
+'''
 # download chemical-target interaction csv based on pubchem compound urls 
 def chem_tar_csv_from_url(urls_path):
     file_df = pd.read_csv(urls_path, header=None, index_col=False)
@@ -94,9 +94,9 @@ def chem_tar_csv_from_url(urls_path):
             
 
 chem_tar_csv_from_url('pubchem_urls_new.csv')
+'''
 
-
-'''# create neo4j ready csv based on downloaded chemical-target interaction csv's from pubchem
+# create neo4j ready csv based on downloaded chemical-target interaction csv's from pubchem
 def pubchem_target_csv_compilation(csv_folder_path, output_path):
     dictionary_list=[]
     files = glob.glob(csv_folder_path + "/*.csv") 
@@ -118,6 +118,8 @@ def pubchem_target_csv_compilation(csv_folder_path, output_path):
                 'pubchem_name' : row['cmpdname'],
                 'source_cmpnd_name' : row['srccmpdname'],
                 'source_gene_name' : row['srctargetname'],
+                'protein_name' : row['protname'],
+                'protein_id' : row['protacxn'],
                 'gene_name' : row['genename'],
                 'action' : row['action'],
                 'evidences' : row['evids'],
@@ -126,8 +128,8 @@ def pubchem_target_csv_compilation(csv_folder_path, output_path):
     neo4j_df = pd.DataFrame.from_dict(dictionary_list)                
     neo4j_df.to_csv(output_path)
 
-pubchem_target_csv_compilation('target_interactions', 'neo4j_target_interactions.csv')
-'''
+pubchem_target_csv_compilation('target_interactions', 'neo4j_gene_protein_interactions.csv')
+
 
 #df = pd.read_csv('neo4j_target_interactions.csv')
 
