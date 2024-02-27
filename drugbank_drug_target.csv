@@ -1,0 +1,19 @@
+,Drug_name,Drug_ID,Target_name,Target_ID,Target_uniprot,Gene,Target_synons
+0,Chlorhexidine,DB00878,Bacterial outer membrane,BE0004833,,,
+1,Chlorhexidine,DB00878,Serum albumin,BE0000530,P02768,ALB,Serum albumin precursor
+2,Palifermin,DB00039,Fibroblast growth factor receptor 2,BE0000748,P21802,FGFR2,"2.7.10.1, BEK, FGFR-2, K-sam, Keratinocyte growth factor receptor, KGFR, KSAM"
+3,Palifermin,DB00039,Fibroblast growth factor receptor 1,BE0002131,P11362,FGFR1,"2.7.10.1, Basic fibroblast growth factor receptor 1, bFGF-R-1, BFGFR, CEK, FGFBR, FGFR-1, FLG, FLT-2, FLT2, Fms-like tyrosine kinase 2, HBGFR, N-sam, Proto-oncogene c-Fgr"
+4,Palifermin,DB00039,Basement membrane-specific heparan sulfate proteoglycan core protein,BE0001031,P98160,HSPG2,"HSPG, Perlecan, PLC"
+5,Chlorhexidine,DB00878,Bacterial outer membrane,BE0004833,,,
+6,Chlorhexidine,DB00878,Serum albumin,BE0000530,P02768,ALB,Serum albumin precursor
+7,Diphenhydramine,DB01075,Histamine H1 receptor,BE0000442,P35367,HRH1,H1R
+8,Diphenhydramine,DB01075,Cytochrome P450 2D6,BE0002363,P10635,CYP2D6,"1.14.14.1, Cholesterol 25-hydroxylase, CYP2DL1, CYPIID6, Cytochrome P450-DB1, Debrisoquine 4-hydroxylase"
+9,Diphenhydramine,DB01075,Cytochrome P450 2C9,BE0002793,P11712,CYP2C9,"(R)-limonene 6-monooxygenase, (S)-limonene 6-monooxygenase, (S)-limonene 7-monooxygenase, 1.14.13.-, Cholesterol 25-hydroxylase, CYP2C10, CYPIIC9, Cytochrome P-450MP, Cytochrome P450 MP-4, Cytochrome P450 MP-8, Cytochrome P450 PB-1, S-mephenytoin 4-hydroxylase"
+10,Diphenhydramine,DB01075,Cytochrome P450 2C19,BE0003536,P33261,CYP2C19,"(R)-limonene 6-monooxygenase, (S)-limonene 6-monooxygenase, (S)-limonene 7-monooxygenase, 1.14.13.-, CYPIIC17, CYPIIC19, Cytochrome P450-11A, Cytochrome P450-254C, Mephenytoin 4-hydroxylase"
+11,Diphenhydramine,DB01075,Solute carrier family 22 member 2,BE0003647,O15244,SLC22A2,"hOCT2, OCT2, Organic cation transporter 2"
+12,Diphenhydramine,DB01075,Solute carrier family 22 member 5,BE0000106,O76082,SLC22A5,"High-affinity sodium-dependent carnitine cotransporter, OCTN2, Organic cation/carnitine transporter 2"
+13,Diphenhydramine,DB01075,Prostaglandin G/H synthase 1,BE0000017,P23219,PTGS1,"1.14.99.1, COX-1, COX1, Cyclooxygenase-1, PGH synthase 1, PGHS-1, PHS 1, Prostaglandin H2 synthase 1, Prostaglandin-endoperoxide synthase 1"
+14,Diphenhydramine,DB01075,Muscarinic acetylcholine receptor M2,BE0000560,P08172,CHRM2,
+15,Palifermin,DB00039,Fibroblast growth factor receptor 2,BE0000748,P21802,FGFR2,"2.7.10.1, BEK, FGFR-2, K-sam, Keratinocyte growth factor receptor, KGFR, KSAM"
+16,Palifermin,DB00039,Fibroblast growth factor receptor 1,BE0002131,P11362,FGFR1,"2.7.10.1, Basic fibroblast growth factor receptor 1, bFGF-R-1, BFGFR, CEK, FGFBR, FGFR-1, FLG, FLT-2, FLT2, Fms-like tyrosine kinase 2, HBGFR, N-sam, Proto-oncogene c-Fgr"
+17,Palifermin,DB00039,Basement membrane-specific heparan sulfate proteoglycan core protein,BE0001031,P98160,HSPG2,"HSPG, Perlecan, PLC"

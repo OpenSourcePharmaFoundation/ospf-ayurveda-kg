@@ -1,0 +1,2 @@
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,682758,6623,Comparative Toxicogenomics Database (CTD),Bisphenol A,C006780,bisphenol A,https://ctdbase.org/detail.go?type=chem&acc=C006780,6240,RRM1,https://ctdbase.org/detail.go?type=gene&acc=6240,,,6240,RRM1,10090,Mus musculus (house mouse),Bisphenol A results in increased methylation of RRM1 promoter,,,PMID:27312807,https://www.ncbi.nlm.nih.gov/pubmed/27312807,27312807,,

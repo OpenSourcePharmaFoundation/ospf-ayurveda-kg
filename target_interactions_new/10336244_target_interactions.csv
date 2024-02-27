@@ -1,0 +1,2 @@
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,1684696,451668,Comparative Toxicogenomics Database (CTD),Decitabine,D000077209,Decitabine,https://ctdbase.org/detail.go?type=chem&acc=D000077209,23531,MMD,https://ctdbase.org/detail.go?type=gene&acc=23531,,,23531,MMD,9606,Homo sapiens (human),Decitabine affects the expression of MMD mRNA,,,PMID:23300844,https://www.ncbi.nlm.nih.gov/pubmed/23300844,23300844,,

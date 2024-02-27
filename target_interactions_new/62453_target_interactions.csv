@@ -1,0 +1,2 @@
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,1850831,5702698,Drug Gene Interaction database (DGIdb),"Benzothiazolium, 3-ethyl-2-(5-(3-ethyl-2(3H)-benzothiazolylidene)-1,3-pentadienyl)-",,DITHIAZANINE,https://www.dgidb.org/drugs/ncit:C72743,,POLI,https://www.dgidb.org/genes/hgnc:9182,,,11201,POLI,9606,Homo sapiens (human),,,,,,,,

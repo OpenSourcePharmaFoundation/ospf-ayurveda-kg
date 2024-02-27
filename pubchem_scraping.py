@@ -77,24 +77,24 @@ pubchem_chem_target_csv(driver, 'pubchem_urls_new.csv', 'phytochem_gene_interact
 '''
 
 # download chemical-target interaction csv based on pubchem compound urls 
-'''def chem_tar_csv_from_url(urls_path):
+def chem_tar_csv_from_url(urls_path):
     file_df = pd.read_csv(urls_path, header=None, index_col=False)
     for index, row in file_df.iterrows():
-        if(index>100):
-            url = row[0]
-            id=url.split('/')[-1]
-            print(index)
-            scraping_url = "https://pubchem.ncbi.nlm.nih.gov/sdq/sdqagent.cgi?infmt=json&outfmt=csv&query={%22download%22:%22*%22,%22collection%22:%22consolidatedcompoundtarget%22,%22order%22:[%22cid,asc%22],%22start%22:1,%22limit%22:10000000,%22downloadfilename%22:%22pubchem_cid_"+id+"_consolidatedcompoundtarget%22,%22where%22:{%22ands%22:[{%22cid%22:%22"+id+"%22}]}}"
-            #data = requests.get(scraping_url)
-            try:
-                df = pd.read_csv(scraping_url, delimiter=',', quotechar='"')   
-                df.to_csv("target_interactions/"+id+'_target_interactions.csv')
-            except:
-                continue
+        url = row[0]
+        id=url.split('/')[-1]
+        scraping_url = "https://pubchem.ncbi.nlm.nih.gov/sdq/sdqagent.cgi?infmt=json&outfmt=csv&query={%22download%22:%22*%22,%22collection%22:%22consolidatedcompoundtarget%22,%22order%22:[%22cid,asc%22],%22start%22:1,%22limit%22:10000000,%22downloadfilename%22:%22pubchem_cid_"+id+"_consolidatedcompoundtarget%22,%22where%22:{%22ands%22:[{%22cid%22:%22"+id+"%22}]}}"
+        #data = requests.get(scraping_url)
+        print(id)
+        try:
+            df = pd.read_csv(scraping_url, delimiter=',', quotechar='"')   
+            df.to_csv("target_interactions_new/"+id+'_target_interactions.csv')
+        except:
+            continue
+
             
 
 chem_tar_csv_from_url('pubchem_urls_new.csv')
-'''
+
 
 '''# create neo4j ready csv based on downloaded chemical-target interaction csv's from pubchem
 def pubchem_target_csv_compilation(csv_folder_path, output_path):
@@ -129,5 +129,8 @@ def pubchem_target_csv_compilation(csv_folder_path, output_path):
 pubchem_target_csv_compilation('target_interactions', 'neo4j_target_interactions.csv')
 '''
 
-df = pd.read_csv('neo4j_target_interactions.csv')
-print(df['interaction_id'].nunique() )
+#df = pd.read_csv('neo4j_target_interactions.csv')
+
+# add protein column
+#print(df['interaction_id'].nunique() )
+

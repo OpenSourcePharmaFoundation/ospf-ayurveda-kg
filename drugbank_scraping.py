@@ -60,5 +60,4 @@ url_list = ['https://go.drugbank.com/indications/DBCOND0060314',
             'https://go.drugbank.com/indications/DBCOND0031602']
 drug_target_df = drugs_from_indication_urls(url_list)
 updated_drug_target_df = get_target_info(drug_target_df)
-print(updated_drug_target_df)
-
+updated_drug_target_df.to_csv('drugbank_drug_target.csv')

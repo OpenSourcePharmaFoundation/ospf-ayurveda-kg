@@ -1,0 +1,2 @@
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,1091777,16942,Comparative Toxicogenomics Database (CTD),2-Methylcholine,C044887,beta-methylcholine,https://ctdbase.org/detail.go?type=chem&acc=C044887,7170,TPM3,https://ctdbase.org/detail.go?type=gene&acc=7170,,,7170,TPM3,9606,Homo sapiens (human),Beta-methylcholine affects the expression of TPM3 mRNA,,,PMID:21179406,https://www.ncbi.nlm.nih.gov/pubmed/21179406,21179406,,

@@ -1,0 +1,2 @@
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,1161517,55245,Comparative Toxicogenomics Database (CTD),Mifepristone,D015735,Mifepristone,https://ctdbase.org/detail.go?type=chem&acc=D015735,4323,MMP14,https://ctdbase.org/detail.go?type=gene&acc=4323,,,4323,MMP14,9606,Homo sapiens (human),Mifepristone results in increased expression of MMP14 mRNA,,,PMID:17584828,https://www.ncbi.nlm.nih.gov/pubmed/17584828,17584828,,

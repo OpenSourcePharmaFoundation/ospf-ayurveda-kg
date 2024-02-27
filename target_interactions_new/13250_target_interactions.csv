@@ -1,0 +1,2 @@
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,1796657,5288209,Comparative Toxicogenomics Database (CTD),Fenretinide,D017313,Fenretinide,https://ctdbase.org/detail.go?type=chem&acc=D017313,7103,TSPAN8,https://ctdbase.org/detail.go?type=gene&acc=7103,,,7103,TSPAN8,10090,Mus musculus (house mouse),Fenretinide results in decreased expression of TSPAN8 mRNA,,,PMID:28973697,https://www.ncbi.nlm.nih.gov/pubmed/28973697,28973697,,
