@@ -11,20 +11,26 @@ df = import_df()
 # print(df)
 
 # remove duplicate PMIDs
-def remove_duplicate_pmids(df):
+'''def remove_duplicate_pmids(df):
     pmid_list=[]
     i=0
     while i<len(df.index):
         row = df.iloc[i]    
+        print(len(df.index))
+        print(row['PMID'])
         if row['PMID'] in pmid_list:
-            df=df.drop(df.index[i])
+            df=df.drop([i], axis=0)
         else:
             pmid_list.append(row['PMID'])
             i+=1
+    print(pmid_list)
     return df
 
 df = remove_duplicate_pmids(df)
-# print(df)
+'''
+
+df = df.drop_duplicates(subset=['PMID'])
+print(df)
 
 df_biomarker = df.loc[df['Association_Type'] == 'Biomarker']
 df_genvar = df.loc[df['Association_Type'] == 'GeneticVariation']
