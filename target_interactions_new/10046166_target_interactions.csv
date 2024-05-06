@@ -1,2 +1,0 @@
-,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,2065766,54686764,Drug Gene Interaction database (DGIdb),Demeclocycline hydrochloride,,DEMECLOCYCLINE HYDROCHLORIDE,https://www.dgidb.org/drugs/rxcui:81993,,POLB,https://www.dgidb.org/genes/hgnc:9174,,,5423,POLB,9606,Homo sapiens (human),,,,,,,,

@@ -1,2 +1,0 @@
-,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,1229717,15939,Comparative Toxicogenomics Database (CTD),Paraquat,D010269,Paraquat,https://ctdbase.org/detail.go?type=chem&acc=D010269,4758,NEU1,https://ctdbase.org/detail.go?type=gene&acc=4758,,,4758,NEU1,10090,Mus musculus (house mouse),Paraquat results in decreased expression of NEU1 mRNA,,,PMID:21371552,https://www.ncbi.nlm.nih.gov/pubmed/21371552,21371552,,
