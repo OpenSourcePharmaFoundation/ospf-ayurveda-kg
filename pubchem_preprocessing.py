@@ -84,72 +84,7 @@ def phytochem_to_pubchem_url(url_list_imppat, csv_path):
         w = csv.writer(file)
         w.writerows(url_id_dict_final.items())
 
-    return(url_list)
-    
-
-# scrape phytochemical data based on list of urls from IMPPAT
-def url_IMPPAT_chem_pn(url_list, json_path, data_name):
-    phytochem_dict={}
-    
-    for url in url_list:
-        r = requests.get(url) 
-        plant_url = url.split('/')[-1]
-        plant_name = plant_url.split('%')[0] + ' ' + plant_url.split('20')[-1]
-        
-        # parsing html
-        soup = beaut(r.content, 'html.parser') 
-        table_phytochem = soup.find('table',id='table_id')
-        phytochem_list=[]
-        for j in table_phytochem.find_all('tr')[1:]:
-            row_data = j.find_all('td')
-            row = [i.text for i in row_data]
-            phytochem_list.append(row[3])
-        phytochem_dict[plant_name]=phytochem_list
-    
-    # write json
-    d = [{ 
-    "plant": key,
-    data_name: value
-    } for key, value in phytochem_dict.items()]
-    with open(json_path, "w") as file:
-        json.dump(d, file)
-
-# scrape therapeutic use data based on list of urls from IMPPAT
-def url_IMPPAT_ther_to_json(url_list, json_path):
-    ther_dict={}
-    
-    for url in url_list:
-        r = requests.get(url) 
-        plant_url = url.split('/')[-1]
-        plant_name = plant_url.split('%')[0] + ' ' + plant_url.split('20')[-1]
-        
-        # parsing html
-        soup = beaut(r.content, 'html.parser') 
-        table_phytochem = soup.find('table',id='table_id')
-        therapeutic_list=[]
-        for j in table_phytochem.find_all('tr')[1:]:
-            row_data = j.find_all('td')
-            row = [i.text for i in row_data]
-            therapeutic_list.append((row[2], row[4]))
-        ther_dict[plant_name]=therapeutic_list
-    
-    # write json
-    d = [{ 
-    "plant": key,
-    "therapeutic_use": value
-    } for key, value in ther_dict.items()]
-    with open(json_path, "w") as file:
-        json.dump(d, file)
-
-## scraping IMPPAT phytochemical data based on taxonomical plant names
-'''url_list_chem = ayur_form_to_IMPPAT_url_chem('./ayurvedic_formulation.csv')
-url_IMPPAT_chem_to_json(url_list_chem, 'plant_phytochemicals.json', "phytochemicals")
-'''
-
-## scraping IMPPAT therapeutic use data based on taxonomical plant names
-'''url_list = ayur_form_to_IMPPAT_url_ther('./ayurvedic_formulation.csv')
-url_IMPPAT_ther_to_json(url_list, 'plant_therapeutic_use.json')
-'''
+    return(url_list)''
 
 # local_file_paths = ['./ayurvedic_formulation.csv']
 
