@@ -6,36 +6,6 @@ import requests
 import json
 import csv
 
-# turns local .csv files into pandas dataframes
-def load_into_pd(local_file_paths):
-    file_df_dict = {}
-    for file_path in local_file_paths:
-        file_df = pd.read_csv(file_path)
-        file_df_dict[os.path.basename(file_path).split('.')[0]] = file_df
-    return file_df_dict
-
-# prepares IMPPAT urls for scraping phytochemical data taking in the path name for the 'ayurvedic formulations' csv
-def ayur_form_to_IMPPAT_url_chem(csv_path):
-    url_list = []
-    file_df = pd.read_csv(csv_path)
-    for row in file_df.iterrows():
-        sci_name = row[1]['Scientific name of the ingredient']
-        sci_name_split = sci_name.split(' ')
-        url = 'https://cb.imsc.res.in/imppat/phytochemical/'+sci_name_split[0]+'%20'+sci_name_split[1]
-        url_list.append(url)
-    return(url_list)
-
-# prepares IMPPAT urls for scraping therapeutic use data taking in the path name for the 'ayurvedic formulations' csv
-def ayur_form_to_IMPPAT_url_ther(csv_path):
-    url_list = []
-    file_df = pd.read_csv(csv_path)
-    for row in file_df.iterrows():
-        sci_name = row[1]['Scientific name of the ingredient']
-        sci_name_split = sci_name.split(' ')
-        url = 'https://cb.imsc.res.in/imppat/therapeutics/'+sci_name_split[0]+'%20'+sci_name_split[1]
-        url_list.append(url)
-    return(url_list)
-
 # prepares pubchem urls for scraping taking in the path name for the phytochemicals csv
 def phytochem_to_pubchem_url(url_list_imppat, csv_path):
     phytochem_dict={}
@@ -84,20 +54,7 @@ def phytochem_to_pubchem_url(url_list_imppat, csv_path):
         w = csv.writer(file)
         w.writerows(url_id_dict_final.items())
 
-    return(url_list)''
-
-# local_file_paths = ['./ayurvedic_formulation.csv']
-
-# cleaning phytochemicals.csv
-'''
-df = pd.read_csv("phytochemicals.csv", header=None) 
-df_new = pd.DataFrame()
-for index, row in df.iterrows():
-    chem_name = row[0]
-    df_new.loc[index, 0]=chem_name[1:-1]
-    print(df_new.loc[index, 0])
-df_new.to_csv("phytochemicals_cleaned.csv", header=None, index=None) 
-'''
+    return(url_list)
 
 ## scraping pubchem chemical-target interaction data based on phytochemical names
 

@@ -7,7 +7,11 @@ All scripts are written as a series of functions, trying to maximize reusability
 ## Data Sources
 ### Ayurvedic Formulation Data
 This contains ayurvedic formulation-plant species-phytochemical data and was provided by Dr. Nibedita Rath. We used the plant composition provided by her. The phytochemicals in this original dataset were not used. Instead, we scraped phytochemical data from the IMPPAT database described below.
-### IMPPAT
-
 ### DisGeNET
 This provides gene-drug associations compiled from several sources. For this project, our raw data was the download of all gene-drug associations for 'Oral Mucositis' and 'Stomatitis.' This can be downloaded from here: https://www.disgenet.org/browser/0/1/1/C1568868::C0038362/_a/_b./ in .xlsx format.
+### DrugBank
+This contains information on the therapeutic targets of various drugs. We used it to extract the drug targets of existing drugs for 4 indications similar to Oral Mucositis. Raw data is not available since it was scraped from the web programmatically, without manual download.
+### Indian Medicinal Plants, Phytochemistry And Therapeutics (IMPPAT)
+This contains information on the phytochemicals in different plant parts and therapeutic uses of plants commonly used in Indian Ayurveda. Raw data is not available since it was scraped from the web programmatically, without manual download.
+### Therapeutic Target Database (TTD)
+This contains information on the therapeutic target genes of various drugs. We used it to extract the drug targets of existing drugs linked to Oral Mucositis. The data was compiled through manual search on the TTD website. Hence, there is no corresponding script for it.

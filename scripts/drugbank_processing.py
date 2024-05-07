@@ -1,9 +1,6 @@
 import pandas as pd
-import glob 
 import requests
 from bs4 import BeautifulSoup as beaut
-import csv
-import json
 
 # returns dictionary in format {drug name : (id, target id)}
 def drugs_from_indication_urls(url_list):
@@ -58,6 +55,7 @@ url_list = ['https://go.drugbank.com/indications/DBCOND0060314',
             'https://go.drugbank.com/indications/DBCOND0020359', 
             'https://go.drugbank.com/indications/DBCOND0054816', 
             'https://go.drugbank.com/indications/DBCOND0031602']
+
 drug_target_df = drugs_from_indication_urls(url_list)
 updated_drug_target_df = get_target_info(drug_target_df)
-updated_drug_target_df.to_csv('drugbank_drug_target.csv')
+updated_drug_target_df.to_csv('data/processed/drugbank_drug_targets.csv')
