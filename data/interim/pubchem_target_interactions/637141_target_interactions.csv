@@ -1,2 +1,2 @@
-,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,1320719,637141,Drug Gene Interaction database (DGIdb),Licoagrodin,,LICOAGRODIN,https://www.dgidb.org/drugs/LICOAGRODIN,,PTPN1,https://www.dgidb.org/genes/PTPN1,,,5770,PTPN1,9606,Homo sapiens (human),,,,PMID:24047800,https://www.ncbi.nlm.nih.gov/pubmed/24047800,24047800,,
+, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,1479593,637141,Drug Gene Interaction database (DGIdb),Licoagrodin,,LICOAGRODIN,https://www.dgidb.org/drugs/chembl:CHEMBL2437368,,PTPN1,https://www.dgidb.org/genes/hgnc:9642,,,5770,PTPN1,9606,Homo sapiens (human),,,,,,,,

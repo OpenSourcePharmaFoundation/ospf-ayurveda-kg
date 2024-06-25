@@ -1,2 +1,2 @@
 ,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,1459660,5318585,Therapeutic Target Database (TTD),Isolicoflavonol,D0E5FV,ISOLICOFLAVONOL,https://idrblab.net/ttd/data/drug/details/D0E5FV,T13260,Aromatase (CYP19A1),https://idrblab.net/ttd/data/target/details/T13260,P11511,Aromatase,1588,CYP19A1,9606,Homo sapiens (human),Inhibitor,,,,,,,
+0,1921979,5318585,Therapeutic Target Database (TTD),Isolicoflavonol,D0E5FV,ISOLICOFLAVONOL,https://idrblab.net/ttd/data/drug/details/D0E5FV,T13260,Aromatase (CYP19A1),https://idrblab.net/ttd/data/target/details/T13260,P11511,Aromatase,1588,CYP19A1,9606,Homo sapiens (human),Inhibitor,,,,,,,

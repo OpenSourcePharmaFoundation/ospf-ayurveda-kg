@@ -1,6 +1,5 @@
 # import dependencies
 import pandas as pd
-import os
 import requests
 from bs4 import BeautifulSoup as beaut
 import json
@@ -88,6 +87,10 @@ url_IMPPAT_chem_to_json(url_list_chem, 'data/processed/imppat_plant_part_phytoch
 ## scraping IMPPAT therapeutic use data based on taxonomical plant names
 url_list = ayur_form_to_IMPPAT_url_ther('data/raw/ayurvedic_formulation.csv')
 url_IMPPAT_ther_to_json(url_list, 'data/processed/imppat_plant_therapeutic_uses.json')
+
+
+
+
 
         
 

@@ -10,8 +10,12 @@ This contains ayurvedic formulation-plant species-phytochemical data and was pro
 ### DisGeNET
 This provides gene-drug associations compiled from several sources. For this project, our raw data was the download of all gene-drug associations for 'Oral Mucositis' and 'Stomatitis.' This can be downloaded from here: https://www.disgenet.org/browser/0/1/1/C1568868::C0038362/_a/_b./ in .xlsx format.
 ### DrugBank
-This contains information on the therapeutic targets of various drugs. We used it to extract the drug targets of existing drugs for 4 indications similar to Oral Mucositis. Raw data is not available since it was scraped from the web programmatically, without manual download.
+This contains information on the therapeutic targets of various drugs. We used it to extract the drug targets of existing drugs for 4 indications similar to Oral Mucositis. Raw data is not available since it was scraped from the web programmatically.
 ### Indian Medicinal Plants, Phytochemistry And Therapeutics (IMPPAT)
-This contains information on the phytochemicals in different plant parts and therapeutic uses of plants commonly used in Indian Ayurveda. Raw data is not available since it was scraped from the web programmatically, without manual download.
+This contains information on the phytochemicals in different plant parts and therapeutic uses of plants commonly used in Indian Ayurveda. Raw data is not available since it was scraped from the web programmatically.
+### PubChem
+We used PubChem to extract information on the chemical-gene and chemical-protein interactions associated with each phytochemical. For a given phytochemical-target interaction, if a protein and gene form are both listed, the interaction is represented as phytochemical-targets->protein, and gene-translates->protein. If only a gene form is mentioned, the interaction is represented as the phytochemical-targets->gene. 
+We could not find a simple way to determine through webscraping whether a given phytochemical-target interaction takes place at the protein level or by interference in transcription and translation (epigenetic level). So, a mapping from a phytochemical to a protein target may mechanistically be mediated by the corresponding gene. This information is not captured with full accuracy in the knowledge graph. 
+The scraped chemical-target interaction data is available in data/interim/pubchem_target_interactions with one file (labelled by PubChem ID) corresponding to each compound.
 ### Therapeutic Target Database (TTD)
-This contains information on the therapeutic target genes of various drugs. We used it to extract the drug targets of existing drugs linked to Oral Mucositis. The data was compiled through manual search on the TTD website. Hence, there is no corresponding script for it.
+This contains information on the therapeutic target genes of various drugs. We used it to extract the drug targets of existing drugs linked to Oral Mucositis. The data was compiled through manual search on the TTD website and is available at data/processed.

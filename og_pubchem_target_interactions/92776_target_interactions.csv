@@ -1,0 +1,2 @@
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,1161517,92776,Comparative Toxicogenomics Database (CTD),Zingiberene,C477983,zingiberene,https://ctdbase.org/detail.go?type=chem&acc=C477983,4128,MAOA,https://ctdbase.org/detail.go?type=gene&acc=4128,,,4128,MAOA,9606,Homo sapiens (human),Zingiberene results in decreased activity of MAOA protein,,,PMID:29844252,https://www.ncbi.nlm.nih.gov/pubmed/29844252,29844252,,

@@ -1,6 +1,6 @@
-,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,1278309,442813,Drug Gene Interaction database (DGIdb),Ononin,,ONONIN,https://www.dgidb.org/drugs/ONONIN,,ATAD5,https://www.dgidb.org/genes/ATAD5,,,79915,ATAD5,9606,Homo sapiens (human),,,,,,,,
-1,1281677,442813,Drug Gene Interaction database (DGIdb),Ononin,,ONONIN,https://www.dgidb.org/drugs/ONONIN,,TP53,https://www.dgidb.org/genes/TP53,,,7157,TP53,9606,Homo sapiens (human),,,,,,,,
-2,1307967,442813,Drug Gene Interaction database (DGIdb),Ononin,,ONONIN,https://www.dgidb.org/drugs/ONONIN,,NPC1,https://www.dgidb.org/genes/NPC1,,,4864,NPC1,9606,Homo sapiens (human),,,,,,,,
-3,1446574,442813,Drug Gene Interaction database (DGIdb),Ononin,,ONONIN,https://www.dgidb.org/drugs/ONONIN,,BRCA1,https://www.dgidb.org/genes/BRCA1,,,672,BRCA1,9606,Homo sapiens (human),,,,,,,,
-4,1921319,442813,Drug Gene Interaction database (DGIdb),Ononin,,ONONIN,https://www.dgidb.org/drugs/ONONIN,,RAB9A,https://www.dgidb.org/genes/RAB9A,,,9367,RAB9A,9606,Homo sapiens (human),,,,,,,,
+, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,1511625,442813,Drug Gene Interaction database (DGIdb),Ononin,,ONONIN,https://www.dgidb.org/drugs/chembl:CHEMBL465980,,ATAD5,https://www.dgidb.org/genes/hgnc:25752,,,79915,ATAD5,9606,Homo sapiens (human),,,,,,,,
+1,1527041,442813,Drug Gene Interaction database (DGIdb),Ononin,,ONONIN,https://www.dgidb.org/drugs/chembl:CHEMBL465980,,TP53,https://www.dgidb.org/genes/hgnc:11998,,,7157,TP53,9606,Homo sapiens (human),,,,,,,,
+2,1527230,442813,Drug Gene Interaction database (DGIdb),Ononin,,ONONIN,https://www.dgidb.org/drugs/chembl:CHEMBL465980,,BRCA1,https://www.dgidb.org/genes/hgnc:1100,,,672,BRCA1,9606,Homo sapiens (human),,,,,,,,
+3,1527231,442813,Drug Gene Interaction database (DGIdb),Ononin,,ONONIN,https://www.dgidb.org/drugs/chembl:CHEMBL465980,,RAB9A,https://www.dgidb.org/genes/hgnc:9792,,,9367,RAB9A,9606,Homo sapiens (human),,,,,,,,
+4,1715328,442813,Drug Gene Interaction database (DGIdb),Ononin,,ONONIN,https://www.dgidb.org/drugs/chembl:CHEMBL465980,,NPC1,https://www.dgidb.org/genes/hgnc:7897,,,4864,NPC1,9606,Homo sapiens (human),,,,,,,,

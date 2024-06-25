@@ -1,17 +1,1 @@
-,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,1073503,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,POLK,https://www.dgidb.org/genes/POLK,,,51426,POLK,9606,Homo sapiens (human),,,,,,,,
-1,1073504,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,L3MBTL1,https://www.dgidb.org/genes/L3MBTL1,,,26013,L3MBTL1,9606,Homo sapiens (human),,,,,,,,
-2,1099096,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,SMAD3,https://www.dgidb.org/genes/SMAD3,,,4088,SMAD3,9606,Homo sapiens (human),,,,,,,,
-3,1099097,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,PLK1,https://www.dgidb.org/genes/PLK1,,,5347,PLK1,9606,Homo sapiens (human),,,,,,,,
-4,1104866,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,PIN1,https://www.dgidb.org/genes/PIN1,,,5300,PIN1,9606,Homo sapiens (human),,,,,,,,
-5,1140885,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,WRN,https://www.dgidb.org/genes/WRN,,,7486,WRN,9606,Homo sapiens (human),,,,,,,,
-6,1140886,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,CBX1,https://www.dgidb.org/genes/CBX1,,,10951,CBX1,9606,Homo sapiens (human),,,,,,,,
-7,1163668,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,POLH,https://www.dgidb.org/genes/POLH,,,5429,POLH,9606,Homo sapiens (human),,,,,,,,
-8,1186589,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,APEX1,https://www.dgidb.org/genes/APEX1,,,328,APEX1,9606,Homo sapiens (human),,,,,,,,
-9,1186590,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,RAPGEF3,https://www.dgidb.org/genes/RAPGEF3,,,10411,RAPGEF3,9606,Homo sapiens (human),,,,,,,,
-10,1189026,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,HKDC1,https://www.dgidb.org/genes/HKDC1,,,80201,HKDC1,9606,Homo sapiens (human),,,,,,,,
-11,1324436,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,KDM4A,https://www.dgidb.org/genes/KDM4A,,,9682,KDM4A,9606,Homo sapiens (human),,,,,,,,
-12,1872009,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,KAT2A,https://www.dgidb.org/genes/KAT2A,,,2648,KAT2A,9606,Homo sapiens (human),,,,,,,,
-13,1877386,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,GLS,https://www.dgidb.org/genes/GLS,,,2744,GLS,9606,Homo sapiens (human),,,,,,,,
-14,1971332,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,FEN1,https://www.dgidb.org/genes/FEN1,,,2237,FEN1,9606,Homo sapiens (human),,,,,,,,
-15,1971333,91440,Drug Gene Interaction database (DGIdb),Sennoside B,,SENNOSIDE B,https://www.dgidb.org/drugs/SENNOSIDE B,,USP2,https://www.dgidb.org/genes/USP2,,,9099,USP2,9606,Homo sapiens (human),,,,,,,,
+, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations

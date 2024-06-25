@@ -1,2 +1,2 @@
-,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,1797577,15380912,Drug Gene Interaction database (DGIdb),Kanzonol W,,KANZONOL W,https://www.dgidb.org/drugs/KANZONOL W,,PPARG,https://www.dgidb.org/genes/PPARG,,,5468,PPARG,9606,Homo sapiens (human),,,,PMID:20022509,https://www.ncbi.nlm.nih.gov/pubmed/20022509,20022509,,
+, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,1882023,15380912,Drug Gene Interaction database (DGIdb),Kanzonol W,,KANZONOL W,https://www.dgidb.org/drugs/chembl:CHEMBL591772,,PPARG,https://www.dgidb.org/genes/hgnc:9236,,,5468,PPARG,9606,Homo sapiens (human),,,,,,,,
