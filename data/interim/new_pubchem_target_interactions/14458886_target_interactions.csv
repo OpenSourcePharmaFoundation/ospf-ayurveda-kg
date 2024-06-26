@@ -1,0 +1,2 @@
+, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,2110458,14458886,Drug Gene Interaction database (DGIdb),3-Deacetylsalannin,,DESACETYL SALANNIN,https://www.dgidb.org/drugs/chembl:CHEMBL2270444,,HSP90AA1,https://www.dgidb.org/genes/hgnc:5253,,,3320,HSP90AA1,9606,Homo sapiens (human),,,,,,,,

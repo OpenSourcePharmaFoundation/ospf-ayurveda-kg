@@ -1,0 +1,2 @@
+, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,1272451,62465,Comparative Toxicogenomics Database (CTD),4-Ethyl-2-methoxyphenol,C084991,4-ethylguaiacol,https://ctdbase.org/detail.go?type=chem&acc=C084991,213,ALB,https://ctdbase.org/detail.go?type=gene&acc=213,,,213,ALB,9606,Homo sapiens (human),4-ethylguaiacol binds to ALB protein,,,PMID:11334365,https://www.ncbi.nlm.nih.gov/pubmed/11334365,11334365,,

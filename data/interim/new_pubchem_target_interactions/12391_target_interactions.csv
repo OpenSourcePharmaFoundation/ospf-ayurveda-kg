@@ -1,0 +1,2 @@
+, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,944479,12391,Toxin and Toxin Target Database (T3DB),Pentadecane,T3D4782,Pentadecane,http://www.t3db.ca/toxins/T3D4782,BE0003536,Cytochrome P450 2C19,http://www.t3db.ca/biodb/bio_entities/BE0003536,P33261,Cytochrome P450 2C19,1557,CYP2C19,9606,Homo sapiens (human),,,,PMID:23611293,https://www.ncbi.nlm.nih.gov/pubmed/23611293,23611293,,

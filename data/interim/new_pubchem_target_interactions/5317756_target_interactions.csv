@@ -1,0 +1,2 @@
+, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,1760147,5317756,Comparative Toxicogenomics Database (CTD),Glycycoumarin,C515155,glycycoumarin,https://ctdbase.org/detail.go?type=chem&acc=C515155,5468,PPARG,https://ctdbase.org/detail.go?type=gene&acc=5468,,,5468,PPARG,9606,Homo sapiens (human),Glycycoumarin binds to PPARG protein,,,PMID:14608046,https://www.ncbi.nlm.nih.gov/pubmed/14608046,14608046,,

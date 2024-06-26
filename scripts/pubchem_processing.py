@@ -7,6 +7,7 @@ import csv
 import glob 
 import os
 
+## Note: Ensure the pubchem_target_interactions folder created by this script has all 910 compound files. If internet connection is spotty, some downloads may fail, leading to incomplete information in the database. The only way to rectify this is to rerun the algorithm. This script usually takes 30-40 minutes to run.
 
 # map name to IMPPAT ID, PubChem ID and PubChem url for each phytochemical
 def phytochem_to_IMPPAT_id_PubChem_id_url(url_list_imppat, csv_path):
@@ -53,13 +54,15 @@ def chem_target_csv_from_url(urls_path, output_dir):
         url = row[2]
         id=url.split('/')[-1]
         scraping_url = "https://pubchem.ncbi.nlm.nih.gov/sdq/sdqagent.cgi?infmt=json&outfmt=csv&query={%22download%22:%22*%22,%22collection%22:%22consolidatedcompoundtarget%22,%22order%22:[%22cid,asc%22],%22start%22:1,%22limit%22:10000000,%22downloadfilename%22:%22pubchem_cid_"+id+"_consolidatedcompoundtarget%22,%22where%22:{%22ands%22:[{%22cid%22:%22"+id+"%22}]}}"
-        #data = requests.get(scraping_url)
-        try:
-            df = pd.read_csv(scraping_url, delimiter=',', quotechar='"')   
-            df.to_csv(output_dir+"/"+id+'_target_interactions.csv')
-        except:
-            print(id)
-            continue
+        attempts=0
+        while attempts<4:
+            try:
+                df = pd.read_csv(scraping_url, delimiter=',', quotechar='"')   
+                df.to_csv(output_dir+"/"+id+'_target_interactions.csv')
+                break
+            except:
+                attempts+=1
+                continue
 
 # create neo4j ready csv based on downloaded chemical-target interaction csv's from pubchem
 def pubchem_target_csv_compilation(csv_folder_path, output_path):
@@ -98,12 +101,11 @@ url_list_chem = ayur_form_to_IMPPAT_url_chem('data/raw/ayurvedic_formulation.csv
 phytochem_to_IMPPAT_id_PubChem_id_url(url_list_chem, 'data/processed/phytochem_imppatid_pubchem_id_url.csv')
 '''
 ## downloading chemical-target interaction data from PubChem into csv's (separate for each compound)
-interim_files_dir = 'data/interim/new_pubchem_target_interactions'
+interim_files_dir = 'data/interim/pubchem_target_interactions'
 if not os.path.exists(interim_files_dir):
     os.mkdir(interim_files_dir)
 chem_target_csv_from_url('data/processed/phytochem_imppatid_pubchem_id_url.csv', interim_files_dir)
-
-
+'''
 ## compiling neo4j input file from chemical-target csv's downloaded above
-'''pubchem_target_csv_compilation('data/interim/new_pubchem_target_interactions', 'pubchem_chemical_target_interactions.csv')
+pubchem_target_csv_compilation('data/interim/pubchem_target_interactions', 'pubchem_chemical_target_interactions.csv')
 '''
