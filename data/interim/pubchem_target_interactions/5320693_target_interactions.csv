@@ -1,4 +1,4 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
 0,1769698,5320693,Drug Gene Interaction database (DGIdb),Pratol,,CHEMBL:CHEMBL16751,https://www.dgidb.org/drugs/chembl:CHEMBL16751,,CYP2C19,https://www.dgidb.org/genes/hgnc:2621,,,1557,CYP2C19,9606,Homo sapiens (human),,,,,,,,
 1,1941616,5320693,Drug Gene Interaction database (DGIdb),Pratol,,CHEMBL:CHEMBL16751,https://www.dgidb.org/drugs/chembl:CHEMBL16751,,CYP3A4,https://www.dgidb.org/genes/hgnc:2637,,,1576,CYP3A4,9606,Homo sapiens (human),,,,,,,,
 2,1941617,5320693,Drug Gene Interaction database (DGIdb),Pratol,,CHEMBL:CHEMBL16751,https://www.dgidb.org/drugs/chembl:CHEMBL16751,,MEN1,https://www.dgidb.org/genes/hgnc:7010,,,4221,MEN1,9606,Homo sapiens (human),,,,,,,,

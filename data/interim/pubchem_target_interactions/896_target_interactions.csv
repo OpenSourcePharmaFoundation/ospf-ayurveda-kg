@@ -1,4 +1,4 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
 0,35292,896,Drug Gene Interaction database (DGIdb),Melatonin,,MELATONIN,https://www.dgidb.org/drugs/rxcui:6711,,MTNR1A,https://www.dgidb.org/genes/hgnc:7463,,,4543.0,MTNR1A,9606.0,Homo sapiens (human),,,,,,,,
 1,35293,896,Drug Gene Interaction database (DGIdb),Melatonin,,MELATONIN,https://www.dgidb.org/drugs/rxcui:6711,,MTNR1A,https://www.dgidb.org/genes/hgnc:7463,,,4543.0,MTNR1A,9606.0,Homo sapiens (human),,,,,,,,
 2,35294,896,Therapeutic Target Database (TTD),Melatonin,D0AN7B,Melatonin,https://idrblab.net/ttd/data/drug/details/D0AN7B,T97613,Melatonin receptor type 1A (MTNR1A),https://idrblab.net/ttd/data/target/details/T97613,P48039,Melatonin receptor type 1A,4543.0,MTNR1A,9606.0,Homo sapiens (human),Binder,,,,,,,

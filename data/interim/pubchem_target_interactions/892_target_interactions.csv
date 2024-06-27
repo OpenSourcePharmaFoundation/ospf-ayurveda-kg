@@ -1,4 +1,4 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
 0,35641,892,Drug Gene Interaction database (DGIdb),Inositol,,INOSITOL,https://www.dgidb.org/drugs/rxcui:5833,,APP,https://www.dgidb.org/genes/hgnc:620,,,351.0,APP,9606,Homo sapiens (human),,,,,,,,
 1,36355,892,Drug Gene Interaction database (DGIdb),Inositol,,INOSITOL,https://www.dgidb.org/drugs/rxcui:5833,,CCN2,https://www.dgidb.org/genes/hgnc:2500,,,1490.0,CCN2,9606,Homo sapiens (human),,,,,,,,
 2,36536,892,Drug Gene Interaction database (DGIdb),Inositol,,INOSITOL,https://www.dgidb.org/drugs/rxcui:5833,,NT5E,https://www.dgidb.org/genes/hgnc:8021,,,4907.0,NT5E,9606,Homo sapiens (human),,,,,,,,

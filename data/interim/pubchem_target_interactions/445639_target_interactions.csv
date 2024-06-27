@@ -1,4 +1,4 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
 0,1431347,445639,Drug Gene Interaction database (DGIdb),Oleic Acid,,OLEIC ACID,https://www.dgidb.org/drugs/rxcui:7631,,KCNH2,https://www.dgidb.org/genes/hgnc:6251,,,3757,KCNH2,9606,Homo sapiens (human),,,,,,,,
 1,1431348,445639,Drug Gene Interaction database (DGIdb),Oleic Acid,,OLEIC ACID,https://www.dgidb.org/drugs/rxcui:7631,,PLK1,https://www.dgidb.org/genes/hgnc:9077,,,5347,PLK1,9606,Homo sapiens (human),,,,,,,,
 2,1431349,445639,Drug Gene Interaction database (DGIdb),Oleic Acid,,OLEIC ACID,https://www.dgidb.org/drugs/rxcui:7631,,PPARA,https://www.dgidb.org/genes/hgnc:9232,,,5465,PPARA,9606,Homo sapiens (human),,,,,,,,

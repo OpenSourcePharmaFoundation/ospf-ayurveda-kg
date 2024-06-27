@@ -1,4 +1,4 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
 0,733593,10168,Drug Gene Interaction database (DGIdb),Rhein,,RHEIN,https://www.dgidb.org/drugs/drugbank:DB13174,,WRN,https://www.dgidb.org/genes/hgnc:12791,,,7486,WRN,9606,Homo sapiens (human),,,,,,,,
 1,733594,10168,Drug Gene Interaction database (DGIdb),Rhein,,RHEIN,https://www.dgidb.org/drugs/drugbank:DB13174,,HSP90AA1,https://www.dgidb.org/genes/hgnc:5253,,,3320,HSP90AA1,9606,Homo sapiens (human),,,,,,,,
 2,733595,10168,Drug Gene Interaction database (DGIdb),Rhein,,RHEIN,https://www.dgidb.org/drugs/drugbank:DB13174,,POLB,https://www.dgidb.org/genes/hgnc:9174,,,5423,POLB,9606,Homo sapiens (human),,,,,,,,

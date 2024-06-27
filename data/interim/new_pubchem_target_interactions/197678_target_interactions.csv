@@ -1,2 +1,0 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,1699488,197678,Drug Gene Interaction database (DGIdb),Shinflavanone,,SHINFLAVANONE,https://www.dgidb.org/drugs/chembl:CHEMBL590635,,PPARG,https://www.dgidb.org/genes/hgnc:9236,,,5468,PPARG,9606,Homo sapiens (human),,,,,,,,

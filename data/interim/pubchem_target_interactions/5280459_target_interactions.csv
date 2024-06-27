@@ -1,4 +1,4 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
 0,1719499,5280459,Therapeutic Target Database (TTD),Quercitrin,D07DJS,QUERCITRIN,https://idrblab.net/ttd/data/drug/details/D07DJS,T26623,Aldose reductase (AKR1B1),https://idrblab.net/ttd/data/target/details/T26623,P15121,Aldo-keto reductase family 1 member B1,231,AKR1B1,9606,Homo sapiens (human),Inhibitor,,,,,,,
 1,1745880,5280459,Drug Gene Interaction database (DGIdb),Quercitrin,,QUERCITRIN,https://www.dgidb.org/drugs/chembl:CHEMBL82242,,POLI,https://www.dgidb.org/genes/hgnc:9182,,,11201,POLI,9606,Homo sapiens (human),,,,,,,,
 2,1745881,5280459,Drug Gene Interaction database (DGIdb),Quercitrin,,QUERCITRIN,https://www.dgidb.org/drugs/chembl:CHEMBL82242,,P4HB,https://www.dgidb.org/genes/hgnc:8548,,,5034,P4HB,9606,Homo sapiens (human),,,,,,,,

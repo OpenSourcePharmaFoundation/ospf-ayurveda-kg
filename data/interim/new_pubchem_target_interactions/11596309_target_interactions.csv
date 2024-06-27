@@ -1,3 +1,0 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,1897753,11596309,Drug Gene Interaction database (DGIdb),Glabrol,,GLABROL,https://www.dgidb.org/drugs/chembl:CHEMBL462721,,PPARG,https://www.dgidb.org/genes/hgnc:9236,,,5468,PPARG,9606,Homo sapiens (human),,,,,,,,
-1,1968995,11596309,Drug Gene Interaction database (DGIdb),Glabrol,,GLABROL,https://www.dgidb.org/drugs/chembl:CHEMBL462721,,SMAD3,https://www.dgidb.org/genes/hgnc:6769,,,4088,SMAD3,9606,Homo sapiens (human),,,,,,,,

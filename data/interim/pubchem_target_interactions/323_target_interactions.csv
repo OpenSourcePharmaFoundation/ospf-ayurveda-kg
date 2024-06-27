@@ -1,4 +1,4 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
 0,4286,323,Drug Gene Interaction database (DGIdb),Coumarin,,COUMARIN,https://www.dgidb.org/drugs/rxcui:2898,,CYP3A4,https://www.dgidb.org/genes/hgnc:2637,,,1576,CYP3A4,9606,Homo sapiens (human),,,,,,,,
 1,14690,323,Drug Gene Interaction database (DGIdb),Coumarin,,COUMARIN,https://www.dgidb.org/drugs/rxcui:2898,,F9,https://www.dgidb.org/genes/hgnc:3551,,,2158,F9,9606,Homo sapiens (human),,,,,,,,
 2,18249,323,DrugBank,Coumarin,DB04665,Coumarin,https://www.drugbank.ca/drugs/DB04665,BE0003336,Cytochrome P450 2A6,https://www.drugbank.ca/bio_entities/BE0003336,P11509,Cytochrome P450 2A6,1548,CYP2A6,9606,Homo sapiens (human),,,,,,,,

@@ -1,2 +1,2 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
 0,1635778,480787,Comparative Toxicogenomics Database (CTD),Glycyrin,C000602096,glycyrin,https://ctdbase.org/detail.go?type=chem&acc=C000602096,1859,DYRK1A,https://ctdbase.org/detail.go?type=gene&acc=1859,,,1859,DYRK1A,9606,Homo sapiens (human),Glycyrin results in decreased activity of DYRK1A protein,,,PMID:31838052,https://www.ncbi.nlm.nih.gov/pubmed/31838052,31838052,,

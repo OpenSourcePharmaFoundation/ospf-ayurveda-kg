@@ -1,4 +1,4 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
 0,253018,3220,Drug Gene Interaction database (DGIdb),Emodin,,EMODIN,https://www.dgidb.org/drugs/ncit:C466,,PTP4A3,https://www.dgidb.org/genes/hgnc:9636,,,11156.0,PTP4A3,9606.0,Homo sapiens (human),,,,,,,,
 1,253019,3220,Drug Gene Interaction database (DGIdb),Emodin,,EMODIN,https://www.dgidb.org/drugs/ncit:C466,,CYP2C9,https://www.dgidb.org/genes/hgnc:2623,,,1559.0,CYP2C9,9606.0,Homo sapiens (human),,,,,,,,
 2,253020,3220,Drug Gene Interaction database (DGIdb),Emodin,,EMODIN,https://www.dgidb.org/drugs/ncit:C466,,AR,https://www.dgidb.org/genes/hgnc:644,,,367.0,AR,9606.0,Homo sapiens (human),,,,,,,,

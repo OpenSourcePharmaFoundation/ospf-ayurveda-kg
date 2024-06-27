@@ -1,4 +1,4 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
 0,1601759,5280805,Drug Gene Interaction database (DGIdb),Rutin,,RUTIN,https://www.dgidb.org/drugs/rxcui:9500,,RELA,https://www.dgidb.org/genes/hgnc:9955,,,5970,RELA,9606,Homo sapiens (human),,,,,,,,
 1,1601760,5280805,Drug Gene Interaction database (DGIdb),Rutin,,RUTIN,https://www.dgidb.org/drugs/rxcui:9500,,NFKB2,https://www.dgidb.org/genes/hgnc:7795,,,4791,NFKB2,9606,Homo sapiens (human),,,,,,,,
 2,1601761,5280805,DrugBank,Rutin,DB01698,Rutin,https://www.drugbank.ca/drugs/DB01698,BE0003074,Carbonyl reductase [NADPH] 1,https://www.drugbank.ca/bio_entities/BE0003074,P16152,Carbonyl reductase [NADPH] 1,873,CBR1,9606,Homo sapiens (human),,,,PMID:18579125,https://www.ncbi.nlm.nih.gov/pubmed/18579125,18579125,,

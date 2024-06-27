@@ -1,2 +1,0 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,2016731,10336244,Drug Gene Interaction database (DGIdb),Shinpterocarpin,,SHINPTEROCARPIN,https://www.dgidb.org/drugs/chembl:CHEMBL591773,,PPARG,https://www.dgidb.org/genes/hgnc:9236,,,5468,PPARG,9606,Homo sapiens (human),,,,,,,,

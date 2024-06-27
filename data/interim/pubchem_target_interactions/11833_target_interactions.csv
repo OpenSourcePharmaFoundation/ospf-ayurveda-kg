@@ -1,2 +1,2 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
 0,873118,11833,DrugBank,4-Methylcoumarin,DB08785,4-Methylcoumarin,https://www.drugbank.ca/drugs/DB08785,BE0004421,Endoglucanase H,https://www.drugbank.ca/bio_entities/BE0004421,P16218,Endoglucanase H,,,203119,Acetivibrio thermocellus ATCC 27405,,,,PMID:10592235,https://www.ncbi.nlm.nih.gov/pubmed/10592235,10592235,,

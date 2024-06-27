@@ -1,2 +1,0 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,1729513,5889042,Therapeutic Target Database (TTD),Isobavachromene,D0F3QP,4-hydroxylonchocarpin,https://idrblab.net/ttd/data/drug/details/D0F3QP,T60366,Ornithine decarboxylase (ODC1),https://idrblab.net/ttd/data/target/details/T60366,P11926,Ornithine decarboxylase,4953,ODC1,9606,Homo sapiens (human),Inhibitor,,,,,,,

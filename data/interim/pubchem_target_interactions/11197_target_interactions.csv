@@ -1,2 +1,2 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
 0,987065,11197,Comparative Toxicogenomics Database (CTD),Tetracosanoic acid,C010210,lignoceric acid,https://ctdbase.org/detail.go?type=chem&acc=C010210,1906,EDN1,https://ctdbase.org/detail.go?type=gene&acc=1906,,,1906,EDN1,9606,Homo sapiens (human),Lignoceric acid results in increased expression of EDN1 protein,,,PMID:16895544,https://www.ncbi.nlm.nih.gov/pubmed/16895544,16895544,,

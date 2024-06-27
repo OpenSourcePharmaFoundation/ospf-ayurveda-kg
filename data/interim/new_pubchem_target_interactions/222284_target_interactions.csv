@@ -1,2 +1,0 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,1473170,222284,Drug Gene Interaction database (DGIdb),Beta-Sitosterol,,BETA-SITOSTEROL,https://www.dgidb.org/drugs/ncit:C63662,,GSK3B,https://www.dgidb.org/genes/hgnc:4617,,,2932,GSK3B,9606,Homo sapiens (human),,,,,,,,

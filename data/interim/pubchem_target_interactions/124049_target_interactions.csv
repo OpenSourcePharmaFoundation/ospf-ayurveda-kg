@@ -1,4 +1,4 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
 0,1363467,124049,Drug Gene Interaction database (DGIdb),Glabranin,,GLABRANIN,https://www.dgidb.org/drugs/chembl:CHEMBL253998,,CYP3A4,https://www.dgidb.org/genes/hgnc:2637,,,1576,CYP3A4,9606,Homo sapiens (human),,,,,,,,
 1,1440082,124049,Drug Gene Interaction database (DGIdb),Glabranin,,GLABRANIN,https://www.dgidb.org/drugs/chembl:CHEMBL253998,,CYP2C9,https://www.dgidb.org/genes/hgnc:2623,,,1559,CYP2C9,9606,Homo sapiens (human),,,,,,,,
 2,1440083,124049,Drug Gene Interaction database (DGIdb),Glabranin,,GLABRANIN,https://www.dgidb.org/drugs/chembl:CHEMBL253998,,CYP2C19,https://www.dgidb.org/genes/hgnc:2621,,,1557,CYP2C19,9606,Homo sapiens (human),,,,,,,,

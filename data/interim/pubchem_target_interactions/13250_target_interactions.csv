@@ -1,2 +1,2 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
 0,875701,13250,Therapeutic Target Database (TTD),Ethyl gallate,D06CPD,ETHYLGALLATE,https://idrblab.net/ttd/data/drug/details/D06CPD,T93344,Squalene monooxygenase (SQLE),https://idrblab.net/ttd/data/target/details/T93344,Q14534,Squalene monooxygenase,6713,SQLE,9606,Homo sapiens (human),Inhibitor,,,,,,,

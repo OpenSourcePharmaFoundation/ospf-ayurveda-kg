@@ -1,3 +1,0 @@
-, id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,1534148,480860,Drug Gene Interaction database (DGIdb),Glyasperin D,,GLYASPERIN D,https://www.dgidb.org/drugs/chembl:CHEMBL1563332,,GMNN,https://www.dgidb.org/genes/hgnc:17493,,,51053,GMNN,9606,Homo sapiens (human),,,,,,,,
-1,1689125,480860,Drug Gene Interaction database (DGIdb),Glyasperin D,,GLYASPERIN D,https://www.dgidb.org/drugs/chembl:CHEMBL1563332,,KDM4A,https://www.dgidb.org/genes/hgnc:22978,,,9682,KDM4A,9606,Homo sapiens (human),,,,,,,,
