@@ -1,0 +1,922 @@
+Name,IMPPAT ID,PubChem URL,PubChem ID
+"5H-2-Pyrindin-6-ol, 6,7-dihydro-7-methyl-, (6R-cis)-",IMPHY004104,https://pubchem.ncbi.nlm.nih.gov/compound/56842090,56842090
+alpha-Amyrenyl acetate,IMPHY004141,https://pubchem.ncbi.nlm.nih.gov/compound/92842,92842
+Akuammidine,IMPHY004181,https://pubchem.ncbi.nlm.nih.gov/compound/15558574,15558574
+Losbanine,IMPHY008426,https://pubchem.ncbi.nlm.nih.gov/compound/101589339,101589339
+Reserpine,IMPHY012049,https://pubchem.ncbi.nlm.nih.gov/compound/5770,5770
+Lupeol,IMPHY012473,https://pubchem.ncbi.nlm.nih.gov/compound/259846,259846
+Substance B,IMPHY012511,https://pubchem.ncbi.nlm.nih.gov/compound/433154,433154
+Echitamidin,IMPHY013923,https://pubchem.ncbi.nlm.nih.gov/compound/190982,190982
+17-O-Acetylechitamine,IMPHY014562,https://pubchem.ncbi.nlm.nih.gov/compound/101589338,101589338
+beta-Sitosterol,IMPHY014836,https://pubchem.ncbi.nlm.nih.gov/compound/222284,222284
+Echitamine,IMPHY014902,https://pubchem.ncbi.nlm.nih.gov/compound/11953926,11953926
+Lupeol acetate,IMPHY014991,https://pubchem.ncbi.nlm.nih.gov/compound/92157,92157
+Decane,IMPHY001516,https://pubchem.ncbi.nlm.nih.gov/compound/15600,15600
+Methyl salicylate,IMPHY003050,https://pubchem.ncbi.nlm.nih.gov/compound/4133,4133
+Ethyl hexanoate,IMPHY003512,https://pubchem.ncbi.nlm.nih.gov/compound/31265,31265
+Eugenol,IMPHY003536,https://pubchem.ncbi.nlm.nih.gov/compound/3314,3314
+"methyl (1R,9R,11S,14Z,15R,17S,19S)-14-ethylidene-18-oxa-2,12-diazahexacyclo[9.6.1.19,15.01,9.03,8.012,17]nonadeca-3,5,7-triene-19-carboxylate",IMPHY003858,https://pubchem.ncbi.nlm.nih.gov/compound/101297632,101297632
+gamma-Terpinene,IMPHY003982,https://pubchem.ncbi.nlm.nih.gov/compound/7461,7461
+"4-(2-Hydroxypropan-2-yl)-1-methylcyclohexane-1,2-diol",IMPHY005279,https://pubchem.ncbi.nlm.nih.gov/compound/186702,186702
+Phenethyl acetate,IMPHY006003,https://pubchem.ncbi.nlm.nih.gov/compound/7654,7654
+"1,2,4-Trimethylbenzene",IMPHY006039,https://pubchem.ncbi.nlm.nih.gov/compound/7247,7247
+2-Phenylethanol,IMPHY006279,https://pubchem.ncbi.nlm.nih.gov/compound/6054,6054
+Nonane,IMPHY007202,https://pubchem.ncbi.nlm.nih.gov/compound/8141,8141
+Palmitic acid,IMPHY007327,https://pubchem.ncbi.nlm.nih.gov/compound/985,985
+Ethyl octanoate,IMPHY008066,https://pubchem.ncbi.nlm.nih.gov/compound/7799,7799
+Benzyl acetate,IMPHY008991,https://pubchem.ncbi.nlm.nih.gov/compound/8785,8785
+Hexacosane,IMPHY009359,https://pubchem.ncbi.nlm.nih.gov/compound/12407,12407
+Ethyl palmitate,IMPHY009624,https://pubchem.ncbi.nlm.nih.gov/compound/12366,12366
+Methyl 4-methoxybenzoate,IMPHY009862,https://pubchem.ncbi.nlm.nih.gov/compound/8499,8499
+Ethylbenzene,IMPHY009980,https://pubchem.ncbi.nlm.nih.gov/compound/7500,7500
+Eucalyptol,IMPHY010072,https://pubchem.ncbi.nlm.nih.gov/compound/2758,2758
+"methyl (10S,12R,13E,18S)-13-ethylidene-8,15-diazapentacyclo[10.5.1.01,9.02,7.010,15]octadeca-2,4,6,8-tetraene-18-carboxylate",IMPHY010543,https://pubchem.ncbi.nlm.nih.gov/compound/6444325,6444325
+4-Carvomenthenol,IMPHY011396,https://pubchem.ncbi.nlm.nih.gov/compound/11230,11230
+Ethyl salicylate,IMPHY011556,https://pubchem.ncbi.nlm.nih.gov/compound/8365,8365
+Ursolic acid,IMPHY011880,https://pubchem.ncbi.nlm.nih.gov/compound/64945,64945
+Tetrahydroalstonine,IMPHY011951,https://pubchem.ncbi.nlm.nih.gov/compound/72340,72340
+Camphor,IMPHY012036,https://pubchem.ncbi.nlm.nih.gov/compound/2537,2537
+Linalool,IMPHY012058,https://pubchem.ncbi.nlm.nih.gov/compound/6549,6549
+o-Xylene,IMPHY012070,https://pubchem.ncbi.nlm.nih.gov/compound/7237,7237
+Gamma-nonalactone,IMPHY012082,https://pubchem.ncbi.nlm.nih.gov/compound/7710,7710
+Mesitylene,IMPHY012088,https://pubchem.ncbi.nlm.nih.gov/compound/7947,7947
+Methyl octanoate,IMPHY012097,https://pubchem.ncbi.nlm.nih.gov/compound/8091,8091
+Citronellol,IMPHY012104,https://pubchem.ncbi.nlm.nih.gov/compound/8842,8842
+beta-Pinene,IMPHY012147,https://pubchem.ncbi.nlm.nih.gov/compound/14896,14896
+alpha-Terpineol,IMPHY012160,https://pubchem.ncbi.nlm.nih.gov/compound/17100,17100
+beta-Amyrin,IMPHY012223,https://pubchem.ncbi.nlm.nih.gov/compound/73145,73145
+"2-Furanmethanol, 5-ethenyltetrahydro-alpha,alpha,5-trimethyl-, cis-",IMPHY012920,https://pubchem.ncbi.nlm.nih.gov/compound/11116492,11116492
+trans-Linalool oxide,IMPHY014989,https://pubchem.ncbi.nlm.nih.gov/compound/6432254,6432254
+2-Phenylethyl propionate,IMPHY015297,https://pubchem.ncbi.nlm.nih.gov/compound/31225,31225
+p-Xylene,IMPHY015918,https://pubchem.ncbi.nlm.nih.gov/compound/7809,7809
+Linalool oxide acetate (pyranoid),IMPHY016041,https://pubchem.ncbi.nlm.nih.gov/compound/6427501,6427501
+Syringic acid,IMPHY000687,https://pubchem.ncbi.nlm.nih.gov/compound/10742,10742
+Picralinal,IMPHY001009,https://pubchem.ncbi.nlm.nih.gov/compound/46229103,46229103
+"methyl (1R,9R,10S,13Z,14R)-13-ethylidene-17-methoxy-11-oxido-18-oxa-8-aza-11-azoniapentacyclo[7.6.3.110,14.01,9.02,7]nonadeca-2,4,6,11-tetraene-15-carboxylate",IMPHY002199,https://pubchem.ncbi.nlm.nih.gov/compound/101636546,101636546
+"methyl (1R,10S,12R,13E,17S,18R,19R)-13-ethylidene-17-hydroxy-16-oxa-8,15-diazahexacyclo[10.6.1.01,9.02,7.010,15.014,18]nonadeca-2,4,6,8-tetraene-19-carboxylate",IMPHY002706,https://pubchem.ncbi.nlm.nih.gov/compound/101324838,101324838
+"19,20-(E)-Vallesamine",IMPHY003630,https://pubchem.ncbi.nlm.nih.gov/compound/13783712,13783712
+Sinapic acid,IMPHY004130,https://pubchem.ncbi.nlm.nih.gov/compound/637775,637775
+Betulin,IMPHY004271,https://pubchem.ncbi.nlm.nih.gov/compound/72326,72326
+"3,5-Dihydroxybenzoic acid",IMPHY005991,https://pubchem.ncbi.nlm.nih.gov/compound/7424,7424
+Vanillic acid,IMPHY007084,https://pubchem.ncbi.nlm.nih.gov/compound/8468,8468
+Lagunamine,IMPHY007522,https://pubchem.ncbi.nlm.nih.gov/compound/14706138,14706138
+Tubotaiwine,IMPHY010930,https://pubchem.ncbi.nlm.nih.gov/compound/13783720,13783720
+Scholaricine,IMPHY010950,https://pubchem.ncbi.nlm.nih.gov/compound/50900051,50900051
+19-Epischolaricine,IMPHY011283,https://pubchem.ncbi.nlm.nih.gov/compound/101587171,101587171
+"Akuammine, 10-deoxy-",IMPHY011448,https://pubchem.ncbi.nlm.nih.gov/compound/90479136,90479136
+Picraline,IMPHY013667,https://pubchem.ncbi.nlm.nih.gov/compound/131636670,131636670
+Akuammicine,IMPHY000969,https://pubchem.ncbi.nlm.nih.gov/compound/441976,441976
+psi-Akuammigine,IMPHY010269,https://pubchem.ncbi.nlm.nih.gov/compound/119079925,119079925
+alpha-Amyrin,IMPHY011619,https://pubchem.ncbi.nlm.nih.gov/compound/73170,73170
+alpha1-Sitosterol,IMPHY011654,https://pubchem.ncbi.nlm.nih.gov/compound/9548595,9548595
+Akuammigine,IMPHY011953,https://pubchem.ncbi.nlm.nih.gov/compound/1268096,1268096
+Campesterol,IMPHY012402,https://pubchem.ncbi.nlm.nih.gov/compound/173183,173183
+Echitamine chloride,IMPHY012986,https://pubchem.ncbi.nlm.nih.gov/compound/10045636,10045636
+Stigmasterol,IMPHY014842,https://pubchem.ncbi.nlm.nih.gov/compound/5280794,5280794
+"angustilobine B, (rac)-",IMPHY002687,https://pubchem.ncbi.nlm.nih.gov/compound/13891905,13891905
+"methyl (12S,13R,14Z)-14-ethylidene-12-(hydroxymethyl)-1,10-diazatetracyclo[11.2.2.03,11.04,9]heptadeca-3(11),4,6,8-tetraene-12-carboxylate",IMPHY003629,https://pubchem.ncbi.nlm.nih.gov/compound/129317087,129317087
+3-Carene,IMPHY011392,https://pubchem.ncbi.nlm.nih.gov/compound/26049,26049
+Terpinolene,IMPHY011599,https://pubchem.ncbi.nlm.nih.gov/compound/11463,11463
+Citral,IMPHY011789,https://pubchem.ncbi.nlm.nih.gov/compound/638011,638011
+Betulinic acid,IMPHY012003,https://pubchem.ncbi.nlm.nih.gov/compound/64971,64971
+alpha-Pinene,IMPHY012061,https://pubchem.ncbi.nlm.nih.gov/compound/6654,6654
+"Echitamine, hydrochloride",IMPHY014021,https://pubchem.ncbi.nlm.nih.gov/compound/3000633,3000633
+Geraniol,IMPHY014923,https://pubchem.ncbi.nlm.nih.gov/compound/637566,637566
+Limonene,IMPHY014988,https://pubchem.ncbi.nlm.nih.gov/compound/22311,22311
+Thiamine,IMPHY000005,https://pubchem.ncbi.nlm.nih.gov/compound/1130,1130
+Riboflavin,IMPHY000846,https://pubchem.ncbi.nlm.nih.gov/compound/493570,493570
+Serotonin,IMPHY004653,https://pubchem.ncbi.nlm.nih.gov/compound/5202,5202
+Ascorbic acid,IMPHY006362,https://pubchem.ncbi.nlm.nih.gov/compound/54670067,54670067
+Nicotinic acid,IMPHY007357,https://pubchem.ncbi.nlm.nih.gov/compound/938,938
+Isomultiflorenol,IMPHY001953,https://pubchem.ncbi.nlm.nih.gov/compound/11876210,11876210
+Hentriacontane,IMPHY008910,https://pubchem.ncbi.nlm.nih.gov/compound/12410,12410
+24-Methylenecycloartanol,IMPHY011393,https://pubchem.ncbi.nlm.nih.gov/compound/94204,94204
+Tannic acid,IMPHY011741,https://pubchem.ncbi.nlm.nih.gov/compound/16129778,16129778
+Colocynthin,IMPHY013490,https://pubchem.ncbi.nlm.nih.gov/compound/54584209,54584209
+Oleic acid,IMPHY011797,https://pubchem.ncbi.nlm.nih.gov/compound/445639,445639
+Linoleic acid,IMPHY014990,https://pubchem.ncbi.nlm.nih.gov/compound/5280450,5280450
+Punicic acid,IMPHY015031,https://pubchem.ncbi.nlm.nih.gov/compound/5281126,5281126
+Cucurbitadienol,IMPHY002563,https://pubchem.ncbi.nlm.nih.gov/compound/14543446,14543446
+Cyperol,IMPHY001661,https://pubchem.ncbi.nlm.nih.gov/compound/14076601,14076601
+Isocyperol,IMPHY002629,https://pubchem.ncbi.nlm.nih.gov/compound/14076604,14076604
+(-)-Cyperene,IMPHY004120,https://pubchem.ncbi.nlm.nih.gov/compound/12308843,12308843
+"(1S,6S,8S)-1,5-dimethyl-8-propan-2-yltricyclo[4.4.0.02,7]dec-4-en-3-one",IMPHY006821,https://pubchem.ncbi.nlm.nih.gov/compound/102316377,102316377
+d-Borneol,IMPHY011590,https://pubchem.ncbi.nlm.nih.gov/compound/61060,61060
+Cyperotundone,IMPHY011598,https://pubchem.ncbi.nlm.nih.gov/compound/12308615,12308615
+alpha-Cyperone,IMPHY011712,https://pubchem.ncbi.nlm.nih.gov/compound/6452086,6452086
+Humulene,IMPHY011761,https://pubchem.ncbi.nlm.nih.gov/compound/5281520,5281520
+(+)-delta-Cadinene,IMPHY011957,https://pubchem.ncbi.nlm.nih.gov/compound/441005,441005
+(-)-alpha-Cadinol,IMPHY012586,https://pubchem.ncbi.nlm.nih.gov/compound/6431302,6431302
+"(2E,4E)-3,7-dimethylocta-2,4,6-trienal",IMPHY014207,https://pubchem.ncbi.nlm.nih.gov/compound/11126441,11126441
+beta-Selinene,IMPHY014708,https://pubchem.ncbi.nlm.nih.gov/compound/442393,442393
+Caswell No. 264AB,IMPHY014806,https://pubchem.ncbi.nlm.nih.gov/compound/442359,442359
+Cedrelanol,IMPHY014906,https://pubchem.ncbi.nlm.nih.gov/compound/160799,160799
+alpha-Muurolol,IMPHY015016,https://pubchem.ncbi.nlm.nih.gov/compound/91753440,91753440
+T-Muurolol,IMPHY015128,https://pubchem.ncbi.nlm.nih.gov/compound/3084331,3084331
+"Caryophyllan-2,6-beta-oxide",IMPHY016557,https://pubchem.ncbi.nlm.nih.gov/compound/6428086,6428086
+Cyprotene,IMPHY016606,https://pubchem.ncbi.nlm.nih.gov/compound/91715050,91715050
+Isorotundene,IMPHY016712,https://pubchem.ncbi.nlm.nih.gov/compound/91753591,91753591
+Luteolin,IMPHY004660,https://pubchem.ncbi.nlm.nih.gov/compound/5280445,5280445
+Aureusidin,IMPHY004681,https://pubchem.ncbi.nlm.nih.gov/compound/5281220,5281220
+Myrtenol,IMPHY000099,https://pubchem.ncbi.nlm.nih.gov/compound/10582,10582
+Pinene,IMPHY000491,/imppat/phytochemical-searchsupclass/Lipids and lipid-like molecules,Lipids and lipid-like molecules
+2-(4-Methylphenyl)propan-2-ol,IMPHY002825,https://pubchem.ncbi.nlm.nih.gov/compound/14529,14529
+Myrcene,IMPHY003485,https://pubchem.ncbi.nlm.nih.gov/compound/31253,31253
+(+)-gamma-Gurjunene,IMPHY003956,https://pubchem.ncbi.nlm.nih.gov/compound/15560285,15560285
+beta-Thujene,IMPHY004680,https://pubchem.ncbi.nlm.nih.gov/compound/520384,520384
+p-Cymene,IMPHY006145,https://pubchem.ncbi.nlm.nih.gov/compound/7463,7463
+Spathulenol,IMPHY007840,https://pubchem.ncbi.nlm.nih.gov/compound/92231,92231
+Dibutyl phthalate,IMPHY007903,https://pubchem.ncbi.nlm.nih.gov/compound/3026,3026
+beta-Gurjunene,IMPHY009743,https://pubchem.ncbi.nlm.nih.gov/compound/6450812,6450812
+beta-Elemene,IMPHY010080,https://pubchem.ncbi.nlm.nih.gov/compound/6918391,6918391
+"8-Isopropyl-2,5-dimethyl-1,2,3,4-tetrahydronaphthalene",IMPHY010182,https://pubchem.ncbi.nlm.nih.gov/compound/518975,518975
+"(S,1Z,6Z)-8-Isopropyl-1-methyl-5-methylenecyclodeca-1,6-diene",IMPHY011586,https://pubchem.ncbi.nlm.nih.gov/compound/91723653,91723653
+alpha-Muurolene,IMPHY011659,https://pubchem.ncbi.nlm.nih.gov/compound/12306047,12306047
+(+)-alpha-Cadinene,IMPHY011660,https://pubchem.ncbi.nlm.nih.gov/compound/12306048,12306048
+Humulene epoxyde,IMPHY011734,https://pubchem.ncbi.nlm.nih.gov/compound/5463721,5463721
+Humulene epoxide II,IMPHY011749,https://pubchem.ncbi.nlm.nih.gov/compound/10704181,10704181
+Anethole,IMPHY011763,https://pubchem.ncbi.nlm.nih.gov/compound/637563,637563
+gamma-Muurolene,IMPHY011792,https://pubchem.ncbi.nlm.nih.gov/compound/12313020,12313020
+(+)-gamma-Cadinene,IMPHY011793,https://pubchem.ncbi.nlm.nih.gov/compound/6432404,6432404
+(-)-trans-Carveol,IMPHY011988,https://pubchem.ncbi.nlm.nih.gov/compound/94221,94221
+Carvone,IMPHY012075,https://pubchem.ncbi.nlm.nih.gov/compound/7439,7439
+Sabinene,IMPHY012165,https://pubchem.ncbi.nlm.nih.gov/compound/18818,18818
+"(1r,3s,5r)-6,6-Dimethyl-2-methylidenebicyclo[3.1.1]heptan-3-ol",IMPHY012265,https://pubchem.ncbi.nlm.nih.gov/compound/88302,88302
+alpha-Curcumene,IMPHY012279,https://pubchem.ncbi.nlm.nih.gov/compound/92139,92139
+Caryophyllene oxide,IMPHY012667,https://pubchem.ncbi.nlm.nih.gov/compound/1742210,1742210
+alpha-Calacorene,IMPHY013080,https://pubchem.ncbi.nlm.nih.gov/compound/12302243,12302243
+alpha-Phellandrene,IMPHY014811,https://pubchem.ncbi.nlm.nih.gov/compound/7460,7460
+Aromadendrene,IMPHY014817,https://pubchem.ncbi.nlm.nih.gov/compound/91354,91354
+beta-Caryophyllene,IMPHY014831,https://pubchem.ncbi.nlm.nih.gov/compound/5281515,5281515
+Bornyl acetate,IMPHY014847,https://pubchem.ncbi.nlm.nih.gov/compound/6448,6448
+Camphene,IMPHY014852,https://pubchem.ncbi.nlm.nih.gov/compound/6616,6616
+"1-Isopropyl-4,7-dimethyl-1,3,4,5,6,8a-hexahydro-4a(2H)-naphthalenol",IMPHY014885,https://pubchem.ncbi.nlm.nih.gov/compound/519857,519857
+6-Epi-beta-bisabolol,IMPHY014907,https://pubchem.ncbi.nlm.nih.gov/compound/12300148,12300148
+alpha-Copaene,IMPHY015123,https://pubchem.ncbi.nlm.nih.gov/compound/70678558,70678558
+Aristolone,IMPHY015490,https://pubchem.ncbi.nlm.nih.gov/compound/165536,165536
+Bulnesene,IMPHY015519,https://pubchem.ncbi.nlm.nih.gov/compound/16679399,16679399
+"Bicyclo[7.2.0]undecan-5-ol, 10,10-dimethyl-2,6-bis(methylene)-",IMPHY015548,https://pubchem.ncbi.nlm.nih.gov/compound/527418,527418
+Isolongifolen-5-one,IMPHY015763,https://pubchem.ncbi.nlm.nih.gov/compound/600416,600416
+Viridiflorol,IMPHY016053,https://pubchem.ncbi.nlm.nih.gov/compound/11996452,11996452
+Pinocarvone,IMPHY002072,https://pubchem.ncbi.nlm.nih.gov/compound/121719,121719
+Rotundene,IMPHY002925,https://pubchem.ncbi.nlm.nih.gov/compound/25203405,25203405
+Eudesm-7(11)-en-4-ol,IMPHY003602,https://pubchem.ncbi.nlm.nih.gov/compound/6432454,6432454
+Valeranone,IMPHY003631,https://pubchem.ncbi.nlm.nih.gov/compound/171455,171455
+(-)-beta-Bourbonene,IMPHY003977,https://pubchem.ncbi.nlm.nih.gov/compound/62566,62566
+Verbenone,IMPHY004077,https://pubchem.ncbi.nlm.nih.gov/compound/29025,29025
+Guaiol,IMPHY004281,https://pubchem.ncbi.nlm.nih.gov/compound/227829,227829
+Longifolene,IMPHY004286,https://pubchem.ncbi.nlm.nih.gov/compound/289151,289151
+1-Octen-3-OL,IMPHY005345,https://pubchem.ncbi.nlm.nih.gov/compound/18827,18827
+(Z)-Hex-2-enyl acetate,IMPHY005992,https://pubchem.ncbi.nlm.nih.gov/compound/5363374,5363374
+Valerenal,IMPHY006203,https://pubchem.ncbi.nlm.nih.gov/compound/6440942,6440942
+Myrtenal,IMPHY006325,https://pubchem.ncbi.nlm.nih.gov/compound/61130,61130
+Hexanal,IMPHY006347,https://pubchem.ncbi.nlm.nih.gov/compound/6184,6184
+1-Hexanol,IMPHY007171,https://pubchem.ncbi.nlm.nih.gov/compound/8103,8103
+Hexanoic acid,IMPHY007354,https://pubchem.ncbi.nlm.nih.gov/compound/8892,8892
+Widdrol,IMPHY007367,https://pubchem.ncbi.nlm.nih.gov/compound/94334,94334
+beta-Cubebene,IMPHY007376,https://pubchem.ncbi.nlm.nih.gov/compound/93081,93081
+1-Octanol,IMPHY007620,https://pubchem.ncbi.nlm.nih.gov/compound/957,957
+alpha-Guaiene,IMPHY008936,https://pubchem.ncbi.nlm.nih.gov/compound/5317844,5317844
+Nootkatone,IMPHY009360,https://pubchem.ncbi.nlm.nih.gov/compound/1268142,1268142
+(-)-alpha-Himachalene,IMPHY010609,https://pubchem.ncbi.nlm.nih.gov/compound/11830551,11830551
+alpha-Cedrene epoxide,IMPHY011100,https://pubchem.ncbi.nlm.nih.gov/compound/122510,122510
+alpha-Campholenal,IMPHY011407,https://pubchem.ncbi.nlm.nih.gov/compound/1252759,1252759
+beta-Eudesmol,IMPHY011542,https://pubchem.ncbi.nlm.nih.gov/compound/91457,91457
+(1R)-2-methyl-5-propan-2-ylbicyclo[3.1.0]hex-2-ene,IMPHY011552,https://pubchem.ncbi.nlm.nih.gov/compound/6451618,6451618
+2-Hexenal,IMPHY011562,https://pubchem.ncbi.nlm.nih.gov/compound/5281168,5281168
+cis-3-Hexen-1-ol,IMPHY011588,https://pubchem.ncbi.nlm.nih.gov/compound/5281167,5281167
+beta-Farnesene,IMPHY011658,https://pubchem.ncbi.nlm.nih.gov/compound/5281517,5281517
+alpha-Gurjunene,IMPHY011667,https://pubchem.ncbi.nlm.nih.gov/compound/15560276,15560276
+2-Hexen-1-OL,IMPHY011694,https://pubchem.ncbi.nlm.nih.gov/compound/5318042,5318042
+"(4E,7E)-1,5,9,9-Tetramethyl-12-oxabicyclo[9.1.0]dodeca-4,7-diene",IMPHY011872,https://pubchem.ncbi.nlm.nih.gov/compound/22559443,22559443
+Elemol,IMPHY011890,https://pubchem.ncbi.nlm.nih.gov/compound/92138,92138
+Valencene,IMPHY011896,https://pubchem.ncbi.nlm.nih.gov/compound/9855795,9855795
+"(1S,2S,6S,7R,8R)-1,3-dimethyl-8-propan-2-yltricyclo[4.4.0.02,7]dec-3-ene",IMPHY012168,https://pubchem.ncbi.nlm.nih.gov/compound/101607926,101607926
+Isopinocamphone,IMPHY012254,https://pubchem.ncbi.nlm.nih.gov/compound/84532,84532
+alpha-Bergamotene,IMPHY012261,https://pubchem.ncbi.nlm.nih.gov/compound/86608,86608
+delta-Cadinol,IMPHY012585,https://pubchem.ncbi.nlm.nih.gov/compound/3084311,3084311
+tau-Cadinol,IMPHY012587,https://pubchem.ncbi.nlm.nih.gov/compound/12302222,12302222
+Phytol,IMPHY012712,https://pubchem.ncbi.nlm.nih.gov/compound/5280435,5280435
+gamma-Elemene,IMPHY012921,https://pubchem.ncbi.nlm.nih.gov/compound/6432312,6432312
+(-)-Globulol,IMPHY014690,https://pubchem.ncbi.nlm.nih.gov/compound/12304985,12304985
+Zizanene,IMPHY014801,https://pubchem.ncbi.nlm.nih.gov/compound/12306046,12306046
+(E)-beta-ocimene,IMPHY014835,https://pubchem.ncbi.nlm.nih.gov/compound/5281553,5281553
+Cedrol,IMPHY014857,https://pubchem.ncbi.nlm.nih.gov/compound/65575,65575
+Calamenene,IMPHY014865,https://pubchem.ncbi.nlm.nih.gov/compound/6429077,6429077
+cis-Nerolidol,IMPHY014871,https://pubchem.ncbi.nlm.nih.gov/compound/5320128,5320128
+(S)-cis-Verbenol,IMPHY014877,https://pubchem.ncbi.nlm.nih.gov/compound/87839,87839
+Ledol,IMPHY014986,https://pubchem.ncbi.nlm.nih.gov/compound/92812,92812
+3-Pinanone,IMPHY015040,https://pubchem.ncbi.nlm.nih.gov/compound/11038,11038
+trans-Verbenol,IMPHY015098,https://pubchem.ncbi.nlm.nih.gov/compound/89664,89664
+"2-[(2R,8R,8aS)-8,8a-dimethyl-1,2,3,4,6,7,8,8a-octahydronaphthalen-2-yl]propan-2-ol",IMPHY015107,https://pubchem.ncbi.nlm.nih.gov/compound/9859337,9859337
+Allo-Aromadendrene,IMPHY016012,https://pubchem.ncbi.nlm.nih.gov/compound/42608158,42608158
+Isomustakone,IMPHY017851,https://pubchem.ncbi.nlm.nih.gov/compound/91748747,91748747
+Dillapiol,IMPHY001144,https://pubchem.ncbi.nlm.nih.gov/compound/10231,10231
+Sugetriol triacetate,IMPHY002501,https://pubchem.ncbi.nlm.nih.gov/compound/101625871,101625871
+Isokobusone,IMPHY002998,https://pubchem.ncbi.nlm.nih.gov/compound/3860435,3860435
+"(4aS,6R,8aS)-4a-hydroxy-4,8a-dimethyl-6-prop-1-en-2-yl-5,6,7,8-tetrahydro-1H-naphthalen-2-one",IMPHY003969,https://pubchem.ncbi.nlm.nih.gov/compound/11651583,11651583
+beta-Rotunol,IMPHY004257,https://pubchem.ncbi.nlm.nih.gov/compound/5321005,5321005
+Patchoulenone,IMPHY004352,https://pubchem.ncbi.nlm.nih.gov/compound/5320424,5320424
+Cyperolone,IMPHY004953,https://pubchem.ncbi.nlm.nih.gov/compound/5316283,5316283
+Rotundone,IMPHY005516,https://pubchem.ncbi.nlm.nih.gov/compound/5321003,5321003
+Glycerol,IMPHY006193,https://pubchem.ncbi.nlm.nih.gov/compound/753,753
+Kobusone,IMPHY007250,https://pubchem.ncbi.nlm.nih.gov/compound/6710676,6710676
+"(2S,3R,4R,5S,6S)-2-(hydroxymethyl)-6-(((2S,3R,4R,5S,6R)-3,4,5-trihydroxy-6-(((4aR,8aS)-4-isopropyl-1,7-dimethyl-1,2,3,4,4a,5,8,8a-octahydronaphthalen-1-yl)oxy)tetrahydro-2H-pyran-2-yl)methoxy)tetrahydro-2H-pyran-3,4,5-triol",IMPHY007378,https://pubchem.ncbi.nlm.nih.gov/compound/91754221,91754221
+1-Methyl-4-(prop-1-en-2-yl)benzene,IMPHY008150,https://pubchem.ncbi.nlm.nih.gov/compound/62385,62385
+epi-Cubebol,IMPHY008903,https://pubchem.ncbi.nlm.nih.gov/compound/91753433,91753433
+delta-Guaiene,IMPHY008946,https://pubchem.ncbi.nlm.nih.gov/compound/94275,94275
+"(6R)-1a-methyl-4-methylidene-6-propan-2-yl-1b,2,3,5,5a,6a-hexahydro-1H-cyclopropa[a]inden-6-ol",IMPHY009754,https://pubchem.ncbi.nlm.nih.gov/compound/6431225,6431225
+1-Isopropyl-4-methylenebicyclo[3.1.0]hex-2-ene,IMPHY009778,https://pubchem.ncbi.nlm.nih.gov/compound/524198,524198
+Cyclosativene,IMPHY009840,https://pubchem.ncbi.nlm.nih.gov/compound/519960,519960
+"p-Mentha-1,5-dien-8-ol",IMPHY009880,https://pubchem.ncbi.nlm.nih.gov/compound/519323,519323
+"Limonene oxide, cis-(-)-",IMPHY010781,https://pubchem.ncbi.nlm.nih.gov/compound/6452061,6452061
+"Cyclohexene, 4-methyl-1-(1-methylethyl)-",IMPHY011074,https://pubchem.ncbi.nlm.nih.gov/compound/10369,10369
+4-Isopropylbenzyl alcohol,IMPHY011557,https://pubchem.ncbi.nlm.nih.gov/compound/325,325
+alpha-Selinene,IMPHY011581,https://pubchem.ncbi.nlm.nih.gov/compound/10856614,10856614
+Oleanolic acid,IMPHY011826,https://pubchem.ncbi.nlm.nih.gov/compound/10494,10494
+(-)-cis-Carveol,IMPHY011973,https://pubchem.ncbi.nlm.nih.gov/compound/330573,330573
+Thujopsadiene,IMPHY012908,https://pubchem.ncbi.nlm.nih.gov/compound/6428961,6428961
+trans-Calamenene,IMPHY012910,https://pubchem.ncbi.nlm.nih.gov/compound/6429022,6429022
+(-)-Carvomenthone,IMPHY013764,https://pubchem.ncbi.nlm.nih.gov/compound/6432474,6432474
+"Selina-3,11-dien-6alpha-ol",IMPHY014506,https://pubchem.ncbi.nlm.nih.gov/compound/91746575,91746575
+14-Hydroxy-9-epi-beta-Caryophyllene,IMPHY014732,https://pubchem.ncbi.nlm.nih.gov/compound/91747230,91747230
+"(3aS,4R,7R)-1,4,9,9-Tetramethyl-5,6,7,8-tetrahydro-4H-3a,7-methanoazulene",IMPHY016603,https://pubchem.ncbi.nlm.nih.gov/compound/74819450,74819450
+"(2R,4aS)-4a,8-Dimethyl-2-(prop-1-en-2-yl)-1,2,3,4,4a,5-hexahydronaphthalene",IMPHY017710,https://pubchem.ncbi.nlm.nih.gov/compound/73015594,73015594
+Myristic acid,IMPHY000060,https://pubchem.ncbi.nlm.nih.gov/compound/11005,11005
+Stearic acid,IMPHY004631,https://pubchem.ncbi.nlm.nih.gov/compound/5281,5281
+beta-Cyperone,IMPHY000614,https://pubchem.ncbi.nlm.nih.gov/compound/10889388,10889388
+Quercetin,IMPHY004619,https://pubchem.ncbi.nlm.nih.gov/compound/5280343,5280343
+"1-Methyl-5-methylidene-9-propan-2-yltricyclo[4.4.0.02,8]dec-3-ene",IMPHY007272,https://pubchem.ncbi.nlm.nih.gov/compound/91748745,91748745
+Calamenone,IMPHY010089,https://pubchem.ncbi.nlm.nih.gov/compound/91747434,91747434
+"1,2,3,4,5,6,7,8-Octahydro-1,4-dimethyl-7-(1-methylethylidene)azulene monoepoxide",IMPHY010560,https://pubchem.ncbi.nlm.nih.gov/compound/92288133,92288133
+Scoparone,IMPHY011395,https://pubchem.ncbi.nlm.nih.gov/compound/8417,8417
+4-Methoxybenzoic acid,IMPHY011515,https://pubchem.ncbi.nlm.nih.gov/compound/7478,7478
+Isopatchoulenone,IMPHY011969,https://pubchem.ncbi.nlm.nih.gov/compound/12308616,12308616
+beta-Patchoulene,IMPHY012305,https://pubchem.ncbi.nlm.nih.gov/compound/101731,101731
+Linolenic acid,IMPHY012723,https://pubchem.ncbi.nlm.nih.gov/compound/5280934,5280934
+Copaene,IMPHY014881,https://pubchem.ncbi.nlm.nih.gov/compound/19725,19725
+"[(2S,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl] (4aS,6aR,6aS,6bR,8R,8aR,9S,10R,11R,12aR,14bS)-8,10,11-trihydroxy-9-(hydroxymethyl)-2,2,6a,6b,9,12a-hexamethyl-1,3,4,5,6,6a,7,8,8a,10,11,12,13,14b-tetradecahydropicene-4a-carboxylate",IMPHY001187,https://pubchem.ncbi.nlm.nih.gov/compound/102005082,102005082
+Terchebin,IMPHY003139,https://pubchem.ncbi.nlm.nih.gov/compound/3084341,3084341
+Arachidic acid,IMPHY011394,https://pubchem.ncbi.nlm.nih.gov/compound/10467,10467
+Arjunolic acid,IMPHY011627,https://pubchem.ncbi.nlm.nih.gov/compound/73641,73641
+Gallic acid,IMPHY012021,https://pubchem.ncbi.nlm.nih.gov/compound/370,370
+Triacontanoic acid,IMPHY000601,https://pubchem.ncbi.nlm.nih.gov/compound/10471,10471
+Ellagitannin,IMPHY002419,https://pubchem.ncbi.nlm.nih.gov/compound/101601927,101601927
+Chebulagic acid,IMPHY004799,https://pubchem.ncbi.nlm.nih.gov/compound/442674,442674
+"(12R,15R,32S,33R)-4,5,6,14,20,21,22,25,26,27,38,39,40,43,44,55-hexadecahydroxy-2,10,13,16,31,34,46,53-octaoxaundecacyclo[46.7.1.03,8.012,33.015,32.018,23.024,29.036,41.042,51.045,50.049,54]hexapentaconta-1(55),3,5,7,18,20,22,24,26,28,36,38,40,42,44,48(56),49(54),50-octadecaene-9,17,30,35,47,52-hexone",IMPHY005412,https://pubchem.ncbi.nlm.nih.gov/compound/16175790,16175790
+Ellagic acid,IMPHY005537,https://pubchem.ncbi.nlm.nih.gov/compound/5281855,5281855
+Punicalagin,IMPHY006904,https://pubchem.ncbi.nlm.nih.gov/compound/44567213,44567213
+Shikimic acid,IMPHY006945,https://pubchem.ncbi.nlm.nih.gov/compound/8742,8742
+Anthraquinone,IMPHY007192,https://pubchem.ncbi.nlm.nih.gov/compound/6780,6780
+Docosanoic acid,IMPHY007212,https://pubchem.ncbi.nlm.nih.gov/compound/8215,8215
+Ethyl gallate,IMPHY009606,https://pubchem.ncbi.nlm.nih.gov/compound/13250,13250
+Chebulinic acid,IMPHY010827,https://pubchem.ncbi.nlm.nih.gov/compound/72284,72284
+Chebulic acid,IMPHY010998,https://pubchem.ncbi.nlm.nih.gov/compound/71308174,71308174
+Ferulic acid,IMPHY011802,https://pubchem.ncbi.nlm.nih.gov/compound/445858,445858
+Caffeic acid,IMPHY011933,https://pubchem.ncbi.nlm.nih.gov/compound/689043,689043
+Maslinic acid,IMPHY011970,https://pubchem.ncbi.nlm.nih.gov/compound/73659,73659
+4-Hydroxycinnamic acid,IMPHY011974,https://pubchem.ncbi.nlm.nih.gov/compound/637542,637542
+Arjungenin,IMPHY012650,https://pubchem.ncbi.nlm.nih.gov/compound/12444386,12444386
+terflavin A,IMPHY014353,https://pubchem.ncbi.nlm.nih.gov/compound/16175788,16175788
+Sennoside A,IMPHY014693,https://pubchem.ncbi.nlm.nih.gov/compound/73111,73111
+Daucosterol,IMPHY014838,https://pubchem.ncbi.nlm.nih.gov/compound/5742590,5742590
+Celastrol,IMPHY002055,https://pubchem.ncbi.nlm.nih.gov/compound/122724,122724
+Corosolic acid,IMPHY006612,https://pubchem.ncbi.nlm.nih.gov/compound/6918774,6918774
+Punicalin,IMPHY006864,https://pubchem.ncbi.nlm.nih.gov/compound/44567214,44567214
+Terflavin C,IMPHY010880,https://pubchem.ncbi.nlm.nih.gov/compound/101589227,101589227
+Terflavin D,IMPHY010881,https://pubchem.ncbi.nlm.nih.gov/compound/101587737,101587737
+Terflavin B,IMPHY013245,https://pubchem.ncbi.nlm.nih.gov/compound/14886031,14886031
+Ricinoleic acid,IMPHY006466,https://pubchem.ncbi.nlm.nih.gov/compound/643684,643684
+Palmitoleic acid,IMPHY011666,https://pubchem.ncbi.nlm.nih.gov/compound/445638,445638
+Pyrogallol,IMPHY000103,https://pubchem.ncbi.nlm.nih.gov/compound/1057,1057
+"1,3,6-tri-O-galloyl-beta-D-glucose",IMPHY000783,https://pubchem.ncbi.nlm.nih.gov/compound/452707,452707
+Bellericoside,IMPHY002259,https://pubchem.ncbi.nlm.nih.gov/compound/101425822,101425822
+Flavylium,IMPHY002588,https://pubchem.ncbi.nlm.nih.gov/compound/145858,145858
+Phloroglucinol,IMPHY003265,https://pubchem.ncbi.nlm.nih.gov/compound/359,359
+Pentagalloylglucose,IMPHY006658,https://pubchem.ncbi.nlm.nih.gov/compound/65238,65238
+beta-Glucogallin,IMPHY010070,https://pubchem.ncbi.nlm.nih.gov/compound/124021,124021
+arjunglucoside I,IMPHY013222,https://pubchem.ncbi.nlm.nih.gov/compound/14658050,14658050
+Kutkin,IMPHY009587,https://pubchem.ncbi.nlm.nih.gov/compound/131750182,131750182
+Picroside II,IMPHY011603,https://pubchem.ncbi.nlm.nih.gov/compound/11944602,11944602
+Picroside III,IMPHY002929,https://pubchem.ncbi.nlm.nih.gov/compound/24121289,24121289
+Acetovanillone,IMPHY005715,https://pubchem.ncbi.nlm.nih.gov/compound/2214,2214
+Picroside I,IMPHY010099,https://pubchem.ncbi.nlm.nih.gov/compound/6440892,6440892
+Kutkosid,IMPHY010632,https://pubchem.ncbi.nlm.nih.gov/compound/129011779,129011779
+Genistein,IMPHY004643,https://pubchem.ncbi.nlm.nih.gov/compound/5280961,5280961
+Galangin,IMPHY005434,https://pubchem.ncbi.nlm.nih.gov/compound/5281616,5281616
+Hydroxywighteone,IMPHY005925,https://pubchem.ncbi.nlm.nih.gov/compound/5378945,5378945
+Pinocembrin,IMPHY007196,https://pubchem.ncbi.nlm.nih.gov/compound/68071,68071
+Naringetol,IMPHY010550,https://pubchem.ncbi.nlm.nih.gov/compound/439246,439246
+Glabranin,IMPHY010555,https://pubchem.ncbi.nlm.nih.gov/compound/124049,124049
+Retinol,IMPHY001308,https://pubchem.ncbi.nlm.nih.gov/compound/445354,445354
+Benzoic acid,IMPHY002962,https://pubchem.ncbi.nlm.nih.gov/compound/243,243
+Methoxsalen,IMPHY003037,https://pubchem.ncbi.nlm.nih.gov/compound/4114,4114
+Kaempferol,IMPHY004388,https://pubchem.ncbi.nlm.nih.gov/compound/5280863,5280863
+Bergapten,IMPHY005428,https://pubchem.ncbi.nlm.nih.gov/compound/2355,2355
+Isovitexin,IMPHY008689,https://pubchem.ncbi.nlm.nih.gov/compound/162350,162350
+Lutein,IMPHY011620,https://pubchem.ncbi.nlm.nih.gov/compound/5281243,5281243
+beta-Carotene,IMPHY011707,https://pubchem.ncbi.nlm.nih.gov/compound/5280489,5280489
+Isoquercitrin,IMPHY012721,https://pubchem.ncbi.nlm.nih.gov/compound/5280804,5280804
+Methacrylonitrile,IMPHY016286,https://pubchem.ncbi.nlm.nih.gov/compound/31368,31368
+Dehydroepiandrosterone,IMPHY016827,https://pubchem.ncbi.nlm.nih.gov/compound/5881,5881
+"Pyrazine, 1,4-dioxide",IMPHY016835,https://pubchem.ncbi.nlm.nih.gov/compound/520103,520103
+4-Aminopyridine,IMPHY017165,https://pubchem.ncbi.nlm.nih.gov/compound/1727,1727
+4-(2-Aminopropyl)phenol,IMPHY017284,https://pubchem.ncbi.nlm.nih.gov/compound/3651,3651
+Glycyrrhizic acid,IMPHY014927,https://pubchem.ncbi.nlm.nih.gov/compound/14982,14982
+Licoflavone B,IMPHY000013,https://pubchem.ncbi.nlm.nih.gov/compound/11349817,11349817
+Glabroisoflavanone A,IMPHY000151,https://pubchem.ncbi.nlm.nih.gov/compound/11221431,11221431
+Paeonol,IMPHY000295,https://pubchem.ncbi.nlm.nih.gov/compound/11092,11092
+Hexadecane,IMPHY000308,https://pubchem.ncbi.nlm.nih.gov/compound/11006,11006
+3-Hydroxyglabrol,IMPHY000375,https://pubchem.ncbi.nlm.nih.gov/compound/480854,480854
+7-Methoxycoumarin,IMPHY000688,https://pubchem.ncbi.nlm.nih.gov/compound/10748,10748
+Glabrene,IMPHY000852,https://pubchem.ncbi.nlm.nih.gov/compound/480774,480774
+Glycyrin,IMPHY000864,https://pubchem.ncbi.nlm.nih.gov/compound/480787,480787
+Shinpterocarpin,IMPHY001239,https://pubchem.ncbi.nlm.nih.gov/compound/10336244,10336244
+Carvacrol,IMPHY001246,https://pubchem.ncbi.nlm.nih.gov/compound/10364,10364
+Hispaglabridin B,IMPHY001500,https://pubchem.ncbi.nlm.nih.gov/compound/15228661,15228661
+Isoglabrolide,IMPHY001586,https://pubchem.ncbi.nlm.nih.gov/compound/15559941,15559941
+Glabroisoflavanone B,IMPHY001793,https://pubchem.ncbi.nlm.nih.gov/compound/11405466,11405466
+Glabrocoumarin,IMPHY001798,https://pubchem.ncbi.nlm.nih.gov/compound/11427657,11427657
+Liqcoumarin,IMPHY001806,https://pubchem.ncbi.nlm.nih.gov/compound/11378967,11378967
+Glabrol,IMPHY001866,https://pubchem.ncbi.nlm.nih.gov/compound/11596309,11596309
+Liquiritigenin,IMPHY001869,https://pubchem.ncbi.nlm.nih.gov/compound/114829,114829
+Octadecane,IMPHY001915,https://pubchem.ncbi.nlm.nih.gov/compound/11635,11635
+4-Methylcoumarin,IMPHY001923,https://pubchem.ncbi.nlm.nih.gov/compound/11833,11833
+Glychionide A,IMPHY001944,https://pubchem.ncbi.nlm.nih.gov/compound/11597485,11597485
+"(1R,3S,4R,7R,9S,12S,13R,17S,19R,20R,22S)-9-hydroxy-3,4,8,8,12,19,22-heptamethyl-14-oxo-23-oxahexacyclo[18.2.1.03,16.04,13.07,12.017,22]tricos-15-ene-19-carboxylic acid",IMPHY002304,https://pubchem.ncbi.nlm.nih.gov/compound/101280179,101280179
+21alpha-Hydroxyisoglabrolide,IMPHY002305,https://pubchem.ncbi.nlm.nih.gov/compound/101280184,101280184
+Pentadecanoic acid,IMPHY002667,https://pubchem.ncbi.nlm.nih.gov/compound/13849,13849
+"2,3,5,6-Tetramethylpyrazine",IMPHY002803,https://pubchem.ncbi.nlm.nih.gov/compound/14296,14296
+Undecane,IMPHY002875,https://pubchem.ncbi.nlm.nih.gov/compound/14257,14257
+Benzyl Alcohol,IMPHY002915,https://pubchem.ncbi.nlm.nih.gov/compound/244,244
+1-Butanol,IMPHY002949,https://pubchem.ncbi.nlm.nih.gov/compound/263,263
+7-Acetoxy-2-methylisoflavone,IMPHY002982,https://pubchem.ncbi.nlm.nih.gov/compound/268208,268208
+Lauric acid,IMPHY003016,https://pubchem.ncbi.nlm.nih.gov/compound/3893,3893
+Decanoic acid,IMPHY003104,https://pubchem.ncbi.nlm.nih.gov/compound/2969,2969
+p-Cresol,IMPHY003113,https://pubchem.ncbi.nlm.nih.gov/compound/2879,2879
+7-Methoxy-2-methyl-3-phenyl-4H-chromen-4-one,IMPHY003256,https://pubchem.ncbi.nlm.nih.gov/compound/354368,354368
+m-Cresol,IMPHY003283,https://pubchem.ncbi.nlm.nih.gov/compound/342,342
+Piperitenone,IMPHY003296,https://pubchem.ncbi.nlm.nih.gov/compound/381152,381152
+Octanoic acid,IMPHY003301,https://pubchem.ncbi.nlm.nih.gov/compound/379,379
+"8(26),14(27)-Onoceradiene-3beta,21alpha-diol",IMPHY003394,https://pubchem.ncbi.nlm.nih.gov/compound/42608308,42608308
+Coumarin,IMPHY003490,https://pubchem.ncbi.nlm.nih.gov/compound/323,323
+Tetradecanal,IMPHY003537,https://pubchem.ncbi.nlm.nih.gov/compound/31291,31291
+o-Cresol,IMPHY003555,https://pubchem.ncbi.nlm.nih.gov/compound/335,335
+"[(7S,8S)-7-hydroxy-5,6,7,8-tetrahydro-3H-pyrrolizin-1-yl]methyl 2-hydroxy-2-[(1S)-1-hydroxyethyl]-3-methylbutanoate",IMPHY003809,https://pubchem.ncbi.nlm.nih.gov/compound/10197,10197
+"(2S,4aS,6aR,6aS,6bR,8aR,9S,10S,12aS,14bR)-10-hydroxy-9-(hydroxymethyl)-2,4a,6a,6b,9,12a-hexamethyl-13-oxo-3,4,5,6,6a,7,8,8a,10,11,12,14b-dodecahydro-1H-picene-2-carboxylic acid",IMPHY004133,https://pubchem.ncbi.nlm.nih.gov/compound/101280182,101280182
+D-Glucuronic Acid,IMPHY004235,https://pubchem.ncbi.nlm.nih.gov/compound/94715,94715
+Pratol,IMPHY004344,https://pubchem.ncbi.nlm.nih.gov/compound/5320693,5320693
+Kumatakenin,IMPHY004360,https://pubchem.ncbi.nlm.nih.gov/compound/5318869,5318869
+Licoagrone,IMPHY004362,https://pubchem.ncbi.nlm.nih.gov/compound/5318993,5318993
+Licoricone,IMPHY004365,https://pubchem.ncbi.nlm.nih.gov/compound/5319013,5319013
+Safrole,IMPHY004549,https://pubchem.ncbi.nlm.nih.gov/compound/5144,5144
+Texasin,IMPHY004586,https://pubchem.ncbi.nlm.nih.gov/compound/5281812,5281812
+Licoisoflavone A,IMPHY004595,https://pubchem.ncbi.nlm.nih.gov/compound/5281789,5281789
+Prunetin,IMPHY004601,https://pubchem.ncbi.nlm.nih.gov/compound/5281804,5281804
+Liquiritigenin 7-beta-D-glucopyranoside,IMPHY004636,https://pubchem.ncbi.nlm.nih.gov/compound/51666248,51666248
+Apigenin,IMPHY004661,https://pubchem.ncbi.nlm.nih.gov/compound/5280443,5280443
+Glyzarin,IMPHY004701,https://pubchem.ncbi.nlm.nih.gov/compound/44257206,44257206
+Liquiritin,IMPHY004759,https://pubchem.ncbi.nlm.nih.gov/compound/503737,503737
+Hispaglabridin A,IMPHY004868,https://pubchem.ncbi.nlm.nih.gov/compound/442774,442774
+Glabrone,IMPHY004974,https://pubchem.ncbi.nlm.nih.gov/compound/5317652,5317652
+Docosyl caffeate,IMPHY004981,https://pubchem.ncbi.nlm.nih.gov/compound/5316952,5316952
+Glycyrrhisoflavone,IMPHY004988,https://pubchem.ncbi.nlm.nih.gov/compound/5317764,5317764
+Isoliquiritin,IMPHY005051,https://pubchem.ncbi.nlm.nih.gov/compound/5318591,5318591
+"7-methoxy-3-[4-[(2S,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyphenyl]chromen-4-one",IMPHY005055,https://pubchem.ncbi.nlm.nih.gov/compound/5318619,5318619
+Glyzaglabrin,IMPHY005062,https://pubchem.ncbi.nlm.nih.gov/compound/5317777,5317777
+4-Hydroxychalcone,IMPHY005574,https://pubchem.ncbi.nlm.nih.gov/compound/5282361,5282361
+Umbelliferone,IMPHY005587,https://pubchem.ncbi.nlm.nih.gov/compound/5281426,5281426
+Neoisoliquiritin,IMPHY005669,https://pubchem.ncbi.nlm.nih.gov/compound/22524410,22524410
+Isoangustone A,IMPHY005762,https://pubchem.ncbi.nlm.nih.gov/compound/21591148,21591148
+2-Pentylfuran,IMPHY005811,https://pubchem.ncbi.nlm.nih.gov/compound/19602,19602
+Licoisoflavone B,IMPHY005876,https://pubchem.ncbi.nlm.nih.gov/compound/5481234,5481234
+Licoflavonol,IMPHY005893,https://pubchem.ncbi.nlm.nih.gov/compound/5481964,5481964
+7-Hydroxy-2-methyl-3-phenyl-4H-chromen-4-one,IMPHY005923,https://pubchem.ncbi.nlm.nih.gov/compound/5380976,5380976
+Glucoliquiritin apioside,IMPHY006083,https://pubchem.ncbi.nlm.nih.gov/compound/74819335,74819335
+Isoliquiritigenin,IMPHY006489,https://pubchem.ncbi.nlm.nih.gov/compound/638278,638278
+Thymol,IMPHY006550,https://pubchem.ncbi.nlm.nih.gov/compound/6989,6989
+Isoflavone,IMPHY006684,https://pubchem.ncbi.nlm.nih.gov/compound/72304,72304
+Methyleugenol,IMPHY006696,https://pubchem.ncbi.nlm.nih.gov/compound/7127,7127
+Glabrolide,IMPHY006740,https://pubchem.ncbi.nlm.nih.gov/compound/90479675,90479675
+Estragole,IMPHY006944,https://pubchem.ncbi.nlm.nih.gov/compound/8815,8815
+Eicosane,IMPHY006951,https://pubchem.ncbi.nlm.nih.gov/compound/8222,8222
+Methylenedioxybenzoyl ethyl PABA,IMPHY006967,https://pubchem.ncbi.nlm.nih.gov/compound/785868,785868
+Decanal,IMPHY006970,https://pubchem.ncbi.nlm.nih.gov/compound/8175,8175
+Indole,IMPHY006981,https://pubchem.ncbi.nlm.nih.gov/compound/798,798
+Furfuryl alcohol,IMPHY007006,https://pubchem.ncbi.nlm.nih.gov/compound/7361,7361
+Furfural,IMPHY007041,https://pubchem.ncbi.nlm.nih.gov/compound/7362,7362
+Undecanoic acid,IMPHY007068,https://pubchem.ncbi.nlm.nih.gov/compound/8180,8180
+Undecanal,IMPHY007076,https://pubchem.ncbi.nlm.nih.gov/compound/8186,8186
+1-Dodecanol,IMPHY007100,https://pubchem.ncbi.nlm.nih.gov/compound/8193,8193
+Heptanal,IMPHY007186,https://pubchem.ncbi.nlm.nih.gov/compound/8130,8130
+Heptanoic acid,IMPHY007195,https://pubchem.ncbi.nlm.nih.gov/compound/8094,8094
+Dodecanal,IMPHY007204,https://pubchem.ncbi.nlm.nih.gov/compound/8194,8194
+beta-Terpinene,IMPHY007267,https://pubchem.ncbi.nlm.nih.gov/compound/66841,66841
+Ethyl acetate,IMPHY007417,https://pubchem.ncbi.nlm.nih.gov/compound/8857,8857
+Licoriphenone,IMPHY007958,https://pubchem.ncbi.nlm.nih.gov/compound/21591149,21591149
+Licoagrodin,IMPHY008216,https://pubchem.ncbi.nlm.nih.gov/compound/637141,637141
+Glycyrrhisoflavanone,IMPHY008234,https://pubchem.ncbi.nlm.nih.gov/compound/5317762,5317762
+Formononetin,IMPHY009035,https://pubchem.ncbi.nlm.nih.gov/compound/5280378,5280378
+Shinflavanone,IMPHY009114,https://pubchem.ncbi.nlm.nih.gov/compound/197678,197678
+Semilicoisoflavone B,IMPHY009174,https://pubchem.ncbi.nlm.nih.gov/compound/5481948,5481948
+Heptadecane,IMPHY009368,https://pubchem.ncbi.nlm.nih.gov/compound/12398,12398
+Nonadecane,IMPHY009369,https://pubchem.ncbi.nlm.nih.gov/compound/12401,12401
+Docosane,IMPHY009375,https://pubchem.ncbi.nlm.nih.gov/compound/12405,12405
+Glabridin,IMPHY009376,https://pubchem.ncbi.nlm.nih.gov/compound/124052,124052
+Heneicosane,IMPHY009382,https://pubchem.ncbi.nlm.nih.gov/compound/12403,12403
+Pentadecane,IMPHY009389,https://pubchem.ncbi.nlm.nih.gov/compound/12391,12391
+30-Hydroxy-11-oxo-beta-amyrin,IMPHY009406,https://pubchem.ncbi.nlm.nih.gov/compound/12310283,12310283
+Tridecane,IMPHY009419,https://pubchem.ncbi.nlm.nih.gov/compound/12388,12388
+Tridecanoic acid,IMPHY009513,https://pubchem.ncbi.nlm.nih.gov/compound/12530,12530
+1-Heptanol,IMPHY009751,https://pubchem.ncbi.nlm.nih.gov/compound/8129,8129
+2'-Hydroxyacetophenone,IMPHY009784,https://pubchem.ncbi.nlm.nih.gov/compound/8375,8375
+1-Undecanol,IMPHY009858,https://pubchem.ncbi.nlm.nih.gov/compound/8184,8184
+Benzaldehyde,IMPHY009946,https://pubchem.ncbi.nlm.nih.gov/compound/240,240
+Dodecane,IMPHY010000,https://pubchem.ncbi.nlm.nih.gov/compound/8182,8182
+Tetradecane,IMPHY011215,https://pubchem.ncbi.nlm.nih.gov/compound/12389,12389
+"7,4'-Dihydroxyflavan",IMPHY011489,https://pubchem.ncbi.nlm.nih.gov/compound/158280,158280
+11-Deoxoglycyrrhetinic acid,IMPHY011842,https://pubchem.ncbi.nlm.nih.gov/compound/12305517,12305517
+Pulegone,IMPHY011884,https://pubchem.ncbi.nlm.nih.gov/compound/442495,442495
+Deoxoglabrolide,IMPHY011887,https://pubchem.ncbi.nlm.nih.gov/compound/101280183,101280183
+Nonanoic acid,IMPHY012100,https://pubchem.ncbi.nlm.nih.gov/compound/8158,8158
+1-Methoxyficifolinol,IMPHY012575,https://pubchem.ncbi.nlm.nih.gov/compound/480872,480872
+Eicosanyl caffeate,IMPHY012804,https://pubchem.ncbi.nlm.nih.gov/compound/5320238,5320238
+Ambrettolide,IMPHY012826,https://pubchem.ncbi.nlm.nih.gov/compound/5365703,5365703
+Licuroside,IMPHY012954,https://pubchem.ncbi.nlm.nih.gov/compound/6475724,6475724
+Triterpenoids,IMPHY013522,https://pubchem.ncbi.nlm.nih.gov/compound/71597391,71597391
+Kanzonol R,IMPHY013718,https://pubchem.ncbi.nlm.nih.gov/compound/131753027,131753027
+Quercetin-3-glucoside,IMPHY014396,https://pubchem.ncbi.nlm.nih.gov/compound/25203368,25203368
+Astragalin,IMPHY014824,https://pubchem.ncbi.nlm.nih.gov/compound/5282102,5282102
+Enoxolone,IMPHY014926,https://pubchem.ncbi.nlm.nih.gov/compound/10114,10114
+Menthone,IMPHY015004,https://pubchem.ncbi.nlm.nih.gov/compound/26447,26447
+"3,5-Dimethylstyrene",IMPHY017205,https://pubchem.ncbi.nlm.nih.gov/compound/21476,21476
+2'-Methoxyacetophenone,IMPHY017676,https://pubchem.ncbi.nlm.nih.gov/compound/68481,68481
+"alpha,beta-Dihydro-3,5,4'-trihydroxy-5'-isopentenylstilbene",IMPHY000053,https://pubchem.ncbi.nlm.nih.gov/compound/10990178,10990178
+"3,3',5'-Trihydroxy-4-methoxy-5-prenylbibenzyl",IMPHY000318,https://pubchem.ncbi.nlm.nih.gov/compound/11023938,11023938
+Kanzonol Y,IMPHY000603,https://pubchem.ncbi.nlm.nih.gov/compound/10001604,10001604
+Glyasperin D,IMPHY000742,https://pubchem.ncbi.nlm.nih.gov/compound/480860,480860
+"3-(3,4-Dihydroxyphenyl)-5,7-dihydroxy-6,8-bis(3-methylbut-2-enyl)chroman-4-one",IMPHY000754,https://pubchem.ncbi.nlm.nih.gov/compound/487089,487089
+1-Methoxyphaseollidin,IMPHY000765,https://pubchem.ncbi.nlm.nih.gov/compound/480873,480873
+Licoricidin,IMPHY000776,https://pubchem.ncbi.nlm.nih.gov/compound/480865,480865
+Gancaonin R,IMPHY000791,https://pubchem.ncbi.nlm.nih.gov/compound/480815,480815
+8-Prenylnaringenin,IMPHY000819,https://pubchem.ncbi.nlm.nih.gov/compound/480764,480764
+Isoflavan,IMPHY000862,https://pubchem.ncbi.nlm.nih.gov/compound/500472,500472
+Glyinflanin B,IMPHY000863,https://pubchem.ncbi.nlm.nih.gov/compound/480799,480799
+Gancaonin I,IMPHY000871,https://pubchem.ncbi.nlm.nih.gov/compound/480777,480777
+"(2S)-2-[4-[(2S,3R,4S,5S,6R)-3-[(2R,3S,4S)-3,4-dihydroxy-4-(hydroxymethyl)oxolan-2-yl]oxy-4,5-dihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyphenyl]-7-hydroxy-2,3-dihydrochromen-4-one",IMPHY001010,https://pubchem.ncbi.nlm.nih.gov/compound/46232263,46232263
+Licoagrodione,IMPHY001244,https://pubchem.ncbi.nlm.nih.gov/compound/10360893,10360893
+"3,3',4,5'-Tetrahydroxy-4',5-diprenylbibenzyl",IMPHY001245,https://pubchem.ncbi.nlm.nih.gov/compound/10362492,10362492
+"(2S,3S,4S,5R,6R)-6-[[(3S,4S,4aR,6aR,6bS,8aR,9R,12aS,14aR,14bR)-9-hydroxy-4-(hydroxymethyl)-4,6a,6b,8a,11,11,14b-heptamethyl-1,2,3,4a,5,6,7,8,9,10,12,12a,14,14a-tetradecahydropicen-3-yl]oxy]-5-[(2S,3R,4S,5S)-4,5-dihydroxy-3-[(2S,3R,4R,5R,6S)-3,4,5-trihydroxy-6-methyloxan-2-yl]oxyoxan-2-yl]oxy-3,4-dihydroxyoxane-2-carboxylic acid",IMPHY001262,https://pubchem.ncbi.nlm.nih.gov/compound/443614,443614
+Flavanone,IMPHY001315,https://pubchem.ncbi.nlm.nih.gov/compound/10251,10251
+2-Acetylpyrrole,IMPHY001688,https://pubchem.ncbi.nlm.nih.gov/compound/14079,14079
+5-Methylfurfural,IMPHY002003,https://pubchem.ncbi.nlm.nih.gov/compound/12097,12097
+2-Acetyl-5-methylfuran,IMPHY002720,https://pubchem.ncbi.nlm.nih.gov/compound/14514,14514
+2-Acetylfuran,IMPHY002750,https://pubchem.ncbi.nlm.nih.gov/compound/14505,14505
+1-Methylpyrrole-2-carboxaldehyde,IMPHY002787,https://pubchem.ncbi.nlm.nih.gov/compound/14504,14504
+"2,3-Butanediol",IMPHY002926,https://pubchem.ncbi.nlm.nih.gov/compound/262,262
+"2,3,5-Trimethylpyrazine",IMPHY002958,https://pubchem.ncbi.nlm.nih.gov/compound/26808,26808
+Paratocarpin B,IMPHY003035,https://pubchem.ncbi.nlm.nih.gov/compound/42607541,42607541
+(+)-Vestitol,IMPHY003324,https://pubchem.ncbi.nlm.nih.gov/compound/177149,177149
+Acetoin,IMPHY003340,https://pubchem.ncbi.nlm.nih.gov/compound/179,179
+Diacetone alcohol,IMPHY003486,https://pubchem.ncbi.nlm.nih.gov/compound/31256,31256
+Medicarpin,IMPHY003549,https://pubchem.ncbi.nlm.nih.gov/compound/336327,336327
+Soyasaponin I,IMPHY004109,https://pubchem.ncbi.nlm.nih.gov/compound/122097,122097
+Apiin,IMPHY004237,https://pubchem.ncbi.nlm.nih.gov/compound/5280746,5280746
+Licochalcone a,IMPHY004374,https://pubchem.ncbi.nlm.nih.gov/compound/5318998,5318998
+Licoflavone A,IMPHY004395,https://pubchem.ncbi.nlm.nih.gov/compound/5319000,5319000
+Glycyrol,IMPHY004405,https://pubchem.ncbi.nlm.nih.gov/compound/5320083,5320083
+"(2S,4S,5R,6R)-5-[(2S,3R,4S,5R,6R)-3-[(2S,3R,5R,6S)-3,5-dihydroxy-6-methyloxan-2-yl]oxy-4,5-dihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-3,4-dihydroxy-6-[[9-hydroxy-4-(hydroxymethyl)-4,6a,6b,8a,11,11,14b-heptamethyl-1,2,3,4a,5,6,7,8,9,10,12,12a,14,14a-tetradecahydropicen-2-yl]oxy]oxane-2-carboxylic acid",IMPHY004460,https://pubchem.ncbi.nlm.nih.gov/compound/5321411,5321411
+4'-O-Methylglabridin,IMPHY004477,https://pubchem.ncbi.nlm.nih.gov/compound/5319664,5319664
+N-Acetylpyrrole,IMPHY004522,https://pubchem.ncbi.nlm.nih.gov/compound/521947,521947
+Wighteone,IMPHY004583,https://pubchem.ncbi.nlm.nih.gov/compound/5281814,5281814
+Licocoumarone,IMPHY004758,https://pubchem.ncbi.nlm.nih.gov/compound/503731,503731
+Glycycoumarin,IMPHY004987,https://pubchem.ncbi.nlm.nih.gov/compound/5317756,5317756
+Lupiwighteone,IMPHY005005,https://pubchem.ncbi.nlm.nih.gov/compound/5317480,5317480
+Isolicoflavonol,IMPHY005049,https://pubchem.ncbi.nlm.nih.gov/compound/5318585,5318585
+"Cyclohexane, 1-methoxy-4-(1-methylethyl)-",IMPHY005381,https://pubchem.ncbi.nlm.nih.gov/compound/23594959,23594959
+Uralsaponin B,IMPHY005401,https://pubchem.ncbi.nlm.nih.gov/compound/163744,163744
+2-Acetyl-1-furfurylpyrrole,IMPHY005518,https://pubchem.ncbi.nlm.nih.gov/compound/20560368,20560368
+Licoagroside B,IMPHY005638,https://pubchem.ncbi.nlm.nih.gov/compound/22297602,22297602
+2-Furylacetone,IMPHY005674,https://pubchem.ncbi.nlm.nih.gov/compound/228583,228583
+"6-[(11-carboxy-4,4,6a,6b,8a,11,14b-heptamethyl-14-oxo-2,3,4a,5,6,7,8,9,10,12,12a,14a-dodecahydro-1H-picen-3-yl)oxy]-3,4-dihydroxy-5-(3,4,5-trihydroxyoxan-2-yl)oxyoxane-2-carboxylic acid",IMPHY005730,https://pubchem.ncbi.nlm.nih.gov/compound/195342,195342
+Apioglycyrrhizin,IMPHY005731,https://pubchem.ncbi.nlm.nih.gov/compound/195343,195343
+Glisoflavone,IMPHY005863,https://pubchem.ncbi.nlm.nih.gov/compound/5487298,5487298
+Echinatin,IMPHY006247,https://pubchem.ncbi.nlm.nih.gov/compound/6442675,6442675
+Ethyl linolenate,IMPHY006410,https://pubchem.ncbi.nlm.nih.gov/compound/5367460,5367460
+(R)-Lavandulol,IMPHY006428,https://pubchem.ncbi.nlm.nih.gov/compound/5464156,5464156
+Squalene,IMPHY006486,https://pubchem.ncbi.nlm.nih.gov/compound/638072,638072
+"2',4'-Dihydroxyacetophenone",IMPHY006552,https://pubchem.ncbi.nlm.nih.gov/compound/6990,6990
+"1-(5-Methyl-2-furanyl)-1,2-propanedione",IMPHY006595,https://pubchem.ncbi.nlm.nih.gov/compound/70968,70968
+Magnolol,IMPHY006690,https://pubchem.ncbi.nlm.nih.gov/compound/72300,72300
+Phaseollinisoflavan,IMPHY006745,https://pubchem.ncbi.nlm.nih.gov/compound/162412,162412
+Licopyranocoumarin,IMPHY006776,https://pubchem.ncbi.nlm.nih.gov/compound/122851,122851
+Ononin,IMPHY006894,https://pubchem.ncbi.nlm.nih.gov/compound/442813,442813
+"2,6-Dimethylpyrazine",IMPHY006953,https://pubchem.ncbi.nlm.nih.gov/compound/7938,7938
+Maltol,IMPHY007058,https://pubchem.ncbi.nlm.nih.gov/compound/8369,8369
+Pterocarpan,IMPHY007169,https://pubchem.ncbi.nlm.nih.gov/compound/6451349,6451349
+Licochalcone C,IMPHY007465,https://pubchem.ncbi.nlm.nih.gov/compound/9840805,9840805
+Licochalcone B,IMPHY007499,https://pubchem.ncbi.nlm.nih.gov/compound/5318999,5318999
+Licoarylcoumarin,IMPHY007508,https://pubchem.ncbi.nlm.nih.gov/compound/10090416,10090416
+Methyl ethyl ketone,IMPHY007720,https://pubchem.ncbi.nlm.nih.gov/compound/6569,6569
+Hemileiocarpin,IMPHY008064,https://pubchem.ncbi.nlm.nih.gov/compound/629440,629440
+"5-[2-[4-Hydroxy-3-(3-methylbut-2-enyl)phenyl]ethyl]-2-(3-methylbut-2-enyl)benzene-1,3-diol",IMPHY008226,https://pubchem.ncbi.nlm.nih.gov/compound/637247,637247
+Inositol,IMPHY008252,https://pubchem.ncbi.nlm.nih.gov/compound/892,892
+Hederasaponine C [French],IMPHY008284,https://pubchem.ncbi.nlm.nih.gov/compound/3037108,3037108
+Furfuryl acetate,IMPHY008508,https://pubchem.ncbi.nlm.nih.gov/compound/12170,12170
+gamma-Octalactone,IMPHY008880,https://pubchem.ncbi.nlm.nih.gov/compound/7704,7704
+1-Pentadecanol,IMPHY009367,https://pubchem.ncbi.nlm.nih.gov/compound/12397,12397
+Isoglycyrol,IMPHY009386,https://pubchem.ncbi.nlm.nih.gov/compound/124050,124050
+Nonacosane,IMPHY009482,https://pubchem.ncbi.nlm.nih.gov/compound/12409,12409
+Glyyunnansapogenin B,IMPHY009680,https://pubchem.ncbi.nlm.nih.gov/compound/131752021,131752021
+gamma-Butyrolactone,IMPHY009823,https://pubchem.ncbi.nlm.nih.gov/compound/7302,7302
+gamma-Caprolactone,IMPHY009824,https://pubchem.ncbi.nlm.nih.gov/compound/12756,12756
+"(2S,4aS,6aR,6aS,6bR,8aR,10S,12aS,14bR)-10,14b-dihydroxy-2,4a,6a,6b,9,9,12a-heptamethyl-13-oxo-1,3,4,5,6,6a,7,8,8a,10,11,12-dodecahydropicene-2-carboxylic acid",IMPHY010136,https://pubchem.ncbi.nlm.nih.gov/compound/101280181,101280181
+Glucoliquiritin,IMPHY010393,https://pubchem.ncbi.nlm.nih.gov/compound/46869260,46869260
+3'-Methoxyglabradin,IMPHY010594,https://pubchem.ncbi.nlm.nih.gov/compound/15228663,15228663
+Ethyl linoleate,IMPHY010841,https://pubchem.ncbi.nlm.nih.gov/compound/5282184,5282184
+Licoagroside A,IMPHY011265,https://pubchem.ncbi.nlm.nih.gov/compound/73357140,73357140
+"Liquiritigenin-7,4'-diglucoside",IMPHY011329,/imppat/phytochemical-searchsupclass/Phenylpropanoids and polyketides,Phenylpropanoids and polyketides
+Guaiacol,IMPHY011409,https://pubchem.ncbi.nlm.nih.gov/compound/460,460
+Salicylic acid,IMPHY011523,https://pubchem.ncbi.nlm.nih.gov/compound/338,338
+Thujone,IMPHY011901,https://pubchem.ncbi.nlm.nih.gov/compound/261491,261491
+alpha-Glycyrrhizin,IMPHY011918,https://pubchem.ncbi.nlm.nih.gov/compound/158471,158471
+cis-Caffeic acid,IMPHY012011,https://pubchem.ncbi.nlm.nih.gov/compound/1549111,1549111
+Propionic acid,IMPHY012028,https://pubchem.ncbi.nlm.nih.gov/compound/1032,1032
+Anabasine,IMPHY012035,https://pubchem.ncbi.nlm.nih.gov/compound/2181,2181
+gamma-Heptalactone,IMPHY012083,https://pubchem.ncbi.nlm.nih.gov/compound/7742,7742
+18alpha-Glycyrrhetinic acid,IMPHY012226,https://pubchem.ncbi.nlm.nih.gov/compound/73398,73398
+6-Prenylnaringenin,IMPHY012358,https://pubchem.ncbi.nlm.nih.gov/compound/155094,155094
+Furfuryl formate,IMPHY012614,https://pubchem.ncbi.nlm.nih.gov/compound/556916,556916
+Isobavachromene,IMPHY012891,https://pubchem.ncbi.nlm.nih.gov/compound/5889042,5889042
+Podophyllin,IMPHY013072,https://pubchem.ncbi.nlm.nih.gov/compound/11979494,11979494
+Hydroxyacetone,IMPHY013759,https://pubchem.ncbi.nlm.nih.gov/compound/8299,8299
+Fenchone,IMPHY013836,https://pubchem.ncbi.nlm.nih.gov/compound/14525,14525
+1-Methyl-3-nitro-1-nitrosoguanidine,IMPHY014675,https://pubchem.ncbi.nlm.nih.gov/compound/135436526,135436526
+D-Fructose,IMPHY014916,https://pubchem.ncbi.nlm.nih.gov/compound/2723872,2723872
+beta-Maltose,IMPHY014998,https://pubchem.ncbi.nlm.nih.gov/compound/6255,6255
+Rutin,IMPHY015047,https://pubchem.ncbi.nlm.nih.gov/compound/5280805,5280805
+Quercitrin,IMPHY015054,https://pubchem.ncbi.nlm.nih.gov/compound/5280459,5280459
+Abssinone II,IMPHY015465,https://pubchem.ncbi.nlm.nih.gov/compound/7330517,7330517
+Butyric anhydride,IMPHY015534,https://pubchem.ncbi.nlm.nih.gov/compound/7798,7798
+"2,4-Difurfurylfuran",IMPHY015688,https://pubchem.ncbi.nlm.nih.gov/compound/53423642,53423642
+Furfuryl butyrate,IMPHY015689,https://pubchem.ncbi.nlm.nih.gov/compound/61167,61167
+Difurfuryl ether,IMPHY015690,https://pubchem.ncbi.nlm.nih.gov/compound/263034,263034
+Furfuryl propionate,IMPHY015692,https://pubchem.ncbi.nlm.nih.gov/compound/61166,61166
+Glabric acid,IMPHY015702,https://pubchem.ncbi.nlm.nih.gov/compound/46173993,46173993
+Glyinflanin H,IMPHY015703,https://pubchem.ncbi.nlm.nih.gov/compound/15233562,15233562
+Isoglycycoumarin,IMPHY015707,https://pubchem.ncbi.nlm.nih.gov/compound/14187587,14187587
+Ammonium glycyrrhizate,IMPHY015708,https://pubchem.ncbi.nlm.nih.gov/compound/62074,62074
+28-Hydroxyglycyrrhetic acid,IMPHY015709,https://pubchem.ncbi.nlm.nih.gov/compound/76064992,76064992
+Glyinflanin G,IMPHY015710,https://pubchem.ncbi.nlm.nih.gov/compound/15233561,15233561
+"1,2-Heptanediol",IMPHY015715,https://pubchem.ncbi.nlm.nih.gov/compound/77302,77302
+Kanzonol B,IMPHY015779,https://pubchem.ncbi.nlm.nih.gov/compound/10881804,10881804
+Kanzonol T,IMPHY015780,https://pubchem.ncbi.nlm.nih.gov/compound/101999902,101999902
+Kanzonol U,IMPHY015781,https://pubchem.ncbi.nlm.nih.gov/compound/10542808,10542808
+Kanzonol V,IMPHY015782,https://pubchem.ncbi.nlm.nih.gov/compound/102444980,102444980
+Kanzonol W,IMPHY015783,https://pubchem.ncbi.nlm.nih.gov/compound/15380912,15380912
+Kanzonol X,IMPHY015784,https://pubchem.ncbi.nlm.nih.gov/compound/10046166,10046166
+Licoagrocarpin,IMPHY015792,https://pubchem.ncbi.nlm.nih.gov/compound/15840593,15840593
+Licoflavanone,IMPHY015793,https://pubchem.ncbi.nlm.nih.gov/compound/14218027,14218027
+Licoisoflavanone,IMPHY015794,https://pubchem.ncbi.nlm.nih.gov/compound/392443,392443
+Isomucronulatol,IMPHY015849,https://pubchem.ncbi.nlm.nih.gov/compound/602152,602152
+(S)-8-Prenylphaseollinisoflavan,IMPHY015890,https://pubchem.ncbi.nlm.nih.gov/compound/15228660,15228660
+2-Phenylbutanoate,IMPHY015893,https://pubchem.ncbi.nlm.nih.gov/compound/3881907,3881907
+2-Ethyl-6-methylpyrazine,IMPHY015919,https://pubchem.ncbi.nlm.nih.gov/compound/26332,26332
+Pyrazole,IMPHY015920,https://pubchem.ncbi.nlm.nih.gov/compound/1048,1048
+Xambioona,IMPHY015988,https://pubchem.ncbi.nlm.nih.gov/compound/14769500,14769500
+Rhein,IMPHY002157,https://pubchem.ncbi.nlm.nih.gov/compound/10168,10168
+1-Hexacosanol,IMPHY007273,https://pubchem.ncbi.nlm.nih.gov/compound/68171,68171
+"3,4-Dihydro-2-(4-hydroxyphenyl)-2h-1-benzopyran-3,4,7,8-tetrol",IMPHY010165,https://pubchem.ncbi.nlm.nih.gov/compound/5317352,5317352
+Leucodelphidin,IMPHY011885,https://pubchem.ncbi.nlm.nih.gov/compound/440835,440835
+Barbaloin,IMPHY013089,https://pubchem.ncbi.nlm.nih.gov/compound/12305761,12305761
+Cianidanol,IMPHY014854,https://pubchem.ncbi.nlm.nih.gov/compound/9064,9064
+beta-D-Glucose,IMPHY014925,https://pubchem.ncbi.nlm.nih.gov/compound/64689,64689
+Leucopelargonidin tetramer,IMPHY000341,https://pubchem.ncbi.nlm.nih.gov/compound/102115508,102115508
+beta-Bisabolene,IMPHY000399,https://pubchem.ncbi.nlm.nih.gov/compound/10104370,10104370
+Proanthocyanidin,IMPHY000622,https://pubchem.ncbi.nlm.nih.gov/compound/108065,108065
+"6,10,14-Trimethylpentadecan-2-one",IMPHY001135,https://pubchem.ncbi.nlm.nih.gov/compound/10408,10408
+Elemicin,IMPHY001351,https://pubchem.ncbi.nlm.nih.gov/compound/10248,10248
+Clitorin,IMPHY001873,https://pubchem.ncbi.nlm.nih.gov/compound/11592917,11592917
+2-Tridecanone,IMPHY001881,https://pubchem.ncbi.nlm.nih.gov/compound/11622,11622
+Heptacosane,IMPHY001896,https://pubchem.ncbi.nlm.nih.gov/compound/11636,11636
+Leucopelargonidin,IMPHY003535,https://pubchem.ncbi.nlm.nih.gov/compound/3286789,3286789
+Methyl linoleate,IMPHY004225,https://pubchem.ncbi.nlm.nih.gov/compound/5284421,5284421
+Methyl linolenate,IMPHY004399,https://pubchem.ncbi.nlm.nih.gov/compound/5319706,5319706
+1-Docosene,IMPHY006063,https://pubchem.ncbi.nlm.nih.gov/compound/74138,74138
+beta-Ionone,IMPHY006485,https://pubchem.ncbi.nlm.nih.gov/compound/638014,638014
+1-Octadecene,IMPHY006925,https://pubchem.ncbi.nlm.nih.gov/compound/8217,8217
+Methyl palmitate,IMPHY006971,https://pubchem.ncbi.nlm.nih.gov/compound/8181,8181
+Benzyl salicylate,IMPHY007048,https://pubchem.ncbi.nlm.nih.gov/compound/8363,8363
+2-Heptadecanone,IMPHY008305,https://pubchem.ncbi.nlm.nih.gov/compound/18027,18027
+Pentacosane,IMPHY009377,https://pubchem.ncbi.nlm.nih.gov/compound/12406,12406
+Tricosane,IMPHY009490,https://pubchem.ncbi.nlm.nih.gov/compound/12534,12534
+Isoelemicin,IMPHY010002,https://pubchem.ncbi.nlm.nih.gov/compound/5318557,5318557
+Farnesylacetone,IMPHY010538,https://pubchem.ncbi.nlm.nih.gov/compound/1711945,1711945
+1-Eicosene,IMPHY010579,https://pubchem.ncbi.nlm.nih.gov/compound/18936,18936
+Asperglaucide,IMPHY010589,https://pubchem.ncbi.nlm.nih.gov/compound/10026486,10026486
+Hexadecan-2-one,IMPHY010977,https://pubchem.ncbi.nlm.nih.gov/compound/29251,29251
+Gibberellic acid,IMPHY011559,https://pubchem.ncbi.nlm.nih.gov/compound/6466,6466
+Fucosterol,IMPHY011613,https://pubchem.ncbi.nlm.nih.gov/compound/5281326,5281326
+cis-beta-Farnesene,IMPHY011657,https://pubchem.ncbi.nlm.nih.gov/compound/5317319,5317319
+1-Hexadecene,IMPHY012133,https://pubchem.ncbi.nlm.nih.gov/compound/12395,12395
+1-Tetradecene,IMPHY012145,https://pubchem.ncbi.nlm.nih.gov/compound/14260,14260
+Nerol,IMPHY012654,https://pubchem.ncbi.nlm.nih.gov/compound/643820,643820
+Kaempferol-3-O-glucorhamnoside,IMPHY014964,https://pubchem.ncbi.nlm.nih.gov/compound/13915496,13915496
+Nerolidol,IMPHY015022,https://pubchem.ncbi.nlm.nih.gov/compound/5284507,5284507
+beta-Sitosterol-beta-D-glucoside,IMPHY015072,https://pubchem.ncbi.nlm.nih.gov/compound/12309055,12309055
+Cabreuva oxide B,IMPHY015541,https://pubchem.ncbi.nlm.nih.gov/compound/15677814,15677814
+Tetracosanoic acid,IMPHY000165,https://pubchem.ncbi.nlm.nih.gov/compound/11197,11197
+Chrysophanol,IMPHY000220,https://pubchem.ncbi.nlm.nih.gov/compound/10208,10208
+Aloe emodin,IMPHY000333,https://pubchem.ncbi.nlm.nih.gov/compound/10207,10207
+Hentriacontan-2-one,IMPHY003391,https://pubchem.ncbi.nlm.nih.gov/compound/182185,182185
+Galactomannan,IMPHY003421,https://pubchem.ncbi.nlm.nih.gov/compound/439336,439336
+Hentriacontan-16-ol,IMPHY003746,https://pubchem.ncbi.nlm.nih.gov/compound/9548843,9548843
+"1,4-Dihydroxy-6,7-dimethoxy-3-methyl-9,10-dioxoanthracene-2-carboxylic acid",IMPHY004497,https://pubchem.ncbi.nlm.nih.gov/compound/53438729,53438729
+Ethyl butyrate,IMPHY006033,https://pubchem.ncbi.nlm.nih.gov/compound/7762,7762
+1-Triacontanol,IMPHY006558,https://pubchem.ncbi.nlm.nih.gov/compound/68972,68972
+Oxalic acid,IMPHY007450,https://pubchem.ncbi.nlm.nih.gov/compound/971,971
+Triacontane,IMPHY009413,https://pubchem.ncbi.nlm.nih.gov/compound/12535,12535
+Butyric acid,IMPHY010081,https://pubchem.ncbi.nlm.nih.gov/compound/264,264
+26-Methylheptacosanoic acid,IMPHY010138,https://pubchem.ncbi.nlm.nih.gov/compound/5282610,5282610
+Emodin,IMPHY011543,https://pubchem.ncbi.nlm.nih.gov/compound/3220,3220
+Procyanidin B2,IMPHY011577,https://pubchem.ncbi.nlm.nih.gov/compound/122738,122738
+Sucrose,IMPHY012053,https://pubchem.ncbi.nlm.nih.gov/compound/5988,5988
+D-Glucose,IMPHY014893,https://pubchem.ncbi.nlm.nih.gov/compound/5793,5793
+(-)-Epicatechin,IMPHY014908,https://pubchem.ncbi.nlm.nih.gov/compound/72276,72276
+Hentriacontanoic acid,IMPHY003294,https://pubchem.ncbi.nlm.nih.gov/compound/37982,37982
+Citric acid,IMPHY003500,https://pubchem.ncbi.nlm.nih.gov/compound/311,311
+Nonacosanoic acid,IMPHY005656,https://pubchem.ncbi.nlm.nih.gov/compound/20245,20245
+Heptacosanoic acid,IMPHY005664,https://pubchem.ncbi.nlm.nih.gov/compound/23524,23524
+"3,4-Dihydroxybenzoic acid",IMPHY011883,https://pubchem.ncbi.nlm.nih.gov/compound/72,72
+(-)-Epiafzelechin,IMPHY011990,https://pubchem.ncbi.nlm.nih.gov/compound/443639,443639
+Physcion,IMPHY012117,https://pubchem.ncbi.nlm.nih.gov/compound/10639,10639
+Sennoside B,IMPHY012222,https://pubchem.ncbi.nlm.nih.gov/compound/91440,91440
+Malvalic acid,IMPHY001097,https://pubchem.ncbi.nlm.nih.gov/compound/10416,10416
+Sterculic acid,IMPHY009570,https://pubchem.ncbi.nlm.nih.gov/compound/12921,12921
+"(9Z)-(12S,13R)-12,13-Epoxyoctadecenoic acid",IMPHY011724,https://pubchem.ncbi.nlm.nih.gov/compound/6449780,6449780
+Procyanidin,IMPHY000569,https://pubchem.ncbi.nlm.nih.gov/compound/107876,107876
+Phlobaphene,IMPHY000644,/imppat/phytochemical-searchsupclass/Organoheterocyclic compounds,Organoheterocyclic compounds
+Aromadendrin,IMPHY002073,https://pubchem.ncbi.nlm.nih.gov/compound/122850,122850
+cis-4-Hydroxy-L-proline,IMPHY003456,https://pubchem.ncbi.nlm.nih.gov/compound/440015,440015
+Ximenynic acid,IMPHY004905,https://pubchem.ncbi.nlm.nih.gov/compound/5312688,5312688
+10-Hydroxy-16-hentriacontanone,IMPHY005736,https://pubchem.ncbi.nlm.nih.gov/compound/22561416,22561416
+1-Octacosanol,IMPHY006972,https://pubchem.ncbi.nlm.nih.gov/compound/68406,68406
+16-Hentriacontanone,IMPHY008930,https://pubchem.ncbi.nlm.nih.gov/compound/94741,94741
+alpha-Santalene,IMPHY007366,https://pubchem.ncbi.nlm.nih.gov/compound/94164,94164
+gamma-Curcumene,IMPHY009815,https://pubchem.ncbi.nlm.nih.gov/compound/12304273,12304273
+alpha-Bergamotenol,IMPHY011356,https://pubchem.ncbi.nlm.nih.gov/compound/5368743,5368743
+beta-Santalene,IMPHY011668,https://pubchem.ncbi.nlm.nih.gov/compound/10889018,10889018
+Levomenol,IMPHY012665,https://pubchem.ncbi.nlm.nih.gov/compound/442343,442343
+Acoradiene,IMPHY015122,https://pubchem.ncbi.nlm.nih.gov/compound/90351,90351
+"(2E)-2-methyl-6-[(1S)-4-methylcyclohex-3-en-1-yl]hepta-2,6-dien-1-ol",IMPHY016005,https://pubchem.ncbi.nlm.nih.gov/compound/15560069,15560069
+trans-alpha-Bergamotene,IMPHY016054,https://pubchem.ncbi.nlm.nih.gov/compound/6429302,6429302
+Bisabolenol,IMPHY016538,https://pubchem.ncbi.nlm.nih.gov/compound/91747530,91747530
+"Campherene-2,13-diol",IMPHY016553,https://pubchem.ncbi.nlm.nih.gov/compound/42608198,42608198
+alpha-Santaldiol,IMPHY016886,https://pubchem.ncbi.nlm.nih.gov/compound/44583958,44583958
+beta-Santaldiol,IMPHY016892,https://pubchem.ncbi.nlm.nih.gov/compound/15276127,15276127
+Bisabolenol D,IMPHY016938,https://pubchem.ncbi.nlm.nih.gov/compound/101614240,101614240
+"(R,Z)-2-Methyl-6-(4-methylcyclohexa-1,4-dien-1-yl)hept-2-en-1-ol",IMPHY017816,https://pubchem.ncbi.nlm.nih.gov/compound/91710638,91710638
+(Z)-gamma-Curcumen-12-ol,IMPHY017836,https://pubchem.ncbi.nlm.nih.gov/compound/91747459,91747459
+Santene,IMPHY000571,https://pubchem.ncbi.nlm.nih.gov/compound/10720,10720
+Bornylene,IMPHY000711,https://pubchem.ncbi.nlm.nih.gov/compound/10047,10047
+"(E)-5-((1R,3R,6S)-2,3-Dimethyltricyclo[2.2.1.02,6]heptan-3-yl)-2-methylpent-2-enoic acid",IMPHY001656,https://pubchem.ncbi.nlm.nih.gov/compound/14059029,14059029
+3-Methylbutanal,IMPHY001854,https://pubchem.ncbi.nlm.nih.gov/compound/11552,11552
+Himachalol,IMPHY002103,https://pubchem.ncbi.nlm.nih.gov/compound/121536,121536
+Exo-norbicycloekasantalal,IMPHY002346,/imppat/phytochemical-searchsupclass/Lipids and lipid-like molecules,Lipids and lipid-like molecules
+(-)-beta-Curcumene,IMPHY002533,https://pubchem.ncbi.nlm.nih.gov/compound/14014430,14014430
+germacrene C,IMPHY002920,https://pubchem.ncbi.nlm.nih.gov/compound/25244915,25244915
+(E)-2-methyl-5-(2-methyl-3-methylidene-2-bicyclo[2.2.1]heptanyl)pent-2-en-1-ol,IMPHY003172,https://pubchem.ncbi.nlm.nih.gov/compound/5368798,5368798
+Bicyclogermacrene,IMPHY003616,https://pubchem.ncbi.nlm.nih.gov/compound/13894537,13894537
+(Z)-alpha-Bisabolene,IMPHY003798,https://pubchem.ncbi.nlm.nih.gov/compound/5352653,5352653
+(E)-alpha-bisabolene,IMPHY003807,https://pubchem.ncbi.nlm.nih.gov/compound/5315468,5315468
+alpha-Santalol,IMPHY004049,https://pubchem.ncbi.nlm.nih.gov/compound/11085337,11085337
+"3,7-Dimethylocta-1,3,7-triene",IMPHY004414,https://pubchem.ncbi.nlm.nih.gov/compound/5320249,5320249
+alpha-Teresantalic acid,IMPHY004466,https://pubchem.ncbi.nlm.nih.gov/compound/5321816,5321816
+Sclareol,IMPHY005400,https://pubchem.ncbi.nlm.nih.gov/compound/163263,163263
+Teresantalol,IMPHY005814,https://pubchem.ncbi.nlm.nih.gov/compound/578221,578221
+trans-beta-Santalol,IMPHY006021,https://pubchem.ncbi.nlm.nih.gov/compound/6450269,6450269
+cis-Lanceol,IMPHY006660,https://pubchem.ncbi.nlm.nih.gov/compound/6536796,6536796
+2-Carene,IMPHY006929,https://pubchem.ncbi.nlm.nih.gov/compound/79044,79044
+Cuparene,IMPHY006932,https://pubchem.ncbi.nlm.nih.gov/compound/86895,86895
+Linalyl acetate,IMPHY007067,https://pubchem.ncbi.nlm.nih.gov/compound/8294,8294
+Santenone,IMPHY008853,/imppat/phytochemical-searchsupclass/Lipids and lipid-like molecules,Lipids and lipid-like molecules
+trans-Isolongifolanone,IMPHY009699,https://pubchem.ncbi.nlm.nih.gov/compound/6427070,6427070
+beta-Santalic acid,IMPHY009705,https://pubchem.ncbi.nlm.nih.gov/compound/131752692,131752692
+beta-Longipinene,IMPHY009737,https://pubchem.ncbi.nlm.nih.gov/compound/25203064,25203064
+beta-Oplopenone,IMPHY009742,https://pubchem.ncbi.nlm.nih.gov/compound/14038847,14038847
+"(S,Z)-2-Methyl-6-(p-tolyl)hept-2-en-1-ol",IMPHY011209,https://pubchem.ncbi.nlm.nih.gov/compound/67178146,67178146
+Farnesol,IMPHY011632,https://pubchem.ncbi.nlm.nih.gov/compound/445070,445070
+alpha-Terpinene,IMPHY011643,https://pubchem.ncbi.nlm.nih.gov/compound/7462,7462
+Epi-beta-Santalene,IMPHY011669,https://pubchem.ncbi.nlm.nih.gov/compound/11106484,11106484
+Zingiberene,IMPHY011745,https://pubchem.ncbi.nlm.nih.gov/compound/92776,92776
+beta-SANTALOL,IMPHY011752,https://pubchem.ncbi.nlm.nih.gov/compound/6857681,6857681
+"(2R,6S,7S,10Z)-beta-Santala-3(15),10-dien-12-ol",IMPHY012013,https://pubchem.ncbi.nlm.nih.gov/compound/5281532,5281532
+epi-Globulol,IMPHY012289,https://pubchem.ncbi.nlm.nih.gov/compound/7308311,7308311
+(Z)-beta-Ocimene,IMPHY012739,https://pubchem.ncbi.nlm.nih.gov/compound/5320250,5320250
+Norecasantalic acid,IMPHY014524,https://pubchem.ncbi.nlm.nih.gov/compound/100966488,100966488
+alpha-trans-Bergamotenol,IMPHY014552,https://pubchem.ncbi.nlm.nih.gov/compound/101352468,101352468
+Bergamotene,IMPHY014830,https://pubchem.ncbi.nlm.nih.gov/compound/521569,521569
+3-(4-Methylcyclohex-3-en-1-yl)butanal,IMPHY016719,https://pubchem.ncbi.nlm.nih.gov/compound/110923,110923
+1-Furfurylpyrrole,IMPHY001574,https://pubchem.ncbi.nlm.nih.gov/compound/15037,15037
+"(E)-5-((1R,3R,6S)-2,3-Dimethyltricyclo[2.2.1.02,6]heptan-3-yl)-2-methylpent-2-enal",IMPHY001657,https://pubchem.ncbi.nlm.nih.gov/compound/14059042,14059042
+(S)-4-(p-Tolyl)valeraldehyde,IMPHY001926,https://pubchem.ncbi.nlm.nih.gov/compound/11816173,11816173
+Sesquisabinene,IMPHY002913,https://pubchem.ncbi.nlm.nih.gov/compound/25202482,25202482
+2-Methoxy-4-vinylphenol,IMPHY003495,https://pubchem.ncbi.nlm.nih.gov/compound/332,332
+beta-Santalal,IMPHY003985,https://pubchem.ncbi.nlm.nih.gov/compound/101449606,101449606
+2-Methoxy-4-methylphenol,IMPHY006640,https://pubchem.ncbi.nlm.nih.gov/compound/7144,7144
+Dendrolasin,IMPHY007908,https://pubchem.ncbi.nlm.nih.gov/compound/5316534,5316534
+4-Vinylphenol,IMPHY008198,https://pubchem.ncbi.nlm.nih.gov/compound/62453,62453
+4-Ethyl-2-methoxyphenol,IMPHY008213,https://pubchem.ncbi.nlm.nih.gov/compound/62465,62465
+Nuciferol,IMPHY008952,https://pubchem.ncbi.nlm.nih.gov/compound/10932923,10932923
+Isodihydroagarofuran,IMPHY010952,https://pubchem.ncbi.nlm.nih.gov/compound/10775429,10775429
+(Z)-gamma-bisabolene,IMPHY011839,https://pubchem.ncbi.nlm.nih.gov/compound/3033866,3033866
+Fokienol,IMPHY012815,https://pubchem.ncbi.nlm.nih.gov/compound/5352449,5352449
+(Z)-Santalol,IMPHY014514,https://pubchem.ncbi.nlm.nih.gov/compound/91753183,91753183
+Cedr-8-ene,IMPHY014805,https://pubchem.ncbi.nlm.nih.gov/compound/6431015,6431015
+cis-alpha-Bergamotene,IMPHY014863,https://pubchem.ncbi.nlm.nih.gov/compound/91753502,91753502
+Acetyldihydroalbene,IMPHY015469,https://pubchem.ncbi.nlm.nih.gov/compound/21675862,21675862
+Cyclosantalal,IMPHY015596,https://pubchem.ncbi.nlm.nih.gov/compound/101925674,101925674
+(2E)-2-Methyl-6-(4-methylphenyl)-2-hepten-1-ol,IMPHY016043,https://pubchem.ncbi.nlm.nih.gov/compound/6430906,6430906
+Nimbiol,IMPHY000093,https://pubchem.ncbi.nlm.nih.gov/compound/11119228,11119228
+6-Deacetylnimbin,IMPHY000150,https://pubchem.ncbi.nlm.nih.gov/compound/10505484,10505484
+Kulinone,IMPHY001446,https://pubchem.ncbi.nlm.nih.gov/compound/44567124,44567124
+Methyl kulonate,IMPHY001448,https://pubchem.ncbi.nlm.nih.gov/compound/44567123,44567123
+Kulactone,IMPHY001600,https://pubchem.ncbi.nlm.nih.gov/compound/15560423,15560423
+Gedunin,IMPHY002006,https://pubchem.ncbi.nlm.nih.gov/compound/12004512,12004512
+Kulolactone,IMPHY002171,https://pubchem.ncbi.nlm.nih.gov/compound/101289844,101289844
+6beta-Hydroxystigmast-4-en-3-one,IMPHY004200,https://pubchem.ncbi.nlm.nih.gov/compound/9823926,9823926
+"Methyl 2,5-dihydroxycinnamate",IMPHY004432,https://pubchem.ncbi.nlm.nih.gov/compound/5353609,5353609
+"(4bS,8aR)-2,4b,8,8-tetramethyl-7,10-dioxo-5,6,8a,9-tetrahydrophenanthrene-3-carboxylic Acid",IMPHY005303,https://pubchem.ncbi.nlm.nih.gov/compound/189727,189727
+"(4aS,10aR)-7-hydroxy-1,1,4a,6-tetramethyl-3,4,10,10a-tetrahydrophenanthrene-2,9-dione",IMPHY005310,https://pubchem.ncbi.nlm.nih.gov/compound/189404,189404
+"(4aS,10aR)-6-hydroxy-1,1,4a,7-tetramethyl-3,4,10,10a-tetrahydrophenanthrene-2,9-dione",IMPHY005328,https://pubchem.ncbi.nlm.nih.gov/compound/189403,189403
+Nimbionol,IMPHY005337,https://pubchem.ncbi.nlm.nih.gov/compound/189704,189704
+Sugiol,IMPHY007375,https://pubchem.ncbi.nlm.nih.gov/compound/94162,94162
+Nimbionone,IMPHY009443,https://pubchem.ncbi.nlm.nih.gov/compound/189706,189706
+Epoxyazadiradione,IMPHY011387,https://pubchem.ncbi.nlm.nih.gov/compound/49863985,49863985
+Nimbin,IMPHY012310,https://pubchem.ncbi.nlm.nih.gov/compound/108058,108058
+Nimbosone,IMPHY012408,https://pubchem.ncbi.nlm.nih.gov/compound/177090,177090
+"(4aS,10aR)-6,7-dimethoxy-1,1,4a-trimethyl-3,4,10,10a-tetrahydrophenanthrene-2,9-dione",IMPHY013917,https://pubchem.ncbi.nlm.nih.gov/compound/189660,189660
+Margolonone,IMPHY013919,https://pubchem.ncbi.nlm.nih.gov/compound/189726,189726
+"(4bS,8aS)-3,4b,8,8-tetramethyl-10-oxo-6,7,8a,9-tetrahydro-5H-phenanthrene-2-carboxylic Acid",IMPHY013920,https://pubchem.ncbi.nlm.nih.gov/compound/189728,189728
+"6-Hydroxycyclohexa-2,4-dien-1-one",IMPHY013953,https://pubchem.ncbi.nlm.nih.gov/compound/440554,440554
+Deacetylgedunin,IMPHY014771,https://pubchem.ncbi.nlm.nih.gov/compound/3034112,3034112
+Myricetin,IMPHY005471,https://pubchem.ncbi.nlm.nih.gov/compound/5281672,5281672
+Cholesterol,IMPHY006300,https://pubchem.ncbi.nlm.nih.gov/compound/5997,5997
+Melicitrin,IMPHY010637,/imppat/phytochemical-searchsupclass/Phenylpropanoids and polyketides,Phenylpropanoids and polyketides
+Hyperoside,IMPHY014935,https://pubchem.ncbi.nlm.nih.gov/compound/5281643,5281643
+Nimbosterin,IMPHY015023,https://pubchem.ncbi.nlm.nih.gov/compound/6602509,6602509
+Azadirone,IMPHY000155,https://pubchem.ncbi.nlm.nih.gov/compound/10906239,10906239
+Nimbochalcin,IMPHY000668,/imppat/phytochemical-searchsupclass/Phenylpropanoids and polyketides,Phenylpropanoids and polyketides
+Triterpenoid,IMPHY000812,https://pubchem.ncbi.nlm.nih.gov/compound/451674,451674
+Azadirolic acid,IMPHY001139,https://pubchem.ncbi.nlm.nih.gov/compound/102316534,102316534
+Azadiradionol,IMPHY001140,https://pubchem.ncbi.nlm.nih.gov/compound/102316535,102316535
+Azadirol,IMPHY001415,https://pubchem.ncbi.nlm.nih.gov/compound/44567142,44567142
+Salimuzzalin,IMPHY001746,https://pubchem.ncbi.nlm.nih.gov/compound/15840157,15840157
+Nimbocinol,IMPHY002653,https://pubchem.ncbi.nlm.nih.gov/compound/13875741,13875741
+1-Cinnamoylmelianolone,IMPHY002655,https://pubchem.ncbi.nlm.nih.gov/compound/13819214,13819214
+5-Hydroxymethylfurfural,IMPHY003174,https://pubchem.ncbi.nlm.nih.gov/compound/237332,237332
+Azadiradione,IMPHY003825,https://pubchem.ncbi.nlm.nih.gov/compound/12308714,12308714
+Azadirachtin,IMPHY004014,https://pubchem.ncbi.nlm.nih.gov/compound/5281303,5281303
+"dimethyl (1S,4S,5R,6S,7S,8R,11S,12R,14S,15R)-12-acetyloxy-4,7-dihydroxy-6-[(1R,2S,6S,8R,9R,11S)-2-hydroxy-11-methyl-5,7,10-trioxatetracyclo[6.3.1.02,6.09,11]dodec-3-en-9-yl]-6-methyl-14-[(E)-2-methylbut-2-enoyl]oxy-3,9-dioxatetracyclo[6.6.1.01,5.011,15]pentadecane-4,11-dicarboxylate",IMPHY004015,https://pubchem.ncbi.nlm.nih.gov/compound/44584063,44584063
+6-Acetylnimbandiol,IMPHY005039,https://pubchem.ncbi.nlm.nih.gov/compound/52952216,52952216
+Azadirachtol,IMPHY005199,https://pubchem.ncbi.nlm.nih.gov/compound/23256847,23256847
+"[(5R,6R,7S,9R,10R,13S,17R)-6-hydroxy-17-(2-hydroxy-5-oxo-2H-furan-3-yl)-4,4,8,10,13-pentamethyl-3-oxo-5,6,7,9,11,12,16,17-octahydrocyclopenta[a]phenanthren-7-yl] acetate",IMPHY005274,https://pubchem.ncbi.nlm.nih.gov/compound/184310,184310
+Nimolicinol,IMPHY005293,https://pubchem.ncbi.nlm.nih.gov/compound/184937,184937
+Nimolinone,IMPHY005957,https://pubchem.ncbi.nlm.nih.gov/compound/56841069,56841069
+Melianoninol,IMPHY006237,https://pubchem.ncbi.nlm.nih.gov/compound/6438693,6438693
+"(5R,9R,10R,13S,14S,17S)-17-[(2R,3S,5R)-5-[(2S)-3,3-dimethyloxiran-2-yl]-2-hydroxyoxolan-3-yl]-4,4,10,13,14-pentamethyl-1,2,5,6,9,11,12,15,16,17-decahydrocyclopenta[a]phenanthren-3-one",IMPHY006837,https://pubchem.ncbi.nlm.nih.gov/compound/44575793,44575793
+"(2R,3S,5R)-5-[(2S)-3,3-dimethyloxiran-2-yl]-3-[(3S,5R,9R,10R,13S,14S,17S)-3-hydroxy-4,4,10,13,14-pentamethyl-2,3,5,6,9,11,12,15,16,17-decahydro-1H-cyclopenta[a]phenanthren-17-yl]oxolan-2-ol",IMPHY006850,https://pubchem.ncbi.nlm.nih.gov/compound/101289709,101289709
+"(1R,2R,5R,6S,10R,11S,12R,15R,16R,18S,19R)-6-(furan-3-yl)-11,16,18-trihydroxy-1,5,10,15-tetramethyl-13-oxapentacyclo[10.6.1.02,10.05,9.015,19]nonadec-8-en-4-one",IMPHY006854,https://pubchem.ncbi.nlm.nih.gov/compound/101306757,101306757
+Naheedin,IMPHY009552,https://pubchem.ncbi.nlm.nih.gov/compound/129754,129754
+17-Hydroxyazadiradione,IMPHY010341,https://pubchem.ncbi.nlm.nih.gov/compound/52951892,52951892
+Vilasinin,IMPHY010454,https://pubchem.ncbi.nlm.nih.gov/compound/102090424,102090424
+Salannin,IMPHY010554,https://pubchem.ncbi.nlm.nih.gov/compound/6437066,6437066
+3-Deacetylsalannin,IMPHY011498,https://pubchem.ncbi.nlm.nih.gov/compound/14458886,14458886
+2-Methyltricosane,IMPHY012479,https://pubchem.ncbi.nlm.nih.gov/compound/283510,283510
+Azadirachtanin,IMPHY000193,https://pubchem.ncbi.nlm.nih.gov/compound/102146586,102146586
+Isomargosinolide,IMPHY000464,/imppat/phytochemical-searchsupclass/Organoheterocyclic compounds,Organoheterocyclic compounds
+"Methyl 2-[6-(furan-3-yl)-7,9,11,15-tetramethyl-12,16-dioxo-3,17-dioxapentacyclo[9.6.1.02,9.04,8.015,18]octadeca-7,13-dien-10-yl]acetate",IMPHY000663,https://pubchem.ncbi.nlm.nih.gov/compound/100017,100017
+Nimbinene,IMPHY001280,https://pubchem.ncbi.nlm.nih.gov/compound/44715635,44715635
+Isoazadirolide,IMPHY002244,https://pubchem.ncbi.nlm.nih.gov/compound/101425842,101425842
+Nimbocinolide,IMPHY002654,https://pubchem.ncbi.nlm.nih.gov/compound/13875774,13875774
+"5,7-Dihydroxy-4'-methoxy-8,3'-di-C-prenylflavanone",IMPHY002788,https://pubchem.ncbi.nlm.nih.gov/compound/14492795,14492795
+28-Deoxonimbolide,IMPHY002857,https://pubchem.ncbi.nlm.nih.gov/compound/14467538,14467538
+1-Nonacosanol,IMPHY002935,https://pubchem.ncbi.nlm.nih.gov/compound/243696,243696
+alpha-Patchoulene,IMPHY004521,https://pubchem.ncbi.nlm.nih.gov/compound/521710,521710
+"(9R,10R,13S,14S,17R)-17-[(2R)-2-[(1R,2S)-1,3-dihydroxy-2-methylpropyl]-2,3-dihydrofuran-4-yl]-4,4,10,13,14-pentamethyl-1,2,5,6,9,11,12,15,16,17-decahydrocyclopenta[a]phenanthren-3-one",IMPHY005267,https://pubchem.ncbi.nlm.nih.gov/compound/184503,184503
+Germacrene B,IMPHY005618,https://pubchem.ncbi.nlm.nih.gov/compound/5281519,5281519
+Isomeldenin,IMPHY006017,https://pubchem.ncbi.nlm.nih.gov/compound/76316558,76316558
+"[(4S,5R,6R,11R,12R,15S,16R,17Z)-17-(2,2-dihydroxyethylidene)-5-hydroxy-3,7,7,11,15-pentamethyl-8,18-dioxo-19-oxapentacyclo[14.3.1.02,15.03,12.06,11]icosa-1,9-dien-4-yl] acetate",IMPHY006238,https://pubchem.ncbi.nlm.nih.gov/compound/6442906,6442906
+Margosinolide,IMPHY006786,/imppat/phytochemical-searchsupclass/Organoheterocyclic compounds,Organoheterocyclic compounds
+Meldenin,IMPHY006799,https://pubchem.ncbi.nlm.nih.gov/compound/101289833,101289833
+"(1S)-1-[(2R,4S,5R)-5-hydroxy-4-[(3S,5R,9R,10R,13S,14S,17S)-3-hydroxy-4,4,10,13,14-pentamethyl-2,3,5,6,9,11,12,15,16,17-decahydro-1H-cyclopenta[a]phenanthren-17-yl]oxolan-2-yl]-2-methylpropane-1,2-diol",IMPHY006827,https://pubchem.ncbi.nlm.nih.gov/compound/101650343,101650343
+"2H-Cyclopenta(b)naphtho(2,3-d)furan-10-carboxylic acid,2-(3-furanyl)-3,3a,4a,5,5a,6,9,9a,10,10a-decahydro-5,6-dihydroxy-1,6,9a,10a-tetramethyl-9-oxo-, methyl ester, (2R,3aS,4aS,5R,5aS,6R,9aR,10S,10aR)-",IMPHY006853,https://pubchem.ncbi.nlm.nih.gov/compound/157277,157277
+"2',3'-Dehydrosalannol",IMPHY007392,https://pubchem.ncbi.nlm.nih.gov/compound/91886694,91886694
+Hexadecanal,IMPHY007467,https://pubchem.ncbi.nlm.nih.gov/compound/984,984
+Isorhamnetin,IMPHY008724,https://pubchem.ncbi.nlm.nih.gov/compound/5281654,5281654
+Nimocinol,IMPHY010224,https://pubchem.ncbi.nlm.nih.gov/compound/178770,178770
+Scopoletin,IMPHY011541,https://pubchem.ncbi.nlm.nih.gov/compound/5280460,5280460
+Nicotiflorin,IMPHY011985,https://pubchem.ncbi.nlm.nih.gov/compound/5318767,5318767
+Sterol,IMPHY012029,https://pubchem.ncbi.nlm.nih.gov/compound/1107,1107
+delta-Elemene,IMPHY013093,https://pubchem.ncbi.nlm.nih.gov/compound/12309449,12309449
+L-(+)-Arabinose,IMPHY004187,https://pubchem.ncbi.nlm.nih.gov/compound/5460291,5460291
+D-Galactose,IMPHY012050,https://pubchem.ncbi.nlm.nih.gov/compound/6036,6036
+D-Glucosamine,IMPHY014892,https://pubchem.ncbi.nlm.nih.gov/compound/439213,439213
+Nimbidiol,IMPHY000016,https://pubchem.ncbi.nlm.nih.gov/compound/11334829,11334829
+Azadirinin,IMPHY001121,https://pubchem.ncbi.nlm.nih.gov/compound/102275331,102275331
+Vanillin,IMPHY001931,https://pubchem.ncbi.nlm.nih.gov/compound/1183,1183
+Margocinin,IMPHY002183,https://pubchem.ncbi.nlm.nih.gov/compound/101529197,101529197
+Margocilin,IMPHY002184,https://pubchem.ncbi.nlm.nih.gov/compound/101529198,101529198
+Cycloeucalenol,IMPHY002229,https://pubchem.ncbi.nlm.nih.gov/compound/101690,101690
+Nimbolicin,IMPHY002557,https://pubchem.ncbi.nlm.nih.gov/compound/14563366,14563366
+Nimolinin,IMPHY003342,https://pubchem.ncbi.nlm.nih.gov/compound/180429,180429
+Cycloeucalenone,IMPHY003804,https://pubchem.ncbi.nlm.nih.gov/compound/21594790,21594790
+beta-Sitostenone,IMPHY003979,https://pubchem.ncbi.nlm.nih.gov/compound/60123241,60123241
+Margocin,IMPHY005184,https://pubchem.ncbi.nlm.nih.gov/compound/21632833,21632833
+Campestan-3-one,IMPHY005977,https://pubchem.ncbi.nlm.nih.gov/compound/53754390,53754390
+Azedarachin C,IMPHY007657,https://pubchem.ncbi.nlm.nih.gov/compound/10348330,10348330
+Azedarachin A,IMPHY007664,https://pubchem.ncbi.nlm.nih.gov/compound/101930511,101930511
+Azedarachin B,IMPHY007672,https://pubchem.ncbi.nlm.nih.gov/compound/102586008,102586008
+Nimbilin,IMPHY009726,https://pubchem.ncbi.nlm.nih.gov/compound/6442484,6442484
+Cinnamic acid,IMPHY011960,https://pubchem.ncbi.nlm.nih.gov/compound/444539,444539
+Limbocidin,IMPHY001341,https://pubchem.ncbi.nlm.nih.gov/compound/102588495,102588495
+Nimbanal,IMPHY002620,https://pubchem.ncbi.nlm.nih.gov/compound/14194023,14194023
+"2,4-Dimethylthiophene",IMPHY003237,https://pubchem.ncbi.nlm.nih.gov/compound/34296,34296
+17-Epiazadiradione,IMPHY003824,https://pubchem.ncbi.nlm.nih.gov/compound/12308716,12308716
+"dimethyl (2aR,3S,4S,4aR,5S,7aS,8R,10R,10aS,10bR)-10-acetoxy-3,5-dihydroxy-4-[(1aR,2S,3aS,6aS,7S,7aS)-6a-hydroxy-7a-methyl-3a,6a,7,7a-tetrahydro-2,7-methanofuro[2,3-b]oxireno[e]oxepin-1a(2H)-yl]-4-methyl-8-{[(2E)-2-methylbut-2-enoyl]oxy}octahydro-1H-naphtho[1,8a-c:4,5-b'c']difuran-5,10a(8H)-dicarboxylate",IMPHY004024,https://pubchem.ncbi.nlm.nih.gov/compound/16126804,16126804
+"1,3-Diacetylvilasinin",IMPHY005037,https://pubchem.ncbi.nlm.nih.gov/compound/52952013,52952013
+Ohchinolide B,IMPHY005723,https://pubchem.ncbi.nlm.nih.gov/compound/21581584,21581584
+11beta-Azadirachtin H,IMPHY005975,https://pubchem.ncbi.nlm.nih.gov/compound/76327056,76327056
+Tiglic acid,IMPHY006221,https://pubchem.ncbi.nlm.nih.gov/compound/125468,125468
+"[(4R,5R,6S,7S,8R,11R,12R,14S,15S)-12-acetyloxy-4,7-dihydroxy-6-[(1R,2S,6S,9R,11S)-2-hydroxy-11-methyl-5,7,10-trioxatetracyclo[6.3.1.02,6.09,11]dodec-3-en-9-yl]-6,11-dimethyl-3,9-dioxatetracyclo[6.6.1.01,5.011,15]pentadecan-14-yl] (E)-2-methylbut-2-enoate",IMPHY006286,https://pubchem.ncbi.nlm.nih.gov/compound/6442369,6442369
+"3,4-Dimethylthiophene",IMPHY008697,https://pubchem.ncbi.nlm.nih.gov/compound/79089,79089
+Vitamin E,IMPHY008937,https://pubchem.ncbi.nlm.nih.gov/compound/14985,14985
+Salannol,IMPHY009514,https://pubchem.ncbi.nlm.nih.gov/compound/12874816,12874816
+Dipropyl disulfide,IMPHY009593,https://pubchem.ncbi.nlm.nih.gov/compound/12377,12377
+7-Deacetoxy-7-hydroxygedunin,IMPHY009957,https://pubchem.ncbi.nlm.nih.gov/compound/1885,1885
+6-Deacetylnimbinene,IMPHY010582,https://pubchem.ncbi.nlm.nih.gov/compound/102285347,102285347
+Nimbinol,IMPHY010713,/imppat/phytochemical-searchsupclass/Lipids and lipid-like molecules,Lipids and lipid-like molecules
+2-Methyl-2-pentenal,IMPHY011385,https://pubchem.ncbi.nlm.nih.gov/compound/5319754,5319754
+Compositolide,IMPHY011526,https://pubchem.ncbi.nlm.nih.gov/compound/76309326,76309326
+Salannic acid,IMPHY011547,https://pubchem.ncbi.nlm.nih.gov/compound/185704,185704
+Vepinin,IMPHY012436,https://pubchem.ncbi.nlm.nih.gov/compound/185552,185552
+"cis-3,5-Diethyl-1,2,4-trithiolane",IMPHY012918,https://pubchem.ncbi.nlm.nih.gov/compound/6431294,6431294
+Salannolactam 21,IMPHY014135,https://pubchem.ncbi.nlm.nih.gov/compound/6442937,6442937
+Azadirachtin D,IMPHY014138,https://pubchem.ncbi.nlm.nih.gov/compound/6443232,6443232
+Azadirachtin F,IMPHY014139,https://pubchem.ncbi.nlm.nih.gov/compound/6443385,6443385
+"13,14-Desepoxyazadirachtin A",IMPHY014597,https://pubchem.ncbi.nlm.nih.gov/compound/101701146,101701146
+11-Hydroxyazadirachtin B,IMPHY014607,https://pubchem.ncbi.nlm.nih.gov/compound/101999884,101999884
+"7-(Acetyloxy)-21-hydroxy-6-methoxy-4,4,8-trimethyl-3-oxocarda-1,14,20(22)-trienolide",IMPHY013913,https://pubchem.ncbi.nlm.nih.gov/compound/188754,188754
+D-Xylose,IMPHY015116,https://pubchem.ncbi.nlm.nih.gov/compound/135191,135191
+Isonimolicinolide,IMPHY000472,/imppat/phytochemical-searchsupclass/Lipids and lipid-like molecules,Lipids and lipid-like molecules
+Isoscopoletin,IMPHY006551,https://pubchem.ncbi.nlm.nih.gov/compound/69894,69894
+Esculetin,IMPHY011518,https://pubchem.ncbi.nlm.nih.gov/compound/5281416,5281416
+Melianin A,IMPHY002310,https://pubchem.ncbi.nlm.nih.gov/compound/101277363,101277363
+Nimbolin B,IMPHY006231,https://pubchem.ncbi.nlm.nih.gov/compound/6443005,6443005
+melianin B,IMPHY006825,https://pubchem.ncbi.nlm.nih.gov/compound/15427646,15427646
+"[(1R,2R,5R,6R,10R,11S,15R,16R,18S)-16,18-diacetyloxy-6-(furan-3-yl)-1,5,10,15-tetramethyl-13-oxapentacyclo[10.6.1.02,10.05,9.015,19]nonadec-8-en-11-yl] (E)-3-phenylprop-2-enoate",IMPHY006834,https://pubchem.ncbi.nlm.nih.gov/compound/101650373,101650373
+24-Methylenelophenol,IMPHY012769,https://pubchem.ncbi.nlm.nih.gov/compound/5283640,5283640
+Desacetylnimbinolide,IMPHY001127,https://pubchem.ncbi.nlm.nih.gov/compound/102285346,102285346
+Campest-4-en-3-one,IMPHY002050,https://pubchem.ncbi.nlm.nih.gov/compound/11988279,11988279
+"1,2-Dioleoyl-3-palmitoylglycerol",IMPHY002896,https://pubchem.ncbi.nlm.nih.gov/compound/25240174,25240174
+"N-[[5,8-dimethoxy-6-nitro-2-(trifluoromethyl)quinolin-4-yl]methylidene]hydroxylamine",IMPHY003099,https://pubchem.ncbi.nlm.nih.gov/compound/298061,298061
+Galactoarabinan,IMPHY003230,https://pubchem.ncbi.nlm.nih.gov/compound/24847856,24847856
+Vepaol,IMPHY003959,https://pubchem.ncbi.nlm.nih.gov/compound/21725519,21725519
+23-Epivepaol,IMPHY003960,https://pubchem.ncbi.nlm.nih.gov/compound/24796982,24796982
+Catechol,IMPHY004079,https://pubchem.ncbi.nlm.nih.gov/compound/289,289
+7-Deacetoxy-7-oxogedunin,IMPHY004140,https://pubchem.ncbi.nlm.nih.gov/compound/71300386,71300386
+Isofraxidin,IMPHY005022,https://pubchem.ncbi.nlm.nih.gov/compound/5318565,5318565
+7-Deacetyl-7-benzoylgedunin,IMPHY005038,https://pubchem.ncbi.nlm.nih.gov/compound/52952112,52952112
+Deacetylazadirachtinol,IMPHY005223,https://pubchem.ncbi.nlm.nih.gov/compound/21725521,21725521
+Dipropyl trisulfide,IMPHY005900,https://pubchem.ncbi.nlm.nih.gov/compound/22383,22383
+Norvaline,IMPHY006652,https://pubchem.ncbi.nlm.nih.gov/compound/65098,65098
+Obtusifoliol,IMPHY006659,https://pubchem.ncbi.nlm.nih.gov/compound/65252,65252
+1-Pentanethiol,IMPHY007203,https://pubchem.ncbi.nlm.nih.gov/compound/8067,8067
+Nicotinamide,IMPHY007385,https://pubchem.ncbi.nlm.nih.gov/compound/936,936
+Limbonin,IMPHY008412,https://pubchem.ncbi.nlm.nih.gov/compound/102276189,102276189
+Mahmoodin,IMPHY009353,https://pubchem.ncbi.nlm.nih.gov/compound/126566,126566
+Fraxinellone,IMPHY009373,https://pubchem.ncbi.nlm.nih.gov/compound/124039,124039
+4alpha-Methylfecosterol,IMPHY009445,https://pubchem.ncbi.nlm.nih.gov/compound/193524,193524
+2-Nonanone,IMPHY009642,https://pubchem.ncbi.nlm.nih.gov/compound/13187,13187
+17-epi-17-Hydroxyazadiradione,IMPHY010313,https://pubchem.ncbi.nlm.nih.gov/compound/52951894,52951894
+Trichilin H,IMPHY010893,https://pubchem.ncbi.nlm.nih.gov/compound/15966088,15966088
+24-Methylenecycloartanone,IMPHY011314,https://pubchem.ncbi.nlm.nih.gov/compound/14635659,14635659
+2-Undecanone,IMPHY011521,https://pubchem.ncbi.nlm.nih.gov/compound/8163,8163
+(+)-Gallocatechin,IMPHY011735,https://pubchem.ncbi.nlm.nih.gov/compound/65084,65084
+Chlorogenic acid,IMPHY011844,https://pubchem.ncbi.nlm.nih.gov/compound/1794427,1794427
+Trichilin D,IMPHY012367,https://pubchem.ncbi.nlm.nih.gov/compound/101665324,101665324
+Glycoprotein,IMPHY012513,https://pubchem.ncbi.nlm.nih.gov/compound/439212,439212
+L-Arabinose,IMPHY014983,https://pubchem.ncbi.nlm.nih.gov/compound/439195,439195
+L-Rhamnose,IMPHY015056,https://pubchem.ncbi.nlm.nih.gov/compound/25310,25310
+3-Tigloylazadirachtin,IMPHY015492,https://pubchem.ncbi.nlm.nih.gov/compound/122232601,122232601
+3-Desacetylazadirachtin,IMPHY015493,https://pubchem.ncbi.nlm.nih.gov/compound/6442561,6442561
+Dipropyl tetrasulfide,IMPHY015625,https://pubchem.ncbi.nlm.nih.gov/compound/104285,104285
+Glycopeptide,IMPHY015706,https://pubchem.ncbi.nlm.nih.gov/compound/56928060,56928060
+Limocinin,IMPHY015796,https://pubchem.ncbi.nlm.nih.gov/compound/14845550,14845550
+Limocinol,IMPHY015797,https://pubchem.ncbi.nlm.nih.gov/compound/14845542,14845542
+Melatonin,IMPHY015811,https://pubchem.ncbi.nlm.nih.gov/compound/896,896
+6-Methoxymellein,IMPHY015812,https://pubchem.ncbi.nlm.nih.gov/compound/83412,83412
+Methyl butyl disulfide,IMPHY015829,https://pubchem.ncbi.nlm.nih.gov/compound/521941,521941
+Methyl propyl tetrasulphide,IMPHY015844,https://pubchem.ncbi.nlm.nih.gov/compound/528709,528709
+Isonimbinolide,IMPHY015861,https://pubchem.ncbi.nlm.nih.gov/compound/14136864,14136864
+"trans-3,5-Diethyl-1,2,4-trithiolane",IMPHY016049,https://pubchem.ncbi.nlm.nih.gov/compound/6432398,6432398

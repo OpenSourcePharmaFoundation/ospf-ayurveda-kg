@@ -1,0 +1,2 @@
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,1491457,5317652,Drug Gene Interaction database (DGIdb),Glabrone,,GLABRONE,https://www.dgidb.org/drugs/GLABRONE,,PPARG,https://www.dgidb.org/genes/PPARG,,,5468,PPARG,9606,Homo sapiens (human),,,,PMID:20022509,https://www.ncbi.nlm.nih.gov/pubmed/20022509,20022509,,

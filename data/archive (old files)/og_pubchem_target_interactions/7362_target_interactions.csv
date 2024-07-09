@@ -1,0 +1,2 @@
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,653451,7362,Drug Gene Interaction database (DGIdb),Furfural,,FURFURAL,https://www.dgidb.org/drugs/FURFURAL,,AR,https://www.dgidb.org/genes/AR,,,367,AR,9606,Homo sapiens (human),,,,,,,,

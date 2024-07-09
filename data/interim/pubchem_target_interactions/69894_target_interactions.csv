@@ -1,0 +1,2 @@
+,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
+0,1325424,69894,Therapeutic Target Database (TTD),Isoscopoletin,D0E0RW,ISOSCOPOLETIN,https://idrblab.net/ttd/data/drug/details/D0E0RW,T16042,Arachidonate 15-lipoxygenase (15-LOX),https://idrblab.net/ttd/data/target/details/T16042,P16050,Polyunsaturated fatty acid lipoxygenase ALOX15,246,ALOX15,9606,Homo sapiens (human),Inhibitor,,,,,,,

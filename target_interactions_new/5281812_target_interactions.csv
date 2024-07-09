@@ -1,5 +1,0 @@
-,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,1493115,441302,Drug Gene Interaction database (DGIdb),Epiandrosterone,,EPIANDROSTERONE,https://www.dgidb.org/drugs/ncit:C61747,,G6PD,https://www.dgidb.org/genes/hgnc:4057,,,2539,G6PD,9606,Homo sapiens (human),,,,,,,,
-1,1493116,441306,DrugBank,Netilmicin,DB00955,Netilmicin,https://www.drugbank.ca/drugs/DB00955,BE0000279,30S ribosomal protein S12,https://www.drugbank.ca/bio_entities/BE0000279,P0A7S3,30S ribosomal protein S12,84234829,,83333,Escherichia coli K-12,Inhibitor,,,PMID:2689137,https://www.ncbi.nlm.nih.gov/pubmed/2689137,2689137.0,,
-2,1493117,441314,Drug Gene Interaction database (DGIdb),Miglitol,,MIGLITOL,https://www.dgidb.org/drugs/rxcui:30009,,MGAM,https://www.dgidb.org/genes/hgnc:7043,,,8972,MGAM,9606,Homo sapiens (human),,,,,,,,
-3,1493118,441314,Drug Gene Interaction database (DGIdb),Miglitol,,MIGLITOL,https://www.dgidb.org/drugs/rxcui:30009,,MGAM,https://www.dgidb.org/genes/hgnc:7043,,,8972,MGAM,9606,Homo sapiens (human),,,,,,,,

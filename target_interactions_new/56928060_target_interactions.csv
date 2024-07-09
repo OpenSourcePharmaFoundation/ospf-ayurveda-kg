@@ -1,2 +1,0 @@
-,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,2105262,54675776,Comparative Toxicogenomics Database (CTD),Tetracycline,D013752,Tetracycline,https://ctdbase.org/detail.go?type=chem&acc=D013752,134147,CMBL,https://ctdbase.org/detail.go?type=gene&acc=134147,,,134147,CMBL,7955,Danio rerio (zebrafish),Tetracycline affects the expression of CMBL mRNA,,,PMID:25064622,https://www.ncbi.nlm.nih.gov/pubmed/25064622,25064622,,

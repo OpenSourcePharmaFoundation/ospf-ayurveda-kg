@@ -1,2 +1,0 @@
-,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,1531491,444795,Comparative Toxicogenomics Database (CTD),Tretinoin,D014212,Tretinoin,https://ctdbase.org/detail.go?type=chem&acc=D014212,3233,HOXD4,https://ctdbase.org/detail.go?type=gene&acc=3233,,,3233,HOXD4,10090,Mus musculus (house mouse),Tretinoin promotes the reaction [YY1 protein binds to HOXD4 promoter],,,PMID:16757478,https://www.ncbi.nlm.nih.gov/pubmed/16757478,16757478,,
