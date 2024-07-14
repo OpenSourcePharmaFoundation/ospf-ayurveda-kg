@@ -1,0 +1,56 @@
+//Load drug-target interactions from Drugbank
+LOAD CSV WITH HEADERS FROM 'file:///drugbank_drug_targets.csv' AS row
+MATCH (d:Disease {name:'Oral mucositis'})
+MERGE (t:Drug {name:row['Drug_name']})
+    SET t.drugbankId = row['Drug_ID']
+MERGE a=(t)-[:TREATS]->(d)
+MERGE (p:Protein {name:row['Target_name']})
+    SET p.drugbankId = row['Target_ID']
+    SET p.uniprotId = row['Target_uniprot']
+    SET p.otherNames = row['Target_synons']
+MERGE b = (t)-[:TARGETS{source:'Drugbank'}]->(p);
+
+//Load protein-gene translation links from Drugbank
+LOAD CSV WITH HEADERS FROM 'file:///drugbank_drug_targets.csv' AS row WITH row WHERE row.Target_uniprot IS NOT NULL
+MATCH (t:Drug {name:row['Drug_name']})
+MATCH (p:Protein {name:row['Target_name']})
+MERGE (g:Gene {name:row['Gene']})
+MERGE c=(g)-[:TRANSLATION]->(p);
+
+//Load TTD data on oral mucositis drugs
+LOAD CSV WITH HEADERS FROM 'file:///ttd_drug_target_genes.csv' AS row 
+MERGE (d:Disease {name:row.Disease})
+    SET d.icd_code = row['Disease Code ICD-10']
+MERGE (t:Drug {name:row.Drug})
+MERGE (t)-[rel:TREATS]->(d);
+
+//Load TTD data on oral mucositis drug target genes
+LOAD CSV WITH HEADERS FROM 'file:///ttd_drug_target_genes.csv' AS row
+WITH row, row['Disease Code ICD-10'] AS disease_code WHERE row.Target is NOT NULL
+MATCH (d:Disease {name:row.Disease})
+MATCH (t:Drug {name:row.Drug})
+MERGE (p:Protein {name:row.Target})
+MERGE (g:Gene {name:row.Gene}) 
+CREATE (t)-[:TARGETS{action:"gene targeted by given drug for oral mucositis",source:"Therapeutic Target Database (TTD)", evidence_urls:row.Reference, evidence:row.PMID}]->(p)
+MERGE (g)-[:TRANSLATION]->(p);
+
+//Load OM altered expressions from disgenet
+LOAD CSV WITH HEADERS FROM 'file:///disgenet__OM_altexps.csv' AS row
+MATCH (d:Disease {name:'Oral mucositis'})
+MERGE (g:Gene {name:row['Gene']})
+    SET g.ncbiId = row['Gene_id']
+CREATE a=(g)-[:EXPRESSION_ASSOCIATION{gdaScore:row['Score_gda'], source:row['Original_DB'], interaction:row['Sentence'], pmid:row['PMID']}]->(d);
+
+//Load OM biomarkers from disgenet
+LOAD CSV WITH HEADERS FROM 'file:///disgenet__OM_biomarkers.csv' AS row
+MATCH (d:Disease {name:'Oral mucositis'})
+MERGE (g:Gene {name:row['Gene']})
+    SET g.ncbiId = row['Gene_id']
+CREATE a=(g)-[:BIOMARKER{gdaScore:row['Score_gda'], source:row['Original_DB'], interaction:row['Sentence'], pmid:row['PMID']}]->(d);
+
+//Load OM genetic variations from disgenet
+LOAD CSV WITH HEADERS FROM 'file:///disgenet__OM_genvars.csv' AS row
+MATCH (d:Disease {name:'Oral mucositis'})
+MERGE (g:Gene {name:row['Gene']})
+    SET g.ncbiId = row['Gene_id']
+CREATE a=(g)-[:VARIANT_ASSOCIATION{gdaScore:row['Score_gda'], source:row['Original_DB'], interaction:row['Sentence'], pmid:row['PMID']}]->(d);

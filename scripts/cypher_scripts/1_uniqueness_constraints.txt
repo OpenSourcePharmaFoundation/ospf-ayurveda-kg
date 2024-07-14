@@ -1,0 +1,27 @@
+// Create constraints to ensure no duplication of nodes
+CREATE CONSTRAINT compound_unique
+FOR (c:Compound) REQUIRE c.pubchemId IS UNIQUE;
+
+CREATE CONSTRAINT disease_unique
+FOR (d:Disease) REQUIRE d.icd_code IS UNIQUE;
+
+CREATE CONSTRAINT drug_unique
+FOR (d:Drug) REQUIRE d.name IS UNIQUE;
+
+CREATE CONSTRAINT formulation_unique
+FOR (f:Formulation) REQUIRE f.name IS UNIQUE;
+
+CREATE CONSTRAINT gene_unique
+FOR (g:Gene) REQUIRE g.name IS UNIQUE;
+
+CREATE CONSTRAINT plant_unique
+FOR (p:Plant) REQUIRE p.scientificname IS UNIQUE;
+
+CREATE CONSTRAINT protein_unique
+FOR (p:Protein) REQUIRE p.name IS UNIQUE;
+
+CREATE CONSTRAINT therapy_area_unique
+FOR (t:Therapeutic_Area) REQUIRE t.name IS UNIQUE;
+
+CREATE CONSTRAINT targets_pubchem_unique
+FOR ()-[r:TARGETS]-() REQUIRE (r.pubchemId) IS UNIQUE;

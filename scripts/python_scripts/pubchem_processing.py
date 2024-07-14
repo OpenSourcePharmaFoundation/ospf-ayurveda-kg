@@ -93,15 +93,16 @@ def pubchem_target_csv_compilation(csv_folder_path, output_path):
     neo4j_df = pd.DataFrame.from_dict(dictionary_list)                
     neo4j_df.to_csv(output_path)
 
-'''## scraping phytochemical IMPPAT ID, PubChem ID and PubChem url data
+## scraping phytochemical IMPPAT ID, PubChem ID and PubChem url data
 url_list_chem = ayur_form_to_IMPPAT_url_chem('data/raw/ayurvedic_formulation.csv')
 phytochem_to_IMPPAT_id_PubChem_id_url(url_list_chem, 'data/processed/phytochem_imppatid_pubchem_id_url.csv')
-
+'''
 ## downloading chemical-target interaction data from PubChem into csv's (separate for each compound)
 interim_files_dir = 'data/interim/pubchem_target_interactions'
 if not os.path.exists(interim_files_dir):
     os.mkdir(interim_files_dir)
 chem_target_csv_from_url('data/processed/phytochem_imppatid_pubchem_id_url.csv', interim_files_dir)
-'''
+
 ## compiling neo4j input file from chemical-target csv's downloaded above
 pubchem_target_csv_compilation('data/interim/pubchem_target_interactions', 'data/processed/pubchem_phytochem_target_interactions.csv')
+'''
