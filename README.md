@@ -26,4 +26,6 @@ The Cypher queries required to put all the processed data together and create a 
 3. Open the 'Configuration' folder (in the same menu as the 'Import' folder) and copy-paste the 'apoc.conf' file from scripts/cypher_scripts in this repository into the DBMS Configuration folder.
 4. Start the DBMS and open the instance. Run the numbered scripts in the cypher_scripts folder in ascending order. The whole script can be copy-pasted into Neo4j desktop and run at once. 
 <!-- end of the list -->
-Once the graph has been created, you may run analytical queries on top of the graph. Examples of queries I have already run that generate interesting ranked lists and visuals are included in 'analysis_queries.txt'
+Once the graph has been created, you may run analytical queries on top of the graph. Examples of queries I have already run that generate interesting ranked lists and visuals are included in 'analysis_queries.txt' 
+
+If you would like to learn more about the hypotheses our team has generated from this data, our next steps, or our process, please reach out to Smiti Mittal at smitimittal@gmail.com or smiti@berkeley.edu, or Dr. Nibedita Rath at nibedita.rath@ospfound.org.
