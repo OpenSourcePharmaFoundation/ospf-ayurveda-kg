@@ -2,6 +2,9 @@ Note: add unique constraint scripts
 CREATE CONSTRAINT gene_unique
 FOR (g:Gene) REQUIRE g.name IS UNIQUE
 
+CREATE CONSTRAINT disease_unique
+FOR (d:Disease) REQUIRE d.icd_code IS UNIQUE
+
 CREATE CONSTRAINT interactions_unique
 FOR ()-[r:GENE_INTERACTION]-() REQUIRE (r.interaction_id) IS UNIQUE
 
@@ -24,6 +27,21 @@ MERGE(c:Compound {name: phyto})
     SET c.type = "phytochemical"
     SET c.source = "IMPPAT"
 MERGE (p)-[rel:PRODUCES]->(c)
+RETURN *
+// Load plant-phytochemical IMPPAT relationships
+CALL apoc.load.json('file:///plant_phytochemicals_parts.json') YIELD value
+WITH value.phytochemicals as phytos, value.plant as plant
+UNWIND phytos as phyto
+MERGE(c:Compound {name: phyto[1]})
+    SET c.part = phyto[0]
+RETURN *
+// Load plant-phytochemical IMPPAT relationships
+CALL apoc.load.json('file:///plant_phytochemicals_parts.json') YIELD value
+WITH value.phytochemicals as phytos, value.plant as plant
+UNWIND phytos as phyto
+MERGE(p:Plant {scientificName: plant})
+MERGE(c:Compound {name: phyto[1]})
+MERGE (p)-[rel:PRODUCES{part:phyto[0]}]->(c)
 RETURN *
 
 // Load plant-therapeutic use IMPPAT relationships
@@ -50,7 +68,7 @@ MERGE (c:Compound {imppatId: imppatId})
     SET c.pubchemUrl = pubchem_url
 
 *** Remove and update with 'new pubchem' script to draw from neo4j_gene_protein_interactions
-//Load chemical-target interactions for phytochemicals from pubmed
+//Old pubchem - Load chemical-target interactions for phytochemicals from pubmed
 LOAD CSV WITH HEADERS FROM 'file:///neo4j_target_interactions.csv' AS row with row where row.gene_name is not NULL
 MATCH (c:Compound {pubchemId:row.cid})
 SET c.pubchemName = row.pubchem_name
@@ -61,11 +79,206 @@ SET g.otherNames = [row.source_gene_name]
 CREATE (c)-[rel:GENE_INTERACTION{action:row.action, pubchemId:row.interaction_id, source:row.info_source, evidence:row.evidences, evidence_urls:row.evidence_urls}]->(g)
 
 
+//Remove incorrect pubchem url's
+MATCH (c:Compound where left(c.pubchemUrl, 4)='/imp')
+REMOVE c.pubchemUrl
+
+// new pubchem
+//New pubchem - Gene-protein mapping for phytochemicals from pubmed
+LOAD CSV WITH HEADERS FROM 'file:///neo4j_gene_protein_interactions.csv' AS row with row where row.protein_name is NOT NULL AND row.gene_name is NOT NULL
+MATCH (g:Gene {name:row.gene_name})
+
+MATCH (p:Protein{name:row.protein_name})
+
+WHERE NOT (g)-[:TRANSLATION]->(p)
+MERGE (g)-[:TRANSLATION]->(p)
+//New pubchem - Load chemical-gene interactions for phytochemicals from pubmed
+LOAD CSV WITH HEADERS FROM 'file:///neo4j_gene_protein_interactions.csv' AS row with row where row.protein_name is NULL AND row.gene_name IS NOT NULL
+MATCH (c:Compound {pubchemId:row.cid})
+SET c.pubchemName = row.pubchem_name
+SET c.otherNames = [row.source_cmpnd_name]
+MERGE (g:Gene{name:row.gene_name})
+SET g.name = row.gene_name
+SET g.otherNames = [row.source_gene_name]
+CREATE (c)-[rel:TARGETS{action:row.action, pubchemId:row.interaction_id, source:row.info_source, evidence:row.evidences, evidence_urls:row.evidence_urls}]->(g)
+
+//New pubchem - Load chemical-protein interactions for phytochemicals from pubmed
+LOAD CSV WITH HEADERS FROM 'file:///neo4j_gene_protein_interactions.csv' AS row with row where row.protein_name is NOT NULL
+MATCH (c:Compound {pubchemId:row.cid})
+SET c.pubchemName = row.pubchem_name
+SET c.otherNames = [row.source_cmpnd_name]
+
+MERGE (p:Protein{name:row.protein_name})
+SET p.name = row.protein_name
+SET p.uniprotId = row.protein_id
+
+CREATE (c)-[rel:TARGETS{action:row.action, pubchemId:row.interaction_id, source:row.info_source, evidence:row.evidences, evidence_urls:row.evidence_urls}]->(p)
+
+
+// DrugBank
+//Load drug-target interactions from Drugbank
+LOAD CSV WITH HEADERS FROM 'file:///drugbank_drug_target.csv' AS row
+MATCH (d:Disease {name:'Oral mucositis'})
+MERGE (t:Drug {name:row['Drug_name']})
+    SET t.drugbankId = row['Drug_ID']
+MERGE a=(t)-[:TREATS]->(d)
+MERGE (p:Protein {name:row['Target_name']})
+    SET p.drugbankId = row['Target_ID']
+    SET p.uniprotId = row['Target_uniprot']
+    REMOVE p.synons
+    SET p.otherNames = row['Target_synons']
+MERGE b = (t)-[:TARGETS{source:'Drugbank'}]->(p)
+RETURN a, b
+//Load target protein info and target-gene interactions from Drugbank
+LOAD CSV WITH HEADERS FROM 'file:///drugbank_drug_target.csv' AS row WITH row WHERE row.Target_uniprot IS NOT NULL
+MATCH (t:Drug {name:row['Drug_name']})
+MATCH (p:Protein {name:row['Target_name']})
+    SET p.drugbankId = row['Target_ID']
+    SET p.uniprotId = row['Target_uniprot']
+    SET p.synons = row['Target_synons']
+MERGE (g:Gene {name:row['Gene']})
+MERGE c=(g)-[:TRANSLATION]->(p)
+RETURN c
+
+// TTD
+//Load TTD data on oral mucositis drug target genes
+LOAD CSV WITH HEADERS FROM 'file:///ttd_oral_mucositis_drugs_target_genes.csv' AS row
+WITH row, row['Disease Code ICD-10'] AS disease_code WHERE row.Target is NOT NULL
+MATCH (d:Disease {name:row.Disease})
+MATCH (t:Drug {name:row.Drug})
+MERGE (g:Gene {name:row.Target}) 
+CREATE (t)-[rel:GENE_INTERACTION{action:"gene targeted by given drug for oral mucositis",source:"Therapeutic Target Database (TTD)", evidence_urls:row.Reference, evidence:row.PMID}]->(g)
+//Load TTD data on oral mucositis drugs
+LOAD CSV WITH HEADERS FROM 'file:///ttd_oral_mucositis_drugs_target_genes.csv' AS row
+WITH row, row['Disease Code ICD-10'] AS disease_code
+MERGE (d:Disease {name:row.Disease})
+    SET d.icd_code = disease_code
+MERGE (t:Drug {name:row.Drug})
+MERGE (t)-[rel:TREATS]->(d)
+// Fix TTD drug-gene to drug-target + gene-target - Part 1
+MATCH a=(n:Drug)-[t]->(c:Gene)-[:TRANSLATION]->(p)
+DELETE t
+MERGE (n)-[:TARGETS]->(p)
+RETURN a
+// Fix TTD drug-gene to drug-target + gene-target - Part 2
+MATCH a=(n:Drug)-[t]->(c:Gene)
+MERGE (d:Drug{name:'AG-013'})
+MERGE (d)-[:TARGETS]->(p:Protein {name:'Trefoil factor-1'})
+MERGE (d2:Drug{name:'Hebervis'})
+MERGE (d2)-[:TARGETS]->(p2:Protein {name:'Epidermal growth factor'})
+MERGE (g:Gene {name:'TFF1'})
+MERGE (g)-[:TRANSLATION]->(d)
+MERGE (g2:Gene {name:'EGF'})
+MERGE (g2)-[:TRANSLATION]->(d2)
+DELETE t
+RETURN *
+
+// disgenet
+//Load OM altered expressions from disgenet
+LOAD CSV WITH HEADERS FROM 'file:///disgenet__OM_altexps.csv' AS row
+MATCH (d:Disease {name:'Oral mucositis'})
+MERGE (g:Gene {name:row['Gene']})
+    SET g.ncbiId = row['Gene_id']
+CREATE a=(g)-[:EXPRESSION_ASSOCIATION{gdaScore:row['Score_gda'], source:row['Original_DB'], interaction:row['Sentence'], pmid:row['PMID']}]->(d)
+RETURN *
+//Load OM biomarkers from disgenet
+LOAD CSV WITH HEADERS FROM 'file:///disgenet__OM_biomarkers.csv' AS row
+MATCH (d:Disease {name:'Oral mucositis'})
+MERGE (g:Gene {name:row['Gene']})
+    SET g.ncbiId = row['Gene_id']
+CREATE a=(g)-[:BIOMARKER{gdaScore:row['Score_gda'], source:row['Original_DB'], interaction:row['Sentence'], pmid:row['PMID']}]->(d)
+RETURN *
+//Load OM genetic variations from disgenet
+LOAD CSV WITH HEADERS FROM 'file:///disgenet__OM_genvars.csv' AS row
+MATCH (d:Disease {name:'Oral mucositis'})
+MERGE (g:Gene {name:row['Gene']})
+    SET g.ncbiId = row['Gene_id']
+CREATE a=(g)-[:VARIANT_ASSOCIATION{gdaScore:row['Score_gda'], source:row['Original_DB'], interaction:row['Sentence'], pmid:row['PMID']}]->(d)
+RETURN *
+
+// QUERIES
+// Displaying all plants producing compounds that interact with the same targets as a an oral mucositis drug
+MATCH (n:Drug)-[p]->(h:Disease)
+MATCH (n)-[b]->(g:Gene)
+MATCH (a:Plant)-[c]->(d:Compound)-[e]->(g)
+RETURN *
 
 MATCH (n:Plant)-[p]->(h:Compound)-[r]->(c)
 WHERE c.name = 'PDGFRB' or c.name = 'COL1A2' or c.name = 'CDH1' or c.name =  'DDR2' or c.name = 'COL3A1' or c.name = 'COL2A1' or c.name = 'COL1A1' or c.name = 'COL5A2'
 RETURN n.scientificName, count(r) ORDER BY count(r)
 
-//Remove incorrect pubchem url's
-MATCH (c:Compound where left(c.pubchemUrl, 4)='/imp')
-REMOVE c.pubchemUrl
+//Querying example from 2/28
+MATCH a=(o:Plant)-[]->(c:Compound)-[]->(p:Protein) 
+WHERE (:Drug)-[]->(p) RETURN o, count(distinct p)ORDER BY count(distinct p)
+UNION
+MATCH b=(o)-[:PRODUCES]->(d:Compound)-[:TARGETS]->(g:Gene)-[]->(p:Protein)
+WHERE (:Drug)-[]->(p)
+RETURN o, count(distinct p) ORDER BY count(distinct p)
+
+//Querying example 2 from 2/28
+MATCH a=(o:Plant)-[]->(c:Compound)-[]->(p:Protein) 
+WHERE (:Drug)-[]->(p) RETURN o.scientificName, count(distinct p) ORDER BY count(distinct p)
+UNION
+MATCH b=(o)-[:PRODUCES]->(d:Compound)-[:TARGETS]->(g:Gene)-[]->(p:Protein)
+WHERE (:Drug)-[]->(p)
+RETURN o.scientificName, count(distinct p) ORDER BY count(distinct p)
+
+//Querying example 3 from 2/28
+MATCH a=(o:Plant{scientificName:'Glycyrrhiza glabra'})-[]->(c:Compound)-[]->(p:Protein) 
+WHERE (:Drug)-[]->(p) 
+MATCH b=(o:Plant{scientificName:'Glycyrrhiza glabra'})-[:PRODUCES]->(d:Compound)-[:TARGETS]->(g:Gene)-[]->(s:Protein)
+WHERE (:Drug)-[]->(s)
+RETURN *
+
+//Querying example 4 from 2/28
+MATCH a=(o:Plant{scientificName:'Glycyrrhiza glabra'})-[]->(c:Compound)-[x]->(p:Protein) 
+WHERE (:Drug)-[]->(p)  RETURN c.name, count(distinct p) order by count(distinct p)
+UNION
+MATCH b=(o:Plant{scientificName:'Glycyrrhiza glabra'})-[:PRODUCES]->(c:Compound)-[:TARGETS]->(g:Gene)-[]->(p:Protein)
+WHERE (:Drug)-[]->(p)
+RETURN c.name, count(distinct p) order by count(distinct p)
+
+//Querying example 1 from 3/20
+MATCH a=(o:Plant)-[]->(c:Compound)-[]->(g:Gene) 
+WHERE (g)-[]->(:Disease{name:'Oral mucositis'}) RETURN o.scientificName, count(distinct g) ORDER BY count(distinct g) DESC
+
+//Querying example 2 from 3/20
+MATCH a=(o:Plant)-[]->(c:Compound)-[]->(g:Gene) 
+WHERE (g)-[]->(:Disease{name:'Oral mucositis'}) RETURN count(distinct g)
+
+//Querying example 3 from 3/20
+MATCH a=(o:Plant)-[]->(c:Compound)-[]->(g:Gene) 
+WHERE (g)-[]->(:Disease{name:'Oral mucositis'}) RETURN g.name, count(distinct c) ORDER BY count(distinct c) DESC
+
+//Querying example 4 from 3/20 - 0.02 incorporates top 18 genes
+MATCH a=(o:Plant)-[]->(c:Compound)-[]->(g:Gene)-[x]->(:Disease{name:'Oral mucositis'}) WHERE toFloat(x.gdaScore)>0.02
+RETURN c.name, count(distinct g), avg(toFloat(x.gdaScore)) ORDER BY avg(toFloat(x.gdaScore))*count(distinct g) DESC 
+
+//Querying example 5 from 3/20
+MATCH a=(o:Plant)-[]->(c:Compound)-[]->(g:Gene)-[x]->(:Disease{name:'Oral mucositis'}) where c.name='Ascorbic acid'
+RETURN *
+
+//Querying example extra 1 from 3/20
+MATCH a=(o:Plant)-[x]->(c:Compound)-[y]->(g:Gene) 
+WHERE (g)-[]->(:Disease{name:'Oral mucositis'}) and (g.name='CXCL8' or g.name='TNF' or g.name='IL1B' or g.name='PPARG' or g.name='CASP8')  
+RETURN c.name, count(distinct o), count(distinct g) ORDER BY (count(distinct o)+count(distinct g)) DESC LIMIT 20
+
+//Querying extra example 2 from 3/20
+MATCH a=(g:Gene)-[x]->(:Disease{name:'Oral mucositis'}) 
+RETURN g.name, avg(toFloat(x.gdaScore)) ORDER BY avg(toFloat(x.gdaScore)) DESC LIMIT 50
+
+//Querying example 2 from 4/10
+MATCH a=(o:Plant{scientificName:'Glycyrrhiza glabra'})-[w]->(c:Compound)-[x]->(p:Protein) 
+WHERE (:Drug)-[]->(p) and w.part='root' 
+MATCH b=(d:Drug)-[]->(p)    
+RETURN a,b, count(distinct p) order by count(distinct p) limit 50
+UNION
+MATCH a=(o:Plant{scientificName:'Glycyrrhiza glabra'})-[w:PRODUCES]->(c:Compound)-[x:TARGETS]->(g:Gene)-[]->(p:Protein)
+WHERE (:Drug)-[]->(p) and w.part='root'
+MATCH b=(d:Drug)-[]->(p) 
+RETURN a,b, count(distinct p) order by count(distinct p) limit 50
+
+//Querying example 3 from 4/10 - 0.02 incorporates top 18 genes
+MATCH a=(o:Plant{scientificName:'Glycyrrhiza glabra'})-[w]->(c:Compound)-[]->(g:Gene)-[x]->(:Disease{name:'Oral mucositis'}) WHERE toFloat(x.gdaScore)>0.02 and w.part='root'
+RETURN a, max(toFloat(x.gdaScore)) ORDER BY max(toFloat(x.gdaScore)) DESC limit 50
+

@@ -19,3 +19,7 @@ We could not find a simple way to determine through webscraping whether a given 
 The scraped chemical-target interaction data is available in data/interim/pubchem_target_interactions with one file (labelled by PubChem ID) corresponding to each compound.
 ### Therapeutic Target Database (TTD)
 This contains information on the therapeutic target genes of various drugs. We used it to extract the drug targets of existing drugs linked to Oral Mucositis. The data was compiled through manual search on the TTD website and is available at data/processed.
+## Creating the Neo4j graph
+The Cypher queries required to put all the processed data together and create a graph are in the 'scripts' folder. These can be run in AuraDB or on Neo4j Desktop. Free instances of AuraDB get auto-deleted in 30 days if they are not used, so we preferred to use Neo4j Desktop for early development. The instructions for creating the graph are as follows:
+1. The user must add all the files in data/processed to the 'import' folder of the Neo4j DBMS in question. Instructions for the same can be found here: https://neo4j.com/docs/desktop-manual/current/operations/import-csv/#:~:text=Start%20by%20selecting%20a%20project,to%20access%20the%20Import%20folder.
+2. 
