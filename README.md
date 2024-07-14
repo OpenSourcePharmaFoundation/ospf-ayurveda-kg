@@ -25,4 +25,5 @@ The Cypher queries required to put all the processed data together and create a 
 2. Install the APOC plugin for the DBMS you have created following the instructions here: https://neo4j.com/docs/apoc/current/installation/ 
 3. Open the 'Configuration' folder (in the same menu as the 'Import' folder) and copy-paste the 'apoc.conf' file from scripts/cypher_scripts in this repository into the DBMS Configuration folder.
 4. Start the DBMS and open the instance. Run the numbered scripts in the cypher_scripts folder in ascending order. The whole script can be copy-pasted into Neo4j desktop and run at once. 
+<!-- end of the list -->
 Once the graph has been created, you may run analytical queries on top of the graph. Examples of queries I have already run that generate interesting ranked lists and visuals are included in 'analysis_queries.txt'
