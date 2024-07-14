@@ -1,0 +1,87 @@
+
+// QUERIES
+// Displaying all plants producing compounds that interact with the same targets as a an oral mucositis drug
+MATCH (n:Drug)-[p]->(h:Disease)
+MATCH (n)-[b]->(g:Gene)
+MATCH (a:Plant)-[c]->(d:Compound)-[e]->(g)
+RETURN *
+
+MATCH (n:Plant)-[p]->(h:Compound)-[r]->(c)
+WHERE c.name = 'PDGFRB' or c.name = 'COL1A2' or c.name = 'CDH1' or c.name =  'DDR2' or c.name = 'COL3A1' or c.name = 'COL2A1' or c.name = 'COL1A1' or c.name = 'COL5A2'
+RETURN n.scientificName, count(r) ORDER BY count(r)
+
+//Querying example from 2/28
+MATCH a=(o:Plant)-[]->(c:Compound)-[]->(p:Protein) 
+WHERE (:Drug)-[]->(p) RETURN o, count(distinct p)ORDER BY count(distinct p)
+UNION
+MATCH b=(o)-[:PRODUCES]->(d:Compound)-[:TARGETS]->(g:Gene)-[]->(p:Protein)
+WHERE (:Drug)-[]->(p)
+RETURN o, count(distinct p) ORDER BY count(distinct p)
+
+//Querying example 2 from 2/28
+MATCH a=(o:Plant)-[]->(c:Compound)-[]->(p:Protein) 
+WHERE (:Drug)-[]->(p) RETURN o.scientificName, count(distinct p) ORDER BY count(distinct p)
+UNION
+MATCH b=(o)-[:PRODUCES]->(d:Compound)-[:TARGETS]->(g:Gene)-[]->(p:Protein)
+WHERE (:Drug)-[]->(p)
+RETURN o.scientificName, count(distinct p) ORDER BY count(distinct p)
+
+//Querying example 3 from 2/28
+MATCH a=(o:Plant{scientificName:'Glycyrrhiza glabra'})-[]->(c:Compound)-[]->(p:Protein) 
+WHERE (:Drug)-[]->(p) 
+MATCH b=(o:Plant{scientificName:'Glycyrrhiza glabra'})-[:PRODUCES]->(d:Compound)-[:TARGETS]->(g:Gene)-[]->(s:Protein)
+WHERE (:Drug)-[]->(s)
+RETURN *
+
+//Querying example 4 from 2/28
+MATCH a=(o:Plant{scientificName:'Glycyrrhiza glabra'})-[]->(c:Compound)-[x]->(p:Protein) 
+WHERE (:Drug)-[]->(p)  RETURN c.name, count(distinct p) order by count(distinct p)
+UNION
+MATCH b=(o:Plant{scientificName:'Glycyrrhiza glabra'})-[:PRODUCES]->(c:Compound)-[:TARGETS]->(g:Gene)-[]->(p:Protein)
+WHERE (:Drug)-[]->(p)
+RETURN c.name, count(distinct p) order by count(distinct p)
+
+//Querying example 1 from 3/20
+MATCH a=(o:Plant)-[]->(c:Compound)-[]->(g:Gene) 
+WHERE (g)-[]->(:Disease{name:'Oral mucositis'}) RETURN o.scientificName, count(distinct g) ORDER BY count(distinct g) DESC
+
+//Querying example 2 from 3/20
+MATCH a=(o:Plant)-[]->(c:Compound)-[]->(g:Gene) 
+WHERE (g)-[]->(:Disease{name:'Oral mucositis'}) RETURN count(distinct g)
+
+//Querying example 3 from 3/20
+MATCH a=(o:Plant)-[]->(c:Compound)-[]->(g:Gene) 
+WHERE (g)-[]->(:Disease{name:'Oral mucositis'}) RETURN g.name, count(distinct c) ORDER BY count(distinct c) DESC
+
+//Querying example 4 from 3/20 - 0.02 incorporates top 18 genes
+MATCH a=(o:Plant)-[]->(c:Compound)-[]->(g:Gene)-[x]->(:Disease{name:'Oral mucositis'}) WHERE toFloat(x.gdaScore)>0.02
+RETURN c.name, count(distinct g), avg(toFloat(x.gdaScore)) ORDER BY avg(toFloat(x.gdaScore))*count(distinct g) DESC 
+
+//Querying example 5 from 3/20
+MATCH a=(o:Plant)-[]->(c:Compound)-[]->(g:Gene)-[x]->(:Disease{name:'Oral mucositis'}) where c.name='Ascorbic acid'
+RETURN *
+
+//Querying example extra 1 from 3/20
+MATCH a=(o:Plant)-[x]->(c:Compound)-[y]->(g:Gene) 
+WHERE (g)-[]->(:Disease{name:'Oral mucositis'}) and (g.name='CXCL8' or g.name='TNF' or g.name='IL1B' or g.name='PPARG' or g.name='CASP8')  
+RETURN c.name, count(distinct o), count(distinct g) ORDER BY (count(distinct o)+count(distinct g)) DESC LIMIT 20
+
+//Querying extra example 2 from 3/20
+MATCH a=(g:Gene)-[x]->(:Disease{name:'Oral mucositis'}) 
+RETURN g.name, avg(toFloat(x.gdaScore)) ORDER BY avg(toFloat(x.gdaScore)) DESC LIMIT 50
+
+//Querying example 2 from 4/10
+MATCH a=(o:Plant{scientificName:'Glycyrrhiza glabra'})-[w]->(c:Compound)-[x]->(p:Protein) 
+WHERE (:Drug)-[]->(p) and w.part='root' 
+MATCH b=(d:Drug)-[]->(p)    
+RETURN a,b, count(distinct p) order by count(distinct p) limit 50
+UNION
+MATCH a=(o:Plant{scientificName:'Glycyrrhiza glabra'})-[w:PRODUCES]->(c:Compound)-[x:TARGETS]->(g:Gene)-[]->(p:Protein)
+WHERE (:Drug)-[]->(p) and w.part='root'
+MATCH b=(d:Drug)-[]->(p) 
+RETURN a,b, count(distinct p) order by count(distinct p) limit 50
+
+//Querying example 3 from 4/10 - 0.02 incorporates top 18 genes
+MATCH a=(o:Plant{scientificName:'Glycyrrhiza glabra'})-[w]->(c:Compound)-[]->(g:Gene)-[x]->(:Disease{name:'Oral mucositis'}) WHERE toFloat(x.gdaScore)>0.02 and w.part='root'
+RETURN a, max(toFloat(x.gdaScore)) ORDER BY max(toFloat(x.gdaScore)) DESC limit 50
+

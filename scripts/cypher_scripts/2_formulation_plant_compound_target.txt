@@ -1,0 +1,82 @@
+//Load Ayurvedic Formulations
+LOAD CSV WITH HEADERS FROM 'file:///ayurvedic_formulation.csv' AS row
+WITH row['Scientific name of the ingredient'] AS scientificName, row['Sanskrit Name of the ingredient'] AS sanskritName, row['Formulation'] AS formulationName
+MERGE (p:Plant {scientificName: scientificName})
+    SET p.scientificName = scientificName, p.sanskritName = sanskritName
+MERGE (f:Formulation {name:formulationName})
+    SET f.name = formulationName
+MERGE (f)-[rel:CONTAINS]->(p);
+
+// Load plant-phytochemical IMPPAT relationships
+CALL apoc.load.json('file:///imppat_plant_part_phytochemicals.json') YIELD value
+WITH value.phytochemicals as phytos, value.plant as plant
+UNWIND phytos as phyto
+MERGE(p:Plant {scientificName: plant})
+MERGE(c:Compound {name: phyto[1]})
+    SET c.type = "phytochemical"
+    SET c.source = "IMPPAT"
+    SET c.part = phyto[0]
+MERGE (p)-[rel:PRODUCES{part:phyto[0]}]->(c);
+
+// Load plant-therapeutic use IMPPAT relationships
+CALL apoc.load.json('file:///imppat_plant_therapeutic_uses.json') YIELD value
+WITH value.therapeutic_use as uses, value.plant as plant
+UNWIND uses as use_ref
+MERGE(p:Plant {scientificName: plant})
+MERGE(a:Therapeutic_Area {name: use_ref[0]})
+    SET a.type = "therapeutic use"
+    SET a.source = "IMPPAT"
+MERGE (p)-[rel:TREATS{Reference:use_ref[1]}]->(a);
+
+//Assign phytochemical imppatId
+LOAD CSV WITH HEADERS FROM 'file:///phytochem_imppatid_pubchem_id_url.csv' AS row
+WITH row[0] AS phytochem_name, row[1] AS imppatId
+MERGE (c:Compound {name: phytochem_name})
+    SET c.imppatId = imppatId;
+
+//Load phytochemical pubchem data based on imppatId
+LOAD CSV WITH HEADERS FROM 'file:///phytochem_imppatid_pubchem_id_url.csv' AS row
+WITH row[1] AS imppatId, row[2] as pubchemUrl, row[3] as pubchemId where row[2] STARTS WITH 'https'
+MERGE (c:Compound {imppatId: imppatId})
+    SET c.pubchemUrl = pubchemUrl
+    SET c.pubchemId = pubchemId;
+
+//Remove incorrect pubchem url's
+MATCH (c:Compound where left(c.pubchemUrl, 4)='/imp')
+REMOVE c.pubchemUrl;
+
+//Load chemical-gene interactions for phytochemicals from pubmed
+LOAD CSV WITH HEADERS FROM 'file:///pubchem_phytochem_target_interactions.csv' AS row with row where row.protein_name is NULL AND row.gene_name IS NOT NULL
+MATCH (c:Compound {pubchemId:row.cid})
+SET c.pubchemName = row.pubchem_name
+SET c.otherNames = [row.source_cmpnd_name]
+MERGE (g:Gene{name:row.gene_name})
+SET g.name = row.gene_name
+SET g.otherNames = [row.source_gene_name]
+CREATE (c)-[rel:TARGETS{action:row.action, pubchemId:row.interaction_id, source:row.info_source, evidence:row.evidences, evidence_urls:row.evidence_urls}]->(g);
+
+//Load chemical-protein interactions for phytochemicals from pubmed
+LOAD CSV WITH HEADERS FROM 'file:///pubchem_phytochem_target_interactions.csv' AS row with row where row.protein_name is NOT NULL
+MATCH (c:Compound {pubchemId:row.cid})
+SET c.pubchemName = row.pubchem_name
+SET c.otherNames = [row.source_cmpnd_name]
+MERGE (p:Protein{name:row.protein_name})
+SET p.name = row.protein_name
+SET p.uniprotId = row.protein_id
+CREATE (c)-[rel:TARGETS{action:row.action, pubchemId:row.interaction_id, source:row.info_source, evidence:row.evidences, evidence_urls:row.evidence_urls}]->(p);
+
+//Loading all proteins and genes (catchall)
+LOAD CSV WITH HEADERS FROM 'file:///pubchem_phytochem_target_interactions.csv' AS row with row where row.protein_name is NOT NULL AND row.gene_name is NOT NULL
+MERGE (g:Gene {name:row.gene_name})
+SET g.name = row.gene_name
+SET g.otherNames = [row.source_gene_name]
+MERGE (p:Protein{name:row.protein_name})
+SET p.name = row.protein_name
+SET p.uniprotId = row.protein_id;
+
+//Gene-protein mapping for phytochemicals from pubmed
+LOAD CSV WITH HEADERS FROM 'file:///pubchem_phytochem_target_interactions.csv' AS row with row where row.protein_name is NOT NULL AND row.gene_name is NOT NULL
+MATCH (g:Gene {name:row.gene_name})
+MATCH (p:Protein{name:row.protein_name})
+WHERE NOT (g)-[:TRANSLATION]->(p)
+MERGE (g)-[:TRANSLATION]->(p);
