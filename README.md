@@ -21,10 +21,11 @@ This contains information on the therapeutic target genes of various drugs. We u
 ## Creating the Neo4j graph
 The Cypher queries required to put all the processed data together and create a graph are in the scripts/cypher_scripts folder. These can be run in AuraDB or on Neo4j Desktop. Free instances of AuraDB get auto-deleted in 30 days if they are not used, so we preferred to use Neo4j Desktop for early development. The instructions for creating the graph are as follows:
 1. Create a new DBMS in Neo4j, following the instructions here: https://neo4j.com/docs/desktop-manual/current/operations/create-dbms/#:~:text=When%20you%20first%20open%20Neo4j,dropdown%20menu%20in%20your%20Project.
-1. Add all the files in the data/processed and data/raw folders to the 'import' folder of the Neo4j DBMS in question, following the instructions here: https://neo4j.com/docs/desktop-manual/current/operations/import-csv/#:~:text=Start%20by%20selecting%20a%20project,to%20access%20the%20Import%20folder.
+1. Add all the files in the data/processed and data/raw folders to the 'import' folder of the Neo4j DBMS in question, following the instructions here: https://neo4j.com/docs/desktop-manual/current/operations/import-csv/#:~:text=Start%20by%20selecting%20a%20project,to%20access%20the%20Import%20folder. We will run the 'LOAD CSV' commands mentioned on this link in Step 4.
 2. Install the APOC plugin for the DBMS you have created following the instructions here: https://neo4j.com/docs/apoc/current/installation/ 
 3. Open the 'Configuration' folder (in the same menu as the 'Import' folder) and copy-paste the 'apoc.conf' file from scripts/cypher_scripts in this repository into the DBMS Configuration folder.
 4. Start the DBMS and open the instance. Run the numbered scripts in the cypher_scripts folder in ascending order. The whole script can be copy-pasted into Neo4j desktop and run at once. 
+Note: In case a script fails, do not re-run the functions that ran successfully. Re-run the code starting from the failed function. Re-running functions can lead to duplication of nodes and relationships in the graph.
 <!-- end of the list -->
 Once the graph has been created, you may run analytical queries on top of the graph. Examples of queries I have already run that generate interesting ranked lists and visuals are included in 'analysis_queries.txt' 
 

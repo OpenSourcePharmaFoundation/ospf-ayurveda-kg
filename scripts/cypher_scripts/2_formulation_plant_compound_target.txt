@@ -29,13 +29,13 @@ MERGE(a:Therapeutic_Area {name: use_ref[0]})
 MERGE (p)-[rel:TREATS{Reference:use_ref[1]}]->(a);
 
 //Assign phytochemical imppatId
-LOAD CSV WITH HEADERS FROM 'file:///phytochem_imppatid_pubchem_id_url.csv' AS row
+LOAD CSV FROM 'file:///phytochem_imppatid_pubchem_id_url.csv' AS row
 WITH row[0] AS phytochem_name, row[1] AS imppatId
 MERGE (c:Compound {name: phytochem_name})
     SET c.imppatId = imppatId;
 
 //Load phytochemical pubchem data based on imppatId
-LOAD CSV WITH HEADERS FROM 'file:///phytochem_imppatid_pubchem_id_url.csv' AS row
+LOAD CSV FROM 'file:///phytochem_imppatid_pubchem_id_url.csv' AS row
 WITH row[1] AS imppatId, row[2] as pubchemUrl, row[3] as pubchemId where row[2] STARTS WITH 'https'
 MERGE (c:Compound {imppatId: imppatId})
     SET c.pubchemUrl = pubchemUrl
