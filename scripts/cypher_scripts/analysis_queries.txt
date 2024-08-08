@@ -1,9 +1,8 @@
 
 // QUERIES
-// Displaying all plants producing compounds that interact with the same targets as a an oral mucositis drug
-MATCH (n:Drug)-[p]->(h:Disease)
-MATCH (n)-[b]->(g:Gene)
-MATCH (a:Plant)-[c]->(d:Compound)-[e]->(g)
+// Displaying all pathways of plants producing compounds that interact with Oral Mucositis drug targets (does not include cases where a compound targets a gene which translates into an Oral Mucositis drug target)
+MATCH (d:Drug)-[]->(q:Protein)
+MATCH (p:Plant)-[r]->(c:Compound)-[]->(q) 
 RETURN *
 
 // Plants producing compounds related to a specific set of oral mucositis markers
