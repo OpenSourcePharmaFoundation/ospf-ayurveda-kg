@@ -5,6 +5,10 @@ from bs4 import BeautifulSoup as beaut
 import json
 import csv
 
+# Medicinal plants csv path
+med_plants_csv="data/processed/medicinal_plants.csv"
+med_plants_uses_csv="data/processed/medicinal_plants_with_uses.csv"
+
 # Prepares urls from medicinal plant database of India for scraping to gather
 # phytochemical data, taking in the path name for the 'ayurvedic formulations' csv.
 # def ayur_form_to_medplantdata_url(csv_path):
@@ -17,19 +21,29 @@ import csv
 #         print("sci_name:")
 #         print(sci_name)
 
-def get_data():
+def create_medplant_db_data_csv():
+    """
+    Grab all data from medicinal plant database.
+    """
+    # Make request to page with all the Ayurvedic formations to get data on (it returns HTML)
+    print("Grabbing raw HTML from medicinal plant database...")
     r = requests.get("https://bsi.gov.in/page/en/medicinal-plant-database")
+
+    # Convert HTML response from URL to parseable object (for scraping)
+    print("Parsing raw HTML...")
     soup = beaut(r.content, 'html.parser')
 
-    # Open CSV file for writing
-    with open('medicinal_plants.csv', mode='w', newline='', encoding='utf-8') as file:
+    # Create & open CSV file for writing
+    print("Creating CSV file from return data...")
+    with open(med_plants_csv, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        # Write headers to CSV
+
+        # Write headers to CSV file
         writer.writerow(['Name of the Plant', 'Family', 'Common Name', 'Link'])
-        
+
         # Find all table rows
         rows = soup.find_all('tr')
-        
+
         # Loop through each row and extract required data
         for row in rows:
             cols = row.find_all('td')
@@ -46,47 +60,91 @@ def get_data():
                 # Extract link
                 link_tag = cols[4].find('a', href=True)
                 if link_tag:
-                    link = link_tag['href']
-                    full_link = "https://archive.bsi.gov.in" + link
+                    full_link = link_tag['href']
                 else:
                     full_link = ''
 
                 # Write row to CSV
                 writer.writerow([plant_name, family_name, common_name, full_link])
 
-    print("Data has been written to medicinal_plants.csv")
+    print(f"Data has been written to {med_plants_csv}")
+
+# Function to extract "Uses" block from the herbarium page
+def extract_uses(link):
+    """
+    Grab the "uses" block from the medicinal plant info page at the given URL.
+    """
+    print(f"Grabbing 'uses' data from {link}...")
+    try:
+        # Send a GET request to the URL
+        page = requests.get(link)
+        soup = beaut(page.content, 'html.parser')
+
+        # Find the <p> tags and search for the one containing "Uses:"
+        uses_block = None
+        for p_tag in soup.find_all('p'):
+            strong_tag = p_tag.find('strong')
+            if strong_tag and 'Uses:' in strong_tag.get_text():
+                uses_block = p_tag
+                break
+
+        if uses_block:
+            # Get the text following the <strong>Uses:</strong> tag
+            uses_text = uses_block.get_text(strip=True).replace('Uses:', '').strip()
+            return uses_text
+        else:
+            return 'Uses not found'
+
+    except Exception as e:
+        return f'Error retrieving uses: {str(e)}'
+
+# Function to process the CSV and extract data for each row
+def process_and_write_csv_row_by_row(input_csv, output_csv):
+    """
+    Process input_csv, and extract data for each row, including calling
+    request to grab to uses data.
+    """
+    with open(input_csv, mode='r', encoding='utf-8') as infile:
+        reader = csv.reader(infile)
+
+        # Read the header from the input CSV
+        header = next(reader)
+
+        # Open the output CSV in append mode to write row-by-row
+        with open(output_csv, mode='a', newline='', encoding='utf-8') as outfile:
+            writer = csv.writer(outfile)
+            
+            # Check if the output CSV is empty, if so, write the header
+            try:
+                outfile.seek(0)
+                first_char = outfile.read(1)
+                if not first_char:
+                    # Write headers to CSV file
+                    writer.writerow(['Name of the Plant', 'Family', 'Common Name', 'Link', 'Uses'])
+            except Exception as e:
+                print(f"Error checking if file is empty: {str(e)}")
+
+            # Loop through each row in the input CSV
+            for row in reader:
+                plant_name, family, common_name, link = row
+                
+                # Extract the "Uses" block content from the page at the link
+                uses_text = extract_uses(link)
+
+                # Escape commas by surrounding the text with quotes
+                uses_text = f'"{uses_text}"'
+
+                print(f"Uses block for {plant_name}: {uses_text}")
+
+                # Write the row to the output CSV with the extracted "Uses" content
+                writer.writerow(row + [uses_text])
+                print(f"Processed: {plant_name}\n")
 
 def main():
-    get_data()
-    # ayur_form_to_medplantdata_url()
-    # Grab the content of the URL: https://bsi.gov.in/page/en/medicinal-plant-database
-    #   Put it into BeautifulSoup
-    #   Get each data point:
-    #     Known information:
-    #     - Each row section starts with <tr><td scope="row">{number}</td>
-    #     - Example row:
-    #       <tr>
-    #         <td scope="row">
-    #           1
-    #         </td>
-    #         <td class="text">
-    #           <p class="MsoNormal"><em>
-    #             Abelmoschus esculentus</em> (L.) Moench
-    #           </p>
-    #         </td>
-    #         <td class="text">
-    #           MALVACEAE
-    #         </td>
-    #         <td>
-    #           Bhindi, Bhindi tori
-    #         </td>
-    #         <td>
-    #           <a href="https://archive.bsi.gov.in/echoHerbarium-Details/en?link=CAL0000003881&column=szBarcode" target="_blank" rel="noopener"> <img src="../../../../uploads/logos/Medilogo.png" alt="View Document" width="30" height="30"></a>
-    #         </td>
-    #       </tr>
-    #     - 
-    #   Grab <td scope="row">
-    # 
+    create_medplant_db_data_csv()
+    process_and_write_csv_row_by_row(med_plants_csv, med_plants_uses_csv)
+    print(f"All 'Uses' data has been gathered and written to {med_plants_uses_csv}")
+
 
 if __name__ == "__main__":
     main()
