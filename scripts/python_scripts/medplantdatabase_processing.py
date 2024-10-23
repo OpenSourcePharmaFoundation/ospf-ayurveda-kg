@@ -111,9 +111,15 @@ def process_and_write_csv_row_by_row(input_csv, output_csv):
             # Write headers to CSV file
             writer.writerow(['Name of the Plant', 'Family', 'Common Name', 'Link', 'Uses'])
 
+            # Current row count for logging purposes
+            current_row = 0
+
             # Loop through each row in the input CSV
             for row in reader:
                 plant_name, family, common_name, link = row
+
+                current_row = current_row + 1
+                print(f"\nProcessing plant #{current_row} - {plant_name}")
                 
                 # Extract the "Uses" block content from the page at the link
                 uses_text = extract_uses(link)
@@ -125,7 +131,7 @@ def process_and_write_csv_row_by_row(input_csv, output_csv):
 
                 # Write the row to the output CSV with the extracted "Uses" content
                 writer.writerow(row + [uses_text])
-                print(f"Processed: {plant_name}\n")
+                print(f"#{current_row} Processed: {plant_name}")
 
 def main():
     create_medplant_db_data_csv()
