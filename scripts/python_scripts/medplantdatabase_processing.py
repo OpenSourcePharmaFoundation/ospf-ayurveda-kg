@@ -124,6 +124,9 @@ def process_and_write_csv_row_by_row(input_csv, output_csv):
                 # Extract the "Uses" block content from the page at the link
                 uses_text = extract_uses(link)
 
+                # Replace line breaks with spaces
+                uses_text = uses_text.replace('\n', ' ').replace('\r', ' ')
+
                 # Escape commas by surrounding the text with quotes
                 uses_text = f'"{uses_text}"'
 
