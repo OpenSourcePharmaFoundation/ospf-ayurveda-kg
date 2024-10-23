@@ -4,22 +4,11 @@ import requests
 from bs4 import BeautifulSoup as beaut
 import json
 import csv
+import os
 
-# Medicinal plants csv path
+# Medicinal plants csv paths
 med_plants_csv="data/processed/medicinal_plants.csv"
 med_plants_uses_csv="data/processed/medicinal_plants_with_uses.csv"
-
-# Prepares urls from medicinal plant database of India for scraping to gather
-# phytochemical data, taking in the path name for the 'ayurvedic formulations' csv.
-# def ayur_form_to_medplantdata_url(csv_path):
-#     url_list = []
-#     file_df = pd.read_csv(csv_path)
-#     print(file_df)
-#     for row in file_df.iterrows():
-#         sci_name = row[1]['Scientific name of the ingredient']
-#         sci_name_split = sci_name.split(' ')
-#         print("sci_name:")
-#         print(sci_name)
 
 def create_medplant_db_data_csv():
     """
@@ -69,10 +58,10 @@ def create_medplant_db_data_csv():
 
     print(f"Data has been written to {med_plants_csv}")
 
-# Function to extract "Uses" block from the herbarium page
 def extract_uses(link):
     """
-    Grab the "uses" block from the medicinal plant info page at the given URL.
+    Grab the "uses" block from the medicinal plant info (herbarium) page at
+    the given URL.
     """
     print(f"Grabbing 'uses' data from {link}...")
     try:
@@ -98,11 +87,10 @@ def extract_uses(link):
     except Exception as e:
         return f'Error retrieving uses: {str(e)}'
 
-# Function to process the CSV and extract data for each row
 def process_and_write_csv_row_by_row(input_csv, output_csv):
     """
-    Process input_csv, and extract data for each row, including calling
-    request to grab to uses data.
+    Process the medicinal plants database CSV, and extract data for each
+    row, including grabbing the uses data from the remote URL.
     """
     with open(input_csv, mode='r', encoding='utf-8') as infile:
         reader = csv.reader(infile)
@@ -110,19 +98,18 @@ def process_and_write_csv_row_by_row(input_csv, output_csv):
         # Read the header from the input CSV
         header = next(reader)
 
+        # Exit with error if the output CSV exists and has content.
+        if not os.path.exists(output_csv):
+            print(f"No {med_plants_uses_csv} file found. Creating...")
+        else:
+            print(f"Error: {med_plants_uses_csv} exists. Remove before running this script.")
+            exit()
+
         # Open the output CSV in append mode to write row-by-row
         with open(output_csv, mode='a', newline='', encoding='utf-8') as outfile:
             writer = csv.writer(outfile)
-            
-            # Check if the output CSV is empty, if so, write the header
-            try:
-                outfile.seek(0)
-                first_char = outfile.read(1)
-                if not first_char:
-                    # Write headers to CSV file
-                    writer.writerow(['Name of the Plant', 'Family', 'Common Name', 'Link', 'Uses'])
-            except Exception as e:
-                print(f"Error checking if file is empty: {str(e)}")
+            # Write headers to CSV file
+            writer.writerow(['Name of the Plant', 'Family', 'Common Name', 'Link', 'Uses'])
 
             # Loop through each row in the input CSV
             for row in reader:
@@ -144,7 +131,6 @@ def main():
     create_medplant_db_data_csv()
     process_and_write_csv_row_by_row(med_plants_csv, med_plants_uses_csv)
     print(f"All 'Uses' data has been gathered and written to {med_plants_uses_csv}")
-
 
 if __name__ == "__main__":
     main()
