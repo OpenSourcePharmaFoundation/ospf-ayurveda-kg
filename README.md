@@ -45,3 +45,23 @@ The Cypher queries required to put all the processed data together and create a 
 Once the graph has been created, you may run analytical queries on top of the graph. Examples of queries I have already run that generate interesting ranked lists and visuals are included in 'analysis_queries.txt' 
 
 If you would like to learn more about the hypotheses our team has generated from this data, our next steps, or our process, please reach out to Smiti Mittal at smitimittal@gmail.com or smiti@berkeley.edu, or Dr. Nibedita Rath at nibedita.rath@ospfound.org.
+
+---
+## Setup
+
+1. Clone the repo.
+
+2. Navigate into the repo folder (in the terminal), and set up a virtual environment:
+```
+python3 -m venv ./venv
+```
+
+3. Activate the virtual environment:
+```
+source ./venv/bin/activate
+```
+
+4. Install required packages:
+```
+python3 -m pip install -r ./requirements.txt
+```
