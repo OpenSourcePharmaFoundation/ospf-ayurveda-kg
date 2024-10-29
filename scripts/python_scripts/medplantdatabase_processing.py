@@ -5,14 +5,40 @@ from bs4 import BeautifulSoup as beaut
 import json
 import csv
 import os
+import re
 
 # Medicinal plants csv paths
 med_plants_csv="data/processed/medicinal_plants.csv"
 med_plants_uses_csv="data/processed/medicinal_plants_with_uses.csv"
 
+# [{Sanskrit Name}, {Scientific name}]
+matching_plants = [
+  "Alstonia scholaris",
+  "Vetiveria zizanioides",
+  "Trichosanthes dioica",
+  "Cyperus rotundus",
+  "Terminalia chebula",
+  "Picrorhiza kurrooa",
+  "Glycyrrhiza glabra",
+  "Cassia fistula",
+  "Santalum album",
+  "Trichosanthes dioica",
+  "Azadirachta indica",
+  "Solanum xanthocarpum",
+  "Tinspora cordifolia",
+  "Adhatoda vasica"
+]
+
+# Adiantum venustum  D.Don
+
 def create_medplant_db_data_csv():
     """
-    Grab all data from medicinal plant database.
+    Grab basic data from medicinal plant database (no "uses" column):
+        -   Name of Plant
+        -   Family
+        -   Common Name
+        -   Link (to the plant-specific page - to scrape "uses" from)
+    Write data to {med_plants_csv} csv file.
     """
     # Make request to page with all the Ayurvedic formations to get data on (it returns HTML)
     print("Grabbing raw HTML from medicinal plant database...")
@@ -45,7 +71,7 @@ def create_medplant_db_data_csv():
                 
                 # Extract common name
                 common_name = cols[3].get_text(separator=" ").strip()
-                
+
                 # Extract link
                 link_tag = cols[4].find('a', href=True)
                 if link_tag:
@@ -57,6 +83,19 @@ def create_medplant_db_data_csv():
                 writer.writerow([plant_name, family_name, common_name, full_link])
 
     print(f"Data has been written to {med_plants_csv}")
+
+def check_plant_name(plant_name):
+    """
+    Use regex to look for any exact match of the plant name within the string.
+
+    @param {string} plant_name Example: Abelmoschus manihot  (L.) Medik.
+    @return {boolean} True if a match is found, false if not.
+    """
+    for plant in matching_plants:
+        # Escape special characters and add word boundaries to ensure full match
+        if re.search(rf'\b{re.escape(plant)}\b', plant_name, re.IGNORECASE):
+            return True
+    return False
 
 def extract_uses(link):
     """
@@ -89,8 +128,11 @@ def extract_uses(link):
 
 def process_and_write_csv_row_by_row(input_csv, output_csv):
     """
-    Process the medicinal plants database CSV, and extract data for each
-    row, including grabbing the uses data from the remote URL.
+    Process the previously downloaded medicinal plants database CSV (at {med_plants_csv}).
+    Adds a "uses" column, by getting the data for it from the remote URL in the "Link" column.
+    Filters out unwanted rows.
+
+    Write result into a new csv, at {med_plants_uses_csv}.
     """
     with open(input_csv, mode='r', encoding='utf-8') as infile:
         reader = csv.reader(infile)
@@ -120,9 +162,12 @@ def process_and_write_csv_row_by_row(input_csv, output_csv):
 
                 current_row = current_row + 1
                 print(f"\nProcessing plant #{current_row} - {plant_name}")
-                
-                # Extract the "Uses" block content from the page at the link
-                uses_text = extract_uses(link)
+
+                is_matching_plant = check_plant_name(plant_name)
+
+                # Extract the "Uses" block content from the page at the link.
+                # If plant_name doesn't match item in matching_plants, don't do the "uses" fetch.
+                uses_text = extract_uses(link) if is_matching_plant else 'UNKNOWN USE'
 
                 # Replace line breaks with spaces
                 uses_text = uses_text.replace('\n', ' ').replace('\r', ' ')
