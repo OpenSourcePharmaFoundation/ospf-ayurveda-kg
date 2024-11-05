@@ -1,0 +1,18 @@
+# System temp files
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# Python virtual environments
+venv
+.venv
+
+# Python caches
+*.pyc
+__pycache__
+
+# IDE files
+.vscode
+*.sublime-*
+.idea/
+.ipynb_checkpoints/
