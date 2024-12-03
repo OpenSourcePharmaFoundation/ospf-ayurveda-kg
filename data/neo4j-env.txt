@@ -1,0 +1,2 @@
+DB Name: ayurvedic-plants-db
+password: neo4jneo4j
