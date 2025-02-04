@@ -17,3 +17,5 @@ __pycache__
 .idea/
 .ipynb_checkpoints/
 *.code-workspace
+
+docs/local_notes.md
