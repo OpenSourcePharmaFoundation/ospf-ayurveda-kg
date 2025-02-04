@@ -1,6 +1,10 @@
 TODO list (next session)
 ========================
-- Get pushing to git working again locally
+- ! Get pushing to git working again locally
+- ! Add gitattributes
+- ! Remove VSCode files from repository
+- ! Push all prior changes to GitHub
+- ! Create local file for notes that don't get added to the repository
 
 - Get existing data bank script working
 
