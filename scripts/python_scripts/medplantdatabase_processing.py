@@ -11,7 +11,7 @@ import re
 med_plants_csv="data/processed/medicinal_plants.csv"
 med_plants_uses_csv="data/processed/medicinal_plants_with_uses.csv"
 
-# [{Sanskrit Name}, {Scientific name}]
+# Scientific names of plants to match
 matching_plants = [
   "Alstonia scholaris",
   "Vetiveria zizanioides",
@@ -28,8 +28,6 @@ matching_plants = [
   "Tinspora cordifolia",
   "Adhatoda vasica"
 ]
-
-# Adiantum venustum  D.Don
 
 def create_medplant_db_data_csv():
     """
@@ -65,10 +63,10 @@ def create_medplant_db_data_csv():
             if len(cols) >= 4:
                 # Extract the plant name (including species name)
                 plant_name = cols[1].get_text(separator=" ").strip()
-                
+
                 # Extract family name
                 family_name = cols[2].get_text(separator=" ").strip()
-                
+
                 # Extract common name
                 common_name = cols[3].get_text(separator=" ").strip()
 
