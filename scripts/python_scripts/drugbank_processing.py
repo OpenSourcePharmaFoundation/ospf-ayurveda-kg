@@ -7,12 +7,11 @@ def drugs_from_indication_urls(url_list):
     row_list=[]
     # drug name : [id, target id]
     for url in url_list:
-        r = requests.get(url) 
+        r = requests.get(url)
         disease_name = 'Oral mucositis'
-        
-        
+
         # parsing html
-        soup = beaut(r.content, 'html.parser') 
+        soup = beaut(r.content, 'html.parser')
         table_drug_targets = soup.find('div',id="targets")
         for j in table_drug_targets.find_all('tr')[1:]:
             new_row = []
@@ -28,8 +27,8 @@ def drugs_from_indication_urls(url_list):
 def get_target_info(df):
     for i, row in df.iterrows():
         url = 'https://go.drugbank.com/bio_entities/'+row['Target_ID']
-        r = requests.get(url) 
-        soup = beaut(r.content, 'html.parser') 
+        r = requests.get(url)
+        soup = beaut(r.content, 'html.parser')
         details = soup.find('dl')
         kind = details.find_all('dd')[1]
         if kind.text == 'protein':
@@ -48,12 +47,12 @@ def get_target_info(df):
             psynonyms = pdetails.find_all('dd')[1]
             p_synonym_list = [i.text for i in psynonyms.find_all('li')]
             df.loc[i, "Target_synons"] = ', '.join(p_synonym_list)
-            
+
     return(df)
-    
-url_list = ['https://go.drugbank.com/indications/DBCOND0060314', 
-            'https://go.drugbank.com/indications/DBCOND0020359', 
-            'https://go.drugbank.com/indications/DBCOND0054816', 
+
+url_list = ['https://go.drugbank.com/indications/DBCOND0060314',
+            'https://go.drugbank.com/indications/DBCOND0020359',
+            'https://go.drugbank.com/indications/DBCOND0054816',
             'https://go.drugbank.com/indications/DBCOND0031602']
 
 drug_target_df = drugs_from_indication_urls(url_list)
