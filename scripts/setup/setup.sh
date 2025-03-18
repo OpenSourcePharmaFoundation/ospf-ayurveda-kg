@@ -26,12 +26,14 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   sudo apt install -y make build-essential libssl-dev zlib1g-dev \
     libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
     libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev \
-    liblzma-dev python-openssl
+    liblzma-dev python3-openssl
 
   # Install pyenv
   curl https://pyenv.run | bash
 
   # Add pyenv to bash so that it loads every time you open a terminal
+  grep -qxF 'export PYENV_ROOT="$HOME/.pyenv"' ~/.bashrc || echo ''
+  grep -qxF 'export PYENV_ROOT="$HOME/.pyenv"' ~/.bashrc || echo '# Set up pyenv'
   grep -qxF 'export PYENV_ROOT="$HOME/.pyenv"' ~/.bashrc || echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
   grep -qxF 'export PATH="$PYENV_ROOT/bin:$PATH"' ~/.bashrc || echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
   grep -qxF 'eval "$(pyenv init --path)"' ~/.bashrc || echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
