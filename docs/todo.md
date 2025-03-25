@@ -1,6 +1,26 @@
 
-TODO list (next session)
-========================
+TODO - next steps (actual project)
+==================================
+1. Do a comprehensive scrape that grabs everything in the data structure we set up last time (see drugbank_notes.md)
+  - e.g. scrape medplantdatabase
+
+2. Create nodes based on drugs (note: there can be other types of nodes. DRUG is just one type of node)
+
+3. Create a very simple initial structure that has each drug as a node, and each [anything] as a property
+  - Figure out how best to subdivide traits of drugs (it'll probably match the data structure in drugbank_notes.md)
+    - Make different traits of interest different node types
+    - Draw a graph database schema
+
+4. Write the Neo4j code for the above structure
+
+5. Test: write a simple search that extracts drugs with a set of 4 chosen characteristics of interest
+
+6. Subdivide the data structure by characteristics
+
+
+------------------------------------------
+TODO list (setup code)
+======================
 - ! Get pushing to git working again locally
 - ! Add gitattributes
 - ! Remove VSCode files from repository
@@ -14,8 +34,6 @@ TODO list (next session)
     - Sets up a python virtual environment in the project
     - Installs required dependencies
 
-- Create a CHANGELOG.md file, select a format
-
 - Get existing data bank script working
 
 - Write quick script that grabs "all" data from one drugbank page in a big clump (as a starting point)
@@ -24,10 +42,33 @@ TODO list (next session)
   - Nibedita will look into this more
   - Basically - figure out what sections we actually need
 
-------------------------------------------
-TODOs
-=====
 - Figure out where to get adverse effects data
   - Pharmacovigilance data
   - Nibi will do this
+
+------------------------------------------
+Assume network is built
+- Narrow drugs down:
+  - Based on effects that look like they'd potentially be helpful for oral mucositis
+  - Receptor binding sites
+
+# What tells us something is a candidate?
+Example: for TB
+- They looked for autophagy, then landed on all candidates that augmented autophagy
+
+For us:
+- Example searches:
+  - For "drooling" or "increased liquid in the mouth"
+  - For reduced mouth inflammation
+  - For reduced pain
+  - Reduce infection
+  - Anything affecting mucus membranes
+  - Look for anything binding to alpha IL2, IL-10
+
+Oral mucositis itself
+- Goes from grade 1 to grade 5 (WHO)
+  - Grade 1 is mouth only
+  - Grade 3-4+ also goes to your digestive tract
+  - etc.
+
 
