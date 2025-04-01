@@ -1,4 +1,9 @@
 ------------------------------------------
+Location
+========
+https://go.drugbank.com/drugs
+
+------------------------------------------
 What data do we need from drugbank?
 ===================================
 - Drug name
@@ -35,6 +40,30 @@ Right now, we have only 2 specific treatments for oral mucositis
 We want to see if there are other drugs (existing drugs) that could be used by
 looking at their targets proteins, pathways, mechanisms of action, side
 effects, chemical structures, etc.
+
+--------------------------------------------------------------------------------
+How to scrape
+=============
+1. Create .csv file for drugbank data
+  - Write headers based on data structure defined below
+2. Visit https://go.drugbank.com/drugs?approved=1&c=name&d=up&page=1
+3. For each row:
+  - Grab link from first column
+  - Follow link
+  - Grab all items from data structure from followed link
+  - Write row into .csv file
+4. On reaching end of page:
+  - Iterate the page number at the end of the URL by 1
+  - Repeat steps 2 and 3
+5. On reaching final row of final page:
+  - Save .csv file
+
+First pass structure
+--------------------
+- Name
+- Summary
+- List of indications, under Associated Conditions
+- WIP
 
 --------------------------------------------------------------------------------
 Data structure
@@ -151,7 +180,7 @@ Data set:
 
   volume_of_distribution: string,
 
-  proteing binding: string,
+  protein binding: string,
 
   metabolism: string,
   route_of_elimination: string,

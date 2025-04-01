@@ -1,21 +1,24 @@
 
 TODO - next steps (actual project)
 ==================================
-1. Do a comprehensive scrape that grabs everything in the data structure we set up last time (see drugbank_notes.md)
-  - e.g. scrape medplantdatabase
+1. ! Scrape medplantdatabase
 
-2. Create nodes based on drugs (note: there can be other types of nodes. DRUG is just one type of node)
+2. Scrape Dr. Duke's USDA data
 
-3. Create a very simple initial structure that has each drug as a node, and each [anything] as a property
+3. Do a comprehensive scrape of Drugbank that grabs everything in the data structure we set up last time (see drugbank_notes.md).
+
+4. Create nodes based on drugs (note: there can be other types of nodes. DRUG is just one type of node)
+
+5. Create a very simple initial structure that has each drug as a node, and each [anything] as a property
   - Figure out how best to subdivide traits of drugs (it'll probably match the data structure in drugbank_notes.md)
     - Make different traits of interest different node types
     - Draw a graph database schema
 
-4. Write the Neo4j code for the above structure
+6. Write the Neo4j code for the above structure
 
-5. Test: write a simple search that extracts drugs with a set of 4 chosen characteristics of interest
+7. Test: write a simple search that extracts drugs with a set of 4 chosen characteristics of interest
 
-6. Subdivide the data structure by characteristics
+8. Subdivide the data structure by characteristics
 
 
 ------------------------------------------
