@@ -16,6 +16,25 @@ def get_drug_list_pages():
         url_list.append(url)
     return url_list
 
+def get_single_drug_data(url):
+    """
+    CALLED LIKE THIS:
+      get_single_drug_data(drugs[0]['url'])
+    Scrape data from a single drug page.
+    Args:
+        url (str): URL of the drug page.
+    """
+    scraper = cloudscraper.create_scraper()
+    res_data = scraper.get(url)
+
+    soup = beaut(res_data.text, 'html.parser')
+
+    # Container for extracted drug data
+    drug_data = {}
+
+    # TODO CONTINUE FROM HERE - GET DATA FROM THE DRUG PAGE FOUND IN THE LINK
+
+
 def get_drugs_from_list(url):
     # res_data = requests.get(url)
 
@@ -52,6 +71,9 @@ def get_drugs_from_list(url):
 
     # rows = soup.find_all("tr")
     print(drugs)
+
+    return drugs
+
     # table_drug_targets = soup.find('table', id="drugs-table")
     # print(table_drug_targets)
     # for j in table_drug_targets.find_all('tr')[1:]:
