@@ -16,3 +16,6 @@ __pycache__
 *.sublime-*
 .idea/
 .ipynb_checkpoints/
+*.code-workspace
+
+docs/local_notes.md

@@ -2,16 +2,20 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup as beaut
 
-# returns dictionary in format {drug name : (id, target id)}
+# Returns dictionary in format {drug name : (id, target id)}
 def drugs_from_indication_urls(url_list):
     row_list=[]
     # drug name : [id, target id]
     for url in url_list:
-        r = requests.get(url)
+        res_data = requests.get(url)
+
+        print("Response data:")
+        print(res_data)
+
         disease_name = 'Oral mucositis'
 
         # parsing html
-        soup = beaut(r.content, 'html.parser')
+        soup = beaut(res_data.content, 'html.parser')
         table_drug_targets = soup.find('div',id="targets")
         for j in table_drug_targets.find_all('tr')[1:]:
             new_row = []
@@ -56,5 +60,6 @@ url_list = ['https://go.drugbank.com/indications/DBCOND0060314',
             'https://go.drugbank.com/indications/DBCOND0031602']
 
 drug_target_df = drugs_from_indication_urls(url_list)
+print(drug_target_df)
 updated_drug_target_df = get_target_info(drug_target_df)
 updated_drug_target_df.to_csv('data/processed/drugbank_drug_targets.csv')
