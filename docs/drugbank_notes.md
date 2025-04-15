@@ -87,32 +87,7 @@ REST API
 Schema
 ------
 ```yaml
-# Example:
-#   {
-#     uniprot_name: "30S ribosomal protein S7",
-#     kind: "Protein",
-#     organism: "Escherichia coli (strain K12)",
-#     phamcological_action: true,
-#     actions: ["Inhibitor"],
-#     general_function: "One of the primary rRNA binding proteins, it...etc...",
-#     specific_function: "mRNA binding",
-#     gene_name: "rpsG",
-#     uniprot_url: "http://www.uniprot.org/uniprot/P02359"
-#   }
-UniprotEntry: {
-  uniprot_name: string,
-  kind: string,
-  organism: string,
-  # Yes = true; No = false
-  phamcological_action: boolean,
-  actions: string[],
-  general_function: string,
-  specific_function: string,
-  gene_name: string,
-  uniprot_url: string
-}
-
-Data set:
+# Data set:
 {
   name: string,
   summary: string,
@@ -305,3 +280,29 @@ Data set:
 
   # {{TODO complete this - WIP}}
 }
+
+# Example:
+#   {
+#     uniprot_name: "30S ribosomal protein S7",
+#     kind: "Protein",
+#     organism: "Escherichia coli (strain K12)",
+#     phamcological_action: true,
+#     actions: ["Inhibitor"],
+#     general_function: "One of the primary rRNA binding proteins, it...etc...",
+#     specific_function: "mRNA binding",
+#     gene_name: "rpsG",
+#     uniprot_url: "http://www.uniprot.org/uniprot/P02359"
+#   }
+UniprotEntry: {
+  uniprot_name: string,
+  kind: string,
+  organism: string,
+  # Yes = true; No = false
+  pharmacological_action: boolean,
+  actions: string[],
+  general_function: string,
+  specific_function: string,
+  gene_name: string,
+  uniprot_url: string
+}
+```
