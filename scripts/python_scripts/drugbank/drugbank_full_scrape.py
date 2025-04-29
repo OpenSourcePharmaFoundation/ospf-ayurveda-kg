@@ -8,8 +8,31 @@ from bs4 import BeautifulSoup as beaut
 #     https://go.drugbank.com/drugs?approved=1&c=name&d=up&page=1
 #     ...
 #     https://go.drugbank.com/drugs?approved=1&c=name&d=up&page=120
+#
 
-def get_drug_list_pages():
+# Definitions
+# -----------
+# query_result_page: A single page of results from a drug search query.
+# basic_drug_data: A single drug's data from a query result page. Contains the
+#                  drug name, weight, description, categories, image_url, and url only.
+# query_result_page_data: The data from a single query result page.
+#                         Contains a list of basic_drug_data objects.
+# drug_data: Comprehensive data on a drug, taken from the dedicated drug page.
+#            These pages are found at the URLs in the basic_drug_data objects.
+
+
+def get_drug_list_urls():
+    """
+    Returns a list of URLs for all drug search results pages on DrugBank.
+    These pages link to every drug in drugbank (through the results table).
+
+    As of 2025-04-28 there are 120 in total.
+
+    :returns: list of URLs. e.g. [
+      'https://go.drugbank.com/drugs?approved=1&c=name&d=up&page=1',
+      'https://go.drugbank.com/drugs?approved=1&c=name&d=up&page=2',
+      ...]
+    """
     url_list = []
     for i in range(1, 121):
         url = 'https://go.drugbank.com/drugs?approved=1&c=name&d=up&page='+str(i)
@@ -35,16 +58,38 @@ def get_single_drug_data(url):
     # TODO CONTINUE FROM HERE - GET DATA FROM THE DRUG PAGE FOUND IN THE LINK
 
 
-def get_drugs_from_list(url):
-    # res_data = requests.get(url)
+def get_query_result_page_data(url):
+    """
+    Get drug table data from a single drug query results page.
+    Will not scrape data from all query results pages - just a single page.
 
+    i.e. all basic drug data directly available at a URL like e.g.
+    https://go.drugbank.com/drugs?approved=1&c=name&d=up&page=2
+
+    :returns: list of objects with basic drug data - all drugs on a single query
+              drug query results page. Format (example):
+    ```
+    {
+      Abarelix: {
+        "name": "Abarelix",
+        "weight": 156.269,
+        "description": "For palliative treatment of advanced prostate cancer",
+        "categories": ["Antioxidants", "Tocopherols"],
+        "image_url": "https://go.drugbank.com/structures/DB00106/image.svg",
+        "url": "https://go.drugbank.com/drugs/DB00106"
+      },
+      Abatacept: {...}
+      ...
+    }
+    ```
+    """
     scraper = cloudscraper.create_scraper()
     res_data = scraper.get(url)
 
     soup = beaut(res_data.text, 'html.parser')
 
     # Container for extracted drugs
-    drugs = []
+    drugs = {}
 
     table_rows = soup.select("table.table tbody tr")
     for row in table_rows:
@@ -54,6 +99,7 @@ def get_drugs_from_list(url):
 
       weight_td = row.select_one(".weight-value")
       weight = weight_td.text.strip().split("\n")[0] if weight_td else None
+      image_url = row.select_one(".image-value img")["src"] if row.select_one(".image-value img") else None
 
       description = row.select_one(".description-value").text.strip()
 
@@ -61,36 +107,27 @@ def get_drugs_from_list(url):
       category_tags = row.select(".categories-value a")
       categories = [cat.text.strip() for cat in category_tags]
 
-      drugs.append({
+      drugs[name] = {
           "name": name,
           "weight": weight,
           "description": description,
           "categories": categories,
+          "image_url": image_url,
           "url": url
-      })
-
-    # rows = soup.find_all("tr")
+      }
     print(drugs)
 
     return drugs
 
-    # table_drug_targets = soup.find('table', id="drugs-table")
-    # print(table_drug_targets)
-    # for j in table_drug_targets.find_all('tr')[1:]:
-    #     new_row = []
-    #     row_data = j.find_all('td')
-    #     row = [i.text for i in row_data]
-    #     new_row = [row[1], row[0], row[2], row_data[2].find('a')['href'].split('/')[-1]]
-    #     print(new_row)
-
 def main():
-    url_list = get_drug_list_pages()
+    url_list = get_drug_list_urls()
+
     count = 1
     for url in url_list:
         count = count + 1
-        if (count > 2): break
+        if (count > 3): break
         print("Processing URL:", url)
-        get_drugs_from_list(url)
+        get_query_result_page_data(url)
 
 main()
 
