@@ -58,7 +58,7 @@ def get_single_drug_data(url):
     # TODO CONTINUE FROM HERE - GET DATA FROM THE DRUG PAGE FOUND IN THE LINK
 
 
-def get_query_result_page_data(url):
+def get_query_result_page_data(url, drugs):
     """
     Get drug table data from a single drug query results page.
     Will not scrape data from all query results pages - just a single page.
@@ -69,8 +69,8 @@ def get_query_result_page_data(url):
     :returns: list of objects with basic drug data - all drugs on a single query
               drug query results page. Format (example):
     ```
-    {
-      Abarelix: {
+    [
+      {
         "name": "Abarelix",
         "weight": 156.269,
         "description": "For palliative treatment of advanced prostate cancer",
@@ -78,18 +78,15 @@ def get_query_result_page_data(url):
         "image_url": "https://go.drugbank.com/structures/DB00106/image.svg",
         "url": "https://go.drugbank.com/drugs/DB00106"
       },
-      Abatacept: {...}
+      {...}
       ...
-    }
+    ]
     ```
     """
     scraper = cloudscraper.create_scraper()
     res_data = scraper.get(url)
 
     soup = beaut(res_data.text, 'html.parser')
-
-    # Container for extracted drugs
-    drugs = {}
 
     table_rows = soup.select("table.table tbody tr")
     for row in table_rows:
@@ -107,95 +104,33 @@ def get_query_result_page_data(url):
       category_tags = row.select(".categories-value a")
       categories = [cat.text.strip() for cat in category_tags]
 
-      drugs[name] = {
+      drugs.append({
           "name": name,
           "weight": weight,
           "description": description,
           "categories": categories,
           "image_url": image_url,
           "url": url
-      }
-    print(drugs)
-
+      })
     return drugs
 
 def main():
+    """
+    Main function to scrape drug data from DrugBank.
+    """
     url_list = get_drug_list_urls()
 
+    # Container for all extracted drugs
+    drugs = []
+
+    # Loop through each query result page URL, and scrape basic drug data
     count = 1
     for url in url_list:
         count = count + 1
         if (count > 3): break
         print("Processing URL:", url)
-        get_query_result_page_data(url)
+        get_query_result_page_data(url, drugs)
+
+    print(drugs)
 
 main()
-
-    # # scrape drug data based on list of urls from DrugBank
-    # drug_target_df = drugs_from_indication_urls(url_list)
-    # print(drug_target_df)
-    # updated_drug_target_df = get_target_info(drug_target_df)
-    # updated_drug_target_df.to_csv('data/processed/drugbank_drug_targets.csv')
-
-
-# # Returns dictionary in format {drug name : (id, target id)}
-# def drugs_from_indication_urls(url_list):
-#     row_list=[]
-#     # drug name : [id, target id]
-#     for url in url_list:
-#         res_data = requests.get(url)
-
-#         print("Response data:")
-#         print(res_data)
-
-#         disease_name = 'Oral mucositis'
-
-#         # parsing html
-#         soup = beaut(res_data.content, 'html.parser')
-#         table_drug_targets = soup.find('div',id="targets")
-#         for j in table_drug_targets.find_all('tr')[1:]:
-#             new_row = []
-#             row_data = j.find_all('td')
-#             row = [i.text for i in row_data]
-#             new_row = [row[1], row[0], row[2], row_data[2].find('a')['href'].split('/')[-1]]
-#             row_list.append(new_row)
-#     df = pd.DataFrame(row_list, columns=['Drug_name','Drug_ID','Target_name','Target_ID'])
-
-#     return(df)
-
-# # get target information from drugbank
-# def get_target_info(df):
-#     for i, row in df.iterrows():
-#         url = 'https://go.drugbank.com/bio_entities/'+row['Target_ID']
-#         r = requests.get(url)
-#         soup = beaut(r.content, 'html.parser')
-#         details = soup.find('dl')
-#         kind = details.find_all('dd')[1]
-#         if kind.text == 'protein':
-#             table = details.find('table')
-#             columns = table.find_all('td')
-#             uniprot_id = columns[1].text
-#             df.loc[i, "Target_uniprot"] = uniprot_id
-
-#             url_protein = 'https://go.drugbank.com/polypeptides/'+uniprot_id
-#             p = requests.get(url_protein)
-#             psoup = beaut(p.content, 'html.parser')
-#             pdetails = psoup.find('dl')
-#             pgene = pdetails.find_all('dd')[2]
-#             df.loc[i, "Gene"] = pgene.text
-
-#             psynonyms = pdetails.find_all('dd')[1]
-#             p_synonym_list = [i.text for i in psynonyms.find_all('li')]
-#             df.loc[i, "Target_synons"] = ', '.join(p_synonym_list)
-
-#     return(df)
-
-# url_list = ['https://go.drugbank.com/indications/DBCOND0060314',
-#             'https://go.drugbank.com/indications/DBCOND0020359',
-#             'https://go.drugbank.com/indications/DBCOND0054816',
-#             'https://go.drugbank.com/indications/DBCOND0031602']
-
-# drug_target_df = drugs_from_indication_urls(url_list)
-# print(drug_target_df)
-# updated_drug_target_df = get_target_info(drug_target_df)
-# updated_drug_target_df.to_csv('data/processed/drugbank_drug_targets.csv')
