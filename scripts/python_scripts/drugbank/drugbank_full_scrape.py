@@ -34,7 +34,7 @@ def get_drug_list_urls():
       ...]
     """
     url_list = []
-    for i in range(1, 121):
+    for i in range(3, 121):
         url = 'https://go.drugbank.com/drugs?approved=1&c=name&d=up&page='+str(i)
         url_list.append(url)
     return url_list
@@ -53,17 +53,24 @@ def get_single_drug_data(drug):
     res_data = scraper.get(drug['url'])
 
     soup = beaut(res_data.text, 'html.parser')
-    print("\n\n\n\n")
-    print("Drug data page:")
 
     drug_card_content = soup.select("div.card-content")
-    print(drug_card_content)
+    print("drug_card_content[0]:", drug_card_content[0])
+
+    description = drug_card_content[0].select_one(".description").text.strip()
+    print("description:")
+    print(description)
+
+    # Extract the drug ID from the URL
+
+    # Extract the "Type" from the drug card (e.g. "Small Molecule")
+    # TODO
+    #   CONTINUE FROM HERE [2025-04-28]
+    #   GET DATA FROM THE DRUG PAGE FOUND IN THE LINK
+    #   CURRENTLY IT WORKS UP TO DESCRIPTION
 
     # Container for extracted drug data
     drug_data = {}
-
-    # TODO CONTINUE FROM HERE - GET DATA FROM THE DRUG PAGE FOUND IN THE LINK
-
 
 def get_query_result_page_data(url, drugs):
     """
