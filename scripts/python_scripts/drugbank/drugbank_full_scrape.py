@@ -39,7 +39,7 @@ def get_drug_list_urls():
         url_list.append(url)
     return url_list
 
-def get_single_drug_data(url):
+def get_single_drug_data(drug):
     """
     CALLED LIKE THIS:
       get_single_drug_data(drugs[0]['url'])
@@ -47,10 +47,17 @@ def get_single_drug_data(url):
     Args:
         url (str): URL of the drug page.
     """
+    print("drug:")
+    print(drug)
     scraper = cloudscraper.create_scraper()
-    res_data = scraper.get(url)
+    res_data = scraper.get(drug['url'])
 
     soup = beaut(res_data.text, 'html.parser')
+    print("\n\n\n\n")
+    print("Drug data page:")
+
+    drug_card_content = soup.select("div.card-content")
+    print(drug_card_content)
 
     # Container for extracted drug data
     drug_data = {}
@@ -121,7 +128,7 @@ def main():
     url_list = get_drug_list_urls()
 
     # Container for all extracted drugs
-    drugs = []
+    basic_drug_data = []
 
     # Loop through each query result page URL, and scrape basic drug data
     count = 1
@@ -129,7 +136,20 @@ def main():
         count = count + 1
         if (count > 3): break
         print("Processing URL:", url)
-        get_query_result_page_data(url, drugs)
+        get_query_result_page_data(url, basic_drug_data)
+
+    # Full drug data will be stored here (with data from each dedicated drug page)
+    drugs = []
+
+    # Loop through each drug in the list and scrape detailed data by grabbing
+    # all data from the drug URL
+    drug_count = 1
+    for basic_drug in basic_drug_data:
+        drug_count = drug_count + 1
+        if (drug_count > 4): break
+        # Get the drug data from the drug page
+        drug_data = get_single_drug_data(basic_drug)
+        drugs.append(drug_data)
 
     print(drugs)
 
