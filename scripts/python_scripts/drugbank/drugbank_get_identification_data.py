@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-def get_dd_pharmacology_data(html):
+def get_dd_identification_data(html):
   soup = BeautifulSoup(html, 'html.parser')
 
   def get_dt_dd_value(soup, dt_id):

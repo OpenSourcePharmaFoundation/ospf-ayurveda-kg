@@ -3,7 +3,8 @@ import requests
 import cloudscraper
 from bs4 import BeautifulSoup as beaut
 
-from drugbank_get_pharmacology_data import get_dd_pharmacology_data
+from drugbank_get_identification_data import get_dd_identification_data
+from dd_get_pharmacology_data import extract_pharmacology_data
 
 GRAB_THIRD_AND_FOURTH_PAGE_ONLY = True
 
@@ -66,18 +67,30 @@ def get_single_drug_data(drug):
 
     description = drug_card_content[0].select_one(".description").text.strip()
 
-    drug_data = get_dd_pharmacology_data(res_data.text)
+    drug_data = get_dd_identification_data(res_data.text)
     drug_data["description"] = description
 
-    print(drug_data)
+    # print(drug_data)
 
-    # Extract the drug ID from the URL
+    # For Associated Conditions - if you need to scrape additional pages
+    # base_url = "https://www.drugbank.com"
+    # drug_id = "DB09278"  # Example drug ID
+    # all_conditions = scrape_all_associated_conditions(base_url, drug_id)
+    # pharma_data['Associated Conditions'].extend(all_conditions)
+    pharma_data = extract_pharmacology_data(res_data.text)
+
+    ## TODO FIGURE OUT HOW TO GET THE REST OF THE ASSOCIATED CONDITIONS
+    print(pharma_data)
+
+    # TODO
+    #   CONTINUE FROM HERE [2025-05-19]
+    #   GET MORE DATA FROM THE DRUG PAGE
+    #   CURRENTLY IT WORKS UP TO THE END OF THE PHARMACOLOGY DATA
+    #   ADD THE REST OF THE DATA TO THE drug_data DICT
+    #   FIGURE OUT HOW TO GET THE REST OF THE ASSOCIATED CONDITIONS (past the first 5)
+    #   - See note above for this
 
     # Extract the "Type" from the drug card (e.g. "Small Molecule")
-    # TODO
-    #   CONTINUE FROM HERE [2025-04-28]
-    #   GET DATA FROM THE DRUG PAGE FOUND IN THE LINK
-    #   CURRENTLY IT WORKS UP TO DESCRIPTION
     return drug_data
 
 def get_query_result_page_data(url, drugs):
