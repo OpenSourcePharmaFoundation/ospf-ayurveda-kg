@@ -3,6 +3,10 @@ import requests
 import cloudscraper
 from bs4 import BeautifulSoup as beaut
 
+from drugbank_get_pharmacology_data import get_dd_pharmacology_data
+
+GRAB_THIRD_AND_FOURTH_PAGE_ONLY = True
+
 # Grab all drug list pages - from 1 to 120
 #   Page general format:
 #     https://go.drugbank.com/drugs?approved=1&c=name&d=up&page=1
@@ -47,19 +51,25 @@ def get_single_drug_data(drug):
     Args:
         url (str): URL of the drug page.
     """
-    print("drug:")
-    print(drug)
+    # print("drug:")
+    # print(drug)
     scraper = cloudscraper.create_scraper()
     res_data = scraper.get(drug['url'])
+
+    # Container for extracted drug data
+    drug_data = {}
 
     soup = beaut(res_data.text, 'html.parser')
 
     drug_card_content = soup.select("div.card-content")
-    print("drug_card_content[0]:", drug_card_content[0])
+    # print("drug_card_content[0]:", drug_card_content[0])
 
     description = drug_card_content[0].select_one(".description").text.strip()
-    print("description:")
-    print(description)
+
+    drug_data = get_dd_pharmacology_data(res_data.text)
+    drug_data["description"] = description
+
+    print(drug_data)
 
     # Extract the drug ID from the URL
 
@@ -68,9 +78,7 @@ def get_single_drug_data(drug):
     #   CONTINUE FROM HERE [2025-04-28]
     #   GET DATA FROM THE DRUG PAGE FOUND IN THE LINK
     #   CURRENTLY IT WORKS UP TO DESCRIPTION
-
-    # Container for extracted drug data
-    drug_data = {}
+    return drug_data
 
 def get_query_result_page_data(url, drugs):
     """
@@ -133,6 +141,7 @@ def main():
     Main function to scrape drug data from DrugBank.
     """
     url_list = get_drug_list_urls()
+    print(url_list)
 
     # Container for all extracted drugs
     basic_drug_data = []
@@ -141,7 +150,7 @@ def main():
     count = 1
     for url in url_list:
         count = count + 1
-        if (count > 3): break
+        if GRAB_THIRD_AND_FOURTH_PAGE_ONLY and count > 3: break
         print("Processing URL:", url)
         get_query_result_page_data(url, basic_drug_data)
 
