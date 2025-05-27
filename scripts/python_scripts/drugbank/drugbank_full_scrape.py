@@ -1,10 +1,12 @@
 import pandas as pd
 import requests
 import cloudscraper
+import json
 from bs4 import BeautifulSoup as beaut
+from pprint import pprint
 
 from drugbank_get_identification_data import get_dd_identification_data
-from dd_get_pharmacology_data import extract_pharmacology_data
+from dd_get_pharmacology_data import extract_pharmacology_data, scrape_all_associated_conditions
 
 GRAB_THIRD_AND_FOURTH_PAGE_ONLY = True
 
@@ -52,8 +54,8 @@ def get_single_drug_data(drug):
     Args:
         url (str): URL of the drug page.
     """
-    # print("drug:")
-    # print(drug)
+    print("drug:")
+    print(drug)
     scraper = cloudscraper.create_scraper()
     res_data = scraper.get(drug['url'])
 
@@ -73,24 +75,41 @@ def get_single_drug_data(drug):
     # print(drug_data)
 
     # For Associated Conditions - if you need to scrape additional pages
-    # base_url = "https://www.drugbank.com"
+    base_url = "https://www.drugbank.com"
+    # TODO: Get this from the drug data
     # drug_id = "DB09278"  # Example drug ID
-    # all_conditions = scrape_all_associated_conditions(base_url, drug_id)
-    # pharma_data['Associated Conditions'].extend(all_conditions)
-    pharma_data = extract_pharmacology_data(res_data.text)
+    drug_data = extract_pharmacology_data(res_data.text)
 
-    ## TODO FIGURE OUT HOW TO GET THE REST OF THE ASSOCIATED CONDITIONS
-    print(pharma_data)
+    # CURRENTLY IT WORKS UP TO THE END OF THE PHARMACOLOGY DATA
+
+    # NOTE: BELOW IS PROBLEMATIC - IT ONLY GETS 5 ASSOCIATED CONDITIONS,
+    # AND NOT NECESSARILY THE FIRST 5.
+    # all_conditions = scrape_all_associated_conditions(base_url, drug_id)
+    # print("drug_data.keys():")
+    # pprint(drug_data.keys())
+    # drug_data['Associated Conditions'].extend(all_conditions)
+
+    ## TODO GET THE REST OF THE ASSOCIATED CONDITIONS
+    # PSEUDOCODE:
+    # - Get the number of associated conditions from the drug data
+    # - Check if there are more than 5 associated conditions
+    # - If so, scrape the additional pages of associated conditions:
+    #   Until end reached, repeat the following:
+    #   - Use the base URL and drug ID to construct the URL for the next page of conditions
+    #   - Make a request to the URL
+    #   - Parse the response to extract the additional conditions
+    #   - Add the additional conditions to the drug_data['Associated Conditions'] list
 
     # TODO
-    #   CONTINUE FROM HERE [2025-05-19]
-    #   GET MORE DATA FROM THE DRUG PAGE
-    #   CURRENTLY IT WORKS UP TO THE END OF THE PHARMACOLOGY DATA
-    #   ADD THE REST OF THE DATA TO THE drug_data DICT
-    #   FIGURE OUT HOW TO GET THE REST OF THE ASSOCIATED CONDITIONS (past the first 5)
+    #   GET THE REST OF THE ASSOCIATED CONDITIONS (past the first 5)
     #   - See note above for this
+    #   TREAT THE DATA WE HAVE FROM THE DRUG DATA PAGE AS "COMPLETE" FOR NOW
+    #   - We can get more data later if needed
+    #   - For now, we can use the data we have in some initial Neo4j analyses
+    #   CONTINUE FROM HERE [2025-05-26]
 
     # Extract the "Type" from the drug card (e.g. "Small Molecule")
+
     return drug_data
 
 def get_query_result_page_data(url, drugs):
@@ -180,6 +199,6 @@ def main():
         drug_data = get_single_drug_data(basic_drug)
         drugs.append(drug_data)
 
-    print(drugs)
+    pprint(drugs)
 
 main()
