@@ -1,3 +1,8 @@
+TODO - next steps
+=================
+1. Get git pushing fixed
+
+2. Push all changes
 
 TODO - next steps (actual project)
 ==================================
