@@ -1,0 +1,48 @@
+ChemBL
+======
+Tested drugs:
+- Sertraline
+- Alprazolam
+- Acetaminophen
+- Lamotrigine
+- Methylphenidate
+- Penicillin
+- Amoxacillin
+- Cloxacillin
+- Lysergic acid
+- LSA
+- Diazepam
+- Metformin
+- Herceptin
+- Rifapentine
+- Rifampin
+- Fentanyl
+- Ketamine
+- Lisdexamfetamine
+- THC
+- Asparaginase
+- Cisplatin
+- Eribulin
+- Imatinic (Gleevec)
+- Mitotane
+- Omacetaxine
+- Arsenic trioxide
+- Warfarin
+- Rofecoxib (Vioxx)
+- Morphine
+- Codeine
+- Ixabepilone
+- Hydroxyurea
+- Urea
+- Cloxacillin
+- Thiamine
+- Beta carotene
+- Atropine
+- Midomafetamine (MDMA)
+- Dextrose
+- Glucorinate
+- Morphine glucuronide
+- Sucrose
+- Glycine
+- Amphetamine
+- Dextroamphetamine
