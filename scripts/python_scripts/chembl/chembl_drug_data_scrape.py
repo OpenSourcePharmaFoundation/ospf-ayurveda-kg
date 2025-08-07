@@ -4,10 +4,7 @@ from time import sleep
 
 ORIGIN = "https://www.ebi.ac.uk"
 BASE_URL = f"{ORIGIN}/chembl/api/data"
-HEADERS = {
-    "User-Agent": "chembl-neo4j-script",
-    "Accept": "application/json"
-}
+HEADERS = {"User-Agent": "chembl-neo4j-script", "Accept": "application/json"}
 OUTPUT_FILE = "chembl_drugs.csv"
 
 
@@ -87,7 +84,11 @@ def get_synonyms(chembl_id):
     r = requests.get(url, headers=HEADERS)
     if r.status_code != 200:
         return []
-    return [s["synonyms"] for s in r.json().get("molecule_synonyms", []) if s.get("synonyms")]
+    return [
+        s["synonyms"]
+        for s in r.json().get("molecule_synonyms", [])
+        if s.get("synonyms")
+    ]
 
 
 # Step 7: Drug class
@@ -96,7 +97,11 @@ def get_drug_class(chembl_id):
     r = requests.get(url, headers=HEADERS)
     if r.status_code != 200:
         return []
-    return [c["drug_class_name"] for c in r.json().get("drug_classes", []) if c.get("drug_class_name")]
+    return [
+        c["drug_class_name"]
+        for c in r.json().get("drug_classes", [])
+        if c.get("drug_class_name")
+    ]
 
 
 # Step 8: Adverse effects (via drug warnings)
@@ -119,11 +124,21 @@ def collect_data():
 
     with open(OUTPUT_FILE, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow([
-            "chembl_id", "drug_name", "class", "therapeutic_uses",
-            "adverse_effects", "binding_sites", "target_names",
-            "target_types", "mechanism_of_action", "lipophilicity", "synonyms"
-        ])
+        writer.writerow(
+            [
+                "chembl_id",
+                "drug_name",
+                "class",
+                "therapeutic_uses",
+                "adverse_effects",
+                "binding_sites",
+                "target_names",
+                "target_types",
+                "mechanism_of_action",
+                "lipophilicity",
+                "synonyms",
+            ]
+        )
 
         for i, chembl_id in enumerate(chembl_ids):
             print(f"[{i+1}/{len(chembl_ids)}] Processing {chembl_id}...")
@@ -163,20 +178,22 @@ def collect_data():
                             target_types.add(target_type)
 
                 # Actual CSV writing occurs here
-                writer.writerow([
-                    chembl_id,
-                    drug_name,
-                    drug_class,
-                    uses,
-                    warnings,
-                    # The below join calls turn returned Python lists into semicolon-separated strings
-                    "; ".join(binding_sites) or "Not available",
-                    "; ".join(targets) or "Not available",
-                    "; ".join(target_types) or "Not available",
-                    "; ".join(moa) or "Not available",
-                    lipophilicity,
-                    synonyms
-                ])
+                writer.writerow(
+                    [
+                        chembl_id,
+                        drug_name,
+                        drug_class,
+                        uses,
+                        warnings,
+                        # The below join calls turn returned Python lists into semicolon-separated strings
+                        "; ".join(binding_sites) or "Not available",
+                        "; ".join(targets) or "Not available",
+                        "; ".join(target_types) or "Not available",
+                        "; ".join(moa) or "Not available",
+                        lipophilicity,
+                        synonyms,
+                    ]
+                )
 
                 sleep(0.2)
 
