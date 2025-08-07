@@ -134,6 +134,8 @@ def collect_data():
                     continue
 
                 drug_name = molecule.get("pref_name", "Not available")
+
+                # Turn returned lists into semicolon-separated strings
                 drug_class = "; ".join(get_drug_class(chembl_id)) or "Not available"
                 uses = "; ".join(get_indications(chembl_id)) or "Not available"
                 warnings = "; ".join(get_drug_warnings(chembl_id)) or "Not available"
@@ -160,12 +162,14 @@ def collect_data():
                         if target_type:
                             target_types.add(target_type)
 
+                # Actual CSV writing occurs here
                 writer.writerow([
                     chembl_id,
                     drug_name,
                     drug_class,
                     uses,
                     warnings,
+                    # The below join calls turn returned Python lists into semicolon-separated strings
                     "; ".join(binding_sites) or "Not available",
                     "; ".join(targets) or "Not available",
                     "; ".join(target_types) or "Not available",
