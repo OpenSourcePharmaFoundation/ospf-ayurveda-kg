@@ -2,6 +2,8 @@ import requests
 import csv
 from time import sleep
 
+from utils.escape_csv_field import escape_csv_field
+
 ORIGIN = "https://www.ebi.ac.uk"
 BASE_URL = f"{ORIGIN}/chembl/api/data"
 HEADERS = {"User-Agent": "chembl-neo4j-script", "Accept": "application/json"}
@@ -70,7 +72,7 @@ def get_indications(chembl_id):
         for i in data.get("drug_indications", []):
             term = i.get("efo_term") or i.get("indication") or i.get("mesh_heading")
             if term:
-                indications.append(term)
+                indications.append(escape_csv_field(term))
         url = data["page_meta"].get("next")
         if url and url.startswith("/"):
             url = ORIGIN + url
@@ -149,6 +151,19 @@ def collect_data():
                     continue
 
                 drug_name = molecule.get("pref_name", "Not available")
+
+                drug_class_raw = get_drug_class(chembl_id)
+                print(f"Drug class raw:", drug_class_raw)
+
+                indications_raw = get_indications(chembl_id)
+                print(f"Indications raw:", indications_raw)
+
+                warnings_raw = get_drug_warnings(chembl_id)
+                print(f"Warnings raw:", warnings_raw)
+
+                synonyms_raw = get_synonyms(chembl_id)
+                print(f"Synonyms raw:", synonyms_raw)
+
 
                 # Turn returned lists into semicolon-separated strings
                 drug_class = "; ".join(get_drug_class(chembl_id)) or "Not available"
