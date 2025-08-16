@@ -4,7 +4,11 @@ TODO - next steps
 
 2. ! Push all changes
 
-3. Get return data to escape commas
+3. 1/2 Get return data to escape commas
+   - ! Escape columns for indications
+   - Escape columns for warnings
+   - Escape columns for synonyms
+   - Escape columns for mechanisms
 
 4. From ChemBL: Get drug class
 
