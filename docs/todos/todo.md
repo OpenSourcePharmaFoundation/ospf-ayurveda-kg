@@ -1,8 +1,22 @@
 TODO - next steps
 =================
-1. Get git pushing fixed
+1. ! Get git pushing fixed
 
-2. Push all changes
+2. ! Push all changes
+
+3. 1/2 Get return data to escape commas
+   - ! Escape columns for indications
+   - Escape columns for warnings
+   - Escape columns for synonyms
+   - Escape columns for mechanisms
+
+4. From ChemBL: Get drug class
+
+5. From ChemBL: See about getting missing adverse effects
+
+6. From ChemBL: Get lipophilicity
+
+7. From ChemBL: Get synonyms
 
 TODO - next steps (actual project)
 ==================================
