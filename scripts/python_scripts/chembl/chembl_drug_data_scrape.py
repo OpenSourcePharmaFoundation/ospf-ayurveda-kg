@@ -109,14 +109,21 @@ def get_drug_class(chembl_id):
 # Step 8: Adverse effects (via drug warnings)
 def get_drug_warnings(chembl_id):
     url = f"{BASE_URL}/drug_warning?molecule_chembl_id={chembl_id}"
-    r = requests.get(url, headers=HEADERS)
-    if r.status_code != 200:
+    result = requests.get(url, headers=HEADERS)
+    if result.status_code != 200:
         return []
-    return [
-        f"{w['warning_class']} ({w.get('warning_text', '').strip()})"
-        for w in r.json().get("drug_warnings", [])
-        if w.get("warning_class")
-    ]
+    result = []
+    # Type: array<string>
+    drug_warnings = result.json().get("drug_warnings", [])
+
+    for drug_warning in drug_warnings:
+        if drug_warning.get("warning_class"):
+            warning_text = escape_csv_field(
+                drug_warning.get("warning_text", "").strip()
+            )
+            formatted_warning = f"{drug_warning['warning_class']} ({warning_text})"
+            result.append(formatted_warning)
+    return result
 
 
 # Step 9: Driver function
@@ -163,7 +170,6 @@ def collect_data():
 
                 synonyms_raw = get_synonyms(chembl_id)
                 print(f"Synonyms raw:", synonyms_raw)
-
 
                 # Turn returned lists into semicolon-separated strings
                 drug_class = "; ".join(get_drug_class(chembl_id)) or "Not available"
