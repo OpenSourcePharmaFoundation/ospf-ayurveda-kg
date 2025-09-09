@@ -145,9 +145,71 @@ data/processed/
 - **Storage requirement**: ~500MB processed CSVs
 
 ## Next Steps
-1. Implement Phase 1 data collection scripts
-2. Test API endpoints with sample queries
-3. Set up CSV escaping utilities for Neo4j compatibility
-4. Create mapping tables for IMPPAT/ChemBL compound cross-references
-5. Develop Neo4j import scripts for new data structure
+
+### Phase 1: Setup & Testing
+- [ ] Review existing ChemBL scraping script at `scripts/python_scripts/chembl/chembl_drug_data_scrape.py`
+- [ ] Test ChemBL API connectivity with a simple request to `/status` endpoint
+- [ ] Verify rate limiting works (0.2-1s delays between requests)
+- [ ] Test pagination handling with `/molecule?max_phase=4&limit=10&offset=0`
+- [ ] Ensure CSV escaping utility at `scripts/python_scripts/chembl/utils/escape_csv_field.py` works correctly
+
+### Phase 2: Core Drug Data Collection
+- [ ] Create function to fetch approved drugs (`/molecule?max_phase=4`)
+- [ ] Add fields: ChEMBL ID, pref_name, synonyms
+- [ ] Add SMILES and InChI representations
+- [ ] Add molecular properties (weight, LogP, LogD, Rule of Five)
+- [ ] Add bioavailability and permeability data
+- [ ] Add first approval year and indication areas
+- [ ] Test with 10 sample drugs first
+- [ ] Run full collection (~2,500 approved drugs)
+- [ ] Save to `data/processed/chembl_approved_drugs.csv`
+
+### Phase 3: Natural Products Collection
+- [ ] Create function to fetch natural products (`/molecule?natural_product=1`)
+- [ ] Include semi-synthetic derivatives
+- [ ] Add natural product classification fields
+- [ ] Test with 10 sample compounds
+- [ ] Run full collection (~5,000 compounds)
+- [ ] Save to `data/processed/chembl_natural_products.csv`
+
+### Phase 4: Pharmacological Data
+- [ ] Fetch drug mechanisms from `/mechanism` endpoint
+- [ ] Link mechanisms to drug ChEMBL IDs
+- [ ] Fetch drug indications from `/drug_indication` endpoint
+- [ ] Include EFO terms and therapeutic areas
+- [ ] Fetch metabolism data from `/metabolism` endpoint (if available)
+- [ ] Save to `data/processed/chembl_drug_mechanisms.csv`
+- [ ] Save to `data/processed/chembl_drug_indications.csv`
+
+### Phase 5: Target Data
+- [ ] Fetch targets for approved drugs from `/target` endpoint
+- [ ] Filter for human targets primarily
+- [ ] Include UniProt accessions and target types
+- [ ] Link targets to drugs via activities
+- [ ] Save to `data/processed/chembl_drug_targets.csv`
+
+### Phase 6: Bioactivity Data
+- [ ] Fetch activities from `/activity` endpoint for approved drugs
+- [ ] Filter for standard activity types (IC50, EC50, Ki, Kd)
+- [ ] Apply confidence score filter (≥ 7)
+- [ ] Include assay descriptions
+- [ ] Save to `data/processed/chembl_bioactivities.csv`
+
+### Phase 7: Safety Data
+- [ ] Fetch drug warnings from `/drug_warning` endpoint
+- [ ] Include black box warnings and withdrawal reasons
+- [ ] Check for toxicity flags in molecule properties
+- [ ] Save to `data/processed/chembl_drug_warnings.csv`
+
+### Phase 8: Data Integration
+- [ ] Create mapping table between ChemBL and IMPPAT compound IDs
+- [ ] Identify overlapping compounds between databases
+- [ ] Generate summary statistics of collected data
+- [ ] Validate all CSV files for Neo4j compatibility
+
+### Phase 9: Neo4j Import Preparation
+- [ ] Update Cypher scripts to include new ChemBL node types
+- [ ] Define relationships between ChemBL drugs and existing nodes
+- [ ] Test import with subset of data
+- [ ] Document any data quality issues found
 
