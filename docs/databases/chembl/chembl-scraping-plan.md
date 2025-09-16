@@ -147,7 +147,7 @@ data/processed/
 ## Next Steps
 
 ### Phase 1: Setup & Testing
-- [ ] Review existing ChemBL scraping script at `scripts/python_scripts/chembl/chembl_drug_data_scrape.py`
+- [x] Review existing ChemBL scraping script at `scripts/python_scripts/chembl/chembl_drug_data_scrape.py`
 - [ ] Test ChemBL API connectivity with a simple request to `/status` endpoint
 - [ ] Verify rate limiting works (0.2-1s delays between requests)
 - [ ] Test pagination handling with `/molecule?max_phase=4&limit=10&offset=0`
