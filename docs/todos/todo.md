@@ -7,6 +7,11 @@ Reset using Claude
 [ ] Implement docs/databases/chembl/chembl-scraping-plan.md
 
 -----------------------------------------
+Misc
+====
+[ ] Learn what the standard place to put tests in a python codebase, and how the files should be structures (in terms of directory/file system structure)
+
+-----------------------------------------
 Automations
 ===========
 [x] Fix whitespace trimming in editorconfig

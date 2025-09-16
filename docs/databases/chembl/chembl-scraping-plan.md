@@ -19,7 +19,7 @@ This plan outlines a comprehensive approach to scraping ChemBL data relevant for
 ### 1.2 Natural Products & Plant-Derived Compounds
 - **Endpoint**: `/molecule?natural_product=1`
 - **Rationale**: Critical for Ayurvedic compound mapping
-- **Additional filters**: 
+- **Additional filters**:
   - Include semi-synthetic derivatives
   - Cross-reference with IMPPAT compound IDs where possible
 
@@ -62,7 +62,7 @@ This plan outlines a comprehensive approach to scraping ChemBL data relevant for
 
 ### 3.2 Bioactivity Data
 - **Endpoint**: `/activity`
-- **Filters**: 
+- **Filters**:
   - Standard activity types (IC50, EC50, Ki, Kd)
   - Human targets primarily
   - Confidence score ≥ 7
@@ -148,10 +148,10 @@ data/processed/
 
 ### Phase 1: Setup & Testing
 - [x] Review existing ChemBL scraping script at `scripts/python_scripts/chembl/chembl_drug_data_scrape.py`
-- [ ] Test ChemBL API connectivity with a simple request to `/status` endpoint
-- [ ] Verify rate limiting works (0.2-1s delays between requests)
-- [ ] Test pagination handling with `/molecule?max_phase=4&limit=10&offset=0`
-- [ ] Ensure CSV escaping utility at `scripts/python_scripts/chembl/utils/escape_csv_field.py` works correctly
+- [x] Test ChemBL API connectivity with a simple request to `/status` endpoint
+- [x] Verify rate limiting works (0.2-1s delays between requests)
+- [x] Test pagination handling with `/molecule?max_phase=4&limit=10&offset=0`
+- [x] Ensure CSV escaping utility at `scripts/python_scripts/chembl/utils/escape_csv_field.py` works correctly
 
 ### Phase 2: Core Drug Data Collection
 - [ ] Create function to fetch approved drugs (`/molecule?max_phase=4`)
