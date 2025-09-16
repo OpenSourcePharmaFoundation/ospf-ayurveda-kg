@@ -2,7 +2,7 @@ import requests
 import csv
 from time import sleep
 
-from utils.escape_csv_field import escape_csv_field
+from src.utils.escape_csv_field import escape_csv_field
 
 ORIGIN = "https://www.ebi.ac.uk"
 BASE_URL = f"{ORIGIN}/chembl/api/data"
