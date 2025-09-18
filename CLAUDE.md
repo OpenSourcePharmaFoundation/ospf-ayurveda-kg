@@ -26,12 +26,25 @@ python3 -m pip install -r ./requirements.txt
 python scripts/python_scripts/disgenet_processing.py
 python scripts/python_scripts/imppat_processing.py
 python scripts/python_scripts/pubchem_processing.py
-python scripts/python_scripts/chembl/chembl_drug_data_scrape.py
+
+# ChemBL comprehensive scraper (NEW: modular structure in src/)
+python src/scrapers/chembl/chembl_scraper.py --test                    # Test mode (10 drugs)
+python src/scrapers/chembl/chembl_scraper.py --approved-drugs-only     # Only approved drugs
+python src/scrapers/chembl/chembl_scraper.py                          # Full scrape (all datasets)
+
+# ChemBL data display CLI (standalone executable with sane defaults)
+./scripts/chembl_display.py                                            # Display data as table (default)
+./scripts/chembl_display.py --generate                                 # Generate test data (10 drugs) & display
+./scripts/chembl_display.py --generate --full                          # Generate ALL drugs (takes hours)
+./scripts/chembl_display.py --vertical --max 5                         # Show 5 drugs with all fields
+./scripts/chembl_display.py --stats                                    # Show data statistics
+./scripts/chembl_display.py --export output.csv --empty "N/A"          # Export with custom empty value
+
 python scripts/python_scripts/drugbank/drugbank_processing.py
 python scripts/python_scripts/medplantdatabase_processing.py
 
 # Format Python code
-black scripts/python_scripts/
+black scripts/python_scripts/ src/
 ```
 
 ### Neo4j Setup
@@ -57,7 +70,7 @@ No automated test suite currently exists. Manual validation through:
 ## Architecture
 
 ### Data Pipeline
-1. **Collection**: Web scraping scripts in `scripts/python_scripts/` fetch data from DisGeNET, DrugBank, IMPPAT, PubChem, ChemBL, MedPlantDatabase, and TTD
+1. **Collection**: Web scraping scripts in `scripts/python_scripts/` and modular scrapers in `src/scrapers/` fetch data from DisGeNET, DrugBank, IMPPAT, PubChem, ChemBL, MedPlantDatabase, and TTD
 2. **Processing**: Data cleaned and formatted for Neo4j import, stored in `data/processed/`
 3. **Graph Creation**: Cypher scripts in `scripts/cypher_scripts/` load data into Neo4j with defined relationships
 4. **Analysis**: Query the knowledge graph to find connections between existing drugs (including Ayurvedic compounds), and disease targets
@@ -70,7 +83,7 @@ No automated test suite currently exists. Manual validation through:
   - Deprecated - it's proprietary and not easily available for public scraping
 - **IMPPAT** (`imppat_processing.py`): Indian (as in the country of India) medicinal plants, phytochemicals, and therapeutic uses
 - **PubChem** (`pubchem_processing.py`): Chemical-gene and chemical-protein interactions
-- **ChemBL** (`chembl/chembl_drug_data_scrape.py`): Approved small molecule drugs with mechanisms and targets
+- **ChemBL** (`src/scrapers/chembl/chembl_scraper.py`): Comprehensive approved drug data collection with mechanisms, targets, indications, and safety warnings
 - **MedPlantDatabase** (`medplantdatabase_processing.py`): Additional medicinal plant data
 - **TTD**: Therapeutic target database (manual compilation in `data/processed/`)
 
