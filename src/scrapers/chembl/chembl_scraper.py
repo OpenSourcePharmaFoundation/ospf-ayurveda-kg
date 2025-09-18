@@ -12,15 +12,36 @@ from time import sleep
 from datetime import datetime
 from typing import Dict, List, Optional, Any
 
+# Import CSV utility function directly
+def util_escape_csv_field(field):
+    """Properly escape a field for CSV format following RFC 4180 standard."""
+    if field is None:
+        return ""
+
+    field_str = str(field)
+
+    # Check if field needs quoting
+    needs_quoting = any(char in field_str for char in [',', '"', '\n', '\r'])
+
+    if needs_quoting or field_str.strip() != field_str:  # Also quote if has leading/trailing spaces
+        # Escape any existing double quotes by doubling them
+        field_str = field_str.replace('"', '""')
+        # Enclose in double quotes
+        return f'"{field_str}"'
+
+    return field_str
+
 # Configuration
 ORIGIN = "https://www.ebi.ac.uk"
 BASE_URL = f"{ORIGIN}/chembl/api/data"
 HEADERS = {"User-Agent": "chembl-neo4j-script", "Accept": "application/json"}
 RATE_LIMIT_DELAY = 0.5  # seconds between API calls
-OUTPUT_DIR = "../../../data/processed"
+
+# Get absolute path to data directory
+DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../data/processed"))
 
 # Ensure output directory exists
-os.makedirs(OUTPUT_DIR, exist_ok=True)
+os.makedirs(DATA_DIR, exist_ok=True)
 
 class ChemBLScraper:
     """Main scraper class for ChemBL data collection"""
@@ -38,21 +59,9 @@ class ChemBLScraper:
 
     def escape_csv_field(self, field: Any) -> str:
         """
-        Properly escape a field for CSV format
+        Properly escape a field for CSV format using utility function
         """
-        if field is None:
-            return ""
-
-        field_str = str(field)
-
-        # If field contains comma, newline, or quotes, it needs to be quoted
-        if ',' in field_str or '\n' in field_str or '"' in field_str:
-            # Escape internal quotes by doubling them
-            field_str = field_str.replace('"', '""')
-            # Wrap in quotes
-            return f'"{field_str}"'
-
-        return field_str
+        return util_escape_csv_field(field)
 
     def make_request(self, url: str) -> Optional[Dict]:
         """
@@ -207,7 +216,7 @@ class ChemBLScraper:
         print("\n🔄 Processing approved drugs...")
         drugs = self.get_approved_drugs()
 
-        output_file = os.path.join(OUTPUT_DIR, "chembl_approved_drugs.csv")
+        output_file = os.path.join(DATA_DIR, "chembl_approved_drugs.csv")
 
         with open(output_file, "w", newline="", encoding="utf-8") as f:
             fieldnames = [
@@ -301,7 +310,7 @@ class ChemBLScraper:
         print("\n🔄 Processing drug mechanisms...")
         drugs = self.get_approved_drugs()
 
-        output_file = os.path.join(OUTPUT_DIR, "chembl_drug_mechanisms.csv")
+        output_file = os.path.join(DATA_DIR, "chembl_drug_mechanisms.csv")
 
         with open(output_file, "w", newline="", encoding="utf-8") as f:
             fieldnames = [
@@ -374,7 +383,7 @@ class ChemBLScraper:
         print("\n🔄 Processing drug targets...")
         drugs = self.get_approved_drugs()
 
-        output_file = os.path.join(OUTPUT_DIR, "chembl_drug_targets.csv")
+        output_file = os.path.join(DATA_DIR, "chembl_drug_targets.csv")
 
         # Collect unique targets
         all_targets = {}
@@ -440,7 +449,7 @@ class ChemBLScraper:
         print("\n🔄 Processing drug indications...")
         drugs = self.get_approved_drugs()
 
-        output_file = os.path.join(OUTPUT_DIR, "chembl_drug_indications.csv")
+        output_file = os.path.join(DATA_DIR, "chembl_drug_indications.csv")
 
         with open(output_file, "w", newline="", encoding="utf-8") as f:
             fieldnames = [
@@ -493,7 +502,7 @@ class ChemBLScraper:
         print("\n🔄 Processing drug warnings...")
         drugs = self.get_approved_drugs()
 
-        output_file = os.path.join(OUTPUT_DIR, "chembl_drug_warnings.csv")
+        output_file = os.path.join(DATA_DIR, "chembl_drug_warnings.csv")
 
         with open(output_file, "w", newline="", encoding="utf-8") as f:
             fieldnames = [
@@ -566,7 +575,7 @@ class ChemBLScraper:
         print(f"✅ Scraping completed!")
         print(f"End time: {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
         print(f"Total duration: {duration}")
-        print(f"Output directory: {os.path.abspath(OUTPUT_DIR)}")
+        print(f"Output directory: {os.path.abspath(DATA_DIR)}")
         print(f"{'='*60}\n")
 
 
