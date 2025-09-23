@@ -154,15 +154,15 @@ data/processed/
 - [x] Ensure CSV escaping utility at `scripts/python_scripts/chembl/utils/escape_csv_field.py` works correctly
 
 ### Phase 2: Core Drug Data Collection
-- [ ] Create function to fetch approved drugs (`/molecule?max_phase=4`)
-- [ ] Add fields: ChEMBL ID, pref_name, synonyms
-- [ ] Add SMILES and InChI representations
-- [ ] Add molecular properties (weight, LogP, LogD, Rule of Five)
-- [ ] Add bioavailability and permeability data
-- [ ] Add first approval year and indication areas
-- [ ] Test with 10 sample drugs first
+- [x] Create function to fetch approved drugs (`/molecule?max_phase=4`)
+- [x] Add fields: ChEMBL ID, pref_name, synonyms
+- [x] Add SMILES and InChI representations
+- [x] Add molecular properties (weight, LogP, LogD, Rule of Five)
+- [x] Add bioavailability and permeability data
+- [x] Add first approval year and indication areas
+- [x] Test with 10 sample drugs first
 - [ ] Run full collection (~2,500 approved drugs)
-- [ ] Save to `data/processed/chembl_approved_drugs.csv`
+- [x] Save to `data/processed/chembl_approved_drugs.csv`
 
 ### Phase 3: Natural Products Collection
 - [ ] Create function to fetch natural products (`/molecule?natural_product=1`)

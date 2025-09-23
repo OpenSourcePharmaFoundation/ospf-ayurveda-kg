@@ -6,7 +6,8 @@ Reset using Claude
 [x] Find plan
 [ ] Implement docs/databases/chembl/chembl-scraping-plan.md
 [ ] Get Claude to regenerate the structure, taking into account the new home of reusable script files, in the src directory
-[ ] Create a CLI tool that lets you run scripts from the top level of the repository
+[ ] Create a CLI tool that lets you run scripts from the top level of the repository+
+
 
 -----------------------------------------
 Misc
