@@ -22,7 +22,8 @@ CLI tools, setup scripts, and legacy prototypes:
 - Standalone CLI tools for data visualization and manipulation
 - Legacy prototypes and proof-of-concept implementations (reference only)
 - DevOps and deployment scripts
-- **NOTE**: Production code should NOT live here - any scraper, data cleaning, database populating, or data analysis code in `/scripts/` (namely python_scripts, cypher_scripts and /db, along with chembl_display.py and __init__.py) is technical debt that should be migrated to `/src`.
+- **NOTE**: Production code should NOT live here - any scraper, data cleaning, database populating, or data analysis code in `/scripts/` (namely python_scripts, cypher_scripts and /db) is technical debt that should be migrated to `/src`.
+  - However, note that some CLI tools are appropriately located here (e.g. chembl_display.py), as they are not part of the core data pipeline, and are used as standalone tools.
 
 ## Commands
 
