@@ -6,6 +6,24 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 OSPF Ayurveda Knowledge Graph - A Neo4j-based knowledge graph integrating Ayurvedic and Western medicine pathways for treating Oral Mucositis (OM). The project combines data from multiple biomedical databases to help repurpose existing drugs and Ayurvedic formulations through scientific understanding of their mechanisms.
 
+## Directory Architecture
+
+### `/src` - Primary Source Code
+The main codebase for all production code including:
+- Database scrapers and data collection modules
+- Data processing and transformation logic
+- Neo4j integration code
+- Analysis utilities
+- All supporting libraries and utilities
+
+### `/scripts` - CLI Tools & Prototypes
+CLI tools, setup scripts, and legacy prototypes:
+- Environment setup and configuration scripts
+- Standalone CLI tools for data visualization and manipulation
+- Legacy prototypes and proof-of-concept implementations (reference only)
+- DevOps and deployment scripts
+- **NOTE**: Production code should NOT live here - any scraper, data cleaning, database populating, or data analysis code in `/scripts/` (namely python_scripts, cypher_scripts and /db, along with chembl_display.py and __init__.py) is technical debt that should be migrated to `/src`.
+
 ## Commands
 
 ### Environment Setup
@@ -20,19 +38,21 @@ source ./venv/bin/activate
 python3 -m pip install -r ./requirements.txt
 ```
 
-### Data Processing
+### Data Processing (Production Scrapers in /src)
 ```bash
-# Process individual databases (WARNING: runtime can from 30 min to several hours due to API rate limits)
-python scripts/python_scripts/disgenet_processing.py
-python scripts/python_scripts/imppat_processing.py
-python scripts/python_scripts/pubchem_processing.py
-
-# ChemBL comprehensive scraper (NEW: modular structure in src/)
+# ChemBL comprehensive scraper (production implementation)
 python src/scrapers/chembl/chembl_scraper.py --test                    # Test mode (10 drugs)
 python src/scrapers/chembl/chembl_scraper.py --approved-drugs-only     # Only approved drugs
 python src/scrapers/chembl/chembl_scraper.py                          # Full scrape (all datasets)
 
-# ChemBL data display CLI (standalone executable with sane defaults)
+# TODO: Migrate these legacy scrapers from /scripts to /src
+# (Currently technical debt - these should be reimplemented in /src)
+python scripts/python_scripts/disgenet_processing.py     # Legacy - needs migration
+python scripts/python_scripts/imppat_processing.py       # Legacy - needs migration
+python scripts/python_scripts/pubchem_processing.py      # Legacy - needs migration
+python scripts/python_scripts/medplantdatabase_processing.py  # Legacy - needs migration
+
+# CLI Tools (appropriately located in /scripts)
 ./scripts/chembl_display.py                                            # Display data as table (default)
 ./scripts/chembl_display.py --generate                                 # Generate test data (10 drugs) & display
 ./scripts/chembl_display.py --generate --full                          # Generate ALL drugs (takes hours)
@@ -40,11 +60,8 @@ python src/scrapers/chembl/chembl_scraper.py                          # Full scr
 ./scripts/chembl_display.py --stats                                    # Show data statistics
 ./scripts/chembl_display.py --export output.csv --empty "N/A"          # Export with custom empty value
 
-python scripts/python_scripts/drugbank/drugbank_processing.py
-python scripts/python_scripts/medplantdatabase_processing.py
-
 # Format Python code
-black scripts/python_scripts/ src/
+black src/ scripts/
 ```
 
 ### Neo4j Setup
