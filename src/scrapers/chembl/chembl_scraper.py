@@ -8,8 +8,9 @@ import requests
 import csv
 import json
 import os
-from time import sleep
-from datetime import datetime
+import pandas as pd
+from time import sleep, time
+from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Any
 
 # Import CSV utility function directly
@@ -46,14 +47,17 @@ os.makedirs(DATA_DIR, exist_ok=True)
 class ChemBLScraper:
     """Main scraper class for ChemBL data collection"""
 
-    def __init__(self, test_mode=False):
+    def __init__(self, test_mode=False, time_limit_minutes=None):
         """
         Initialize the scraper
         Args:
             test_mode: If True, only fetch a small subset of data for testing
+            time_limit_minutes: If set, stop scraping after this many minutes
         """
         self.test_mode = test_mode
         self.test_limit = 10 if test_mode else None
+        self.time_limit_minutes = time_limit_minutes
+        self.start_time = None
         self.session = requests.Session()
         self.session.headers.update(HEADERS)
 
@@ -62,6 +66,16 @@ class ChemBLScraper:
         Properly escape a field for CSV format using utility function
         """
         return util_escape_csv_field(field)
+
+    def is_time_limit_exceeded(self) -> bool:
+        """
+        Check if the time limit has been exceeded
+        """
+        if not self.time_limit_minutes or not self.start_time:
+            return False
+
+        elapsed = time() - self.start_time
+        return elapsed >= (self.time_limit_minutes * 60)
 
     def make_request(self, url: str) -> Optional[Dict]:
         """
@@ -125,6 +139,32 @@ class ChemBLScraper:
         molecules = self.get_paginated_results(url, "molecules")
         print(f"✅ Found {len(molecules)} approved drugs")
         return molecules
+
+    def load_approved_drugs_from_csv(self) -> List[Dict]:
+        """
+        Load approved drugs from existing CSV file (for development/testing)
+        Returns a list of drug dictionaries with minimal info needed for further processing
+        """
+        csv_file = os.path.join(DATA_DIR, "chembl_approved_drugs.csv")
+
+        if not os.path.exists(csv_file):
+            print(f"❌ CSV file not found: {csv_file}")
+            print("   Please run --approved-drugs-only first to generate the base dataset")
+            return []
+
+        print(f"\n📂 Loading existing drugs from CSV...")
+        df = pd.read_csv(csv_file)
+
+        # Convert to list of dicts with minimal required fields
+        drugs = []
+        for _, row in df.iterrows():
+            drugs.append({
+                "molecule_chembl_id": row["chembl_id"],
+                "pref_name": row.get("pref_name", "")
+            })
+
+        print(f"✅ Loaded {len(drugs)} drugs from CSV")
+        return drugs
 
     def get_natural_products(self) -> List[Dict]:
         """
@@ -214,6 +254,12 @@ class ChemBLScraper:
         Process and save approved drug data
         """
         print("\n🔄 Processing approved drugs...")
+
+        # Set start time if using time limit
+        if self.time_limit_minutes:
+            self.start_time = time()
+            print(f"⏱️  Time limit set to {self.time_limit_minutes} minutes")
+
         drugs = self.get_approved_drugs()
 
         output_file = os.path.join(DATA_DIR, "chembl_approved_drugs.csv")
@@ -221,10 +267,11 @@ class ChemBLScraper:
         with open(output_file, "w", newline="", encoding="utf-8") as f:
             fieldnames = [
                 "chembl_id", "pref_name", "synonyms", "smiles", "inchi", "inchi_key",
-                "molecular_formula", "molecular_weight", "alogp", "hba", "hbd",
+                "molecular_formula", "molecular_weight", "alogp", "logd", "hba", "hbd",
                 "psa", "rtb", "ro5_violations", "aromatic_rings", "heavy_atoms",
                 "qed_weighted", "cx_logp", "cx_logd", "molecular_species",
-                "first_approval", "oral_bioavailability", "indication_class",
+                "first_approval", "oral_bioavailability", "bioavailability_score",
+                "permeability", "indication_class",
                 "therapeutic_areas", "natural_product", "polymer_flag",
                 "molecule_type", "max_phase", "withdrawn_flag", "withdrawn_reason",
                 "withdrawn_year", "withdrawn_country"
@@ -237,8 +284,20 @@ class ChemBLScraper:
                 if self.test_mode and i >= self.test_limit:
                     break
 
+                # Check time limit
+                if self.is_time_limit_exceeded():
+                    print(f"⏱️  Time limit reached. Processed {i} drugs.")
+                    break
+
                 chembl_id = drug["molecule_chembl_id"]
-                print(f"  [{i+1}/{len(drugs)}] Processing {chembl_id}...")
+
+                # Show time remaining if using time limit
+                if self.time_limit_minutes:
+                    elapsed = time() - self.start_time
+                    remaining = (self.time_limit_minutes * 60) - elapsed
+                    print(f"  [{i+1}/{len(drugs)}] Processing {chembl_id}... ({remaining:.0f}s remaining)")
+                else:
+                    print(f"  [{i+1}/{len(drugs)}] Processing {chembl_id}...")
 
                 # Get additional details
                 details = self.get_molecule_details(chembl_id)
@@ -247,6 +306,9 @@ class ChemBLScraper:
 
                 # Get molecule properties
                 props = details.get("molecule_properties", {})
+
+                # Get molecule structures (handle None case)
+                structures = details.get("molecule_structures") or {}
 
                 # Get molecule synonyms
                 synonyms = details.get("molecule_synonyms", [])
@@ -268,12 +330,13 @@ class ChemBLScraper:
                     "chembl_id": chembl_id,
                     "pref_name": details.get("pref_name", ""),
                     "synonyms": self.escape_csv_field("; ".join(synonym_list[:10])),  # Limit synonyms
-                    "smiles": details.get("molecule_structures", {}).get("canonical_smiles", ""),
-                    "inchi": details.get("molecule_structures", {}).get("standard_inchi", ""),
-                    "inchi_key": details.get("molecule_structures", {}).get("standard_inchi_key", ""),
+                    "smiles": structures.get("canonical_smiles", ""),
+                    "inchi": structures.get("standard_inchi", ""),
+                    "inchi_key": structures.get("standard_inchi_key", ""),
                     "molecular_formula": props.get("full_molformula", ""),
                     "molecular_weight": props.get("mw_freebase", ""),
                     "alogp": props.get("alogp", ""),
+                    "logd": props.get("acd_logd", props.get("logd", "")),  # Try multiple field names
                     "hba": props.get("hba", ""),
                     "hbd": props.get("hbd", ""),
                     "psa": props.get("psa", ""),
@@ -286,7 +349,9 @@ class ChemBLScraper:
                     "cx_logd": props.get("cx_logd", ""),
                     "molecular_species": props.get("molecular_species", ""),
                     "first_approval": details.get("first_approval", ""),
-                    "oral_bioavailability": details.get("oral", ""),
+                    "oral_bioavailability": "True" if details.get("oral") else "False",  # Convert to boolean string
+                    "bioavailability_score": props.get("bioavailability", ""),  # May not be available
+                    "permeability": "",  # Not directly available in ChemBL API
                     "indication_class": self.escape_csv_field("; ".join(indication_classes)),
                     "therapeutic_areas": self.escape_csv_field("; ".join(therapeutic_areas)),
                     "natural_product": details.get("natural_product", ""),
@@ -303,12 +368,22 @@ class ChemBLScraper:
 
         print(f"✅ Saved approved drugs to {output_file}")
 
-    def process_mechanisms(self):
+    def process_mechanisms(self, use_cached_drugs=True):
         """
         Process and save drug mechanism data
+        Args:
+            use_cached_drugs: If True, load drugs from CSV instead of fetching from API
         """
         print("\n🔄 Processing drug mechanisms...")
-        drugs = self.get_approved_drugs()
+
+        # Load drugs from CSV or fetch from API
+        if use_cached_drugs:
+            drugs = self.load_approved_drugs_from_csv()
+            if not drugs:
+                print("❌ No cached drugs available. Run --approved-drugs-only first.")
+                return
+        else:
+            drugs = self.get_approved_drugs()
 
         output_file = os.path.join(DATA_DIR, "chembl_drug_mechanisms.csv")
 
@@ -376,12 +451,22 @@ class ChemBLScraper:
 
         print(f"✅ Saved drug mechanisms to {output_file}")
 
-    def process_targets(self):
+    def process_targets(self, use_cached_drugs=True):
         """
         Process and save drug target data
+        Args:
+            use_cached_drugs: If True, load drugs from CSV instead of fetching from API
         """
         print("\n🔄 Processing drug targets...")
-        drugs = self.get_approved_drugs()
+
+        # Load drugs from CSV or fetch from API
+        if use_cached_drugs:
+            drugs = self.load_approved_drugs_from_csv()
+            if not drugs:
+                print("❌ No cached drugs available. Run --approved-drugs-only first.")
+                return
+        else:
+            drugs = self.get_approved_drugs()
 
         output_file = os.path.join(DATA_DIR, "chembl_drug_targets.csv")
 
@@ -442,12 +527,22 @@ class ChemBLScraper:
 
         print(f"✅ Saved drug targets to {output_file}")
 
-    def process_indications(self):
+    def process_indications(self, use_cached_drugs=True):
         """
         Process and save drug indication data
+        Args:
+            use_cached_drugs: If True, load drugs from CSV instead of fetching from API
         """
         print("\n🔄 Processing drug indications...")
-        drugs = self.get_approved_drugs()
+
+        # Load drugs from CSV or fetch from API
+        if use_cached_drugs:
+            drugs = self.load_approved_drugs_from_csv()
+            if not drugs:
+                print("❌ No cached drugs available. Run --approved-drugs-only first.")
+                return
+        else:
+            drugs = self.get_approved_drugs()
 
         output_file = os.path.join(DATA_DIR, "chembl_drug_indications.csv")
 
@@ -495,12 +590,22 @@ class ChemBLScraper:
 
         print(f"✅ Saved drug indications to {output_file}")
 
-    def process_warnings(self):
+    def process_warnings(self, use_cached_drugs=True):
         """
         Process and save drug safety warning data
+        Args:
+            use_cached_drugs: If True, load drugs from CSV instead of fetching from API
         """
         print("\n🔄 Processing drug warnings...")
-        drugs = self.get_approved_drugs()
+
+        # Load drugs from CSV or fetch from API
+        if use_cached_drugs:
+            drugs = self.load_approved_drugs_from_csv()
+            if not drugs:
+                print("❌ No cached drugs available. Run --approved-drugs-only first.")
+                return
+        else:
+            drugs = self.get_approved_drugs()
 
         output_file = os.path.join(DATA_DIR, "chembl_drug_warnings.csv")
 
@@ -550,9 +655,11 @@ class ChemBLScraper:
 
         print(f"✅ Saved drug warnings to {output_file}")
 
-    def run_full_scrape(self):
+    def run_full_scrape(self, use_cached_drugs=True):
         """
         Run the complete scraping pipeline
+        Args:
+            use_cached_drugs: If True, use existing drug CSV for secondary data collections
         """
         start_time = datetime.now()
         print(f"\n{'='*60}")
@@ -561,11 +668,15 @@ class ChemBLScraper:
         print(f"{'='*60}")
 
         # Process each data type
-        self.process_approved_drugs()
-        self.process_mechanisms()
-        self.process_targets()
-        self.process_indications()
-        self.process_warnings()
+        if not use_cached_drugs:
+            # Only fetch approved drugs if not using cache
+            self.process_approved_drugs()
+
+        # Process secondary data (will use cached drugs if available)
+        self.process_mechanisms(use_cached_drugs=use_cached_drugs)
+        self.process_targets(use_cached_drugs=use_cached_drugs)
+        self.process_indications(use_cached_drugs=use_cached_drugs)
+        self.process_warnings(use_cached_drugs=use_cached_drugs)
 
         # Calculate runtime
         end_time = datetime.now()
@@ -601,19 +712,29 @@ def main():
         action="store_true",
         help="Only fetch mechanism data"
     )
+    parser.add_argument(
+        "--time-limit",
+        type=float,
+        help="Time limit in minutes for scraping (e.g., 5 for 5 minutes)"
+    )
+    parser.add_argument(
+        "--use-cache",
+        action="store_true",
+        help="Use cached drug list from CSV instead of re-downloading (faster for development)"
+    )
 
     args = parser.parse_args()
 
     # Initialize scraper
-    scraper = ChemBLScraper(test_mode=args.test)
+    scraper = ChemBLScraper(test_mode=args.test, time_limit_minutes=args.time_limit)
 
     # Run appropriate scraping mode
     if args.approved_drugs_only:
         scraper.process_approved_drugs()
     elif args.mechanisms_only:
-        scraper.process_mechanisms()
+        scraper.process_mechanisms(use_cached_drugs=args.use_cache)
     else:
-        scraper.run_full_scrape()
+        scraper.run_full_scrape(use_cached_drugs=args.use_cache)
 
 
 if __name__ == "__main__":
