@@ -25,3 +25,11 @@ Provide a concise summary that includes:
 - **Context Notes**: Any relevant context from commit messages or documentation
 
 Focus on giving actionable context to quickly resume work from where it was left off. Be specific about file locations and any partial implementations that need completion.
+
+Priorities
+==========
+1. PRIORITIZE UNSTAGED AND UNCOMMITTED CHANGES. That's *always* going to be the most recent, if it's present.
+2. PRIORITIZE RECENT COMMITS. Those are always going to be the second most recent.
+   Look at what was *actually* changed.
+
+Note: ignore Claude Code changes.
