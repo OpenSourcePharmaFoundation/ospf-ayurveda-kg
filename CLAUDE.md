@@ -42,8 +42,9 @@ python3 -m pip install -r ./requirements.txt
 ### Data Processing (Production Scrapers in /src)
 ```bash
 # ChemBL comprehensive scraper (production implementation)
-python src/scrapers/chembl/chembl_scraper.py --test                    # Test mode (10 drugs)
+python src/scrapers/chembl/chembl_scraper.py --test                    # Test mode (10 records)
 python src/scrapers/chembl/chembl_scraper.py --approved-drugs-only     # Only approved drugs
+python src/scrapers/chembl/chembl_scraper.py --natural-products-only   # Only natural products
 python src/scrapers/chembl/chembl_scraper.py                          # Full scrape (all datasets)
 
 # TODO: Migrate these legacy scrapers from /scripts to /src
