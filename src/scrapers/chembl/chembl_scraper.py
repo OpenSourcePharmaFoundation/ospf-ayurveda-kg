@@ -47,17 +47,21 @@ os.makedirs(DATA_DIR, exist_ok=True)
 class ChemBLScraper:
     """Main scraper class for ChemBL data collection"""
 
-    def __init__(self, test_mode=False, time_limit_minutes=None, record_limit=None):
+    def __init__(self, test_mode=False, time_limit_minutes=None, record_limit=None, skip_first=0, append_mode=False):
         """
         Initialize the scraper
         Args:
             test_mode: If True, only fetch a small subset of data for testing
             time_limit_minutes: If set, stop scraping after this many minutes
             record_limit: If set, stop after processing this many records
+            skip_first: If set, skip the first N records (useful for resuming)
+            append_mode: If True, append to existing CSV files instead of overwriting
         """
         self.test_mode = test_mode
         self.test_limit = record_limit if record_limit else (10 if test_mode else None)
         self.time_limit_minutes = time_limit_minutes
+        self.skip_first = skip_first
+        self.append_mode = append_mode
         self.start_time = None
         self.session = requests.Session()
         self.session.headers.update(HEADERS)
@@ -290,11 +294,17 @@ class ChemBLScraper:
             self.start_time = time()
             print(f"⏱️  Time limit set to {self.time_limit_minutes} minutes")
 
+        if self.skip_first > 0:
+            print(f"⏭️  Skipping first {self.skip_first} drugs (resuming from drug #{self.skip_first + 1})")
+
         drugs = self.get_approved_drugs()
 
         output_file = os.path.join(DATA_DIR, "chembl_approved_drugs.csv")
 
-        with open(output_file, "w", newline="", encoding="utf-8") as f:
+        # Use append mode if specified, otherwise overwrite
+        file_mode = "a" if self.append_mode else "w"
+
+        with open(output_file, file_mode, newline="", encoding="utf-8") as f:
             fieldnames = [
                 "chembl_id", "pref_name", "synonyms", "smiles", "inchi", "inchi_key",
                 "molecular_formula", "molecular_weight", "alogp", "logd", "hba", "hbd",
@@ -308,34 +318,43 @@ class ChemBLScraper:
             ]
 
             writer = csv.DictWriter(f, fieldnames=fieldnames)
-            writer.writeheader()
 
+            # Only write header if not appending
+            if not self.append_mode:
+                writer.writeheader()
+
+            processed_count = 0
             for i, drug in enumerate(drugs):
-                if self.test_limit and i >= self.test_limit:
+                # Skip first N drugs if resuming
+                if i < self.skip_first:
+                    continue
+
+                if self.test_limit and processed_count >= self.test_limit:
                     break
 
                 # Check time limit
                 if self.is_time_limit_exceeded():
-                    print(f"⏱️  Time limit reached. Processed {i} drugs.")
+                    print(f"⏱️  Time limit reached. Processed {processed_count} drugs.")
                     break
 
                 chembl_id = drug["molecule_chembl_id"]
+                actual_position = i + 1  # 1-indexed position in full list
 
                 # Show time remaining if using time limit
                 if self.time_limit_minutes:
                     elapsed = time() - self.start_time
                     remaining = (self.time_limit_minutes * 60) - elapsed
-                    print(f"  [{i+1}/{len(drugs)}] Processing {chembl_id}... ({remaining:.0f}s remaining)")
+                    print(f"  [{actual_position}/{len(drugs)}] Processing {chembl_id}... ({remaining:.0f}s remaining)")
                 else:
-                    print(f"  [{i+1}/{len(drugs)}] Processing {chembl_id}...")
+                    print(f"  [{actual_position}/{len(drugs)}] Processing {chembl_id}...")
 
                 # Get additional details
                 details = self.get_molecule_details(chembl_id)
                 if not details:
                     continue
 
-                # Get molecule properties
-                props = details.get("molecule_properties", {})
+                # Get molecule properties (handle None case)
+                props = details.get("molecule_properties") or {}
 
                 # Get molecule structures (handle None case)
                 structures = details.get("molecule_structures") or {}
@@ -395,8 +414,12 @@ class ChemBLScraper:
                 }
 
                 writer.writerow(row)
+                processed_count += 1
 
-        print(f"✅ Saved approved drugs to {output_file}")
+        if self.append_mode:
+            print(f"✅ Appended {processed_count} approved drugs to {output_file}")
+        else:
+            print(f"✅ Saved {processed_count} approved drugs to {output_file}")
 
     def process_natural_products(self):
         """
@@ -453,8 +476,8 @@ class ChemBLScraper:
                 if not details:
                     continue
 
-                # Get molecule properties
-                props = details.get("molecule_properties", {})
+                # Get molecule properties (handle None case)
+                props = details.get("molecule_properties") or {}
 
                 # Get molecule structures (handle None case)
                 structures = details.get("molecule_structures") or {}
@@ -1132,11 +1155,28 @@ def main():
         type=int,
         help="Maximum number of records to process (e.g., 200 for 200 records)"
     )
+    parser.add_argument(
+        "--skip-first",
+        type=int,
+        default=0,
+        help="Skip the first N records (useful for resuming from a specific point, e.g., 2179)"
+    )
+    parser.add_argument(
+        "--append",
+        action="store_true",
+        help="Append to existing CSV files instead of overwriting (use with --skip-first)"
+    )
 
     args = parser.parse_args()
 
     # Initialize scraper
-    scraper = ChemBLScraper(test_mode=args.test, time_limit_minutes=args.time_limit, record_limit=args.limit)
+    scraper = ChemBLScraper(
+        test_mode=args.test,
+        time_limit_minutes=args.time_limit,
+        record_limit=args.limit,
+        skip_first=args.skip_first,
+        append_mode=args.append
+    )
 
     # Run appropriate scraping mode
     if args.approved_drugs_only:
