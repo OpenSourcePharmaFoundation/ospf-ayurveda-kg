@@ -6,7 +6,10 @@ Reset using Claude
 [x] Find plan
 [x] Look into alternatives to Neo4j [NebulaGraph is promising]
     {DECISION: we're sticking with Neo4j, for now}
-[ ] Implement docs/databases/chembl/chembl-scraping-plan.md
+[x] Implement scraping steps from docs/databases/chembl/chembl-scraping-plan.md
+[ ] Implement Data Integration steps from docs/databases/chembl/chembl-scraping-plan.md
+[ ] Implement Neo4j Import steps from docs/databases/chembl/chembl-scraping-plan.md
+
 [ ] Get Claude to regenerate the structure, taking into account the new home of reusable script files, in the src directory
 [ ] Create a CLI tool that lets you run scripts from the top level of the repository
 
