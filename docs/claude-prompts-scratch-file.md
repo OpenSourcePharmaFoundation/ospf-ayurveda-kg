@@ -1,0 +1,1 @@
+Write a plan to scrape data from ChemBL that could be potentially relevant to repurposing drugs and ayurvedic formulation. This includes chemistry-related information of certain types (but not ALL chemistry-related information). Include all pharmocological information. The API docs can be found at https://www.ebi.ac.uk/chembl/api/data/docs
