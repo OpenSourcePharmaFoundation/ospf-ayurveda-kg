@@ -1,0 +1,95 @@
+// ============================================================================
+// ChemBL Drug Indications Import
+// ============================================================================
+// Imports drug indication data (what diseases/conditions drugs treat)
+// from ChemBL using MeSH and EFO ontology terms.
+//
+// Source: data/processed/chembl_drug_indications.csv
+//
+// Note: Currently contains TEST DATA (79 records). Run full collection
+// before production import.
+//
+// PREREQUISITE: Run 5_chembl_approved_drugs.txt first!
+// ============================================================================
+
+// -----------------------------------------------------------------------------
+// Step 1: Import Drug Indications and Create Indication Nodes
+// -----------------------------------------------------------------------------
+// Each indication has both MeSH (Medical Subject Headings) and EFO
+// (Experimental Factor Ontology) identifiers where available.
+
+LOAD CSV WITH HEADERS FROM 'file:///chembl_drug_indications.csv' AS row
+
+// Match the drug by ChemBL ID
+MATCH (d:Drug {chembl_id: row.chembl_id})
+
+// Create Indication node using MeSH ID as primary identifier (more common)
+// Fall back to EFO ID if MeSH not available
+WITH d, row,
+     CASE
+       WHEN row.mesh_id IS NOT NULL AND row.mesh_id <> ''
+         THEN row.mesh_id
+       WHEN row.efo_id IS NOT NULL AND row.efo_id <> ''
+         THEN row.efo_id
+       ELSE row.chembl_id + '_' + COALESCE(row.mesh_heading, row.efo_term)
+     END AS indication_id
+
+WHERE indication_id IS NOT NULL
+
+MERGE (i:Indication {id: indication_id})
+SET i.mesh_id = CASE WHEN row.mesh_id <> '' THEN row.mesh_id ELSE null END,
+    i.mesh_heading = CASE WHEN row.mesh_heading <> '' THEN row.mesh_heading ELSE null END,
+    i.efo_id = CASE WHEN row.efo_id <> '' THEN row.efo_id ELSE null END,
+    i.efo_term = CASE WHEN row.efo_term <> '' THEN row.efo_term ELSE null END,
+    i.name = COALESCE(row.mesh_heading, row.efo_term),
+    i.source = 'ChemBL'
+
+// Create TREATS relationship with max_phase information
+MERGE (d)-[r:TREATS_INDICATION]->(i)
+SET r.max_phase = CASE WHEN row.max_phase_for_ind <> ''
+                       THEN toInteger(row.max_phase_for_ind)
+                       ELSE null END,
+    r.source = 'ChemBL';
+
+// -----------------------------------------------------------------------------
+// Step 2: Link ChemBL Indications to existing Disease nodes
+// -----------------------------------------------------------------------------
+// Try to match ChemBL indications to existing Disease nodes by name
+// This connects the ChemBL drug-disease relationships to the existing
+// DisGeNET disease data.
+
+MATCH (i:Indication)
+WHERE i.name IS NOT NULL
+
+MATCH (d:Disease)
+WHERE toLower(d.name) = toLower(i.name)
+   OR toLower(d.name) CONTAINS toLower(i.name)
+   OR toLower(i.name) CONTAINS toLower(d.name)
+
+MERGE (i)-[:SAME_AS]->(d);
+
+// -----------------------------------------------------------------------------
+// Step 3: Special handling for Oral Mucositis
+// -----------------------------------------------------------------------------
+// Since this project focuses on Oral Mucositis, explicitly link any
+// relevant indications to the main Disease node.
+
+MATCH (i:Indication)
+WHERE toLower(i.name) CONTAINS 'mucositis'
+   OR toLower(i.name) CONTAINS 'stomatitis'
+   OR toLower(i.mesh_heading) CONTAINS 'mucositis'
+   OR toLower(i.mesh_heading) CONTAINS 'stomatitis'
+
+MATCH (d:Disease {name: 'Oral mucositis'})
+MERGE (i)-[:RELATED_TO]->(d);
+
+// -----------------------------------------------------------------------------
+// Step 4: Create summary statistics (optional query)
+// -----------------------------------------------------------------------------
+// Run this to see what was imported:
+//
+// MATCH (d:Drug)-[r:TREATS_INDICATION]->(i:Indication)
+// WHERE d.chembl_id IS NOT NULL
+// RETURN count(DISTINCT d) AS drugs_with_indications,
+//        count(DISTINCT i) AS unique_indications,
+//        count(r) AS total_relationships;

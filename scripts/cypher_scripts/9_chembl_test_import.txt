@@ -1,0 +1,133 @@
+// ============================================================================
+// ChemBL Test Import - Validation Queries
+// ============================================================================
+// Run these queries AFTER importing ChemBL data to validate the import
+// and explore the new graph structure.
+//
+// IMPORTANT: Run scripts 4-8 in order before running these queries.
+// ============================================================================
+
+// -----------------------------------------------------------------------------
+// 1. Count Summary - What was imported?
+// -----------------------------------------------------------------------------
+
+// Count all ChemBL drugs
+MATCH (d:Drug)
+WHERE d.chembl_id IS NOT NULL
+RETURN 'ChemBL Drugs' AS type, count(d) AS count;
+
+// Count by node type
+MATCH (n)
+WHERE n.source = 'ChemBL' OR 'ChemBL' IN COALESCE(n.sources, [])
+RETURN labels(n)[0] AS node_type, count(n) AS count
+ORDER BY count DESC;
+
+// -----------------------------------------------------------------------------
+// 2. Relationship Summary
+// -----------------------------------------------------------------------------
+
+MATCH (d:Drug)-[r]->(n)
+WHERE d.chembl_id IS NOT NULL
+RETURN type(r) AS relationship, count(r) AS count
+ORDER BY count DESC;
+
+// -----------------------------------------------------------------------------
+// 3. Sample ChemBL Drug with Full Details
+// -----------------------------------------------------------------------------
+
+MATCH (d:Drug {chembl_id: 'CHEMBL2'})
+OPTIONAL MATCH (d)-[:HAS_MECHANISM]->(m:Mechanism)
+OPTIONAL MATCH (d)-[:TREATS_INDICATION]->(i:Indication)
+OPTIONAL MATCH (d)-[:HAS_WARNING]->(w:Warning)
+OPTIONAL MATCH (d)-[:INDICATED_FOR]->(ta:Therapeutic_Area)
+RETURN d.chembl_id AS id,
+       d.name AS name,
+       d.molecular_weight AS mw,
+       d.first_approval AS approved,
+       collect(DISTINCT m.action_type) AS mechanisms,
+       collect(DISTINCT i.name) AS indications,
+       collect(DISTINCT w.warning_class) AS warnings,
+       collect(DISTINCT ta.name) AS therapeutic_areas;
+
+// -----------------------------------------------------------------------------
+// 4. Find Drugs That Target Proteins Also Targeted by Phytochemicals
+// -----------------------------------------------------------------------------
+// This is the key query for drug repurposing - finding existing drugs
+// that share targets with Ayurvedic plant compounds.
+
+MATCH (drug:Drug)-[:HAS_MECHANISM]->(m:Mechanism)-[:ACTS_ON]->(t:Target)
+WHERE drug.chembl_id IS NOT NULL
+
+MATCH (t)-[:SAME_AS]->(p:Protein)<-[:TARGETS]-(compound:Compound)
+WHERE compound.source = 'IMPPAT'
+
+MATCH (plant:Plant)-[:PRODUCES]->(compound)
+
+RETURN drug.name AS approved_drug,
+       m.action_type AS mechanism,
+       t.name AS target,
+       p.name AS protein,
+       compound.name AS phytochemical,
+       plant.scientificName AS plant
+LIMIT 20;
+
+// -----------------------------------------------------------------------------
+// 5. Drugs Indicated for Oral Mucositis-Related Conditions
+// -----------------------------------------------------------------------------
+
+MATCH (d:Drug)-[:TREATS_INDICATION]->(i:Indication)
+WHERE d.chembl_id IS NOT NULL
+  AND (toLower(i.name) CONTAINS 'mucositis'
+       OR toLower(i.name) CONTAINS 'stomatitis'
+       OR toLower(i.name) CONTAINS 'oral'
+       OR toLower(i.mesh_heading) CONTAINS 'mouth')
+RETURN d.name AS drug,
+       d.chembl_id AS chembl_id,
+       i.name AS indication,
+       i.mesh_id AS mesh_id
+ORDER BY d.name;
+
+// -----------------------------------------------------------------------------
+// 6. Natural Product Drugs from ChemBL
+// -----------------------------------------------------------------------------
+// Drugs derived from natural sources - potential bridges to Ayurveda
+
+MATCH (d:Drug)
+WHERE d.chembl_id IS NOT NULL
+  AND d.natural_product = true
+RETURN d.name AS drug,
+       d.chembl_id AS chembl_id,
+       d.first_approval AS approved,
+       d.indication_class AS indication
+ORDER BY d.first_approval DESC
+LIMIT 50;
+
+// -----------------------------------------------------------------------------
+// 7. Safety Profile - Drugs with Warnings
+// -----------------------------------------------------------------------------
+
+MATCH (d:Drug)-[:HAS_WARNING]->(w:Warning)
+WHERE d.chembl_id IS NOT NULL
+RETURN d.name AS drug,
+       w.warning_class AS toxicity_type,
+       w.warning_type AS warning_type,
+       substring(w.description, 0, 100) AS description
+ORDER BY w.warning_class, d.name;
+
+// -----------------------------------------------------------------------------
+// 8. Integration Check - ChemBL drugs linked to existing data
+// -----------------------------------------------------------------------------
+
+// Drugs linked to existing Proteins
+MATCH (d:Drug)-[:HAS_MECHANISM]->()-[:ACTS_ON]->(t:Target)-[:SAME_AS]->(p:Protein)
+WHERE d.chembl_id IS NOT NULL
+RETURN 'ChemBL Drugs -> Proteins' AS connection, count(DISTINCT d) AS drugs, count(DISTINCT p) AS proteins;
+
+// Drugs linked to existing Genes
+MATCH (d:Drug)-[:HAS_MECHANISM]->()-[:ACTS_ON]->(t:Target)-[:ENCODED_BY]->(g:Gene)
+WHERE d.chembl_id IS NOT NULL
+RETURN 'ChemBL Drugs -> Genes' AS connection, count(DISTINCT d) AS drugs, count(DISTINCT g) AS genes;
+
+// Indications linked to existing Diseases
+MATCH (i:Indication)-[:SAME_AS]->(dis:Disease)
+RETURN 'Indications -> Diseases' AS connection, count(DISTINCT i) AS indications, count(DISTINCT dis) AS diseases;

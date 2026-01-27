@@ -1,0 +1,47 @@
+// ============================================================================
+// ChemBL Drug Warnings Import
+// ============================================================================
+// Imports drug safety warnings including black box warnings and
+// withdrawal information from ChemBL.
+//
+// Source: data/processed/chembl_drug_warnings.csv
+//
+// Note: Currently contains TEST DATA (9 records). Run full collection
+// before production import.
+//
+// PREREQUISITE: Run 5_chembl_approved_drugs.txt first!
+// ============================================================================
+
+// -----------------------------------------------------------------------------
+// Step 1: Import Drug Warnings
+// -----------------------------------------------------------------------------
+
+LOAD CSV WITH HEADERS FROM 'file:///chembl_drug_warnings.csv' AS row
+
+MATCH (d:Drug {chembl_id: row.chembl_id})
+
+WITH d, row,
+     row.chembl_id + '_' +
+     COALESCE(row.warning_type, 'unknown') + '_' +
+     COALESCE(row.warning_class, 'unknown') AS warning_id
+
+MERGE (w:Warning {id: warning_id})
+SET w.warning_type = row.warning_type,
+    w.warning_class = row.warning_class,
+    w.description = CASE WHEN row.warning_description <> '' THEN row.warning_description ELSE null END,
+    w.warning_text = CASE WHEN row.warning_text <> '' THEN row.warning_text ELSE null END,
+    w.country = CASE WHEN row.warning_country <> '' THEN row.warning_country ELSE null END,
+    w.year = CASE WHEN row.warning_year <> '' THEN toInteger(row.warning_year) ELSE null END,
+    w.source = 'ChemBL'
+
+MERGE (d)-[:HAS_WARNING]->(w);
+
+// -----------------------------------------------------------------------------
+// Step 2: Categorize Warnings by Toxicity Type
+// -----------------------------------------------------------------------------
+
+MATCH (w:Warning)
+WHERE w.warning_class IS NOT NULL AND w.warning_class <> ''
+
+MERGE (tc:ToxicityCategory {name: w.warning_class})
+MERGE (w)-[:CATEGORY]->(tc);

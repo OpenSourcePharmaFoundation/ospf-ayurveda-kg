@@ -1,0 +1,63 @@
+// ============================================================================
+// ChemBL Data Integration - Constraints
+// ============================================================================
+// Run this BEFORE importing ChemBL data to ensure data integrity.
+// These constraints allow ChemBL drugs to coexist with existing DrugBank/TTD drugs.
+//
+// IMPORTANT: Run each statement separately in Neo4j Browser.
+// ============================================================================
+
+// -----------------------------------------------------------------------------
+// 1. Add optional chembl_id index on Drug nodes (not unique - allows nulls)
+// -----------------------------------------------------------------------------
+// We use an index instead of a unique constraint because existing drugs
+// won't have chembl_id values initially.
+
+CREATE INDEX drug_chembl_id_index IF NOT EXISTS
+FOR (d:Drug) ON (d.chembl_id);
+
+// -----------------------------------------------------------------------------
+// 2. Create constraint for ChemBL Target nodes
+// -----------------------------------------------------------------------------
+// ChemBL targets use their own ID system (CHEMBL followed by numbers)
+
+CREATE CONSTRAINT chembl_target_unique IF NOT EXISTS
+FOR (t:Target) REQUIRE t.chembl_id IS UNIQUE;
+
+// -----------------------------------------------------------------------------
+// 3. Create constraint for Mechanism nodes
+// -----------------------------------------------------------------------------
+// Mechanisms describe how drugs work (e.g., "INHIBITOR of enzyme X")
+
+CREATE CONSTRAINT mechanism_unique IF NOT EXISTS
+FOR (m:Mechanism) REQUIRE m.id IS UNIQUE;
+
+// -----------------------------------------------------------------------------
+// 4. Create constraint for Indication nodes
+// -----------------------------------------------------------------------------
+// Indications are diseases/conditions a drug treats (from MeSH/EFO ontologies)
+
+CREATE INDEX indication_mesh_index IF NOT EXISTS
+FOR (i:Indication) ON (i.mesh_id);
+
+CREATE INDEX indication_efo_index IF NOT EXISTS
+FOR (i:Indication) ON (i.efo_id);
+
+// -----------------------------------------------------------------------------
+// 5. Create constraint for Warning nodes
+// -----------------------------------------------------------------------------
+// Safety warnings including black box warnings
+
+CREATE CONSTRAINT warning_unique IF NOT EXISTS
+FOR (w:Warning) REQUIRE w.id IS UNIQUE;
+
+// -----------------------------------------------------------------------------
+// 6. Create index for InChI Key lookups
+// -----------------------------------------------------------------------------
+// InChI Keys enable matching between ChemBL compounds and IMPPAT phytochemicals
+
+CREATE INDEX compound_inchi_key_index IF NOT EXISTS
+FOR (c:Compound) ON (c.inchi_key);
+
+CREATE INDEX drug_inchi_key_index IF NOT EXISTS
+FOR (d:Drug) ON (d.inchi_key);

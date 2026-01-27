@@ -1,0 +1,124 @@
+// ============================================================================
+// ChemBL Drug Mechanisms and Targets Import
+// ============================================================================
+// Imports mechanism of action and target data from ChemBL.
+// Creates relationships showing HOW drugs work and WHAT they target.
+//
+// Sources:
+//   - data/processed/chembl_drug_mechanisms.csv
+//   - data/processed/chembl_drug_targets.csv
+//
+// PREREQUISITE: Run 4_chembl_constraints.txt and 5_chembl_approved_drugs.txt first!
+// ============================================================================
+
+// -----------------------------------------------------------------------------
+// Part A: Import Drug Mechanisms
+// -----------------------------------------------------------------------------
+// Mechanisms describe the action type (INHIBITOR, AGONIST, etc.) and
+// what molecular target the drug acts upon.
+//
+// Note: Currently contains TEST DATA (10 records). Run full collection
+// before production import.
+
+LOAD CSV WITH HEADERS FROM 'file:///chembl_drug_mechanisms.csv' AS row
+
+// Match the drug by ChemBL ID
+MATCH (d:Drug {chembl_id: row.chembl_id})
+
+// Create a unique mechanism node
+// Using combination of drug + target + action as the unique ID
+WITH d, row,
+     row.chembl_id + '_' + COALESCE(row.target_chembl_id, 'unknown') + '_' + COALESCE(row.action_type, 'unknown') AS mech_id
+
+MERGE (m:Mechanism {id: mech_id})
+SET m.action_type = row.action_type,
+    m.mechanism_of_action = row.mechanism_of_action,
+    m.target_chembl_id = row.target_chembl_id,
+    m.target_name = row.target_name,
+    m.target_type = row.target_type,
+    m.binding_site = CASE WHEN row.binding_site <> '' THEN row.binding_site ELSE null END,
+    m.direct_interaction = CASE WHEN row.direct_interaction = 'True' OR row.direct_interaction = '1'
+                                THEN true ELSE false END,
+    m.molecular_mechanism = row.molecular_mechanism,
+    m.disease_efficacy = CASE WHEN row.disease_efficacy = 'True' OR row.disease_efficacy = '1'
+                              THEN true ELSE false END,
+    m.mechanism_comment = CASE WHEN row.mechanism_comment <> '' THEN row.mechanism_comment ELSE null END,
+    m.selectivity_comment = CASE WHEN row.selectivity_comment <> '' THEN row.selectivity_comment ELSE null END,
+    m.source = 'ChemBL'
+
+// Create relationship from Drug to Mechanism
+MERGE (d)-[:HAS_MECHANISM]->(m);
+
+// -----------------------------------------------------------------------------
+// Part B: Link Mechanisms to Target nodes
+// -----------------------------------------------------------------------------
+// Create Target nodes from mechanism data and link them
+
+LOAD CSV WITH HEADERS FROM 'file:///chembl_drug_mechanisms.csv' AS row
+WITH row WHERE row.target_chembl_id IS NOT NULL AND row.target_chembl_id <> ''
+
+// Find or create the Mechanism
+WITH row,
+     row.chembl_id + '_' + row.target_chembl_id + '_' + COALESCE(row.action_type, 'unknown') AS mech_id
+
+MATCH (m:Mechanism {id: mech_id})
+
+// Create or merge the Target
+MERGE (t:Target {chembl_id: row.target_chembl_id})
+SET t.name = row.target_name,
+    t.target_type = row.target_type,
+    t.source = 'ChemBL'
+
+// Create relationship from Mechanism to Target
+MERGE (m)-[:ACTS_ON]->(t);
+
+// -----------------------------------------------------------------------------
+// Part C: Import Detailed Target Information
+// -----------------------------------------------------------------------------
+// Enriches Target nodes with additional data from the targets file
+//
+// Note: Currently contains TEST DATA (43 records). Run full collection
+// before production import.
+
+LOAD CSV WITH HEADERS FROM 'file:///chembl_drug_targets.csv' AS row
+
+MERGE (t:Target {chembl_id: row.target_chembl_id})
+SET t.name = COALESCE(t.name, row.pref_name),
+    t.chembl_name = row.pref_name,
+    t.target_type = row.target_type,
+    t.organism = row.organism,
+    t.tax_id = CASE WHEN row.tax_id <> '' THEN toInteger(row.tax_id) ELSE null END,
+    t.gene_names = CASE WHEN row.gene_names <> '' THEN row.gene_names ELSE null END,
+    t.uniprot_accessions = CASE WHEN row.uniprot_accessions <> '' THEN row.uniprot_accessions ELSE null END,
+    t.target_family = CASE WHEN row.target_family <> '' THEN row.target_family ELSE null END,
+    t.target_class = CASE WHEN row.target_class <> '' THEN row.target_class ELSE null END,
+    t.protein_class = CASE WHEN row.protein_class <> '' THEN row.protein_class ELSE null END,
+    t.source = 'ChemBL';
+
+// -----------------------------------------------------------------------------
+// Part D: Link ChemBL Targets to existing Protein nodes
+// -----------------------------------------------------------------------------
+// Try to match ChemBL targets to existing Protein nodes by UniProt ID
+
+MATCH (t:Target)
+WHERE t.uniprot_accessions IS NOT NULL
+
+MATCH (p:Protein)
+WHERE p.uniprotId IS NOT NULL
+  AND p.uniprotId IN split(t.uniprot_accessions, ', ')
+
+MERGE (t)-[:SAME_AS]->(p);
+
+// -----------------------------------------------------------------------------
+// Part E: Link ChemBL Targets to existing Gene nodes
+// -----------------------------------------------------------------------------
+// Try to match ChemBL targets to existing Gene nodes by gene name
+
+MATCH (t:Target)
+WHERE t.gene_names IS NOT NULL
+
+WITH t, split(t.gene_names, ', ') AS genes
+UNWIND genes AS gene_name
+
+MATCH (g:Gene {name: gene_name})
+MERGE (t)-[:ENCODED_BY]->(g);
