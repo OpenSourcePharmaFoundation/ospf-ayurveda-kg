@@ -1,0 +1,128 @@
+// ============================================================================
+// ChemBL Approved Drugs Import
+// ============================================================================
+// Imports approved drug data from ChemBL, enriching existing Drug nodes
+// where possible and creating new ones for drugs not in DrugBank/TTD.
+//
+// Source: data/processed/chembl_approved_drugs.csv
+// Records: ~3,274 unique approved drugs
+//
+// PREREQUISITE: Run 4_chembl_constraints.txt first!
+// ============================================================================
+
+// -----------------------------------------------------------------------------
+// Step 1: Import ChemBL Approved Drugs
+// -----------------------------------------------------------------------------
+// Strategy:
+// - Use MERGE on chembl_id to avoid duplicates from ChemBL
+// - Store rich molecular data for future analysis
+// - Link to existing drugs by name in a separate step
+
+LOAD CSV WITH HEADERS FROM 'file:///chembl_approved_drugs.csv' AS row
+
+// Create or update Drug node with ChemBL data
+MERGE (d:Drug {chembl_id: row.chembl_id})
+
+// Set basic identification
+SET d.chembl_id = row.chembl_id,
+    d.name = COALESCE(d.name, row.pref_name),  // Keep existing name if present
+    d.chembl_name = row.pref_name,
+    d.synonyms = CASE WHEN row.synonyms IS NOT NULL AND row.synonyms <> ''
+                      THEN split(replace(row.synonyms, '"', ''), '; ')
+                      ELSE d.synonyms END
+
+// Set molecular structure identifiers
+SET d.smiles = CASE WHEN row.smiles <> '' THEN row.smiles ELSE d.smiles END,
+    d.inchi = CASE WHEN row.inchi <> '' THEN row.inchi ELSE d.inchi END,
+    d.inchi_key = CASE WHEN row.inchi_key <> '' THEN row.inchi_key ELSE d.inchi_key END,
+    d.molecular_formula = CASE WHEN row.molecular_formula <> '' THEN row.molecular_formula ELSE d.molecular_formula END
+
+// Set molecular properties (convert to float where appropriate)
+SET d.molecular_weight = CASE WHEN row.molecular_weight <> ''
+                              THEN toFloat(row.molecular_weight)
+                              ELSE d.molecular_weight END,
+    d.alogp = CASE WHEN row.alogp <> '' THEN toFloat(row.alogp) ELSE d.alogp END,
+    d.hba = CASE WHEN row.hba <> '' THEN toInteger(row.hba) ELSE d.hba END,
+    d.hbd = CASE WHEN row.hbd <> '' THEN toInteger(row.hbd) ELSE d.hbd END,
+    d.psa = CASE WHEN row.psa <> '' THEN toFloat(row.psa) ELSE d.psa END,
+    d.rtb = CASE WHEN row.rtb <> '' THEN toInteger(row.rtb) ELSE d.rtb END,
+    d.ro5_violations = CASE WHEN row.ro5_violations <> '' THEN toInteger(row.ro5_violations) ELSE d.ro5_violations END,
+    d.aromatic_rings = CASE WHEN row.aromatic_rings <> '' THEN toInteger(row.aromatic_rings) ELSE d.aromatic_rings END,
+    d.heavy_atoms = CASE WHEN row.heavy_atoms <> '' THEN toInteger(row.heavy_atoms) ELSE d.heavy_atoms END,
+    d.qed_weighted = CASE WHEN row.qed_weighted <> '' THEN toFloat(row.qed_weighted) ELSE d.qed_weighted END
+
+// Set approval and status information
+SET d.first_approval = CASE WHEN row.first_approval <> ''
+                            THEN toInteger(row.first_approval)
+                            ELSE d.first_approval END,
+    d.max_phase = CASE WHEN row.max_phase <> '' THEN toInteger(row.max_phase) ELSE d.max_phase END,
+    d.molecule_type = row.molecule_type,
+    d.natural_product = CASE WHEN row.natural_product = '1' OR row.natural_product = 'True'
+                             THEN true
+                             ELSE false END,
+    d.oral_bioavailability = row.oral_bioavailability,
+    d.withdrawn_flag = CASE WHEN row.withdrawn_flag = '1' OR row.withdrawn_flag = 'True'
+                            THEN true
+                            ELSE false END
+
+// Set classification
+SET d.indication_class = CASE WHEN row.indication_class <> '' AND row.indication_class <> '""'
+                              THEN row.indication_class
+                              ELSE d.indication_class END
+
+// Add source tracking
+SET d.sources = CASE WHEN d.sources IS NULL
+                     THEN ['ChemBL']
+                     ELSE CASE WHEN NOT 'ChemBL' IN d.sources
+                               THEN d.sources + 'ChemBL'
+                               ELSE d.sources END END;
+
+// -----------------------------------------------------------------------------
+// Step 2: Link Drugs to Therapeutic Areas
+// -----------------------------------------------------------------------------
+// therapeutic_areas field contains semicolon-separated disease categories
+
+LOAD CSV WITH HEADERS FROM 'file:///chembl_approved_drugs.csv' AS row
+WITH row WHERE row.therapeutic_areas IS NOT NULL
+           AND row.therapeutic_areas <> ''
+           AND row.therapeutic_areas <> '""'
+
+MATCH (d:Drug {chembl_id: row.chembl_id})
+
+// Split therapeutic areas and create relationships
+WITH d, row, split(replace(replace(row.therapeutic_areas, '"', ''), '; ', ';'), ';') AS areas
+UNWIND areas AS area
+WITH d, trim(area) AS clean_area
+WHERE clean_area <> ''
+
+MERGE (ta:Therapeutic_Area {name: clean_area})
+MERGE (d)-[:INDICATED_FOR]->(ta);
+
+// -----------------------------------------------------------------------------
+// Step 3: Try to link ChemBL drugs to existing DrugBank/TTD drugs by name
+// -----------------------------------------------------------------------------
+// This attempts to enrich existing Drug nodes with ChemBL data
+// by matching on drug name (case-insensitive)
+
+// First, find drugs that might be duplicates (same name, different nodes)
+// This query identifies potential matches for manual review
+
+MATCH (chembl:Drug)
+WHERE chembl.chembl_id IS NOT NULL
+
+MATCH (existing:Drug)
+WHERE existing.chembl_id IS NULL
+  AND (toLower(existing.name) = toLower(chembl.chembl_name)
+       OR toLower(existing.name) IN [x IN chembl.synonyms | toLower(x)])
+
+// Transfer ChemBL properties to existing drug and mark for potential merge
+SET existing.chembl_id_match = chembl.chembl_id,
+    existing.potential_duplicate = true;
+
+// -----------------------------------------------------------------------------
+// Step 4: Create index for fast drug lookups
+// -----------------------------------------------------------------------------
+// Run this after import to speed up queries
+
+// CREATE INDEX drug_name_lower IF NOT EXISTS
+// FOR (d:Drug) ON (toLower(d.name));

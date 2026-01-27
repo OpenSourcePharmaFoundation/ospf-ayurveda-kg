@@ -210,19 +210,28 @@ data/processed/
 - [x] Filter for toxicity (T) and ADME (A) assay types
 - [x] Categorize toxicity types (hERG, cytotoxicity, genotoxicity, hepatotoxicity, neurotoxicity)
 - [x] Test with 10 sample drugs (9 warnings, 1 toxicity assay collected - sparse data)
-- [ ] Run full collection for all approved drugs
+- [x] Run full collection for all approved drugs
 - [x] Save to `data/processed/chembl_drug_warnings.csv`
 - [x] Save to `data/processed/chembl_toxicity.csv`
 
 ### Phase 8: Data Integration
-- [ ] Create mapping table between ChemBL and IMPPAT compound IDs
-- [ ] Identify overlapping compounds between databases
-- [ ] Generate summary statistics of collected data
-- [ ] Validate all CSV files for Neo4j compatibility
+- [o] [IGNORE FOR NOW] Create mapping table between ChemBL and IMPPAT compound IDs
+- [o] Identify overlapping compounds between databases
+- [x] Generate summary statistics of collected data (see `docs/databases/chembl/chembl-data-statistics.md`)
+- [x] Validate all CSV files for Neo4j compatibility (see `docs/databases/chembl/neo4j-csv-validation.md`)
+
+---
+
+
+---
 
 ### Phase 9: Neo4j Import Preparation
-- [ ] Update Cypher scripts to include new ChemBL node types
-- [ ] Define relationships between ChemBL drugs and existing nodes
-- [ ] Test import with subset of data
-- [ ] Document any data quality issues found
+- [x] Update Cypher scripts to include new ChemBL node types
+- [x] Define relationships between ChemBL drugs and existing nodes
+- [x] Troubleshoot Neo4j instance query running
+- [x] Test import with subset of data (run scripts 4-9 in Neo4j)
+- [x] Document any data quality issues found <- fixed them
+- [x] Import all data
+
+- [ ] Script runner
 

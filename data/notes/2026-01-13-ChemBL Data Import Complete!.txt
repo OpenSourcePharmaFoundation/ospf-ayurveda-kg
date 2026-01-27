@@ -1,0 +1,70 @@
+  ✅ ChemBL Data Import Complete!
+
+  ★ Insight ─────────────────────────────────────
+  Knowledge Graph Integration Pattern:
+  1. MERGE over CREATE: Using MERGE allows idempotent imports - safe to re-run without duplicates
+  2. Multi-ontology IDs: Indications use both MeSH and EFO IDs, enabling cross-database linking
+  3. InChI Keys: These structural identifiers will enable matching ChemBL drugs with IMPPAT phytochemicals for drug repurposing analysis
+  ─────────────────────────────────────────────────
+
+  Import Summary
+  ┌──────────────────┬───────┐
+  │    Node Type     │ Count │
+  ├──────────────────┼───────┤
+  │ Drug             │ 3,274 │
+  ├──────────────────┼───────┤
+  │ Therapeutic_Area │ 1,928 │
+  ├──────────────────┼───────┤
+  │ Indication       │ 62    │
+  ├──────────────────┼───────┤
+  │ Target           │ 49    │
+  ├──────────────────┼───────┤
+  │ Mechanism        │ 10    │
+  ├──────────────────┼───────┤
+  │ Warning          │ 9     │
+  ├──────────────────┼───────┤
+  │ ToxicityCategory │ 5     │
+  └──────────────────┴───────┘
+
+  Relationship Summary
+  ┌───────────────────────────────────────┬────────┐
+  │             Relationship              │ Count  │
+  ├───────────────────────────────────────┼────────┤
+  │ INDICATED_FOR (Drug→Therapeutic_Area) │ 29,119 │
+  ├───────────────────────────────────────┼────────┤
+  │ TREATS_INDICATION (Drug→Indication)   │ 79     │
+  ├───────────────────────────────────────┼────────┤
+  │ HAS_MECHANISM (Drug→Mechanism)        │ 10     │
+  ├───────────────────────────────────────┼────────┤
+  │ HAS_WARNING (Drug→Warning)            │ 9      │
+  └───────────────────────────────────────┴────────┘
+  Key Findings for Your Project
+
+  - 1,744 natural product drugs (53% of dataset) - excellent for Ayurveda-Western medicine bridging
+  - 13 oral/mucositis-related therapeutic areas including drugs like:
+    - Acetaminophen, Acetylcysteine (both linked to Mucositis)
+    - Amlexanox (Stomatitis)
+    - Bupivacaine (Mucositis)
+
+  Note on Test Data
+
+  The mechanisms, targets, indications, and warnings files contain test data (10-79 records). To get the full dataset, run the ChemBL scraper with full collection:
+
+  python src/scrapers/chembl/chembl_scraper.py --approved-drugs-only  # For full mechanisms/targets
+
+  Your Neo4j database at bolt://localhost:7687 is now ready for queries!
+
+
+Mark Jobes
+Andrew Watson
+Gavin
+Sheena
+Henry Rodriguez
+Tanya
+
+Mike Meaken
+Lola
+
+
+Kareem - maybe meet him on the way to Laura's
+Fred - maybe meet him on the way to Laura's
