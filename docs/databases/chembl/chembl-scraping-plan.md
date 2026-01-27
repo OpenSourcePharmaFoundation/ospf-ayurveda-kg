@@ -228,9 +228,10 @@ data/processed/
 ### Phase 9: Neo4j Import Preparation
 - [x] Update Cypher scripts to include new ChemBL node types
 - [x] Define relationships between ChemBL drugs and existing nodes
-- [ ] Troubleshoot Neo4j instance query running
-- [ ] Test import with subset of data (run scripts 4-9 in Neo4j)
-- [ ] Document any data quality issues found
+- [x] Troubleshoot Neo4j instance query running
+- [x] Test import with subset of data (run scripts 4-9 in Neo4j)
+- [x] Document any data quality issues found <- fixed them
+- [x] Import all data
 
 - [ ] Script runner
 

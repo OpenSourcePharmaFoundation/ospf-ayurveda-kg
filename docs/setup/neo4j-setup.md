@@ -1,149 +1,271 @@
 # Neo4j Setup Guide for OSPF Ayurveda Knowledge Graph
 
-This guide walks through setting up Neo4j Desktop for the Ayurveda Knowledge Graph project.
+This guide walks through setting up a Neo4j database instance for the ChemBL drug data integration.
 
-## Step 1: Download Neo4j Desktop
+## Prerequisites
 
-1. Go to: https://neo4j.com/download/
-2. Click **"Download Neo4j Desktop"**
-3. Fill in the form (or skip with a throwaway email)
-4. Download the `.dmg` file for macOS
-5. **Save the activation key** shown on the download page (you'll need it!)
+- **Neo4j Desktop 2.1.0** - Already installed and running
+- **Neo4j Database Version**: 5.x (this guide tested with 5.26.0 - latest in 5.x series)
+- ChemBL data files in `data/processed/` directory
 
-## Step 2: Install Neo4j Desktop
+> **Note on Neo4j Version**: Neo4j Desktop 2.1.0 supports Neo4j 5.x databases. Version 5.1.0 was an early 5.x release; the current stable is 5.26.0. All Cypher scripts are compatible with any 5.x version.
+
+---
+
+## Quick Start (Automated)
+
+For experienced users, run these commands from the project root:
 
 ```bash
-# Open the downloaded DMG
-open ~/Downloads/neo4j-desktop-*.dmg
+# 1. Run the setup script to prepare files for import
+./scripts/setup/neo4j-prepare-import.sh
 
-# Drag Neo4j Desktop to Applications
-# Then open it from Applications
+# 2. Follow the Neo4j Desktop steps in Section 2 below
+
+# 3. After starting Neo4j, run the master import script in Neo4j Browser
+# (Copy contents of scripts/cypher_scripts/0_master_import.cypher)
 ```
 
-When first launched:
-1. Enter the **activation key** from the download page
-2. Accept the license agreement
-3. Wait for initial setup to complete
+---
 
-## Step 3: Create a New Project and Database
+## 1. Create New Database in Neo4j Desktop
 
-1. Click **"New"** → **"Create project"**
+### Step 1.1: Open Neo4j Desktop
+
+Launch Neo4j Desktop from your Applications folder.
+
+### Step 1.2: Create a New Project (Optional)
+
+1. Click **"New"** → **"Create project"** in the left sidebar
 2. Name it: `OSPF Ayurveda KG`
-3. Click **"Add"** → **"Local DBMS"**
-4. Configure:
-   - Name: `AyurvedaKG`
-   - Password: Choose a password (remember it!)
-   - Version: Latest (5.x recommended)
-5. Click **"Create"**
+3. Click anywhere outside the name field to save
 
-## Step 4: Install APOC Plugin
+### Step 1.3: Create a New DBMS
 
-APOC (Awesome Procedures on Cypher) is required for JSON imports.
+1. Inside your project, click **"Add"** → **"Local DBMS"**
+2. Configure the DBMS:
+   - **Name**: `ospf-ayurveda-kg`
+   - **Password**: `neo4jneo4j`
+   - **Version**: Select **5.26.0** (or latest 5.x available)
+3. Click **"Create"**
 
-1. Click on your new database (`AyurvedaKG`)
-2. Click the **"Plugins"** tab on the right
-3. Find **"APOC"** and click **"Install"**
-4. Wait for installation to complete
+> **Important**: The password `neo4jneo4j` matches the credentials stored in `docs/neo4j-access.md`. You can use a different password, but update that file accordingly.
 
-## Step 5: Configure APOC for File Imports
+### Step 1.4: Install APOC Plugin
 
-1. Click the **three dots (...)** next to your database
+APOC (Awesome Procedures on Cypher) is required for advanced import operations.
+
+1. Click on your new DBMS (`ospf-ayurveda-kg`)
+2. Click the **"Plugins"** tab on the right panel
+3. Find **"APOC"** in the list
+4. Click **"Install"**
+5. Wait for installation to complete
+
+### Step 1.5: Configure APOC [DONE]
+
+1. Click **"..."** (three dots) next to your DBMS
 2. Select **"Open folder"** → **"Configuration"**
-3. This opens the database configuration folder in Finder
-4. Copy the `apoc.conf` file from this project:
+3. In the Finder window that opens, look for or create `apoc.conf`
+4. Add this content to `apoc.conf`:
 
-```bash
-# Find your Neo4j config folder (shown when you clicked "Open folder")
-# It will be something like:
-# ~/Library/Application Support/Neo4j Desktop/Application/relate-data/dbmss/dbms-XXXXX/conf/
-
-# Copy the apoc.conf file
-cp /Users/andrew.faulkner/projects/ospf/ospf-ayurveda-kg/scripts/cypher_scripts/apoc.conf \
-   "PASTE_YOUR_NEO4J_CONF_PATH_HERE/"
+```properties
+# APOC Configuration for OSPF Ayurveda KG
+apoc.import.file.enabled=true
+apoc.import.file.use_neo4j_config=true
+apoc.export.file.enabled=true
 ```
 
-## Step 6: Copy CSV Files to Import Folder
+> **Alternatively**, copy the pre-configured file:
+> ```bash
+> cp scripts/cypher_scripts/apoc.conf /path/to/neo4j-config-folder/
+> ```
 
-1. Click the **three dots (...)** next to your database
+---
+
+## 2. Credentials Storage
+
+Credentials are stored in `docs/neo4j-access.md`:
+
+```
+username: neo4j
+password: neo4jneo4j
+```
+
+These credentials are used for:
+- Neo4j Browser login
+- Any programmatic access (Python scripts, etc.)
+
+---
+
+## 3. Prepare Data Files for Import
+
+[**CONTINUE FROM THIS POINT**]
+
+Neo4j can only import CSV files from its designated `import` folder.
+
+### Step 3.1: Locate the Import Directory
+
+1. In Neo4j Desktop, click **"..."** next to your DBMS
 2. Select **"Open folder"** → **"Import"**
-3. Copy all CSV files to this folder:
+3. Note this path (typically: `~/.neo4jDesktop/relate-data/dbmss/dbms-XXXXX/import/`)
+
+### Step 3.2: Copy ChemBL CSV Files
+
+Run the preparation script from the project root:
 
 ```bash
-# For test import (100 drugs):
-cp /Users/andrew.faulkner/projects/ospf/ospf-ayurveda-kg/data/test_import/*.csv \
-   "PASTE_YOUR_NEO4J_IMPORT_PATH_HERE/"
-
-# OR for full import (3,274 drugs):
-cp /Users/andrew.faulkner/projects/ospf/ospf-ayurveda-kg/data/processed/*.csv \
-   "PASTE_YOUR_NEO4J_IMPORT_PATH_HERE/"
+./scripts/setup/neo4j-prepare-import.sh
 ```
 
-## Step 7: Start the Database
+Or manually copy files:
 
-1. Click **"Start"** on your database
-2. Wait for it to show "Running" (green indicator)
+```bash
+# Get the import directory path from Neo4j Desktop, then:
+NEO4J_IMPORT="/path/to/neo4j/import"
+
+# Copy all ChemBL data files (excluding samples)
+cp data/processed/chembl_approved_drugs.csv "$NEO4J_IMPORT/"
+cp data/processed/chembl_drug_mechanisms.csv "$NEO4J_IMPORT/"
+cp data/processed/chembl_drug_targets.csv "$NEO4J_IMPORT/"
+cp data/processed/chembl_drug_indications.csv "$NEO4J_IMPORT/"
+cp data/processed/chembl_drug_warnings.csv "$NEO4J_IMPORT/"
+cp data/processed/chembl_bioactivities.csv "$NEO4J_IMPORT/"
+cp data/processed/chembl_natural_products.csv "$NEO4J_IMPORT/"
+cp data/processed/chembl_drug_metabolism.csv "$NEO4J_IMPORT/"
+cp data/processed/chembl_toxicity.csv "$NEO4J_IMPORT/"
+```
+
+---
+
+## 4. Start the Database
+
+1. In Neo4j Desktop, click the **"Start"** button on your DBMS
+2. Wait for the status to show **"Active"** (green indicator)
 3. Click **"Open"** to launch Neo4j Browser
 
-## Step 8: Run Import Scripts
+### Login Credentials
 
-In Neo4j Browser, run the Cypher scripts in order:
+- **Username**: `neo4j`
+- **Password**: `neo4jneo4j`
 
-### 8.1 Create Constraints (run once)
-Copy contents of `scripts/cypher_scripts/4_chembl_constraints.txt`
+---
 
-### 8.2 Import Approved Drugs
-Copy contents of `scripts/cypher_scripts/5_chembl_approved_drugs.txt`
+## 5. Import ChemBL Data
 
-### 8.3 Import Mechanisms and Targets
-Copy contents of `scripts/cypher_scripts/6_chembl_mechanisms_targets.txt`
+The Cypher import scripts must be run **in order**. Each script builds on the previous one.
 
-### 8.4 Import Indications
-Copy contents of `scripts/cypher_scripts/7_chembl_indications.txt`
+### Import Execution Order
 
-### 8.5 Import Warnings
-Copy contents of `scripts/cypher_scripts/8_chembl_warnings.txt`
+| Script | Purpose | Estimated Time |
+|--------|---------|----------------|
+| `4_chembl_constraints.txt` | Create indexes and constraints | < 1 second |
+| `5_chembl_approved_drugs.txt` | Import ~4,376 approved drugs | 30-60 seconds |
+| `6_chembl_mechanisms_targets.txt` | Import mechanisms and targets | 10-20 seconds |
+| `7_chembl_indications.txt` | Import drug indications | 10-20 seconds |
+| `8_chembl_warnings.txt` | Import safety warnings | 5-10 seconds |
 
-### 8.6 Validate Import
-Copy contents of `scripts/cypher_scripts/9_chembl_test_import.txt`
+### Step 5.1: Run Each Script
 
-## Step 9: Verify Installation
+1. Open Neo4j Browser (click "Open" in Neo4j Desktop)
+2. For each script in `scripts/cypher_scripts/`:
+   - Open the `.txt` file
+   - Copy the entire contents
+   - Paste into Neo4j Browser's query editor
+   - Click the **Play** button (▶) to execute
 
-Run this query to verify data was imported:
+> **Warning**: Each step in a script must be run separately. The scripts contain comments separating logical steps. Run one `LOAD CSV` block at a time.
+
+### Step 5.2: Verify Import
+
+After running all import scripts, execute the validation queries in `9_chembl_test_import.txt`:
 
 ```cypher
-MATCH (d:Drug) WHERE d.chembl_id IS NOT NULL
-RETURN count(d) AS chembl_drugs;
+// Count all ChemBL drugs
+MATCH (d:Drug)
+WHERE d.chembl_id IS NOT NULL
+RETURN 'ChemBL Drugs' AS type, count(d) AS count;
 ```
 
-Expected result:
-- Test import: 100 drugs
-- Full import: ~3,274 drugs
+Expected results (with current test data):
+```
+┌─────────────────┬───────┐
+│ type            │ count │
+├─────────────────┼───────┤
+│ "ChemBL Drugs"  │ 4376  │
+└─────────────────┴───────┘
+```
 
-## Troubleshooting
+---
 
-### "File not found" errors
-- Ensure CSV files are in the `import` folder
-- Check file permissions: `chmod 644 *.csv`
-- Verify APOC is installed and database was restarted after installing
+## 6. Directory Structure After Setup
 
-### "apoc.load.json" not found
-- APOC plugin not installed or enabled
-- Copy `apoc.conf` to the `conf` folder
-- Restart the database
+```
+scripts/
+├── setup/
+│   └── neo4j-prepare-import.sh    # Helper script for file copying
+├── cypher_scripts/
+│   ├── apoc.conf                  # APOC configuration
+│   ├── 4_chembl_constraints.txt   # Index/constraint creation
+│   ├── 5_chembl_approved_drugs.txt
+│   ├── 6_chembl_mechanisms_targets.txt
+│   ├── 7_chembl_indications.txt
+│   ├── 8_chembl_warnings.txt
+│   └── 9_chembl_test_import.txt   # Validation queries
+└── ...
 
-### Slow imports
-- For large files, increase memory:
-  1. Stop database
-  2. Click **...** → **Settings**
-  3. Increase `dbms.memory.heap.max_size` to `2G` or more
-  4. Restart database
+docs/
+├── neo4j-access.md                # Stored credentials
+└── setup/
+    └── neo4j-setup.md             # This document
+```
+
+---
+
+## 7. Troubleshooting
+
+### "File not found" errors during LOAD CSV
+
+- Ensure files are in the Neo4j import directory
+- Verify file names match exactly (case-sensitive)
+- Check that `apoc.import.file.enabled=true` is set
+
+### "Constraint already exists" errors
+
+- This is normal if re-running constraint scripts
+- The `IF NOT EXISTS` clause handles this gracefully
+
+### Slow import performance
+
+- For large datasets, consider increasing Neo4j heap memory:
+  1. Click "..." → "Settings"
+  2. Adjust `server.memory.heap.initial_size` and `server.memory.heap.max_size`
+
+### Cannot connect to database
+
+- Verify the database is running (green "Active" status)
+- Check that port 7687 (Bolt) is not blocked
+- Try restarting the DBMS
+
+---
+
+## 8. Next Steps
+
+After successful import:
+
+1. **Explore the data** using queries in `9_chembl_test_import.txt`
+2. **Run analysis queries** from `analysis_queries.txt` (if exists)
+3. **Integrate with other data sources** (DisGeNET, IMPPAT, etc.)
+
+---
 
 ## Quick Reference
 
-| Action | Location |
-|--------|----------|
-| Open Neo4j Browser | Click "Open" on running database |
-| Find import folder | **...** → Open folder → Import |
-| Find config folder | **...** → Open folder → Configuration |
-| View logs | **...** → Open folder → Logs |
-| Change settings | **...** → Settings |
+| Item | Value |
+|------|-------|
+| Neo4j Desktop Version | 2.1.0 |
+| Neo4j Database Version | 5.26.0 (or latest 5.x) |
+| Username | `neo4j` |
+| Password | `neo4jneo4j` |
+| Bolt Port | 7687 |
+| HTTP Port | 7474 |
+| Default Database | `neo4j` |
