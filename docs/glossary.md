@@ -5,3 +5,13 @@ MeSH: Medical Subject Heading
 EFO: Experimental Factor Ontology. Bioinformatics resource used for systematically describing experimental variables in biological databases.
 
 Ontology: A structured vocabulary - generally for specific technical purposes
+
+Physicochemical properties: chemical properties of the molecule e.g. PH, bond properties, PKA
+
+Molecular weight:
+
+PSA:
+
+logP:
+
+HBD/HBA:
