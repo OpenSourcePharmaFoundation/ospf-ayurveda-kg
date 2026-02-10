@@ -4,7 +4,7 @@ import requests
 import pandas as pd
 from imppat_processing import ayur_form_to_IMPPAT_url_chem
 import csv
-import glob 
+import glob
 import os
 
 ## Note: Ensure the pubchem_target_interactions folder created by this script has all 910 compound files. If internet connection is spotty, some downloads may fail, leading to incomplete information in the database. The only way to rectify this is to rerun the algorithm. This script usually takes 30-40 minutes to run.
@@ -13,10 +13,10 @@ import os
 def phytochem_to_IMPPAT_id_PubChem_id_url(url_list_imppat, csv_path):
     phytochem_dict={}
     for url in url_list_imppat:
-        r = requests.get(url) 
-        
+        r = requests.get(url)
+
         # parsing html
-        soup = beaut(r.content, 'html.parser') 
+        soup = beaut(r.content, 'html.parser')
         table_phytochem = soup.find('table',id='table_id')
         for j in table_phytochem.find_all('tr')[1:]:
             row_data = j.find_all('td')
@@ -24,9 +24,9 @@ def phytochem_to_IMPPAT_id_PubChem_id_url(url_list_imppat, csv_path):
             if row[3] not in phytochem_dict.keys():
                 imppatid = row[2]
                 name = row[3]
-                
+
                 url_phytochem = 'https://cb.imsc.res.in/imppat/phytochemical-detailedpage/' + imppatid
-                p = requests.get(url_phytochem) 
+                p = requests.get(url_phytochem)
 
                 # parsing html
                 soup2 = beaut(p.content, 'html.parser')
@@ -37,17 +37,17 @@ def phytochem_to_IMPPAT_id_PubChem_id_url(url_list_imppat, csv_path):
                 url_split = url.split('/')
                 pubchemid = url_split[-1]
                 phytochem_dict[name]=[name, imppatid, url, pubchemid]
-    
+
     file = open(csv_path, 'w+', newline ='')
-    with file:  
+    with file:
         fieldnames = ['Name','IMPPAT ID', 'PubChem URL', 'PubChem ID']
         writer = csv.writer(file)
-        writer.writerow(fieldnames)  
+        writer.writerow(fieldnames)
         for key, value in phytochem_dict.items():
             writer.writerow(value)
     return
 
-# download chemical-target interaction csv's based on pubchem compound urls 
+# download chemical-target interaction csv's based on pubchem compound urls
 def chem_target_csv_from_url(urls_path, output_dir):
     file_df = pd.read_csv(urls_path, index_col=False)
     for index, row in file_df.iterrows():
@@ -57,7 +57,7 @@ def chem_target_csv_from_url(urls_path, output_dir):
         attempts=0
         while attempts<4:
             try:
-                df = pd.read_csv(scraping_url, delimiter=',', quotechar='"')   
+                df = pd.read_csv(scraping_url, delimiter=',', quotechar='"')
                 df.to_csv(output_dir+"/"+id+'_target_interactions.csv')
                 break
             except:
@@ -67,12 +67,12 @@ def chem_target_csv_from_url(urls_path, output_dir):
 # create neo4j ready csv based on downloaded chemical-target interaction csv's from pubchem
 def pubchem_target_csv_compilation(csv_folder_path, output_path):
     dictionary_list=[]
-    files = glob.glob(csv_folder_path + "/*.csv") 
+    files = glob.glob(csv_folder_path + "/*.csv")
     for j in range(0, len(files)):
-        
+
         filename = files[j]
 
-        df = pd.read_csv(filename) 
+        df = pd.read_csv(filename)
         if df.empty:
             continue
         for index, row in df.iterrows():
@@ -90,7 +90,7 @@ def pubchem_target_csv_compilation(csv_folder_path, output_path):
             'evidences' : row['evids'],
             'evidence_urls' : row['evurls']}
             dictionary_list.append(new_row)
-    neo4j_df = pd.DataFrame.from_dict(dictionary_list)                
+    neo4j_df = pd.DataFrame.from_dict(dictionary_list)
     neo4j_df.to_csv(output_path)
 
 ## scraping phytochemical IMPPAT ID, PubChem ID and PubChem url data
@@ -104,5 +104,5 @@ if not os.path.exists(interim_files_dir):
 chem_target_csv_from_url('data/processed/phytochem_imppatid_pubchem_id_url.csv', interim_files_dir)
 
 ## compiling neo4j input file from chemical-target csv's downloaded above
-pubchem_target_csv_compilation('data/interim/pubchem_target_interactions', 'data/processed/pubchem_phytochem_target_interactions.csv')
+pubchem_target_csv_compilation('data/interim/pubchem_target_interactions', 'data/processed/pubchem-target-interactions/pubchem_phytochem_target_interactions.csv')
 '''
