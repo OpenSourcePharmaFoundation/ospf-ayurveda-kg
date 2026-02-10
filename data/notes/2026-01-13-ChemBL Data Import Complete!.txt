@@ -53,18 +53,3 @@
   python src/scrapers/chembl/chembl_scraper.py --approved-drugs-only  # For full mechanisms/targets
 
   Your Neo4j database at bolt://localhost:7687 is now ready for queries!
-
-
-Mark Jobes
-Andrew Watson
-Gavin
-Sheena
-Henry Rodriguez
-Tanya
-
-Mike Meaken
-Lola
-
-
-Kareem - maybe meet him on the way to Laura's
-Fred - maybe meet him on the way to Laura's

@@ -1,2 +1,0 @@
-,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,1322445,442674,Therapeutic Target Database (TTD),CID 442674,D0J5OV,Chebulagic acid,https://idrblab.net/ttd/data/drug/details/D0J5OV,T00140,Arachidonate 5-lipoxygenase (5-LOX),https://idrblab.net/ttd/data/target/details/T00140,P09917,Polyunsaturated fatty acid 5-lipoxygenase,240,ALOX5,9606,Homo sapiens (human),Inhibitor,,,,,,,
