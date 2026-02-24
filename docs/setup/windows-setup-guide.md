@@ -1,6 +1,8 @@
 # Windows Setup Guide for OSPF Ayurveda Knowledge Graph
 
-This comprehensive guide walks you through setting up a complete development environment on Windows for the OSPF Ayurveda Knowledge Graph project. By the end, you'll have WSL2, Python, Git, Neo4j, and Claude Code all working together.
+This comprehensive guide walks you through setting up a complete development environment on **Windows 10 or Windows 11** for the OSPF Ayurveda Knowledge Graph project. By the end, you'll have WSL2, Python, Git, Neo4j, and Claude Code all working together.
+
+> **Note**: This guide covers both Windows 10 and Windows 11. Where steps differ, we'll note the differences clearly.
 
 **Estimated Total Time**: 1-2 hours (depending on download speeds)
 
@@ -28,9 +30,11 @@ This comprehensive guide walks you through setting up a complete development env
 
 WSL2 allows you to run a full Linux environment directly on Windows. This gives you access to bash, Linux tools, and a development environment that matches most servers and CI/CD systems.
 
+> **Windows 11 Users**: Great news! WSL2 is more deeply integrated into Windows 11, and the installation process is even smoother. Windows Terminal also comes pre-installed.
+
 ### Prerequisites
 
-- **Windows 10** version is v2004 or higher (Build 19041+), or **Windows 11**
+- **Windows 11** (any version), or **Windows 10** version 2004 or higher (Build 19041+)
 - Administrator access to your computer
 - At least 10GB of free disk space
 
@@ -38,9 +42,13 @@ WSL2 allows you to run a full Linux environment directly on Windows. This gives 
 
 1. Press `Win + R` to open the Run dialog
 2. Type `winver` and press Enter
-3. Verify your version is at least **v2004** (Build 19041) or you're on Windows 11
+3. Check your version:
+   - **Windows 11**: Any version works ✓
+   - **Windows 10**: Must be version **2004** (Build 19041) or higher
 
-> **Note**: If your Windows version is older, you'll need to update Windows first via Settings → Update & Security → Windows Update.
+> **Note**: If you're on an older Windows 10 version, update via:
+> - **Windows 11**: Settings → Windows Update
+> - **Windows 10**: Settings → Update & Security → Windows Update
 
 ### Step 1.2: Enable WSL2 Features (Recommended Method)
 
@@ -142,6 +150,9 @@ Windows Terminal is a modern terminal app that makes working with WSL2 much nice
 
 #### Installing Windows Terminal
 
+**Windows 11**: Windows Terminal is already installed! Skip to "Opening WSL2 in Windows Terminal" below.
+
+**Windows 10**: Install from the Microsoft Store:
 1. Open the **Microsoft Store** (search for it in Start menu)
 2. Search for **Windows Terminal**
 3. Click **Get** or **Install**
@@ -782,10 +793,12 @@ How do I run the ChemBL scraper?
 
 ### WSL2 Issues
 
-#### "WSL 2 requires an update to its kernel component"
+#### "WSL 2 requires an update to its kernel component" (Windows 10 only)
 
-Download and install the update from:
+This error typically occurs on Windows 10. Download and install the update from:
 https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+
+> **Note**: Windows 11 users shouldn't see this error as the kernel is bundled with the OS.
 
 #### WSL2 is slow or unresponsive
 
