@@ -18,6 +18,15 @@ This comprehensive guide walks you through setting up a complete development env
 
 > **Universal Tip**: Throughout this guide, when we say "search for X", the most reliable method on **both** Windows versions is to press the **Windows key** on your keyboard and start typing. This works identically on Windows 10 and 11.
 
+### Keyboard Shortcut Notation
+
+Throughout this guide, keyboard shortcuts are written like `Ctrl+K` or `Win+R`. This means:
+- **Press and hold** the first key(s)
+- **Then press** the final key
+- **Release all keys**
+
+For example, `Ctrl+Shift+2` means: hold **Ctrl** and **Shift**, then press **2**, then release all.
+
 ---
 
 ## Table of Contents
@@ -52,7 +61,7 @@ WSL2 allows you to run a full Linux environment directly on Windows. This gives 
 
 ### Step 1.1: Check Your Windows Version
 
-1. Press `Win + R` to open the Run dialog
+1. Press `Win+R` to open the Run dialog
 2. Type `winver` and press Enter
 3. Check your version:
    - **Windows 11**: Any version works ✓
@@ -75,7 +84,7 @@ Microsoft has simplified WSL2 installation. Open **PowerShell as Administrator**
 5. Click **Yes** if prompted by User Account Control
 
 **Option B (Keyboard shortcut):**
-1. Press `Win + X` to open the Power User menu
+1. Press `Win+X` to open the Power User menu
 2. Select **Windows Terminal (Admin)** or **Windows PowerShell (Admin)**
 3. Click **Yes** if prompted
 
@@ -187,11 +196,11 @@ Windows Terminal is a modern terminal app that makes working with WSL2 much nice
 2. Click the **dropdown arrow** (▼) next to the new tab button (+) at the top
 3. Select **Ubuntu** (or your Linux distribution)
 
-**Keyboard shortcut**: Once Windows Terminal is open, press `Ctrl + Shift + 2` to open Ubuntu directly in a new tab.
+**Keyboard shortcut**: Once Windows Terminal is open, press `Ctrl+Shift+2` to open Ubuntu directly in a new tab.
 
 #### Setting Ubuntu as Default (Optional)
 
-1. In Windows Terminal, press `Ctrl + ,` to open Settings
+1. In Windows Terminal, press `Ctrl+,` (Ctrl and comma) to open Settings
 2. In the left sidebar, click **Startup**
 3. Under "Default profile", select **Ubuntu**
 4. Click **Save**
@@ -648,13 +657,13 @@ You need to copy CSV files from the project to Neo4j's import folder.
 #### Option A: Using Windows File Explorer
 
 1. Open File Explorer:
-   - Press `Win + E`, or
+   - Press `Win+E`, or
    - Click the **folder icon** on your taskbar
 2. In the address bar at the top, type: `\\wsl$\Ubuntu\home\yourusername\projects\ospf-ayurveda-kg\data\processed` and press Enter
    - Replace `yourusername` with your actual Linux username
-3. Select all `.csv` files (`Ctrl + A` to select all)
-4. Copy them (`Ctrl + C`)
-5. Navigate to the Neo4j import folder (from Step 9.1) and paste (`Ctrl + V`)
+3. Select all `.csv` files (`Ctrl+A` to select all)
+4. Copy them (`Ctrl+C`)
+5. Navigate to the Neo4j import folder (from Step 9.1) and paste (`Ctrl+V`)
 
 > **Windows 11 Note**: If you right-click and don't see Copy/Paste, click **"Show more options"** to see the full context menu, or just use the keyboard shortcuts above.
 
@@ -815,7 +824,7 @@ How do I run the ChemBL scraper?
 | `claude "your question"` | Ask a single question |
 | `/help` | Show available commands |
 | `/clear` | Clear conversation history |
-| `Ctrl + C` | Exit Claude Code |
+| `Ctrl+C` | Exit Claude Code |
 
 ---
 
