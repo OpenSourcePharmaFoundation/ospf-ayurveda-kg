@@ -28,7 +28,7 @@ Updated tasks - 2026-02-02
     [ ] Identify the important data files and what they are
     [ ] Commands and subagents?
     [ ] Update Claude initialization file
-[ ] Clean up garbage files
+[ ] 1/2 Clean up garbage files
     [ ] ...so Claude isn't grabbing crap and generating spurious results
 
 
@@ -62,12 +62,12 @@ NEW DIRECTION - 2026-01-26
 [ ] Brodie: feature branch with a demo of a classic machine learning analysis (like K-nearest neighbours or SVM)
 [ ] Investigate validity of the "politely asked Claude to solve the problem" experiment
 
-
 -----------------------------------------
 -----------------------------------------
 -----------------------------------------
 [ ] Get Claude to regenerate the structure, taking into account the new home of reusable script files, in the src directory
 [ ] Create a CLI tool that lets you run scripts from the top level of the repository
+
 
 -----------------------------------------
 -----------------------------------------
