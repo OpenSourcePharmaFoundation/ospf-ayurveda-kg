@@ -6,6 +6,18 @@ This comprehensive guide walks you through setting up a complete development env
 
 **Estimated Total Time**: 1-2 hours (depending on download speeds)
 
+### Quick UI Reference: Windows 10 vs Windows 11
+
+| Action | Windows 10 | Windows 11 |
+|--------|-----------|------------|
+| **Search for apps** | Click Start (bottom-left corner) and type | Press **Windows key** and type (or click the magnifying glass icon) |
+| **Start button location** | Bottom-left corner of taskbar | Center of taskbar (by default) |
+| **Right-click context menu** | Full menu appears immediately | Simplified menu—click **"Show more options"** for full menu |
+| **Windows Terminal** | Must install from Microsoft Store | Pre-installed |
+| **Settings → Updates** | Settings → Update & Security → Windows Update | Settings → Windows Update |
+
+> **Universal Tip**: Throughout this guide, when we say "search for X", the most reliable method on **both** Windows versions is to press the **Windows key** on your keyboard and start typing. This works identically on Windows 10 and 11.
+
 ---
 
 ## Table of Contents
@@ -54,11 +66,18 @@ WSL2 allows you to run a full Linux environment directly on Windows. This gives 
 
 Microsoft has simplified WSL2 installation. Open **PowerShell as Administrator**:
 
-1. Click the Start menu
+**Option A (Works on both Windows 10 and 11):**
+1. Press the **Windows key** on your keyboard
 2. Type `PowerShell`
-3. Right-click on **Windows PowerShell**
-4. Select **Run as administrator**
+3. Look for **Windows PowerShell** in the results
+4. Right-click on it and select **Run as administrator**
+   - **Windows 11**: You may need to click **"Show more options"** first to see "Run as administrator"
 5. Click **Yes** if prompted by User Account Control
+
+**Option B (Keyboard shortcut):**
+1. Press `Win + X` to open the Power User menu
+2. Select **Windows Terminal (Admin)** or **Windows PowerShell (Admin)**
+3. Click **Yes** if prompted
 
 In the PowerShell window, run:
 
@@ -81,7 +100,9 @@ After the installation completes, you **must restart** your computer:
 Restart-Computer
 ```
 
-Or simply restart via the Start menu.
+Or restart manually:
+- **Windows 11**: Click the **Start button** (Windows icon, centered on taskbar) → Click the **Power icon** (bottom-right of Start panel) → **Restart**
+- **Windows 10**: Click the **Start button** (Windows icon, bottom-left) → Click the **Power icon** → **Restart**
 
 ### Step 1.4: Complete Ubuntu Setup
 
@@ -153,18 +174,20 @@ Windows Terminal is a modern terminal app that makes working with WSL2 much nice
 **Windows 11**: Windows Terminal is already installed! Skip to "Opening WSL2 in Windows Terminal" below.
 
 **Windows 10**: Install from the Microsoft Store:
-1. Open the **Microsoft Store** (search for it in Start menu)
-2. Search for **Windows Terminal**
+1. Press the **Windows key** and type `Microsoft Store`, then press Enter
+2. In the Store, click the **Search** box and type `Windows Terminal`
 3. Click **Get** or **Install**
-4. Once installed, you can pin it to your taskbar
+4. Once installed, you can pin it to your taskbar (right-click the app → **Pin to taskbar**)
 
 #### Opening WSL2 in Windows Terminal
 
-1. Open **Windows Terminal**
-2. Click the **dropdown arrow** (▼) next to the new tab button (+)
+1. Open **Windows Terminal**:
+   - Press **Windows key**, type `Terminal`, press Enter
+   - Or click the Terminal icon if it's pinned to your taskbar
+2. Click the **dropdown arrow** (▼) next to the new tab button (+) at the top
 3. Select **Ubuntu** (or your Linux distribution)
 
-Alternatively, press `Ctrl + Shift + 2` to open Ubuntu directly.
+**Keyboard shortcut**: Once Windows Terminal is open, press `Ctrl + Shift + 2` to open Ubuntu directly in a new tab.
 
 #### Setting Ubuntu as Default (Optional)
 
@@ -173,11 +196,13 @@ Alternatively, press `Ctrl + Shift + 2` to open Ubuntu directly.
 3. Under "Default profile", select **Ubuntu**
 4. Click **Save**
 
-### Method 2: Direct Access via Start Menu
+### Method 2: Direct Access via Windows Search
 
-1. Click the **Start menu**
+1. Press the **Windows key** on your keyboard
 2. Type `Ubuntu`
-3. Click on the **Ubuntu** app
+3. Click on the **Ubuntu** app in the search results
+
+> **Tip**: You can also pin Ubuntu to your taskbar for quick access. Right-click the Ubuntu app and select **Pin to taskbar**.
 
 ### Method 3: From PowerShell or CMD
 
@@ -536,7 +561,7 @@ Neo4j is the graph database that stores the knowledge graph. We'll install **Neo
 
 ### Step 8.3: Launch and Activate Neo4j Desktop
 
-1. Open **Neo4j Desktop** from the Start menu
+1. Press the **Windows key**, type `Neo4j Desktop`, and press Enter
 2. When prompted, paste your **activation key**
 3. Click **Activate**
 
@@ -622,11 +647,16 @@ You need to copy CSV files from the project to Neo4j's import folder.
 
 #### Option A: Using Windows File Explorer
 
-1. Open the project folder in WSL2:
-   - In Windows Explorer, go to: `\\wsl$\Ubuntu\home\yourusername\projects\ospf-ayurveda-kg\data\processed`
-   - Or navigate to `\\wsl$\Ubuntu` in the address bar
-2. Copy all `.csv` files
-3. Paste them into the Neo4j import folder
+1. Open File Explorer:
+   - Press `Win + E`, or
+   - Click the **folder icon** on your taskbar
+2. In the address bar at the top, type: `\\wsl$\Ubuntu\home\yourusername\projects\ospf-ayurveda-kg\data\processed` and press Enter
+   - Replace `yourusername` with your actual Linux username
+3. Select all `.csv` files (`Ctrl + A` to select all)
+4. Copy them (`Ctrl + C`)
+5. Navigate to the Neo4j import folder (from Step 9.1) and paste (`Ctrl + V`)
+
+> **Windows 11 Note**: If you right-click and don't see Copy/Paste, click **"Show more options"** to see the full context menu, or just use the keyboard shortcuts above.
 
 #### Option B: Using WSL2 Commands
 
@@ -905,8 +935,8 @@ deactivate
 
 ### Daily Workflow
 
-1. Open Windows Terminal
-2. Select Ubuntu profile
+1. Press **Windows key**, type `Terminal`, press Enter (or click **Ubuntu** if you pinned it)
+2. If using Windows Terminal, select the **Ubuntu** profile from the dropdown (▼)
 3. Navigate to project: `cd ~/projects/ospf-ayurveda-kg`
 4. Activate venv: `source ./venv/bin/activate`
 5. Start Claude Code: `claude`
