@@ -70,7 +70,7 @@ Microsoft has simplified WSL2 installation. Open **PowerShell as Administrator**
 1. Press the **Windows key** on your keyboard
 2. Type `PowerShell`
 3. Look for **Windows PowerShell** in the results
-4. Right-click on it and select **Run as administrator**
+4. Right-click the Windows Powershell item in the results, and select **Run as administrator**
    - **Windows 11**: You may need to click **"Show more options"** first to see "Run as administrator"
 5. Click **Yes** if prompted by User Account Control
 
