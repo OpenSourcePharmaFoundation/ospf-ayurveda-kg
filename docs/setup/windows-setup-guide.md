@@ -408,16 +408,14 @@ cd ~/projects
 Using SSH (if you set up SSH keys):
 
 ```bash
-git clone git@github.com:YOUR-ORGANIZATION/ospf-ayurveda-kg.git
+git clone git@github.com:OpenSourcePharmaFoundation/ospf-ayurveda-kg.git
 ```
 
 Or using HTTPS (enter GitHub credentials when prompted):
 
 ```bash
-git clone https://github.com/YOUR-ORGANIZATION/ospf-ayurveda-kg.git
+git clone https://github.com/OpenSourcePharmaFoundation/ospf-ayurveda-kg.git
 ```
-
-> **Note**: Replace `YOUR-ORGANIZATION` with the actual GitHub organization or username.
 
 ### Step 5.3: Navigate to the Project
 
@@ -864,7 +862,7 @@ Your SSH key isn't set up correctly. Re-follow the SSH key steps in Part 3.
 
 You're using HTTPS. Switch to SSH:
 ```bash
-git remote set-url origin git@github.com:ORG/ospf-ayurveda-kg.git
+git remote set-url origin git@github.com:OpenSourcePharmaFoundation/ospf-ayurveda-kg.git
 ```
 
 ### Python Issues
