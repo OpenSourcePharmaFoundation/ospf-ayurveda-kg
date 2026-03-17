@@ -730,6 +730,12 @@ curl -fsSL https://claude.ai/install.sh | bash
 
 This handles everything automatically—no Node.js or npm required.
 
+> **If you see a warning** about `~/.local/bin` not being in your PATH, run:
+> ```bash
+> echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
+> ```
+> This adds Claude Code's install location to your shell's search path. You only need to do this once.
+
 ### Step 10.2: Verify Installation
 
 ```bash
