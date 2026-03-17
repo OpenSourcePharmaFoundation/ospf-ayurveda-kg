@@ -720,38 +720,23 @@ RETURN count(d) AS total_drugs
 
 Claude Code is an AI-powered coding assistant that runs in your terminal.
 
-### Step 10.1: Install Node.js (Required for Claude Code)
+### Step 10.1: Install Claude Code
 
-Claude Code requires Node.js. Install it in WSL2:
-
-```bash
-# Install Node.js via NodeSource
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt install -y nodejs
-```
-
-Verify installation:
+Run the official installer in your WSL2 terminal:
 
 ```bash
-node --version
-npm --version
+curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-### Step 10.2: Install Claude Code
+This handles everything automatically—no Node.js or npm required.
 
-```bash
-npm install -g @anthropic-ai/claude-code
-```
-
-The `-g` flag installs it globally, making `claude` available from anywhere.
-
-### Step 10.3: Verify Installation
+### Step 10.2: Verify Installation
 
 ```bash
 claude --version
 ```
 
-### Step 10.4: Authenticate Claude Code
+### Step 10.3: Authenticate Claude Code
 
 Run Claude Code for the first time:
 
