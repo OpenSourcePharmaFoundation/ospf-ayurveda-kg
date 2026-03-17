@@ -23,6 +23,8 @@ Monday
 
   → See: docs/setup/windows-setup-guide.md
 
+[ ] Add steps to set up windows terminal with sane hotkeys
+
 [ ] Clean the crap out:
     [ ] docs/notes
     [ ] docs/setup

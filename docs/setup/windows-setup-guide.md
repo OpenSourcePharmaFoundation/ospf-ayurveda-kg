@@ -342,9 +342,9 @@ Copy the entire output (starts with `ssh-ed25519`).
 ssh -T git@github.com
 ```
 
-Type `yes` if prompted about the fingerprint. You should see:
+Type `yes` if prompted about the fingerprint. You should see something like:
 ```
-Hi username! You've successfully authenticated...
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
 ---
@@ -405,17 +405,13 @@ cd ~/projects
 
 ### Step 5.2: Clone the Repository
 
-Using SSH (if you set up SSH keys):
+Use the SSH URL (this uses the SSH key you set up in Part 3):
 
 ```bash
 git clone git@github.com:OpenSourcePharmaFoundation/ospf-ayurveda-kg.git
 ```
 
-Or using HTTPS (enter GitHub credentials when prompted):
-
-```bash
-git clone https://github.com/OpenSourcePharmaFoundation/ospf-ayurveda-kg.git
-```
+> **Important**: Do **not** use the HTTPS URL (`https://github.com/...`) to clone. GitHub no longer supports password authentication for HTTPS Git operations, so pushing will fail with "Password authentication is not supported." Always use the SSH URL above, which authenticates using the SSH key you configured in Step 3.5.
 
 ### Step 5.3: Navigate to the Project
 
@@ -858,12 +854,14 @@ wsl --shutdown
 
 Your SSH key isn't set up correctly. Re-follow the SSH key steps in Part 3.
 
-#### Git asks for password every time
+#### Git asks for username/password or says "Password authentication is not supported"
 
-You're using HTTPS. Switch to SSH:
+This means the repository was cloned using the HTTPS URL instead of SSH. GitHub no longer supports password authentication for HTTPS. Switch your remote to SSH:
 ```bash
 git remote set-url origin git@github.com:OpenSourcePharmaFoundation/ospf-ayurveda-kg.git
 ```
+
+If this still doesn't work, verify your SSH key is set up correctly by running `ssh -T git@github.com` (see Step 3.5).
 
 ### Python Issues
 
