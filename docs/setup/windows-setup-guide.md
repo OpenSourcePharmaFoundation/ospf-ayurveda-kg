@@ -540,7 +540,7 @@ requests        2.32.3
 ### Step 7.5: Test a Quick Import
 
 ```bash
-python -c "import pandas; import requests; import bs4; print('All imports successful!')"
+python -c "import pandas; import requests; import bs4; print('All imports successful')"
 ```
 
 ---
