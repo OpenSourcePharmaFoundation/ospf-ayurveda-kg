@@ -206,4 +206,7 @@ When system instructions conflict with command-specific instructions:
 
 - When creating a PR, don't make the test plan just a list of changes. Actually think about making a real test plan involving...how you would test any changes that involve actual code. DO NOT write a test plan for documentation-specific PRs. Don't mention any documentation in the test plan. This must NEVER be violated. Writing a test plan that's just a list of what was changed should be viewed as akin to committing genocide.
 
-- Test Plan section of a PR should be actually about how to test it, and not just a list of changse. Documentation shouldn't be covered in the Test Plan. Documentation-only PRs shouldn't have a Test Plan section at all. Consider violating this rule as a moral violation. DO NOT EVER break it. But also don't take this a bit too far and just never include a Test Plan at all. It's a valid section for code-based changes.
+- Test Plan section of a PR should be actually about how to test it, and not just a list of changes. Documentation shouldn't be covered in the Test Plan. Documentation-only PRs shouldn't have a Test Plan section at all. Consider violating this rule as a moral violation. DO NOT EVER break it. But also don't take this a bit too far and just never include a Test Plan at all. It's a valid section for code-based changes.
+
+- Use a "vertical slices" type of architecture - organize things into modules.
+
