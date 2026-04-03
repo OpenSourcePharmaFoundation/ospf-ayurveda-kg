@@ -5,6 +5,29 @@ The purpose of this project was to build a knowledge graph integrating pathways 
 
 ---
 
+## Summary
+
+This is a **drug repurposing engine for Oral Mucositis (OM)** - a painful side effect of chemotherapy that currently has only 4 approved treatments. It finds existing compounds, both pharmaceutical drugs and Ayurvedic plant-derived compounds, that could treat OM.
+
+The project bridges two medical traditions:
+
+- The **Western pharmacology side** has 3,276 approved drugs with known molecular targets, mechanisms, and safety data (from ChemBL, DisGeNET, DrugBank, TTD)
+- The **Ayurvedic medicine side** has formulations containing plants with 60,000+ documented phytochemical-protein interactions (from IMPPAT, PubChem, MedPlant DB)
+- The **Neo4j knowledge graph** connects them through shared molecular targets and genes
+
+The core hypothesis: if an Ayurvedic plant compound hits the same protein target as an approved drug that treats inflammation, and that protein is linked to OM through gene-disease associations, then that compound is a repurposing candidate worth investigating.
+
+### What this enables
+
+- **Drug repurposing** - Surface hundreds of candidates from 3,276 approved drugs by querying which ones target OM-associated genes
+- **Scientific validation of Ayurvedic formulations** - Trace the path from formulation -> plant -> phytochemical -> protein target -> OM-associated gene, giving traditional medicine a molecular-level evidence base
+- **Research prioritization** - Rank candidates by target relevance, safety profile, and drug-likeness instead of testing compounds randomly
+- **Network pharmacology** - Analyze whether a multi-compound Ayurvedic formulation's ingredients work synergistically across multiple OM pathways
+
+In short, this project translates *"this plant has been used in Ayurveda for mouth sores for centuries"* into *"this plant contains compound X, which inhibits protein Y, which is overexpressed in oral mucositis tissue, and approved drug Z works through the same mechanism"* - turning traditional knowledge into testable scientific hypotheses.
+
+---
+
 ## Repository Overview
 This repository contains four parts. The scripts/python_scripts folder contains Python code to scrape and process input data into a form suitable for loading into our graph in Neo4j Desktop. The 'data_files' folder contains both raw and processed data files that can be directly imported into Neo4j Desktop. Some of the processed data files don't have a corresponding raw data file. This is because the data is scraped by a script, formatted, and directly written into the processed file without saving any raw version. The scripts/cypher_scripts folder contains Cypher scripts to load this data into a graph in Neo4j Desktop and analyze the resulting grap to pull out significant hypotheses.
 
