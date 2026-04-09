@@ -155,8 +155,12 @@ scripts/
 
 docs/
 ├── databases/             # Database-specific documentation
-├── todos/todo.md         # Active development tasks
-└── project-info.md       # Project background information
+├── setup/                 # Environment and tool setup guides
+├── notes/                 # Research notes and implementation plans
+├── investigations/        # Architecture decisions and option analyses
+├── next-steps/            # Roadmap and gap analysis
+├── todos/                 # Active development tasks
+└── cleanup/               # Cleanup session records
 ```
 
 ### Dependencies
