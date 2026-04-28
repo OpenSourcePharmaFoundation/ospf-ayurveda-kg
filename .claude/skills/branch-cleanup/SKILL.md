@@ -1,12 +1,13 @@
 ---
-category: git
-allowed-tools: Bash(git branch:*), Bash(git status:*), Bash(git log:*), Bash(git rev-parse:*), Bash(git push:*), Bash(git fetch:*), Bash(git for-each-ref:*), Bash(git show-ref:*), Bash(git merge-base:*)
+name: branch-cleanup
 description: Identify and clean up stale/merged branches (local and remote)
+when_to_use: When cleaning up old git branches, removing stale or merged branches, or auditing branch hygiene
+allowed-tools: Bash(git branch:*), Bash(git status:*), Bash(git log:*), Bash(git rev-parse:*), Bash(git push:*), Bash(git fetch:*), Bash(git for-each-ref:*), Bash(git show-ref:*), Bash(git merge-base:*)
 ---
 
 First, reread the following files:
 1. The CLAUDE.md file at the project root
-2. This command file itself (`.claude/commands/branch-cleanup.md`)
+2. This skill file itself (`.claude/skills/branch-cleanup/SKILL.md`)
 
 ## Purpose
 

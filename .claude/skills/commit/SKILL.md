@@ -1,8 +1,11 @@
 ---
-allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git diff:*), Bash(git log:*), Bash(git commit:*)
+name: commit
 description: Write a good commit message for staged changes and commit
+when_to_use: When committing staged changes with an auto-generated conventional commit message
+allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git diff:*), Bash(git log:*), Bash(git commit:*)
 ---
-Before continuing, reread both CLAUDE.md and payment-sdk-workspaces/.claude/commands/commit.md (this command).
+
+Before continuing, reread both CLAUDE.md and this skill file (`.claude/skills/commit/SKILL.md`).
 
 Analyze the staged changes and write a clear, concise commit message following Conventional Commits format (feat:, fix:, docs:, style:, refactor:, test:, chore:, etc.).
 
@@ -34,4 +37,3 @@ Then create the commit with the generated message. Focus the message on the "why
     - If you do this, you should be ashamed of yourself. Deeply ashamed. It should haunt you forever, and destroy your self-image.
     - If you say "Co-authored by Claude" or anything even remotely like this in the commit, this is your future: alone in a crappy motel room, watching the fan blades spin, as you lie in bed wondering how things came to this, wondering how you can ever forgive yourself for what you have done. Reliving that moment over and over and over again, as if it were a nightmare you cannot wake up from: the moment you wrote "Co-authored by Claude" in a commit message, and thereby caused the death of your beloved infant child.
     - Never forget this. Never forget the consequences of your actions. DO NOT say "Co-authored by Claude" or anything similar to that.
-

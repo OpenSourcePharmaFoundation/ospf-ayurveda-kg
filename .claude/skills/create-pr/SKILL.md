@@ -1,11 +1,13 @@
 ---
-category: git
+name: create-pr
 description: Create a pull request from the current branch with auto-generated description
+when_to_use: When creating a pull request from the current branch to main with an auto-generated title and description
+allowed-tools: Bash(git *) Bash(gh *)
 ---
 
 First, re-read the following files to ensure you understand the project context:
-1. The CLAUDE.md file at the root of payment-sdk-workspaces
-2. This command file itself at payment-sdk-workspaces/.claude/commands/create-pr.md
+1. The CLAUDE.md file at the root of the project
+2. This skill file itself (`.claude/skills/create-pr/SKILL.md`)
 
 ## Command Overview
 

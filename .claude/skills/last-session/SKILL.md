@@ -1,3 +1,10 @@
+---
+name: last-session
+description: Review Recent Project Activity
+when_to_use: When resuming work on a project and needing to understand what was done in the last session, or when asking about recent changes
+allowed-tools: Bash(git status:*) Bash(git log:*) Bash(git diff:*) Bash(git branch:*) Bash(find *) Read
+---
+
 # Review Recent Project Activity
 
 Please analyze the recent project activity and remind me what was being worked on last time. Follow these steps:
@@ -18,7 +25,7 @@ Provide a concise summary that includes:
 - **Progress Status**: What was completed vs. what remains
 - **Branch Context**: Current branch and its purpose
 - **All Files Modified**: List ALL changed files from git status and recent commits
-  - Mark important/key files with ⭐ AND bold formatting
+  - Mark important/key files with bold formatting
   - Group by category if helpful (e.g., scripts, docs, data)
   - Include both tracked and untracked files
 - **Next Steps**: Any incomplete work or documented next actions

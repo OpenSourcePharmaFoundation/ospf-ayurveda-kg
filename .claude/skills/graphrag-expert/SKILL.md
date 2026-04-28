@@ -1,11 +1,13 @@
 ---
-category: expert
+name: graphrag-expert
 description: GraphRAG expert - consult when implementing, calling, or creating prompts for the Graph-Aware RAG system
+when_to_use: When implementing RAG retrieval, writing Cypher queries, designing embedding strategies, crafting LLM prompts for the knowledge graph, or working on the src/RAG module
+allowed-tools: Bash(ls *) Bash(find *) Bash(grep *) Read
 ---
 
 First, reread the following files to ensure you have full context:
 1. The CLAUDE.md file at the project root
-2. This command file itself (`.claude/commands/graphrag-expert.md`)
+2. This skill file itself (`.claude/skills/graphrag-expert/SKILL.md`)
 3. `docs/notes/local-llm-implementation-plan.md` — the 8-week implementation plan for the Graph-Aware RAG system
 4. `src/RAG/retrieval/docs/retrieval-info.md` — the retrieval strategy documentation
 
@@ -19,7 +21,7 @@ Your expertise covers:
 - **Context assembly**: converting subgraph traversal results into grounded LLM context
 - **Prompt engineering**: crafting prompts for Cypher generation, entity extraction, and response synthesis
 - **Embedding strategy**: which nodes/properties to embed, model selection (general vs. biomedical)
-- **Multi-hop reasoning**: traversing Plant → Compound → Protein → Gene → Disease paths
+- **Multi-hop reasoning**: traversing Plant -> Compound -> Protein -> Gene -> Disease paths
 - **Evidence tracing**: preserving provenance (PMIDs, gdaScores, data sources) through the RAG pipeline
 
 ## Project-Specific Knowledge
@@ -35,13 +37,13 @@ Relationship properties: action, source, evidence, evidence_urls, pubchemId,
 
 ### Retrieval Architecture (Planned)
 ```
-User Question → Intent Classifier
-  ├── Precise query → Cypher generation → Neo4j execution
-  └── Fuzzy query → Vector similarity → Entry point discovery
+User Question -> Intent Classifier
+  ├── Precise query -> Cypher generation -> Neo4j execution
+  └── Fuzzy query -> Vector similarity -> Entry point discovery
          ↓
   Graph Traversal (1-3 hops from entry points)
          ↓
-  Context Assembly (subgraph → natural language text)
+  Context Assembly (subgraph -> natural language text)
          ↓
   LLM Response Generation (with citations)
 ```
@@ -52,9 +54,9 @@ src/RAG/
 └── retrieval/
     ├── __init__.py
     ├── embedder.py          # Embed queries & nodes
-    ├── cypher_generator.py  # NL → Cypher via LLM
+    ├── cypher_generator.py  # NL -> Cypher via LLM
     ├── graph_retriever.py   # Hybrid retrieval orchestrator
-    ├── context_builder.py   # Subgraph → text for LLM
+    ├── context_builder.py   # Subgraph -> text for LLM
     └── docs/
         └── retrieval-info.md
 src/llm/
@@ -90,7 +92,7 @@ For biomedical text, prefer domain-specific embedding models:
 
 ### For Implementation Questions
 1. Check what currently exists under `src/RAG/` and `src/llm/`
-2. Reference the implementation plan phases (infrastructure → RAG pipeline → query enhancement → interface)
+2. Reference the implementation plan phases (infrastructure -> RAG pipeline -> query enhancement -> interface)
 3. Recommend concrete next steps based on current project state
 4. Ensure any new code follows the established module structure
 
@@ -102,8 +104,8 @@ For biomedical text, prefer domain-specific embedding models:
 
 ### For Retrieval Strategy Decisions
 1. Favor hybrid retrieval (vector + Cypher) over either alone
-2. For precise entity lookups → structured Cypher
-3. For fuzzy/colloquial queries → vector similarity → graph expansion
+2. For precise entity lookups -> structured Cypher
+3. For fuzzy/colloquial queries -> vector similarity -> graph expansion
 4. Always include 1-3 hop graph traversal from entry points to capture multi-target pathways
 5. Preserve provenance through the entire pipeline — every claim should be traceable to a source
 

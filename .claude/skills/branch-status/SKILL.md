@@ -1,7 +1,8 @@
 ---
-category: git
-allowed-tools: Bash(git branch:*), Bash(git status:*), Bash(git log:*), Bash(git rev-parse:*), Bash(git fetch:*), Bash(git for-each-ref:*), Bash(git merge-base:*), Bash(git show-ref:*)
+name: branch-status
 description: Quick overview of all branches — merged status, divergence, last activity
+when_to_use: When checking branch status, viewing branch divergence from main, or getting an overview of all branches
+allowed-tools: Bash(git branch:*), Bash(git status:*), Bash(git log:*), Bash(git rev-parse:*), Bash(git fetch:*), Bash(git for-each-ref:*), Bash(git merge-base:*), Bash(git show-ref:*)
 ---
 
 ## Purpose

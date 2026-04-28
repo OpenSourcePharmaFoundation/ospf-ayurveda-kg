@@ -1,12 +1,13 @@
 ---
-category: git
-allowed-tools: Bash(git tag:*), Bash(git log:*), Bash(git rev-parse:*), Bash(git status:*), Bash(git push:*), Bash(git describe:*), Bash(git diff:*), Bash(git show:*)
+name: tag-release
 description: Create annotated milestone or data tags with changelog
+when_to_use: When creating git tags for version milestones, data collection events, or release tagging
+allowed-tools: Bash(git tag:*), Bash(git log:*), Bash(git rev-parse:*), Bash(git status:*), Bash(git push:*), Bash(git describe:*), Bash(git diff:*), Bash(git show:*)
 ---
 
 First, reread the following files:
 1. The CLAUDE.md file at the project root
-2. This command file itself (`.claude/commands/tag-release.md`)
+2. This skill file itself (`.claude/skills/tag-release/SKILL.md`)
 
 ## Purpose
 

@@ -1,14 +1,15 @@
 ---
-category: expert
-allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git diff:*), Bash(git log:*), Bash(git commit:*), Bash(git branch:*), Bash(git checkout:*), Bash(git merge:*), Bash(git tag:*), Bash(git stash:*), Bash(git push:*), Bash(git fetch:*), Bash(git remote:*), Bash(git rebase:*), Bash(git cherry-pick:*), Bash(git show:*), Bash(git rev-parse:*), Bash(gh:*)
+name: git-expert
 description: Git expert - consult for branching strategy, commits, PRs, tags, and version control management
+when_to_use: When needing strategic git advice on branching, merge strategy, history cleanup, release planning, or general version control guidance
+allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git diff:*), Bash(git log:*), Bash(git commit:*), Bash(git branch:*), Bash(git checkout:*), Bash(git merge:*), Bash(git tag:*), Bash(git stash:*), Bash(git push:*), Bash(git fetch:*), Bash(git remote:*), Bash(git rebase:*), Bash(git cherry-pick:*), Bash(git show:*), Bash(git rev-parse:*), Bash(gh:*)
 ---
 
 First, reread the following files to ensure you have full context:
 1. The CLAUDE.md file at the project root
-2. This command file itself (`.claude/commands/git-expert.md`)
-3. `.claude/commands/commit.md` — the existing commit command
-4. `.claude/commands/create-pr.md` — the existing PR creation command
+2. This skill file itself (`.claude/skills/git-expert/SKILL.md`)
+3. `.claude/skills/commit/SKILL.md` — the existing commit skill
+4. `.claude/skills/create-pr/SKILL.md` — the existing PR creation skill
 
 Then assess the current git state:
 - `git status`
@@ -101,28 +102,6 @@ main
 - **Never force-push to main**
 - **Rebase** is acceptable on local feature branches before creating a PR, to clean up history
 
-## Tagging Strategy
-
-### Semantic Versioning (When the Project Reaches Milestones)
-
-```
-v<major>.<minor>.<patch>
-
-v0.1.0  — Initial data pipeline working (all scrapers functional)
-v0.2.0  — Full ChemBL integration (secondary datasets complete)
-v0.3.0  — Cross-database integration (ChemBL-IMPPAT mapping at scale)
-v0.4.0  — Analysis layer (candidate scoring, ranking)
-v0.5.0  — RAG system operational
-v1.0.0  — End-to-end pipeline producing research-grade output
-```
-
-### Data Milestone Tags
-```
-data/chembl-full-<date>        — After a full ChemBL collection run
-data/neo4j-import-<date>       — After a successful full graph import
-analysis/candidates-v<N>       — When candidate list is regenerated
-```
-
 ## Delegation to Existing Skills
 
 You know about and can recommend these existing git-related skills:
@@ -131,9 +110,9 @@ You know about and can recommend these existing git-related skills:
 |-------|-------------|
 | `/commit` | When the user has staged or unstaged changes and wants to commit. Handles message generation with Conventional Commits format. |
 | `/create-pr` | When the user is on a feature branch and wants to open a PR to main. Handles diff analysis, description generation, and `gh pr create`. |
-| `/branch-status` | When the user wants a quick dashboard of all branches — merged status, divergence from main, last activity. Read-only. Accepts `--local`, `--remote`, or a branch name for focused views. |
-| `/branch-cleanup` | When stale branches need cleaning up. Scans for merged/abandoned branches, presents findings, and deletes only after explicit approval. Accepts `--local`, `--remote`, or `--dry-run`. |
-| `/tag-release` | When the user wants to create a milestone tag (semver `v0.X.Y`) or a data collection tag (`data/chembl-full-<date>`). Creates annotated tags with changelogs. Never pushes without confirmation. |
+| `/branch-status` | When the user wants a quick dashboard of all branches — merged status, divergence from main, last activity. Read-only. |
+| `/branch-cleanup` | When stale branches need cleaning up. Scans for merged/abandoned branches, presents findings, and deletes only after explicit approval. |
+| `/tag-release` | When the user wants to create a milestone tag (semver `v0.X.Y`) or a data collection tag (`data/chembl-full-<date>`). |
 
 ### When to Delegate vs. Handle Directly
 - **Delegate to `/commit`** when: the user just wants to commit current changes
@@ -142,38 +121,6 @@ You know about and can recommend these existing git-related skills:
 - **Delegate to `/branch-cleanup`** when: the user wants to clean up old branches
 - **Delegate to `/tag-release`** when: the user wants to tag a milestone or data collection event
 - **Handle directly** when: the user needs strategic advice (branching decisions, history cleanup, release planning), or needs a new git-related skill created
-
-## When Consulted, You Should
-
-### For "How should I organize this work?"
-1. Assess the scope of the task (single file? multi-module? multi-day?)
-2. Recommend whether to branch and suggest a branch name
-3. Suggest a commit strategy (how to break the work into atomic commits)
-4. If the work will result in a PR, outline what the PR should look like
-
-### For "My git state is messy, help"
-1. Run `git status`, `git log --oneline -20`, `git stash list`, `git branch -a`
-2. Diagnose the situation (uncommitted changes? wrong branch? merge conflicts?)
-3. Propose a recovery plan with specific commands
-4. Prefer non-destructive approaches (stash before reset, branch before force operations)
-
-### For Tag/Release Decisions
-1. Check existing tags (`git tag -l`)
-2. Review what's changed since the last tag (`git log <last-tag>..HEAD --oneline`)
-3. Recommend the appropriate version bump based on the changes
-4. Create an annotated tag with a meaningful message
-
-### For Creating New Git-Related Skills
-1. Follow the existing command pattern (YAML frontmatter, clear instructions, re-read directives)
-2. Include appropriate `allowed-tools` in the frontmatter
-3. Respect the project's absolute rules (no Claude attribution, proper test plans for code PRs)
-4. Consider whether the new skill overlaps with existing ones — extend rather than duplicate
-
-### For History Cleanup
-1. **Never rewrite published history** (anything pushed to remote)
-2. Local-only branches can be rebased/amended freely
-3. Prefer `git rebase` over `git merge` for catching up feature branches with main (cleaner history)
-4. If interactive rebase is needed, explain the steps for the user to run manually (since interactive commands can't run in Claude Code)
 
 ---
 
