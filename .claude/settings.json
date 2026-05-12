@@ -70,10 +70,15 @@
       "Bash(xz:*)",
       "Bash(zip:*)",
 
+      "Bash(git add)",
+      "Bash(git add:*)",
       "Bash(git checkout:*)",
+      "Bash(git cherry-pick:*)",
+      "Bash(git commit:*)",
       "Bash(git log:*)",
       "Bash(git push:*)",
       "Bash(git status:*)",
+      "Bash(git stash:*)",
 
       "Bash(npm install:*)",
       "Bash(npm install)",
@@ -95,6 +100,7 @@
       "Bash(npx tsc:*)",
 
       "Bash(pip:*)",
+      "Bash(bash .claude/statusline.sh)",
 
       "Bash(open ./payment-sdk-workspaces/packages/payment-element-webcomponent/dist/example.html)",
       "Bash(timeout 10s npx playwright:*)",
@@ -151,7 +157,12 @@
       "WebFetch(domain:hotels.cloudbeds-stage.com)",
       "WebFetch(domain:us2.cloudbeds-stage.com)",
 
-      "WebSearch"
+      "WebSearch",
+
+      "Delete",
+      "Edit",
+      "MultiEdit",
+      "Write"
     ],
     "ask": [
       "Bash(apt:*)",
@@ -167,18 +178,7 @@
       "Bash(mv:*)",
       "Bash(pkill:*)",
       "Bash(rm:*)",
-      "Bash(rmdir:*)",
-
-      "Bash(git add)",
-      "Bash(git add:*)",
-      "Bash(git cherry-pick:*)",
-      "Bash(git commit:*)",
-      "Bash(git stash:*)",
-
-      "Delete",
-      "Edit",
-      "MultiEdit",
-      "Write"
+      "Bash(rmdir:*)"
     ],
     "deny": [
       "Bash(su:*)",
@@ -186,6 +186,11 @@
       "Bash(umount:*)"
     ],
     "defaultMode": "default"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash .claude/statusline.sh",
+    "padding": 2
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [

@@ -1,2 +1,0 @@
-,id,cid,dsn,cmpdname,srccmpd,srccmpdname,srccmpdurl,srctarget,srctargetname,srctargeturl,protacxn,protname,geneid,genename,taxid,taxname,action,actname,actvalue,evids,evurls,pmids,dois,citations
-0,2000958,3860435,Drug Gene Interaction database (DGIdb),Isokobusone,,ISOKOBUSONE,https://www.dgidb.org/drugs/ISOKOBUSONE,,CYP3A4,https://www.dgidb.org/genes/CYP3A4,,,1576,CYP3A4,9606,Homo sapiens (human),,,,,,,,

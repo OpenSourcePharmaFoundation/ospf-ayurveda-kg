@@ -1,2 +1,0 @@
-chembl_id,drug_name,activity_id,assay_chembl_id,assay_type,assay_description,target_chembl_id,target_name,target_organism,standard_type,standard_relation,standard_value,standard_units,pchembl_value,activity_comment,toxicity_category
-CHEMBL405,AMPHETAMINE,205746,CHEMBL844273,A,Binding energy by using the equation deltaG obsd = -RT ln KD,CHEMBL612558,ADMET,,Binding energy,=,6.8,kCal mol-1,,,ADME

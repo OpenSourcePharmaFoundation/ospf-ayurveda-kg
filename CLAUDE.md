@@ -16,14 +16,13 @@ The main codebase for all production code including:
 - Analysis utilities
 - All supporting libraries and utilities
 
-### `/scripts` - CLI Tools & Prototypes
-CLI tools, setup scripts, and legacy prototypes:
-- Environment setup and configuration scripts
-- Standalone CLI tools for data visualization and manipulation
-- Legacy prototypes and proof-of-concept implementations (reference only)
-- DevOps and deployment scripts
-- **NOTE**: Production code should NOT live here - any scraper, data cleaning, database populating, or data analysis code in `/scripts/` (namely python_scripts, cypher_scripts and /db) is technical debt that should be migrated to `/src`.
-  - However, note that some CLI tools are appropriately located here (e.g. chembl_display.py), as they are not part of the core data pipeline, and are used as standalone tools.
+### `/scripts` - CLI Tools & Operations
+Standalone CLI tools, setup scripts, and Neo4j import scripts:
+- Standalone CLI tools for data visualization (`chembl_display.py`, `csv_display.py`)
+- Environment setup and configuration scripts (`setup/`)
+- Neo4j Cypher import scripts (`cypher_scripts/`)
+- Neo4j setup automation (`setup_neo4j.py`)
+- **NOTE**: Production code should NOT live here. All scrapers, data processors, and analysis code belong in `/src`.
 
 ## Commands
 
@@ -47,12 +46,25 @@ python src/scrapers/chembl/chembl_scraper.py --approved-drugs-only     # Only ap
 python src/scrapers/chembl/chembl_scraper.py --natural-products-only   # Only natural products
 python src/scrapers/chembl/chembl_scraper.py                          # Full scrape (all datasets)
 
-# TODO: Migrate these legacy scrapers from /scripts to /src
-# (Currently technical debt - these should be reimplemented in /src)
-python scripts/python_scripts/disgenet_processing.py     # Legacy - needs migration
-python scripts/python_scripts/imppat_processing.py       # Legacy - needs migration
-python scripts/python_scripts/pubchem_processing.py      # Legacy - needs migration
-python scripts/python_scripts/medplantdatabase_processing.py  # Legacy - needs migration
+# DisGeNET gene-disease associations
+python src/scrapers/disgenet/disgenet_scraper.py                       # Process DisGeNET data
+python src/scrapers/disgenet/disgenet_scraper.py --input <path>        # Custom input file
+
+# IMPPAT plant phytochemicals and therapeutic uses
+python src/scrapers/imppat/imppat_scraper.py                           # Scrape all data
+python src/scrapers/imppat/imppat_scraper.py --chem-only               # Only phytochemicals
+python src/scrapers/imppat/imppat_scraper.py --ther-only               # Only therapeutic uses
+
+# PubChem chemical-target interactions
+python src/scrapers/pubchem/pubchem_scraper.py                         # Full pipeline
+python src/scrapers/pubchem/pubchem_scraper.py --ids-only              # Only scrape PubChem IDs
+python src/scrapers/pubchem/pubchem_scraper.py --download-only         # Only download interactions
+python src/scrapers/pubchem/pubchem_scraper.py --compile-only          # Only compile CSVs
+
+# BSI Medicinal Plant Database
+python src/scrapers/medplant/medplant_scraper.py                       # Full scrape
+python src/scrapers/medplant/medplant_scraper.py --listing-only        # Only plant listing
+python src/scrapers/medplant/medplant_scraper.py --uses-only           # Only therapeutic uses
 
 # CLI Tools (appropriately located in /scripts)
 ./scripts/chembl_display.py                                            # Display data as table (default)
@@ -89,7 +101,7 @@ No automated test suite currently exists. Manual validation through:
 ## Architecture
 
 ### Data Pipeline
-1. **Collection**: Web scraping scripts in `scripts/python_scripts/` and modular scrapers in `src/scrapers/` fetch data from DisGeNET, DrugBank, IMPPAT, PubChem, ChemBL, MedPlantDatabase, and TTD
+1. **Collection**: Modular scrapers in `src/scrapers/` fetch data from ChemBL, DisGeNET, IMPPAT, PubChem, MedPlantDatabase, and TTD
 2. **Processing**: Data cleaned and formatted for Neo4j import, stored in `data/processed/`
 3. **Graph Creation**: Cypher scripts in `scripts/cypher_scripts/` load data into Neo4j with defined relationships
 4. **Analysis**: Query the knowledge graph to find connections between existing drugs (including Ayurvedic compounds), and disease targets
@@ -97,13 +109,12 @@ No automated test suite currently exists. Manual validation through:
 ### Key Components
 
 #### Data Sources & Processing Scripts
-- **DisGeNET** (`disgenet_processing.py`): Gene-drug associations for Oral Mucositis and Stomatitis
-- **DrugBank** (`drugbank/`): Drug target information for OM-related indications
-  - Deprecated - it's proprietary and not easily available for public scraping
-- **IMPPAT** (`imppat_processing.py`): Indian (as in the country of India) medicinal plants, phytochemicals, and therapeutic uses
-- **PubChem** (`pubchem_processing.py`): Chemical-gene and chemical-protein interactions
-- **ChemBL** (`src/scrapers/chembl/chembl_scraper.py`): Comprehensive approved drug data collection with mechanisms, targets, indications, and safety warnings
-- **MedPlantDatabase** (`medplantdatabase_processing.py`): Additional medicinal plant data
+All scrapers live in `src/scrapers/`, each as a self-contained module following the ChemBL pattern:
+- **ChemBL** (`src/scrapers/chembl/`): Comprehensive approved drug data — mechanisms, targets, indications, warnings
+- **DisGeNET** (`src/scrapers/disgenet/`): Gene-disease associations for Oral Mucositis and Stomatitis
+- **IMPPAT** (`src/scrapers/imppat/`): Indian medicinal plants, phytochemicals, and therapeutic uses
+- **PubChem** (`src/scrapers/pubchem/`): Chemical-gene and chemical-protein interactions
+- **MedPlantDatabase** (`src/scrapers/medplant/`): BSI medicinal plant data with therapeutic uses
 - **TTD**: Therapeutic target database (manual compilation in `data/processed/`)
 
 #### Neo4j Schema
@@ -118,12 +129,13 @@ No automated test suite currently exists. Manual validation through:
   - ...but not everywhere. Check databases' rules for this first to determine if this is necessary
 - Data stored as CSV/JSON files optimized for Neo4j's LOAD CSV command
 - Cypher scripts numbered to indicate execution order
-- CSV field escaping utility in `chembl/utils/escape_csv_field.py` for handling commas in data
+- CSV field escaping utility in `src/utils/escape_csv_field.py` for handling commas in data
 
 ## Development Notes
 
 ### Current Status
-- Active development on ChemBL integration (branch: scraping-chembl)
+- All scrapers migrated to `src/scrapers/` following vertical slice architecture
+- Active development on ChemBL integration
 - Some ChemBL data fields need comma escaping (indications, warnings, synonyms, mechanisms)
 
 ### Important Warnings
@@ -141,22 +153,25 @@ data/
 └── archive (old files)/    # Historical PubChem target interactions
 
 scripts/
-├── python_scripts/         # Data collection and processing
-│   ├── chembl/            # ChemBL drug data scraping
-│   ├── drugbank/          # DrugBank web scraping
-│   └── *.py               # Database-specific processors
-├── cypher_scripts/        # Neo4j graph creation scripts
+├── chembl_display.py       # CLI tool: display ChemBL data as table
+├── csv_display.py          # CLI tool: generic CSV display
+├── setup_neo4j.py          # Neo4j setup and import automation
+├── cypher_scripts/         # Neo4j graph creation scripts (numbered for order)
 │   ├── 1_uniqueness_constraints.txt
 │   ├── 2_formulation_plant_compound_target.txt
 │   ├── 3_disease_drug_target.txt
 │   ├── analysis_queries.txt
-│   └── apoc.conf          # APOC configuration
-└── setup/                 # Environment setup scripts
+│   └── apoc.conf           # APOC configuration
+└── setup/                  # Environment setup scripts
 
 docs/
 ├── databases/             # Database-specific documentation
-├── todos/todo.md         # Active development tasks
-└── project-info.md       # Project background information
+├── setup/                 # Environment and tool setup guides
+├── notes/                 # Research notes and implementation plans
+├── investigations/        # Architecture decisions and option analyses
+├── next-steps/            # Roadmap and gap analysis
+├── todos/                 # Active development tasks
+└── cleanup/               # Cleanup session records
 ```
 
 ### Dependencies
@@ -206,4 +221,7 @@ When system instructions conflict with command-specific instructions:
 
 - When creating a PR, don't make the test plan just a list of changes. Actually think about making a real test plan involving...how you would test any changes that involve actual code. DO NOT write a test plan for documentation-specific PRs. Don't mention any documentation in the test plan. This must NEVER be violated. Writing a test plan that's just a list of what was changed should be viewed as akin to committing genocide.
 
-- Test Plan section of a PR should be actually about how to test it, and not just a list of changse. Documentation shouldn't be covered in the Test Plan. Documentation-only PRs shouldn't have a Test Plan section at all. Consider violating this rule as a moral violation. DO NOT EVER break it. But also don't take this a bit too far and just never include a Test Plan at all. It's a valid section for code-based changes.
+- Test Plan section of a PR should be actually about how to test it, and not just a list of changes. Documentation shouldn't be covered in the Test Plan. Documentation-only PRs shouldn't have a Test Plan section at all. Consider violating this rule as a moral violation. DO NOT EVER break it. But also don't take this a bit too far and just never include a Test Plan at all. It's a valid section for code-based changes.
+
+- Use a "vertical slices" type of architecture - organize things into modules.
+
