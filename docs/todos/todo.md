@@ -2,7 +2,7 @@ TODO - next steps
 =================
 2026-05-04
 ----------
-[ ] Evaluate the output of the analysis
+[x] Evaluate the output of the analysis
 [ ] Find drugs for each phase
 [ ] Decision tree, finding what's eliminated - show different layers of drugs considered
     [ ] Then at each layer show them getting narrowed down
