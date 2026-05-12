@@ -8,6 +8,8 @@ Ontology: A structured vocabulary - generally for specific technical purposes
 
 Physicochemical properties: chemical properties of the molecule e.g. PH, bond properties, PKA
 
+ROS: Reactive oxygen species
+
 Molecular weight:
 
 PSA:

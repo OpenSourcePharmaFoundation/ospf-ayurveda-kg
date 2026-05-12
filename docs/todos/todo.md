@@ -1,5 +1,23 @@
 TODO - next steps
 =================
+2026-05-04
+----------
+[ ] Evaluate the output of the analysis
+[ ] Find drugs for each phase
+[ ] Decision tree, finding what's eliminated - show different layers of drugs considered
+    [ ] Then at each layer show them getting narrowed down
+    [ ] Think concentric circles with different layers, and in the centre, the drugs selected
+[ ] Create data visualization agent
+[ ] Build the frontend (call it a "prototype")
+[ ] Get experts to evaluate the output
+[ ] CHECK EACH DRUG FOR WHETHER IT'S BEEN STUDIED IN THIS CONTEXT (before giving it to experts)
+    [ ] Think about whether to include non-novel drugs (maybe, since it verifies that the system is sane, maybe not, because it might be viewed as a trivial finding and thus discredit the system)
+[ ] Think about what to tackle next
+[ ] Get the data scraper to scrape more data from more places and wire it together
+
+
+------------------------
+
 Reset using Claude
 ------------------
 [x] Get Claude Code to write a plan
