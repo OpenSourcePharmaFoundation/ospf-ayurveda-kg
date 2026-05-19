@@ -3,17 +3,99 @@ TODO - next steps
 2026-05-04
 ----------
 [x] Evaluate the output of the analysis
+[x] Build the basic frontend (call it a "prototype")
+[x] Create data visualization agent
+
+4. [x] Add more data to the knowledge graph - that is, more nodes
+    [x] Make a list of all possible nodes that can be made by extracting properties from drugs
+    [x] Make these nodes
+    New node types created (script: 10_extract_new_node_types.txt):
+      - Indication (2,328) — extracted from Drug.indication_class
+      - Metabolite (591) — from chembl_drug_metabolism.csv
+      - Enzyme (90) — from chembl_drug_metabolism.csv
+      - Organism (24) — from Target.organism
+      - TargetType (7) — from Target.target_type
+      - ActionType (3) — from Mechanism.action_type
+      - MoleculeType (1) — from Drug.molecule_type
+    Skipped (no data available): MolecularSpecies, WithdrawalEvent (reasons empty), BindingSite (test data)
+
+5. [ ] More complex frontend
+    [ ] Clicking drugs in the Drug Candidates page should display data for the drug in a drawer
+    [ ] Create a "dashboard" that summarizes the things we actually care about
+        [ ] This should be a tab
+        [ ] Default to this tab - it should be the first tab
+        [ ] Outline steps to create this on a more granular level
+    [ ] Create specific page for each drug of interest
+    [ ] Create a frontend that renders the knowledge graph and lets you navigate through it
+      [ ] Export the knowledge graph data from neoj
+          [ ] Include the bad and good candidates worth looking at - But make it 100s of nodes
+          [ ] Include the medical conditions/diseases/disorders it treats as nodes
+          [ ] Include things like proteins it binds to, etc as nodes (that is, the new nodes)
+      [ ] Add a tab for the network graph
+        [ ] Give it a sane name (the tab, that is)
+        [ ] Make a visualizer with a network graph - containing JUST the drugs of interest - place in the network graph tab
+            [ ] Show drug nodes, condition/disease/disorder nodes, and each of the newly generated nodes from step 4
+            [ ] Show connections between nodes
+            [ ] Create a "data table" area
+                [ ] Show data for each node on clicking node
+                [ ] Show data for each relationship on clicking relationship
+
+[ ] Think about what to tackle next
 [ ] Find drugs for each phase
 [ ] Decision tree, finding what's eliminated - show different layers of drugs considered
     [ ] Then at each layer show them getting narrowed down
     [ ] Think concentric circles with different layers, and in the centre, the drugs selected
-[ ] Create data visualization agent
-[ ] Build the frontend (call it a "prototype")
 [ ] Get experts to evaluate the output
 [ ] CHECK EACH DRUG FOR WHETHER IT'S BEEN STUDIED IN THIS CONTEXT (before giving it to experts)
-    [ ] Think about whether to include non-novel drugs (maybe, since it verifies that the system is sane, maybe not, because it might be viewed as a trivial finding and thus discredit the system)
-[ ] Think about what to tackle next
+    [ ] Think about whether to include non-novel drugs
+        - Maybe, since it verifies that the system is sane, maybe not, because it might be viewed as a trivial finding and thus discredit the system
 [ ] Get the data scraper to scrape more data from more places and wire it together
+
+
+-----------------------------------------
+Frontend Prototype Improvements
+===============================
+Missing visualization components
+  [ ] PropertyRadar — radar chart for MW/LogP/PSA/HBD/HBA (use on CandidateCard + summary)
+  [ ] PhaseCoverageHeatmap — 5-phase × N-strategy coverage grid
+  [ ] SafetyVerdictGrid — color-coded candidate × safety verdict grid
+  [ ] TierBarChart — grouped bar chart for tiered candidate scores
+
+Missing custom markdown components (currently inlined in MarkdownRenderer)
+  [ ] CustomTable — extract table styling into own component
+  [ ] CustomCodeBlock — add syntax highlighting (rehype-highlight is installed but not wired up)
+  [ ] CustomHeading — add anchor link IDs to H1/H2/H3
+  [ ] SafetyBadge — extract from SummaryView into reusable component
+  [ ] ScoreBar — extract from markdown-preprocessor into React component
+
+Drug Candidates tab
+  [ ] CandidateList — filterable/sortable grid wrapper (sort by score, MW, name, etc.)
+  [ ] Add sort options (A-Z, highest score, MW range, LogP range)
+  [ ] Add mini PropertyRadar to each CandidateCard
+
+Bugs
+  [ ] DataTableViz tooltip hardcoded white background — breaks dark mode
+  [ ] csv-loader: is_natural_product only checks lowercase 'true' — misses 'True'
+  [ ] CandidateCard property filter hides legitimate zero values (HBD=0, HBA=0)
+
+UX improvements
+  [ ] URL-based state (?analysis=may-03&section=methodology) so navigation survives refresh
+  [ ] Loading skeletons instead of plain "Loading analysis..." text
+  [ ] Error boundary at app level to catch rendering crashes
+  [ ] More specific error messages (404 vs network error vs timeout)
+  [ ] "Copy to clipboard" button on ChemBL IDs
+  [ ] Search result highlighting in Drug Candidates tab
+
+Performance
+  [ ] Lazy-load Drug Candidates CSV (only fetch when tab is opened)
+  [ ] Dynamic import for Recharts components (bundle is 1.1MB pre-gzip)
+
+Tests (zero test coverage currently)
+  [ ] Set up Jest + React Testing Library (not yet installed)
+  [ ] markdown-parser.test.ts — section splitting, preamble, numbered vs. uppercase H2
+  [ ] table-extractor.test.ts — table parsing, numeric detection, skip non-pipe tables
+  [ ] markdown-preprocessor.test.ts — each transform function, regression on valid markdown
+  [ ] App.test.tsx — renders, both tabs present, default shows summary
 
 
 ------------------------

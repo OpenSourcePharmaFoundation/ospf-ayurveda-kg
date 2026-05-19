@@ -1,0 +1,104 @@
+// ============================================================================
+// Step 4: Extract New Node Types from Drug Properties
+// ============================================================================
+// Creates new node types by extracting properties that were stored as flat
+// fields on existing nodes. This enriches the graph for traversal, filtering,
+// and frontend visualization.
+//
+// PREREQUISITE: Run scripts 1-8 first (base graph must exist).
+//
+// NOTE: Enzyme and Metabolite imports require Python (see below) because
+// the metabolism CSV needs proper parsing. The Cypher sections here handle
+// everything else.
+// ============================================================================
+
+
+// ---------------------------------------------------------------------------
+// 1. Indication nodes from Drug.indication_class
+// ---------------------------------------------------------------------------
+// Splits semicolon-separated indication_class strings into individual
+// Indication nodes. This is the primary source of indication data (2,600+
+// drugs have this field populated).
+
+MATCH (d:Drug)
+WHERE d.indication_class IS NOT NULL
+  AND d.indication_class <> ''
+  AND d.indication_class <> '""'
+WITH d, split(replace(replace(d.indication_class, '"', ''), '; ', ';'), ';') AS indications
+UNWIND indications AS indication
+WITH d, trim(indication) AS clean_indication
+WHERE clean_indication <> ''
+MERGE (i:Indication {name: clean_indication})
+MERGE (d)-[:TREATS_INDICATION]->(i);
+
+
+// ---------------------------------------------------------------------------
+// 2. MoleculeType nodes from Drug.molecule_type
+// ---------------------------------------------------------------------------
+// Categorizes drugs by molecular type (Small molecule, Antibody, etc.)
+
+MATCH (d:Drug)
+WHERE d.molecule_type IS NOT NULL AND d.molecule_type <> ''
+MERGE (mt:MoleculeType {name: d.molecule_type})
+MERGE (d)-[:IS_TYPE]->(mt);
+
+
+// ---------------------------------------------------------------------------
+// 3. ActionType nodes from Mechanism.action_type
+// ---------------------------------------------------------------------------
+// How drugs interact with their targets (INHIBITOR, AGONIST, etc.)
+
+MATCH (m:Mechanism)
+WHERE m.action_type IS NOT NULL AND m.action_type <> ''
+MERGE (at:ActionType {name: m.action_type})
+MERGE (m)-[:HAS_ACTION_TYPE]->(at);
+
+
+// ---------------------------------------------------------------------------
+// 4. TargetType nodes from Target.target_type
+// ---------------------------------------------------------------------------
+// Classification of molecular targets (SINGLE PROTEIN, PROTEIN FAMILY, etc.)
+
+MATCH (t:Target)
+WHERE t.target_type IS NOT NULL AND t.target_type <> ''
+MERGE (tt:TargetType {name: t.target_type})
+MERGE (t)-[:IS_TARGET_TYPE]->(tt);
+
+
+// ---------------------------------------------------------------------------
+// 5. Organism nodes from Target.organism
+// ---------------------------------------------------------------------------
+// Species in which targets are found (Homo sapiens, etc.)
+
+MATCH (t:Target)
+WHERE t.organism IS NOT NULL AND t.organism <> ''
+MERGE (o:Organism {name: t.organism})
+MERGE (t)-[:FOUND_IN]->(o);
+
+
+// ---------------------------------------------------------------------------
+// 6. BindingSite nodes from Mechanism.binding_site
+// ---------------------------------------------------------------------------
+// Where on a target the drug binds (only populated for some mechanisms).
+
+MATCH (m:Mechanism)
+WHERE m.binding_site IS NOT NULL AND m.binding_site <> ''
+MERGE (bs:BindingSite {name: m.binding_site})
+MERGE (m)-[:AT_SITE]->(bs);
+
+
+// ---------------------------------------------------------------------------
+// 7. Enzyme and Metabolite nodes (REQUIRES PYTHON)
+// ---------------------------------------------------------------------------
+// The metabolism CSV (10,000 records) needs proper parsing that LOAD CSV
+// struggles with (embedded commas, quoted fields). Run this Python command
+// after the Cypher steps above:
+//
+//   source venv/bin/activate
+//   python scripts/import_metabolism.py --password YOUR_PASSWORD
+//
+// Creates:
+//   - Enzyme nodes (Drug -[:METABOLIZED_BY]-> Enzyme)
+//   - Metabolite nodes (Drug -[:PRODUCES_METABOLITE]-> Metabolite)
+//   - Enzyme-Metabolite links (Enzyme -[:CATALYZES]-> Metabolite)
+// ---------------------------------------------------------------------------

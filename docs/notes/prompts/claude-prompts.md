@@ -33,7 +33,7 @@ On visiting the site initially, it should display the summary - that is, that's 
 
 Make it a SPA.
 
-Write the document to a file.
+Write the generated plan to a file.
 
 We're going to place the frontend in a new folder, such as ./frontend-demo
 
