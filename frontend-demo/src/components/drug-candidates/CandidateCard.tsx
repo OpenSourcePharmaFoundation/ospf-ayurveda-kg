@@ -1,24 +1,26 @@
-import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import type { DrugCandidate } from '@/types/drug-candidate';
 import { getCandidateRanking } from '@/lib/candidate-tiers';
 import type { CandidateTier } from '@/lib/candidate-tiers';
 
-const TIER_STYLES: Record<string, { card: string; badge: string; label: string }> = {
+const TIER_STYLES: Record<string, { row: string; badge: string; label: string; accent: string }> = {
   elite: {
-    card: 'ring-[3px] ring-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.4),0_0_6px_rgba(16,185,129,0.25)] dark:ring-emerald-400 dark:shadow-[0_0_20px_rgba(16,185,129,0.3),0_0_6px_rgba(16,185,129,0.15)] bg-gradient-to-br from-emerald-50/60 to-card dark:from-emerald-950/20 dark:to-card',
+    row: 'border-l-[3px] border-l-emerald-500 bg-gradient-to-r from-emerald-50/50 to-transparent dark:from-emerald-950/20',
     badge: 'bg-emerald-600 text-white border-emerald-700 font-semibold',
-    label: 'Lead Candidate',
+    label: 'Lead',
+    accent: 'text-emerald-700 dark:text-emerald-400',
   },
   top: {
-    card: 'ring-2 ring-amber-400/70 shadow-[0_0_12px_rgba(251,191,36,0.25)] dark:ring-amber-500/60 dark:shadow-[0_0_12px_rgba(251,191,36,0.15)]',
+    row: 'border-l-[3px] border-l-amber-400 bg-gradient-to-r from-amber-50/40 to-transparent dark:from-amber-950/15',
     badge: 'bg-amber-500 text-white border-amber-500',
-    label: 'Top Candidate',
+    label: 'Top',
+    accent: 'text-amber-600 dark:text-amber-400',
   },
   highlighted: {
-    card: 'ring-2 ring-sky-400/50 dark:ring-sky-500/40',
+    row: 'border-l-[3px] border-l-sky-400 bg-gradient-to-r from-sky-50/30 to-transparent dark:from-sky-950/10',
     badge: 'bg-sky-100 text-sky-700 border-sky-300 dark:bg-sky-900/40 dark:text-sky-300 dark:border-sky-600',
-    label: 'Candidate of Interest',
+    label: 'Interest',
+    accent: 'text-sky-600 dark:text-sky-400',
   },
 };
 
@@ -34,81 +36,81 @@ export function CandidateCard({ candidate, tier, onClick }: CandidateCardProps) 
   const tierStyle = tier ? TIER_STYLES[tier] : null;
   const topIndications = candidate.indications.slice(0, 3);
 
-  const properties = [
-    ...(ranking?.score ? [{ label: 'Score', value: String(ranking.score) }] : []),
-    { label: 'MW', value: candidate.molecular_weight?.toFixed(1) },
-    { label: 'LogP', value: candidate.alogp?.toFixed(2) },
-    { label: 'PSA', value: candidate.psa?.toFixed(1) },
-    { label: 'HBD', value: candidate.hbd?.toString() },
-    { label: 'HBA', value: candidate.hba?.toString() },
-  ].filter((p) => p.value && p.value !== '0' && p.value !== '0.0' && p.value !== '0.00');
-
   return (
-    <Card
-      className={`hover:shadow-md transition-shadow ${onClick ? 'cursor-pointer' : ''} ${tierStyle?.card ?? ''}`}
+    <div
+      className={`flex items-center gap-4 px-4 py-3 rounded-lg border border-border transition-colors hover:bg-muted/40 ${onClick ? 'cursor-pointer' : ''} ${tierStyle?.row ?? ''}`}
       onClick={() => onClick?.(candidate)}
     >
-      <CardContent className="pt-4">
-        <div className="flex items-start justify-between mb-2">
-          <div className="min-w-0">
-            <h3 className="font-semibold text-foreground text-sm truncate">
-              {displayName}
-            </h3>
-            {candidate.chembl_id && (
-              <span className="text-xs text-muted-foreground font-mono">
-                {candidate.chembl_id}
-              </span>
-            )}
-          </div>
-          <div className="flex gap-1 shrink-0">
-            {tierStyle && (
-              <Badge variant="outline" className={`text-xs ${tierStyle.badge}`}>
-                {tierStyle.label}
-              </Badge>
-            )}
-            {candidate.is_natural_product && (
-              <Badge variant="outline" className="text-xs border-primary/40 text-primary">
-                Natural
-              </Badge>
-            )}
-          </div>
-        </div>
-
-        {properties.length > 0 && (
-          <div className="flex flex-wrap gap-2 my-3">
-            {properties.map(({ label, value }) => (
-              <div
-                key={label}
-                className="bg-muted/50 rounded px-2 py-1 text-xs"
-              >
-                <span className="text-muted-foreground">{label}: </span>
-                <span className="font-mono font-medium text-foreground">{value}</span>
-              </div>
-            ))}
-          </div>
+      {/* Score */}
+      <div className="w-12 shrink-0 text-center">
+        {ranking?.score ? (
+          <span className={`text-lg font-bold font-mono ${tierStyle?.accent ?? 'text-muted-foreground'}`}>
+            {ranking.score}
+          </span>
+        ) : (
+          <span className="text-sm text-muted-foreground/40">—</span>
         )}
+      </div>
 
-        {topIndications.length > 0 && (
-          <div className="mt-2">
-            <p className="text-xs text-muted-foreground mb-1">Indications:</p>
-            <div className="flex flex-wrap gap-1">
-              {topIndications.map((ind) => (
-                <span
-                  key={ind}
-                  className="text-xs bg-secondary text-secondary-foreground px-1.5 py-0.5 rounded"
-                >
-                  {ind}
-                </span>
-              ))}
-              {candidate.indications.length > 3 && (
-                <span className="text-xs text-muted-foreground">
-                  +{candidate.indications.length - 3} more
-                </span>
-              )}
-            </div>
-          </div>
+      {/* Name + ChemBL ID */}
+      <div className="w-52 shrink-0 min-w-0">
+        <div className="font-semibold text-sm text-foreground truncate">{displayName}</div>
+        {candidate.chembl_id && (
+          <div className="text-xs text-muted-foreground font-mono">{candidate.chembl_id}</div>
         )}
-      </CardContent>
-    </Card>
+      </div>
+
+      {/* Tier badge */}
+      <div className="w-16 shrink-0">
+        {tierStyle && (
+          <Badge variant="outline" className={`text-xs ${tierStyle.badge}`}>
+            {tierStyle.label}
+          </Badge>
+        )}
+      </div>
+
+      {/* Molecular properties */}
+      <div className="hidden md:flex items-center gap-3 shrink-0">
+        <PropPill label="MW" value={candidate.molecular_weight?.toFixed(0)} />
+        <PropPill label="LogP" value={candidate.alogp?.toFixed(1)} />
+        <PropPill label="PSA" value={candidate.psa?.toFixed(0)} />
+      </div>
+
+      {/* Badges */}
+      <div className="flex items-center gap-1.5 shrink-0 ml-auto">
+        {candidate.is_natural_product && (
+          <Badge variant="outline" className="text-xs border-primary/40 text-primary">
+            Natural
+          </Badge>
+        )}
+      </div>
+
+      {/* Indications (hidden on small screens) */}
+      <div className="hidden lg:flex items-center gap-1 min-w-0 max-w-xs">
+        {topIndications.slice(0, 2).map((ind) => (
+          <span
+            key={ind}
+            className="text-xs bg-secondary text-secondary-foreground px-1.5 py-0.5 rounded truncate max-w-[120px]"
+          >
+            {ind}
+          </span>
+        ))}
+        {candidate.indications.length > 2 && (
+          <span className="text-xs text-muted-foreground shrink-0">
+            +{candidate.indications.length - 2}
+          </span>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function PropPill({ label, value }: { label: string; value?: string }) {
+  if (!value || value === '0') return null;
+  return (
+    <div className="bg-muted/50 rounded px-1.5 py-0.5 text-xs whitespace-nowrap">
+      <span className="text-muted-foreground">{label} </span>
+      <span className="font-mono font-medium text-foreground">{value}</span>
+    </div>
   );
 }

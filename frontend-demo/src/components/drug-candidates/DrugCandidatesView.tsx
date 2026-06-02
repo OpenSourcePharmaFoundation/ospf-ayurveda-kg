@@ -93,7 +93,7 @@ export function DrugCandidatesView() {
         </span>
       </div>
 
-      <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="flex flex-col gap-1.5">
         {filtered.map((candidate) => (
           <CandidateCard
             key={candidate.chembl_id || candidate.drug_name}
