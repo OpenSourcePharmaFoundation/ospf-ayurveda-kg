@@ -1,6 +1,8 @@
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Drawer, DrawerContent } from '@/components/ui/drawer';
+import { getCandidateRanking } from '@/lib/candidate-tiers';
+import type { CandidateRanking, SafetyVerdict } from '@/lib/candidate-tiers';
 import type { DrugCandidate } from '@/types/drug-candidate';
 
 interface CandidateDetailDrawerProps {
@@ -15,6 +17,19 @@ const PHASE_LABELS: Record<number, string> = {
   2: 'Phase II',
   3: 'Phase III',
   4: 'Approved',
+};
+
+const SAFETY_STYLES: Record<SafetyVerdict, { bg: string; text: string; label: string }> = {
+  GREEN: { bg: 'bg-emerald-500/10', text: 'text-emerald-700 dark:text-emerald-400', label: 'Low Risk' },
+  YELLOW: { bg: 'bg-amber-500/10', text: 'text-amber-700 dark:text-amber-400', label: 'Moderate Risk' },
+  ORANGE: { bg: 'bg-orange-500/10', text: 'text-orange-700 dark:text-orange-400', label: 'Elevated Risk' },
+  RED: { bg: 'bg-red-500/10', text: 'text-red-700 dark:text-red-400', label: 'High Risk' },
+};
+
+const TIER_LABELS: Record<string, string> = {
+  elite: 'Lead Candidate',
+  top: 'Top Candidate',
+  highlighted: 'Candidate of Interest',
 };
 
 function PropertyRow({ label, value, unit }: { label: string; value: string; unit?: string }) {
@@ -37,11 +52,12 @@ export function CandidateDetailDrawer({
   if (!candidate) return null;
 
   const phaseLabel = PHASE_LABELS[candidate.max_phase] ?? `Phase ${candidate.max_phase}`;
+  const ranking = getCandidateRanking(candidate.chembl_id);
 
   return (
     <Drawer open={open} onOpenChange={onOpenChange} swipeDirection="right">
       <DrawerContent
-        title={candidate.drug_name}
+        title={ranking?.displayName || candidate.drug_name}
         description={candidate.chembl_id || undefined}
       >
         <div className="px-6 py-5 space-y-6">
@@ -53,6 +69,8 @@ export function CandidateDetailDrawer({
               </Badge>
             )}
           </div>
+
+          {ranking && <RankingSection ranking={ranking} />}
 
           <div>
             <h4 className="text-sm font-semibold text-foreground mb-1">Molecular Properties</h4>
@@ -112,7 +130,7 @@ export function CandidateDetailDrawer({
               <h4 className="text-sm font-semibold text-foreground mb-1">External Links</h4>
               <Separator className="mb-3" />
               <a
-                href={`https://www.ebi.ac.uk/chembl/compound_report_card/${candidate.chembl_id}/`}
+                href={`https://www.ebi.ac.uk/chembl/explore/compound/${candidate.chembl_id}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-primary hover:underline"
@@ -124,6 +142,38 @@ export function CandidateDetailDrawer({
         </div>
       </DrawerContent>
     </Drawer>
+  );
+}
+
+function RankingSection({ ranking }: { ranking: CandidateRanking }) {
+  const tierLabel = ranking.tier ? TIER_LABELS[ranking.tier] : null;
+  const safetyStyle = ranking.safety ? SAFETY_STYLES[ranking.safety] : null;
+
+  return (
+    <div className="rounded-lg border border-border bg-muted/30 p-4 space-y-3">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          {tierLabel && (
+            <span className="text-sm font-semibold text-foreground">{tierLabel}</span>
+          )}
+          {safetyStyle && (
+            <span className={`text-xs px-2 py-0.5 rounded-full ${safetyStyle.bg} ${safetyStyle.text}`}>
+              {safetyStyle.label}
+            </span>
+          )}
+        </div>
+        <span className="text-lg font-bold font-mono text-foreground">
+          {ranking.score}
+          <span className="text-sm font-normal text-muted-foreground">/100</span>
+        </span>
+      </div>
+      <div>
+        <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1.5">
+          Why this candidate?
+        </h4>
+        <p className="text-sm text-foreground leading-relaxed">{ranking.rationale}</p>
+      </div>
+    </div>
   );
 }
 

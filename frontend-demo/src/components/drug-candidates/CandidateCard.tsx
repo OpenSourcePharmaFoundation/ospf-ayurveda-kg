@@ -1,9 +1,15 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import type { DrugCandidate } from '@/types/drug-candidate';
+import { getCandidateRanking } from '@/lib/candidate-tiers';
 import type { CandidateTier } from '@/lib/candidate-tiers';
 
 const TIER_STYLES: Record<string, { card: string; badge: string; label: string }> = {
+  elite: {
+    card: 'ring-[3px] ring-amber-500 shadow-[0_0_20px_rgba(251,191,36,0.45),0_0_6px_rgba(251,191,36,0.3)] dark:ring-amber-400 dark:shadow-[0_0_20px_rgba(251,191,36,0.3),0_0_6px_rgba(251,191,36,0.2)] bg-gradient-to-br from-amber-50/60 to-card dark:from-amber-950/20 dark:to-card',
+    badge: 'bg-amber-500 text-white border-amber-600 font-semibold',
+    label: 'Lead Candidate',
+  },
   top: {
     card: 'ring-2 ring-amber-400/70 shadow-[0_0_12px_rgba(251,191,36,0.25)] dark:ring-amber-500/60 dark:shadow-[0_0_12px_rgba(251,191,36,0.15)]',
     badge: 'bg-amber-500 text-white border-amber-500',
@@ -33,6 +39,8 @@ export function CandidateCard({ candidate, tier, onClick }: CandidateCardProps) 
 
   const topIndications = candidate.indications.slice(0, 3);
   const tierStyle = tier ? TIER_STYLES[tier] : null;
+  const ranking = getCandidateRanking(candidate.chembl_id);
+  const displayName = ranking?.displayName || candidate.drug_name;
 
   return (
     <Card
@@ -43,7 +51,7 @@ export function CandidateCard({ candidate, tier, onClick }: CandidateCardProps) 
         <div className="flex items-start justify-between mb-2">
           <div className="min-w-0">
             <h3 className="font-semibold text-foreground text-sm truncate">
-              {candidate.drug_name}
+              {displayName}
             </h3>
             {candidate.chembl_id && (
               <span className="text-xs text-muted-foreground font-mono">

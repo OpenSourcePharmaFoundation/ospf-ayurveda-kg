@@ -10,6 +10,7 @@ export async function loadDrugCandidates(url: string): Promise<DrugCandidate[]> 
       header: true,
       skipEmptyLines: true,
       transformHeader: (h) => h.trim(),
+      transform: (value) => value.trim().replace(/^"|"$/g, ''),
       complete: (results) => {
         const candidates = results.data.map(transformRow).filter(Boolean) as DrugCandidate[];
         resolve(candidates);
@@ -19,30 +20,34 @@ export async function loadDrugCandidates(url: string): Promise<DrugCandidate[]> 
   });
 }
 
+function clean(value: string | undefined): string {
+  return (value ?? '').trim().replace(/^"|"$/g, '');
+}
+
 function transformRow(row: Record<string, string>): DrugCandidate | null {
-  const name = row['drug_name'] || row['pref_name'] || row['Drug'] || '';
+  const name = clean(row['drug_name']) || clean(row['pref_name']) || clean(row['Drug']);
   if (!name) return null;
 
   const indications = (
-    row['indications'] || row['current_indications'] || row['mesh_heading'] || ''
+    clean(row['indications']) || clean(row['current_indications']) || clean(row['mesh_heading'])
   )
     .split(/;\s*/)
     .map((s) => s.trim())
     .filter(Boolean);
 
-  const naturalRaw = (row['is_natural_product'] || row['natural_product'] || '').trim();
+  const naturalRaw = clean(row['is_natural_product']) || clean(row['natural_product']);
 
   return {
     drug_name: name,
-    chembl_id: row['chembl_id'] || row['molecule_chembl_id'] || '',
-    molecular_weight: parseFloat(row['molecular_weight'] || row['mw_freebase'] || '0'),
-    alogp: parseFloat(row['alogp'] || row['logP'] || '0'),
-    psa: parseFloat(row['psa'] || row['polar_surface_area'] || '0'),
-    hbd: parseFloat(row['hbd'] || row['h_bond_donors'] || '0'),
-    hba: parseFloat(row['hba'] || row['h_bond_acceptors'] || '0'),
+    chembl_id: clean(row['chembl_id']) || clean(row['molecule_chembl_id']),
+    molecular_weight: parseFloat(clean(row['molecular_weight']) || clean(row['mw_freebase']) || '0'),
+    alogp: parseFloat(clean(row['alogp']) || clean(row['logP']) || '0'),
+    psa: parseFloat(clean(row['psa']) || clean(row['polar_surface_area']) || '0'),
+    hbd: parseFloat(clean(row['hbd']) || clean(row['h_bond_donors']) || '0'),
+    hba: parseFloat(clean(row['hba']) || clean(row['h_bond_acceptors']) || '0'),
     is_natural_product: naturalRaw.toLowerCase() === 'true' || naturalRaw === '1',
     indications,
-    indication_count: parseInt(row['indication_count'] || String(indications.length), 10),
-    max_phase: parseInt(row['max_phase'] || '4', 10),
+    indication_count: parseInt(clean(row['indication_count']) || String(indications.length), 10),
+    max_phase: parseInt(clean(row['max_phase']) || '4', 10),
   };
 }

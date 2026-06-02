@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback } from 'react';
 import { useDrugCandidates } from '@/hooks/use-drug-candidates';
 import { CandidateCard } from './CandidateCard';
 import { CandidateDetailDrawer } from './CandidateDetailDrawer';
-import { getCandidateTier } from '@/lib/candidate-tiers';
+import { getCandidateTier, getCandidateScore } from '@/lib/candidate-tiers';
 import type { DrugCandidate } from '@/types/drug-candidate';
 
 export function DrugCandidatesView() {
@@ -31,13 +31,10 @@ export function DrugCandidatesView() {
     if (filterNatural) {
       result = result.filter((c) => c.is_natural_product);
     }
-    const tierOrder = { top: 0, highlighted: 1 };
     return [...result].sort((a, b) => {
-      const ta = getCandidateTier(a.chembl_id);
-      const tb = getCandidateTier(b.chembl_id);
-      const oa = ta ? tierOrder[ta] : 2;
-      const ob = tb ? tierOrder[tb] : 2;
-      return oa - ob;
+      const sa = getCandidateScore(a.chembl_id);
+      const sb = getCandidateScore(b.chembl_id);
+      return sb - sa;
     });
   }, [candidates, search, filterNatural]);
 
@@ -82,6 +79,10 @@ export function DrugCandidatesView() {
 
       <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground mb-4">
         <span>Showing {filtered.length} of {candidates.length} candidates</span>
+        <span className="flex items-center gap-1.5">
+          <span className="inline-block w-3 h-3 rounded-sm ring-[3px] ring-amber-500 bg-gradient-to-br from-amber-100 to-amber-50" />
+          Lead Candidates
+        </span>
         <span className="flex items-center gap-1.5">
           <span className="inline-block w-3 h-3 rounded-sm ring-2 ring-amber-400/70 bg-amber-400/20" />
           Top Candidates
