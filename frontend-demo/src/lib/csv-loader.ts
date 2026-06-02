@@ -9,6 +9,7 @@ export async function loadDrugCandidates(url: string): Promise<DrugCandidate[]> 
     Papa.parse<Record<string, string>>(text, {
       header: true,
       skipEmptyLines: true,
+      transformHeader: (h) => h.trim(),
       complete: (results) => {
         const candidates = results.data.map(transformRow).filter(Boolean) as DrugCandidate[];
         resolve(candidates);
