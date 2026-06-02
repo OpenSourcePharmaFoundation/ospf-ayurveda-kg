@@ -80,7 +80,7 @@ export function DrugCandidatesView() {
       <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground mb-4">
         <span>Showing {filtered.length} of {candidates.length} candidates</span>
         <span className="flex items-center gap-1.5">
-          <span className="inline-block w-3 h-3 rounded-sm ring-[3px] ring-amber-500 bg-gradient-to-br from-amber-100 to-amber-50" />
+          <span className="inline-block w-3 h-3 rounded-sm ring-[3px] ring-emerald-500 bg-gradient-to-br from-emerald-100 to-emerald-50" />
           Lead Candidates
         </span>
         <span className="flex items-center gap-1.5">
