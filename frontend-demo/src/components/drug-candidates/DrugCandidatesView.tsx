@@ -2,6 +2,7 @@ import { useState, useMemo, useCallback } from 'react';
 import { useDrugCandidates } from '@/hooks/use-drug-candidates';
 import { CandidateCard } from './CandidateCard';
 import { CandidateDetailDrawer } from './CandidateDetailDrawer';
+import { getCandidateTier } from '@/lib/candidate-tiers';
 import type { DrugCandidate } from '@/types/drug-candidate';
 
 export function DrugCandidatesView() {
@@ -30,7 +31,14 @@ export function DrugCandidatesView() {
     if (filterNatural) {
       result = result.filter((c) => c.is_natural_product);
     }
-    return result;
+    const tierOrder = { top: 0, highlighted: 1 };
+    return [...result].sort((a, b) => {
+      const ta = getCandidateTier(a.chembl_id);
+      const tb = getCandidateTier(b.chembl_id);
+      const oa = ta ? tierOrder[ta] : 2;
+      const ob = tb ? tierOrder[tb] : 2;
+      return oa - ob;
+    });
   }, [candidates, search, filterNatural]);
 
   if (loading) {
@@ -72,15 +80,24 @@ export function DrugCandidatesView() {
         </label>
       </div>
 
-      <p className="text-sm text-muted-foreground mb-4">
-        Showing {filtered.length} of {candidates.length} candidates
-      </p>
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground mb-4">
+        <span>Showing {filtered.length} of {candidates.length} candidates</span>
+        <span className="flex items-center gap-1.5">
+          <span className="inline-block w-3 h-3 rounded-sm ring-2 ring-amber-400/70 bg-amber-400/20" />
+          Top Candidates
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="inline-block w-3 h-3 rounded-sm ring-2 ring-sky-400/50 bg-sky-400/10" />
+          Candidates of Interest
+        </span>
+      </div>
 
       <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((candidate) => (
           <CandidateCard
             key={candidate.chembl_id || candidate.drug_name}
             candidate={candidate}
+            tier={getCandidateTier(candidate.chembl_id)}
             onClick={handleCardClick}
           />
         ))}

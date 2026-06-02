@@ -1,13 +1,28 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import type { DrugCandidate } from '@/types/drug-candidate';
+import type { CandidateTier } from '@/lib/candidate-tiers';
+
+const TIER_STYLES: Record<string, { card: string; badge: string; label: string }> = {
+  top: {
+    card: 'ring-2 ring-amber-400/70 shadow-[0_0_12px_rgba(251,191,36,0.25)] dark:ring-amber-500/60 dark:shadow-[0_0_12px_rgba(251,191,36,0.15)]',
+    badge: 'bg-amber-500 text-white border-amber-500',
+    label: 'Top Candidate',
+  },
+  highlighted: {
+    card: 'ring-2 ring-sky-400/50 dark:ring-sky-500/40',
+    badge: 'bg-sky-100 text-sky-700 border-sky-300 dark:bg-sky-900/40 dark:text-sky-300 dark:border-sky-600',
+    label: 'Candidate of Interest',
+  },
+};
 
 interface CandidateCardProps {
   candidate: DrugCandidate;
+  tier?: CandidateTier;
   onClick?: (candidate: DrugCandidate) => void;
 }
 
-export function CandidateCard({ candidate, onClick }: CandidateCardProps) {
+export function CandidateCard({ candidate, tier, onClick }: CandidateCardProps) {
   const properties = [
     { label: 'MW', value: candidate.molecular_weight?.toFixed(1) },
     { label: 'LogP', value: candidate.alogp?.toFixed(2) },
@@ -17,10 +32,11 @@ export function CandidateCard({ candidate, onClick }: CandidateCardProps) {
   ].filter((p) => p.value && p.value !== '0' && p.value !== '0.0' && p.value !== '0.00');
 
   const topIndications = candidate.indications.slice(0, 3);
+  const tierStyle = tier ? TIER_STYLES[tier] : null;
 
   return (
     <Card
-      className={`hover:shadow-md transition-shadow ${onClick ? 'cursor-pointer' : ''}`}
+      className={`hover:shadow-md transition-shadow ${onClick ? 'cursor-pointer' : ''} ${tierStyle?.card ?? ''}`}
       onClick={() => onClick?.(candidate)}
     >
       <CardContent className="pt-4">
@@ -36,6 +52,11 @@ export function CandidateCard({ candidate, onClick }: CandidateCardProps) {
             )}
           </div>
           <div className="flex gap-1 shrink-0">
+            {tierStyle && (
+              <Badge variant="outline" className={`text-xs ${tierStyle.badge}`}>
+                {tierStyle.label}
+              </Badge>
+            )}
             {candidate.is_natural_product && (
               <Badge variant="outline" className="text-xs border-primary/40 text-primary">
                 Natural
