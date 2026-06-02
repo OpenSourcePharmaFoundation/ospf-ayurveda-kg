@@ -27,13 +27,34 @@ const TIER_STYLES: Record<string, { row: string; badge: string; label: string; a
 interface CandidateCardProps {
   candidate: DrugCandidate;
   tier?: CandidateTier;
+  compact?: boolean;
+  selected?: boolean;
   onClick?: (candidate: DrugCandidate) => void;
 }
 
-export function CandidateCard({ candidate, tier, onClick }: CandidateCardProps) {
+export function CandidateCard({ candidate, tier, compact, selected, onClick }: CandidateCardProps) {
   const ranking = getCandidateRanking(candidate.chembl_id);
   const displayName = ranking?.displayName || candidate.drug_name;
   const tierStyle = tier ? TIER_STYLES[tier] : null;
+
+  if (compact) {
+    return (
+      <div
+        className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors cursor-pointer text-sm ${
+          selected
+            ? 'bg-primary/10 text-primary font-medium'
+            : 'hover:bg-muted/60 text-foreground'
+        } ${tierStyle ? tierStyle.row : ''}`}
+        onClick={() => onClick?.(candidate)}
+      >
+        <span className={`w-8 shrink-0 text-center font-mono text-xs font-bold ${tierStyle?.accent ?? 'text-muted-foreground/50'}`}>
+          {ranking?.score || '—'}
+        </span>
+        <span className="truncate">{displayName}</span>
+      </div>
+    );
+  }
+
   const topIndications = candidate.indications.slice(0, 3);
 
   return (
@@ -41,7 +62,6 @@ export function CandidateCard({ candidate, tier, onClick }: CandidateCardProps) 
       className={`flex items-center gap-4 px-4 py-3 rounded-lg border border-border transition-colors hover:bg-muted/40 ${onClick ? 'cursor-pointer' : ''} ${tierStyle?.row ?? ''}`}
       onClick={() => onClick?.(candidate)}
     >
-      {/* Score */}
       <div className="w-12 shrink-0 text-center">
         {ranking?.score ? (
           <span className={`text-lg font-bold font-mono ${tierStyle?.accent ?? 'text-muted-foreground'}`}>
@@ -52,7 +72,6 @@ export function CandidateCard({ candidate, tier, onClick }: CandidateCardProps) 
         )}
       </div>
 
-      {/* Name + ChemBL ID */}
       <div className="w-52 shrink-0 min-w-0">
         <div className="font-semibold text-sm text-foreground truncate">{displayName}</div>
         {candidate.chembl_id && (
@@ -60,7 +79,6 @@ export function CandidateCard({ candidate, tier, onClick }: CandidateCardProps) 
         )}
       </div>
 
-      {/* Tier badge */}
       <div className="w-16 shrink-0">
         {tierStyle && (
           <Badge variant="outline" className={`text-xs ${tierStyle.badge}`}>
@@ -69,14 +87,12 @@ export function CandidateCard({ candidate, tier, onClick }: CandidateCardProps) 
         )}
       </div>
 
-      {/* Molecular properties */}
       <div className="hidden md:flex items-center gap-3 shrink-0">
         <PropPill label="MW" value={candidate.molecular_weight?.toFixed(0)} />
         <PropPill label="LogP" value={candidate.alogp?.toFixed(1)} />
         <PropPill label="PSA" value={candidate.psa?.toFixed(0)} />
       </div>
 
-      {/* Badges */}
       <div className="flex items-center gap-1.5 shrink-0 ml-auto">
         {candidate.is_natural_product && (
           <Badge variant="outline" className="text-xs border-primary/40 text-primary">
@@ -85,7 +101,6 @@ export function CandidateCard({ candidate, tier, onClick }: CandidateCardProps) 
         )}
       </div>
 
-      {/* Indications (hidden on small screens) */}
       <div className="hidden lg:flex items-center gap-1 min-w-0 max-w-xs">
         {topIndications.slice(0, 2).map((ind) => (
           <span
