@@ -1,11 +1,20 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { useDrugCandidates } from '@/hooks/use-drug-candidates';
 import { CandidateCard } from './CandidateCard';
+import { CandidateDetailDrawer } from './CandidateDetailDrawer';
+import type { DrugCandidate } from '@/types/drug-candidate';
 
 export function DrugCandidatesView() {
   const { candidates, loading, error } = useDrugCandidates();
   const [search, setSearch] = useState('');
   const [filterNatural, setFilterNatural] = useState(false);
+  const [selectedCandidate, setSelectedCandidate] = useState<DrugCandidate | null>(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const handleCardClick = useCallback((candidate: DrugCandidate) => {
+    setSelectedCandidate(candidate);
+    setDrawerOpen(true);
+  }, []);
 
   const filtered = useMemo(() => {
     let result = candidates;
@@ -69,7 +78,11 @@ export function DrugCandidatesView() {
 
       <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((candidate) => (
-          <CandidateCard key={candidate.chembl_id || candidate.drug_name} candidate={candidate} />
+          <CandidateCard
+            key={candidate.chembl_id || candidate.drug_name}
+            candidate={candidate}
+            onClick={handleCardClick}
+          />
         ))}
       </div>
 
@@ -78,6 +91,12 @@ export function DrugCandidatesView() {
           No candidates match your filters.
         </div>
       )}
+
+      <CandidateDetailDrawer
+        candidate={selectedCandidate}
+        open={drawerOpen}
+        onOpenChange={setDrawerOpen}
+      />
     </div>
   );
 }

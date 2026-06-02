@@ -4,9 +4,10 @@ import type { DrugCandidate } from '@/types/drug-candidate';
 
 interface CandidateCardProps {
   candidate: DrugCandidate;
+  onClick?: (candidate: DrugCandidate) => void;
 }
 
-export function CandidateCard({ candidate }: CandidateCardProps) {
+export function CandidateCard({ candidate, onClick }: CandidateCardProps) {
   const properties = [
     { label: 'MW', value: candidate.molecular_weight?.toFixed(1) },
     { label: 'LogP', value: candidate.alogp?.toFixed(2) },
@@ -18,7 +19,10 @@ export function CandidateCard({ candidate }: CandidateCardProps) {
   const topIndications = candidate.indications.slice(0, 3);
 
   return (
-    <Card className="hover:shadow-md transition-shadow">
+    <Card
+      className={`hover:shadow-md transition-shadow ${onClick ? 'cursor-pointer' : ''}`}
+      onClick={() => onClick?.(candidate)}
+    >
       <CardContent className="pt-4">
         <div className="flex items-start justify-between mb-2">
           <div className="min-w-0">
