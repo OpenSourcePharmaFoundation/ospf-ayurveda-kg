@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { X, ChevronDown } from 'lucide-react';
@@ -96,6 +96,10 @@ export function CandidateDetailPanel({ candidate, onClose }: CandidateDetailPane
           )}
 
           {ranking && <RankingSection ranking={ranking} />}
+
+          {candidate.chembl_id && ranking && (ranking.tier === 'elite' || ranking.tier === 'top') && (
+            <MoleculeStructure chemblId={candidate.chembl_id} name={displayName} />
+          )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -250,6 +254,28 @@ function RankingSection({ ranking }: { ranking: CandidateRanking }) {
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+function MoleculeStructure({ chemblId, name }: { chemblId: string; name: string }) {
+  const [failed, setFailed] = useState(false);
+  const handleError = useCallback(() => setFailed(true), []);
+
+  if (failed) return null;
+
+  return (
+    <div>
+      <h4 className="text-sm font-semibold text-foreground mb-1">Molecular Structure</h4>
+      <Separator className="mb-3" />
+      <div className="rounded-lg border border-border bg-white p-4 inline-block">
+        <img
+          src={`https://www.ebi.ac.uk/chembl/api/data/image/${chemblId}.svg`}
+          alt={`${name} molecular structure`}
+          className="max-w-[280px] max-h-[280px]"
+          onError={handleError}
+        />
+      </div>
     </div>
   );
 }
