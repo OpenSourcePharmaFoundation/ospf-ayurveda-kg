@@ -2,9 +2,15 @@ import { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { X, ChevronDown } from 'lucide-react';
-import { getCandidateRanking } from '@/lib/candidate-tiers';
+import { getCandidateRanking, getExistingOmStatus } from '@/lib/candidate-tiers';
 import type { CandidateRanking, SafetyVerdict } from '@/lib/candidate-tiers';
 import type { DrugCandidate } from '@/types/drug-candidate';
+
+function titleCase(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
 
 interface CandidateDetailPanelProps {
   candidate: DrugCandidate;
@@ -47,7 +53,8 @@ function PropertyRow({ label, value, unit }: { label: string; value: string; uni
 export function CandidateDetailPanel({ candidate, onClose }: CandidateDetailPanelProps) {
   const phaseLabel = PHASE_LABELS[candidate.max_phase] ?? `Phase ${candidate.max_phase}`;
   const ranking = getCandidateRanking(candidate.chembl_id);
-  const displayName = ranking?.displayName || candidate.drug_name;
+  const displayName = ranking?.displayName || titleCase(candidate.drug_name);
+  const omStatus = getExistingOmStatus(candidate.chembl_id);
 
   return (
     <div className="h-full flex flex-col">
@@ -70,12 +77,23 @@ export function CandidateDetailPanel({ candidate, onClose }: CandidateDetailPane
         <div className="px-6 py-5 space-y-6 max-w-3xl">
           <div className="flex flex-wrap gap-2">
             <Badge variant="outline">{phaseLabel}</Badge>
+            {omStatus && (
+              <Badge variant="outline" className="border-violet-400 text-violet-600 dark:text-violet-400 dark:border-violet-500">
+                Existing OM Drug
+              </Badge>
+            )}
             {candidate.is_natural_product && (
               <Badge variant="outline" className="border-primary/40 text-primary">
                 Natural Product
               </Badge>
             )}
           </div>
+
+          {omStatus && (
+            <div className="rounded-md bg-violet-500/10 px-3 py-2 text-sm text-violet-700 dark:text-violet-300">
+              {omStatus}
+            </div>
+          )}
 
           {ranking && <RankingSection ranking={ranking} />}
 

@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import type { DrugCandidate } from '@/types/drug-candidate';
-import { getCandidateRanking } from '@/lib/candidate-tiers';
+import { getCandidateRanking, getExistingOmStatus } from '@/lib/candidate-tiers';
 import type { CandidateTier } from '@/lib/candidate-tiers';
 
 const TIER_STYLES: Record<string, { row: string; badge: string; label: string; accent: string }> = {
@@ -32,10 +32,17 @@ interface CandidateCardProps {
   onClick?: (candidate: DrugCandidate) => void;
 }
 
+function titleCase(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
 export function CandidateCard({ candidate, tier, compact, selected, onClick }: CandidateCardProps) {
   const ranking = getCandidateRanking(candidate.chembl_id);
-  const displayName = ranking?.displayName || candidate.drug_name;
+  const displayName = ranking?.displayName || titleCase(candidate.drug_name);
   const tierStyle = tier ? TIER_STYLES[tier] : null;
+  const omStatus = getExistingOmStatus(candidate.chembl_id);
 
   if (compact) {
     return (
@@ -51,6 +58,9 @@ export function CandidateCard({ candidate, tier, compact, selected, onClick }: C
           {ranking?.score || '—'}
         </span>
         <span className="truncate">{displayName}</span>
+        {omStatus && (
+          <span className="shrink-0 text-[10px] text-violet-600 dark:text-violet-400 font-medium" title={omStatus}>OM</span>
+        )}
       </div>
     );
   }
@@ -94,6 +104,11 @@ export function CandidateCard({ candidate, tier, compact, selected, onClick }: C
       </div>
 
       <div className="flex items-center gap-1.5 shrink-0 ml-auto">
+        {omStatus && (
+          <Badge variant="outline" className="text-xs border-violet-400 text-violet-600 dark:text-violet-400 dark:border-violet-500" title={omStatus}>
+            Existing OM
+          </Badge>
+        )}
         {candidate.is_natural_product && (
           <Badge variant="outline" className="text-xs border-primary/40 text-primary">
             Natural

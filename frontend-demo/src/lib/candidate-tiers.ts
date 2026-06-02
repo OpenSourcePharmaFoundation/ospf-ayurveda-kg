@@ -97,7 +97,7 @@ const CANDIDATE_RANKINGS = new Map<string, CandidateRanking>([
     rationale: 'Maleate salt form of filgotinib — same mechanism and rationale. Salt form may offer different pharmacokinetic properties useful for topical formulation development.',
   }],
   ['CHEMBL2103743', {
-    tier: 'highlighted', score: 54,
+    tier: 'top', score: 54,
     rationale: 'Citrate salt form of tofacitinib — same JAK inhibitor mechanism targeting IL-6/IFN-gamma signaling in OM. Salt form may provide different solubility characteristics relevant to mouthwash or topical gel formulation.',
   }],
 
@@ -154,4 +154,15 @@ export function getCandidateScore(chemblId: string): number {
 
 export function getCandidateRanking(chemblId: string): CandidateRanking | null {
   return CANDIDATE_RANKINGS.get(chemblId) ?? null;
+}
+
+const EXISTING_OM_DRUGS = new Map<string, string>([
+  ['CHEMBL384467', 'De facto clinical standard for OM (mouthwash)'],
+  ['CHEMBL45',     'Studied for OM — oral mucositis is a listed indication'],
+  ['CHEMBL600',    'Studied for OM — mucositis and oral mucositis are listed indications'],
+  ['CHEMBL514800', 'FDA-approved for Behcet\'s oral ulcers — closest phenotypic analog to OM'],
+]);
+
+export function getExistingOmStatus(chemblId: string): string | null {
+  return EXISTING_OM_DRUGS.get(chemblId) ?? null;
 }
