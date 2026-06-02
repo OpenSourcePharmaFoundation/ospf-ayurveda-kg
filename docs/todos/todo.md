@@ -20,7 +20,26 @@ TODO - next steps
     Skipped (no data available): MolecularSpecies, WithdrawalEvent (reasons empty), BindingSite (test data)
 
 5. [ ] More complex frontend
-    [ ] Clicking drugs in the Drug Candidates page should display data for the drug in a drawer
+    [x] Clicking drugs in the Drug Candidates page should display data for the drug in a drawer
+        - Evolved from drawer → master-detail layout (sidebar nav + inline content panel)
+    [x] Drug Candidates tab moved to first position, made default tab
+    [x] Card view converted to list view with score-based sorting
+    [x] Candidate detail content area (replaces drawer)
+        [x] Master-detail layout: compact nav sidebar on left, full detail panel on right
+        [x] Ranking rationale section with collapsible "More detail" (safety profile, scoring methodology)
+        [x] Molecular structure images for top candidates (from ChemBL API)
+        [x] Lipinski's Rule of Five checker
+        [x] Full indications list
+        [x] ChemBL external link
+    [x] Three-tier candidate highlighting system
+        [x] Lead Candidates (top 3) — green ring/glow: Dexamethasone, Budesonide, Mesalamine
+        [x] Top Candidates (next 7) — amber ring: Melatonin, NAC, Pentoxifylline, Apremilast, Azathioprine, Tofacitinib, Naltrexone
+        [x] Candidates of Interest (next 20) — sky blue ring: Tier 2-3 + breast cancer intersection
+    [x] Ranking scores displayed on each list item, sorted by consensus score
+    [x] Formulation-specific display names (e.g. "Dexamethasone mouthwash" vs "DEXAMETHASONE")
+    [x] Existing OM drugs marked with violet badge (Dexamethasone, Melatonin, NAC, Apremilast)
+    [x] Title-cased drug names (was ALL CAPS from CSV)
+    [x] Added 5 missing consensus candidates to CSV (Dexamethasone, Melatonin, NAC, Pentoxifylline, Apremilast)
     [ ] Create a "dashboard" that summarizes the things we actually care about
         [ ] This should be a tab
         [ ] Default to this tab - it should be the first tab
@@ -75,8 +94,14 @@ Drug Candidates tab
 
 Bugs
   [ ] DataTableViz tooltip hardcoded white background — breaks dark mode
-  [ ] csv-loader: is_natural_product only checks lowercase 'true' — misses 'True'
-  [ ] CandidateCard property filter hides legitimate zero values (HBD=0, HBA=0)
+  [x] csv-loader: is_natural_product only checks lowercase 'true' — misses 'True'
+      - Fixed: case-insensitive check via .toLowerCase()
+  [x] CandidateCard property filter hides legitimate zero values (HBD=0, HBA=0)
+      - Root cause was CSV column name mismatch (all values were 0). Fixed CSV header trimming + column mapping.
+  [x] csv-loader: column names didn't match CSV headers (logP vs alogp, polar_surface_area vs psa, etc.)
+      - Added transformHeader trim + column name fallbacks + value cleaning
+  [x] csv-loader: CSV header whitespace not trimmed — PapaParse keys had leading spaces
+  [x] Unescaped commas in indication text broke CSV parsing (e.g. "osteoarthritis, knee")
 
 UX improvements
   [ ] URL-based state (?analysis=may-03&section=methodology) so navigation survives refresh
