@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { X } from 'lucide-react';
+import { X, ChevronDown } from 'lucide-react';
 import { getCandidateRanking } from '@/lib/candidate-tiers';
 import type { CandidateRanking, SafetyVerdict } from '@/lib/candidate-tiers';
 import type { DrugCandidate } from '@/types/drug-candidate';
@@ -154,33 +155,83 @@ export function CandidateDetailPanel({ candidate, onClose }: CandidateDetailPane
 }
 
 function RankingSection({ ranking }: { ranking: CandidateRanking }) {
+  const [expanded, setExpanded] = useState(false);
   const tierLabel = ranking.tier ? TIER_LABELS[ranking.tier] : null;
   const safetyStyle = ranking.safety ? SAFETY_STYLES[ranking.safety] : null;
 
   return (
-    <div className="rounded-lg border border-border bg-muted/30 p-4 space-y-3">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          {tierLabel && (
-            <span className="text-sm font-semibold text-foreground">{tierLabel}</span>
-          )}
-          {safetyStyle && (
-            <span className={`text-xs px-2 py-0.5 rounded-full ${safetyStyle.bg} ${safetyStyle.text}`}>
-              {safetyStyle.label}
-            </span>
-          )}
+    <div
+      className="rounded-lg border border-border bg-muted/30 overflow-hidden cursor-pointer transition-colors hover:bg-muted/50"
+      onClick={() => setExpanded((v) => !v)}
+    >
+      <div className="p-4 space-y-3">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            {tierLabel && (
+              <span className="text-sm font-semibold text-foreground">{tierLabel}</span>
+            )}
+            {safetyStyle && (
+              <span className={`text-xs px-2 py-0.5 rounded-full ${safetyStyle.bg} ${safetyStyle.text}`}>
+                {safetyStyle.label}
+              </span>
+            )}
+          </div>
+          <span className="text-lg font-bold font-mono text-foreground">
+            {ranking.score}
+            <span className="text-sm font-normal text-muted-foreground">/100</span>
+          </span>
         </div>
-        <span className="text-lg font-bold font-mono text-foreground">
-          {ranking.score}
-          <span className="text-sm font-normal text-muted-foreground">/100</span>
-        </span>
+
+        <div>
+          <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1.5">
+            Why this candidate?
+          </h4>
+          <p className="text-sm text-foreground leading-relaxed">{ranking.rationale}</p>
+        </div>
+
+        <button
+          type="button"
+          className="flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
+          onClick={() => setExpanded((v) => !v)}
+        >
+          <ChevronDown
+            className={`size-3.5 transition-transform ${expanded ? 'rotate-180' : ''}`}
+          />
+          {expanded ? 'Less detail' : 'More detail'}
+        </button>
       </div>
-      <div>
-        <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1.5">
-          Why this candidate?
-        </h4>
-        <p className="text-sm text-foreground leading-relaxed">{ranking.rationale}</p>
-      </div>
+
+      {expanded && (
+        <div className="px-4 pb-4 pt-0 border-t border-border/50 space-y-3">
+          {ranking.safety && (
+            <div className="pt-3">
+              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1.5">
+                Safety Profile
+              </h4>
+              <p className="text-sm text-foreground leading-relaxed">
+                {ranking.safety === 'GREEN' &&
+                  'Well-characterized safety profile suitable for cancer patients. No significant concerns for the proposed formulation and delivery route.'}
+                {ranking.safety === 'YELLOW' &&
+                  'Generally safe but requires monitoring. Some considerations around drug interactions or systemic effects in immunocompromised patients.'}
+                {ranking.safety === 'ORANGE' &&
+                  'Elevated risk — requires careful dose management and patient selection. Significant drug interaction potential with common chemotherapy regimens.'}
+                {ranking.safety === 'RED' &&
+                  'High risk — serious safety concerns including black box warnings or fatal drug-drug interaction potential. Use only when benefits clearly outweigh risks.'}
+              </p>
+            </div>
+          )}
+
+          <div>
+            <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1.5">
+              Scoring Methodology
+            </h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Composite score from 15-agent multi-round evaluation assessing efficacy evidence,
+              safety profile, developability, ADMET properties, phase coverage, and Ayurvedic bridge potential.
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
