@@ -13,11 +13,15 @@ export default function App() {
     <PageShell>
       <AppHeader />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
-        <Tabs defaultValue="analysis" className="w-full">
+        <Tabs defaultValue="candidates" className="w-full">
           <TabsList className="mb-6">
-            <TabsTrigger value="analysis">Analysis</TabsTrigger>
             <TabsTrigger value="candidates">Drug Candidates</TabsTrigger>
+            <TabsTrigger value="analysis">Analysis</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="candidates">
+            <DrugCandidatesView />
+          </TabsContent>
 
           <TabsContent value="analysis">
             <AnalysisView
@@ -26,10 +30,6 @@ export default function App() {
               selectedSection={selectedSection}
               onSectionChange={setSelectedSection}
             />
-          </TabsContent>
-
-          <TabsContent value="candidates">
-            <DrugCandidatesView />
           </TabsContent>
         </Tabs>
       </main>
