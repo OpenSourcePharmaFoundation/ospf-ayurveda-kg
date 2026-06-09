@@ -56,12 +56,15 @@ function transformRow(row: Record<string, string>): DrugCandidate | null {
   const name = clean(row['drug_name']) || clean(row['pref_name']) || clean(row['Drug']);
   if (!name) return null;
 
-  const indications = (
-    clean(row['indications']) || clean(row['current_indications']) || clean(row['mesh_heading'])
-  )
-    .split(/;\s*/)
-    .map((s) => s.trim())
-    .filter(Boolean);
+  const indications = [
+    ...new Map(
+      (clean(row['indications']) || clean(row['current_indications']) || clean(row['mesh_heading']))
+        .split(/;\s*/)
+        .map((s) => s.trim())
+        .filter(Boolean)
+        .map((s) => [s.toLowerCase(), s] as const),
+    ).values(),
+  ];
 
   const naturalRaw = clean(row['is_natural_product']) || clean(row['natural_product']);
 
