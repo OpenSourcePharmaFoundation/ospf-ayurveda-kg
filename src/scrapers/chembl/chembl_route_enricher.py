@@ -216,11 +216,13 @@ def infer_route_from_indication(
     name_lower = indication_name.lower()
     for keyword, atc_prefix in INDICATION_BODY_SYSTEM.items():
         if keyword in name_lower:
+            # First try exact 3-char prefix match (e.g., S01 for ophthalmic)
             for code in drug_atc_codes:
-                if code.startswith(atc_prefix[:1]):
+                if code[:3] == atc_prefix:
                     route = atc_to_route(code)
                     if route:
                         return route
+            # Fall back to the canonical route for this prefix
             return atc_to_route(atc_prefix)
     return None
 
