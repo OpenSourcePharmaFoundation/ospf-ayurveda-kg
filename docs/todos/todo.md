@@ -1,7 +1,5 @@
 TODO - next steps
 =================
-2026-05-04
-----------
 [x] Evaluate the output of the analysis
 [x] Build the basic frontend (call it a "prototype")
 [x] Create data visualization agent
@@ -18,6 +16,11 @@ TODO - next steps
       - ActionType (3) — from Mechanism.action_type
       - MoleculeType (1) — from Drug.molecule_type
     Skipped (no data available): MolecularSpecies, WithdrawalEvent (reasons empty), BindingSite (test data)
+
+    [x] Move all chem info in Drug Candidates detail view into a collapsible accordion (default closed)
+        - Desktop panel: already had Accordion wrapper, confirmed it defaults to closed
+        - Mobile drawer: wrapped Molecular Properties + Lipinski's Rule of Five in new Accordion
+    [x] Sort indications by frequency — most common indications across all candidates appear first
 
 5. [ ] More complex frontend
     [x] Clicking drugs in the Drug Candidates page should display data for the drug in a drawer
@@ -58,7 +61,7 @@ TODO - next steps
             [ ] Create a "data table" area
                 [ ] Show data for each node on clicking node
                 [ ] Show data for each relationship on clicking relationship
-
+[ ]
 [ ] Think about what to tackle next
 [ ] Find drugs for each phase
 [ ] Decision tree, finding what's eliminated - show different layers of drugs considered
