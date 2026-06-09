@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Drawer, DrawerContent } from '@/components/ui/drawer';
+import { ChevronDown } from 'lucide-react';
 import { getCandidateRanking } from '@/lib/candidate-tiers';
 import type { CandidateRanking, SafetyVerdict } from '@/lib/candidate-tiers';
 import type { DrugCandidate } from '@/types/drug-candidate';
@@ -72,42 +74,7 @@ export function CandidateDetailDrawer({
 
           {ranking && <RankingSection ranking={ranking} />}
 
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-1">Molecular Properties</h4>
-            <Separator />
-            <div className="divide-y divide-border">
-              <PropertyRow
-                label="Molecular Weight"
-                value={candidate.molecular_weight?.toFixed(2) || '—'}
-                unit="Da"
-              />
-              <PropertyRow
-                label="LogP (Lipophilicity)"
-                value={candidate.alogp?.toFixed(2) || '—'}
-              />
-              <PropertyRow
-                label="Polar Surface Area"
-                value={candidate.psa?.toFixed(1) || '—'}
-                unit="Å²"
-              />
-              <PropertyRow
-                label="H-Bond Donors"
-                value={candidate.hbd?.toString() ?? '—'}
-              />
-              <PropertyRow
-                label="H-Bond Acceptors"
-                value={candidate.hba?.toString() ?? '—'}
-              />
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-1">
-              Lipinski's Rule of Five
-            </h4>
-            <Separator className="mb-3" />
-            <RuleOfFiveCheck candidate={candidate} />
-          </div>
+          <ChemPropertiesSection candidate={candidate} />
 
           {candidate.indications.length > 0 && (
             <div>
@@ -142,6 +109,81 @@ export function CandidateDetailDrawer({
         </div>
       </DrawerContent>
     </Drawer>
+  );
+}
+
+function ChemPropertiesSection({ candidate }: { candidate: DrugCandidate }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div
+      className="rounded-lg border border-border bg-muted/30 overflow-hidden cursor-pointer transition-colors hover:bg-muted/50"
+      onClick={() => setExpanded((v) => !v)}
+    >
+      <div className="p-4">
+        <div className="flex items-center justify-between">
+          <span className="text-sm font-semibold text-foreground">Chemical Properties</span>
+          <button
+            type="button"
+            className="flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
+            onClick={(e) => {
+              e.stopPropagation();
+              setExpanded((v) => !v);
+            }}
+          >
+            <ChevronDown
+              className={`size-3.5 transition-transform ${expanded ? 'rotate-180' : ''}`}
+            />
+            {expanded ? 'Hide' : 'Show'}
+          </button>
+        </div>
+      </div>
+
+      {expanded && (
+        <div className="px-4 pb-4 pt-0 border-t border-border/50">
+          <div className="grid grid-cols-1 gap-6 pt-3">
+            <div>
+              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1.5">
+                Molecular Properties
+              </h4>
+              <Separator />
+              <div className="divide-y divide-border">
+                <PropertyRow
+                  label="Molecular Weight"
+                  value={candidate.molecular_weight?.toFixed(2) || '—'}
+                  unit="Da"
+                />
+                <PropertyRow
+                  label="LogP (Lipophilicity)"
+                  value={candidate.alogp?.toFixed(2) || '—'}
+                />
+                <PropertyRow
+                  label="Polar Surface Area"
+                  value={candidate.psa?.toFixed(1) || '—'}
+                  unit="Å²"
+                />
+                <PropertyRow
+                  label="H-Bond Donors"
+                  value={candidate.hbd?.toString() ?? '—'}
+                />
+                <PropertyRow
+                  label="H-Bond Acceptors"
+                  value={candidate.hba?.toString() ?? '—'}
+                />
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1.5">
+                Lipinski's Rule of Five
+              </h4>
+              <Separator className="mb-3" />
+              <RuleOfFiveCheck candidate={candidate} />
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
