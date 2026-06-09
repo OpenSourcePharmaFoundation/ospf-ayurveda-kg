@@ -1,7 +1,12 @@
 import Papa from 'papaparse';
-import type { DrugCandidate } from '@/types/drug-candidate';
+import type { DrugCandidate, RouteDataMap, IndicationFrequencyMap } from '@/types/drug-candidate';
 
-export async function loadDrugCandidates(url: string): Promise<DrugCandidate[]> {
+export interface LoadResult {
+  candidates: DrugCandidate[];
+  indicationFrequency: IndicationFrequencyMap;
+}
+
+export async function loadDrugCandidates(url: string): Promise<LoadResult> {
   const response = await fetch(url);
   const text = await response.text();
 
@@ -13,21 +18,31 @@ export async function loadDrugCandidates(url: string): Promise<DrugCandidate[]> 
       transform: (value) => value.trim().replace(/^"|"$/g, ''),
       complete: (results) => {
         const candidates = results.data.map(transformRow).filter(Boolean) as DrugCandidate[];
-        sortIndicationsByFrequency(candidates);
-        resolve(candidates);
+        const indicationFrequency = buildIndicationFrequency(candidates);
+        sortIndicationsByFrequency(candidates, indicationFrequency);
+        resolve({ candidates, indicationFrequency });
       },
       error: (error: Error) => reject(error),
     });
   });
 }
 
-function sortIndicationsByFrequency(candidates: DrugCandidate[]): void {
+export async function loadRouteData(url: string): Promise<RouteDataMap> {
+  const response = await fetch(url);
+  return response.json();
+}
+
+function buildIndicationFrequency(candidates: DrugCandidate[]): IndicationFrequencyMap {
   const freq = new Map<string, number>();
   for (const c of candidates) {
     for (const ind of c.indications) {
       freq.set(ind, (freq.get(ind) ?? 0) + 1);
     }
   }
+  return freq;
+}
+
+function sortIndicationsByFrequency(candidates: DrugCandidate[], freq: IndicationFrequencyMap): void {
   for (const c of candidates) {
     c.indications.sort((a, b) => (freq.get(b) ?? 0) - (freq.get(a) ?? 0));
   }

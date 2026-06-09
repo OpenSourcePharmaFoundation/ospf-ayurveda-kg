@@ -6,7 +6,7 @@ import { getCandidateTier, getCandidateScore } from '@/lib/candidate-tiers';
 import type { DrugCandidate } from '@/types/drug-candidate';
 
 export function DrugCandidatesView() {
-  const { candidates, loading, error } = useDrugCandidates();
+  const { candidates, routeData, indicationFrequency, loading, error } = useDrugCandidates();
   const [search, setSearch] = useState('');
   const [filterNatural, setFilterNatural] = useState(false);
   const [selectedCandidate, setSelectedCandidate] = useState<DrugCandidate | null>(null);
@@ -152,6 +152,8 @@ export function DrugCandidatesView() {
           <CandidateDetailPanel
             key={selectedCandidate.chembl_id}
             candidate={selectedCandidate}
+            routeData={routeData}
+            indicationFrequency={indicationFrequency}
             onClose={handleClose}
           />
         </div>

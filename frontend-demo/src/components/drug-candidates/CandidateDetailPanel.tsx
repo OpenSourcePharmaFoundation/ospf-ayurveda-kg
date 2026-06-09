@@ -4,7 +4,8 @@ import { Separator } from '@/components/ui/separator';
 import { X, ChevronDown } from 'lucide-react';
 import { getCandidateRanking, getExistingOmStatus } from '@/lib/candidate-tiers';
 import type { CandidateRanking, SafetyVerdict } from '@/lib/candidate-tiers';
-import type { DrugCandidate } from '@/types/drug-candidate';
+import type { DrugCandidate, RouteDataMap, IndicationFrequencyMap } from '@/types/drug-candidate';
+import { IndicationsTable } from './IndicationsTable';
 
 function titleCase(name: string): string {
   return name
@@ -14,6 +15,8 @@ function titleCase(name: string): string {
 
 interface CandidateDetailPanelProps {
   candidate: DrugCandidate;
+  routeData: RouteDataMap;
+  indicationFrequency: IndicationFrequencyMap;
   onClose: () => void;
 }
 
@@ -50,7 +53,7 @@ function PropertyRow({ label, value, unit }: { label: string; value: string; uni
   );
 }
 
-export function CandidateDetailPanel({ candidate, onClose }: CandidateDetailPanelProps) {
+export function CandidateDetailPanel({ candidate, routeData, indicationFrequency, onClose }: CandidateDetailPanelProps) {
   const phaseLabel = PHASE_LABELS[candidate.max_phase] ?? `Phase ${candidate.max_phase}`;
   const ranking = getCandidateRanking(candidate.chembl_id);
   const displayName = ranking?.displayName || titleCase(candidate.drug_name);
@@ -105,13 +108,12 @@ export function CandidateDetailPanel({ candidate, onClose }: CandidateDetailPane
                 Indications ({candidate.indications.length})
               </h4>
               <Separator className="mb-3" />
-              <div className="flex flex-wrap gap-1.5">
-                {candidate.indications.map((ind) => (
-                  <Badge key={ind} variant="secondary" className="text-xs">
-                    {ind}
-                  </Badge>
-                ))}
-              </div>
+              <IndicationsTable
+                indications={candidate.indications}
+                chemblId={candidate.chembl_id}
+                routeData={routeData[candidate.chembl_id]}
+                indicationFrequency={indicationFrequency}
+              />
             </div>
           )}
 

@@ -11,3 +11,12 @@ export interface DrugCandidate {
   indication_count: number;
   max_phase: number;
 }
+
+export interface DrugRouteData {
+  routes_by_indication: Record<string, string>;
+  available_routes: string[];
+}
+
+export type RouteDataMap = Record<string, DrugRouteData>;
+
+export type IndicationFrequencyMap = Map<string, number>;

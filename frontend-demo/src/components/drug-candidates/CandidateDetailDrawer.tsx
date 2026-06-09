@@ -5,10 +5,13 @@ import { Drawer, DrawerContent } from '@/components/ui/drawer';
 import { ChevronDown } from 'lucide-react';
 import { getCandidateRanking } from '@/lib/candidate-tiers';
 import type { CandidateRanking, SafetyVerdict } from '@/lib/candidate-tiers';
-import type { DrugCandidate } from '@/types/drug-candidate';
+import type { DrugCandidate, RouteDataMap, IndicationFrequencyMap } from '@/types/drug-candidate';
+import { IndicationsTable } from './IndicationsTable';
 
 interface CandidateDetailDrawerProps {
   candidate: DrugCandidate | null;
+  routeData: RouteDataMap;
+  indicationFrequency: IndicationFrequencyMap;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
@@ -48,6 +51,8 @@ function PropertyRow({ label, value, unit }: { label: string; value: string; uni
 
 export function CandidateDetailDrawer({
   candidate,
+  routeData,
+  indicationFrequency,
   open,
   onOpenChange,
 }: CandidateDetailDrawerProps) {
@@ -82,13 +87,12 @@ export function CandidateDetailDrawer({
                 Indications ({candidate.indications.length})
               </h4>
               <Separator className="mb-3" />
-              <div className="flex flex-wrap gap-1.5">
-                {candidate.indications.map((ind) => (
-                  <Badge key={ind} variant="secondary" className="text-xs">
-                    {ind}
-                  </Badge>
-                ))}
-              </div>
+              <IndicationsTable
+                indications={candidate.indications}
+                chemblId={candidate.chembl_id}
+                routeData={routeData[candidate.chembl_id]}
+                indicationFrequency={indicationFrequency}
+              />
             </div>
           )}
 
