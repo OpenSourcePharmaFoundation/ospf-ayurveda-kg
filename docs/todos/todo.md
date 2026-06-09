@@ -21,6 +21,10 @@ TODO - next steps
         - Desktop panel: already had Accordion wrapper, confirmed it defaults to closed
         - Mobile drawer: wrapped Molecular Properties + Lipinski's Rule of Five in new Accordion
     [x] Sort indications by frequency — most common indications across all candidates appear first
+    [x] Replace indication badges with table — columns: Indication, Commonality, Route of Administration
+        - Route data scraped from ChemBL API (src/scrapers/chembl/chembl_route_enricher.py)
+        - Combines per-indication ATC codes (45%), keyword inference (43%), drug-level fallback (11% no data)
+        - Commonality labels: Very Common (≥15 drugs), Common (≥7), Uncommon (≥3), Rare (<3)
 
 5. [ ] More complex frontend
     [x] Clicking drugs in the Drug Candidates page should display data for the drug in a drawer
@@ -73,6 +77,7 @@ TODO - next steps
         - Maybe, since it verifies that the system is sane, maybe not, because it might be viewed as a trivial finding and thus discredit the system
 [ ] Get the data scraper to scrape more data from more places and wire it together
 
+[ ] Add pages (or rather modals) for more info on each indication
 
 -----------------------------------------
 Frontend Prototype Improvements
