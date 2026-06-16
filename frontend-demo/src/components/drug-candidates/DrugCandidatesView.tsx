@@ -102,7 +102,7 @@ export function DrugCandidatesView() {
                     onChange={(e) => setFilterExistingOm(e.target.checked)}
                     className="rounded border-input"
                   />
-                  Hide existing OM drugs
+                  <span title="Hide existing drugs for Oral Mucositis">Hide existing OM drugs</span>
                 </label>
               </div>
             )}
@@ -147,7 +147,7 @@ export function DrugCandidatesView() {
                     onChange={(e) => setFilterExistingOm(e.target.checked)}
                     className="rounded border-input"
                   />
-                  Hide existing OM
+                  <span title="Hide existing drugs for Oral Mucositis">Hide existing OM</span>
                 </label>
               </div>
               <div className="text-xs text-muted-foreground">
