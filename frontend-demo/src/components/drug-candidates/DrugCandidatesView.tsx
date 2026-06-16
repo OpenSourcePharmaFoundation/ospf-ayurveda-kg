@@ -3,38 +3,36 @@ import { useDrugCandidates } from '@/hooks/use-drug-candidates';
 import { CandidateCard } from './CandidateCard';
 import { CandidateDetailPanel } from './CandidateDetailPanel';
 import { getCandidateTier, getCandidateScore, getExistingOmStatus } from '@/lib/candidate-tiers';
-import { readParam, useUrlState } from '@/hooks/use-url-state';
+import { useUrlParam, useUrlState } from '@/hooks/use-url-state';
 import type { DrugCandidate } from '@/types/drug-candidate';
 
 export function DrugCandidatesView() {
   const { candidates, routeData, indicationFrequency, loading, error } = useDrugCandidates();
   const { update } = useUrlState();
+  const drugParam = useUrlParam('drug');
   const [search, setSearch] = useState('');
   const [filterNatural, setFilterNatural] = useState(false);
   const [filterExistingOm, setFilterExistingOm] = useState(true);
-  const [selectedCandidate, setSelectedCandidate] = useState<DrugCandidate | null>(null);
-  const restoredFromUrl = useRef(false);
+  const filterOverridden = useRef(false);
+
+  const selectedCandidate = useMemo(() => {
+    if (!drugParam || candidates.length === 0) return null;
+    return candidates.find((c) => c.chembl_id === drugParam) ?? null;
+  }, [drugParam, candidates]);
 
   useEffect(() => {
-    if (restoredFromUrl.current || candidates.length === 0) return;
-    restoredFromUrl.current = true;
-    const drugParam = readParam('drug');
-    if (drugParam) {
-      const match = candidates.find((c) => c.chembl_id === drugParam);
-      if (match) {
-        if (getExistingOmStatus(match.chembl_id) !== null) setFilterExistingOm(false);
-        setSelectedCandidate(match);
-      }
+    if (!selectedCandidate || filterOverridden.current) return;
+    if (getExistingOmStatus(selectedCandidate.chembl_id) !== null) {
+      filterOverridden.current = true;
+      setFilterExistingOm(false);
     }
-  }, [candidates]);
+  }, [selectedCandidate]);
 
   const handleCardClick = useCallback((candidate: DrugCandidate) => {
-    setSelectedCandidate(candidate);
     update({ drug: candidate.chembl_id || null });
   }, [update]);
 
   const handleClose = useCallback(() => {
-    setSelectedCandidate(null);
     update({ drug: null });
   }, [update]);
 
