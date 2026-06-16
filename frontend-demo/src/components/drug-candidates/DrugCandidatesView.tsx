@@ -2,13 +2,14 @@ import { useState, useMemo, useCallback } from 'react';
 import { useDrugCandidates } from '@/hooks/use-drug-candidates';
 import { CandidateCard } from './CandidateCard';
 import { CandidateDetailPanel } from './CandidateDetailPanel';
-import { getCandidateTier, getCandidateScore } from '@/lib/candidate-tiers';
+import { getCandidateTier, getCandidateScore, getExistingOmStatus } from '@/lib/candidate-tiers';
 import type { DrugCandidate } from '@/types/drug-candidate';
 
 export function DrugCandidatesView() {
   const { candidates, routeData, indicationFrequency, loading, error } = useDrugCandidates();
   const [search, setSearch] = useState('');
   const [filterNatural, setFilterNatural] = useState(false);
+  const [filterExistingOm, setFilterExistingOm] = useState(false);
   const [selectedCandidate, setSelectedCandidate] = useState<DrugCandidate | null>(null);
 
   const handleCardClick = useCallback((candidate: DrugCandidate) => {
@@ -33,12 +34,15 @@ export function DrugCandidatesView() {
     if (filterNatural) {
       result = result.filter((c) => c.is_natural_product);
     }
+    if (filterExistingOm) {
+      result = result.filter((c) => getExistingOmStatus(c.chembl_id) === null);
+    }
     return [...result].sort((a, b) => {
       const sa = getCandidateScore(a.chembl_id);
       const sb = getCandidateScore(b.chembl_id);
       return sb - sa;
     });
-  }, [candidates, search, filterNatural]);
+  }, [candidates, search, filterNatural, filterExistingOm]);
 
   if (loading) {
     return (
@@ -81,15 +85,26 @@ export function DrugCandidatesView() {
               />
             </div>
             {!hasSelection && (
-              <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer shrink-0">
-                <input
-                  type="checkbox"
-                  checked={filterNatural}
-                  onChange={(e) => setFilterNatural(e.target.checked)}
-                  className="rounded border-input"
-                />
-                Natural products only
-              </label>
+              <div className="flex items-center gap-4 shrink-0">
+                <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={filterNatural}
+                    onChange={(e) => setFilterNatural(e.target.checked)}
+                    className="rounded border-input"
+                  />
+                  Natural products only
+                </label>
+                <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={filterExistingOm}
+                    onChange={(e) => setFilterExistingOm(e.target.checked)}
+                    className="rounded border-input"
+                  />
+                  Hide existing OM drugs
+                </label>
+              </div>
             )}
           </div>
 
