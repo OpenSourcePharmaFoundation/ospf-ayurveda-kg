@@ -126,7 +126,10 @@ Bugs
   [x] Unescaped commas in indication text broke CSV parsing (e.g. "osteoarthritis, knee")
 
 UX improvements
-  [ ] URL-based state (?analysis=may-03&section=methodology) so navigation survives refresh
+  [x] URL-based state (?analysis=may-03&section=methodology) so navigation survives refresh
+      - Params: tab, analysis, section, drug (all optional, clean URL when default)
+      - Deep links: ?drug=CHEMBL704 opens Mesalamine detail; ?tab=analysis&analysis=may-04-multi-agent opens that doc
+      - Auto-disables "Hide existing OM" filter when deep-linking to an existing OM drug
   [ ] Loading skeletons instead of plain "Loading analysis..." text
   [ ] Error boundary at app level to catch rendering crashes
   [ ] More specific error messages (404 vs network error vs timeout)
