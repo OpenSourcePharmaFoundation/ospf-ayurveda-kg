@@ -93,7 +93,7 @@ export function DrugCandidatesView() {
                     onChange={(e) => setFilterNatural(e.target.checked)}
                     className="rounded border-input"
                   />
-                  Natural products only
+                  <span title="Show only compounds derived from natural sources (plants, fungi, etc.)">Natural products only</span>
                 </label>
                 <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer">
                   <input
@@ -112,16 +112,16 @@ export function DrugCandidatesView() {
           {!hasSelection && (
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground mb-4">
               <span>Showing {filtered.length} of {candidates.length} candidates</span>
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5" title="Top-scoring candidates (score >= 55) — strongest evidence for OM treatment">
                 <span className="inline-block w-3 h-3 rounded-sm ring-[3px] ring-emerald-500 bg-gradient-to-br from-emerald-100 to-emerald-50" />
                 Lead Candidates
                 <span className="text-amber-400">★</span>
               </span>
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5" title="Strong candidates (score >= 45) with good mechanistic rationale">
                 <span className="inline-block w-3 h-3 rounded-sm ring-2 ring-amber-400/70 bg-amber-400/20" />
                 Top Candidates
               </span>
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5" title="Scored candidates with potential but lower overall evidence or deprioritized concerns">
                 <span className="inline-block w-3 h-3 rounded-sm ring-2 ring-sky-400/50 bg-sky-400/10" />
                 Candidates of Interest
               </span>
@@ -138,7 +138,7 @@ export function DrugCandidatesView() {
                     onChange={(e) => setFilterNatural(e.target.checked)}
                     className="rounded border-input"
                   />
-                  Natural only
+                  <span title="Show only compounds derived from natural sources (plants, fungi, etc.)">Natural only</span>
                 </label>
                 <label className="flex items-center gap-1.5 text-xs text-muted-foreground cursor-pointer">
                   <input

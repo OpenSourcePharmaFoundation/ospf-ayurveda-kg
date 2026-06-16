@@ -28,17 +28,17 @@ const PHASE_LABELS: Record<number, string> = {
   4: 'Approved',
 };
 
-const SAFETY_STYLES: Record<SafetyVerdict, { bg: string; text: string; label: string }> = {
-  GREEN: { bg: 'bg-emerald-500/10', text: 'text-emerald-700 dark:text-emerald-400', label: 'Low Risk' },
-  YELLOW: { bg: 'bg-amber-500/10', text: 'text-amber-700 dark:text-amber-400', label: 'Moderate Risk' },
-  ORANGE: { bg: 'bg-orange-500/10', text: 'text-orange-700 dark:text-orange-400', label: 'Elevated Risk' },
-  RED: { bg: 'bg-red-500/10', text: 'text-red-700 dark:text-red-400', label: 'High Risk' },
+const SAFETY_STYLES: Record<SafetyVerdict, { bg: string; text: string; label: string; tooltip: string }> = {
+  GREEN: { bg: 'bg-emerald-500/10', text: 'text-emerald-700 dark:text-emerald-400', label: 'Low Risk', tooltip: 'Well-characterized safety profile suitable for cancer patients' },
+  YELLOW: { bg: 'bg-amber-500/10', text: 'text-amber-700 dark:text-amber-400', label: 'Moderate Risk', tooltip: 'Generally safe but requires monitoring for drug interactions or systemic effects' },
+  ORANGE: { bg: 'bg-orange-500/10', text: 'text-orange-700 dark:text-orange-400', label: 'Elevated Risk', tooltip: 'Requires careful dose management and patient selection' },
+  RED: { bg: 'bg-red-500/10', text: 'text-red-700 dark:text-red-400', label: 'High Risk', tooltip: 'Serious safety concerns — use only when benefits clearly outweigh risks' },
 };
 
-const TIER_LABELS: Record<string, string> = {
-  elite: 'Lead Candidate',
-  top: 'Top Candidate',
-  highlighted: 'Candidate of Interest',
+const TIER_LABELS: Record<string, { label: string; tooltip: string }> = {
+  elite: { label: 'Lead Candidate', tooltip: 'Top-scoring compound (>= 55) with strongest evidence for OM treatment' },
+  top: { label: 'Top Candidate', tooltip: 'Strong candidate (>= 45) with good mechanistic rationale' },
+  highlighted: { label: 'Candidate of Interest', tooltip: 'Scored candidate with potential but lower evidence or flagged concerns' },
 };
 
 function PropertyRow({ label, value, unit }: { label: string; value: string; unit?: string }) {
@@ -79,14 +79,14 @@ export function CandidateDetailPanel({ candidate, routeData, indicationFrequency
       <div className="flex-1 overflow-y-auto">
         <div className="px-6 py-5 space-y-6 max-w-3xl">
           <div className="flex flex-wrap gap-2">
-            <Badge variant="outline">{phaseLabel}</Badge>
+            <Badge variant="outline" title="Highest clinical development phase reached by this compound">{phaseLabel}</Badge>
             {omStatus && (
-              <Badge variant="outline" className="border-violet-400 text-violet-600 dark:text-violet-400 dark:border-violet-500">
+              <Badge variant="outline" className="border-violet-400 text-violet-600 dark:text-violet-400 dark:border-violet-500" title={omStatus}>
                 Existing OM Drug
               </Badge>
             )}
             {candidate.is_natural_product && (
-              <Badge variant="outline" className="border-primary/40 text-primary">
+              <Badge variant="outline" className="border-primary/40 text-primary" title="Compound derived from a natural source (plant, fungus, or organism)">
                 Natural Product
               </Badge>
             )}
@@ -240,10 +240,10 @@ function RankingSection({ ranking }: { ranking: CandidateRanking }) {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             {tierLabel && (
-              <span className="text-sm font-semibold text-foreground">{tierLabel}</span>
+              <span className="text-sm font-semibold text-foreground" title={tierLabel.tooltip}>{tierLabel.label}</span>
             )}
             {safetyStyle && (
-              <span className={`text-xs px-2 py-0.5 rounded-full ${safetyStyle.bg} ${safetyStyle.text}`}>
+              <span className={`text-xs px-2 py-0.5 rounded-full ${safetyStyle.bg} ${safetyStyle.text}`} title={safetyStyle.tooltip}>
                 {safetyStyle.label}
               </span>
             )}

@@ -3,24 +3,27 @@ import type { DrugCandidate } from '@/types/drug-candidate';
 import { getCandidateRanking, getExistingOmStatus } from '@/lib/candidate-tiers';
 import type { CandidateTier } from '@/lib/candidate-tiers';
 
-const TIER_STYLES: Record<string, { row: string; badge: string; label: string; accent: string }> = {
+const TIER_STYLES: Record<string, { row: string; badge: string; label: string; accent: string; tooltip: string }> = {
   elite: {
     row: 'border-l-[3px] border-l-emerald-500 bg-gradient-to-r from-emerald-50/50 to-transparent dark:from-emerald-950/20',
     badge: 'bg-emerald-600 text-white border-emerald-700 font-semibold',
     label: 'Lead',
     accent: 'text-emerald-700 dark:text-emerald-400',
+    tooltip: 'Lead Candidate — top-scoring compound with strongest evidence for OM treatment',
   },
   top: {
     row: 'border-l-[3px] border-l-amber-400 bg-gradient-to-r from-amber-50/40 to-transparent dark:from-amber-950/15',
     badge: 'bg-amber-500 text-white border-amber-500',
     label: 'Top',
     accent: 'text-amber-600 dark:text-amber-400',
+    tooltip: 'Top Candidate — strong mechanistic rationale and good overall score',
   },
   highlighted: {
     row: 'border-l-[3px] border-l-sky-400 bg-gradient-to-r from-sky-50/30 to-transparent dark:from-sky-950/10',
     badge: 'bg-sky-100 text-sky-700 border-sky-300 dark:bg-sky-900/40 dark:text-sky-300 dark:border-sky-600',
     label: 'Interest',
     accent: 'text-sky-600 dark:text-sky-400',
+    tooltip: 'Candidate of Interest — has potential but lower evidence or flagged concerns',
   },
 };
 
@@ -99,16 +102,16 @@ export function CandidateCard({ candidate, tier, compact, selected, onClick }: C
 
       <div className="w-16 shrink-0">
         {tierStyle && (
-          <Badge variant="outline" className={`text-xs ${tierStyle.badge}`}>
+          <Badge variant="outline" className={`text-xs ${tierStyle.badge}`} title={tierStyle.tooltip}>
             {tierStyle.label}
           </Badge>
         )}
       </div>
 
       <div className="hidden md:flex items-center gap-3 shrink-0">
-        <PropPill label="MW" value={candidate.molecular_weight?.toFixed(0)} />
-        <PropPill label="LogP" value={candidate.alogp?.toFixed(1)} />
-        <PropPill label="PSA" value={candidate.psa?.toFixed(0)} />
+        <PropPill label="MW" value={candidate.molecular_weight?.toFixed(0)} tooltip="Molecular Weight in Daltons — affects absorption and distribution" />
+        <PropPill label="LogP" value={candidate.alogp?.toFixed(1)} tooltip="Lipophilicity — higher values mean more fat-soluble, affects membrane permeability" />
+        <PropPill label="PSA" value={candidate.psa?.toFixed(0)} tooltip="Polar Surface Area in Å² — affects oral bioavailability and membrane transport" />
       </div>
 
       <div className="flex items-center gap-1.5 shrink-0 ml-auto">
@@ -118,7 +121,7 @@ export function CandidateCard({ candidate, tier, compact, selected, onClick }: C
           </Badge>
         )}
         {candidate.is_natural_product && (
-          <Badge variant="outline" className="text-xs border-primary/40 text-primary">
+          <Badge variant="outline" className="text-xs border-primary/40 text-primary" title="Compound derived from a natural source (plant, fungus, or organism)">
             Natural
           </Badge>
         )}
@@ -143,10 +146,10 @@ export function CandidateCard({ candidate, tier, compact, selected, onClick }: C
   );
 }
 
-function PropPill({ label, value }: { label: string; value?: string }) {
+function PropPill({ label, value, tooltip }: { label: string; value?: string; tooltip?: string }) {
   if (!value || value === '0') return null;
   return (
-    <div className="bg-muted/50 rounded px-1.5 py-0.5 text-xs whitespace-nowrap">
+    <div className="bg-muted/50 rounded px-1.5 py-0.5 text-xs whitespace-nowrap" title={tooltip}>
       <span className="text-muted-foreground">{label} </span>
       <span className="font-mono font-medium text-foreground">{value}</span>
     </div>
