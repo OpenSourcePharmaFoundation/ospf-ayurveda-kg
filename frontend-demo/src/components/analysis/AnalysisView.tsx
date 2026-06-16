@@ -64,10 +64,7 @@ export function AnalysisView({
     <div>
       <AnalysisToolbar
         selectedAnalysis={selectedAnalysis}
-        onAnalysisChange={(id) => {
-          onAnalysisChange(id);
-          onSectionChange(null);
-        }}
+        onAnalysisChange={onAnalysisChange}
         selectedSection={selectedSection}
         onSectionChange={onSectionChange}
         sections={sections}
