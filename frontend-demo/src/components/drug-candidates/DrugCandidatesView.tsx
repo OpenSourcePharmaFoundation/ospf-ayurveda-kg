@@ -1,24 +1,42 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { useDrugCandidates } from '@/hooks/use-drug-candidates';
 import { CandidateCard } from './CandidateCard';
 import { CandidateDetailPanel } from './CandidateDetailPanel';
 import { getCandidateTier, getCandidateScore, getExistingOmStatus } from '@/lib/candidate-tiers';
+import { readParam, useUrlState } from '@/hooks/use-url-state';
 import type { DrugCandidate } from '@/types/drug-candidate';
 
 export function DrugCandidatesView() {
   const { candidates, routeData, indicationFrequency, loading, error } = useDrugCandidates();
+  const { update } = useUrlState();
   const [search, setSearch] = useState('');
   const [filterNatural, setFilterNatural] = useState(false);
   const [filterExistingOm, setFilterExistingOm] = useState(true);
   const [selectedCandidate, setSelectedCandidate] = useState<DrugCandidate | null>(null);
+  const restoredFromUrl = useRef(false);
+
+  useEffect(() => {
+    if (restoredFromUrl.current || candidates.length === 0) return;
+    restoredFromUrl.current = true;
+    const drugParam = readParam('drug');
+    if (drugParam) {
+      const match = candidates.find((c) => c.chembl_id === drugParam);
+      if (match) {
+        if (getExistingOmStatus(match.chembl_id) !== null) setFilterExistingOm(false);
+        setSelectedCandidate(match);
+      }
+    }
+  }, [candidates]);
 
   const handleCardClick = useCallback((candidate: DrugCandidate) => {
     setSelectedCandidate(candidate);
-  }, []);
+    update({ drug: candidate.chembl_id || null });
+  }, [update]);
 
   const handleClose = useCallback(() => {
     setSelectedCandidate(null);
-  }, []);
+    update({ drug: null });
+  }, [update]);
 
   const filtered = useMemo(() => {
     let result = candidates;
