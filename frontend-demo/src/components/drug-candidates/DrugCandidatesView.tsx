@@ -129,8 +129,30 @@ export function DrugCandidatesView() {
           )}
 
           {hasSelection && (
-            <div className="text-xs text-muted-foreground">
-              {filtered.length} candidates
+            <div className="space-y-1.5">
+              <div className="flex flex-col gap-1">
+                <label className="flex items-center gap-1.5 text-xs text-muted-foreground cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={filterNatural}
+                    onChange={(e) => setFilterNatural(e.target.checked)}
+                    className="rounded border-input"
+                  />
+                  Natural only
+                </label>
+                <label className="flex items-center gap-1.5 text-xs text-muted-foreground cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={filterExistingOm}
+                    onChange={(e) => setFilterExistingOm(e.target.checked)}
+                    className="rounded border-input"
+                  />
+                  Hide existing OM
+                </label>
+              </div>
+              <div className="text-xs text-muted-foreground">
+                {filtered.length} candidates
+              </div>
             </div>
           )}
         </div>
