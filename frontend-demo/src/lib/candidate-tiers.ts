@@ -186,3 +186,37 @@ const EXISTING_OM_DRUGS = new Map<string, string>([
 export function getExistingOmStatus(chemblId: string): string | null {
   return EXISTING_OM_DRUGS.get(chemblId) ?? null;
 }
+
+export interface PlantSource {
+  plant: string;
+  commonName?: string;
+  bsiLink?: string;
+}
+
+const PLANT_SOURCES = new Map<string, PlantSource[]>([
+  ['PCID14982', [
+    { plant: 'Glycyrrhiza glabra', commonName: 'Yashtimadhu / Licorice' },
+  ]],
+  ['PCID969516', [
+    { plant: 'Curcuma longa', commonName: 'Haldi / Turmeric', bsiLink: 'https://archive.bsi.gov.in/echoHerbarium-Details/en?link=CAL0000003148&column=szBarcode' },
+  ]],
+  ['PCID5280863', [
+    { plant: 'Glycyrrhiza glabra', commonName: 'Yashtimadhu / Licorice' },
+    { plant: 'Cassia fistula', commonName: 'Amaltas / Golden Shower', bsiLink: 'https://archive.bsi.gov.in/echoHerbarium-Details/en?link=CAL0000003513&column=szBarcode' },
+    { plant: 'Azadirachta indica', commonName: 'Nim / Neem', bsiLink: 'https://archive.bsi.gov.in/echoHerbarium-Details/en?link=CAL0000009901&column=szBarcode' },
+  ]],
+  ['CHEMBL108545', [
+    { plant: 'Alstonia scholaris', commonName: 'Saptaparni', bsiLink: 'https://archive.bsi.gov.in/echoHerbarium-Details/en?link=CAL0000009268&column=szBarcode' },
+    { plant: 'Cassia fistula', commonName: 'Amaltas / Golden Shower', bsiLink: 'https://archive.bsi.gov.in/echoHerbarium-Details/en?link=CAL0000003513&column=szBarcode' },
+  ]],
+  ['CHEMBL416', [
+    { plant: 'Glycyrrhiza glabra', commonName: 'Yashtimadhu / Licorice' },
+  ]],
+  ['CHEMBL45', [
+    { plant: 'Azadirachta indica', commonName: 'Nim / Neem', bsiLink: 'https://archive.bsi.gov.in/echoHerbarium-Details/en?link=CAL0000009901&column=szBarcode' },
+  ]],
+]);
+
+export function getPlantSources(chemblId: string): PlantSource[] | null {
+  return PLANT_SOURCES.get(chemblId) ?? null;
+}
