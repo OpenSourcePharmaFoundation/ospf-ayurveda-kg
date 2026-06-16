@@ -57,6 +57,22 @@ const CANDIDATE_RANKINGS = new Map<string, CandidateRanking>([
     rationale: 'Low-dose naltrexone (LDN) shows anti-inflammatory effects on mucosal tissue through a paradoxical mechanism — at low doses, transient opioid receptor blockade triggers upregulation of endogenous opioids (endorphins, enkephalins) and opioid growth factor, which modulate immune function and reduce inflammation. Growing clinical evidence in Crohn\'s disease and other mucosal inflammatory conditions. Excellent safety profile at low doses.',
   }],
 
+  // Ayurvedic bridge candidate
+  ['PCID14982', {
+    tier: 'top', score: 56.5, safety: 'YELLOW', displayName: 'Glycyrrhizin (Yashtimadhu)',
+    rationale: 'Strongest Ayurvedic bridge candidate — Glycyrrhiza glabra (licorice) with unique HMGB1 inhibition mechanism targeting an underserved Phase 2-3 pathway. Glycyrrhizin directly binds RELA, TNF, and CASP3 (confirmed in PubChem). The glycoside form is preferred over aglycone for topical OM — sugar moieties improve mucoadhesion and reduce systemic absorption. Pleasant licorice taste is a major compliance advantage for oral rinse formulation. Regulatory pathway via AYUSH (India) estimated at 2-4 years, $2-5M.',
+  }],
+
+  // Deprioritized natural products (retained for reference)
+  ['PCID969516', {
+    tier: 'highlighted', score: 53.5, safety: 'YELLOW', displayName: 'Curcumin (deprioritized)',
+    rationale: 'DEPRIORITIZED — flagged as a PAINS (pan-assay interference) compound. Despite 120+ clinical trials, zero approvals have resulted. The multi-agent debate concluded that "clinical precedent" is likely publication bias. Retained only for orthogonal target validation to distinguish real NF-κB binding from assay artifacts. NF-κB inhibition mechanism is genuine but bioavailability concerns persist for systemic delivery; however, topical oral application may bypass this limitation.',
+  }],
+  ['PCID5280863', {
+    tier: null, score: 47, safety: 'YELLOW', displayName: 'Kaempferol (deprioritized)',
+    rationale: 'DEPRIORITIZED — the claim of "12+ targets" was determined to be ~90% CTD text-mining artifacts rather than direct binding evidence. More critically, JNK activation by kaempferol is counterproductive for OM pathogenesis. Demoted to Ayurvedic bridge marker compound only. The Pathway Analyst confirmed genuine breadth across 7/9 OM pathways, but the JNK concern and data quality issues outweigh this.',
+  }],
+
   // Highlighted: Tier 2 anti-inflammatory
   ['CHEMBL1021', {
     tier: 'highlighted', score: 50,
@@ -145,7 +161,11 @@ const CANDIDATE_RANKINGS = new Map<string, CandidateRanking>([
 ]);
 
 export function getCandidateTier(chemblId: string): CandidateTier {
-  return CANDIDATE_RANKINGS.get(chemblId)?.tier ?? null;
+  const score = CANDIDATE_RANKINGS.get(chemblId)?.score ?? 0;
+  if (score >= 55) return 'elite';
+  if (score >= 45) return 'top';
+  if (score > 0) return 'highlighted';
+  return null;
 }
 
 export function getCandidateScore(chemblId: string): number {
