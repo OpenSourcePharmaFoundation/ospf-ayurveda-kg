@@ -9,7 +9,7 @@ export function DrugCandidatesView() {
   const { candidates, routeData, indicationFrequency, loading, error } = useDrugCandidates();
   const [search, setSearch] = useState('');
   const [filterNatural, setFilterNatural] = useState(false);
-  const [filterExistingOm, setFilterExistingOm] = useState(false);
+  const [filterExistingOm, setFilterExistingOm] = useState(true);
   const [selectedCandidate, setSelectedCandidate] = useState<DrugCandidate | null>(null);
 
   const handleCardClick = useCallback((candidate: DrugCandidate) => {
