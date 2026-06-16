@@ -110,7 +110,6 @@ export function CandidateDetailPanel({ candidate, routeData, indicationFrequency
               <Separator className="mb-3" />
               <IndicationsTable
                 indications={candidate.indications}
-                chemblId={candidate.chembl_id}
                 routeData={routeData[candidate.chembl_id]}
                 indicationFrequency={indicationFrequency}
               />

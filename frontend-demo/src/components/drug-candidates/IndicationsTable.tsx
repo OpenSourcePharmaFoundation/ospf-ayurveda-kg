@@ -4,7 +4,6 @@ import type { DrugRouteData, IndicationFrequencyMap } from '@/types/drug-candida
 
 interface IndicationsTableProps {
   indications: string[];
-  chemblId: string;
   routeData: DrugRouteData | undefined;
   indicationFrequency: IndicationFrequencyMap;
 }
@@ -67,7 +66,6 @@ function SortIcon({ active, direction }: { active: boolean; direction: SortDirec
 
 export function IndicationsTable({
   indications,
-  chemblId,
   routeData,
   indicationFrequency,
 }: IndicationsTableProps) {
