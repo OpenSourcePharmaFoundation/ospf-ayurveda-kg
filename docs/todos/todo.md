@@ -102,6 +102,17 @@ Drug Candidates tab
       - Gold ★ on elite-tier candidates that aren't already existing OM drugs
       - Shows in both full list view and compact sidebar view
       - Legend updated to include ★ next to "Lead Candidates"
+  [x] Add natural product candidates (Glycyrrhizin, Curcumin, Kaempferol) to drug list
+      - Added to CSV with PubChem IDs (PCID prefix) and molecular properties
+      - Glycyrrhizin (56.5, Top), Curcumin (53.5, deprioritized), Kaempferol (47, deprioritized)
+  [x] Score-based tier cutoffs (Lead >= 55, Top >= 45, Interest > 0)
+      - Replaced manual tier assignments with dynamic score-based computation
+  [x] Add "Hide existing OM drugs" filter checkbox (checked by default)
+      - Filters out Dexamethasone, Melatonin, NAC, Apremilast
+      - Available in both full view and compact sidebar
+  [x] Add hover tooltips to all badges and checkboxes
+      - Tier badges, safety labels, Natural/Existing OM badges, MW/LogP/PSA pills
+      - Legend items, filter checkboxes (both views)
 
 Bugs
   [ ] DataTableViz tooltip hardcoded white background — breaks dark mode
