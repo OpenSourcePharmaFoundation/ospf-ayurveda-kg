@@ -58,6 +58,9 @@ export function CandidateCard({ candidate, tier, compact, selected, onClick }: C
           {ranking?.score || '—'}
         </span>
         <span className="truncate">{displayName}</span>
+        {tier === 'elite' && !omStatus && (
+          <span className="shrink-0 text-amber-400 text-xs" title="Top recommended candidate">★</span>
+        )}
         {omStatus && (
           <span className="shrink-0 text-[10px] text-violet-600 dark:text-violet-400 font-medium" title={omStatus}>OM</span>
         )}
@@ -83,7 +86,12 @@ export function CandidateCard({ candidate, tier, compact, selected, onClick }: C
       </div>
 
       <div className="w-52 shrink-0 min-w-0">
-        <div className="font-semibold text-sm text-foreground truncate">{displayName}</div>
+        <div className="font-semibold text-sm text-foreground truncate">
+          {displayName}
+          {tier === 'elite' && !omStatus && (
+            <span className="ml-1.5 text-amber-400" title="Top recommended candidate">★</span>
+          )}
+        </div>
         {candidate.chembl_id && (
           <div className="text-xs text-muted-foreground font-mono">{candidate.chembl_id}</div>
         )}

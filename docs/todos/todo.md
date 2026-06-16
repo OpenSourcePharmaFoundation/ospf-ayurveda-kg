@@ -65,7 +65,6 @@ TODO - next steps
             [ ] Create a "data table" area
                 [ ] Show data for each node on clicking node
                 [ ] Show data for each relationship on clicking relationship
-[ ]
 [ ] Think about what to tackle next
 [ ] Find drugs for each phase
 [ ] Decision tree, finding what's eliminated - show different layers of drugs considered
@@ -99,6 +98,10 @@ Drug Candidates tab
   [ ] CandidateList — filterable/sortable grid wrapper (sort by score, MW, name, etc.)
   [ ] Add sort options (A-Z, highest score, MW range, LogP range)
   [ ] Add mini PropertyRadar to each CandidateCard
+  [x] Star/highlight the best suggested candidates in the drug list
+      - Gold ★ on elite-tier candidates that aren't already existing OM drugs
+      - Shows in both full list view and compact sidebar view
+      - Legend updated to include ★ next to "Lead Candidates"
 
 Bugs
   [ ] DataTableViz tooltip hardcoded white background — breaks dark mode

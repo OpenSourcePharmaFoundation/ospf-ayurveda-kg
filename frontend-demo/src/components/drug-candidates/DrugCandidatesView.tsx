@@ -100,6 +100,7 @@ export function DrugCandidatesView() {
               <span className="flex items-center gap-1.5">
                 <span className="inline-block w-3 h-3 rounded-sm ring-[3px] ring-emerald-500 bg-gradient-to-br from-emerald-100 to-emerald-50" />
                 Lead Candidates
+                <span className="text-amber-400">★</span>
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="inline-block w-3 h-3 rounded-sm ring-2 ring-amber-400/70 bg-amber-400/20" />
