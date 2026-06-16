@@ -1,0 +1,3118 @@
+{
+  "CHEMBL1000": {
+    "available_routes": [
+      "Ophthalmic",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "allergic conjunctivitis": "Ophthalmic",
+      "allergic disease": "Oral",
+      "allergic rhinitis": "Nasal",
+      "conjunctivitis, allergic": "Ophthalmic",
+      "dermatitis": "Topical",
+      "eczema": "Topical",
+      "eczematoid dermatitis": "Topical",
+      "eye allergy": "Ophthalmic",
+      "eye manifestations": "Ophthalmic",
+      "hypersensitivity": "Oral",
+      "rhinitis": "Nasal",
+      "rhinitis, allergic, perennial": "Nasal",
+      "rhinitis, allergic, seasonal": "Nasal",
+      "seasonal allergic rhinitis": "Nasal"
+    }
+  },
+  "CHEMBL1021": {
+    "available_routes": [
+      "Ophthalmic"
+    ],
+    "routes_by_indication": {
+      "cataract": "Ophthalmic",
+      "eye diseases": "Ophthalmic",
+      "eye inflammation": "Ophthalmic",
+      "inflammation": "Ophthalmic",
+      "macular edema": "Ophthalmic",
+      "macular retinal edema": "Ophthalmic",
+      "miosis": "Ophthalmic",
+      "ophthalmologic surgical procedures": "Ophthalmic",
+      "pain": "Ophthalmic",
+      "pain, postoperative": "Ophthalmic"
+    }
+  },
+  "CHEMBL1043": {
+    "available_routes": [
+      "Oral",
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "acne": "Topical",
+      "acne vulgaris": "Topical",
+      "dermatitis herpetiformis": "Topical",
+      "leprosy": "Oral"
+    }
+  },
+  "CHEMBL107": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "acute coronary syndrome": "Oral",
+      "amyotrophic lateral sclerosis": "Oral",
+      "aphthous ulcer": "Topical (oral cavity)",
+      "arrhythmias, cardiac": "Oral",
+      "asthma": "Inhaled",
+      "atherosclerosis": "Oral",
+      "atrial fibrillation": "Oral",
+      "behcet syndrome": "Oral",
+      "behcet's syndrome": "Oral",
+      "cardiac arrhythmia": "Oral",
+      "cardiovascular disease": "Oral",
+      "cardiovascular diseases": "Oral",
+      "cholangiocarcinoma": "Oral",
+      "chronic hepatitis c virus infection": "Oral",
+      "chronic kidney disease": "Oral",
+      "cirrhosis of liver": "Oral",
+      "coronary artery disease": "Oral",
+      "coronary disease": "Oral",
+      "coronavirus infections": "Oral",
+      "coronavirus infectious disease": "Oral",
+      "covid-19": "Oral",
+      "diabetic nephropathies": "Oral",
+      "diabetic nephropathy": "Oral",
+      "familial mediterranean fever": "Oral",
+      "gout": "Oral",
+      "heart disease": "Oral",
+      "heart diseases": "Oral",
+      "heart failure": "Oral",
+      "hepatitis c, chronic": "Oral",
+      "hypertension": "Oral",
+      "intracranial hemorrhage": "Oral",
+      "intracranial hemorrhages": "Oral",
+      "ischemia reperfusion injury": "Oral",
+      "liver cirrhosis": "Oral",
+      "liver cirrhosis, biliary": "Oral",
+      "lung disease": "Oral",
+      "lung diseases": "Oral",
+      "multiple myeloma": "Oral",
+      "myocardial infarction": "Oral",
+      "neoplasm": "Oral",
+      "neoplasms": "Oral",
+      "non-st elevated myocardial infarction": "Oral",
+      "non-st elevation myocardial infarction": "Oral",
+      "osteoarthritis, knee": "Oral",
+      "pericarditis": "Oral",
+      "peripheral arterial disease": "Oral",
+      "pneumonia, viral": "Oral",
+      "postpericardiotomy syndrome": "Oral",
+      "primary biliary cirrhosis": "Oral",
+      "proliferative vitreoretinopathy": "Oral",
+      "prostate cancer": "Oral",
+      "prostatic neoplasms, castration-resistant": "Oral",
+      "renal insufficiency, chronic": "Oral",
+      "reperfusion injury": "Oral",
+      "severe acute respiratory syndrome": "Oral",
+      "st elevation myocardial infarction": "Oral",
+      "stomatitis, aphthous": "Topical (oral cavity)",
+      "urogenital neoplasm": "Oral",
+      "urogenital neoplasms": "Oral",
+      "vascular disease": "Oral",
+      "vascular diseases": "Oral",
+      "vasculitis": "Oral",
+      "viral pneumonia": "Oral",
+      "vitreoretinopathy, proliferative": "Oral"
+    }
+  },
+  "CHEMBL1077": {
+    "available_routes": [
+      "Ophthalmic"
+    ],
+    "routes_by_indication": {
+      "age-related macular degeneration": "Ophthalmic",
+      "allergic conjunctivitis": "Ophthalmic",
+      "cataract": "Ophthalmic",
+      "conjunctivitis, allergic": "Ophthalmic",
+      "cystoid macular edema": "Ophthalmic",
+      "dry eye syndrome": "Ophthalmic",
+      "dry eye syndromes": "Ophthalmic",
+      "eye diseases": "Ophthalmic",
+      "eye inflammation": "Ophthalmic",
+      "inflammation": "Ophthalmic",
+      "macular degeneration": "Ophthalmic",
+      "macular edema": "Ophthalmic",
+      "presbyopia": "Ophthalmic"
+    }
+  },
+  "CHEMBL108545": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL1089221": {
+    "available_routes": [
+      "Ophthalmic",
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "arthralgia": "Topical",
+      "eye diseases": "Ophthalmic",
+      "eye inflammation": "Ophthalmic",
+      "myalgia": "Topical"
+    }
+  },
+  "CHEMBL1091": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "atopic eczema": "Topical",
+      "dermatitis, atopic": "Topical",
+      "skin disease": "Topical",
+      "skin diseases": "Topical"
+    }
+  },
+  "CHEMBL1152": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "allergic conjunctivitis": "Ophthalmic",
+      "anterior uveitis": "Ophthalmic",
+      "cataract": "Ophthalmic",
+      "conjunctivitis, allergic": "Ophthalmic",
+      "eye infection": "Ophthalmic",
+      "eye infections": "Ophthalmic",
+      "macular edema": "Ophthalmic",
+      "macular retinal edema": "Ophthalmic",
+      "retinal vein occlusion": "Ophthalmic",
+      "uveitis": "Ophthalmic",
+      "uveitis, anterior": "Ophthalmic"
+    }
+  },
+  "CHEMBL1168": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "abnormal glucose tolerance": "Oral",
+      "acute myocardial infarction": "Oral",
+      "albuminuria": "Oral",
+      "arthritis, rheumatoid": "Oral",
+      "atherosclerosis": "Oral",
+      "atrial fibrillation": "Oral",
+      "atrial flutter": "Oral",
+      "cardiovascular disease": "Oral",
+      "cardiovascular diseases": "Oral",
+      "chronic kidney disease": "Oral",
+      "congestive heart failure": "Oral",
+      "coronary artery disease": "Oral",
+      "covid-19": "Oral",
+      "diabetes mellitus": "Oral",
+      "diabetes mellitus, type 1": "Oral",
+      "diabetes mellitus, type 2": "Oral",
+      "diabetic nephropathies": "Oral",
+      "diabetic nephropathy": "Oral",
+      "glomerulonephritis": "Oral",
+      "glucose intolerance": "Oral",
+      "heart disease": "Oral",
+      "heart diseases": "Oral",
+      "heart failure": "Oral",
+      "hypercholesterolemia": "Oral",
+      "hypertension": "Oral",
+      "kidney disease": "Oral",
+      "kidney diseases": "Oral",
+      "lupus erythematosus, systemic": "Oral",
+      "metabolic disease": "Oral",
+      "metabolic diseases": "Oral",
+      "metabolic syndrome": "Oral",
+      "myocardial infarction": "Oral",
+      "myocardial ischemia": "Oral",
+      "renal insufficiency, chronic": "Oral",
+      "rheumatoid arthritis": "Oral",
+      "severe acute respiratory syndrome": "Oral",
+      "stroke": "Oral",
+      "stutter disorder": "Oral",
+      "stuttering": "Oral",
+      "systemic lupus erythematosus": "Oral",
+      "type 1 diabetes mellitus": "Oral",
+      "type 2 diabetes mellitus": "Oral"
+    }
+  },
+  "CHEMBL1169": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "colitis, ulcerative": "Oral",
+      "crohn disease": "Oral",
+      "crohn's disease": "Oral",
+      "osteomyelitis": "Oral",
+      "pulmonary tuberculosis": "Oral",
+      "tuberculosis": "Oral",
+      "tuberculosis, pulmonary": "Oral",
+      "ulcerative colitis": "Oral"
+    }
+  },
+  "CHEMBL1200386": {
+    "available_routes": [
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "candidiasis": "Topical",
+      "eczema": "Topical",
+      "eczematoid dermatitis": "Topical",
+      "psoriasis": "Topical",
+      "skin disease": "Topical",
+      "skin diseases": "Topical",
+      "tinea pedis": "Topical"
+    }
+  },
+  "CHEMBL1200402": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "fish-eye disease": "Ophthalmic",
+      "lecithin cholesterol acyltransferase deficiency": "Ophthalmic"
+    }
+  },
+  "CHEMBL1200436": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "burn": "Oral",
+      "burns": "Oral",
+      "decubitus ulcer": "Oral",
+      "fanconi anemia": "Oral",
+      "injury": "Oral",
+      "klinefelter syndrome": "Oral",
+      "klinefelter's syndrome": "Oral",
+      "malnutrition": "Oral",
+      "neoplasm": "Oral",
+      "neoplasms": "Oral",
+      "pressure ulcer": "Oral",
+      "rotator cuff injuries": "Oral",
+      "rotator cuff tear": "Oral",
+      "turner syndrome": "Oral",
+      "wounds and injuries": "Oral"
+    }
+  },
+  "CHEMBL1200470": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL1200538": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "asthma": "Inhaled",
+      "dermatitis": "Topical"
+    }
+  },
+  "CHEMBL1200544": {
+    "available_routes": [
+      "IV",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "bacterial disease": "Oral/IV",
+      "bacterial infections": "Oral/IV",
+      "dermatitis": "Topical",
+      "eczema": "Topical",
+      "eczematoid dermatitis": "Topical",
+      "nasal congestion": "Nasal",
+      "nasal obstruction": "Nasal",
+      "otitis media": "Otic",
+      "skin disease": "Topical",
+      "skin diseases": "Topical"
+    }
+  },
+  "CHEMBL1200600": {
+    "available_routes": [
+      "Ophthalmic",
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "acne": "Topical",
+      "acne vulgaris": "Topical",
+      "dry eye syndrome": "Ophthalmic",
+      "dry eye syndromes": "Ophthalmic",
+      "eye diseases": "Ophthalmic",
+      "eye inflammation": "Ophthalmic",
+      "hemorrhoid": "Topical",
+      "hemorrhoids": "Topical"
+    }
+  },
+  "CHEMBL1200613": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL1200659": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL1200735": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "bacterial conjunctivitis": "Ophthalmic",
+      "bronchitis, chronic": "Inhaled",
+      "cataract": "Ophthalmic",
+      "chronic bronchitis": "Inhaled",
+      "conjunctivitis, bacterial": "Ophthalmic"
+    }
+  },
+  "CHEMBL1200751": {
+    "available_routes": [
+      "IV",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "neoplasm": "Oral/IV",
+      "neoplasms": "Oral/IV"
+    }
+  },
+  "CHEMBL1200806": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL1200865": {
+    "available_routes": [
+      "Ophthalmic"
+    ],
+    "routes_by_indication": {
+      "allergic conjunctivitis": "Ophthalmic",
+      "anterior uveitis": "Ophthalmic",
+      "blepharitis": "Ophthalmic",
+      "cataract": "Ophthalmic",
+      "conjunctivitis, allergic": "Ophthalmic",
+      "dry eye syndrome": "Ophthalmic",
+      "dry eye syndromes": "Ophthalmic",
+      "eye diseases": "Ophthalmic",
+      "eye inflammation": "Ophthalmic",
+      "eye pain": "Ophthalmic",
+      "inflammation": "Ophthalmic",
+      "ocular pain": "Ophthalmic",
+      "uveitis, anterior": "Ophthalmic"
+    }
+  },
+  "CHEMBL1200879": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL1200930": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL1201109": {
+    "available_routes": [
+      "Ophthalmic",
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "atopic eczema": "Topical",
+      "dermatitis, atopic": "Topical",
+      "eye diseases": "Ophthalmic",
+      "eye inflammation": "Ophthalmic",
+      "skin disease": "Topical",
+      "skin diseases": "Topical"
+    }
+  },
+  "CHEMBL1201124": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "allergic rhinitis": "Nasal",
+      "cataract": "Ophthalmic",
+      "eye pain": "Ophthalmic",
+      "macular edema": "Ophthalmic",
+      "macular retinal edema": "Ophthalmic",
+      "ocular pain": "Ophthalmic",
+      "rhinitis, allergic, seasonal": "Nasal"
+    }
+  },
+  "CHEMBL1201173": {
+    "available_routes": [
+      "Ophthalmic"
+    ],
+    "routes_by_indication": {
+      "eye diseases": "Ophthalmic",
+      "eye inflammation": "Ophthalmic"
+    }
+  },
+  "CHEMBL1201191": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "allergic disease": "Oral",
+      "allergic rhinitis": "Nasal",
+      "asthma": "Inhaled",
+      "colorectal neoplasm": "Oral",
+      "colorectal neoplasms": "Oral",
+      "dermatitis": "Topical",
+      "diabetic nephropathies": "Oral",
+      "diabetic nephropathy": "Oral",
+      "eczema": "Topical",
+      "eczematoid dermatitis": "Topical",
+      "hypersensitivity": "Oral",
+      "rhinitis": "Nasal",
+      "rhinitis, allergic, perennial": "Nasal",
+      "rhinitis, allergic, seasonal": "Nasal",
+      "rhinitis, vasomotor": "Nasal",
+      "seasonal allergic rhinitis": "Nasal",
+      "urticaria": "Oral",
+      "vasomotor rhinitis": "Nasal"
+    }
+  },
+  "CHEMBL1201320": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "arthritis, juvenile": "Oral",
+      "asthma": "Inhaled",
+      "autism": "Oral",
+      "autism spectrum disorder": "Oral",
+      "autistic disorder": "Oral",
+      "breast neoplasm": "Oral",
+      "breast neoplasms": "Oral",
+      "child development disorders, pervasive": "Oral",
+      "chronic gastritis": "Oral",
+      "chronic hepatitis b virus infection": "Oral",
+      "cystic fibrosis": "Oral",
+      "digestive system diseases": "Oral",
+      "duodenal ulcer": "Oral",
+      "dyspepsia": "Oral",
+      "eosinophilic esophagitis": "Oral",
+      "esophageal cancer": "Oral",
+      "esophageal neoplasms": "Oral",
+      "esophagitis, peptic": "Oral",
+      "fatty liver": "Oral",
+      "fatty liver disease": "Oral",
+      "gastric ulcer": "Oral",
+      "gastritis": "Oral",
+      "gastroesophageal reflux": "Oral",
+      "gastroesophageal reflux disease": "Oral",
+      "gastrointestinal disease": "Oral",
+      "gastrointestinal hemorrhage": "Oral",
+      "helicobacter infections": "Oral",
+      "helicobacter pylori infectious disease": "Oral",
+      "hemorrhage": "Oral",
+      "hepatitis b, chronic": "Oral",
+      "hypertension, pulmonary": "Oral",
+      "juvenile idiopathic arthritis": "Oral",
+      "lymphoma": "Oral",
+      "nausea": "Oral",
+      "neoplasm": "Oral",
+      "neoplasms": "Oral",
+      "neuralgia": "Oral",
+      "neuropathic pain": "Oral",
+      "non-alcoholic fatty liver disease": "Oral",
+      "non-alcoholic steatohepatitis": "Oral",
+      "osteoarthritis": "Oral",
+      "peptic esophagitis": "Oral",
+      "peptic ulcer": "Oral",
+      "peptic ulcer disease": "Oral",
+      "pre-eclampsia": "Oral",
+      "preeclampsia": "Oral",
+      "pulmonary arterial hypertension": "Oral",
+      "stomach ulcer": "Oral",
+      "ulcer": "Oral",
+      "ulcer disease": "Oral"
+    }
+  },
+  "CHEMBL1201761": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "bacterial conjunctivitis": "Ophthalmic",
+      "cataract": "Ophthalmic",
+      "conjunctivitis, bacterial": "Ophthalmic"
+    }
+  },
+  "CHEMBL1201766": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL1201863": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "barrett esophagus": "Oral",
+      "barrett's esophagus": "Oral",
+      "dyspepsia": "Oral",
+      "esophagitis": "Oral",
+      "esophagitis, peptic": "Oral",
+      "gastroesophageal reflux": "Oral",
+      "gastroesophageal reflux disease": "Oral",
+      "heartburn": "Oral",
+      "peptic esophagitis": "Oral",
+      "peptic ulcer": "Oral"
+    }
+  },
+  "CHEMBL121": {
+    "available_routes": [
+      "Injection",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "asthma": "Inhaled",
+      "diabetes mellitus": "Oral/Injection"
+    }
+  },
+  "CHEMBL1219": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "amyotrophic lateral sclerosis": "Oral",
+      "cancer": "Oral",
+      "cholangiocarcinoma": "Oral",
+      "communicable diseases": "Oral",
+      "duodenal ulcer": "Oral",
+      "dyspepsia": "Oral",
+      "gastroesophageal reflux": "Oral",
+      "gastroesophageal reflux disease": "Oral",
+      "gastrointestinal hemorrhage": "Oral",
+      "helicobacter infections": "Oral",
+      "helicobacter pylori infectious disease": "Oral",
+      "hematologic neoplasms": "Oral",
+      "infectious disease": "Oral",
+      "intrahepatic cholangiocarcinoma": "Oral",
+      "lymphoid neoplasm": "Oral",
+      "lymphoma": "Oral",
+      "neoplasm": "Oral",
+      "neoplasms": "Oral",
+      "peptic ulcer": "Oral"
+    }
+  },
+  "CHEMBL122": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "adenoma": "Oral",
+      "alzheimer disease": "Oral",
+      "arthropathy": "Oral",
+      "brain neoplasm": "Oral",
+      "brain neoplasms": "Oral",
+      "carcinoma, non-small-cell lung": "Oral",
+      "colorectal adenoma": "Oral",
+      "colorectal cancer": "Oral",
+      "colorectal neoplasms": "Oral",
+      "joint diseases": "Oral",
+      "non-small cell lung carcinoma": "Oral",
+      "osteoarthritis": "Oral",
+      "osteoarthritis, knee": "Oral",
+      "pain": "Oral",
+      "paraganglioma": "Oral",
+      "prostate cancer": "Oral",
+      "prostatic neoplasms, castration-resistant": "Oral",
+      "rheumatic disease": "Oral",
+      "rheumatic diseases": "Oral",
+      "stomach neoplasm": "Oral",
+      "stomach neoplasms": "Oral"
+    }
+  },
+  "CHEMBL1237055": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL1364144": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "asthma": "Inhaled",
+      "dermatitis": "Topical",
+      "uveitis": "Ophthalmic"
+    }
+  },
+  "CHEMBL1370": {
+    "available_routes": [
+      "Inhaled",
+      "Nasal",
+      "Oral",
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "airway obstruction": "Inhaled",
+      "allergic bronchopulmonary aspergillosis": "Inhaled",
+      "allergic rhinitis": "Nasal",
+      "aspergillosis, allergic bronchopulmonary": "Inhaled",
+      "asthma": "Inhaled",
+      "bronchiolitis obliterans": "Inhaled",
+      "bronchiolitis obliterans syndrome": "Inhaled",
+      "bronchitis, chronic": "Inhaled",
+      "bronchopulmonary dysplasia": "Inhaled",
+      "chronic bronchitis": "Inhaled",
+      "chronic graft versus host disease": "Inhaled",
+      "lung diseases, obstructive": "Inhaled",
+      "nasal cavity polyp": "Nasal",
+      "nasal congestion": "Nasal",
+      "nasal obstruction": "Nasal",
+      "nasal polyps": "Nasal",
+      "rhinitis, allergic, perennial": "Nasal",
+      "rhinitis, allergic, seasonal": "Nasal",
+      "seasonal allergic rhinitis": "Nasal",
+      "status asthmaticus": "Inhaled"
+    }
+  },
+  "CHEMBL1401": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "amebiasis": "Oral",
+      "arthritis, rheumatoid": "Oral",
+      "brain diseases": "Oral",
+      "bronchiolitis": "Inhaled",
+      "chronic hepatitis b virus infection": "Oral",
+      "chronic hepatitis c virus infection": "Oral",
+      "clostridium infections": "Oral",
+      "commensal clostridium infectious disease": "Oral",
+      "covid-19": "Oral",
+      "crohn disease": "Oral",
+      "crohn's disease": "Oral",
+      "cryptosporidiosis": "Oral",
+      "diabetes mellitus, type 2": "Oral",
+      "diarrhea": "Oral",
+      "dyspepsia": "Oral",
+      "encephalopathy": "Oral",
+      "enterocolitis, pseudomembranous": "Oral",
+      "gastroenteritis": "Oral",
+      "helicobacter infections": "Oral",
+      "helicobacter pylori infectious disease": "Oral",
+      "hepatitis b, chronic": "Oral",
+      "hepatitis c": "Oral",
+      "hepatitis c virus infection": "Oral",
+      "hepatitis c, chronic": "Oral",
+      "hiv infection": "Oral",
+      "hiv infections": "Oral",
+      "influenza": "Oral",
+      "influenza, human": "Oral",
+      "irritable bowel syndrome": "Oral",
+      "kidney disease": "Oral",
+      "kidney diseases": "Oral",
+      "liver disease": "Oral",
+      "liver diseases": "Oral",
+      "malnutrition": "Oral",
+      "periodontitis": "Oral",
+      "peritonitis": "Oral",
+      "pseudomembranous enterocolitis": "Oral",
+      "respiratory system disease": "Oral",
+      "respiratory tract diseases": "Oral",
+      "rheumatoid arthritis": "Oral",
+      "severe acute respiratory syndrome": "Oral",
+      "sexually transmitted disease": "Oral",
+      "sexually transmitted diseases": "Oral",
+      "tuberculosis": "Oral",
+      "type 2 diabetes mellitus": "Oral"
+    }
+  },
+  "CHEMBL1413": {
+    "available_routes": [
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "candidiasis": "Topical",
+      "dermatitis, seborrheic": "Topical",
+      "onychomycosis": "Topical",
+      "seborrheic dermatitis": "Topical",
+      "tinea": "Topical",
+      "tinea pedis": "Topical",
+      "tinea unguium": "Topical"
+    }
+  },
+  "CHEMBL1437": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "acute lung injury": "Oral",
+      "brain injuries": "Oral",
+      "brain injury": "Oral",
+      "cardiovascular disease": "Oral",
+      "cardiovascular diseases": "Oral",
+      "cognitive dysfunction": "Oral",
+      "cognitive impairment": "Oral",
+      "congenital heart disease": "Oral",
+      "depressive disorder": "Oral",
+      "heart disease": "Oral",
+      "heart diseases": "Oral",
+      "hepatorenal syndrome": "Oral",
+      "hernias, diaphragmatic, congenital": "Oral",
+      "hypotension": "Oral",
+      "hypotension, orthostatic": "Oral",
+      "inflammation": "Oral",
+      "ischemic stroke": "Oral",
+      "obesity": "Oral",
+      "orthostatic hypotension": "Oral",
+      "radiodermatitis": "Topical",
+      "sepsis": "Oral",
+      "septic shock": "Oral",
+      "shock": "Oral",
+      "shock, septic": "Oral",
+      "stroke": "Oral",
+      "syndrome": "Oral",
+      "syndromic disease": "Oral"
+    }
+  },
+  "CHEMBL1444": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "abortion, spontaneous": "Oral",
+      "adenomyosis": "Oral",
+      "angiosarcoma": "Oral",
+      "anovulation": "Oral",
+      "azoospermia": "Oral",
+      "brain neoplasm": "Oral",
+      "brain neoplasms": "Oral",
+      "breast cancer": "Oral",
+      "breast carcinoma": "Oral",
+      "breast ductal carcinoma in situ": "Oral",
+      "breast neoplasm": "Oral",
+      "breast neoplasms": "Oral",
+      "cancer": "Oral",
+      "carcinoma": "Oral",
+      "carcinoma, endometrioid": "Oral",
+      "carcinoma, intraductal, noninfiltrating": "Oral",
+      "carcinoma, lobular": "Oral",
+      "carcinoma, non-small-cell lung": "Oral",
+      "cervical adenocarcinoma": "Oral",
+      "dwarfism": "Oral",
+      "ectopic pregnancy": "Oral",
+      "endometrial cancer": "Oral",
+      "endometrial carcinoma": "Oral",
+      "endometrial neoplasm": "Oral",
+      "endometrial neoplasms": "Oral",
+      "endometrioid carcinoma": "Oral",
+      "endometriosis": "Oral",
+      "fallopian tube cancer": "Oral",
+      "fallopian tube carcinoma": "Oral",
+      "fallopian tube neoplasms": "Oral",
+      "follicular cyst": "Oral",
+      "growth delay": "Oral",
+      "hemangiosarcoma": "Oral",
+      "hereditary breast and ovarian cancer syndrome": "Oral",
+      "hermanski-pudlak syndrome": "Oral",
+      "hermansky-pudlak syndrome": "Oral",
+      "hypogonadism": "Oral",
+      "hypogonadotropic hypogonadism": "Oral",
+      "infertility": "Oral",
+      "infertility, male": "Oral",
+      "inflammatory breast carcinoma": "Oral",
+      "inflammatory breast neoplasms": "Oral",
+      "invasive lobular carcinoma": "Oral",
+      "leiomyoma": "Oral",
+      "leiomyosarcoma": "Oral",
+      "liver cancer": "Oral",
+      "liver neoplasms": "Oral",
+      "lobular breast carcinoma": "Oral",
+      "lymphangioleiomyomatosis": "Oral",
+      "lymphoma, non-hodgkin": "Oral",
+      "male infertility": "Oral",
+      "menopause": "Oral",
+      "mesothelioma": "Oral",
+      "metastasis": "Oral",
+      "miscarriage": "Oral",
+      "neoplasm": "Oral",
+      "neoplasm metastasis": "Oral",
+      "neoplasms": "Oral",
+      "non-hodgkins lymphoma": "Oral",
+      "non-small cell lung carcinoma": "Oral",
+      "osteoporosis": "Oral",
+      "ovarian cancer": "Oral",
+      "ovarian carcinoma": "Oral",
+      "ovarian hyperstimulation syndrome": "Oral",
+      "ovarian neoplasms": "Oral",
+      "peritoneal neoplasms": "Oral",
+      "peritoneum cancer": "Oral",
+      "polycystic ovary syndrome": "Oral",
+      "pregnancy": "Oral",
+      "pregnancy, ectopic": "Oral",
+      "triple negative breast neoplasms": "Oral",
+      "triple-negative breast cancer": "Oral",
+      "uterine cancer": "Oral",
+      "uterine cervical neoplasms": "Oral",
+      "uterine fibroid": "Oral",
+      "uterine neoplasm": "Oral",
+      "uterine neoplasms": "Oral"
+    }
+  },
+  "CHEMBL1448": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "acute myeloid leukemia": "Oral",
+      "adenomatous polyposis coli": "Oral",
+      "arthritis, rheumatoid": "Oral",
+      "colonic neoplasms": "Oral",
+      "colorectal cancer": "Oral",
+      "colorectal neoplasms": "Oral",
+      "covid-19": "Oral",
+      "diabetic nephropathies": "Oral",
+      "diabetic nephropathy": "Oral",
+      "familial adenomatous polyposis": "Oral",
+      "helminthiasis": "Oral",
+      "leukemia, myeloid, acute": "Oral",
+      "malignant colon neoplasm": "Oral",
+      "metastatic prostate cancer": "Oral",
+      "prostate cancer": "Oral",
+      "prostatic neoplasms": "Oral",
+      "prostatic neoplasms, castration-resistant": "Oral",
+      "rheumatoid arthritis": "Oral",
+      "severe acute respiratory syndrome": "Oral"
+    }
+  },
+  "CHEMBL1456": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "age-related macular degeneration": "Ophthalmic",
+      "bronchiolitis obliterans syndrome": "Inhaled",
+      "chronic graft versus host disease": "Inhaled",
+      "extranodal nasal nk/t cell lymphoma": "Nasal",
+      "fish-eye disease": "Ophthalmic",
+      "granuloma, lethal midline": "Nasal",
+      "lecithin cholesterol acyltransferase deficiency": "Ophthalmic",
+      "macular degeneration": "Ophthalmic",
+      "psoriasis": "Topical",
+      "uveitis": "Ophthalmic"
+    }
+  },
+  "CHEMBL1464": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "alzheimer disease": "Oral",
+      "aortic stenosis": "Oral",
+      "aortic valve stenosis": "Oral",
+      "arthritis, rheumatoid": "Oral",
+      "atherosclerosis": "Oral",
+      "atopic eczema": "Topical",
+      "atrial fibrillation": "Oral",
+      "atrial flutter": "Oral",
+      "autoimmune polyendocrinopathy": "Oral",
+      "brain infarction": "Oral",
+      "cancer": "Oral",
+      "cardiovascular disease": "Oral",
+      "cardiovascular diseases": "Oral",
+      "cerebral infarction": "Oral",
+      "chemotherapy-induced nausea and vomiting": "Oral",
+      "cirrhosis of liver": "Oral",
+      "colitis, ulcerative": "Oral",
+      "coronary artery disease": "Oral",
+      "coronary disease": "Oral",
+      "crohn disease": "Oral",
+      "crohn's disease": "Oral",
+      "deep vein thrombosis": "Oral",
+      "depressive disorder, major": "Oral",
+      "dermatitis, atopic": "Topical",
+      "diabetes mellitus": "Oral",
+      "diabetes mellitus, type 2": "Oral",
+      "epilepsy": "Oral",
+      "essential hypertension": "Oral",
+      "heart disease": "Oral",
+      "heart diseases": "Oral",
+      "heart failure": "Oral",
+      "hematologic neoplasms": "Oral",
+      "hemorrhage": "Oral",
+      "hypertension, pulmonary": "Oral",
+      "hypertriglyceridemia": "Oral",
+      "idiopathic pulmonary fibrosis": "Oral",
+      "ischemic attack, transient": "Oral",
+      "ischemic stroke": "Oral",
+      "liver cirrhosis": "Oral",
+      "lymphoid neoplasm": "Oral",
+      "lymphoma": "Oral",
+      "major depressive disorder": "Oral",
+      "melanoma": "Oral",
+      "metastasis": "Oral",
+      "multiple sclerosis, relapsing-remitting": "Oral",
+      "myocardial infarction": "Oral",
+      "myocardial ischemia": "Oral",
+      "nausea": "Oral",
+      "neoplasm": "Oral",
+      "neoplasm metastasis": "Oral",
+      "neoplasms": "Oral",
+      "non-alcoholic fatty liver disease": "Oral",
+      "non-alcoholic steatohepatitis": "Oral",
+      "obesity": "Oral",
+      "osteoarthritis, knee": "Oral",
+      "overactive bladder": "Oral",
+      "pancreatic carcinoma": "Oral",
+      "pancreatic neoplasms": "Oral",
+      "parkinson disease": "Oral",
+      "peripheral vascular disease": "Oral",
+      "peripheral vascular diseases": "Oral",
+      "polyendocrinopathies, autoimmune": "Oral",
+      "pregnancy": "Oral",
+      "prostate adenocarcinoma": "Oral",
+      "prostate cancer": "Oral",
+      "prostatic neoplasms": "Oral",
+      "prostatic neoplasms, castration-resistant": "Oral",
+      "psoriasis": "Topical",
+      "pulmonary arterial hypertension": "Oral",
+      "pulmonary embolism": "Oral",
+      "pulmonary hypertension": "Oral",
+      "recurrent thrombophlebitis": "Oral",
+      "relapsing-remitting multiple sclerosis": "Oral",
+      "rheumatic heart disease": "Oral",
+      "rheumatoid arthritis": "Oral",
+      "stroke": "Oral",
+      "thrombocytopenia": "Oral",
+      "thromboembolism": "Oral",
+      "thrombophlebitis": "Oral",
+      "thrombosis": "Oral",
+      "thrombotic disease": "Oral",
+      "transient ischemic attack": "Oral",
+      "type 2 diabetes mellitus": "Oral",
+      "ulcerative colitis": "Oral",
+      "urinary bladder, overactive": "Oral",
+      "venous thromboembolism": "Oral",
+      "venous thrombosis": "Oral"
+    }
+  },
+  "CHEMBL1502": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "acute coronary syndrome": "Oral",
+      "aspergillosis": "Oral",
+      "bacterial disease": "Oral",
+      "bacterial infections": "Oral",
+      "barrett esophagus": "Oral",
+      "barrett's esophagus": "Oral",
+      "congestive heart failure": "Oral",
+      "diabetes mellitus": "Oral",
+      "diabetes mellitus, type 1": "Oral",
+      "diabetes mellitus, type 2": "Oral",
+      "duodenal ulcer": "Oral",
+      "esophageal disease": "Oral",
+      "esophageal diseases": "Oral",
+      "esophagitis": "Oral",
+      "gastric ulcer": "Oral",
+      "gastrin-producing neuroendocrine tumor": "Oral",
+      "gastrinoma": "Oral",
+      "gastroesophageal reflux": "Oral",
+      "gastroesophageal reflux disease": "Oral",
+      "gastrointestinal hemorrhage": "Oral",
+      "heart failure": "Oral",
+      "helicobacter infections": "Oral",
+      "helicobacter pylori infectious disease": "Oral",
+      "hemorrhage": "Oral",
+      "laryngopharyngeal reflux": "Oral",
+      "multiple sclerosis": "Oral",
+      "peptic ulcer": "Oral",
+      "prostate cancer": "Oral",
+      "prostatic neoplasms, castration-resistant": "Oral",
+      "psychosis": "Oral",
+      "psychotic disorders": "Oral",
+      "schizophrenia": "Oral",
+      "stomach ulcer": "Oral",
+      "type 1 diabetes mellitus": "Oral",
+      "type 2 diabetes mellitus": "Oral",
+      "ulcer": "Oral",
+      "ulcer disease": "Oral",
+      "zollinger-ellison syndrome": "Oral"
+    }
+  },
+  "CHEMBL154": {
+    "available_routes": [
+      "Oral",
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "arthralgia": "Topical",
+      "myalgia": "Topical",
+      "rheumatic disease": "Oral",
+      "rheumatic diseases": "Oral",
+      "vaginal inflammation": "Oral",
+      "vaginitis": "Oral"
+    }
+  },
+  "CHEMBL1542": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "acute lymphoblastic leukemia": "Oral",
+      "acute myeloid leukemia": "Oral",
+      "anemia, sickle cell": "Oral",
+      "anti-neutrophil antibody associated vasculitis": "Oral",
+      "anti-neutrophil cytoplasmic antibody-associated vasculitis": "Oral",
+      "arthritis, rheumatoid": "Oral",
+      "autoimmune hepatitis": "Oral",
+      "bullous pemphigoid": "Oral",
+      "carcinoma, hepatocellular": "Oral",
+      "cardiomyopathies": "Oral",
+      "cardiomyopathy": "Oral",
+      "chronic kidney disease": "Oral",
+      "churg-strauss syndrome": "Oral",
+      "colitis, ulcerative": "Oral",
+      "crohn disease": "Oral",
+      "crohn's disease": "Oral",
+      "delayed graft function": "Oral",
+      "dermatitis": "Topical",
+      "eczema": "Topical",
+      "eczematoid dermatitis": "Topical",
+      "encephalomyelitis": "Oral",
+      "glomerulonephritis, iga": "Oral",
+      "gout": "Oral",
+      "granulomatosis with polyangiitis": "Oral",
+      "hepatitis, autoimmune": "Oral",
+      "hepatocellular carcinoma": "Oral",
+      "idiopathic pulmonary fibrosis": "Oral",
+      "iga glomerulonephritis": "Oral",
+      "immune system disease": "Oral",
+      "immune system diseases": "Oral",
+      "infertility": "Oral",
+      "inflammatory bowel disease": "Oral",
+      "inflammatory bowel diseases": "Oral",
+      "interstitial lung disease": "Oral",
+      "kidney disease": "Oral",
+      "kidney diseases": "Oral",
+      "leukemia, myeloid, acute": "Oral",
+      "lung disease": "Oral",
+      "lung diseases": "Oral",
+      "lung diseases, interstitial": "Oral",
+      "lupus erythematosus, systemic": "Oral",
+      "lupus nephritis": "Oral",
+      "microscopic polyangiitis": "Oral",
+      "mucopolysaccharidoses": "Oral",
+      "mucopolysaccharidosis": "Oral",
+      "myasthenia gravis": "Oral",
+      "myelodysplastic syndrome": "Oral",
+      "myelodysplastic syndromes": "Oral",
+      "neuromyelitis optica": "Oral",
+      "pemphigoid, bullous": "Oral",
+      "pemphigus": "Oral",
+      "pemphigus vulgaris": "Oral",
+      "precursor cell lymphoblastic leukemia-lymphoma": "Oral",
+      "pulmonary fibrosis": "Oral",
+      "renal insufficiency, chronic": "Oral",
+      "rheumatoid arthritis": "Oral",
+      "sickle cell anemia": "Oral",
+      "systemic lupus erythematosus": "Oral",
+      "takayasu arteritis": "Oral",
+      "thrombocytopenia": "Oral",
+      "ulcerative colitis": "Oral",
+      "urticaria": "Oral",
+      "vasculitis": "Oral"
+    }
+  },
+  "CHEMBL1567": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "carcinoma, renal cell": "Otic",
+      "clear cell renal carcinoma": "Otic"
+    }
+  },
+  "CHEMBL1650": {
+    "available_routes": [
+      "Ophthalmic",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "asthma": "Inhaled",
+      "atopic eczema": "Topical",
+      "contact dermatitis": "Topical",
+      "dermatitis herpetiformis": "Topical",
+      "dermatitis, atopic": "Topical",
+      "dermatitis, contact": "Topical",
+      "dermatitis, exfoliative": "Topical",
+      "dermatitis, seborrheic": "Topical",
+      "exfoliative dermatitis": "Topical",
+      "eye diseases": "Ophthalmic",
+      "eye inflammation": "Ophthalmic",
+      "herpes zoster ophthalmicus": "Ophthalmic",
+      "ophthalmia, sympathetic": "Ophthalmic",
+      "ophthalmic herpes zoster": "Ophthalmic",
+      "posterior uveitis": "Ophthalmic",
+      "seborrheic dermatitis": "Topical",
+      "sympathetic ophthalmia": "Ophthalmic",
+      "uveitis, posterior": "Ophthalmic"
+    }
+  },
+  "CHEMBL1683": {
+    "available_routes": [
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "atopic eczema": "Topical",
+      "dermatitis, atopic": "Topical",
+      "dermatitis, seborrheic": "Topical",
+      "psoriasis": "Topical",
+      "psoriasis vulgaris": "Topical",
+      "seborrheic dermatitis": "Topical",
+      "skin disease": "Topical",
+      "skin diseases": "Topical"
+    }
+  },
+  "CHEMBL1690": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL1723241": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "acne": "Topical",
+      "acne vulgaris": "Topical"
+    }
+  },
+  "CHEMBL1789941": {
+    "available_routes": [
+      "IV",
+      "Oral",
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "atopic eczema": "Topical",
+      "bronchiolitis obliterans": "Inhaled",
+      "bronchiolitis obliterans syndrome": "Inhaled",
+      "chronic graft versus host disease": "Inhaled",
+      "dermatitis": "Topical",
+      "dermatitis, atopic": "Topical",
+      "dermatitis, seborrheic": "Topical",
+      "eczema": "Topical",
+      "eczematoid dermatitis": "Topical",
+      "neoplasm": "Oral/IV",
+      "neoplasms": "Oral/IV",
+      "psoriasis": "Topical",
+      "seborrheic dermatitis": "Topical"
+    }
+  },
+  "CHEMBL1790041": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "autosomal dominant hyper-ige syndrome": "Oral",
+      "barrett esophagus": "Oral",
+      "barrett's esophagus": "Oral",
+      "breast cancer": "Oral",
+      "breast carcinoma": "Oral",
+      "breast carcinoma in situ": "Oral",
+      "breast neoplasms": "Oral",
+      "cancer": "Oral",
+      "carcinoma, medullary": "Oral",
+      "carcinoma, renal cell": "Oral",
+      "cough": "Oral",
+      "esophagitis, peptic": "Oral",
+      "gastric ulcer": "Oral",
+      "gastroesophageal reflux": "Oral",
+      "gastroesophageal reflux disease": "Oral",
+      "helicobacter infections": "Oral",
+      "helicobacter pylori infectious disease": "Oral",
+      "hypotension, orthostatic": "Oral",
+      "immune system disease": "Oral",
+      "immune system diseases": "Oral",
+      "job syndrome": "Oral",
+      "leukemia, t-cell": "Oral",
+      "medullary thyroid gland carcinoma": "Oral",
+      "multiple sclerosis": "Oral",
+      "neoplasms": "Oral",
+      "orthostatic hypotension": "Oral",
+      "peptic esophagitis": "Oral",
+      "peptic ulcer": "Oral",
+      "postpartum hemorrhage": "Oral",
+      "precursor t-cell lymphoblastic leukemia-lymphoma": "Oral",
+      "renal cell carcinoma": "Oral",
+      "stomach ulcer": "Oral",
+      "t-cell leukemia": "Oral",
+      "t-lymphoblastic lymphoma": "Oral"
+    }
+  },
+  "CHEMBL19019": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "acute respiratory distress syndrome": "Oral",
+      "alcohol abuse": "Oral",
+      "alcohol dependence": "Oral",
+      "alcohol drinking": "Oral",
+      "alcohol-related disorders": "Oral",
+      "alcoholism": "Oral",
+      "amphetamine-related disorders": "Oral",
+      "anorexia nervosa": "Oral",
+      "atopic eczema": "Topical",
+      "back pain": "Oral",
+      "binge eating": "Oral",
+      "borderline personality disorder": "Oral",
+      "breast cancer": "Oral",
+      "breast neoplasms": "Oral",
+      "bulimia": "Oral",
+      "bulimia nervosa": "Oral",
+      "cannabis dependence": "Oral",
+      "child development disorders, pervasive": "Oral",
+      "chronic pain": "Oral",
+      "cocaine abuse": "Oral",
+      "cocaine dependence": "Oral",
+      "cocaine-related disorders": "Oral",
+      "colitis, ulcerative": "Oral",
+      "coronavirus infections": "Oral",
+      "coronavirus infectious disease": "Oral",
+      "covid-19": "Oral",
+      "crohn disease": "Oral",
+      "crohn's disease": "Oral",
+      "cystitis, interstitial": "Oral",
+      "depressive disorder": "Oral",
+      "depressive disorder, major": "Oral",
+      "dermatitis, atopic": "Topical",
+      "diabetic neuropathies": "Oral",
+      "diabetic neuropathy": "Oral",
+      "drug dependence": "Oral",
+      "dry eye syndrome": "Ophthalmic",
+      "dry eye syndromes": "Ophthalmic",
+      "endometriosis": "Oral",
+      "fatigue": "Oral",
+      "fibromyalgia": "Oral",
+      "gambling": "Oral",
+      "gambling behaviour": "Oral",
+      "heroin dependence": "Oral",
+      "hiv infection": "Oral",
+      "hiv infections": "Oral",
+      "interstitial cystitis": "Oral",
+      "long covid-19": "Oral",
+      "low back pain": "Oral",
+      "major depressive disorder": "Oral",
+      "marijuana abuse": "Oral",
+      "melanoma": "Oral",
+      "mental disorders": "Oral",
+      "mental or behavioural disorder": "Oral",
+      "methamphetamine dependence": "Oral",
+      "migraine disorder": "Oral",
+      "migraine disorders": "Oral",
+      "multiple sclerosis": "Oral",
+      "nicotine dependence": "Oral",
+      "obesity": "Oral",
+      "obsessive-compulsive disorder": "Oral",
+      "opioid dependence": "Oral",
+      "opioid use disorder": "Oral",
+      "opioid-related disorders": "Oral",
+      "pain": "Oral",
+      "pervasive developmental disorder": "Oral",
+      "post-acute covid-19 syndrome": "Oral",
+      "post-traumatic stress disorder": "Oral",
+      "psoriasis": "Topical",
+      "respiratory distress syndrome": "Oral",
+      "schizophrenia": "Oral",
+      "severe acute respiratory syndrome": "Oral",
+      "smoking cessation": "Oral",
+      "stress disorders, post-traumatic": "Oral",
+      "substance-related disorders": "Oral",
+      "tobacco use disorder": "Oral",
+      "trichotillomania": "Oral",
+      "ulcerative colitis": "Oral"
+    }
+  },
+  "CHEMBL192": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "acute kidney injury": "Oral",
+      "anemia, sickle cell": "Oral",
+      "arterial occlusive disease": "Oral",
+      "arterial occlusive diseases": "Oral",
+      "asphyxia neonatorum": "Oral",
+      "becker muscular dystrophy": "Oral",
+      "benign prostatic hyperplasia": "Oral",
+      "beta-thalassemia": "Oral",
+      "brain diseases": "Oral",
+      "brain injuries": "Oral",
+      "brain injury": "Oral",
+      "bronchopulmonary dysplasia": "Inhaled",
+      "carcinoma, non-small-cell lung": "Oral",
+      "cerebral small vessel disease": "Oral",
+      "cerebral small vessel diseases": "Oral",
+      "cirrhosis of liver": "Oral",
+      "congestive heart failure": "Oral",
+      "coronary artery disease": "Oral",
+      "coronary disease": "Oral",
+      "coronary vasospasm": "Oral",
+      "covid-19": "Oral",
+      "cystic fibrosis": "Oral",
+      "diabetes mellitus": "Oral",
+      "duchenne muscular dystrophy": "Oral",
+      "eisenmenger complex": "Oral",
+      "eisenmenger syndrome": "Oral",
+      "encephalopathy": "Oral",
+      "erectile dysfunction": "Oral",
+      "female infertility": "Oral",
+      "fetal growth restriction": "Oral",
+      "fetal growth retardation": "Oral",
+      "foramen ovale, patent": "Oral",
+      "glaucoma": "Ophthalmic",
+      "heart disease": "Oral",
+      "heart diseases": "Oral",
+      "heart failure": "Oral",
+      "hepatitis c": "Oral",
+      "hepatitis c virus infection": "Oral",
+      "hypertension": "Oral",
+      "hypertension, pulmonary": "Oral",
+      "hypoplastic left heart syndrome": "Oral",
+      "hypoxia-ischemia, brain": "Oral",
+      "idiopathic pulmonary fibrosis": "Oral",
+      "impotence": "Oral",
+      "infertility": "Oral",
+      "infertility, female": "Oral",
+      "ischemic stroke": "Oral",
+      "liver cirrhosis": "Oral",
+      "lung disease": "Oral",
+      "lung diseases": "Oral",
+      "lymphangioma": "Oral",
+      "migraine with aura": "Oral",
+      "muscular dystrophy, duchenne": "Oral",
+      "mycobacterium infection": "Oral",
+      "mycobacterium infections": "Oral",
+      "myelodysplastic syndrome": "Oral",
+      "myelodysplastic syndromes": "Oral",
+      "non-small cell lung carcinoma": "Oral",
+      "parkinson disease": "Oral",
+      "patent foramen ovale": "Oral",
+      "peripheral arterial disease": "Oral",
+      "persistent fetal circulation syndrome": "Oral",
+      "pre-eclampsia": "Oral",
+      "preeclampsia": "Oral",
+      "pregnancy": "Oral",
+      "premature birth": "Oral",
+      "premature ejaculation": "Oral",
+      "priapism": "Oral",
+      "prostatic hyperplasia": "Oral",
+      "pulmonary arterial hypertension": "Oral",
+      "pulmonary edema": "Oral",
+      "pulmonary embolism": "Oral",
+      "pulmonary hypertension": "Oral",
+      "raynaud disease": "Oral",
+      "rectal neoplasms": "Oral",
+      "rectum cancer": "Oral",
+      "scleroderma": "Oral",
+      "scleroderma, localized": "Oral",
+      "scleroderma, systemic": "Oral",
+      "severe acute respiratory syndrome": "Oral",
+      "sexual dysfunction": "Oral",
+      "sexual dysfunction, physiological": "Oral",
+      "sickle cell anemia": "Oral",
+      "skin disease": "Topical",
+      "skin diseases": "Topical",
+      "skin ulcer": "Topical",
+      "systemic scleroderma": "Oral",
+      "urinary incontinence": "Oral"
+    }
+  },
+  "CHEMBL19299": {
+    "available_routes": [
+      "Oral",
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "arthralgia": "Topical",
+      "myalgia": "Topical",
+      "rheumatic disease": "Oral",
+      "rheumatic diseases": "Oral"
+    }
+  },
+  "CHEMBL2064032": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL2079130": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "esophagitis": "Oral",
+      "gastroesophageal reflux": "Oral",
+      "gastroesophageal reflux disease": "Oral",
+      "helicobacter infections": "Oral",
+      "helicobacter pylori infectious disease": "Oral",
+      "peptic ulcer": "Oral"
+    }
+  },
+  "CHEMBL2103736": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL2103743": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "atopic eczema": "Topical",
+      "dermatitis, atopic": "Topical"
+    }
+  },
+  "CHEMBL2103744": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL2107830": {
+    "available_routes": [
+      "Injection",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "diabetes mellitus": "Oral/Injection"
+    }
+  },
+  "CHEMBL2110372": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL2111286": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "gastroesophageal reflux": "Oral",
+      "gastroesophageal reflux disease": "Oral",
+      "helicobacter infections": "Oral",
+      "helicobacter pylori infectious disease": "Oral",
+      "peptic ulcer": "Oral"
+    }
+  },
+  "CHEMBL2146140": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL2146146": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "allergic rhinitis": "Nasal",
+      "rhinitis, allergic, seasonal": "Nasal",
+      "seasonal allergic rhinitis": "Nasal"
+    }
+  },
+  "CHEMBL22": {
+    "available_routes": [
+      "IV",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "age-related macular degeneration": "Ophthalmic",
+      "bacterial disease": "Oral/IV",
+      "bacterial infections": "Oral/IV",
+      "dermatitis": "Topical",
+      "eczema": "Topical",
+      "eczematoid dermatitis": "Topical",
+      "macular degeneration": "Ophthalmic",
+      "otitis media": "Otic",
+      "skin disease": "Topical",
+      "skin diseases": "Topical"
+    }
+  },
+  "CHEMBL221959": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "alopecia areata": "Oral",
+      "ankylosing spondylitis": "Oral",
+      "arthritis, juvenile": "Oral",
+      "arthritis, psoriatic": "Oral",
+      "arthritis, rheumatoid": "Oral",
+      "chronic granulomatous disease": "Oral",
+      "chronic kidney disease": "Oral",
+      "colitis": "Oral",
+      "colitis, ulcerative": "Oral",
+      "covid-19": "Oral",
+      "crohn disease": "Oral",
+      "crohn's disease": "Oral",
+      "cutaneous leishmaniasis": "Oral",
+      "cutaneous lupus erythematosus": "Oral",
+      "dermatomyositis": "Oral",
+      "down syndrome": "Oral",
+      "dry eye syndrome": "Ophthalmic",
+      "dry eye syndromes": "Ophthalmic",
+      "extranodal nasal nk/t cell lymphoma": "Nasal",
+      "glioblastoma": "Oral",
+      "glioblastoma multiforme": "Oral",
+      "granuloma annulare": "Oral",
+      "granuloma, lethal midline": "Nasal",
+      "granulomatous disease, chronic": "Oral",
+      "injury": "Oral",
+      "juvenile idiopathic arthritis": "Oral",
+      "kidney disease": "Oral",
+      "kidney diseases": "Oral",
+      "leishmaniasis, cutaneous": "Oral",
+      "lupus erythematosus, cutaneous": "Oral",
+      "lupus erythematosus, systemic": "Oral",
+      "myasthenia gravis": "Oral",
+      "myocarditis": "Oral",
+      "myositis": "Oral",
+      "pneumonia": "Oral",
+      "polymyalgia rheumatica": "Oral",
+      "pouchitis": "Oral",
+      "psoriasis": "Topical",
+      "psoriasis vulgaris": "Topical",
+      "psoriatic arthritis": "Oral",
+      "renal insufficiency, chronic": "Oral",
+      "rheumatoid arthritis": "Oral",
+      "sarcoidosis": "Oral",
+      "scleroderma, systemic": "Oral",
+      "severe acute respiratory syndrome": "Oral",
+      "sjogren syndrome": "Oral",
+      "sjogren's syndrome": "Oral",
+      "spondylitis, ankylosing": "Oral",
+      "stevens-johnson syndrome": "Oral",
+      "systemic lupus erythematosus": "Oral",
+      "systemic scleroderma": "Oral",
+      "takayasu arteritis": "Oral",
+      "toxic epidermal necrolysis": "Oral",
+      "ulcerative colitis": "Oral",
+      "wounds and injuries": "Oral"
+    }
+  },
+  "CHEMBL2348780": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "becker muscular dystrophy": "Oral",
+      "colitis, ulcerative": "Oral",
+      "duchenne muscular dystrophy": "Oral",
+      "muscular dystrophy, duchenne": "Oral",
+      "ulcerative colitis": "Oral"
+    }
+  },
+  "CHEMBL267894": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "osteoarthritis": "Oral"
+    }
+  },
+  "CHEMBL294199": {
+    "available_routes": [
+      "Inhaled",
+      "Injection",
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "arthralgia": "Topical",
+      "common cold": "Nasal",
+      "myalgia": "Topical",
+      "non-allergic rhinitis": "Nasal"
+    }
+  },
+  "CHEMBL296913": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL30": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "amyotrophic lateral sclerosis": "Oral",
+      "anxiety disorders": "Oral",
+      "atopic eczema": "Topical",
+      "breast cancer": "Oral",
+      "breast carcinoma": "Oral",
+      "breast carcinoma in situ": "Oral",
+      "breast neoplasms": "Oral",
+      "chronic obstructive pulmonary disease": "Oral",
+      "dermatitis, atopic": "Topical",
+      "duodenal ulcer": "Oral",
+      "dyspepsia": "Oral",
+      "endometrial cancer": "Oral",
+      "endometrial neoplasms": "Oral",
+      "erythropoietic protoporphyria": "Oral",
+      "gastroesophageal reflux": "Oral",
+      "gastroesophageal reflux disease": "Oral",
+      "gastrointestinal hemorrhage": "Oral",
+      "generalized anxiety disorder": "Oral",
+      "heartburn": "Oral",
+      "hemorrhage": "Oral",
+      "infection": "Oral",
+      "infections": "Oral",
+      "peptic ulcer": "Oral",
+      "protoporphyria, erythropoietic": "Oral",
+      "pulmonary disease, chronic obstructive": "Oral",
+      "ulcer": "Oral",
+      "ulcer disease": "Oral"
+    }
+  },
+  "CHEMBL31": {
+    "available_routes": [
+      "IV",
+      "Ophthalmic",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "bacterial conjunctivitis": "Ophthalmic",
+      "bacterial disease": "Oral/IV",
+      "bacterial infections": "Oral/IV",
+      "cataract": "Ophthalmic",
+      "conjunctivitis, bacterial": "Ophthalmic",
+      "eye infection": "Ophthalmic",
+      "eye infections": "Ophthalmic"
+    }
+  },
+  "CHEMBL3137308": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "arthritis, rheumatoid": "Oral",
+      "colitis, ulcerative": "Oral",
+      "kidney disease": "Oral",
+      "kidney diseases": "Oral",
+      "liver disease": "Oral",
+      "liver diseases": "Oral",
+      "psoriasis": "Topical",
+      "rheumatoid arthritis": "Oral",
+      "ulcerative colitis": "Oral"
+    }
+  },
+  "CHEMBL314854": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "anaplastic astrocytoma": "Oral",
+      "asthma": "Inhaled",
+      "astrocytoma": "Oral",
+      "breast carcinoma": "Oral",
+      "breast neoplasms": "Oral",
+      "cerebral hemorrhage": "Oral",
+      "chronic inflammatory demyelinating polyradiculoneuropathy": "Oral",
+      "chronic progressive multiple sclerosis": "Oral",
+      "covid-19": "Oral",
+      "glioblastoma": "Oral",
+      "glioblastoma multiforme": "Oral",
+      "intracerebral hemorrhage": "Oral",
+      "multiple sclerosis": "Oral",
+      "multiple sclerosis, chronic progressive": "Oral",
+      "multiple sclerosis, relapsing-remitting": "Oral",
+      "optic neuritis": "Oral",
+      "polyradiculoneuropathy, chronic inflammatory demyelinating": "Oral",
+      "primary progressive multiple sclerosis": "Oral",
+      "relapsing-remitting multiple sclerosis": "Oral",
+      "renal insufficiency": "Oral",
+      "rett syndrome": "Oral",
+      "schizophrenia": "Oral",
+      "severe acute respiratory syndrome": "Oral",
+      "stroke": "Oral",
+      "uveitis": "Ophthalmic"
+    }
+  },
+  "CHEMBL316561": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "cirrhosis of liver": "Oral",
+      "gastroesophageal reflux": "Oral",
+      "gastroesophageal reflux disease": "Oral",
+      "liver cirrhosis": "Oral",
+      "non-alcoholic fatty liver disease": "Oral",
+      "non-alcoholic steatohepatitis": "Oral",
+      "pancreatic carcinoma": "Oral",
+      "pancreatic neoplasms": "Oral",
+      "peptic ulcer": "Oral"
+    }
+  },
+  "CHEMBL3181947": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "cataract": "Ophthalmic",
+      "eye pain": "Ophthalmic",
+      "ocular pain": "Ophthalmic",
+      "ophthalmologic surgical procedures": "Ophthalmic"
+    }
+  },
+  "CHEMBL3183075": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "duodenal ulcer": "Oral",
+      "dyspepsia": "Oral",
+      "esophagitis": "Oral",
+      "gastritis": "Oral",
+      "gastroesophageal reflux": "Oral",
+      "gastroesophageal reflux disease": "Oral",
+      "gastroparesis": "Oral",
+      "heartburn": "Oral",
+      "peptic ulcer": "Oral"
+    }
+  },
+  "CHEMBL3187723": {
+    "available_routes": [
+      "IV",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "hilar cholangiocarcinoma": "Topical",
+      "klatskin tumor": "Topical",
+      "neoplasm": "Oral/IV",
+      "neoplasms": "Oral/IV",
+      "skin carcinoma": "Topical",
+      "skin neoplasms": "Topical"
+    }
+  },
+  "CHEMBL32": {
+    "available_routes": [
+      "IV",
+      "Ophthalmic",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "acanthamoeba keratitis": "Ophthalmic",
+      "asthma": "Inhaled",
+      "bacterial conjunctivitis": "Ophthalmic",
+      "bacterial disease": "Oral/IV",
+      "bacterial infections": "Oral/IV",
+      "bronchitis, chronic": "Inhaled",
+      "cataract": "Ophthalmic",
+      "chronic bronchitis": "Inhaled",
+      "conjunctivitis, bacterial": "Ophthalmic",
+      "endophthalmitis": "Ophthalmic",
+      "eye infection": "Ophthalmic",
+      "eye infections": "Ophthalmic",
+      "infectious otitis media": "Otic",
+      "keratitis": "Ophthalmic",
+      "otitis media": "Otic",
+      "skin disease": "Topical",
+      "skin diseases": "Topical"
+    }
+  },
+  "CHEMBL3301607": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "ankylosing spondylitis": "Oral",
+      "arthritis, juvenile": "Oral",
+      "arthritis, psoriatic": "Oral",
+      "arthritis, rheumatoid": "Oral",
+      "colitis, ulcerative": "Oral",
+      "crohn disease": "Oral",
+      "crohn's disease": "Oral",
+      "cutaneous lupus erythematosus": "Oral",
+      "inflammatory bowel disease": "Oral",
+      "inflammatory bowel diseases": "Oral",
+      "juvenile idiopathic arthritis": "Oral",
+      "kidney disease": "Oral",
+      "kidney diseases": "Oral",
+      "lupus erythematosus, cutaneous": "Oral",
+      "lupus erythematosus, systemic": "Oral",
+      "psoriatic arthritis": "Oral",
+      "rheumatoid arthritis": "Oral",
+      "sjogren syndrome": "Oral",
+      "sjogren's syndrome": "Oral",
+      "spondylarthropathies": "Oral",
+      "spondylitis, ankylosing": "Oral",
+      "spondyloarthropathy": "Oral",
+      "systemic lupus erythematosus": "Oral",
+      "ulcerative colitis": "Oral",
+      "uveitis": "Ophthalmic"
+    }
+  },
+  "CHEMBL3655081": {
+    "available_routes": [
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "atopic eczema": "Topical",
+      "dermatitis, atopic": "Topical",
+      "diabetes mellitus, type 1": "Topical",
+      "eczema": "Topical",
+      "eczematoid dermatitis": "Topical",
+      "food allergy": "Topical",
+      "food hypersensitivity": "Topical",
+      "granuloma annulare": "Topical",
+      "kidney disease": "Topical",
+      "kidney diseases": "Topical",
+      "liver disease": "Topical",
+      "liver diseases": "Topical",
+      "psoriasis": "Topical",
+      "sarcoidosis": "Topical",
+      "stevens-johnson syndrome": "Topical",
+      "toxic epidermal necrolysis": "Topical",
+      "type 1 diabetes mellitus": "Topical"
+    }
+  },
+  "CHEMBL3707243": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL3707246": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL3707247": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "colitis, ulcerative": "Oral",
+      "covid-19": "Oral",
+      "crohn disease": "Oral",
+      "crohn's disease": "Oral",
+      "liver disease": "Oral",
+      "liver diseases": "Oral",
+      "multiple sclerosis": "Oral",
+      "multiple sclerosis, relapsing-remitting": "Oral",
+      "relapsing-remitting multiple sclerosis": "Oral",
+      "severe acute respiratory syndrome": "Oral",
+      "ulcerative colitis": "Oral"
+    }
+  },
+  "CHEMBL3707348": {
+    "available_routes": [
+      "IV",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "bronchiolitis obliterans syndrome": "Inhaled",
+      "chronic graft versus host disease": "Inhaled",
+      "neoplasm": "Oral/IV",
+      "neoplasms": "Oral/IV"
+    }
+  },
+  "CHEMBL384467": {
+    "available_routes": [
+      "Nasal",
+      "Ophthalmic",
+      "Oral",
+      "Otic",
+      "Topical",
+      "Topical (oral cavity)"
+    ],
+    "routes_by_indication": {
+      "acne": "Topical",
+      "acne vulgaris": "Topical",
+      "age-related macular degeneration": "Ophthalmic",
+      "allergic conjunctivitis": "Ophthalmic",
+      "allergic rhinitis": "Nasal",
+      "anterior uveitis": "Ophthalmic",
+      "asthma": "Inhaled",
+      "atopic eczema": "Topical",
+      "bronchiolitis": "Inhaled",
+      "bronchiolitis obliterans syndrome": "Inhaled",
+      "bronchopulmonary dysplasia": "Inhaled",
+      "cataract": "Ophthalmic",
+      "chronic graft versus host disease": "Inhaled",
+      "conjunctivitis, allergic": "Ophthalmic",
+      "conjunctivitis, viral": "Ophthalmic",
+      "contact dermatitis": "Topical",
+      "cystoid macular edema": "Ophthalmic",
+      "dermatitis": "Topical",
+      "dermatitis herpetiformis": "Topical",
+      "dermatitis, atopic": "Topical",
+      "dermatitis, contact": "Topical",
+      "dermatitis, exfoliative": "Topical",
+      "dermatitis, seborrheic": "Topical",
+      "dry eye syndrome": "Ophthalmic",
+      "dry eye syndromes": "Ophthalmic",
+      "exfoliative dermatitis": "Topical",
+      "extranodal nasal nk/t cell lymphoma": "Nasal",
+      "eye diseases": "Ophthalmic",
+      "eye inflammation": "Ophthalmic",
+      "glaucoma": "Ophthalmic",
+      "granuloma, lethal midline": "Nasal",
+      "hemorrhoid": "Topical",
+      "hemorrhoids": "Topical",
+      "herpes zoster ophthalmicus": "Ophthalmic",
+      "infectious otitis media": "Otic",
+      "intermediate uveitis": "Ophthalmic",
+      "keratitis": "Ophthalmic",
+      "macular degeneration": "Ophthalmic",
+      "macular edema": "Ophthalmic",
+      "macular retinal edema": "Ophthalmic",
+      "nasal congestion": "Nasal",
+      "nasal obstruction": "Nasal",
+      "ophthalmia, sympathetic": "Ophthalmic",
+      "ophthalmic herpes zoster": "Ophthalmic",
+      "otitis externa": "Otic",
+      "otitis media": "Otic",
+      "papilledema": "Ophthalmic",
+      "posterior uveitis": "Ophthalmic",
+      "psoriasis": "Topical",
+      "psoriasis vulgaris": "Topical",
+      "retinal edema": "Ophthalmic",
+      "retinal vein occlusion": "Ophthalmic",
+      "rhinitis, allergic": "Nasal",
+      "rhinitis, allergic, perennial": "Nasal",
+      "rhinitis, allergic, seasonal": "Nasal",
+      "seasonal allergic rhinitis": "Nasal",
+      "seborrheic dermatitis": "Topical",
+      "sympathetic ophthalmia": "Ophthalmic",
+      "uveitis": "Ophthalmic",
+      "uveitis, anterior": "Ophthalmic",
+      "uveitis, intermediate": "Ophthalmic",
+      "uveitis, posterior": "Ophthalmic",
+      "viral conjunctivitis": "Ophthalmic",
+      "wet macular degeneration": "Ophthalmic"
+    }
+  },
+  "CHEMBL3989410": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL3989676": {
+    "available_routes": [
+      "Ophthalmic",
+      "Oral",
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "arthralgia": "Topical",
+      "eye diseases": "Ophthalmic",
+      "eye inflammation": "Ophthalmic",
+      "myalgia": "Topical",
+      "rheumatic disease": "Oral",
+      "rheumatic diseases": "Oral"
+    }
+  },
+  "CHEMBL4": {
+    "available_routes": [
+      "IV",
+      "Ophthalmic",
+      "Oral",
+      "Otic"
+    ],
+    "routes_by_indication": {
+      "acne": "Topical",
+      "acne vulgaris": "Topical",
+      "bacterial conjunctivitis": "Ophthalmic",
+      "bacterial disease": "Oral/IV",
+      "bacterial infections": "Oral/IV",
+      "bronchitis, chronic": "Inhaled",
+      "chronic bronchitis": "Inhaled",
+      "conjunctivitis, bacterial": "Ophthalmic",
+      "corneal ulcer": "Ophthalmic",
+      "eye infection": "Ophthalmic",
+      "eye infections": "Ophthalmic",
+      "glaucoma": "Ophthalmic",
+      "glaucoma, open-angle": "Ophthalmic",
+      "infectious otitis media": "Otic",
+      "keratitis": "Ophthalmic",
+      "open-angle glaucoma": "Ophthalmic",
+      "otitis externa": "Otic",
+      "otitis media": "Otic"
+    }
+  },
+  "CHEMBL4071161": {
+    "available_routes": [
+      "IV",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "neoplasm": "Oral/IV",
+      "neoplasms": "Oral/IV"
+    }
+  },
+  "CHEMBL4085457": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "alopecia": "Oral",
+      "alopecia areata": "Oral",
+      "arthritis, rheumatoid": "Oral",
+      "celiac disease": "Oral",
+      "cicatricial alopecia": "Oral",
+      "colitis, ulcerative": "Oral",
+      "crohn disease": "Oral",
+      "crohn's disease": "Oral",
+      "diabetes mellitus, type 1": "Oral",
+      "keloid": "Oral",
+      "kidney disease": "Oral",
+      "kidney diseases": "Oral",
+      "liver disease": "Oral",
+      "liver diseases": "Oral",
+      "mycosis fungoides": "Oral",
+      "rheumatoid arthritis": "Oral",
+      "sezary syndrome": "Oral",
+      "sezary's disease": "Oral",
+      "type 1 diabetes mellitus": "Oral",
+      "ulcerative colitis": "Oral",
+      "vitiligo": "Oral"
+    }
+  },
+  "CHEMBL416": {
+    "available_routes": [
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "acute graft vs. host disease": "Topical",
+      "arthritis, rheumatoid": "Topical",
+      "bronchiolitis obliterans syndrome": "Inhaled",
+      "chronic graft versus host disease": "Inhaled",
+      "crohn disease": "Topical",
+      "crohn's disease": "Topical",
+      "diffuse scleroderma": "Topical",
+      "epidermolysis bullosa acquisita": "Topical",
+      "graft versus host disease": "Topical",
+      "graft vs host disease": "Topical",
+      "hematologic neoplasms": "Topical",
+      "lymphoid neoplasm": "Topical",
+      "lymphoma": "Topical",
+      "lymphoma, t-cell": "Topical",
+      "mycosis fungoides": "Topical",
+      "pancreatic carcinoma": "Topical",
+      "pancreatic neoplasms": "Topical",
+      "psoriasis": "Topical",
+      "rheumatoid arthritis": "Topical",
+      "scleroderma, diffuse": "Topical",
+      "sezary syndrome": "Topical",
+      "sezary's disease": "Topical",
+      "t-cell non-hodgkin lymphoma": "Topical"
+    }
+  },
+  "CHEMBL4298167": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL429910": {
+    "available_routes": [
+      "Injection",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "diabetes mellitus": "Oral/Injection"
+    }
+  },
+  "CHEMBL443": {
+    "available_routes": [
+      "IV",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "age-related macular degeneration": "Ophthalmic",
+      "bacterial disease": "Oral/IV",
+      "bacterial infections": "Oral/IV",
+      "dermatitis": "Topical",
+      "eczema": "Topical",
+      "eczematoid dermatitis": "Topical",
+      "macular degeneration": "Ophthalmic",
+      "skin disease": "Topical",
+      "skin diseases": "Topical"
+    }
+  },
+  "CHEMBL45": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "actinic keratosis": "Oral",
+      "acute kidney injury": "Oral",
+      "acute myocardial infarction": "Oral",
+      "alcohol-related disorders": "Oral",
+      "anxiety": "Oral",
+      "aortic aneurysm": "Oral",
+      "asphyxia neonatorum": "Oral",
+      "atopic eczema": "Topical",
+      "atrial fibrillation": "Oral",
+      "attention deficit disorder with hyperactivity": "Oral",
+      "attention deficit hyperactivity disorder": "Oral",
+      "autism": "Oral",
+      "autism spectrum disorder": "Oral",
+      "autistic disorder": "Oral",
+      "barrett esophagus": "Oral",
+      "barrett's esophagus": "Oral",
+      "bipolar disorder": "Oral",
+      "bone diseases, metabolic": "Oral",
+      "brain injuries": "Oral",
+      "brain injury": "Oral",
+      "brain ischemia": "Oral",
+      "breast cancer": "Oral",
+      "breast neoplasms": "Oral",
+      "burn": "Oral",
+      "burns": "Oral",
+      "cancer": "Oral",
+      "carcinoma, non-small-cell lung": "Oral",
+      "child development disorders, pervasive": "Oral",
+      "cognitive dysfunction": "Oral",
+      "cognitive impairment": "Oral",
+      "colitis, ulcerative": "Oral",
+      "covid-19": "Oral",
+      "delirium": "Oral",
+      "dementia": "Oral",
+      "dengue": "Oral",
+      "dengue disease": "Oral",
+      "depressive disorder": "Oral",
+      "depressive disorder, major": "Oral",
+      "dermatitis, atopic": "Topical",
+      "diabetes mellitus": "Oral",
+      "enterocolitis, necrotizing": "Oral",
+      "enuresis": "Oral",
+      "epilepsy": "Oral",
+      "essential hypertension": "Oral",
+      "eye neoplasms": "Ophthalmic",
+      "fatigue": "Oral",
+      "fibromyalgia": "Oral",
+      "gastroesophageal reflux": "Oral",
+      "gastroesophageal reflux disease": "Oral",
+      "head and neck malignant neoplasia": "Oral",
+      "head and neck neoplasms": "Oral",
+      "hemorrhage": "Oral",
+      "hot flashes": "Oral",
+      "hypertension": "Oral",
+      "hypoxia-ischemia, brain": "Oral",
+      "injury": "Oral",
+      "insomnia": "Oral",
+      "irritable bowel syndrome": "Oral",
+      "ischemia reperfusion injury": "Oral",
+      "keratosis, actinic": "Oral",
+      "major depressive disorder": "Oral",
+      "mandibular prognathia": "Oral",
+      "melanoma": "Oral",
+      "menopause": "Oral",
+      "metabolic disease": "Oral",
+      "metabolic diseases": "Oral",
+      "metabolic syndrome": "Oral",
+      "migraine disorder": "Oral",
+      "migraine disorders": "Oral",
+      "multiple sclerosis": "Oral",
+      "multiple sclerosis, relapsing-remitting": "Oral",
+      "myocardial infarction": "Oral",
+      "necrotizing enterocolitis": "Oral",
+      "neonatal sepsis": "Oral",
+      "neoplasm": "Oral",
+      "neoplasms": "Oral",
+      "non-small cell lung carcinoma": "Oral",
+      "obstructive sleep apnea": "Oral",
+      "ocular cancer": "Ophthalmic",
+      "oral mucositis": "Topical (oral cavity)",
+      "oral squamous cell carcinoma": "Oral",
+      "osteopenia": "Oral",
+      "pain": "Oral",
+      "parkinson disease": "Oral",
+      "periodontal diseases": "Topical (oral cavity)",
+      "periodontal disorder": "Topical (oral cavity)",
+      "periodontitis": "Oral",
+      "postpartum hemorrhage": "Oral",
+      "prediabetes syndrome": "Oral",
+      "prediabetic state": "Oral",
+      "prognathism": "Oral",
+      "relapsing-remitting multiple sclerosis": "Oral",
+      "reperfusion injury": "Oral",
+      "schizophrenia": "Oral",
+      "sepsis": "Oral",
+      "severe acute respiratory syndrome": "Oral",
+      "skin disease": "Topical",
+      "skin diseases": "Topical",
+      "sleep apnea, obstructive": "Oral",
+      "sleep disorder": "Oral",
+      "sleep initiation and maintenance disorders": "Oral",
+      "sleep wake disorders": "Oral",
+      "squamous cell carcinoma of head and neck": "Oral",
+      "stomatitis": "Topical (oral cavity)",
+      "stroke": "Oral",
+      "substance withdrawal syndrome": "Oral",
+      "sunburn": "Oral",
+      "tooth disease": "Oral",
+      "tooth diseases": "Oral",
+      "ulcerative colitis": "Oral",
+      "uveal melanoma": "Oral",
+      "wounds and injuries": "Oral"
+    }
+  },
+  "CHEMBL469": {
+    "available_routes": [
+      "Ophthalmic",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "cataract": "Ophthalmic",
+      "conjunctivitis, viral": "Ophthalmic",
+      "eye diseases": "Ophthalmic",
+      "eye inflammation": "Ophthalmic",
+      "rheumatic disease": "Oral",
+      "rheumatic diseases": "Oral",
+      "viral conjunctivitis": "Ophthalmic"
+    }
+  },
+  "CHEMBL480": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "breast cancer": "Oral",
+      "breast neoplasms": "Oral",
+      "cervical cancer": "Oral",
+      "chronic lymphocytic leukemia": "Oral",
+      "cystic fibrosis": "Oral",
+      "diabetes mellitus, type 1": "Oral",
+      "duodenal ulcer": "Oral",
+      "dyspepsia": "Oral",
+      "endometrial cancer": "Oral",
+      "endometrial neoplasms": "Oral",
+      "eosinophilic esophagitis": "Oral",
+      "esophagitis, peptic": "Oral",
+      "gastric ulcer": "Oral",
+      "gastritis": "Oral",
+      "gastroesophageal reflux": "Oral",
+      "gastroesophageal reflux disease": "Oral",
+      "gout": "Oral",
+      "heartburn": "Oral",
+      "helicobacter infections": "Oral",
+      "helicobacter pylori infectious disease": "Oral",
+      "idiopathic pulmonary fibrosis": "Oral",
+      "laryngopharyngeal reflux": "Oral",
+      "leukemia, lymphocytic, chronic, b-cell": "Oral",
+      "lymphoma": "Oral",
+      "neoplasm": "Oral",
+      "neoplasms": "Oral",
+      "osteoarthritis": "Oral",
+      "pain": "Oral",
+      "peptic esophagitis": "Oral",
+      "peptic ulcer": "Oral",
+      "premature birth": "Oral",
+      "pseudomyxoma peritonei": "Oral",
+      "rectal neoplasms": "Oral",
+      "rectum cancer": "Oral",
+      "stomach ulcer": "Oral",
+      "type 1 diabetes mellitus": "Oral",
+      "uterine cervical neoplasms": "Oral"
+    }
+  },
+  "CHEMBL48449": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL485": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "anemia, sickle cell": "Oral",
+      "constipation": "Oral",
+      "cough": "Oral",
+      "myopia": "Oral",
+      "neck pain": "Oral",
+      "osteoarthritis": "Oral",
+      "pain": "Oral",
+      "sickle cell anemia": "Oral",
+      "toothache": "Oral"
+    }
+  },
+  "CHEMBL499": {
+    "available_routes": [
+      "Ophthalmic",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "age-related macular degeneration": "Ophthalmic",
+      "cardiovascular disease": "Oral",
+      "cardiovascular diseases": "Oral",
+      "glaucoma": "Ophthalmic",
+      "glaucoma, open-angle": "Ophthalmic",
+      "macular degeneration": "Ophthalmic",
+      "open-angle glaucoma": "Ophthalmic",
+      "wet macular degeneration": "Ophthalmic"
+    }
+  },
+  "CHEMBL513": {
+    "available_routes": [
+      "IV",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "neoplasm": "Oral/IV",
+      "neoplasms": "Oral/IV"
+    }
+  },
+  "CHEMBL514800": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "acne": "Topical",
+      "acne vulgaris": "Topical",
+      "alcohol dependence": "Oral",
+      "alcoholism": "Oral",
+      "allergic contact dermatitis": "Topical",
+      "ankylosing spondylitis": "Oral",
+      "arthritis, psoriatic": "Oral",
+      "arthritis, rheumatoid": "Oral",
+      "atopic eczema": "Topical",
+      "behcet syndrome": "Oral",
+      "behcet's syndrome": "Oral",
+      "colitis, ulcerative": "Oral",
+      "covid-19": "Oral",
+      "dermatitis": "Topical",
+      "dermatitis, allergic contact": "Topical",
+      "dermatitis, atopic": "Topical",
+      "dermatomyositis": "Oral",
+      "discoid lupus erythematosus": "Oral",
+      "eczema": "Topical",
+      "eczematoid dermatitis": "Topical",
+      "erythema multiforme": "Oral",
+      "gout": "Oral",
+      "hidradenitis suppurativa": "Oral",
+      "immune system disease": "Oral",
+      "immune system diseases": "Oral",
+      "influenza": "Oral",
+      "influenza, human": "Oral",
+      "lichen planus": "Oral",
+      "lichen planus, oral": "Oral",
+      "lupus erythematosus, discoid": "Oral",
+      "oral lichen planus": "Oral",
+      "oral ulcer": "Topical (oral cavity)",
+      "pneumonia": "Oral",
+      "prostatitis": "Oral",
+      "psoriasis": "Topical",
+      "psoriasis vulgaris": "Topical",
+      "psoriatic arthritis": "Oral",
+      "pustulosis palmaris et plantaris": "Topical",
+      "rheumatoid arthritis": "Oral",
+      "rosacea": "Oral",
+      "severe acute respiratory syndrome": "Oral",
+      "spondylitis, ankylosing": "Oral",
+      "ulcerative colitis": "Oral",
+      "uveitis": "Ophthalmic",
+      "vitiligo": "Oral"
+    }
+  },
+  "CHEMBL527": {
+    "available_routes": [
+      "Ophthalmic",
+      "Oral",
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "arthralgia": "Topical",
+      "eye diseases": "Ophthalmic",
+      "eye inflammation": "Ophthalmic",
+      "myalgia": "Topical",
+      "rheumatic disease": "Oral",
+      "rheumatic diseases": "Oral"
+    }
+  },
+  "CHEMBL5314366": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL5315119": {
+    "available_routes": [],
+    "routes_by_indication": {}
+  },
+  "CHEMBL5315124": {
+    "available_routes": [
+      "IV",
+      "Ophthalmic",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "bacterial conjunctivitis": "Ophthalmic",
+      "bacterial disease": "Oral/IV",
+      "bacterial infections": "Oral/IV",
+      "bronchitis": "Inhaled",
+      "bronchitis, chronic": "Inhaled",
+      "cataract": "Ophthalmic",
+      "chronic bronchitis": "Inhaled",
+      "conjunctivitis, bacterial": "Ophthalmic",
+      "endophthalmitis": "Ophthalmic",
+      "eye infection": "Ophthalmic",
+      "eye infections": "Ophthalmic",
+      "otitis media": "Otic",
+      "skin disease": "Topical",
+      "skin diseases": "Topical"
+    }
+  },
+  "CHEMBL571": {
+    "available_routes": [
+      "Oral",
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "arthralgia": "Topical",
+      "myalgia": "Topical",
+      "rheumatic disease": "Oral",
+      "rheumatic diseases": "Oral"
+    }
+  },
+  "CHEMBL58323": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "alcohol dependence": "Oral",
+      "alcoholism": "Oral",
+      "amyotrophic lateral sclerosis": "Oral",
+      "anxiety": "Oral",
+      "brain neoplasm": "Oral",
+      "brain neoplasms": "Oral",
+      "dementia": "Oral",
+      "depressive disorder": "Oral",
+      "diabetic neuropathies": "Oral",
+      "diabetic neuropathy": "Oral",
+      "epilepsies, partial": "Oral",
+      "epilepsy": "Oral",
+      "erythromelalgia": "Oral",
+      "fibromyalgia": "Oral",
+      "kidney disease": "Oral",
+      "kidney diseases": "Oral",
+      "migraine disorder": "Oral",
+      "migraine disorders": "Oral",
+      "neuralgia": "Oral",
+      "neuralgia, postherpetic": "Oral",
+      "neuropathic pain": "Oral",
+      "osteoarthritis": "Oral",
+      "paraganglioma": "Oral",
+      "partial epilepsy": "Oral",
+      "postherpetic neuralgia": "Oral",
+      "primary erythermalgia": "Oral",
+      "schizophrenia": "Oral",
+      "sciatica": "Oral",
+      "seizure": "Oral",
+      "seizures": "Oral",
+      "status epilepticus": "Oral"
+    }
+  },
+  "CHEMBL599": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "ankylosing spondylitis": "Oral",
+      "arthritis, juvenile": "Oral",
+      "arthritis, rheumatoid": "Oral",
+      "dysmenorrhea": "Oral",
+      "juvenile idiopathic arthritis": "Oral",
+      "low back pain": "Oral",
+      "lupus erythematosus, systemic": "Oral",
+      "migraine disorder": "Oral",
+      "migraine disorders": "Oral",
+      "osteoarthritis": "Oral",
+      "osteoarthritis, knee": "Oral",
+      "pain": "Oral",
+      "pharyngitis": "Oral",
+      "pregnancy": "Oral",
+      "prostate adenocarcinoma": "Oral",
+      "prostatic neoplasms": "Oral",
+      "rheumatic disease": "Oral",
+      "rheumatic diseases": "Oral",
+      "rheumatoid arthritis": "Oral",
+      "shoulder pain": "Oral",
+      "spondylitis, ankylosing": "Oral",
+      "systemic lupus erythematosus": "Oral",
+      "toothache": "Oral",
+      "tuberculosis": "Oral"
+    }
+  },
+  "CHEMBL600": {
+    "available_routes": [
+      "IV",
+      "Ophthalmic",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "age-related macular degeneration": "Ophthalmic",
+      "bronchitis, chronic": "Inhaled",
+      "chronic bronchitis": "Inhaled",
+      "dry eye syndrome": "Ophthalmic",
+      "dry eye syndromes": "Ophthalmic",
+      "eye disease": "Ophthalmic",
+      "eye diseases": "Ophthalmic",
+      "macular degeneration": "Ophthalmic",
+      "oral mucositis": "Topical (oral cavity)",
+      "psoriasis": "Topical",
+      "psoriasis vulgaris": "Topical",
+      "stomatitis": "Topical (oral cavity)"
+    }
+  },
+  "CHEMBL606": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "abortion, incomplete": "Oral",
+      "abortion, spontaneous": "Oral",
+      "ankylosing spondylitis": "Oral",
+      "benign muscle neoplasm": "Oral",
+      "clostridium infections": "Oral",
+      "commensal clostridium infectious disease": "Oral",
+      "duodenal ulcer": "Oral",
+      "endometrial disorder": "Oral",
+      "gastric ulcer": "Oral",
+      "gastroesophageal reflux": "Oral",
+      "gastroesophageal reflux disease": "Oral",
+      "hemorrhage": "Oral",
+      "incomplete abortion": "Oral",
+      "infection": "Oral",
+      "infections": "Oral",
+      "leiomyoma": "Oral",
+      "menorrhagia": "Oral",
+      "miscarriage": "Oral",
+      "muscle cramp": "Oral",
+      "myoma": "Oral",
+      "non-alcoholic fatty liver disease": "Oral",
+      "non-alcoholic steatohepatitis": "Oral",
+      "obesity": "Oral",
+      "osteoarthritis": "Oral",
+      "pain": "Oral",
+      "peptic ulcer": "Oral",
+      "peptic ulcer disease": "Oral",
+      "postpartum hemorrhage": "Oral",
+      "pre-eclampsia": "Oral",
+      "preeclampsia": "Oral",
+      "pregnancy": "Oral",
+      "premature birth": "Oral",
+      "spondylitis, ankylosing": "Oral",
+      "spontaneous abortion": "Oral",
+      "stomach ulcer": "Oral",
+      "uterine diseases": "Oral",
+      "uterine fibroid": "Oral"
+    }
+  },
+  "CHEMBL615": {
+    "available_routes": [
+      "IV",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "bacterial disease": "Oral/IV",
+      "bacterial infections": "Oral/IV"
+    }
+  },
+  "CHEMBL622": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "acute pain": "Oral",
+      "arthritis, juvenile": "Oral",
+      "arthritis, rheumatoid": "Oral",
+      "carcinoma, hepatocellular": "Oral",
+      "colorectal neoplasm": "Oral",
+      "colorectal neoplasms": "Oral",
+      "fish-eye disease": "Ophthalmic",
+      "hepatocellular carcinoma": "Oral",
+      "juvenile idiopathic arthritis": "Oral",
+      "lecithin cholesterol acyltransferase deficiency": "Ophthalmic",
+      "muscular disease": "Oral",
+      "muscular diseases": "Oral",
+      "osteoarthritis": "Oral",
+      "pain": "Oral",
+      "pancreatic neoplasm": "Oral",
+      "pancreatic neoplasms": "Oral",
+      "rheumatic disease": "Oral",
+      "rheumatic diseases": "Oral",
+      "rheumatoid arthritis": "Oral",
+      "sprain": "Oral",
+      "sprains and strains": "Oral"
+    }
+  },
+  "CHEMBL628": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "acute coronary syndrome": "Oral",
+      "acute kidney injury": "Oral",
+      "acute lymphoblastic leukemia": "Oral",
+      "acute pancreatitis": "Oral",
+      "alopecia areata": "Oral",
+      "anemia": "Oral",
+      "anemia (phenotype)": "Oral",
+      "avascular necrosis": "Oral",
+      "behcet syndrome": "Oral",
+      "behcet's syndrome": "Oral",
+      "biliary atresia": "Oral",
+      "bipolar disorder": "Oral",
+      "brachial plexus neuropathies": "Oral",
+      "brachial plexus neuropathy": "Oral",
+      "brain disease": "Oral",
+      "brain diseases": "Oral",
+      "breast cancer": "Oral",
+      "breast neoplasm": "Oral",
+      "breast neoplasms": "Oral",
+      "cancer": "Oral",
+      "carcinoma, non-small-cell lung": "Oral",
+      "cardiovascular disease": "Oral",
+      "cardiovascular diseases": "Oral",
+      "central nervous system neoplasm": "Oral",
+      "central nervous system neoplasms": "Oral",
+      "chronic kidney disease": "Oral",
+      "chronic renal failure syndrome": "Oral",
+      "cirrhosis of liver": "Oral",
+      "cognitive dysfunction": "Oral",
+      "cognitive impairment": "Oral",
+      "coronary artery disease": "Oral",
+      "coronary disease": "Oral",
+      "covid-19": "Oral",
+      "crohn disease": "Oral",
+      "crohn's disease": "Oral",
+      "cutaneous leishmaniasis": "Oral",
+      "depressive disorder": "Oral",
+      "depressive disorder, major": "Oral",
+      "diabetic nephropathies": "Oral",
+      "diabetic nephropathy": "Oral",
+      "duchenne muscular dystrophy": "Oral",
+      "ductus arteriosus, patent": "Oral",
+      "endometriosis": "Oral",
+      "enterocolitis, necrotizing": "Oral",
+      "epilepsy": "Oral",
+      "fatty liver": "Oral",
+      "fibrosis": "Oral",
+      "glomerulonephritis": "Oral",
+      "head and neck neoplasms": "Oral",
+      "heart disease": "Oral",
+      "heart diseases": "Oral",
+      "hepatic steatosis": "Oral",
+      "hepatitis, alcoholic": "Oral",
+      "hermanski-pudlak syndrome": "Oral",
+      "hermansky-pudlak syndrome": "Oral",
+      "hiv infection": "Oral",
+      "hiv infections": "Oral",
+      "infertility": "Oral",
+      "inflammatory bowel disease": "Oral",
+      "inflammatory bowel diseases": "Oral",
+      "injury": "Oral",
+      "jaundice": "Oral",
+      "kidney failure, chronic": "Oral",
+      "leishmaniasis": "Oral",
+      "leishmaniasis, cutaneous": "Oral",
+      "liver cirrhosis": "Oral",
+      "liver cirrhosis, biliary": "Oral",
+      "liver disease": "Oral",
+      "liver diseases": "Oral",
+      "liver failure": "Oral",
+      "long covid-19": "Oral",
+      "major depressive disorder": "Oral",
+      "malaria, falciparum": "Oral",
+      "muscular dystrophy, duchenne": "Oral",
+      "necrotizing enterocolitis": "Oral",
+      "neonatal sepsis": "Oral",
+      "neoplasms": "Oral",
+      "nephrotic syndrome": "Oral",
+      "non-alcoholic fatty liver disease": "Oral",
+      "non-alcoholic steatohepatitis": "Oral",
+      "non-small cell lung carcinoma": "Oral",
+      "oral submucous fibrosis": "Oral",
+      "osteonecrosis": "Oral",
+      "pancreatitis": "Oral",
+      "parkinson disease": "Oral",
+      "patent ductus arteriosus": "Oral",
+      "plasmodium falciparum malaria": "Oral",
+      "post-acute covid-19 syndrome": "Oral",
+      "precursor cell lymphoblastic leukemia-lymphoma": "Oral",
+      "primary biliary cirrhosis": "Oral",
+      "pulmonary sarcoidosis": "Oral",
+      "renal insufficiency, chronic": "Oral",
+      "sarcoidosis, pulmonary": "Oral",
+      "schizophrenia": "Oral",
+      "severe acute respiratory syndrome": "Oral",
+      "sexually transmitted disease": "Oral",
+      "sexually transmitted diseases": "Oral",
+      "upper aerodigestive tract neoplasm": "Oral",
+      "wounds and injuries": "Oral"
+    }
+  },
+  "CHEMBL656": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "back pain": "Oral",
+      "cancer": "Oral",
+      "cancer pain": "Oral",
+      "chronic pain": "Oral",
+      "colorectal cancer": "Oral",
+      "colorectal neoplasms": "Oral",
+      "depressive disorder": "Oral",
+      "diabetic neuropathies": "Oral",
+      "diabetic neuropathy": "Oral",
+      "diabetic polyneuropathy": "Oral",
+      "drug dependence": "Oral",
+      "genital neoplasm, female": "Oral",
+      "genital neoplasms, female": "Oral",
+      "head and neck malignant neoplasia": "Oral",
+      "head and neck neoplasms": "Oral",
+      "hypospadias": "Oral",
+      "intervertebral disc degeneration": "Oral",
+      "intervertebral disk degeneration": "Oral",
+      "joint disease": "Oral",
+      "joint diseases": "Oral",
+      "kidney calculi": "Oral",
+      "kidney cancer": "Oral",
+      "kidney neoplasm": "Oral",
+      "kidney neoplasms": "Oral",
+      "low back pain": "Oral",
+      "neck pain": "Oral",
+      "neoplasms": "Oral",
+      "nephrolithiasis": "Oral",
+      "neuralgia": "Oral",
+      "neuropathic pain": "Oral",
+      "nutrition disorders": "Oral",
+      "nutritional disorder": "Oral",
+      "opioid dependence": "Oral",
+      "opioid use disorder": "Oral",
+      "opioid-related disorders": "Oral",
+      "osteoarthritis": "Oral",
+      "osteoarthritis, hip": "Oral",
+      "osteoarthritis, knee": "Oral",
+      "pain": "Oral",
+      "parkinson disease": "Oral",
+      "pre-eclampsia": "Oral",
+      "preeclampsia": "Oral",
+      "pruritus": "Oral",
+      "respiratory depression": "Oral",
+      "respiratory insufficiency": "Oral",
+      "restless legs syndrome": "Oral",
+      "sinusitis": "Oral",
+      "spinal cord injuries": "Oral",
+      "spinal cord injury": "Oral",
+      "substance abuse": "Oral",
+      "substance-related disorders": "Oral",
+      "toothache": "Oral"
+    }
+  },
+  "CHEMBL679": {
+    "available_routes": [
+      "IV",
+      "Inhaled",
+      "Nasal",
+      "Ophthalmic",
+      "Oral",
+      "Topical (oral cavity)"
+    ],
+    "routes_by_indication": {
+      "airway obstruction": "Inhaled",
+      "allergic rhinitis": "Nasal",
+      "asthma": "Inhaled",
+      "bronchial spasm": "Inhaled",
+      "bronchiolitis": "Inhaled",
+      "cardiovascular disease": "Oral",
+      "cardiovascular diseases": "Oral",
+      "glaucoma": "Ophthalmic",
+      "hemorrhage": "Oral/IV",
+      "lung diseases, obstructive": "Inhaled",
+      "nasal congestion": "Nasal",
+      "nasal obstruction": "Nasal",
+      "rhinitis, allergic, perennial": "Nasal",
+      "rhinitis, allergic, seasonal": "Nasal",
+      "seasonal allergic rhinitis": "Nasal",
+      "skin neoplasm": "Topical",
+      "skin neoplasms": "Topical"
+    }
+  },
+  "CHEMBL698": {
+    "available_routes": [
+      "Inhaled",
+      "Injection",
+      "Ophthalmic",
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "cataract": "Ophthalmic",
+      "hemorrhoid": "Topical",
+      "hemorrhoids": "Topical",
+      "pruritus": "Topical",
+      "skin disease": "Topical",
+      "skin diseases": "Topical"
+    }
+  },
+  "CHEMBL704": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "adenoma": "Oral",
+      "berylliosis": "Oral",
+      "colitis": "Oral",
+      "colitis, collagenous": "Oral",
+      "colitis, lymphocytic": "Oral",
+      "colitis, ulcerative": "Oral",
+      "collagenous colitis": "Oral",
+      "colonic diverticula": "Oral",
+      "colorectal adenoma": "Oral",
+      "colorectal cancer": "Oral",
+      "colorectal neoplasms": "Oral",
+      "colorectal neoplasms, hereditary nonpolyposis": "Oral",
+      "crohn disease": "Oral",
+      "crohn's disease": "Oral",
+      "digestive system diseases": "Oral",
+      "diverticular disease": "Oral",
+      "diverticular diseases": "Oral",
+      "diverticulitis": "Oral",
+      "diverticulum, colon": "Oral",
+      "eosinophilic esophagitis": "Oral",
+      "gastrointestinal disease": "Oral",
+      "hiv infection": "Oral",
+      "hiv infections": "Oral",
+      "inflammatory bowel disease": "Oral",
+      "inflammatory bowel diseases": "Oral",
+      "irritable bowel syndrome": "Oral",
+      "lymphocytic colitis": "Oral",
+      "lynch syndrome": "Oral",
+      "malnutrition": "Oral",
+      "proctitis": "Oral",
+      "ulcerative colitis": "Oral"
+    }
+  },
+  "CHEMBL723": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "acute myeloid leukemia": "Oral",
+      "angina pectoris": "Oral",
+      "angina, stable": "Oral",
+      "arthritis, rheumatoid": "Oral",
+      "atherosclerosis": "Oral",
+      "atrial fibrillation": "Oral",
+      "breast cancer": "Oral",
+      "breast neoplasms": "Oral",
+      "cancer": "Oral",
+      "cardiomyopathies": "Oral",
+      "cardiomyopathy": "Oral",
+      "cardiovascular disease": "Oral",
+      "cardiovascular diseases": "Oral",
+      "chronic kidney disease": "Oral",
+      "cocaine dependence": "Oral",
+      "cocaine-related disorders": "Oral",
+      "congestive heart failure": "Oral",
+      "coronary artery disease": "Oral",
+      "coronary disease": "Oral",
+      "diabetes mellitus, type 2": "Oral",
+      "epilepsy": "Oral",
+      "esophageal and gastric varices": "Oral",
+      "esophageal varices": "Oral",
+      "essential hypertension": "Oral",
+      "glioblastoma": "Oral",
+      "glioblastoma multiforme": "Oral",
+      "heart failure": "Oral",
+      "hematologic neoplasms": "Oral",
+      "hypercholesterolemia": "Oral",
+      "hypertension": "Oral",
+      "hypertension, portal": "Oral",
+      "hypertension, pulmonary": "Oral",
+      "hypertrophy, left ventricular": "Oral",
+      "hypoglycemia": "Oral",
+      "kidney disease": "Oral",
+      "kidney diseases": "Oral",
+      "kidney failure, chronic": "Oral",
+      "left ventricular hypertrophy": "Oral",
+      "leukemia, lymphoid": "Oral",
+      "leukemia, myeloid, acute": "Oral",
+      "lymphoid leukemia": "Oral",
+      "lymphoid neoplasm": "Oral",
+      "lymphoma": "Oral",
+      "multiple myeloma": "Oral",
+      "myocardial infarction": "Oral",
+      "neoplasms": "Oral",
+      "portal hypertension": "Oral",
+      "post-traumatic stress disorder": "Oral",
+      "prostate cancer": "Oral",
+      "prostatic neoplasms, castration-resistant": "Oral",
+      "pulmonary arterial hypertension": "Oral",
+      "pulmonary hypertension": "Oral",
+      "renal insufficiency, chronic": "Oral",
+      "rheumatoid arthritis": "Oral",
+      "stage 5 chronic kidney disease": "Oral",
+      "stress disorders, post-traumatic": "Oral",
+      "type 2 diabetes mellitus": "Oral",
+      "vascular disease": "Oral",
+      "vascular diseases": "Oral",
+      "ventricular dysfunction, left": "Oral"
+    }
+  },
+  "CHEMBL799": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "arthritis, rheumatoid": "Oral",
+      "atherosclerosis": "Oral",
+      "cadasil": "Oral",
+      "cardiovascular disease": "Oral",
+      "cardiovascular diseases": "Oral",
+      "cerebral infarction": "Oral",
+      "cerebral small vessel disease": "Oral",
+      "cerebral small vessel diseases": "Oral",
+      "cerebrovascular disorder": "Oral",
+      "cerebrovascular disorders": "Oral",
+      "cognitive dysfunction": "Oral",
+      "cognitive impairment": "Oral",
+      "coronary artery disease": "Oral",
+      "coronary disease": "Oral",
+      "fatty liver": "Oral",
+      "heart failure": "Oral",
+      "hepatic steatosis": "Oral",
+      "injury": "Oral",
+      "intermittent claudication": "Oral",
+      "intermittent vascular claudication": "Oral",
+      "ischemic stroke": "Oral",
+      "osteoarthritis": "Oral",
+      "pain": "Oral",
+      "peripheral arterial disease": "Oral",
+      "peripheral vascular disease": "Oral",
+      "peripheral vascular diseases": "Oral",
+      "recurrent thrombophlebitis": "Oral",
+      "rheumatoid arthritis": "Oral",
+      "stroke": "Oral",
+      "thrombosis": "Oral",
+      "urticaria": "Oral",
+      "wounds and injuries": "Oral"
+    }
+  },
+  "CHEMBL8": {
+    "available_routes": [
+      "IV",
+      "Ophthalmic",
+      "Oral",
+      "Otic"
+    ],
+    "routes_by_indication": {
+      "bacterial disease": "Oral/IV",
+      "bacterial infections": "Oral/IV",
+      "bronchiectasis": "Inhaled",
+      "bronchitis, chronic": "Inhaled",
+      "cataract": "Ophthalmic",
+      "chronic bronchitis": "Inhaled",
+      "endophthalmitis": "Ophthalmic",
+      "eye infection": "Ophthalmic",
+      "eye infections": "Ophthalmic",
+      "infectious otitis media": "Otic",
+      "otitis externa": "Otic",
+      "otitis media": "Otic"
+    }
+  },
+  "CHEMBL80": {
+    "available_routes": [
+      "IV",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "constipation": "Oral"
+    }
+  },
+  "CHEMBL852": {
+    "available_routes": [
+      "IV",
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "bronchiectasis": "Inhaled",
+      "extranodal nasal nk/t cell lymphoma": "Nasal",
+      "granuloma, lethal midline": "Nasal",
+      "neoplasm": "Oral/IV",
+      "neoplasms": "Oral/IV",
+      "retinal neoplasm": "Ophthalmic",
+      "retinal neoplasms": "Ophthalmic"
+    }
+  },
+  "CHEMBL865": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "arthritis, rheumatoid": "Oral",
+      "dysmenorrhea": "Oral",
+      "osteoarthritis": "Oral",
+      "osteoarthritis, knee": "Oral",
+      "pain": "Oral",
+      "pancreatitis": "Oral",
+      "pharyngitis": "Oral",
+      "rheumatic disease": "Oral",
+      "rheumatic diseases": "Oral",
+      "rheumatoid arthritis": "Oral"
+    }
+  },
+  "CHEMBL898": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "amyloid neuropathies, familial": "Oral",
+      "arthritis, rheumatoid": "Oral",
+      "diabetes mellitus, type 2": "Oral",
+      "familial amyloid neuropathy": "Oral",
+      "fever": "Oral",
+      "osteoarthritis": "Oral",
+      "pain": "Oral",
+      "rheumatoid arthritis": "Oral",
+      "type 2 diabetes mellitus": "Oral"
+    }
+  },
+  "CHEMBL93": {
+    "available_routes": [],
+    "routes_by_indication": {
+      "acne": "Topical",
+      "acne vulgaris": "Topical",
+      "asthma": "Inhaled"
+    }
+  },
+  "CHEMBL960": {
+    "available_routes": [
+      "Oral"
+    ],
+    "routes_by_indication": {
+      "arthritis, psoriatic": "Oral",
+      "arthritis, rheumatoid": "Oral",
+      "asymptomatic myeloma": "Oral",
+      "breast cancer": "Oral",
+      "breast disease": "Oral",
+      "breast diseases": "Oral",
+      "breast neoplasm": "Oral",
+      "breast neoplasms": "Oral",
+      "bronchiolitis obliterans syndrome": "Inhaled",
+      "bullous pemphigoid": "Oral",
+      "central nervous system neoplasm": "Oral",
+      "central nervous system neoplasms": "Oral",
+      "chronic graft versus host disease": "Inhaled",
+      "covid-19": "Oral",
+      "hemosiderosis": "Oral",
+      "henoch-schoenlein purpura": "Oral",
+      "hiv infection": "Oral",
+      "hiv infections": "Oral",
+      "iga vasculitis": "Oral",
+      "lupus erythematosus, systemic": "Oral",
+      "lupus nephritis": "Oral",
+      "lymphoproliferative disorders": "Oral",
+      "lymphoproliferative syndrome": "Oral",
+      "melanoma": "Oral",
+      "multiple myeloma": "Oral",
+      "myasthenia gravis": "Oral",
+      "neoplasm": "Oral",
+      "neoplasms": "Oral",
+      "pemphigoid, bullous": "Oral",
+      "polymyalgia rheumatica": "Oral",
+      "prostate cancer": "Oral",
+      "prostatic neoplasms, castration-resistant": "Oral",
+      "psoriatic arthritis": "Oral",
+      "rheumatoid arthritis": "Oral",
+      "severe acute respiratory syndrome": "Oral",
+      "sjogren syndrome": "Oral",
+      "sjogren's syndrome": "Oral",
+      "smoldering multiple myeloma": "Oral",
+      "systemic lupus erythematosus": "Oral",
+      "uveitis": "Ophthalmic"
+    }
+  },
+  "CHEMBL989": {
+    "available_routes": [
+      "Ophthalmic",
+      "Otic",
+      "Topical"
+    ],
+    "routes_by_indication": {
+      "age-related macular degeneration": "Ophthalmic",
+      "anterior uveitis": "Ophthalmic",
+      "atopic eczema": "Topical",
+      "dermatitis, atopic": "Topical",
+      "dermatitis, seborrheic": "Topical",
+      "eye diseases": "Ophthalmic",
+      "eye inflammation": "Ophthalmic",
+      "glaucoma": "Ophthalmic",
+      "hemorrhoid": "Topical",
+      "hemorrhoids": "Topical",
+      "intermediate uveitis": "Ophthalmic",
+      "macular degeneration": "Ophthalmic",
+      "macular edema": "Ophthalmic",
+      "macular retinal edema": "Ophthalmic",
+      "posterior uveitis": "Ophthalmic",
+      "psoriasis": "Topical",
+      "retinal diseases": "Ophthalmic",
+      "retinopathy": "Ophthalmic",
+      "seborrheic dermatitis": "Topical",
+      "skin disease": "Topical",
+      "skin diseases": "Topical",
+      "uveitis": "Ophthalmic",
+      "uveitis, anterior": "Ophthalmic",
+      "uveitis, intermediate": "Ophthalmic",
+      "uveitis, posterior": "Ophthalmic"
+    }
+  }
+}

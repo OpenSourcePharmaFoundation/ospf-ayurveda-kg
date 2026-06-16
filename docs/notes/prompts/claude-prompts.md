@@ -1,3 +1,64 @@
+Write a plan for creating a "frontend demo."
+
+The rough idea is to demo the results, from files such as:
+  - data/analysis/oral_mucositis_drug_candidates-2026-05-03.md
+  - data/analysis/oral_mucositis_drug_candidates-2026-01-29.md
+  - data/analysis/oral_mucositis_multi_agent_drug_discovery-2026-05-04.md
+
+Read all of these documents before you build anything. We'll also generate more in a similar vein.
+
+We'd also like to generate data visualizations for the tables, numbers, etc in these documents. Choose a good data visualization library.
+- Display these inline in the displayed data sections
+  - Also show the raw data. Make this visible through an accordion (default to just showing the visualization if one is present).
+
+Render the markdown in a way that's aesthetically pleasing. Have components for things like tables and lists. Make it:
+- consistent
+- follow modern design systems
+- dynamic
+- responsive
+
+It's essentially a static site (but not quite), meant to display our prior results.
+
+Have a content area. That content area should have what's displayed change based on the selected values in 2 dropdowns - that is, the dropdowns are used to display different results, and different parts of the results. More specifically:
+1. One dropdown should relate to the specific output instance (i.e. a single analysis - these correspond to individual files)
+  - One of those output instances should be the conglomerate one, which we'll create later using similar methods to the prior generated outputs.
+  - That is, we're also going to have Claude generate a conglomerate results document built from the results of the prior analyses.
+  - One of the options should be "all output" that shows the whole thing from a single "document".
+  - One of the options should be the "summary" that gives a short version of the results, across all analyses. The second dropdown should be grayed out if summary is selected. Summary should basically list the recommended drugs and the reasons they were selected. We'll do another Claude analysis to generate these.
+2. The second dropdown should relate to the section of each document (e.g. "Current State: Approved OM Treatments").
+
+Have a second tab (besides the one showing analysis content) that displays each recommended drug, and lists the arguments for why that drug was chosen.
+
+On visiting the site initially, it should display the summary - that is, that's the default option for the dropdowns. When "summary" is selected (as an option in the first dropdown), gray out the other dropdown.
+
+Make it a SPA.
+
+Write the generated plan to a file.
+
+We're going to place the frontend in a new folder, such as ./frontend-demo
+
+Stack:
+- React
+- Shadcn for the component system
+- Typescript
+- npm (latest version) as the package manager
+- eslint
+- Test with Jest and React Testing Library
+- Prettier for formatting
+- Vite for the build system
+- Host on Vercel - build it accordingly
+
+Figure out how to deploy it.
+
+-----
+
+STRETCH GOALS:
+
+Display the knowledge graph if you can. Look into Neo4j's built-in capabilities for doing this. This can be a different tab in the page from the "content display area" that shows the outputs of the analyses.
+- We should be able to interact with it to a degree, if possible.
+
+-----
+
 We're going to switch gears a bit.
 
 We'd like to add a local LLM to this project. We'd like to train it on the medical data we've pulled. We want to be able to ask it for potential treatments for various chemotherapy side effects, having it draw on the data it's pulled.

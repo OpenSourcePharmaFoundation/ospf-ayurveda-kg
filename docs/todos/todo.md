@@ -1,19 +1,151 @@
 TODO - next steps
 =================
-2026-05-04
-----------
-[ ] Evaluate the output of the analysis
+[x] Evaluate the output of the analysis
+[x] Build the basic frontend (call it a "prototype")
+[x] Create data visualization agent
+
+4. [x] Add more data to the knowledge graph - that is, more nodes
+    [x] Make a list of all possible nodes that can be made by extracting properties from drugs
+    [x] Make these nodes
+    New node types created (script: 10_extract_new_node_types.txt):
+      - Indication (2,328) — extracted from Drug.indication_class
+      - Metabolite (591) — from chembl_drug_metabolism.csv
+      - Enzyme (90) — from chembl_drug_metabolism.csv
+      - Organism (24) — from Target.organism
+      - TargetType (7) — from Target.target_type
+      - ActionType (3) — from Mechanism.action_type
+      - MoleculeType (1) — from Drug.molecule_type
+    Skipped (no data available): MolecularSpecies, WithdrawalEvent (reasons empty), BindingSite (test data)
+
+    [x] Move all chem info in Drug Candidates detail view into a collapsible accordion (default closed)
+        - Desktop panel: already had Accordion wrapper, confirmed it defaults to closed
+        - Mobile drawer: wrapped Molecular Properties + Lipinski's Rule of Five in new Accordion
+    [x] Sort indications by frequency — most common indications across all candidates appear first
+    [x] Replace indication badges with table — columns: Indication, Commonality, Route of Administration
+        - Route data scraped from ChemBL API (src/scrapers/chembl/chembl_route_enricher.py)
+        - Combines per-indication ATC codes (45%), keyword inference (43%), drug-level fallback (11% no data)
+        - Commonality labels: Very Common (≥15 drugs), Common (≥7), Uncommon (≥3), Rare (<3)
+
+5. [ ] More complex frontend
+    [x] Clicking drugs in the Drug Candidates page should display data for the drug in a drawer
+        - Evolved from drawer → master-detail layout (sidebar nav + inline content panel)
+    [x] Drug Candidates tab moved to first position, made default tab
+    [x] Card view converted to list view with score-based sorting
+    [x] Candidate detail content area (replaces drawer)
+        [x] Master-detail layout: compact nav sidebar on left, full detail panel on right
+        [x] Ranking rationale section with collapsible "More detail" (safety profile, scoring methodology)
+        [x] Molecular structure images for top candidates (from ChemBL API)
+        [x] Lipinski's Rule of Five checker
+        [x] Full indications list
+        [x] ChemBL external link
+    [x] Three-tier candidate highlighting system
+        [x] Lead Candidates (top 3) — green ring/glow: Dexamethasone, Budesonide, Mesalamine
+        [x] Top Candidates (next 7) — amber ring: Melatonin, NAC, Pentoxifylline, Apremilast, Azathioprine, Tofacitinib, Naltrexone
+        [x] Candidates of Interest (next 20) — sky blue ring: Tier 2-3 + breast cancer intersection
+    [x] Ranking scores displayed on each list item, sorted by consensus score
+    [x] Formulation-specific display names (e.g. "Dexamethasone mouthwash" vs "DEXAMETHASONE")
+    [x] Existing OM drugs marked with violet badge (Dexamethasone, Melatonin, NAC, Apremilast)
+    [x] Title-cased drug names (was ALL CAPS from CSV)
+    [x] Added 5 missing consensus candidates to CSV (Dexamethasone, Melatonin, NAC, Pentoxifylline, Apremilast)
+    [ ] Create a "dashboard" that summarizes the things we actually care about
+        [ ] This should be a tab
+        [ ] Default to this tab - it should be the first tab
+        [ ] Outline steps to create this on a more granular level
+    [ ] Create specific page for each drug of interest
+    [ ] Create a frontend that renders the knowledge graph and lets you navigate through it
+      [ ] Export the knowledge graph data from neoj
+          [ ] Include the bad and good candidates worth looking at - But make it 100s of nodes
+          [ ] Include the medical conditions/diseases/disorders it treats as nodes
+          [ ] Include things like proteins it binds to, etc as nodes (that is, the new nodes)
+      [ ] Add a tab for the network graph
+        [ ] Give it a sane name (the tab, that is)
+        [ ] Make a visualizer with a network graph - containing JUST the drugs of interest - place in the network graph tab
+            [ ] Show drug nodes, condition/disease/disorder nodes, and each of the newly generated nodes from step 4
+            [ ] Show connections between nodes
+            [ ] Create a "data table" area
+                [ ] Show data for each node on clicking node
+                [ ] Show data for each relationship on clicking relationship
+[ ] Think about what to tackle next
 [ ] Find drugs for each phase
 [ ] Decision tree, finding what's eliminated - show different layers of drugs considered
     [ ] Then at each layer show them getting narrowed down
     [ ] Think concentric circles with different layers, and in the centre, the drugs selected
-[ ] Create data visualization agent
-[ ] Build the frontend (call it a "prototype")
 [ ] Get experts to evaluate the output
 [ ] CHECK EACH DRUG FOR WHETHER IT'S BEEN STUDIED IN THIS CONTEXT (before giving it to experts)
-    [ ] Think about whether to include non-novel drugs (maybe, since it verifies that the system is sane, maybe not, because it might be viewed as a trivial finding and thus discredit the system)
-[ ] Think about what to tackle next
+    [ ] Think about whether to include non-novel drugs
+        - Maybe, since it verifies that the system is sane, maybe not, because it might be viewed as a trivial finding and thus discredit the system
 [ ] Get the data scraper to scrape more data from more places and wire it together
+
+[ ] Add pages (or rather modals) for more info on each indication
+
+-----------------------------------------
+Frontend Prototype Improvements
+===============================
+Missing visualization components
+  [ ] PropertyRadar — radar chart for MW/LogP/PSA/HBD/HBA (use on CandidateCard + summary)
+  [ ] PhaseCoverageHeatmap — 5-phase × N-strategy coverage grid
+  [ ] SafetyVerdictGrid — color-coded candidate × safety verdict grid
+  [ ] TierBarChart — grouped bar chart for tiered candidate scores
+
+Missing custom markdown components (currently inlined in MarkdownRenderer)
+  [ ] CustomTable — extract table styling into own component
+  [ ] CustomCodeBlock — add syntax highlighting (rehype-highlight is installed but not wired up)
+  [ ] CustomHeading — add anchor link IDs to H1/H2/H3
+  [ ] SafetyBadge — extract from SummaryView into reusable component
+  [ ] ScoreBar — extract from markdown-preprocessor into React component
+
+Drug Candidates tab
+  [ ] CandidateList — filterable/sortable grid wrapper (sort by score, MW, name, etc.)
+  [ ] Add sort options (A-Z, highest score, MW range, LogP range)
+  [ ] Add mini PropertyRadar to each CandidateCard
+  [x] Star/highlight the best suggested candidates in the drug list
+      - Gold ★ on elite-tier candidates that aren't already existing OM drugs
+      - Shows in both full list view and compact sidebar view
+      - Legend updated to include ★ next to "Lead Candidates"
+  [x] Add natural product candidates (Glycyrrhizin, Curcumin, Kaempferol) to drug list
+      - Added to CSV with PubChem IDs (PCID prefix) and molecular properties
+      - Glycyrrhizin (56.5, Top), Curcumin (53.5, deprioritized), Kaempferol (47, deprioritized)
+  [x] Score-based tier cutoffs (Lead >= 55, Top >= 45, Interest > 0)
+      - Replaced manual tier assignments with dynamic score-based computation
+  [x] Add "Hide existing OM drugs" filter checkbox (checked by default)
+      - Filters out Dexamethasone, Melatonin, NAC, Apremilast
+      - Available in both full view and compact sidebar
+  [x] Add hover tooltips to all badges and checkboxes
+      - Tier badges, safety labels, Natural/Existing OM badges, MW/LogP/PSA pills
+      - Legend items, filter checkboxes (both views)
+
+Bugs
+  [ ] DataTableViz tooltip hardcoded white background — breaks dark mode
+  [x] csv-loader: is_natural_product only checks lowercase 'true' — misses 'True'
+      - Fixed: case-insensitive check via .toLowerCase()
+  [x] CandidateCard property filter hides legitimate zero values (HBD=0, HBA=0)
+      - Root cause was CSV column name mismatch (all values were 0). Fixed CSV header trimming + column mapping.
+  [x] csv-loader: column names didn't match CSV headers (logP vs alogp, polar_surface_area vs psa, etc.)
+      - Added transformHeader trim + column name fallbacks + value cleaning
+  [x] csv-loader: CSV header whitespace not trimmed — PapaParse keys had leading spaces
+  [x] Unescaped commas in indication text broke CSV parsing (e.g. "osteoarthritis, knee")
+
+UX improvements
+  [x] URL-based state (?analysis=may-03&section=methodology) so navigation survives refresh
+      - Params: tab, analysis, section, drug (all optional, clean URL when default)
+      - Deep links: ?drug=CHEMBL704 opens Mesalamine detail; ?tab=analysis&analysis=may-04-multi-agent opens that doc
+      - Auto-disables "Hide existing OM" filter when deep-linking to an existing OM drug
+  [ ] Loading skeletons instead of plain "Loading analysis..." text
+  [ ] Error boundary at app level to catch rendering crashes
+  [ ] More specific error messages (404 vs network error vs timeout)
+  [ ] "Copy to clipboard" button on ChemBL IDs
+  [ ] Search result highlighting in Drug Candidates tab
+
+Performance
+  [ ] Lazy-load Drug Candidates CSV (only fetch when tab is opened)
+  [ ] Dynamic import for Recharts components (bundle is 1.1MB pre-gzip)
+
+Tests (zero test coverage currently)
+  [ ] Set up Jest + React Testing Library (not yet installed)
+  [ ] markdown-parser.test.ts — section splitting, preamble, numbered vs. uppercase H2
+  [ ] table-extractor.test.ts — table parsing, numeric detection, skip non-pipe tables
+  [ ] markdown-preprocessor.test.ts — each transform function, regression on valid markdown
+  [ ] App.test.tsx — renders, both tabs present, default shows summary
 
 
 ------------------------

@@ -1,0 +1,322 @@
+// ============================================================================
+// Knowledge Graph Exploration Queries
+// ============================================================================
+// General-purpose queries for navigating and understanding the graph structure.
+// Run these in Neo4j Browser — most return visual graphs, not just tables.
+//
+// For domain-specific research queries (plant-drug target overlaps, gene-disease
+// scoring, etc.), see analysis_queries.txt instead.
+// ============================================================================
+
+
+// ---------------------------------------------------------------------------
+// 0a. QUICK DIAGNOSTIC — What node labels exist?
+// ---------------------------------------------------------------------------
+
+CALL db.labels() YIELD label
+RETURN label ORDER BY label;
+
+
+// ---------------------------------------------------------------------------
+// 0b. QUICK DIAGNOSTIC — What relationship types exist?
+// ---------------------------------------------------------------------------
+
+CALL db.relationshipTypes() YIELD relationshipType
+RETURN relationshipType ORDER BY relationshipType;
+
+
+// ---------------------------------------------------------------------------
+// 1. SCHEMA VISUALIZATION
+// ---------------------------------------------------------------------------
+// Renders every node label and relationship type as an interactive graph.
+// Run this first to get the "map" of the whole knowledge graph.
+
+CALL db.schema.visualization();
+
+
+// ---------------------------------------------------------------------------
+// 2. NODE & RELATIONSHIP CENSUS
+// ---------------------------------------------------------------------------
+// Counts every label and relationship type in the database.
+
+CALL {
+  MATCH (n)
+  UNWIND labels(n) AS label
+  RETURN label AS type, 'Node' AS kind, count(*) AS count
+  UNION ALL
+  MATCH ()-[r]->()
+  RETURN type(r) AS type, 'Relationship' AS kind, count(*) AS count
+}
+RETURN kind, type, count
+ORDER BY kind, count DESC;
+
+
+// ---------------------------------------------------------------------------
+// 3. FULL GRAPH SAMPLE
+// ---------------------------------------------------------------------------
+// Pulls a representative subgraph of ChemBL drugs and their connections.
+// Limited to 200 to avoid overwhelming the browser.
+
+MATCH (d:Drug)-[r]->(connected)
+WHERE d.chembl_id IS NOT NULL
+WITH d, r, connected
+LIMIT 200
+RETURN d, r, connected;
+
+
+// ---------------------------------------------------------------------------
+// 4. ORAL MUCOSITIS NEIGHBORHOOD
+// ---------------------------------------------------------------------------
+// Everything within 3 hops of the core disease node.
+
+MATCH path = (n)-[*1..3]-(om:Disease {name: 'Oral mucositis'})
+RETURN path
+LIMIT 300;
+
+
+// ---------------------------------------------------------------------------
+// 5. DRUG → MECHANISM → TARGET → GENE CHAIN
+// ---------------------------------------------------------------------------
+// The drug discovery backbone: how drugs work and what they hit.
+
+MATCH path = (d:Drug)-[:HAS_MECHANISM]->(m:Mechanism)-[:ACTS_ON]->(t:Target)
+OPTIONAL MATCH gene_path = (t)-[:ENCODED_BY]->(g:Gene)
+OPTIONAL MATCH protein_path = (t)-[:SAME_AS]->(p:Protein)
+RETURN path, gene_path, protein_path
+LIMIT 150;
+
+
+// ---------------------------------------------------------------------------
+// 6. DRUG → INDICATION → DISEASE LINKAGE
+// ---------------------------------------------------------------------------
+// What drugs treat which conditions, and how those map to Disease nodes.
+
+MATCH path = (d:Drug)-[:TREATS_INDICATION]->(i:Indication)
+OPTIONAL MATCH disease_path = (i)-[:SAME_AS|RELATED_TO]->(dis:Disease)
+RETURN path, disease_path
+LIMIT 200;
+
+
+// ---------------------------------------------------------------------------
+// 7. AYURVEDIC SIDE — Plants, Compounds, and Targets
+// ---------------------------------------------------------------------------
+// The traditional medicine half of the graph: formulations → plants →
+// phytochemicals → gene/protein targets.
+
+MATCH path = (p:Plant)-[:PRODUCES]->(c:Compound)
+OPTIONAL MATCH target_path = (c)-[:TARGETS]->(g)
+RETURN path, target_path
+LIMIT 200;
+
+
+// ---------------------------------------------------------------------------
+// 8. FORMULATION BREAKDOWN
+// ---------------------------------------------------------------------------
+// Ayurvedic formulations and which plants they contain.
+
+MATCH path = (f:Formulation)-[:CONTAINS]->(p:Plant)
+OPTIONAL MATCH compound_path = (p)-[:PRODUCES]->(c:Compound)
+RETURN path, compound_path
+LIMIT 200;
+
+
+// ---------------------------------------------------------------------------
+// 9. BRIDGE QUERY — Where Ayurvedic Compounds Meet Drug Targets
+// ---------------------------------------------------------------------------
+// The core research question: find plant compounds that hit the same
+// protein targets as approved drugs.
+
+MATCH (drug:Drug)-[:HAS_MECHANISM]->(:Mechanism)-[:ACTS_ON]->(t:Target)
+MATCH (t)-[:SAME_AS]->(p:Protein)<-[:TARGETS]-(compound:Compound)
+MATCH (compound)<-[:PRODUCES]-(plant:Plant)
+RETURN drug, t, p, compound, plant
+LIMIT 100;
+
+
+// ---------------------------------------------------------------------------
+// 10. GENE-DISEASE EVIDENCE
+// ---------------------------------------------------------------------------
+// Genes associated with Oral Mucositis via biomarkers, expression changes,
+// and genetic variants — with evidence scores.
+
+MATCH (g:Gene)-[r]->(d:Disease {name: 'Oral mucositis'})
+RETURN g.name AS gene,
+       type(r) AS association_type,
+       toFloat(r.gdaScore) AS score,
+       r.source AS source
+ORDER BY score DESC
+LIMIT 50;
+
+
+// ---------------------------------------------------------------------------
+// 11. THERAPEUTIC AREA HUBS
+// ---------------------------------------------------------------------------
+// Which therapeutic areas have the most drugs? Useful for finding
+// well-studied disease categories.
+
+MATCH (d:Drug)-[:INDICATED_FOR]->(ta:Therapeutic_Area)
+RETURN ta.name AS therapeutic_area, count(d) AS drug_count
+ORDER BY drug_count DESC
+LIMIT 30;
+
+
+// ---------------------------------------------------------------------------
+// 12. PLANT THERAPEUTIC COVERAGE
+// ---------------------------------------------------------------------------
+// What therapeutic areas do the Ayurvedic plants cover?
+
+MATCH (p:Plant)-[:TREATS]->(ta:Therapeutic_Area)
+RETURN p.scientificName AS plant, collect(ta.name) AS therapeutic_uses, count(ta) AS use_count
+ORDER BY use_count DESC;
+
+
+// ---------------------------------------------------------------------------
+// 13. MOST-CONNECTED COMPOUNDS
+// ---------------------------------------------------------------------------
+// Phytochemicals that target the most genes/proteins — potential leads.
+
+MATCH (c:Compound)-[r:TARGETS]->(target)
+RETURN c.name AS compound, count(DISTINCT target) AS target_count
+ORDER BY target_count DESC
+LIMIT 30;
+
+
+// ---------------------------------------------------------------------------
+// 14. DRUG WARNINGS & SAFETY
+// ---------------------------------------------------------------------------
+// Drugs with safety warnings, categorized by toxicity type.
+
+MATCH (d:Drug)-[:HAS_WARNING]->(w:Warning)-[:CATEGORY]->(tc:ToxicityCategory)
+RETURN d.chembl_name AS drug,
+       w.warning_type AS warning_type,
+       tc.name AS toxicity_category,
+       w.description AS description
+ORDER BY d.chembl_name;
+
+
+// ---------------------------------------------------------------------------
+// 15. DRUG METABOLISM — Enzyme Landscape
+// ---------------------------------------------------------------------------
+// Which metabolic enzymes process the most drugs? Shared enzymes between
+// drugs = drug-drug interaction risk.
+
+MATCH (d:Drug)-[:METABOLIZED_BY]->(e:Enzyme)
+RETURN e.name AS enzyme, count(d) AS drug_count
+ORDER BY drug_count DESC
+LIMIT 30;
+
+
+// ---------------------------------------------------------------------------
+// 16. DRUG METABOLISM — Full Pathway
+// ---------------------------------------------------------------------------
+// Drug → Enzyme → Metabolite chains. Shows what a drug gets broken down
+// into and which enzyme does it.
+
+MATCH (d:Drug)-[:METABOLIZED_BY]->(e:Enzyme)-[:CATALYZES]->(m:Metabolite)
+WHERE (d)-[:PRODUCES_METABOLITE]->(m)
+RETURN d.chembl_name AS drug, e.name AS enzyme, m.name AS metabolite
+ORDER BY d.chembl_name
+LIMIT 50;
+
+
+// ---------------------------------------------------------------------------
+// 17. SHARED METABOLIC ENZYMES
+// ---------------------------------------------------------------------------
+// Pairs of drugs that share metabolic enzymes — potential drug-drug
+// interactions. Critical for cancer patients on multiple medications.
+
+MATCH (d1:Drug)-[:METABOLIZED_BY]->(e:Enzyme)<-[:METABOLIZED_BY]-(d2:Drug)
+WHERE id(d1) < id(d2)
+RETURN d1.chembl_name AS drug_1, d2.chembl_name AS drug_2,
+       e.name AS shared_enzyme, count(e) AS shared_count
+ORDER BY shared_count DESC
+LIMIT 30;
+
+
+// ---------------------------------------------------------------------------
+// 18. METABOLITE LANDSCAPE
+// ---------------------------------------------------------------------------
+// Drugs that produce the most metabolites — complex metabolism = more
+// interaction risk.
+
+MATCH (d:Drug)-[:PRODUCES_METABOLITE]->(m:Metabolite)
+RETURN d.chembl_name AS drug, count(m) AS metabolite_count
+ORDER BY metabolite_count DESC
+LIMIT 20;
+
+
+// ---------------------------------------------------------------------------
+// 19. MOLECULE TYPE BREAKDOWN
+// ---------------------------------------------------------------------------
+// Distribution of drugs by molecular type.
+
+MATCH (d:Drug)-[:IS_TYPE]->(mt:MoleculeType)
+RETURN mt.name AS molecule_type, count(d) AS drug_count
+ORDER BY drug_count DESC;
+
+
+// ---------------------------------------------------------------------------
+// 20. ACTION TYPES — How Drugs Work
+// ---------------------------------------------------------------------------
+// Drug mechanisms grouped by action type (INHIBITOR, AGONIST, etc.)
+
+MATCH (d:Drug)-[:HAS_MECHANISM]->(m:Mechanism)-[:HAS_ACTION_TYPE]->(at:ActionType)
+RETURN at.name AS action_type,
+       collect(DISTINCT d.chembl_name) AS drugs,
+       count(DISTINCT d) AS drug_count
+ORDER BY drug_count DESC;
+
+
+// ---------------------------------------------------------------------------
+// 21. TARGET TYPES
+// ---------------------------------------------------------------------------
+// Distribution of molecular targets by type.
+
+MATCH (t:Target)-[:IS_TARGET_TYPE]->(tt:TargetType)
+RETURN tt.name AS target_type, count(t) AS target_count,
+       collect(t.name)[..5] AS example_targets
+ORDER BY target_count DESC;
+
+
+// ---------------------------------------------------------------------------
+// 22. ORGANISM DISTRIBUTION
+// ---------------------------------------------------------------------------
+// Which organisms are the drug targets found in?
+
+MATCH (t:Target)-[:FOUND_IN]->(o:Organism)
+RETURN o.name AS organism, count(t) AS target_count
+ORDER BY target_count DESC;
+
+
+// ---------------------------------------------------------------------------
+// 23. MOST-INDICATED DRUGS
+// ---------------------------------------------------------------------------
+// Drugs that treat the most conditions — broadly useful compounds.
+
+MATCH (d:Drug)-[:TREATS_INDICATION]->(i:Indication)
+RETURN d.chembl_name AS drug, count(i) AS indication_count
+ORDER BY indication_count DESC
+LIMIT 20;
+
+
+// ---------------------------------------------------------------------------
+// 24. INDICATION HUBS
+// ---------------------------------------------------------------------------
+// Conditions with the most approved drugs — well-served vs. underserved.
+
+MATCH (d:Drug)-[:TREATS_INDICATION]->(i:Indication)
+RETURN i.name AS indication, count(d) AS drug_count
+ORDER BY drug_count DESC
+LIMIT 30;
+
+
+// ---------------------------------------------------------------------------
+// 25. PROPERTY AUDIT
+// ---------------------------------------------------------------------------
+// Every node label with its properties and data types.
+// Useful for understanding what data is available on each node type.
+
+CALL db.schema.nodeTypeProperties()
+YIELD nodeType, propertyName, propertyTypes, mandatory
+RETURN nodeType, propertyName, propertyTypes, mandatory
+ORDER BY nodeType, propertyName;
