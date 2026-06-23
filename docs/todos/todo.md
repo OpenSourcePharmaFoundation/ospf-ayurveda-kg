@@ -254,3 +254,54 @@ TODO list (setup code)
 Misc
 ====
 - [ ] Narrow drugs down. See docs/notes/narrowing-drugs-down-notes.md
+
+
+-----------------------------------------
+Deployment
+==========
+Platform: Vercel (static SPA hosting)
+Why: vercel.json already exists, monorepo subdirectory support, automatic preview deployments on PRs, no backend/secrets needed, free tier sufficient for prototype.
+
+Pre-deployment code changes
+  [x] vercel.json already configured (build command, output dir, SPA rewrites)
+  [ ] Update index.html <title> from "frontend-demo" to "OSPF Ayurveda Knowledge Graph"
+  [ ] Add .nvmrc file (pin Node 22 for Vercel and contributors)
+  [ ] Verify build succeeds locally: cd frontend-demo && npm run build
+
+Vercel setup (manual — dashboard at vercel.com)
+  [ ] Create Vercel account (or sign in with GitHub)
+  [ ] Import repo: OpenSourcePharmaFoundation/ospf-ayurveda-kg
+  [ ] Set Root Directory to "frontend-demo" (CRITICAL — without this, build fails)
+  [ ] Confirm Framework Preset auto-detects as Vite
+  [ ] Set Node.js version to 22.x
+  [ ] Deploy and verify production URL loads
+
+Branch strategy
+  [ ] Merge frontend-prototype-demo → main via PR
+  [ ] Vercel production branch: main (auto-deploys on merge)
+  [ ] Preview deployments: automatic on every PR (zero config)
+
+Post-deployment verification
+  [ ] App loads and both tabs (Drug Candidates, Analysis) render
+  [ ] Static data loads: /data/analysis/oral_mucositis_candidates.csv accessible
+  [ ] SPA routing works: deep link with ?tab=analysis&analysis=may-04-multi-agent loads correctly
+  [ ] URL state survives page refresh
+  [ ] Deep link to specific drug works: ?drug=CHEMBL704
+
+Optional future steps
+  [ ] Custom domain (e.g. kg.ospf.org) — configure in Vercel dashboard + DNS
+  [ ] Install Vercel GitHub App for PR preview URL comments
+  [ ] Add GitHub Actions CI (lint + typecheck) as complement to Vercel deploys
+
+NOT deployed (intentionally excluded)
+  - Neo4j database — local only, frontend uses pre-exported static data
+  - Python scrapers (src/scrapers/) — run locally, output baked into public/data/
+  - Data pipeline (scripts/, data/) — processing tools, not served to users
+  - Documentation (docs/, CLAUDE.md)
+
+Fallback: GitHub Pages (only if Vercel is rejected by org)
+  - Would require .github/workflows/deploy-frontend.yml workflow
+  - Needs 404.html copy hack for SPA routing
+  - Needs base path in vite.config.ts for /ospf-ayurveda-kg/ prefix
+  - No preview deployments without extra tooling
+  - More maintenance for zero benefit on a prototype

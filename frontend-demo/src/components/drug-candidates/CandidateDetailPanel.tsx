@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { X, ChevronDown } from 'lucide-react';
-import { getCandidateRanking, getExistingOmStatus } from '@/lib/candidate-tiers';
+import { getCandidateRanking, getExistingOmStatus, getPlantSources } from '@/lib/candidate-tiers';
 import type { CandidateRanking, SafetyVerdict } from '@/lib/candidate-tiers';
 import type { DrugCandidate, RouteDataMap, IndicationFrequencyMap } from '@/types/drug-candidate';
 import { IndicationsTable } from './IndicationsTable';
@@ -58,6 +58,7 @@ export function CandidateDetailPanel({ candidate, routeData, indicationFrequency
   const ranking = getCandidateRanking(candidate.chembl_id);
   const displayName = ranking?.displayName || titleCase(candidate.drug_name);
   const omStatus = getExistingOmStatus(candidate.chembl_id);
+  const plantSources = getPlantSources(candidate.chembl_id);
 
   return (
     <div className="h-full flex flex-col">
@@ -110,25 +111,47 @@ export function CandidateDetailPanel({ candidate, routeData, indicationFrequency
               <Separator className="mb-3" />
               <IndicationsTable
                 indications={candidate.indications}
-                chemblId={candidate.chembl_id}
                 routeData={routeData[candidate.chembl_id]}
                 indicationFrequency={indicationFrequency}
               />
             </div>
           )}
 
-          {candidate.chembl_id && (
+          {(candidate.chembl_id || plantSources) && (
             <div>
               <h4 className="text-sm font-semibold text-foreground mb-1">External Links</h4>
               <Separator className="mb-3" />
-              <a
-                href={`https://www.ebi.ac.uk/chembl/explore/compound/${candidate.chembl_id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-primary hover:underline"
-              >
-                View on ChemBL →
-              </a>
+              <div className="space-y-2">
+                {candidate.chembl_id && (
+                  <a
+                    href={`https://www.ebi.ac.uk/chembl/explore/compound/${candidate.chembl_id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-primary hover:underline block"
+                  >
+                    View on ChemBL →
+                  </a>
+                )}
+                {plantSources && plantSources.map((source) => (
+                  <div key={source.plant} className="flex flex-col gap-0.5">
+                    <span className="text-xs text-muted-foreground">
+                      Source plant: <span className="italic">{source.plant}</span>
+                      {source.commonName && ` (${source.commonName})`}
+                    </span>
+                    {source.bsiLink && (
+                      <a
+                        href={source.bsiLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-primary hover:underline"
+                        title="BSI Medicinal Plant Database — Botanical Survey of India herbarium record"
+                      >
+                        View on BSI MedPlant Database →
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
