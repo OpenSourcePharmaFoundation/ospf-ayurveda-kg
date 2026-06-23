@@ -80,7 +80,7 @@ export function SummaryView() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">
+        <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
           Drug Discovery Summary
         </h2>
         <p className="text-muted-foreground">
@@ -121,7 +121,7 @@ export function SummaryView() {
                   #{candidate.rank}
                 </span>
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
                     <span className="font-semibold text-foreground">{candidate.name}</span>
                     <Badge variant={safetyVariants[candidate.safety]}>
                       {candidate.score}/100

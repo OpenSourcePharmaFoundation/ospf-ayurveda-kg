@@ -75,12 +75,12 @@ export function CandidateCard({ candidate, tier, compact, selected, onClick }: C
 
   return (
     <div
-      className={`flex items-center gap-4 px-4 py-3 rounded-lg border border-border transition-colors hover:bg-muted/40 ${onClick ? 'cursor-pointer' : ''} ${tierStyle?.row ?? ''}`}
+      className={`flex items-center gap-3 sm:gap-4 px-3 sm:px-4 py-3 rounded-lg border border-border transition-colors hover:bg-muted/40 ${onClick ? 'cursor-pointer' : ''} ${tierStyle?.row ?? ''}`}
       onClick={() => onClick?.(candidate)}
     >
-      <div className="w-12 shrink-0 text-center">
+      <div className="w-10 sm:w-12 shrink-0 text-center">
         {ranking?.score ? (
-          <span className={`text-lg font-bold font-mono ${tierStyle?.accent ?? 'text-muted-foreground'}`}>
+          <span className={`text-base sm:text-lg font-bold font-mono ${tierStyle?.accent ?? 'text-muted-foreground'}`}>
             {ranking.score}
           </span>
         ) : (
@@ -88,7 +88,7 @@ export function CandidateCard({ candidate, tier, compact, selected, onClick }: C
         )}
       </div>
 
-      <div className="w-52 shrink-0 min-w-0">
+      <div className="flex-1 min-w-0">
         <div className="font-semibold text-sm text-foreground truncate">
           {displayName}
           {tier === 'elite' && !omStatus && (
@@ -114,7 +114,7 @@ export function CandidateCard({ candidate, tier, compact, selected, onClick }: C
         <PropPill label="PSA" value={candidate.psa?.toFixed(0)} tooltip="Polar Surface Area in Å² — affects oral bioavailability and membrane transport" />
       </div>
 
-      <div className="flex items-center gap-1.5 shrink-0 ml-auto">
+      <div className="hidden sm:flex items-center gap-1.5 shrink-0 ml-auto">
         {omStatus && (
           <Badge variant="outline" className="text-xs border-violet-400 text-violet-600 dark:text-violet-400 dark:border-violet-500" title={omStatus}>
             Existing OM

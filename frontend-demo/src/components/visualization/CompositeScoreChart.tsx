@@ -8,6 +8,7 @@ import {
   ResponsiveContainer,
   Cell,
 } from 'recharts';
+import { useIsMobile } from '@/hooks/use-media-query';
 
 interface CandidateScore {
   name: string;
@@ -33,25 +34,35 @@ const safetyColors: Record<string, string> = {
   RED: 'hsl(0, 72%, 51%)',
 };
 
+function truncateName(name: string, max: number): string {
+  return name.length > max ? name.slice(0, max - 1) + '…' : name;
+}
+
 export function CompositeScoreChart() {
+  const isMobile = useIsMobile();
+  const axisWidth = isMobile ? 90 : 125;
+  const leftMargin = isMobile ? 95 : 130;
+  const tickSize = isMobile ? 10 : 11;
+
   return (
-    <div className="bg-card border border-border rounded-lg p-4">
+    <div className="bg-card border border-border rounded-lg p-3 sm:p-4">
       <h3 className="text-sm font-semibold text-foreground mb-3">
         Consensus Drug Candidate Rankings
       </h3>
-      <ResponsiveContainer width="100%" height={320}>
+      <ResponsiveContainer width="100%" height={isMobile ? 280 : 320}>
         <BarChart
           data={CONSENSUS_CANDIDATES}
           layout="vertical"
-          margin={{ top: 5, right: 30, left: 130, bottom: 5 }}
+          margin={{ top: 5, right: isMobile ? 15 : 30, left: leftMargin, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(0, 0%, 90%)" />
-          <XAxis type="number" domain={[0, 100]} tick={{ fontSize: 11 }} />
+          <XAxis type="number" domain={[0, 100]} tick={{ fontSize: tickSize }} />
           <YAxis
             dataKey="name"
             type="category"
-            tick={{ fontSize: 11 }}
-            width={125}
+            tick={{ fontSize: tickSize }}
+            width={axisWidth}
+            tickFormatter={(name: string) => truncateName(name, isMobile ? 14 : 25)}
           />
           <Tooltip
             formatter={(value) => [`${value}/100`, 'Composite Score']}
@@ -69,7 +80,7 @@ export function CompositeScoreChart() {
           </Bar>
         </BarChart>
       </ResponsiveContainer>
-      <div className="flex gap-4 mt-2 text-xs text-muted-foreground justify-center">
+      <div className="flex flex-wrap gap-3 sm:gap-4 mt-2 text-xs text-muted-foreground justify-center">
         {Object.entries(safetyColors).map(([label, color]) => (
           <span key={label} className="flex items-center gap-1">
             <span
