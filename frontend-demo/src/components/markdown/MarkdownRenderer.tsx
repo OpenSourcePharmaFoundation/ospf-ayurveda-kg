@@ -35,21 +35,21 @@ const customComponents: Components = {
     </thead>
   ),
   th: ({ children }) => (
-    <th className="px-4 py-3 text-left font-semibold border-b border-border">
+    <th className="px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold border-b border-border">
       {children}
     </th>
   ),
   td: ({ children }) => (
-    <td className="px-4 py-2.5 border-b border-border/50">{children}</td>
+    <td className="px-2 sm:px-4 py-2 sm:py-2.5 border-b border-border/50">{children}</td>
   ),
   tr: ({ children }) => <tr className="hover:bg-muted/30 transition-colors">{children}</tr>,
   h1: ({ children }) => (
-    <h1 className="text-2xl font-bold text-foreground mt-8 mb-4 pb-2 border-b-2 border-primary/30">
+    <h1 className="text-xl sm:text-2xl font-bold text-foreground mt-6 sm:mt-8 mb-3 sm:mb-4 pb-2 border-b-2 border-primary/30">
       {children}
     </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="text-xl font-semibold text-foreground mt-8 mb-3 pb-1 border-b border-border">
+    <h2 className="text-lg sm:text-xl font-semibold text-foreground mt-6 sm:mt-8 mb-2 sm:mb-3 pb-1 border-b border-border">
       {children}
     </h2>
   ),
