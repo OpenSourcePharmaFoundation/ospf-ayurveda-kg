@@ -13,6 +13,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
+import { useIsMobile } from '@/hooks/use-media-query';
 import type { TableData } from '@/types/analysis';
 
 interface DataTableVizProps {
@@ -20,6 +21,7 @@ interface DataTableVizProps {
 }
 
 export function DataTableViz({ table }: DataTableVizProps) {
+  const isMobile = useIsMobile();
   const hasChart = table.numericColumns.length > 0 && table.rows.length > 1;
   const entityCol = findEntityColumn(table);
 
@@ -60,17 +62,18 @@ export function DataTableViz({ table }: DataTableVizProps) {
           <BarChart
             data={chartData}
             layout={entityCol ? 'vertical' : 'horizontal'}
-            margin={{ top: 5, right: 20, left: entityCol ? 100 : 5, bottom: 5 }}
+            margin={{ top: 5, right: isMobile ? 10 : 20, left: entityCol ? (isMobile ? 70 : 100) : 5, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="hsl(0, 0%, 90%)" />
             {entityCol ? (
               <>
-                <XAxis type="number" tick={{ fontSize: 11 }} />
+                <XAxis type="number" tick={{ fontSize: isMobile ? 10 : 11 }} />
                 <YAxis
                   dataKey="name"
                   type="category"
-                  tick={{ fontSize: 11 }}
-                  width={95}
+                  tick={{ fontSize: isMobile ? 10 : 11 }}
+                  width={isMobile ? 65 : 95}
+                  tickFormatter={(name: string) => name.length > (isMobile ? 10 : 20) ? name.slice(0, isMobile ? 9 : 19) + '…' : name}
                 />
               </>
             ) : (

@@ -2,14 +2,17 @@ import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { useDrugCandidates } from '@/hooks/use-drug-candidates';
 import { CandidateCard } from './CandidateCard';
 import { CandidateDetailPanel } from './CandidateDetailPanel';
+import { CandidateDetailDrawer } from './CandidateDetailDrawer';
 import { getCandidateTier, getCandidateScore, getExistingOmStatus } from '@/lib/candidate-tiers';
 import { useUrlParam, useUrlState } from '@/hooks/use-url-state';
+import { useIsMobile } from '@/hooks/use-media-query';
 import type { DrugCandidate } from '@/types/drug-candidate';
 
 export function DrugCandidatesView() {
   const { candidates, routeData, indicationFrequency, loading, error } = useDrugCandidates();
   const { update } = useUrlState();
   const drugParam = useUrlParam('drug');
+  const isMobile = useIsMobile();
   const [search, setSearch] = useState('');
   const [filterNatural, setFilterNatural] = useState(false);
   const [filterExistingOm, setFilterExistingOm] = useState(true);
@@ -77,46 +80,47 @@ export function DrugCandidatesView() {
   }
 
   const hasSelection = selectedCandidate !== null;
+  const showSplitPane = hasSelection && !isMobile;
 
   return (
-    <div className={hasSelection ? 'flex gap-0 -mx-4 sm:-mx-6' : ''}>
+    <div className={showSplitPane ? 'flex gap-0 -mx-4 sm:-mx-6' : ''}>
       {/* List panel */}
       <div
         className={
-          hasSelection
+          showSplitPane
             ? 'w-72 shrink-0 border-r border-border flex flex-col h-[calc(100vh-12rem)]'
             : ''
         }
       >
-        <div className={hasSelection ? 'px-3 pt-3 pb-2 space-y-2 shrink-0' : ''}>
+        <div className={showSplitPane ? 'px-3 pt-3 pb-2 space-y-2 shrink-0' : ''}>
           {/* Search */}
-          <div className={hasSelection ? '' : 'flex flex-col sm:flex-row gap-3 mb-6'}>
-            <div className={hasSelection ? '' : 'flex-1'}>
+          <div className={showSplitPane ? '' : 'flex flex-col sm:flex-row gap-3 mb-6'}>
+            <div className={showSplitPane ? '' : 'flex-1'}>
               <input
                 type="text"
-                placeholder={hasSelection ? 'Search...' : 'Search by name, ChemBL ID, or indication...'}
+                placeholder={showSplitPane ? 'Search...' : 'Search by name, ChemBL ID, or indication...'}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
               />
             </div>
-            {!hasSelection && (
-              <div className="flex items-center gap-4 shrink-0">
-                <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer">
+            {!showSplitPane && (
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 shrink-0">
+                <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer min-h-[44px]">
                   <input
                     type="checkbox"
                     checked={filterNatural}
                     onChange={(e) => setFilterNatural(e.target.checked)}
-                    className="rounded border-input"
+                    className="rounded border-input size-4"
                   />
                   <span title="Show only compounds derived from natural sources (plants, fungi, etc.)">Natural products only</span>
                 </label>
-                <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer">
+                <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer min-h-[44px]">
                   <input
                     type="checkbox"
                     checked={filterExistingOm}
                     onChange={(e) => setFilterExistingOm(e.target.checked)}
-                    className="rounded border-input"
+                    className="rounded border-input size-4"
                   />
                   <span title="Hide existing drugs for Oral Mucositis">Hide existing OM drugs</span>
                 </label>
@@ -125,7 +129,7 @@ export function DrugCandidatesView() {
           </div>
 
           {/* Legend + count */}
-          {!hasSelection && (
+          {!showSplitPane && (
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground mb-4">
               <span>Showing {filtered.length} of {candidates.length} candidates</span>
               <span className="flex items-center gap-1.5" title="Top-scoring candidates (score >= 55) — strongest evidence for OM treatment">
@@ -144,7 +148,7 @@ export function DrugCandidatesView() {
             </div>
           )}
 
-          {hasSelection && (
+          {showSplitPane && (
             <div className="space-y-1.5">
               <div className="flex flex-col gap-1">
                 <label className="flex items-center gap-1.5 text-xs text-muted-foreground cursor-pointer">
@@ -176,7 +180,7 @@ export function DrugCandidatesView() {
         {/* Candidate list */}
         <div
           className={
-            hasSelection
+            showSplitPane
               ? 'flex-1 overflow-y-auto px-2 pb-2 space-y-0.5'
               : 'flex flex-col gap-1.5'
           }
@@ -186,8 +190,8 @@ export function DrugCandidatesView() {
               key={candidate.chembl_id || candidate.drug_name}
               candidate={candidate}
               tier={getCandidateTier(candidate.chembl_id)}
-              compact={hasSelection}
-              selected={hasSelection && selectedCandidate?.chembl_id === candidate.chembl_id}
+              compact={showSplitPane}
+              selected={showSplitPane && selectedCandidate?.chembl_id === candidate.chembl_id}
               onClick={handleCardClick}
             />
           ))}
@@ -200,8 +204,8 @@ export function DrugCandidatesView() {
         )}
       </div>
 
-      {/* Detail panel */}
-      {selectedCandidate && (
+      {/* Desktop: inline detail panel */}
+      {showSplitPane && selectedCandidate && (
         <div className="flex-1 min-w-0 h-[calc(100vh-12rem)]">
           <CandidateDetailPanel
             key={selectedCandidate.chembl_id}
@@ -211,6 +215,17 @@ export function DrugCandidatesView() {
             onClose={handleClose}
           />
         </div>
+      )}
+
+      {/* Mobile: drawer overlay */}
+      {isMobile && (
+        <CandidateDetailDrawer
+          candidate={selectedCandidate}
+          routeData={routeData}
+          indicationFrequency={indicationFrequency}
+          open={hasSelection}
+          onOpenChange={(open) => { if (!open) handleClose(); }}
+        />
       )}
     </div>
   );
