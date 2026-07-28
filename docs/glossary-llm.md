@@ -1,30 +1,71 @@
-LLM terms
-=========
+LLM & Graph ML Terms
+=====================
 
-Parameters:
+Core LLM Concepts
+-----------------
 
-Context window:
+LLM: Large Language Model. A neural network trained on massive text corpora to predict the next token in a sequence. The "large" refers to the number of parameters (billions), and the "language" part is key — LLMs operate on text tokens. This distinction matters for our project: we want the same style of learned inference but applied to biomedical entities (drugs, targets, diseases) rather than words. The LLM in our architecture serves as a natural language interface, not as the reasoning engine over the knowledge graph.
 
-Graph Neural Network:
+Parameters: The learned numerical weights inside a neural network that determine its behavior. When a model is described as "7 billion parameters," that means 7 billion individual numbers were adjusted during training. Parameters are what the model learns — they encode the patterns discovered in training data. In a knowledge graph embedding model, parameters encode the learned relationships between entities (e.g., the model learns that "Drug X" and "Target Y" are geometrically close in embedding space because they co-occur in TARGETS relationships).
 
-GNN-LLM Alignment:
+Context Window: The maximum amount of input a model can process in a single pass, measured in tokens. GPT-4 has a 128K token window; Claude has up to 200K. This is a hard architectural limit — the model literally cannot "see" information outside this window. For our project, this matters because a knowledge graph with thousands of nodes can't be dumped into a prompt. Instead, we use retrieval (GraphRAG) to pull in only the relevant subgraph for each query.
 
-Tokens:
+Tokens: The atomic units that an LLM processes. Text is split into tokens (roughly word fragments — "pharmacokinetics" might become ["pharm", "aco", "kinetics"]). The LLM predicts one token at a time. In knowledge graph embedding, the analog of a token is an entity or relation — the model operates on discrete biomedical concepts rather than word pieces.
 
-Tensors:
-
-Vectors:
-
-Tensorflow:
-
-Latent Space Trajectories:
-
-LLM:
-
-Text-Attributed Graphs:
-
-Structured flow pipeline:
+Vectors: Ordered arrays of numbers that represent a point in multi-dimensional space. A 3D vector [1, 2, 3] is a point in 3D space. In ML, vectors typically have hundreds or thousands of dimensions. They are the fundamental unit of representation — every entity, word, or concept that a model reasons about is represented internally as a vector.
 
 Vector Embedding: A numerical representation of text (or other data) as an array of floating-point numbers (e.g. 384 dimensions), produced by a neural network model. The key property is that semantically similar inputs produce geometrically close vectors — so "anti-inflammatory NSAID" and "reduces swelling and pain" end up near each other in vector space, even though they share no words. This enables similarity-based retrieval: instead of exact string matching, you compute the distance between vectors to find the most relevant results. In a knowledge graph context, embeddings are stored as node properties so that fuzzy natural-language queries can find relevant nodes without requiring exact property matches.
 
-[Figure out concept of LLM-like analysis that doesn't work on text nodes (i.e. uses drug nodes instead) - add words for this here]
+Tensors: Multi-dimensional arrays of numbers — the generalized form of vectors. A vector is a 1D tensor (a list), a matrix is a 2D tensor (a grid), and tensors extend this to any number of dimensions. All data flowing through a neural network — inputs, weights, outputs — is represented as tensors. The name "TensorFlow" comes from this: it's a framework for defining how tensors flow through computation graphs.
+
+TensorFlow: An open-source machine learning framework developed by Google. It provides the infrastructure for building, training, and deploying neural networks. In our context, TensorFlow (or its alternative PyTorch) would be the framework used to train knowledge graph embedding models — defining the neural architecture, running the training loop over our graph data, and producing the learned entity embeddings. PyTorch is currently more dominant in research; TensorFlow is more common in production deployment.
+
+Latent Space: The learned internal representation space of a neural network — the multi-dimensional coordinate system where the model places entities after training. "Latent" means hidden: these dimensions don't correspond to human-interpretable features. Instead, the model discovers its own features during training. For a knowledge graph embedding, the latent space is where drugs, targets, and diseases live as points — and their geometric relationships (distance, direction, clustering) encode the biological relationships the model has learned.
+
+Latent Space Trajectories: Paths through latent space that represent sequential transformations or transitions. In drug discovery, a trajectory might trace how a compound's properties change as you modify its structure, or how a disease state evolves through biological pathways. Analyzing these trajectories can reveal mechanistic insights — e.g., "modifying this scaffold moves the compound along a trajectory toward better target selectivity but away from oral bioavailability."
+
+
+Graph Machine Learning
+----------------------
+
+Graph Neural Network (GNN): A class of neural networks designed to operate directly on graph-structured data (nodes and edges) rather than on sequences (like LLMs) or grids (like image CNNs). A GNN learns by message-passing: each node aggregates information from its neighbors, updates its own representation, and repeats for multiple layers. After several rounds, each node's embedding encodes information about its local graph neighborhood. For our knowledge graph, a GNN could learn that a drug node connected to certain targets, which are in turn connected to certain disease pathways, is likely to be effective for Oral Mucositis — even if that specific drug-disease edge doesn't exist yet.
+
+Knowledge Graph Embedding (KGE): The direct analog of word embeddings, but for knowledge graph entities and relations. KGE models (TransE, RotatE, ComplEx, DistMult) learn to place every entity (drug, disease, gene, compound) and every relation type (TARGETS, TREATS, ASSOCIATED_WITH) into a continuous vector space such that known true facts are geometrically consistent. For example, TransE learns embeddings where `Drug_vector + TARGETS_vector ≈ Gene_vector` for every known (Drug, TARGETS, Gene) triple. Once trained, the model can score any hypothetical triple — this is how it makes predictions about relationships that aren't in the training data.
+
+Link Prediction: The graph equivalent of "next token prediction" in an LLM. Given a knowledge graph with some edges, link prediction scores the likelihood of missing edges. For our project, this is the core inference task: "Given everything we know about Drug X's targets, mechanisms, and structural properties, how likely is it to treat Disease Y?" This is how the system makes predictions without the language component — it reasons from graph structure and learned entity embeddings, not from text patterns.
+
+Knowledge Graph Completion: The broader task of filling in missing facts in a knowledge graph using learned patterns. Link prediction is one technique; others include rule mining (discovering logical rules like "if X TARGETS gene A, and gene A ASSOCIATED_WITH disease B, then X may TREAT disease B") and path-based reasoning. This is what our system does at its core — it takes the incomplete knowledge graph we've built from ChemBL, DisGeNET, IMPPAT, and PubChem, and infers the relationships that aren't explicitly stated in any single database.
+
+Text-Attributed Graphs (TAGs): Graphs where nodes and/or edges carry associated text descriptions in addition to structured properties. Our knowledge graph is a TAG — each Drug node has a name, mechanism description, and indication text; each Gene node has functional annotations. TAGs are significant because they sit at the intersection of graph ML and language models: a GNN can reason over graph structure while an LLM can reason over the text attributes, and combining both produces richer representations than either alone.
+
+GNN-LLM Alignment: Techniques for mapping GNN-produced node embeddings and LLM-produced text embeddings into a shared vector space, so that both modalities can be reasoned about together. This is how a user's natural language query ("what approved drugs might reduce NF-kB-driven inflammation in oral mucosa?") gets translated into a region of the same embedding space where relevant Drug and Gene nodes live. Alignment enables the LLM to "understand" graph structure and the GNN to benefit from textual semantics.
+
+Knowledge Graph Reasoning (KGR): The umbrella term for all methods of drawing inferences from a knowledge graph — including link prediction, rule learning, path-based reasoning, and subgraph matching. This is what replaces the "language model" component in our architecture: instead of predicting the next word, a KGR system predicts missing facts, discovers multi-hop pathways (Drug -> Target -> Pathway -> Disease), and scores hypotheses. The reasoning happens over structured biomedical relationships, not over token sequences.
+
+
+Architecture & Pipeline
+-----------------------
+
+Neuro-Symbolic AI: An approach that combines neural networks (learning from data, handling ambiguity) with symbolic reasoning (logic, structured knowledge, explicit rules). Our architecture is neuro-symbolic: the LLM handles natural language understanding (neural), the knowledge graph encodes structured biomedical facts (symbolic), and graph ML models bridge the two by learning continuous representations of discrete graph structure. This combination is more powerful than either approach alone — the neural component handles fuzzy matching and generalization, while the symbolic component ensures reasoning is grounded in verifiable facts.
+
+Agentic RAG: Retrieval-Augmented Generation where the retrieval step is performed by autonomous agents rather than simple vector search. Standard RAG retrieves text chunks; Agentic RAG dispatches specialized agents that can query databases, traverse graphs, call APIs, and synthesize multi-source results before the LLM generates its response. In our architecture, the LLM receives a user query, decomposes it into sub-tasks, and dispatches graph-reasoning agents to retrieve and analyze relevant subgraphs — the LLM then synthesizes their findings into a natural language answer.
+
+GraphRAG: A specialization of RAG where the retrieval source is a knowledge graph rather than a document corpus. Instead of embedding text chunks and finding similar ones, GraphRAG traverses graph relationships to find relevant connected subgraphs. For our system, a query about "drugs targeting TNF-alpha for oral mucositis" would traverse (Disease:Oral_Mucositis)-[ASSOCIATED_WITH]->(Gene:TNF)-[TARGETS]<-(Drug:?) and return the matching drug nodes plus their surrounding context as the retrieved information.
+
+Query Decomposition: The process of breaking a complex natural language question into smaller, independently answerable sub-queries. An LLM takes "What approved anti-inflammatory drugs target NF-kB pathway genes associated with oral mucositis, and which have Ayurvedic plant sources?" and decomposes it into: (1) find OM-associated genes in NF-kB pathway, (2) find approved drugs targeting those genes, (3) filter for anti-inflammatory mechanism, (4) check for Ayurvedic plant sources. Each sub-query is routed to the appropriate reasoning agent. This is the proper term for what was described as "subagents" — the LLM decomposes intent, and specialized reasoners execute each piece.
+
+Entity Extraction (Named Entity Recognition / NER): The process of identifying and classifying biomedical entities mentioned in natural language text. When a user types "does curcumin affect TNF-alpha in mucositis patients?", entity extraction identifies "curcumin" as a Compound node, "TNF-alpha" as a Gene node, and "mucositis" as a Disease node. This bridges the gap between human language and graph structure — it's how the system knows which nodes to start reasoning from.
+
+Structured Flow Pipeline: An orchestration pattern where an LLM's output is not free-form text but a structured sequence of tool calls, graph queries, and reasoning steps defined by a predetermined flow. Rather than letting the LLM improvise, the pipeline enforces: (1) entity extraction, (2) query decomposition, (3) graph retrieval, (4) inference, (5) synthesis. This ensures reproducibility and allows each step to use the most appropriate technique — the LLM for language understanding, Cypher queries for graph traversal, KGE/GNN models for link prediction, and the LLM again for final answer generation.
+
+Reasoning Agents (Domain-Specific Reasoners): Specialized modules within a multi-agent system, each responsible for a particular type of inference. In our architecture, these are the components that replace the "language" reasoning of a standalone LLM: a target profiling agent queries gene-disease associations, a drug repurposing agent scores link predictions, a pathway analyst traces multi-hop graph routes, and a safety agent checks interaction risks. The LLM orchestrates these agents but does not perform the biomedical reasoning itself — the agents reason directly over graph structure and embeddings.
+
+
+Concepts Specific to This Project
+----------------------------------
+
+Knowledge Graph as "Language": The core architectural insight of this project. In an LLM, the model learns statistical relationships between words from co-occurrence in text. In our system, a KGE/GNN model learns statistical relationships between biomedical entities from co-occurrence in graph structure. The vocabulary is drugs, genes, diseases, compounds, and plants. The grammar is the relation types (TARGETS, TREATS, CONTAINS, ASSOCIATED_WITH). The "sentences" are paths through the graph. And "fluency" is the geometric consistency of the learned embeddings. The model doesn't need to understand English to predict that Drug X may treat Disease Y — it needs to understand the graph topology.
+
+Biomedical Knowledge Graph Embedding: The application of KGE techniques specifically to biomedical knowledge graphs. Models like BioTransE or DRKG (Drug Repurposing Knowledge Graph) embed drugs, diseases, genes, and their relationships into a shared latent space, then use the geometry of that space to predict novel drug-disease or drug-target relationships. This is precisely the "LLM-like analysis that doesn't work on text nodes" — it's the same mathematical machinery (vectors, learned parameters, geometric reasoning) applied to biomedical entities instead of words.
+
+Hybrid Neuro-Symbolic Drug Discovery Platform: The proper name for the overall system we're building. "Hybrid" because it combines an LLM (neural, language-based) with a knowledge graph (symbolic, structure-based) and graph ML models (neural, structure-based). "Neuro-symbolic" because it bridges learned representations with explicit knowledge. "Drug discovery platform" because the purpose is to identify, evaluate, and rank therapeutic candidates. The LLM is the interface; the knowledge graph is the knowledge base; the KGE/GNN models are the inference engine; and the multi-agent orchestration is the reasoning architecture.
