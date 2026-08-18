@@ -182,7 +182,7 @@ You (Orchestrator)
  └── Final Synthesis ──► Consensus report with ranked candidates
 ```
 
-**Total agents: 16-17 in Standard mode** (1 Disease Research + 5-6 Phase 1 + 5 Phase 2 + 2 Debate + 3 Phase 3)
+**Total agents: 15-17 in Standard mode** (1 Disease Research + 5-6 Phase 1 + 5 Phase 2 + 2 Debate + 2-3 Phase 3)
 
 ## Execution Protocol
 
@@ -194,8 +194,8 @@ This is the most critical step. The sub-agent skill files contain methodology bu
 
 ```
 You are a Disease Biology Research Specialist. Your job is to build a comprehensive
-disease model for [TARGET DISEASE] that will be used by 15 downstream drug discovery
-agents. This model is the FOUNDATION of the entire pipeline — every other agent uses
+disease model for [TARGET DISEASE] that will be used by multiple downstream drug
+discovery agents (typically 15-16). This model is the FOUNDATION of the entire pipeline — every other agent uses
 it as their primary disease reference.
 
 DEPTH REQUIREMENT: Your model must be detailed enough that a domain expert agent can
@@ -521,7 +521,7 @@ Devil's Advocate challenges: [INSERT]
 
 ### Step 5: Phase 3 — Final Evaluation
 
-Spawn 3 final agents with ALL prior round findings:
+Spawn 2-3 final agents with ALL prior round findings (Combination Designer is conditional — see Agent Relevance Gating):
 
 | Agent | Skill File | Task |
 |-------|-----------|------|
@@ -692,11 +692,11 @@ Phase 0 (Disease Research) + Phase 1 + Candidate Ranker only:
 - Skip Phase 2 deep dives
 - Skip Debate Round
 - Use for initial screening, not final recommendations
-- **Agents: 7-8** (1 Disease Research + 5-6 Phase 1 + 1 Candidate Ranker)
+- **Agents: 7-8** (1 Disease Research + 5-6 Phase 1 + 1 Candidate Ranker — Quick mode always includes Candidate Ranker regardless of other Phase 3 gating)
 
 ### Standard Mode (15-25 minutes)
 Full pipeline: Phase 0 → Phase 1 → Synthesis → Phase 2 (with Literature Reviewer) → Debate → Phase 3 → Final Report.
-- **Agents: 16-17** (1 + 5-6 + 5 + 2 + 3)
+- **Agents: 15-17** (1 + 5-6 + 5 + 2 + 2-3)
 
 ### Deep Mode (25-45 minutes)
 Standard mode plus:
