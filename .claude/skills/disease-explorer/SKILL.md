@@ -58,13 +58,11 @@ index evaluation) but apply it to the [TARGET DISEASE] patient context.
 ```
 
 **Clinical Landscape Researcher:**
-```
-SKILL FILE ADAPTATION:
-Your skill file focuses on a specific therapeutic area's clinical landscape. For
-[TARGET DISEASE], assess clinical precedent, ongoing trials, and the treatment landscape
-for [TARGET DISEASE]'s therapeutic area specifically. Use the skill file's methodology
-for evaluating clinical evidence strength, but apply it to [TARGET DISEASE].
-```
+This agent uses ONE OF TWO skill files depending on whether [TARGET DISEASE] is cancer-related:
+- **Cancer-related disease** → use `cancer-researcher/SKILL.md` (deep oncology expertise: cancer trial phases, drug classes, resistance mechanisms, biomarkers, precision medicine). No adaptation needed — the skill file works natively for cancer.
+- **Non-cancer disease** → use `clinical-landscape/SKILL.md` (generic clinical landscape analysis: trial phases across therapeutic areas, success rates by area, regulatory pathways, evidence frameworks, development economics). No adaptation needed — the skill file is disease-agnostic.
+
+Determining cancer-relatedness: a disease is "cancer-related" if it IS a cancer (any malignancy), a direct consequence of cancer treatment (e.g., chemotherapy side effects, radiation injury), or a condition primarily affecting cancer patients. Diseases that merely share some molecular pathways with cancer (e.g., autoimmune conditions involving NF-κB) are NOT cancer-related for this purpose.
 
 **Candidate Ranker:**
 ```
@@ -155,7 +153,7 @@ You (Orchestrator)
  │
  ├── Phase 1: Parallel Domain Analysis (5-6 agents) ──► Round 1 findings
  │     ├── Medicinal Chemist (reads chemist/SKILL.md)
- │     ├── Clinical Landscape Researcher (reads cancer-researcher/SKILL.md)
+ │     ├── Clinical Landscape Researcher (reads clinical-landscape/SKILL.md or cancer-researcher/SKILL.md)
  │     ├── Traditional Medicine Expert (reads ethnobotany-expert/SKILL.md) ◄── conditional
  │     ├── Molecular Target Analyst (reads target-profiler/SKILL.md)
  │     ├── Pharmacokinetics Specialist (reads admet-predictor/SKILL.md)
@@ -403,13 +401,13 @@ Return your analysis as structured JSON with this schema:
 | Agent | Role in Prompt | Skill File | Primary Question |
 |-------|---------------|-----------|-----------------|
 | **Chemist** | "Medicinal Chemist" | `chemist/SKILL.md` | "What do the molecular structures tell us about these candidates' likely behavior against [DISEASE]?" |
-| **Clinical Landscape Researcher** | "Clinical Landscape Researcher" | `cancer-researcher/SKILL.md` | "What clinical precedent exists for these candidates in [DISEASE] or related conditions? What's the treatment landscape?" |
+| **Clinical Landscape Researcher** | "Clinical Landscape Researcher" | `clinical-landscape/SKILL.md` (default) OR `cancer-researcher/SKILL.md` (if cancer-related) | "What clinical precedent exists for these candidates in [DISEASE] or related conditions? What's the treatment landscape?" |
 | **Ethnobotany Expert** | "Traditional Medicine Expert" | `ethnobotany-expert/SKILL.md` | "What traditional medicine evidence supports these candidates for [DISEASE] or its symptoms?" |
 | **Target Profiler** | "Molecular Target Analyst" | `target-profiler/SKILL.md` | "How druggable and validated are the targets these candidates hit, in the context of [DISEASE]?" |
 | **ADMET Predictor** | "Pharmacokinetics Specialist" | `admet-predictor/SKILL.md` | "Can these compounds reach the relevant tissue/organ? What are pharmacokinetic deal-breakers?" |
 | **Disease Modeler** | "[DISEASE] Biology Specialist" | `disease-modeler/SKILL.md` | "Which disease stages do these candidates address? Where are the therapeutic gaps?" |
 
-**IMPORTANT — Role names in agent prompts:** Use the "Role in Prompt" column, NOT the skill file name. Some skill file names reflect a prior project context rather than the generic role (e.g., `cancer-researcher` contains clinical landscape analysis methodology applicable to any therapeutic area). The agent's role identity in the prompt should match the actual task.
+**IMPORTANT — Role names in agent prompts:** Use the "Role in Prompt" column, NOT the skill file name. The agent's role identity in the prompt should match the actual task. For the Clinical Landscape Researcher specifically, route to the correct skill file based on whether [TARGET DISEASE] is cancer-related (see Per-Agent Adaptation Overrides).
 
 **Agent Relevance Gating — before spawning, assess whether each agent is relevant:**
 
