@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Worktrees
+
+Do NOT use worktrees (EnterWorktree) in this project. Work directly on the current branch. This is a single-developer project with no concurrent work.
+
 ## Project Overview
 
 OSPF Ayurveda Knowledge Graph - A Neo4j-based knowledge graph integrating Ayurvedic and Western medicine pathways for treating Oral Mucositis (OM). The project combines data from multiple biomedical databases to help repurpose existing drugs and Ayurvedic formulations through scientific understanding of their mechanisms.

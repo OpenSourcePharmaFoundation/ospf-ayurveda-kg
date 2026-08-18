@@ -5,7 +5,7 @@ Steps
 - Get Claude to aggregate ALL of the drug data
   - Convert all drug data into a single large knowledge graph
 
-- Figure out concept of LLM-like analysis that doesn't work on text nodes (i.e. uses drug nodes instead)
+- Figure out concept of LLM-like analysis that doesn't work on text nodes (i.e. uses drug nodes instead) [Graph Neural Network]
   - Find libraries for this
 
 - Get a simple LLM running locally (with no calls to external servers)

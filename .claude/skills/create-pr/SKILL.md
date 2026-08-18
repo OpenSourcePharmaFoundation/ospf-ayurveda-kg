@@ -1,68 +1,98 @@
 ---
 name: create-pr
-description: Create a pull request from the current branch with auto-generated description
-when_to_use: When creating a pull request from the current branch to main with an auto-generated title and description
-allowed-tools: Bash(git *) Bash(gh *)
+description: >
+  Create or update a pull request from the current branch with auto-generated description.
+  Also handles updating an existing PR's title or body when given a PR URL or number.
+tools: Bash(git status:*), Bash(git log:*), Bash(git diff:*), Bash(git push:*), Bash(git rev-parse:*), Bash(gh pr create:*), Bash(gh pr view:*), Bash(gh api:*)
+when_to_use: >
+  create PR, open PR, update PR, edit PR description, tighten PR, rewrite PR body,
+  update pull request, change PR title, improve PR description
 ---
 
-First, re-read the following files to ensure you understand the project context:
-1. The CLAUDE.md file at the root of the project
-2. This skill file itself (`.claude/skills/create-pr/SKILL.md`)
+## Detect mode
 
-## Command Overview
+If the user provides a PR URL or number, or asks to update/edit/tighten a PR, this is an **update**. Otherwise it's a **create**.
 
-This command creates a pull request from the current branch to the main branch with an automatically generated description based on the differences between the branches.
+---
 
-## Instructions
+## Create mode
 
-1. **Check current branch status**
-   - Run `git status` to ensure all changes are committed
-   - Get the current branch name
-   - Verify we're not on the main branch
+Create a pull request from the current branch.
 
-2. **Analyze branch differences**
-   - Run `git log main..HEAD --oneline` to see all commits in this branch
-   - Run `git diff main...HEAD --stat` to see changed files summary
-   - Run `git diff main...HEAD` to see detailed changes (if needed for context)
+1. **Check branch status and analyze changes** (run in parallel where possible)
+   - `git status` — ensure all changes are committed; if on main, inform the user and stop
+   - `git rev-parse --abbrev-ref HEAD` — get current branch name
+   - `git log main..HEAD --oneline` — commits in this branch
+   - `git diff main...HEAD --stat` — changed files summary
+   - `git diff main...HEAD` — detailed changes (read selectively if large)
 
-3. **Generate PR description - First Pass**
-   Create a comprehensive PR description that includes:
-   - **Summary**: 2-3 sentences describing what this PR accomplishes
-   - **Changes**: Bullet list of key changes made
-   - **Testing**: Suggestions for how to test the changes
-     - If the entire commit is just documentation, exclude this section.
-     - Otherwise, check that the Testing section actually includes a test plan, and doesn't just include another list of changes in the PR. If it DOES just contain a list of changes, generate a new section, with an explicit prompt not to just give a list of the changes, but to instead come up with a step-by-step plan to test the changes.
-   - **Related Issues**: If commit messages reference Jira issues, include them
+2. **Push if needed**
+   - Run `git push origin <current_branch_name>` (safe; no-ops if already up to date)
 
-   Make this first version detailed and thorough.
+3. **Generate PR title and description**
 
-4. **Simplify the description - Second Pass**
-   - If the word given after the colon at the end of this command is VERBOSE (or some variant of it), skip this step.
-   After generating the initial description, immediately simplify it:
-   - Keep the summary to 1-2 sentences
-   - Reduce the changes list to only the most important items (3-5 bullets max)
-   - Keep testing notes brief and actionable
-   - Remove any verbose explanations
+   **Title:** Keep concise. May add `etc` at the end for refactor PRs with many small changes.
 
-5. **Create the pull request**
-   Use the `gh pr create` command with:
-   - `--title`: A concise, descriptive title based on the main change
-   - `--body`: The simplified description from step 4
-   - `--base main`: Target the main branch
+   **Body format** (generate directly as concise — no verbose-then-simplify):
+   - **Summary**: 1-2 sentences on what and why
+   - **Changes**: 3-5 key bullets max
+   - **Testing**: Brief, actionable test plan (not just a list of changes). Exclude for docs-only PRs.
+   - **Links**: GitHub issues as bullet links if referenced in commits.
 
-   **IMPORTANT**: Do NOT include any "Generated with Claude Code" or similar tags in the PR title or body. The PR should appear as if written directly by the developer.
+   If the argument is VERBOSE (or a variant: verbose, --verbose, -v), make the description more detailed instead of concise.
 
-6. **Provide the PR URL**
-   After creation, output the PR URL so the user can review it on GitHub.
+4. **Create the PR**
+   ```
+   gh pr create --title "<title>" --body "<body>" --base main
+   ```
 
-## Notes
+5. **Output the PR URL.**
 
-- If there are uncommitted changes, ask the user if they want to commit them first. But don't require it.
-- If already on main branch, inform the user and stop
-- Keep the final PR description professional and concise
-- Focus on what changed and why, not implementation details
-- The simplification step is crucial - aim for clarity and brevity in the final version
+---
 
-----
+## Update mode
 
-Check the word after the colon at the end of this line (the user input after the command), and if it says VERBOSE, verbose, --verbose, -v, or some variant of those, skip step 4:
+Update an existing PR's title and/or body.
+
+1. **Fetch the current PR** (run in parallel where possible)
+   - `gh pr view <number> --repo <owner/repo> --json title,body,headRefName,baseRefName,commits,files,additions,deletions`
+   - If the branch is checked out locally, also run `git log` and `git diff` against the base branch for richer context
+
+2. **Draft the new title and/or body** following the same formatting rules as create mode. Preserve any content the user didn't ask to change.
+
+3. **Update the PR via the REST API**
+
+   `gh pr edit` is broken on repos that ever used GitHub Projects Classic — it fails with:
+   ```
+   GraphQL: Projects (classic) is being deprecated...
+   ```
+
+   **Always use the REST API instead:**
+   ```bash
+   # Write body to a temp JSON file to avoid shell escaping issues
+   cat > "$TMPDIR/pr-body.json" <<'ENDJSON'
+   {
+     "title": "new title here",
+     "body": "new body here"
+   }
+   ENDJSON
+
+   gh api repos/<owner>/<repo>/pulls/<number> \
+     --method PATCH \
+     --input "$TMPDIR/pr-body.json" \
+     --jq '.html_url'
+   ```
+
+   Omit `title` or `body` from the JSON to leave that field unchanged.
+
+4. **Output the PR URL.**
+
+---
+
+## Rules
+
+- Don't ask the user if they want to commit uncommitted changes.
+- If already on main branch (and creating), inform the user and stop.
+- Keep descriptions professional and concise — focus on what changed and why.
+- NEVER mention a TODO list file change unless it's the only change in the PR.
+- Use the correct base branch per repo (check `.claude/base-branches.txt` if it exists, otherwise default to `main`).

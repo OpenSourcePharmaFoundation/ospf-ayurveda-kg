@@ -69,7 +69,6 @@
       "Bash(xargs:*)",
       "Bash(xz:*)",
       "Bash(zip:*)",
-
       "Bash(git add)",
       "Bash(git add:*)",
       "Bash(git checkout:*)",
@@ -79,7 +78,6 @@
       "Bash(git push:*)",
       "Bash(git status:*)",
       "Bash(git stash:*)",
-
       "Bash(npm install:*)",
       "Bash(npm install)",
       "Bash(npm ls:*)",
@@ -93,31 +91,25 @@
       "Bash(npm run)",
       "Bash(npm run:*)",
       "Bash(npm test:*)",
-
       "Bash(npx playwright test:*)",
       "Bash(npx prettier:*)",
       "Bash(npx pwd:*)",
       "Bash(npx tsc:*)",
-
       "Bash(pip:*)",
       "Bash(bash .claude/statusline.sh)",
-
       "Bash(open ./payment-sdk-workspaces/packages/payment-element-webcomponent/dist/example.html)",
       "Bash(timeout 10s npx playwright:*)",
-
       "mcp__atlassian__getJiraIssue",
       "mcp__atlassian__lookupJiraAccountId",
       "mcp__puppeteer__puppeteer_click",
       "mcp__puppeteer__puppeteer_evaluate",
       "mcp__puppeteer__puppeteer_navigate",
       "mcp__puppeteer__puppeteer_screenshot",
-
       "Create",
       "Read",
       "Grep",
       "Glob",
       "LS",
-
       "WebFetch(domain:anthropic.com)",
       "WebFetch(domain:support.anthropic.com)",
       "WebFetch(domain:axios-http.com)",
@@ -147,7 +139,6 @@
       "WebFetch(domain:www.w3schools.com)",
       "WebFetch(domain:webpack.js.org)",
       "WebFetch(domain:zustand.docs.pmnd.rs)",
-
       "WebFetch(domain:cloudbeds.com)",
       "WebFetch(domain:api.cloudbeds.com)",
       "WebFetch(domain:hotels.cloudbeds.com)",
@@ -156,9 +147,7 @@
       "WebFetch(domain:api.cloudbeds-stage.com)",
       "WebFetch(domain:hotels.cloudbeds-stage.com)",
       "WebFetch(domain:us2.cloudbeds-stage.com)",
-
       "WebSearch",
-
       "Delete",
       "Edit",
       "MultiEdit",
@@ -196,5 +185,8 @@
   "enabledMcpjsonServers": [
     "puppeteer"
   ],
-  "outputStyle": "Explanatory"
+  "outputStyle": "Explanatory",
+  "worktree": {
+    "bgIsolation": "none"
+  }
 }
