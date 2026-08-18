@@ -1,7 +1,7 @@
 ---
 name: disease-explorer
 description: Generic multi-agent drug discovery pipeline — explore drug candidates for ANY disease by spawning parallel domain expert agents that analyze, debate, and converge on consensus recommendations
-when_to_use: When running a drug discovery analysis for any disease (not just Oral Mucositis), exploring therapeutic candidates for a condition, or wanting multi-agent reasoning about drug candidates for a specific disease
+when_to_use: When running a drug discovery analysis for any disease, exploring therapeutic candidates for a condition, or wanting multi-agent reasoning about drug candidates for a specific disease
 allowed-tools: Bash Read Edit Write Agent SendMessage
 ---
 
@@ -74,8 +74,49 @@ OM pathobiology). Re-anchor ALL scoring dimensions against [TARGET DISEASE]:
 Keep the MCDA methodology and scoring framework, but the disease anchor changes entirely.
 ```
 
-**All other agents** (Chemist, Ethnobotany, Target Profiler, ADMET, Pathway Analyst,
-Drug Repurposing Strategist, SAR Analyst, Combination Designer, Clinical Feasibility):
+**Pathway Analyst:**
+```
+DISEASE ADAPTATION:
+Your skill file maps OM-specific signaling cascades (NF-κB, ceramide/S1P, MAPK, etc.).
+For [TARGET DISEASE], build the pathway map FROM the Disease Brief's pathobiology model
+instead. Identify the key signaling cascades for [TARGET DISEASE], map candidate targets
+onto those cascades, and assess multi-target coverage against [TARGET DISEASE] pathways
+specifically — not OM pathways.
+```
+
+**Drug Repurposing Strategist:**
+```
+DISEASE ADAPTATION:
+Your skill file searches for drugs to reposition for OM based on OM-relevant targets.
+For [TARGET DISEASE], search for repositioning opportunities against [TARGET DISEASE]
+targets from the Disease Brief. Key adaptation: the "fastest path to patients" depends
+on [TARGET DISEASE]'s regulatory landscape, not OM's.
+```
+
+**Combination Designer:**
+```
+DISEASE ADAPTATION:
+Your skill file evaluates Ayurvedic multi-plant formulations for OM.
+For [TARGET DISEASE]:
+- If traditional medicine combinations are relevant (see Disease Brief section 7),
+  evaluate those alongside modern combinations
+- If not, focus purely on rational polypharmacology — multi-target combinations
+  designed against [TARGET DISEASE] pathway biology
+- Assess synergy against [TARGET DISEASE] phases/pathways, not OM phases
+```
+
+**Clinical Feasibility Assessor:**
+```
+DISEASE ADAPTATION:
+Your skill file assesses feasibility for OM treatment in cancer patients.
+For [TARGET DISEASE], adapt:
+- Regulatory pathway to [TARGET DISEASE]'s therapeutic area
+- Patient recruitment considerations for [TARGET DISEASE] population
+- Standard comparator arms for [TARGET DISEASE] clinical trials
+- Market context and competitive landscape for [TARGET DISEASE]
+```
+
+**Chemist, Ethnobotany Expert, Target Profiler, ADMET Predictor, SAR Analyst:**
 ```
 DISEASE ADAPTATION:
 Your skill file references Oral Mucositis as the default disease context.
@@ -83,6 +124,8 @@ For THIS analysis, the target disease is: [TARGET DISEASE].
 - Use your scoring frameworks and methodologies, but apply them to [TARGET DISEASE]
 - When your skill file references OM-specific data, search the available data files
   for [TARGET DISEASE]-relevant information instead (see DATA DISCOVERY COMMANDS below)
+- Score targets and mechanisms against [TARGET DISEASE] pathobiology from the Disease
+  Brief, not against OM pathobiology
 - If no project data exists for [TARGET DISEASE], use your training knowledge and
   clearly mark those assessments as "knowledge-based, not data-backed"
 ```
@@ -100,13 +143,13 @@ You (Orchestrator)
  │     ├── Disease Research Agent ──► Builds disease model (phases, targets, gaps)
  │     └── Data Discovery (bash) ──► Finds disease-relevant data in project files
  │
- ├── Phase 1: Parallel Domain Analysis (6 agents) ──► Round 1 findings
- │     ├── Chemist Agent (reads chemist/SKILL.md)
- │     ├── Cancer Researcher Agent (reads cancer-researcher/SKILL.md)
- │     ├── Ethnobotany Agent (reads ethnobotany-expert/SKILL.md)
- │     ├── Target Profiler Agent (reads target-profiler/SKILL.md)
- │     ├── ADMET Agent (reads admet-predictor/SKILL.md)
- │     └── Disease Modeler Agent (reads disease-modeler/SKILL.md)
+ ├── Phase 1: Parallel Domain Analysis (5-6 agents) ──► Round 1 findings
+ │     ├── Medicinal Chemist (reads chemist/SKILL.md)
+ │     ├── Clinical Landscape Researcher (reads cancer-researcher/SKILL.md)
+ │     ├── Traditional Medicine Expert (reads ethnobotany-expert/SKILL.md) ◄── conditional
+ │     ├── Molecular Target Analyst (reads target-profiler/SKILL.md)
+ │     ├── Pharmacokinetics Specialist (reads admet-predictor/SKILL.md)
+ │     └── [DISEASE] Biology Specialist (reads disease-modeler/SKILL.md)
  │
  ├── Orchestrator synthesizes Round 1 ──► Agreements, conflicts, gaps
  │
@@ -129,7 +172,7 @@ You (Orchestrator)
  └── Final Synthesis ──► Consensus report with ranked candidates
 ```
 
-**Total agents: 17 in Standard mode** (1 Disease Research + 6 Phase 1 + 5 Phase 2 + 2 Debate + 3 Phase 3)
+**Total agents: 16-17 in Standard mode** (1 Disease Research + 5-6 Phase 1 + 5 Phase 2 + 2 Debate + 3 Phase 3)
 
 ## Execution Protocol
 
@@ -142,53 +185,93 @@ This is the most critical step for non-OM diseases. The OM pipeline gets 200+ li
 ```
 You are a Disease Biology Research Specialist. Your job is to build a comprehensive
 disease model for [TARGET DISEASE] that will be used by 15 downstream drug discovery
-agents.
+agents. This model is the FOUNDATION of the entire pipeline — every other agent uses
+it as their primary disease reference.
 
-Your output must be AS DETAILED as the Sonis 5-Phase Model of Oral Mucositis — that's
-the gold standard. For OM, the model includes: 5 distinct phases with timelines, key
-biology per phase, molecular targets with therapeutic direction, current therapies per
-phase, and therapeutic gaps per phase. Build the equivalent for [TARGET DISEASE].
+DEPTH REQUIREMENT: Your model must be detailed enough that a domain expert agent can
+score drug candidates against specific disease biology, not just generic mechanisms.
+"Anti-inflammatory" is not useful — "inhibits TNF-α signaling in the synovial
+membrane during the proliferative phase" is useful.
+
+STRUCTURAL FLEXIBILITY: Different diseases are best modeled differently. Choose the
+organizational structure that best fits [TARGET DISEASE]:
+
+- **Phase/stage model** — if the disease has recognized temporal progression
+  (e.g., cancer staging, wound healing phases, infection progression)
+- **Pathway/mechanism model** — if the disease is driven by concurrent dysregulated
+  pathways rather than sequential stages (e.g., metabolic syndrome, autoimmune diseases)
+- **Organ/system model** — if the disease manifests differently across organ systems
+  (e.g., lupus, sarcoidosis)
+- **Hybrid** — combine approaches if needed
+
+Whatever structure you choose, for EACH unit (phase, pathway, or organ system), provide:
+  - Key biology (cellular and molecular events)
+  - Molecular targets table: Target | Role | Therapeutic Direction
+  - Current therapies (approved and off-label)
+  - Therapeutic gaps (what's missing or inadequate)
 
 REQUIRED SECTIONS:
 
 1. DISEASE OVERVIEW
    - Full name, ICD codes, prevalence, mortality/morbidity
    - Common subtypes/variants and how biology differs between them
+   - Disease category (inflammatory, degenerative, infectious, genetic, metabolic,
+     autoimmune, neoplastic, etc.) — this helps downstream agents calibrate
 
-2. PATHOBIOLOGY MODEL (equivalent to OM's 5-Phase Sonis Model)
-   - Identify the recognized phases or stages of [TARGET DISEASE]
-   - For EACH phase/stage:
-     - Trigger and timeline
-     - Key biology (cellular and molecular events)
-     - Molecular targets table: Target | Role | Therapeutic Direction
-     - Current therapies (approved and off-label)
-     - Therapeutic gaps (what's missing or inadequate)
+2. PATHOBIOLOGY MODEL
+   - State which organizational structure you chose and why
+   - Detailed model as described above
+   - Explicitly mark which parts of the model are well-established science vs
+     areas of active research/uncertainty
 
 3. PATIENT POPULATION PROFILE
    - Demographics (age, sex distribution)
    - Common comorbidities
-   - Typical concurrent medications (for DDI analysis)
+   - Typical concurrent medications (for DDI analysis downstream)
    - Population-specific vulnerabilities (organ function, immune status)
-   - Quality of life impact
+   - Quality of life impact and primary patient burden
 
 4. CURRENT STANDARD OF CARE
    - First-line treatments and their limitations
    - Second-line / refractory options
-   - Unmet medical needs (what would a new drug need to do?)
+   - Unmet medical needs (what would a new drug need to do better?)
+   - Known failed approaches (drugs/mechanisms that were tried and didn't work — this
+     prevents downstream agents from recommending already-failed strategies)
 
 5. KEY MOLECULAR TARGETS (master list)
-   - All targets mentioned in the phase model, consolidated
-   - Druggability assessment for each
+   - All targets mentioned in the model, consolidated into one table
+   - Druggability assessment for each (known druggable, theoretically druggable,
+     undruggable, unknown)
    - Known drugs/compounds that hit each target
+   - Validation level: genetic evidence, clinical evidence, preclinical only, or
+     computational prediction
 
 6. ROUTE OF ADMINISTRATION CONSIDERATIONS
    - Target tissue/organ accessibility
    - Which routes are feasible for this disease
    - Patient compliance considerations
+   - Whether topical/local delivery could bypass systemic exposure concerns
 
-Be thorough — downstream agents will use this as their primary disease reference.
-Mark any claims you're uncertain about.
+7. TRADITIONAL MEDICINE RELEVANCE (brief assessment)
+   - Does [TARGET DISEASE] or its symptoms have a history in traditional medicine
+     systems (Ayurveda, TCM, Western herbal, etc.)?
+   - If yes: which traditions, what plants/formulations, quality of evidence
+   - If no: note this — it affects whether the Ethnobotany Expert agent is useful
+
+CONFIDENCE MARKERS: For every factual claim, mark your confidence:
+- [ESTABLISHED] — textbook-level, widely accepted
+- [CURRENT CONSENSUS] — accepted but may evolve
+- [EMERGING] — recent research, not fully validated
+- [UNCERTAIN] — conflicting evidence or limited data
 ```
+
+**Disease Brief Validation:** After the Disease Research Agent returns, scan its output for:
+- Are molecular targets specific enough for scoring? (gene symbols, not just "inflammation")
+- Does it cover therapeutic gaps, or just describe biology?
+- Does it include the patient population profile with concurrent medications?
+- Are confidence markers present?
+
+If the Disease Brief is thin or missing critical sections, send the agent a follow-up message requesting the missing sections before proceeding to Phase 1. Do NOT proceed with an incomplete Disease Brief — it will silently degrade every downstream agent's analysis.
 
 After the Disease Research Agent returns, use its output as the **Disease Brief**. This brief gets included in EVERY subsequent agent prompt.
 
@@ -239,17 +322,26 @@ Spawn 6 agents simultaneously. Each agent must:
 For each agent, use the Agent tool with a prompt structured like:
 
 ```
-You are the [ROLE NAME] for a drug discovery analysis.
+You are the [ROLE NAME] for a drug discovery analysis targeting [TARGET DISEASE].
 
-FIRST: Read the skill file at .claude/skills/[skill-name]/SKILL.md — it contains your
-complete domain knowledge, scoring frameworks, and output formats.
-
-THEN: Read the project's CLAUDE.md for data pipeline context.
-
-[DISEASE ADAPTATION NOTICE — include if target disease is not OM]
+IMPORTANT — READ THIS BEFORE THE SKILL FILE:
+[PER-AGENT DISEASE ADAPTATION OVERRIDE — the specific override for this agent type,
+from the Per-Agent Adaptation Overrides section. This MUST come before the skill
+file instruction so the agent reads the skill file through the correct lens.]
 
 DISEASE BRIEF:
-[INSERT THE DISEASE BRIEF FROM STEP 0]
+[INSERT THE FULL DISEASE BRIEF FROM PHASE 0 — disease model, patient population,
+molecular targets, standard of care, route considerations]
+
+DATA INVENTORY (from Phase 0):
+[INSERT DATA INVENTORY — which project files have disease-relevant data, which don't]
+
+NOW: Read the skill file at .claude/skills/[skill-name]/SKILL.md for methodology
+and scoring frameworks. The skill file was written for Oral Mucositis — extract the
+METHODOLOGY (how to score, how to structure analysis, what output format to use) and
+apply it to [TARGET DISEASE] using the Disease Brief above as your disease context.
+
+ALSO: Read the project's CLAUDE.md for data pipeline context.
 
 YOUR TASK:
 Analyze [SPECIFIC QUESTION] from the perspective of [YOUR DOMAIN],
@@ -265,7 +357,7 @@ DATA DISCOVERY — Run these commands to find disease-relevant data:
   grep -i "[KEY TARGET GENE]" data/processed/chembl_drug_targets.csv | head -20
 If no results, use your training knowledge and mark assessments as "knowledge-based."
 
-DATA FILES TO CONSULT (from orchestrator's Phase 0 Data Inventory):
+ADDITIONAL DATA (from orchestrator's Phase 0 Data Inventory):
 - [relevant CSV/JSON files with specific rows/entries identified, or "No project
   data found — use training knowledge"]
 
@@ -296,21 +388,33 @@ Return your analysis as structured JSON with this schema:
 
 **Phase 1 Agent Assignments:**
 
-| Agent | Skill File | Primary Question |
-|-------|-----------|-----------------|
-| **Chemist** | `chemist/SKILL.md` | "What do the molecular structures tell us about these candidates' likely behavior against [DISEASE]?" |
-| **Cancer Researcher** | `cancer-researcher/SKILL.md` | "What clinical precedent exists for these candidates in [DISEASE] or related conditions?" |
-| **Ethnobotany Expert** | `ethnobotany-expert/SKILL.md` | "What traditional medicine evidence supports these candidates for [DISEASE] or its symptoms?" |
-| **Target Profiler** | `target-profiler/SKILL.md` | "How druggable and validated are the targets these candidates hit, in the context of [DISEASE]?" |
-| **ADMET Predictor** | `admet-predictor/SKILL.md` | "Can these compounds reach the relevant tissue/organ? What are pharmacokinetic deal-breakers?" |
-| **Disease Modeler** | `disease-modeler/SKILL.md` | "Which disease phases/stages do these candidates address? Where are the therapeutic gaps?" |
+| Agent | Role in Prompt | Skill File | Primary Question |
+|-------|---------------|-----------|-----------------|
+| **Chemist** | "Medicinal Chemist" | `chemist/SKILL.md` | "What do the molecular structures tell us about these candidates' likely behavior against [DISEASE]?" |
+| **Clinical Landscape Researcher** | "Clinical Landscape Researcher" | `cancer-researcher/SKILL.md` | "What clinical precedent exists for these candidates in [DISEASE] or related conditions? What's the treatment landscape?" |
+| **Ethnobotany Expert** | "Traditional Medicine Expert" | `ethnobotany-expert/SKILL.md` | "What traditional medicine evidence supports these candidates for [DISEASE] or its symptoms?" |
+| **Target Profiler** | "Molecular Target Analyst" | `target-profiler/SKILL.md` | "How druggable and validated are the targets these candidates hit, in the context of [DISEASE]?" |
+| **ADMET Predictor** | "Pharmacokinetics Specialist" | `admet-predictor/SKILL.md` | "Can these compounds reach the relevant tissue/organ? What are pharmacokinetic deal-breakers?" |
+| **Disease Modeler** | "[DISEASE] Biology Specialist" | `disease-modeler/SKILL.md` | "Which disease stages do these candidates address? Where are the therapeutic gaps?" |
+
+**IMPORTANT — Role names in agent prompts:** Use the "Role in Prompt" column, NOT the skill file name. The skill files were named for their OM context (e.g., `cancer-researcher` because OM is a cancer side effect). For a generic disease, the agent's role identity should match the actual task — "Clinical Landscape Researcher" instead of "Cancer Researcher," etc.
+
+**Agent Relevance Gating — before spawning, assess whether each agent is relevant:**
+
+| Agent | When to SKIP or DOWNWEIGHT |
+|-------|---------------------------|
+| **Ethnobotany Expert** | Skip if [DISEASE] has no traditional medicine history (e.g., diseases discovered recently, purely genetic conditions like Huntington's). If unsure, include but note "traditional medicine evidence may be limited." |
+| **Clinical Landscape Researcher** | Always include — every disease has a treatment landscape. |
+| **Combination Designer** (Phase 3) | Skip if [DISEASE] standard of care is monotherapy and multi-compound approaches aren't established. |
+
+If you skip an agent, note it in the final report under "Pipeline Configuration" so the reader knows.
 
 **Key Data Files** (search for disease-relevant data in these):
 - `data/processed/chembl_*.csv` — Drug mechanisms, targets, indications, warnings
 - `data/processed/disgenet_*.csv` — Gene-disease associations
 - `data/processed/pubchem_*.csv` — Chemical-target interactions
-- `data/processed/imppat_*.csv` or `data/processed/imppat_*.json` — Plant phytochemicals
-- `data/processed/medplant_*.csv` — Medicinal plant therapeutic uses
+- `data/processed/imppat_*.csv` or `data/processed/imppat_*.json` — Plant phytochemicals (most relevant for diseases with herbal treatment traditions)
+- `data/processed/medplant_*.csv` — Medicinal plant therapeutic uses (same caveat)
 
 ### Step 2: Round 1 Synthesis
 
@@ -444,6 +548,16 @@ DISEASE BRIEF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+PIPELINE CONFIGURATION
+Disease Model Structure: [phase-based / pathway-based / organ-based / hybrid]
+Agents Run: [list of agents actually spawned]
+Agents Skipped: [list + reason, e.g., "Ethnobotany Expert — no traditional medicine
+  history for this disease"]
+Known Failed Approaches: [from Disease Brief — mechanisms/drugs already tried and
+  failed for this disease, so the reader knows these were excluded deliberately]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 EXECUTIVE SUMMARY
 [3-5 sentences: what we found, what we recommend, what's uncertain]
 
@@ -478,10 +592,12 @@ Synergy Mechanism: [how they enhance each other]
 
 EXPERT AGREEMENT MAP
 
-                    Chemist  Cancer  Ethno  Target  ADMET  Disease  Path  Safety
-[Candidate 1]         8       7       9       8       5       7       7     6
-[Candidate 2]         7       5       6       6       8       5       6     8
-[Candidate 3]         6       8       3       7       7       6       8     7
+                    Chemist  Clinical  Ethno  Target  ADMET  Disease  Path  Safety  LitRev
+[Candidate 1]         8        7        9       8       5       7       7     6       7
+[Candidate 2]         7        5        6       6       8       5       6     8       5
+[Candidate 3]         6        8        —       7       7       6       8     7       8
+
+(— = agent skipped for this disease; Ethno skipped when no traditional medicine relevance)
 
 Notable Disagreements:
 • [Candidate X]: [Agent A] (9) vs [Agent B] (3) — [nature of disagreement].
@@ -552,11 +668,11 @@ Phase 0 (Disease Research) + Phase 1 + Candidate Ranker only:
 - Skip Phase 2 deep dives
 - Skip Debate Round
 - Use for initial screening, not final recommendations
-- **Agents: 8** (1 Disease Research + 6 Phase 1 + 1 Candidate Ranker)
+- **Agents: 7-8** (1 Disease Research + 5-6 Phase 1 + 1 Candidate Ranker)
 
 ### Standard Mode (15-25 minutes)
 Full pipeline: Phase 0 → Phase 1 → Synthesis → Phase 2 (with Literature Reviewer) → Debate → Phase 3 → Final Report.
-- **Agents: 17** (1 + 6 + 5 + 2 + 3)
+- **Agents: 16-17** (1 + 5-6 + 5 + 2 + 3)
 
 ### Deep Mode (25-45 minutes)
 Standard mode plus:
