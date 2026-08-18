@@ -2,10 +2,12 @@
 name: commit
 description: Write a good commit message for staged changes and commit
 when_to_use: When committing staged changes with an auto-generated conventional commit message
-allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git diff:*), Bash(git log:*), Bash(git commit:*)
+allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git log:*), Bash(git commit:*)
 ---
 
 Before continuing, reread both CLAUDE.md and this skill file (`.claude/skills/commit/SKILL.md`).
+
+**DO NOT run `git add`.** Only commit whatever is already staged. If nothing is staged, tell the user and stop.
 
 Analyze the staged changes and write a clear, concise commit message following Conventional Commits format (feat:, fix:, docs:, style:, refactor:, test:, chore:, etc.).
 
