@@ -18,4 +18,6 @@ __pycache__
 .ipynb_checkpoints/
 *.code-workspace
 
+.claude/worktrees
+
 docs/local_notes.md
