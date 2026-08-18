@@ -168,7 +168,7 @@ You (Orchestrator)
  │     ├── Safety Pharmacologist Agent (reads safety-pharmacologist/SKILL.md)
  │     ├── Drug Repurposing Agent (reads drug-repurposing-strategist/SKILL.md)
  │     ├── SAR Analyst Agent (reads sar-analyst/SKILL.md)
- │     └── Literature Reviewer Agent (reads literature-reviewer/SKILL.md) ◄── NEW in Standard
+ │     └── Literature Reviewer Agent (reads literature-reviewer/SKILL.md)
  │
  ├── Debate Round (2 agents) ──► Conflict resolution
  │     ├── Devil's Advocate (attack consensus)
@@ -321,7 +321,7 @@ Record what you find as a **Data Inventory** section in the Disease Brief:
 
 ### Step 1: Phase 1 — Parallel Domain Analysis
 
-Spawn 6 agents simultaneously. Each agent must:
+Spawn 5-6 agents simultaneously (depending on agent relevance gating). Each agent must:
 1. Read its skill file for domain knowledge
 2. Read the Disease Brief you provide
 3. Read relevant data files from `data/processed/` (if available for this disease)
@@ -335,9 +335,9 @@ For each agent, use the Agent tool with a prompt structured like:
 You are the [ROLE NAME] for a drug discovery analysis targeting [TARGET DISEASE].
 
 IMPORTANT — READ THIS BEFORE THE SKILL FILE:
-[PER-AGENT DISEASE ADAPTATION OVERRIDE — the specific override for this agent type,
-from the Per-Agent Adaptation Overrides section. This MUST come before the skill
-file instruction so the agent reads the skill file through the correct lens.]
+[PER-AGENT SKILL FILE ADAPTATION — the specific override for this agent type,
+from the Per-Agent Adaptation Overrides section above. This MUST come before the
+skill file instruction so the agent reads the skill file through the correct lens.]
 
 DISEASE BRIEF:
 [INSERT THE FULL DISEASE BRIEF FROM PHASE 0 — disease model, patient population,
@@ -593,11 +593,13 @@ CONSENSUS RANKING
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 RECOMMENDED COMBINATION
+[Include this section only if the Combination Designer agent was run.
+ Omit entirely if it was skipped — note the skip in PIPELINE CONFIGURATION.]
 
 [The Combination Designer's top recommendation]
 Components: [compound A] + [compound B] (+ [compound C])
 Rationale: [why these together]
-Disease Phase Coverage: [which disease phases/stages the combination addresses]
+Disease Model Coverage: [which disease phases/pathways/systems the combination addresses]
 Synergy Mechanism: [how they enhance each other]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
