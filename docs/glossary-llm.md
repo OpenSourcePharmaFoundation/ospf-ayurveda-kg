@@ -28,7 +28,15 @@ Latent Space Trajectories: Paths through latent space that represent sequential 
 Graph Machine Learning
 ----------------------
 
-Graph Neural Network (GNN): A class of neural networks designed to operate directly on graph-structured data (nodes and edges) rather than on sequences (like LLMs) or grids (like image CNNs). A GNN learns by message-passing: each node aggregates information from its neighbors, updates its own representation, and repeats for multiple layers. After several rounds, each node's embedding encodes information about its local graph neighborhood. For our knowledge graph, a GNN could learn that a drug node connected to certain targets, which are in turn connected to certain disease pathways, is likely to be effective for Oral Mucositis — even if that specific drug-disease edge doesn't exist yet.
+Graph Neural Network (GNN): A class of neural networks designed to operate directly on graph-structured data (nodes and edges) rather than on sequences (like LLMs) or grids (like image CNNs). A GNN learns by message-passing, which is a concrete three-step process repeated for multiple layers:
+
+  1. **Message**: For each edge, the source node's vector is multiplied by a learned weight matrix (a grid of numbers tuned during training). This matrix multiplication transforms the neighbor's representation into a "message." In R-GCN, each relationship type (TARGETS, TREATS, etc.) has its own weight matrix, so information flowing along different edge types is transformed differently.
+
+  2. **Aggregate**: Each node collects all incoming messages from its neighbors and combines them into a single vector — typically by averaging (mean), summing, or using learned attention weights that let the node decide which neighbors matter most.
+
+  3. **Update**: The node merges the aggregated neighbor information with its own current vector, passes the result through a nonlinear activation function (e.g. ReLU), and produces its new representation: `new_vector = ReLU(W_self × old_vector + aggregated_messages)`.
+
+Each layer of this process expands the receptive field by one hop: after 1 layer a node "sees" its direct neighbors; after 2 layers it encodes information about neighbors-of-neighbors; after 3 layers, 3-hop patterns. For our knowledge graph, this means a 2-layer GNN applied to `Curcumin → TNF → Oral Mucositis` will produce a Curcumin embedding that encodes TNF's disease associations and co-targeting drugs — even though Curcumin has no direct edge to OM. This is how the model predicts novel drug-disease relationships from graph topology alone. (See `docs/notes/gnn-message-passing.md` for a full worked example.)
 
 Knowledge Graph Embedding (KGE): The direct analog of word embeddings, but for knowledge graph entities and relations. KGE models (TransE, RotatE, ComplEx, DistMult) learn to place every entity (drug, disease, gene, compound) and every relation type (TARGETS, TREATS, ASSOCIATED_WITH) into a continuous vector space such that known true facts are geometrically consistent. For example, TransE learns embeddings where `Drug_vector + TARGETS_vector ≈ Gene_vector` for every known (Drug, TARGETS, Gene) triple. Once trained, the model can score any hypothetical triple — this is how it makes predictions about relationships that aren't in the training data.
 
