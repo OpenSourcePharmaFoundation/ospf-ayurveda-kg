@@ -1,0 +1,385 @@
+{
+  "agent": "literature-reviewer",
+  "phase": 2,
+  "disease": "Clostridioides difficile infection (CDI)",
+  "date": "2026-08-18",
+  "full_analysis": "data/reports/disease-explorer/clostridioides-difficile/2026-08-17/agents/p2-literature.md",
+
+  "headline_findings": [
+    "UDCA — Round 1's #1 non-benchmark candidate (mean 7.1) — has a published in vivo FAILURE that no Phase 1 agent cited: hamster mortality 62.5% vs 62.5% (p=0.78), plus human observational CDI incidence running the wrong direction (25% on UDCA vs 9.2% off). Evidence score drops to 3.0.",
+    "The PK objection to UDCA was the wrong objection. UDCA reaches 43.5% of the fecal bile acid pool in antibiotic-treated animals — colonic delivery is adequate and it still fails. This kills the colon-targeted-release and ASBT-inhibitor rescue strategies proposed in Round 1.",
+    "Ebselen's activity is abolished by blood/albumin/glutathione (MIC >128 ug/mL with 5% blood). CDI colitis is an exudative, protein-losing, often hemorrhagic process. This resolves Round 1 Conflict #1 decisively in ADMET's favour.",
+    "Niclosamide's preclinical package is the best-designed in the set (epidemic RT027 strain, therapeutic post-challenge dosing, n=10/group, dose-response, survival AND recurrence endpoints, microbiota preserved) yet it scored 2nd-lowest in Round 1. Under-rated.",
+    "CDI preclinical-to-clinical translation succeeds only 36% of the time (6,918 paired samples), and the SUSTAINED-RESPONSE endpoint is the single strongest negative correlate of translation success (SRC -0.20, p=1.5e-54) — which is exactly the endpoint this pipeline is instructed to score every candidate on."
+  ],
+
+  "claim_verification": [
+    {
+      "claim_id": 1,
+      "candidate": "Ebselen",
+      "claim": "Positive mouse CDI data via covalent TcdB CPD inhibition",
+      "status": "PARTIALLY_REFUTED",
+      "evidence_score": 4.0,
+      "round1_mean": 6.4,
+      "delta": -2.4,
+      "highest_evidence_level": "4 (animal); 1b for human safety in unrelated indications",
+      "study_design_verified": {
+        "citation": "Bender et al., Sci Transl Med 2015 (PMC6025901)",
+        "model": "Conventional Swiss-Webster mice",
+        "cdiff_strain": "630 — laboratory reference, NOT an epidemic ribotype",
+        "dose_route": "100 mg/kg daily, oral gavage, 4 days",
+        "timing": "First dose 2 h BEFORE infection — PROPHYLACTIC, not therapeutic",
+        "group_sizes": "n=8 ebselen vs n=7 vehicle (15 total)",
+        "survival_endpoint": false,
+        "cfu_effect": "None — no significant effect on CFU counts over 5 days",
+        "results": "Clinical score p=0.0055; mucosal hypertrophy p=0.0392; submucosal edema p=0.0177; inflammatory infiltration p=0.0162",
+        "potency": "CPD IC50 6.9 nM; full-length TcdB 17.2 nM; cell rounding 20.5 nM",
+        "independently_replicated_in_vivo": false
+      },
+      "translational_assessment": "Weakest in vivo design in the candidate set. Prophylactic dosing against a non-epidemic strain, histopathology rather than survival, n=15 total, single lab, never replicated.",
+      "refuting_evidence": [
+        "Mechanism formally contested in print: Beilhartz et al. Comment (Sci Transl Med 2016, aad8926); authors' Response concedes 'multiple modes of action, but the contribution of each to its efficacy remains unclear'",
+        "Blood abolishes activity: MIC >128 ug/mL with 5% defibrinated sheep blood; ebselen reacts with albumin thiols and glutathione. Pyruvate alone reduces activity 2-16 fold (PMC8557875)",
+        "NOT microbiome-neutral: inhibits Actinomyces viscosus (MIC 2 ug/mL), Fusobacterium spp. (4-8), Lactobacillus spp. (8-32); spares only Bacteroides (>=128)",
+        "Ribotype 078 intrinsically resistant (MIC 32-128 ug/mL)",
+        "Is a direct antibacterial (MIC 2-16 ug/mL, MBC 16), not a pure antivirulence agent as framed"
+      ],
+      "supporting_evidence_retained": "Excellent human safety: ~635 adults across >=11 randomised double-blind placebo-controlled trials, dosing to 28 days; Phase 3 STOPMD-3 positive in Meniere's disease (n=221, low-freq PTA 57.9% vs 36.5%, p=0.0037). Zero CDI clinical data.",
+      "resolves_round1_conflict": "Conflict #1 (Target 8.5 vs ADMET 4.0) — resolved in ADMET's favour",
+      "recommendation": "Downgrade to 4.0. Retain only as a chemical starting point for a non-thiol-reactive CPD inhibitor (a SAR programme, not a repurposing candidate). Redox-stability screen in fecal slurry is a gating experiment."
+    },
+    {
+      "claim_id": 2,
+      "candidate": "Berberine",
+      "claim": "Positive rodent CDI models with better microbiota preservation than vancomycin",
+      "status": "VERIFIED_WITH_CORRECTIONS",
+      "evidence_score": 6.0,
+      "round1_mean": 6.7,
+      "delta": -0.7,
+      "highest_evidence_level": "4 (animal, two independent labs); 1b in non-CDI infectious diarrhoea",
+      "studies_verified": [
+        {
+          "citation": "Lv et al., Antimicrob Agents Chemother 2015 (PMID 25824219)",
+          "model": "C57BL/6 mice, vancomycin-then-berberine relapse model",
+          "findings": "Prevented CDI recurrence, significantly improved survival, suppressed Enterobacteriaceae expansion, counteracted vancomycin dysbiosis. Endpoints: DAI, relative weight, histopathology, fecal toxin A/B, 16S rRNA. Berberine+vancomycin > vancomycin alone.",
+          "group_sizes": "NOT VERIFIED — full text paywalled"
+        },
+        {
+          "citation": "Int J Antimicrob Agents 2025;65(5) (PMID 39986400)",
+          "model": "Vancomycin-dependent rCDI mouse model + intestinal organoids",
+          "findings": "Reduced severity, increased survival, higher occludin, suppressed inflammatory pathways in caecum and serum, Firmicutes up / Proteobacteria down",
+          "group_sizes": "NOT VERIFIED — abstract only"
+        }
+      ],
+      "reproducibility": "TWO independent laboratories, ten years apart, both positive, both in the recurrence configuration. Best-replicated preclinical package in the candidate set.",
+      "corrections_to_disease_model": [
+        {
+          "section": "7.2",
+          "current_text": "MICs typically in the tens to hundreds of ug/mL",
+          "corrected": "MIC 256-1,024 mg/L (median ~491), MBC 256-16,384 mg/L (median ~1,879), across 12 strains including 9 clinical RT027 (Eur J Clin Microbiol Infect Dis 2020, PMC7303057). Vancomycin same panel: MIC 0.25-4.0, MBC 0.25-64.",
+          "impact": "Berberine is ~400x less potent than vancomycin by MIC and ~260x by MBC. The §6.4 'fecal concentrations exceed MIC 100-1000x' argument does not survive an MBC median of 1,879 mg/L. Validates the Chemist's dissenting 5.0."
+        }
+      ],
+      "good_news_refuting_a_round1_fear": {
+        "source": "PMC12299432 (2025)",
+        "finding": "Sub-MIC berberine SUPPRESSES toxin, does not induce it: TcdA -57%, TcdB -54% at 1/2 MIC at 24h, comparable to vancomycin's -58%/-61%. Downregulates tcdA, tcdB, tcdE, tcdR.",
+        "consequence": "ADMET's nominated hard stop for berberine monotherapy (p1-admet.md:167, :428) does NOT trigger.",
+        "caveat": "Broth, not fecal matrix. Fecal-matrix MIC remains the right unmet experiment."
+      },
+      "new_risks_not_flagged_in_round1": [
+        {
+          "risk": "Sporulation induction",
+          "detail": "Sub-MIC berberine upregulates spo0A, the master sporulation regulator ('relatively modest'). Sub-MICs do not affect spore germination.",
+          "why_it_matters": "Directly undercuts the recurrence claim berberine is proposed for — §4.6 unmet need #2 is eliminating the spore reservoir."
+        },
+        {
+          "risk": "Biofilm enhancement in the exact proposed combination",
+          "detail": "1/2 MIC berberine + vancomycin unexpectedly ENHANCED biofilm formation in clinical strain 5 (p=0.02)",
+          "why_it_matters": "Biofilm is an EMERGING persistence reservoir (§2.10). This is a hazard for the vancomycin+berberine pair §A.2 routes to the Combination Designer."
+        }
+      ],
+      "synergy_claim": "Sub-MIC berberine reduced vancomycin MICs in 10/12 strains (strain 630: 4.0->0.5 mg/L; strain 4: 4.0->1.0 mg/L), but NO FIC indices were reported — synergy is asserted, not formally demonstrated.",
+      "human_data": "Level 1b RCT in 165 adults with ETEC/V. cholerae diarrhoea (PMID 3549923) — wrong pathogen, antisecretory mechanism. Establishes oral tolerability and dosing precedent only. Zero human CDI data.",
+      "recommendation": "Adjust to 6.0. Core claim stands and is well replicated; price in the potency correction plus the two new risks. Highest-value disconfirming experiment: does sub-MIC berberine promote sporulation in vivo?"
+    },
+    {
+      "claim_id": 3,
+      "candidate": "UDCA (ursodiol)",
+      "claim": "Germination inhibition via CspC; high-priority repurposing lead",
+      "status": "REFUTED",
+      "evidence_score": 3.0,
+      "round1_mean": 7.1,
+      "delta": -4.1,
+      "highest_evidence_level": "4 with a NEGATIVE primary endpoint; supporting evidence only level 3 (uncontrolled)",
+      "ic50_answer": {
+        "ic50_exists": false,
+        "detail": "No published IC50 values for UDCA against C. difficile germination. Literature reports categorical inhibition at fixed concentrations only.",
+        "working_concentrations": "0.5-2 mM (~200-800 ug/mL) [Weingarden, J Clin Gastroenterol 2016, PMID 26485102, 10-11 clinical isolates, 20 min vs 2 mM taurocholate]; 0.05-0.1% w/v [Palmieri 2018 — at 0.1% UDCA vs 0.1% TCA: 0.05% +/- 0.05% CFU vs 100% +/- 0%, p<0.0001]",
+        "mechanism_is_cspc": "NOT ESTABLISHED. No study has demonstrated competitive binding at CspC. Palmieri et al. explicitly declined to test it and noted 'other steroids present in the colon may also play an undetermined role.' The §5 target assignment of UDCA to #7/#11 is INFERENCE, NOT MEASUREMENT."
+      },
+      "blocking_negative_evidence": {
+        "citation": "Palmieri et al., 'Inhibitory Effect of Ursodeoxycholic Acid on Clostridium difficile Germination Is Insufficient to Prevent Colitis: A Study in Hamsters and Humans,' Front Microbiol 2018;9:2849 (PMC6262072)",
+        "hamster_arm": {
+          "design": "Group A (n=8): UDCA 50 mg/kg/day gelatin capsules days 1-13 + clindamycin 50 mg/kg IP day 1 + gentamicin 5 mg/kg BID days 1-5; challenged day 6 with 10^4 spores strain VPI10463. Group B (n=8): antibiotics + challenge only.",
+          "result": "Mortality IDENTICAL: 62.5% (5/8) in both arms, P = 0.78"
+        },
+        "human_arm": {
+          "design": "IBD patients hospitalised for acute flares Sept 2012 - May 2014; PSC-IBD on UDCA vs IBD-only not on UDCA",
+          "result": "CDI in 25% (4/12) of UDCA-treated PSC-IBD vs 9.2% (41/445) of IBD without PSC — WRONG DIRECTION",
+          "caveat": "Observational and confounded (PSC-IBD is itself a CDI risk factor); does not establish harm, but firmly fails to support benefit"
+        },
+        "authors_conclusion": "UDCA, at usual doses, is inefficient to prevent CDI."
+      },
+      "pharmacokinetic_finding_that_inverts_round1_reasoning": {
+        "finding": "UDCA reached high fecal levels — 43.5% of the bile acid pool — ONLY when combined with antibiotics. Without antibiotics, levels were minimal (max 4.28%) because the microbiota converts UDCA to LCA.",
+        "consequence_1": "Round 1's central objection (enterohepatic recapture prevents colonic delivery — p1-admet.md:190, p1-disease-modeler.md:316) is WRONG. In the antibiotic-treated state, which IS the CDI state, UDCA accumulates in the colon because dysbiosis destroys the 7a-dehydroxylating machinery that would convert it. UDCA reaches the colon fine in exactly the patients who need it, and still fails.",
+        "consequence_2": "Every proposed delivery-based rescue is dead — colon-targeted delayed release, UDCA + ASBT inhibitor (odevixibat/elobixibat), higher dosing. All solve a problem that does not exist. STAND DOWN these strategies (routed to Drug Repurposing Strategist and Pathway Analyst).",
+        "consequence_3": "Answers the Pathway Analyst's UDCA-vs-LCA assignment in the unexpected direction: dysbiosis INCREASES luminal parent UDCA. Direct LCA delivery remains untested and is a SEPARATE hypothesis, not a UDCA rescue."
+      },
+      "counter_evidence_weighed": "Clin Infect Dis 2019;68(3):498 — UNCONTROLLED observational case series, n=16 high-risk patients on off-label UDCA; 87.5% recurrence-free at median 264 days (81.3% conservative imputation). Authors flag: no control group, highly selected population, expected ~50% recurrence. Two recurred on UDCA (324 and 23 days); one discontinued for diarrhoea/pruritus. Cites no inhibitory concentrations and no colonic PK. Level 3 against level 4 with a hard negative endpoint.",
+      "does_the_ser109_nuance_rescue_it": "No. The SER-109 lesson (a negative CDI trial can be a PCR-diagnostic artifact) applies to human recurrence endpoints. UDCA failed on an ANIMAL MORTALITY endpoint — death is not a diagnostic artifact.",
+      "recommendation": "BLOCK as a lead. Downgrade from #1 non-benchmark to 3.0. Retain only as a mechanistic probe."
+    },
+    {
+      "claim_id": 4,
+      "candidate": "Oral hyperimmune bovine colostrum / IgY",
+      "claim": "Powered clinical trial data exists for CDI",
+      "status": "NOT_VERIFIED",
+      "evidence_score": 3.0,
+      "round1_ethno_score": 6.0,
+      "delta": -3.0,
+      "highest_evidence_level": "2b (one aborted, underpowered RCT); otherwise 3 and 4",
+      "direct_answer": "NO. There are no powered clinical trials for oral colostrum or IgY in CDI. Not one.",
+      "only_randomised_trial": {
+        "product": "C. difficile Immune Whey (CDIW) — cows immunised in gestation with inactivated C. difficile vaccine; colostrum processed to concentrate high-titre immunoglobulins",
+        "design": "Prospective, randomised, double-blind vs metronidazole, in lab-confirmed recurrent mild-to-moderate CDAD",
+        "n": 38,
+        "result": "At 14 days: 20/20 (100%) responded to metronidazole vs 16/18 (89%) receiving CDIW",
+        "termination": "Interrupted early because of the BANKRUPTCY OF THE SPONSOR",
+        "interpretation": "Underpowered by roughly an order of magnitude for a non-inferiority claim; numerically inferior to a comparator that is itself inferior to vancomycin (§4.5). Uninterpretable in either direction — certainly not support."
+      },
+      "all_other_evidence": [
+        "van Dissel et al., anti-C. difficile WPC-40: open-label, uncontrolled, n~16, descriptive only",
+        "Anti-CD-WPI hamster primary infection model (PMC6409564): survival 50%/80%/100% vs 10% and 0% controls",
+        "Human secretory IgA, hamster model, J Infect Dis 2021;224:1394: improved survival",
+        "FliD-specific IgY, hamster, strain 630 (PMID 21474614): significant protection",
+        "Toxin A-fragment IgY: required carbonate buffer pH 9.5 for gastric protection"
+      ],
+      "structural_problems": [
+        "Hamster is the model §A.3 singles out as least translatable (hyperacute, lethal, not representative of human CDI course); these are prophylaxis-style designs",
+        "The IgY work is largely anti-TcdA or anti-colonisation-factor. Per §4.5, TcdA-directed strategies failed clinically (actoxumab: no added benefit, increased mortality as monotherapy). An oral antibody product must be TcdB-directed to align with the one anti-toxin success (bezlotoxumab).",
+        "Gastric survival of orally delivered antibody is a real, unsolved formulation problem that the animal work papers over with buffers"
+      ],
+      "what_survives": "The modality is validated in principle by bezlotoxumab, and the mechanistic fit to recurrence mechanism (iii) — failed adaptive anti-toxin immunity — is genuine and correctly identified by the Ethnobotany agent.",
+      "recommendation": "Downgrade to 3.0-4.5 max, contingent on re-specification as TcdB-directed. Ethnobotany's 6.0 rests on a clinical evidence base that does not exist."
+    },
+    {
+      "claim_id": 5,
+      "candidate": "Niclosamide",
+      "claim": "Blocks TcdB entry / pore formation",
+      "status": "VERIFIED_AND_UNDERRATED",
+      "evidence_score": 6.5,
+      "round1_mean": 5.1,
+      "delta": 1.4,
+      "highest_evidence_level": "4 (best design in the set); 1 for human safety as a decades-old WHO-listed anthelmintic",
+      "mechanism_correction": "Correct in EFFECT, but the mechanism is HOST-DIRECTED, not toxin-directed. Niclosamide is a proton shuttle that raises endosomal pH, blocking the pH-dependent conformational change required for pore formation and cytosolic translocation. It does not bind TcdB. Consequently it inhibits ALL THREE toxins — TcdA, TcdB, AND CDT.",
+      "why_mechanism_matters": "A host-directed mechanism is strain-agnostic and immune to the TcdB-subtype/receptor-switching variability §A.3 flags as an unresolved risk.",
+      "study_design_verified": {
+        "citation": "Tam et al., Nat Commun 2018;9:5233 (PMC6286312)",
+        "model": "C57BL/6, antibiotic-preconditioned, spore challenge",
+        "cdiff_strain": "UK1 (BI/NAP1/027) — EPIDEMIC strain expressing all three toxins",
+        "dose_route": "Niclosamide ethanolamine (NEN) 2, 10, 50 mg/kg oral gavage",
+        "timing": "First dose 4 h POST-challenge, then 3 consecutive days — THERAPEUTIC",
+        "group_sizes": "n = 10 per group",
+        "dose_response": true,
+        "survival_endpoint": true,
+        "recurrence_endpoint": true,
+        "results_primary": "50 mg/kg NEN: 100% survival vs 45% control; dose-dependent protection from weight loss and diarrhoea",
+        "results_recurrence": "NEN-treated 100% survival post-recurrence vs >60% moribund in controls",
+        "microbiota": "Minimal effect on gut microbiota; diversity similar to controls while vancomycin caused dramatic dysbiosis",
+        "independently_replicated_in_vivo": false
+      },
+      "design_comparison_vs_ebselen": "Better on EVERY axis: epidemic vs lab strain, therapeutic vs prophylactic dosing, n=10 vs n=8/7, dose-response vs single dose, survival endpoint vs none, recurrence endpoint vs none, microbiota assessed vs not. Round 1 scored ebselen 6.4 and niclosamide 5.1 — that ordering is backwards on evidence quality.",
+      "open_liabilities": [
+        "ADMET's nitro-reduction concern (3.0 score) is legitimate and UNRESOLVED — no study measures niclosamide stability at colonic Eh ~ -200 mV. However the Tam experiment ran in a live anaerobic colonised murine gut and worked; that is in vivo counter-evidence to a purely chemical prediction.",
+        "Formulation: the efficacious agent was the ethanolamine SALT (NEN), not free base. Niclosamide dissolution is notoriously poor. A 2025 Front Microbiol paper describes controlled-release nanospheres developed specifically to address this for CDI.",
+        "Single laboratory, not independently replicated in vivo"
+      ],
+      "note": "Low systemic exposure with preferential colonic distribution is an ASSET per §6.2 — and it is the exact property that made niclosamide fail in oncology repurposing. A direct instantiation of the Ethnobotany agent's 'failed bioavailability as CDI screening filter' thesis.",
+      "recommendation": "Raise to 6.5 — highest evidence score of any non-benchmark candidate. Route to Devil's Advocate and Candidate Ranker to revisit the 5.1 mean."
+    },
+    {
+      "claim_id": 6,
+      "candidate": "Aprepitant / NK1R antagonism",
+      "claim": "Direct preclinical evidence in CDI, or extrapolation from other colitis models?",
+      "status": "EXTRAPOLATED_FROM_DISCREDITED_PREMISE",
+      "evidence_score": 2.5,
+      "round1_mean": 4.9,
+      "delta": -2.4,
+      "highest_evidence_level": "4/5 — toxin-instillation and knockout, not infection",
+      "direct_answer": "Neither, precisely. CDI-TOXIN-specific preclinical evidence DOES exist (it is not generic colitis extrapolation), but it is anchored to the wrong toxin, uses toxin-instillation rather than infection models, and was generated with different compounds.",
+      "evidence_base": [
+        "CP-96,345 pretreatment dramatically inhibited fluid secretion and mannitol permeability in toxin A ileal loops; reduced lamina propria inflammation and epithelial necrosis; complete inhibition of mast cell protease release (PMC521430)",
+        "NK-1R mRNA upregulation after toxin A exposure is substance P-dependent and blocked by CP-96,345 (Am J Physiol 1998;275:G68, PMID 9655686)",
+        "NK1R-knockout mice protected from toxin A secretory/inflammatory changes and epithelial damage; correlates with reduced TNF-alpha and myeloperoxidase",
+        "CGRP upregulation in DRG and ileal mucosa during toxin A enteritis (Am J Physiol 1998;274:G196)"
+      ],
+      "disqualifying_qualifications": [
+        {
+          "id": 1,
+          "issue": "The entire package is built on TcdA",
+          "detail": "Rat ileal loop instillation of PURIFIED TOXIN A; NK1R-KO mice challenged with TOXIN A. No NK1R study used TcdB.",
+          "conflict": "§4.5: 'TcdA-directed strategies do not work' — actoxumab added no benefit over bezlotoxumab and INCREASED MORTALITY as monotherapy. §2.10: TcdB is dominant; A-B+ strains cause full disease. The NK1R rationale is anchored to the toxin clinical development has already discredited."
+        },
+        {
+          "id": 2,
+          "issue": "Toxin-instillation models, not infection models",
+          "detail": "No NK1R antagonist has been tested in a C. difficile infection model with spores, colonisation, and a recurrence endpoint. Ileal loop assays measure acute secretion over hours; §4.5's endpoint requirement is sustained clinical response at 30-90 days."
+        },
+        {
+          "id": 3,
+          "issue": "The compounds are not aprepitant",
+          "detail": "CP-96,345 and L-733,060 are 1990s tool compounds. CP-96,345 has a documented off-target Ca2+ channel interaction (Eur J Pharmacol 1992) confounding attribution to NK1R at all. ZERO aprepitant CDI data of any kind exist."
+        }
+      ],
+      "additional_objection": "Aprepitant is systemically absorbed by design (§6.2 inverted logic penalises it) and is a CYP3A4 substrate AND moderate inhibitor — DDIs with tacrolimus, cyclosporine, warfarin, DOACs in precisely the §3.3 population.",
+      "point_in_favour": "§4.6 unmet need #8 (host-directed therapy to limit inflammatory tissue damage) is 'an entirely empty category,' and NK1R is a real, druggable, approved-drug entry point. A recent mBio paper on pharmacological reduction of neutrophil infiltration reducing CDI severity confirms the host-inflammation axis is live. Aprepitant is the wrong molecule for it.",
+      "recommendation": "Downgrade to <=3.0 and deprioritise. The host-inflammation CATEGORY deserves a candidate; aprepitant is not it."
+    },
+    {
+      "claim_id": 7,
+      "candidate": "Disease model §4.5 failed approaches table",
+      "claim": "Accuracy and completeness of the 12-entry failed approaches table",
+      "status": "VERIFIED_WITH_9_ADDITIONS_AND_2_CORRECTIONS",
+      "evidence_score": 8.5,
+      "assessment": "§4.5 is accurate and well constructed. All 12 entries verify. Tolevamer, actoxumab, both toxoid vaccines, surotomycin, cadazolid, ridinilazole, probiotics/PLACIDE, metronidazole demotion, CP101, NTCD-M3 (correctly labelled dormant not failed), and unscreened FMT all confirm as stated. The three-mode failure synthesis is sound."
+    }
+  ],
+
+  "failed_approaches_additions": [
+    {"programme": "LFF571 (Novartis)", "what": "Thiopeptide antibacterial", "outcome": "Phase 2 NON-INFERIOR to vancomycin for cure — development discontinued anyway", "lesson": "Reinforces the ridinilazole lesson from the other direction: in CDI, MEETING non-inferiority is not sufficient to sustain a programme"},
+    {"programme": "DS-2969b (Daiichi Sankyo)", "what": "GyrB inhibitor", "outcome": "Discontinued", "lesson": "Antibacterial me-too mode"},
+    {"programme": "OPS-2071", "what": "Quinolone-class antibacterial", "outcome": "Discontinued", "lesson": "Antibacterial me-too mode"},
+    {"programme": "Ramoplanin", "what": "Glycolipodepsipeptide, non-absorbed", "outcome": "Discontinued", "lesson": "Antibacterial me-too mode"},
+    {"programme": "Ramizol", "what": "Styrylbenzene antibacterial", "outcome": "Discontinued", "lesson": "Antibacterial me-too mode"},
+    {"programme": "KB109 (Kaleido)", "what": "Synthetic glycan, microbiome-modulating", "outcome": "Discontinued", "lesson": "Relevant to the prebiotic/glycan theses in §7.3"},
+    {"programme": "Nitazoxanide", "what": "Thiazolide", "outcome": "Small trials comparable to vancomycin; never advanced", "lesson": "—"},
+    {"programme": "Misoprostol / PROCLAIM (NCT03617172)", "what": "Prostaglandin E1 analog for recurrence prevention", "outcome": "HALTED FOR FEASIBILITY: 7 participants enrolled over 3 years despite 1,572 pre-screened and 226 eligible. Safe and well tolerated.", "lesson": "A FOURTH FAILURE MODE §4.5 does not represent: CDI trials die on RECRUITMENT. Route to Clinical Feasibility Assessor. Note misoprostol remains scientifically UNTESTED, not disproven — the host-directed/barrier category (§4.6 #8) is empty because nobody finished a trial."},
+    {"programme": "FMT capsules, VHA RCT 2025 (Clin Infect Dis 2025;80:52)", "what": "Double-blind placebo-controlled capsule FMT, 2018-2022", "outcome": "n=153 (76 FMT / 77 placebo), STOPPED EARLY FOR FUTILITY. Primary outcome 32.9% FMT vs 29.9% placebo; absolute difference 3.0%, 95% CI -11.7% to +17.7%", "lesson": "See nuance correction 2"}
+  ],
+
+  "failed_approaches_nuance_corrections": [
+    {
+      "entry": "SER-109 (not currently in §4.5)",
+      "nuance": "A FAILED PHASE 2 THAT BECAME AN APPROVED DRUG — the most important nuance in the section",
+      "detail": "ECOSPOR Phase 2 (n=89, randomised 2:1, 59 SER-109 / 30 placebo, multiply-recurrent CDI) MISSED its primary endpoint: 44% recurrence on SER-109 vs 53% placebo. Widely reported as an existential blow to microbiome therapeutics. It then SUCCEEDED in Phase 3 (ECOSPOR III, published JAMA) and was approved as Vowst.",
+      "root_cause": "Sponsor's own analysis: PCR-based diagnosis (less specific — enrolled patients merely COLONISED rather than actively infected, and generated false on-study 'recurrences') plus suboptimal dosing.",
+      "lesson": "In CDI specifically, a negative trial is frequently a DIAGNOSTIC-STRINGENCY ARTIFACT rather than a mechanism refutation. Toxin-EIA vs PCR enrolment can invert a result on an unchanged mechanism. Any candidate killed on a single negative CDI trial deserves a look at how that trial diagnosed its patients.",
+      "self_applied": "This is the strongest available argument for retaining UDCA at some non-zero level. It does NOT rescue UDCA — the UDCA negative is an animal mortality endpoint, and death is not a diagnostic artifact."
+    },
+    {
+      "entry": "§2.10 'FMT is highly effective for recurrent CDI' listed as WELL-ESTABLISHED",
+      "nuance": "REQUIRES DOWNGRADE TO CURRENT CONSENSUS",
+      "detail": "The 2025 VHA randomised double-blind placebo-controlled capsule trial was stopped early for futility with essentially no separation (32.9% vs 29.9%). Authors' explanations parallel the ECOSPOR Phase 2 post-mortem: 78% of participants had only ONE prior recurrence (vs >=3 in successful trials); PCR rather than toxin testing 'may be more likely to represent colonization versus active infection'; capsule product may differ from approved formulations; mean 6.3-day gap between antibiotic cessation and FMT; PPI use permitted. Authors state directly: 'cure rates in controlled trials of FMT have been lower than those reported in observational studies.'",
+      "recommended_edit": "Reclassify as CURRENT CONSENSUS, qualified: 'highly effective in multiply-recurrent (>=2-3 prior recurrences), toxin-EIA-confirmed disease; efficacy over placebo is not established in first-recurrence or PCR-diagnosed populations.'",
+      "pipeline_consequence": "The placebo/spontaneous-resolution rate in loosely-diagnosed CDI populations is ~30% and can swallow a real effect. Any candidate proposing a recurrence-prevention endpoint MUST specify toxin-EIA enrolment and a multiply-recurrent population, or it will fail for reasons unrelated to its mechanism. This is a DESIGN REQUIREMENT for the Clinical Feasibility Assessor, not a caveat."
+    }
+  ],
+
+  "translational_discount": {
+    "citation": "Predicting clinical trial success for Clostridium difficile infections based on preclinical data, Front Artif Intell 2024;7:1487335",
+    "dataset": "6,918 paired samples after cleaning, from 480 preclinical trial arms (43 trials, 3 animal species) and 158 clinical trial arms (52 trials)",
+    "headline": "Only 36% of preclinical-clinical experiment pairs resulted in translation success",
+    "failure_predictors": [
+      {
+        "feature": "Sustained-response endpoint",
+        "statistic": "SRC -0.20, p = 1.53e-54 — the SINGLE STRONGEST negative correlate of translation success",
+        "pipeline_relevance": "CRITICAL TENSION. §4.5/§A.2 instruct the Clinical Feasibility Assessor to use sustained clinical response at 30-90 days as the primary endpoint, and instruct the Candidate Ranker to weight durability above potency. Both are correct on clinical-value grounds — and both point at the endpoint where animal data has the LEAST predictive power. The pipeline is scoring candidates on the axis where its evidence is weakest. State this explicitly in the final report rather than resolving it silently."
+      },
+      {
+        "feature": "Younger subjects (animal and human)",
+        "statistic": "Strong statistical support",
+        "pipeline_relevance": "Every rodent CDI study reviewed used young laboratory animals; the §3.1 patient population is elderly with immunosenescence, altered baseline microbiota, and polypharmacy. The age mismatch is universal across all six preclinical packages assessed."
+      }
+    ],
+    "model_choice_rule": "The hamster model 'represents a fulminant and lethal course of disease and as such does not represent the usual course and spectrum of CDI in human beings,' and lacks hamster-specific reagents and genetically modified strains. Mice can RECOVER, permitting genuine recurrence modelling. Therefore: A MOUSE RECURRENCE STUDY SHOULD OUTRANK A HAMSTER SURVIVAL STUDY — a concrete ranking rule Round 1 did not apply.",
+    "recommended_discount_schedule": [
+      {"configuration": "Independently replicated mouse recurrence model, therapeutic dosing, epidemic strain", "score_ceiling": 7.0},
+      {"configuration": "Single-lab mouse recurrence/survival study, therapeutic dosing, epidemic strain", "score_ceiling": 6.5},
+      {"configuration": "Single-lab mouse study, prophylactic dosing, lab strain, no survival endpoint", "score_ceiling": 4.0},
+      {"configuration": "Hamster survival/prophylaxis only", "score_ceiling": 3.5},
+      {"configuration": "Purified-toxin instillation models only", "score_ceiling": 2.5},
+      {"configuration": "In vitro only", "score_ceiling": 2.0}
+    ]
+  },
+
+  "evidence_scores_final": [
+    {"candidate": "Fidaxomicin", "type": "benchmark", "round1_mean": 8.9, "evidence_score": 9.5, "level": "1a", "verdict": "Approved; superiority over vancomycin on recurrence established"},
+    {"candidate": "Vancomycin", "type": "benchmark", "round1_mean": 6.6, "evidence_score": 9.0, "level": "1a", "verdict": "Approved SOC; evidence excellent even where disease-biology fit is poor"},
+    {"candidate": "Bezlotoxumab", "type": "benchmark", "round1_mean": 7.1, "evidence_score": 8.0, "level": "1b", "verdict": "MODIFY I/II; the one anti-toxin success"},
+    {"candidate": "Niclosamide", "type": "candidate", "round1_mean": 5.1, "evidence_score": 6.5, "level": "4 (best design in set)", "verdict": "VERIFIED, UNDER-RATED — highest evidence score of any non-benchmark"},
+    {"candidate": "Berberine", "type": "candidate", "round1_mean": 6.7, "evidence_score": 6.0, "level": "4 (x2 independent labs)", "verdict": "VERIFIED with material corrections"},
+    {"candidate": "Ibezapolstat", "type": "candidate", "round1_mean": 6.9, "evidence_score": 5.0, "level": "2", "verdict": "Class strategy discredited across 8 programmes"},
+    {"candidate": "Ebselen", "type": "candidate", "round1_mean": 6.4, "evidence_score": 4.0, "level": "4 (weakest design)", "verdict": "PARTIALLY REFUTED"},
+    {"candidate": "Colostrum / IgY", "type": "candidate", "round1_mean": 6.0, "evidence_score": 3.0, "level": "2b (aborted)", "verdict": "NOT VERIFIED"},
+    {"candidate": "UDCA", "type": "candidate", "round1_mean": 7.1, "evidence_score": 3.0, "level": "4 NEGATIVE", "verdict": "REFUTED in vivo"},
+    {"candidate": "Aprepitant", "type": "candidate", "round1_mean": 4.9, "evidence_score": 2.5, "level": "4/5, wrong toxin", "verdict": "Extrapolated from discredited premise"},
+    {"candidate": "Conessine", "type": "candidate", "round1_mean": 3.8, "evidence_score": 1.0, "level": "6 (hypothesis only)", "verdict": "No CDI data of any kind; §7.2 labels it a generated hypothesis"}
+  ],
+
+  "rank_change_summary": "UDCA falls from #1 non-benchmark to last-but-two. Niclosamide rises from #8 to #1 non-benchmark on evidence quality. Berberine is best-supported on REPLICATION, niclosamide on STUDY DESIGN — and their mechanisms are orthogonal (microbiome/host-barrier vs host-endosomal anti-toxin), making them the natural combination pair to route to the Combination Designer IN PLACE OF vancomycin + berberine (which carries the biofilm-enhancement signal).",
+
+  "blocking_negative_results": [
+    {"candidate": "UDCA", "action": "BLOCK as lead", "evidence": "Hamster mortality 62.5% vs 62.5% p=0.78; human observational CDI 25% vs 9.2% wrong direction; colonic delivery confirmed adequate (43.5% of fecal BA pool) yet still ineffective", "collateral": "Stand down colon-targeted-delivery and ASBT-inhibitor rescue strategies — they solve a non-problem"},
+    {"candidate": "Ebselen", "action": "DOWNGRADE to 4.0", "evidence": "Activity abolished by blood/albumin/glutathione (MIC >128 ug/mL with 5% blood); inhibits commensals; RT078 intrinsically resistant; mechanism formally contested in print; single n=15 prophylactic study", "collateral": "Resolves Conflict #1 in ADMET's favour; redox-stability screen is gating"},
+    {"candidate": "Aprepitant", "action": "DOWNGRADE to <=3.0", "evidence": "NK1R evidence base is TcdA-anchored — the toxin whose targeting failed clinically; no infection-model data; no aprepitant data; CP-96,345 has confounding Ca2+ channel activity", "collateral": "Host-inflammation category still deserves a candidate"},
+    {"candidate": "Colostrum / IgY", "action": "DOWNGRADE to 3.0-4.5", "evidence": "Only randomised trial (n=38) terminated for sponsor bankruptcy, numerically inferior to metronidazole (89% vs 100%); everything else uncontrolled or hamster; antibody largely anti-TcdA", "collateral": "Re-specify as TcdB-directed before advancing"},
+    {"candidate": "Berberine", "action": "DO NOT BLOCK — price in", "evidence": "spo0A upregulation at sub-MIC; biofilm enhancement with vancomycin at 1/2 MIC in one clinical strain; MIC/MBC ~400x/~260x worse than vancomycin", "collateral": "Core claim verified and replicated; adjust to 6.0"},
+    {"candidate": "Ibezapolstat", "action": "Confirms Round 1 Agreement #6", "evidence": "5 additional discontinued antibacterial programmes beyond the 3 in §4.5 — narrow-spectrum antibacterial is an 8-programme graveyard", "collateral": "—"}
+  ],
+
+  "literature_gaps": [
+    {"rank": 1, "gap": "No fecal-matrix MIC exists for ANY candidate — every MIC cited is broth. §6.2 flags cationic fecal binding; berberine is most exposed. The Chemist's and ADMET's convergent fecal-slurry recommendation is the single highest-value cheap experiment and is unmet for berberine, ebselen, and niclosamide alike."},
+    {"rank": 2, "gap": "No candidate has measured MICs against the protective commensal guild (Lachnospiraceae, Ruminococcaceae, 7a-dehydroxylating Clostridia) — §A.1 question 2. Round 1 Gap #8 entirely unfilled. Only relevant data found is ebselen's, and it is unfavourable."},
+    {"rank": 3, "gap": "No colonic redox-stability data for any candidate. Niclosamide's nitro group and ebselen's selenazole are both predicted-reducible at Eh ~ -200 mV; neither measured. Ebselen's blood/thiol inactivation is the closest proxy and is damning for ebselen specifically."},
+    {"rank": 4, "gap": "No UDCA dose-response/IC50 against germination, and no demonstration of CspC competition. The §5 target assignment is inference."},
+    {"rank": 5, "gap": "No TcdB-directed oral antibody product has been tested. All oral antibody work is anti-TcdA or anti-colonisation-factor — built on the failed arm of §4.5. Well-specified, tractable, and arguably the clearest white space identified in this review."},
+    {"rank": 6, "gap": "No NK1R antagonist tested in a C. difficile INFECTION model (as opposed to purified-toxin instillation), and none with TcdB."},
+    {"rank": 7, "gap": "No published FIC indices for berberine + vancomycin. Synergy asserted from MIC shifts in 10/12 strains without formal checkerboard analysis."},
+    {"rank": 8, "gap": "Berberine's spo0A upregulation has not been followed up in vivo. If sub-MIC berberine promotes sporulation in a live gut, it directly undercuts the recurrence claim its two positive mouse studies rest on. Highest-value DISCONFIRMING experiment for the currently best-supported candidate."},
+    {"rank": 9, "gap": "No candidate in this set addresses §4.6 unmet need #1 (recurrence prevention without live biotherapeutics, usable in immunocompromised patients) with human data. Round 1 Gap #1 confirmed from the literature side."},
+    {"rank": 10, "gap": "PUBLICATION BIAS: for berberine, curcumin, EGCG and other natural products, negative in vitro and animal results are systematically under-published. The two positive berberine rodent studies should be read with that asymmetry in mind."}
+  ],
+
+  "answers_to_phase1_questions": [
+    {"from": "Ethnobotany (p1-ethnobotany.md:425a)", "question": "Does oral hyperimmune bovine colostrum/IgY have powered CDI trial data beyond case series?", "answer": "NO. One randomised trial (CDIW vs metronidazole, n=38), terminated because the sponsor went bankrupt, numerically inferior (89% vs 100%). Everything else uncontrolled human series or hamster. Your 6.0 should come down."},
+    {"from": "Ethnobotany (p1-ethnobotany.md:425b)", "question": "What colonic/fecal UDCA concentrations are achieved in dysbiotic patients?", "answer": "ANSWERED, and it inverts the premise. In antibiotic-treated hamsters UDCA reached 43.5% of the fecal bile acid pool; without antibiotics <=4.28%. Dysbiosis INCREASES luminal parent UDCA — delivery is not limiting. UDCA still failed to reduce mortality. Your 'decisive derisking experiment' has effectively already been run, with a negative result."},
+    {"from": "ADMET (p1-admet.md:428)", "question": "Does toxin output rise at sub-MIC berberine?", "answer": "NO — it FALLS (TcdA -57%, TcdB -54% at 1/2 MIC, comparable to vancomycin). Your proposed hard stop does not trigger. Caveat: broth, not fecal matrix."},
+    {"from": "ADMET (p1-admet.md:425)", "question": "Is the active anti-germination species UDCA or downstream LCA?", "answer": "In the dysbiotic state the conversion machinery is absent, so PARENT UDCA is what accumulates — and it is not sufficient. Direct LCA delivery remains untested and is a separate hypothesis, not a UDCA rescue."},
+    {"from": "Chemist (p1-chemist.md:603)", "question": "Redox stability at Eh ~ -200 mV as a mandatory early screen?", "answer": "ENDORSED AND ELEVATED. For ebselen the closest available proxy (5% blood -> MIC >128 ug/mL) already reads as a fail. No data exists for niclosamide or berberine. Highest-value cheap experiment in the programme."}
+  ],
+
+  "recommended_disease_model_edits": [
+    {"section": "2.10", "edit": "Move 'FMT is highly effective for recurrent CDI' from WELL-ESTABLISHED to CURRENT CONSENSUS, qualified to multiply-recurrent, toxin-EIA-confirmed populations (VHA RCT 2025, stopped for futility)"},
+    {"section": "2.10", "edit": "Move 'Ebselen as a CPD inhibitor with in vivo efficacy' from EMERGING to UNCERTAIN/DISPUTED — mechanism contested in print, authors concede multiple modes of action"},
+    {"section": "7.2", "edit": "Replace berberine 'MICs typically in the tens to hundreds of ug/mL' with 'MIC 256-1,024 mg/L, MBC 256-16,384 mg/L across 12 strains including 9 clinical RT027'"},
+    {"section": "7.3 / 7.4", "edit": "Change UDCA from 'High-priority repurposing lead [EMERGING — case reports only, but strong mechanism]' to reflect the negative hamster study and wrong-direction human observational data"},
+    {"section": "4.5", "edit": "Add the 9 programmes listed in failed_approaches_additions, and add a FOURTH failure mode: feasibility/recruitment failure (PROCLAIM: 7 enrolled over 3 years from 1,572 pre-screened)"},
+    {"section": "4.5", "edit": "Add the SER-109 nuance: a failed Phase 2 that became an approved drug, with diagnostic stringency as root cause"},
+    {"section": "A.3", "edit": "Replace the qualitative translation warning with the quantitative figure: 36% success across 6,918 paired samples; sustained-response endpoint the strongest negative correlate (SRC -0.20, p=1.5e-54); young-subject bias"},
+    {"section": "5", "edit": "Mark the UDCA->CspC (#7/#11) target assignment as INFERRED, not measured"}
+  ],
+
+  "confidence": {
+    "high": ["UDCA refutation (published primary endpoint with explicit authors' conclusion)", "Niclosamide assessment", "§4.5 cross-check"],
+    "moderate_high": ["Ebselen (blood-inactivation finding is in vitro; in vivo magnitude in a human colon is inferred, though well-founded)"],
+    "moderate": ["Berberine (2025 replication read at abstract level; group sizes for both rodent studies not extractable from accessible full text)"]
+  },
+
+  "limitations": [
+    "Several full texts were paywalled. The 2015 berberine AAC paper and the 2025 IJAA paper were characterised from abstracts and secondary sources rather than methods sections. Group sizes and exact survival percentages for both are NOT VERIFIED and should be treated as unconfirmed.",
+    "Absence of evidence is not evidence of absence — particularly for natural products, where negative results are under-published.",
+    "Trial registry status was checked by search, not by systematic ClinicalTrials.gov query; a dedicated registry sweep would likely surface additional discontinued programmes.",
+    "Scores are EVIDENCE-QUALITY scores only. A low evidence score is not by itself a reason to drop a candidate with a strong mechanistic rationale and a cheap disconfirming experiment available — that is a judgement for the Candidate Ranker."
+  ]
+}

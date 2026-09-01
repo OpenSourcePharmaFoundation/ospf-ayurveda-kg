@@ -1,0 +1,310 @@
+{
+  "agent": "drug-repurposing-strategist",
+  "phase": 2,
+  "disease": "Clostridioides difficile infection (CDI)",
+  "focus_subtype": "recurrent CDI (rCDI)",
+  "analysis_date": "2026-08-17",
+  "report_path": "data/reports/disease-explorer/clostridioides-difficile/2026-08-17/agents/p2-repurposing.md",
+  "evidence_basis": "project CSVs (data/processed/) + disease-model.md + Round 1 agent outputs + domain knowledge; no live literature retrieval",
+
+  "rubric": {
+    "note": "Skill-file rubric re-weighted for CDI. Measures DEVELOPMENT-PATH FEASIBILITY, not disease biology. Do not sum with the Clinical Landscape agent's score - overlapping construct.",
+    "dimensions": [
+      {"name": "compartment_access", "weight": 0.20, "definition": "Does the drug reach its actual target compartment intact and free? Uses ADMET agent's C1 luminal / C2 mucosal-intracellular / C3 systemic model"},
+      {"name": "mechanism_validation_cdi", "weight": 0.15, "definition": "CDI-specific evidence strength, discounted per disease model A.3"},
+      {"name": "safety_package_transferability", "weight": 0.15, "definition": "Does existing human safety data cover the CDI dose, duration AND population"},
+      {"name": "formulation_cmc_gap", "weight": 0.15, "definition": "Marketed formulation usable as-is, or new dosage form required"},
+      {"name": "regulatory_path_clarity", "weight": 0.10, "definition": "RLD availability; 505(b)(2) vs 505(b)(1) vs BLA; exclusivity earned"},
+      {"name": "trial_design_precedent", "weight": 0.10, "definition": "Inherits add-on 3-for-3 precedent or replacement 0-for-3 precedent"},
+      {"name": "commercial_funding_viability", "weight": 0.15, "definition": "COGS, sponsor economics, generic erosion. Raised from 10% on CDI's 6-of-12 financial failure rate"}
+    ],
+    "veto_flag": "Binary, reported separately from the weighted score. Denotes a mechanistic or clinical contradiction that a weighted average structurally cannot express."
+  },
+
+  "eligibility_gate": {
+    "finding": "Only 3 of the 6 disease-model-flagged repurposing leads have a genuine 505(b)(2) path. Prior human exposure is not equivalent to an available Reference Listed Drug.",
+    "candidates": [
+      {"drug": "UDCA (ursodiol)", "approved": true, "us_rld": "Actigall / Urso 250 / Urso Forte", "pathway": "505(b)(2)", "eligible": true},
+      {"drug": "Aprepitant", "approved": true, "us_rld": "Emend", "pathway": "505(b)(2)", "eligible": true},
+      {"drug": "Niclosamide", "approved": true, "us_rld": "UNCERTAIN - US marketing discontinued; needs formal listed-drug determination", "pathway": "505(b)(2) contingent", "eligible": "conditional", "verify": true},
+      {"drug": "Anakinra", "approved": true, "us_rld": null, "pathway": "BLA supplement - 505(b)(2) does not exist for biologics", "eligible": false},
+      {"drug": "Ustekinumab", "approved": true, "us_rld": null, "pathway": "BLA supplement", "eligible": false},
+      {"drug": "Ebselen", "approved": false, "us_rld": null, "pathway": "505(b)(1) full NDA", "eligible": false},
+      {"drug": "DAV132 / ribaxamase", "approved": false, "us_rld": null, "pathway": "in-licensing, not repurposing", "eligible": false}
+    ]
+  },
+
+  "scores": [
+    {
+      "rank": 1, "drug": "Ribaxamase (SYN-004)", "chembl_id": null,
+      "transaction_type": "in-licensing (NOT a repurpose - included as reference point)",
+      "feasibility_score": 7.40, "veto_flag": false,
+      "tier1_target": "#70 luminal antibiotic inactivation",
+      "dimensions": {"compartment_access": 9, "mechanism_validation_cdi": 8, "safety_package_transferability": 7, "formulation_cmc_gap": 8, "regulatory_path_clarity": 6, "trial_design_precedent": 8, "commercial_funding_viability": 5},
+      "regulatory_pathway": "BLA (enzyme biologic)",
+      "timeline_years": "5-7", "cost_usd": "80-150M plus acquisition",
+      "key_advantage": "Positive human Phase 2b - strongest clinical evidence in this report; only asset addressing Tier 1 target #70; addresses unmet need #7 (primary prevention), for which no approved option exists",
+      "key_risk": "Not a repurpose; BLA route; payer logic for a prevention product; sponsor Theriva stalled for funding",
+      "disposition": "Evaluate acquisition"
+    },
+    {
+      "rank": 2, "drug": "UDCA (ursodiol)", "chembl_id": "CHEMBL1551",
+      "transaction_type": "repurposing", "feasibility_score": 6.90, "veto_flag": false,
+      "tier1_target": "#11 taurocholate-competitive germination; #66 secondary bile acid supply",
+      "dimensions": {"compartment_access": 5, "mechanism_validation_cdi": 6, "safety_package_transferability": 9, "formulation_cmc_gap": 10, "regulatory_path_clarity": 8, "trial_design_precedent": 9, "commercial_funding_viability": 3},
+      "regulatory_pathway": "505(b)(2), IR formulation at approved dose; 3-yr exclusivity, 8-yr if QIDP granted (QIDP ARGUABLE only)",
+      "positioning": "Add-on to fidaxomicin/vancomycin; primary endpoint CDI recurrence through week 8",
+      "timeline_years": "5-6", "cost_usd": "45-85M",
+      "key_advantage": "Every non-biological barrier already cleared - RLD exists, dose within approved range, no CMC work, safety package fully transferable, add-on design has 3-for-3 precedent",
+      "key_risk": "Colonic free concentration may be an order of magnitude below germination IC50 (ADMET verdict C); dose ceiling ~20 mg/kg/d blocks the obvious fix because high-dose UDCA (28-30 mg/kg/d) caused harm in PSC",
+      "disposition": "PURSUE - Stage 0 fecal PK study first"
+    },
+    {
+      "rank": 3, "drug": "Nitazoxanide", "chembl_id": "CHEMBL1401",
+      "transaction_type": "repurposing", "feasibility_score": 6.75, "veto_flag": false,
+      "tier1_target": null, "other_target": "bacterial PFOR-class, Phase 2 outgrowth",
+      "new_candidate": true,
+      "dimensions": {"compartment_access": 7, "mechanism_validation_cdi": 8, "safety_package_transferability": 8, "formulation_cmc_gap": 9, "regulatory_path_clarity": 8, "trial_design_precedent": 5, "commercial_funding_viability": 2},
+      "regulatory_pathway": "505(b)(2), RLD Alinia. QIDP CLEARLY eligible (it is a bona fide antibacterial) - the only 505(b)(2) candidate for which the GAIN premise straightforwardly holds",
+      "timeline_years": "5-7", "cost_usd": "45-85M",
+      "key_advantage": "The only candidate in the entire pipeline with existing HUMAN CDI EFFICACY DATA. Appears in disease model 4.3 (alternatives), not 4.5 (failures) - it never failed, it was never funded",
+      "key_risk": "It is a me-too antibacterial, the single most reliably fatal profile in CDI (4.5: 0-for-3). Its existing data support the endpoint that no longer matters (initial cure) and it is unproven on the one that does (recurrence)",
+      "disposition": "CONDITIONAL - reposition as add-on to fidaxomicin scored on recurrence, or drop. Realistic sponsor is NIAID, not industry"
+    },
+    {
+      "rank": 4, "drug": "Chenodiol (CDCA)", "chembl_id": "CHEMBL240597",
+      "transaction_type": "repurposing", "feasibility_score": 6.50, "veto_flag": false,
+      "tier1_target": "#11 taurocholate-competitive germination",
+      "new_candidate": true,
+      "dimensions": {"compartment_access": 6, "mechanism_validation_cdi": 7, "safety_package_transferability": 5, "formulation_cmc_gap": 9, "regulatory_path_clarity": 8, "trial_design_precedent": 9, "commercial_funding_viability": 3},
+      "regulatory_pathway": "505(b)(2), RLD Chenodal (Ctexli for CTX, verify)",
+      "timeline_years": "5-7", "cost_usd": "50-90M",
+      "key_advantage": "The disease model NAMES CDCA in the #11 target row with Preclinical (strong) validation, then omits it from the A.2 repurposing list. Higher potency than UDCA. Crucially, does NOT depend on the depleted bai guild - both parent (CDCA) and metabolite (LCA) are active, so the ADMET agent's UDCA-vs-LCA effector fork is not a single point of failure here",
+      "key_risk": "Dose-related hepatotoxicity in a population where hepatic impairment is overrepresented (3.2); diarrhoea in ~30-40% at gallstone doses, against a diarrhoea endpoint. Also a potent FXR agonist (target #61, direction UNCERTAIN) which may shrink the bile acid pool and work against #66",
+      "disposition": "PURSUE as a parallel arm in the Stage 0 fecal PK study"
+    },
+    {
+      "rank": 5, "drug": "Hydroxychloroquine", "chembl_id": null,
+      "transaction_type": "repurposing", "feasibility_score": 6.35, "veto_flag": false,
+      "tier1_target": null, "other_target": "#41 v-ATPase / endosomal acidification (Module A, TcdB translocation)",
+      "new_candidate": true,
+      "dimensions": {"compartment_access": 7, "mechanism_validation_cdi": 4, "safety_package_transferability": 7, "formulation_cmc_gap": 10, "regulatory_path_clarity": 8, "trial_design_precedent": 7, "commercial_funding_viability": 2},
+      "regulatory_pathway": "505(b)(2), RLD Plaquenil. QIDP ineligible (host-directed)",
+      "timeline_years": "6-8", "cost_usd": "50-90M",
+      "key_advantage": "Solves the C2 compartment problem that killed ebselen and niclosamide: well absorbed, reaches the colonocyte basolaterally (no mucus layer, no dissolution step, no luminal thiol sink), and as a lipophilic weak base CONCENTRATES in acidic organelles - it accumulates in the exact compartment it must act on. Named in the model's own #41 row but missed because #41 is not Tier 1",
+      "key_risk": "The endosomal pH shift required to block TcdB translocation may exceed clinically achievable concentrations - unproven. QT prolongation intersects with diarrhoea-driven hypokalaemia in an elderly population",
+      "disposition": "ONE IN VITRO EXPERIMENT - cheapest high-information test in the whole Phase 2 analysis ($30-60k, 2-3 mo)"
+    },
+    {
+      "rank": 6, "drug": "UDCA + IBAT inhibitor (odevixibat CHEMBL4297588 / maralixibat CHEMBL363392)",
+      "transaction_type": "combination repurposing", "feasibility_score": 5.85, "veto_flag": true,
+      "tier1_target": "#11 delivery enabler",
+      "dimensions": {"compartment_access": 9, "mechanism_validation_cdi": 3, "safety_package_transferability": 6, "formulation_cmc_gap": 6, "regulatory_path_clarity": 5, "trial_design_precedent": 7, "commercial_funding_viability": 4},
+      "veto_reason": "ASBT is not selective for UDCA. Blocking it shunts the ENTIRE bile acid pool into the colon - including TAUROCHOLATE, the primary germinant and the very ligand at target #11 that UDCA is meant to competitively displace. Net effect on germination depends on an unmeasured ratio and could be worse than baseline. Compounded by: IBAT inhibitors' dose-limiting toxicity is diarrhoea; and combining a pennies-per-dose generic with orphan-priced on-patent drugs destroys the cost advantage while doubling the 505(b)(2) burden",
+      "disposition": "SURFACED, EVALUATED, REJECTED as a development path. Retained as a preclinical question for the Pathway Analyst: does IBAT inhibition raise or lower the colonic UDCA:taurocholate ratio?"
+    },
+    {
+      "rank": 7, "drug": "Aprepitant", "chembl_id": "CHEMBL1471",
+      "transaction_type": "repurposing", "feasibility_score": 5.10, "veto_flag": true,
+      "tier1_target": null, "other_target": "#51 NK1R/TACR1",
+      "dimensions": {"compartment_access": 7, "mechanism_validation_cdi": 3, "safety_package_transferability": 4, "formulation_cmc_gap": 8, "regulatory_path_clarity": 7, "trial_design_precedent": 3, "commercial_funding_viability": 3},
+      "veto_reason": "CYP3A4 substrate AND moderate inhibitor. Section 3.3's DDI checklist leads with tacrolimus, cyclosporine, warfarin, digoxin, DOACs in an elderly, renally-impaired, heavily polypharmaceutical population. Discards CDI's great pharmacological advantage (6.4: luminal drugs have near-zero DDI risk) for a preclinical-only target. Compounded by no endpoint precedent (Clinical Landscape: 'unbounded') and an approved exposure of only 3 days versus CDI's 10+",
+      "disposition": "DO NOT PURSUE. The 5.10 score reflects an easy pathway to a destination nobody can define - do not read it as 'middling but viable'"
+    },
+    {
+      "rank": 8, "drug": "Anakinra", "chembl_id": null,
+      "transaction_type": "repurposing (biologic)", "feasibility_score": 4.95, "veto_flag": false,
+      "tier1_target": null, "other_target": "#45 IL-1beta / IL-1R (Tier 2)",
+      "dimensions": {"compartment_access": 7, "mechanism_validation_cdi": 4, "safety_package_transferability": 6, "formulation_cmc_gap": 6, "regulatory_path_clarity": 5, "trial_design_precedent": 2, "commercial_funding_viability": 3},
+      "regulatory_pathway": "BLA supplement or investigator-initiated trial under IND. No 505(b)(2) exists for biologics",
+      "key_advantage": "4-6 hour half-life - the effect can be switched off within a day if the infection worsens. In a disease where TNF blockade is itself a CDI risk factor, reversibility is the property that makes cytokine blockade thinkable at all. Clearly the better of the two host-directed biologics on drug-property grounds",
+      "key_risk": "The only plausible positioning is fulminant CDI - no endpoint precedent, 8-15 yr timelines, consent-impaired slow-accruing enrolment, cost unbounded. Daily SC injection in frail elderly. Preclinical evidence only",
+      "disposition": "Investigator-initiated trial only, if at all. Endpoint would be colectomy-free survival"
+    },
+    {
+      "rank": 9, "drug": "Ustekinumab", "chembl_id": null,
+      "transaction_type": "repurposing (biologic)", "feasibility_score": 4.30, "veto_flag": true,
+      "tier1_target": null, "other_target": "#46 IL-23/IL-23R",
+      "dimensions": {"compartment_access": 6, "mechanism_validation_cdi": 2, "safety_package_transferability": 6, "formulation_cmc_gap": 6, "regulatory_path_clarity": 4, "trial_design_precedent": 3, "commercial_funding_viability": 2},
+      "veto_reason": "Targets #46 (INHIBIT IL-23) and #47 (AGONIZE IL-22) are mutually incompatible - IL-23 is the principal driver of ILC3-derived IL-22, which the disease model itself calls a protective epithelial axis. Ustekinumab would suppress the protective arm. Compounded by PK mismatch: IV induction then SC q8-12wk cannot titrate within the 8-week recurrence window",
+      "clinical_signal_answer": "No powered analysis is known to exist. The consistent IBD-literature signal is that ustekinumab has a LOWER SERIOUS-INFECTION RATE than anti-TNF - a statement about infections generally, not evidence of anti-CDI-recurrence efficacy. Any observational signal would be dominated by confounding by indication.",
+      "disposition": "NOT A DEVELOPMENT CANDIDATE. Correct action is a retrospective cohort analysis in IBD biologic registries ($100-300k, 6-9 mo) - either produces a signal or closes the question permanently"
+    },
+    {
+      "rank": 10, "drug": "Ebselen", "chembl_id": null,
+      "transaction_type": "NOT repurposable - unapproved", "feasibility_score": 4.00, "veto_flag": false,
+      "tier1_target": "#26 TcdB cysteine protease domain",
+      "dimensions": {"compartment_access": 2, "mechanism_validation_cdi": 7, "safety_package_transferability": 4, "formulation_cmc_gap": 3, "regulatory_path_clarity": 2, "trial_design_precedent": 7, "commercial_funding_viability": 4},
+      "regulatory_pathway": "505(b)(1) FULL NDA. No RLD exists; Phase 2 safety data belongs to other sponsors and cannot be cited without right of reference. QIDP doubtful (anti-toxin, not antibacterial)",
+      "timeline_years": "9-12", "cost_usd": "125-225M",
+      "colonic_concentration_answer": "Delivery is NOT the limiting step - poor solubility means most of an oral dose reaches the colon. What fails is chemical survival: (1) dissolution caps free concentration; (2) the Se-S exchange mechanism is quenched by mM cysteine/glutathione and bacterial H2S at Eh -200 mV; (3) the CPD target is intracellular (C2), so the lumen is the wrong destination anyway; (4) the systemic rescue fails identically because ebselen binds albumin Cys34 >99%. No formulation fixes a molecule consumed by the medium it must cross",
+      "disposition": "TOOL COMPOUND, NOT CANDIDATE. The fast path in this space belongs to the TARGET (#26), not this molecule. Hand to SAR Analyst as a warhead-replacement problem"
+    },
+    {
+      "rank": 11, "drug": "Niclosamide", "chembl_id": "CHEMBL1448",
+      "transaction_type": "repurposing", "feasibility_score": 3.85, "veto_flag": false,
+      "tier1_target": null, "other_target": "#30 TcdB delivery/pore-forming domain",
+      "dimensions": {"compartment_access": 2, "mechanism_validation_cdi": 4, "safety_package_transferability": 6, "formulation_cmc_gap": 2, "regulatory_path_clarity": 5, "trial_design_precedent": 7, "commercial_funding_viability": 3},
+      "existing_formulation_answer": "NO. Yomesan's 2g chewable is engineered for single-dose, purely luminal contact-killing of a tapeworm scolex - poor dissolution is a FEATURE of that product. Niclosamide's intrinsic aqueous solubility is ~1.6 uM, at or below the range where TcdB entry blockade is reported. The marketed formulation delivers mass without delivering free drug",
+      "gap_to_cdi_indication": [
+        "Solubility-enabling reformulation (ASD/nanocrystal/co-crystal/prodrug) = new dosage form 505(b)(2), 24-36 mo and $10-20M BEFORE Phase 2 opens",
+        "US RLD status uncertain - needs formal FDA listed-drug determination (cheap, necessary, nobody has done it)",
+        "Nitro reduction at Eh -200 mV plausibly destroys the pharmacophore - settleable by one anaerobic stability assay",
+        "Wrong compartment (C2, three serial low-efficiency steps) AND wrong selectivity - its actual primary pharmacology is protonophore/mitochondrial uncoupling, which will uncouple commensals and colonocytes alike"
+      ],
+      "timeline_years": "7-10", "cost_usd": "75-140M",
+      "disposition": "Spend $200-400k on three benchtop experiments plus the FDA listed-drug letter before anything else. Expect a negative"
+    }
+  ],
+
+  "new_candidates_q6": {
+    "question": "Approved drugs NOT on the flagged list that hit Tier 1 targets",
+    "cspc_germination_tier1_7_11": {
+      "found": ["Chenodiol (CDCA), CHEMBL240597, approved 1983 - named in the model's own #11 target row with Preclinical (strong) validation, then omitted from A.2"],
+      "rejected": [
+        {"drug": "Obeticholic acid (CHEMBL566315)", "reason": "Hepatotoxicity warning and cirrhosis restrictions; hepatic impairment is overrepresented in CDI"},
+        {"drug": "Taurursodiol (CHEMBL272427)", "reason": "Taurine conjugate is MORE efficiently recaptured by ileal ASBT, plausibly worsening colonic delivery. Useful as a Stage 0 analytical comparator only"},
+        {"drug": "Cholic acid (CHEMBL205596)", "reason": "Germinant precursor - wrong direction"},
+        {"drug": "Deoxycholic acid (CHEMBL406393)", "reason": "Colonic carcinogenesis risk on chronic exposure; no oral formulation (approved as submental-fat injectable)"}
+      ],
+      "conclusion": "The germination space contains exactly TWO viable approved drugs - ursodiol and chenodiol - and they are stereoisomers of each other. A thin bench; test both in Stage 0"
+    },
+    "tcdb_cpd_tier1_26": {
+      "found": [],
+      "rejected": [
+        {"drug": "Auranofin (CHEMBL1366)", "reason": "Gold(I) soft electrophile - fails identically to ebselen in a thiol-saturated lumen, plus nephrotoxicity and blood dyscrasias"},
+        {"drug": "Disulfiram (CHEMBL964)", "reason": "Thiol-reactive disulfide; section 6.2 explicitly flags disulfides as unstable at Eh -200 mV"}
+      ],
+      "conclusion": "NO approved-drug option. But finding two independent thiol-reactive chemotypes failing for the identical reason upgrades the ADMET agent's molecule-specific objection to a CLASS RULE - see cross_cutting_findings"
+    },
+    "luminal_antibiotic_inactivation_tier1_70": {
+      "found": [],
+      "rejected": [
+        {"drug": "Activated charcoal", "reason": "Non-selective - would adsorb the CDI-treatment antibiotic alongside the inciting one. DAV132's entire engineering exists to solve this; off-the-shelf charcoal is not a shortcut to it"},
+        {"drug": "Clavulanate (CHEMBL777) and beta-lactamase inhibitors", "reason": "WRONG DIRECTION - these PRESERVE beta-lactam activity; #70 requires DESTROYING it in the lumen. Clean example of the mechanism-direction error the skill file guardrails warn about"}
+      ],
+      "conclusion": "#70 is the clearest white space in the disease: clinical proof-of-concept exists (ribaxamase Phase 2b positive), no approved drug, no active sponsor. Basis for the in-licensing recommendation"
+    },
+    "secondary_bile_acid_restoration_tier1_64_66": {
+      "found": ["Odevixibat (CHEMBL4297588) / maralixibat (CHEMBL363392) as DELIVERY ENABLERS for UDCA"],
+      "conclusion": "Surfaced and then rejected on a mechanistic veto - see scores rank 6"
+    },
+    "other_targets_considered_and_rejected": [
+      {"drug": "Cholestyramine / colesevelam / sevelamer", "target": "#34", "reason": "Doubly disqualified - tolevamer FAILED Phase 3 at luminal sequestration, and 6.2 forbids co-administration (they bind vancomycin and would bind any bile-acid candidate, i.e. they directly antagonise the #66 strategy)"},
+      {"drug": "Colchicine", "target": "#44 NLRP3", "reason": "Dose-limiting diarrhoea; narrow therapeutic index; severe toxicity in renal impairment; CYP3A4/P-gp DDIs. Every one lands on a 3.4 population vulnerability"},
+      {"drug": "Pioglitazone", "target": "#53 PPARgamma", "reason": "Heart-failure warnings; CHF is prevalent in this population"},
+      {"drug": "Calcitriol / vitamin D3", "target": "#54 VDR", "reason": "Effect size almost certainly too small to be a therapy. NOT a candidate, but worth one line as a near-free adjunct arm or stratification covariate in whatever trial runs - #54 is the only host target with any clinical (observational) CDI data"},
+      {"drug": "Teduglutide", "target": "#60 GLP-2", "reason": "Injectable, expensive, neoplasia warning; wrong risk profile for an acute infection"},
+      {"drug": "Hsp90 inhibitors", "target": "#40", "reason": "No Hsp90 inhibitor has ever been approved - all oncology programs failed. Cyclosporine hits the pathway but is DDI-prohibitive"},
+      {"drug": "Paromomycin and aminoglycosides", "target": "Phase 2", "reason": "Top of the luminal physicochemical screen and exactly the wrong answer - broad-spectrum destruction of the commensal guild"}
+    ]
+  },
+
+  "cross_cutting_findings": [
+    {
+      "id": "CC1",
+      "severity": "high",
+      "title": "Targets #46 and #47 are mutually incompatible",
+      "detail": "#46 instructs INHIBIT IL-23; #47 instructs AGONIZE IL-22 as a protective epithelial axis. IL-23 is the principal driver of ILC3-derived IL-22, so blocking IL-23 suppresses IL-22. These targets cannot both be pursued. The Round 1 scoring exercise scored candidates independently against a target list and had no mechanism for detecting this.",
+      "consequence": "Ustekinumab is not merely unsupported in CDI - it points at the wrong end of an axis the model itself calls protective",
+      "routed_to": "Pathway Analyst (Phase 2) - adjudicate whether pathogenic IL-23-driven Th17 inflammation and protective ILC3-derived IL-22 are separable by timing, cell type or magnitude. Until resolved, no IL-23-directed candidate should score positively. Disease model 5.3 should carry an explicit cross-reference between rows #46 and #47"
+    },
+    {
+      "id": "CC2",
+      "severity": "high",
+      "title": "Soft-electrophile covalent chemistry is a CLASS-LEVEL failure in the CDI lumen",
+      "detail": "The ADMET agent argued this for ebselen from selenium chemistry. Auranofin (gold, at target #21) and disulfiram (disulfide) fail identically, upgrading a molecule-specific objection to a class rule: any warhead whose mechanism is exchange with a cysteine thiol will be consumed by mM free cysteine, glutathione and bacterial H2S at Eh -200 mV before reaching a target, and will have no selectivity if it does",
+      "consequence": "The warhead replacement at #26 cannot simply be 'a different covalent warhead'. It must resist exchange with abundant small-molecule thiols - which rules out most of the standard covalent toolkit",
+      "routed_to": "SAR Analyst - narrows the search to reversible-covalent chemistry (fast off-rate vs small thiols, slow vs target), non-covalent CPD inhibitors, or a mucosally-activated prodrug. Hand over as a constraint, not a suggestion"
+    },
+    {
+      "id": "CC3",
+      "severity": "medium",
+      "title": "Bile acid pharmacology and CDI share an adverse-event axis",
+      "detail": "UDCA, chenodiol, IBAT inhibitors and colchicine all have diarrhoea as their principal or dose-limiting adverse effect. CDI's primary endpoint is diarrhoea recurrence",
+      "consequence": "Three protocol requirements for any bile-acid CDI program: (1) toxin-confirmed adjudicated endpoint, never symptom-based; (2) blinded independent endpoint committee is mandatory, not optional - functional unblinding risk is real; (3) dose escalation is doubly constrained, by the adverse effect AND, for UDCA, by the high-dose PSC harm signal. The intuitive answer to 'colonic concentration may be sub-therapeutic' (give more) is closed off from both directions. This is the tightest constraint on the pipeline's leading candidate and was not stated in Round 1",
+      "routed_to": "Clinical Feasibility Assessor, Candidate Ranker"
+    },
+    {
+      "id": "CC4",
+      "severity": "medium",
+      "title": "In CDI, in-licensing may beat repurposing",
+      "detail": "The Clinical Landscape agent found 6 of 12 CDI failures were financial, not scientific. Read from a repurposing seat that is a shopping list, not a warning: ribaxamase (Ph2b positive, stalled for funding), NTCD-M3 (Ph2 positive, never advanced), CP101 (Ph2 positive, discontinued for financing) are clinically de-risked and financially orphaned",
+      "consequence": "Ribaxamase scores 7.4/10 - the highest in this analysis - and is the only asset addressing Tier 1 target #70. A serious CDI strategy should evaluate acquiring one of these alongside, probably ahead of, repurposing a generic bile acid",
+      "routed_to": "Clinical Feasibility Assessor, Candidate Ranker"
+    },
+    {
+      "id": "CC5",
+      "severity": "medium",
+      "title": "The project's approved-drug data is stereochemistry-blind, which is disqualifying for bile acids",
+      "detail": "CHENODIOL, URSODIOL and DEOXYCHOLIC ACID share a byte-identical descriptor row in chembl_approved_drugs.csv (MW 392.58, AlogP 4.48, TPSA 77.76, HBD 3, HBA 3). UDCA and CDCA differ only in the stereo layer of the InChIKey (RUDATBOHQWOJDD-BSWAIDMHSA-N vs RUDATBOHQWOJDD-UZVSRGJWSA-N)",
+      "consequence": "Any descriptor-based or Lipinski-style similarity screen over this dataset treats a germination inhibitor and a secondary bile acid as the same molecule, and ranks cholic acid - the germinant precursor - as a near neighbour of its own antagonists. Bile acid activity in CDI is entirely a stereochemistry and hydroxylation-pattern story",
+      "routed_to": "Chemist, SAR Analyst, Natural Product Scout - screen on SMILES/InChI stereochemistry or 3D pharmacophore, never on tabulated descriptors, for this compound class"
+    },
+    {
+      "id": "CC6",
+      "severity": "low",
+      "title": "Physicochemical luminal screening does not find CDI drugs",
+      "detail": "Screening 2,973 scorable approved drugs for a luminal-confinement profile (MW>600 OR TPSA>150) returns 403 hits, topped by aminoglycosides, cephalosporins and diagnostic dyes - every one of which would flatten the commensal guild",
+      "consequence": "Empirically confirms 6.4: colonic delivery is necessary but nowhere near sufficient; SELECTIVITY is the binding constraint. Any future repurposing screen must filter on commensal-sparing spectrum BEFORE luminal physicochemistry - for which, per Round 1 gap #8, no candidate has measured data"
+    },
+    {
+      "id": "CC7",
+      "severity": "low",
+      "title": "The Ethnobotany agent's bioavailability inversion has a boundary",
+      "detail": "'Compounds abandoned for poor bioavailability elsewhere should be positively screened for CDI' is right for C1 luminal candidates and WRONG for C2 candidates. Niclosamide is the counterexample",
+      "consequence": "Refined rule: invert bioavailability scoring only AFTER establishing which compartment the target sits in"
+    },
+    {
+      "id": "CC8",
+      "severity": "medium",
+      "title": "The project has no CDI target-drug or gene-disease dataset",
+      "detail": "chembl_drug_mechanisms.csv is ~10 rows, chembl_drug_targets.csv ~40 rows, and disgenet__OM_*.csv plus ttd_drug_target_genes.csv are Oral-Mucositis-specific. The systematic target-overlap workflow in the skill file is not executable for CDI",
+      "consequence": "Every CDI target assignment in this pipeline rests on the disease model's hand-curated section 5 master list with no database backing",
+      "routed_to": "Data Scraper agent"
+    }
+  ],
+
+  "disagreements_with_round1": [
+    {"item": "Ebselen", "round1": "mean 6.4, Target Profiler 8.5; framed as a repurposing candidate with a fast path", "p2_position": "Repurposing feasibility 4.0. No RLD means a full 505(b)(1) NDA, 9-12 yrs, $125-225M. Prior human exposure is not reference-able safety data. The Target Profiler's 8.5 is correct ABOUT THE TARGET and should be preserved as such"},
+    {"item": "Niclosamide", "round1": "poor absorption is 'a CDI advantage'", "p2_position": "It is the primary obstacle. The target is intracellular; solubility ~1.6 uM caps free drug below the active range"},
+    {"item": "Ustekinumab", "round1": "worth investigating for anti-recurrence benefit", "p2_position": "Mechanistically contraindicated (CC1) plus PK too slow for an 8-week window"},
+    {"item": "Aprepitant", "round1": "mean 4.9, 'moderate'", "p2_position": "Do not pursue. DDI profile is disqualifying in this population and there is no endpoint"},
+    {"item": "Repurposing as the fastest route (implicit in the skill file itself)", "round1": "assumed", "p2_position": "Partly false in CDI. In-licensing a de-risked, financially orphaned Phase 2 asset is faster and better-evidenced"}
+  ],
+
+  "recommended_actions": [
+    {"priority": 1, "action": "HCQ in vitro TcdB entry-blockade assay in a colonocyte line at mucosally-achievable concentrations", "cost_usd": "30-60k", "duration_months": "2-3", "decides": "Whether a cheap approved drug hits Module A"},
+    {"priority": 2, "action": "Niclosamide kill-or-cure package: anaerobic stability, fecal-water dissolution, colonocyte uptake, FDA listed-drug determination letter", "cost_usd": "200-400k", "duration_months": "4-6", "decides": "Closes niclosamide (expected negative)"},
+    {"priority": 3, "action": "Ustekinumab vs anti-TNF CDI-recurrence retrospective cohort analysis in IBD biologic registries", "cost_usd": "100-300k", "duration_months": "6-9", "decides": "Answers Q5 definitively"},
+    {"priority": 4, "action": "STAGE 0 - fecal bile acid PK in CDI patients (n=20-30), UDCA + chenodiol + taurocholate arms, free concentration in FECAL WATER vs germination IC50", "cost_usd": "1-3M", "duration_months": "9-12", "decides": "GO/NO-GO on the pipeline's leading candidate. Resolves Round 1 gap #7 and the ADMET agent's central objection for 3% of program cost"},
+    {"priority": 5, "action": "Ribaxamase asset evaluation - diligence on the Phase 2b data package and acquisition cost", "cost_usd": "150-300k", "duration_months": "3-4", "decides": "Whether the fastest path is a transaction rather than a repurpose"},
+    {"priority": 6, "action": "Pre-IND / Type B meeting on 505(b)(2) reliance, endpoint, and fecal-concentration bridging", "cost_usd": "200k", "duration_months": "4-6 (parallel with #4)", "decides": "De-risks the regulatory assumptions"}
+  ],
+  "total_derisking_cost_usd": "under 4.5M",
+  "total_derisking_duration_months": 12,
+  "derisking_note": "Roughly 5% of the cheapest development program in this report, and it resolves Round 1 gaps #5, #6, #7 and most of #2",
+
+  "strategic_fork": {
+    "question": "Who pays? Every top-ranked candidate is a cheap generic and CDI's dominant failure mode is financial",
+    "fork_a_speed": {"description": "IR ursodiol, marketed formulation, no IP moat", "timeline_years": "5-6", "cost_usd": "45-85M", "funder": "NIAID / BARDA / DoD / CARB-X / academic consortium / payer-funded pragmatic trial", "outcome": "A guideline recommendation for a generic. Maximum patient benefit, zero commercial capture", "recommended": true},
+    "fork_b_defensibility": {"description": "Proprietary colon-targeted bile acid formulation, composition-of-matter plus method-of-use IP", "timeline_years": "7-9", "cost_usd": "60-110M", "funder": "Specialty pharma / VC", "outcome": "An ownable product. Slower, and carries the PPI-defeats-pH-coating technical risk", "recommended": false},
+    "recommendation": "Fork A, because the stated objective is fastest path to patients, not best return. But state the tradeoff plainly - Fork A will not attract industry capital, and a program with no owner is exactly how CDI assets die"
+  },
+
+  "verify_list": [
+    "Niclosamide US listed-drug/RLD status (discontinued but referenceable?) - determines whether it has any 505(b)(2) path",
+    "Chenodiol current US marketing status and label (Chenodal; Ctexli for CTX) - RLD availability plus the hepatotoxicity/diarrhoea rates quoted",
+    "High-dose UDCA PSC harm signal (28-30 mg/kg/d, increased death/transplant) - the most load-bearing single fact in the UDCA assessment",
+    "UDCA and CDCA anti-germination IC50 values in C. difficile - Stage 0's go/no-go criterion",
+    "Fecal bile acid concentrations in UDCA-treated patients - may be partly answerable from literature before spending $2M",
+    "Ebselen clinical development status and sponsors (Daiichi; Sound Pharmaceuticals SPI-1005) - confirms the no-RLD finding",
+    "Ustekinumab biosimilar availability",
+    "Obeticholic acid current market and regulatory restrictions",
+    "Nitazoxanide CDI trial data - size, comparator, outcomes; plus any sporulation/toxin-suppression data. Nitazoxanide's whole case rests on this and its rank would move most",
+    "Ribaxamase asset status and Theriva's disposition - whether the in-licensing recommendation is actionable",
+    "Orphan designation precedent for recurrent CDI - worth 7 years, stacks with QIDP"
+  ],
+
+  "disclaimer": "All repurposing hypotheses are computational and knowledge-based. No new experimental data was generated. Target-drug assignments derive from the disease model's hand-curated section 5 master list, which has no database backing in this project's current data. Feasibility scores measure development-path tractability, NOT probability of clinical benefit. The verify_list must be cleared before any external-facing use."
+}
