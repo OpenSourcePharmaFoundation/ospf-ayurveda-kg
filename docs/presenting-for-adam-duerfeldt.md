@@ -1,3 +1,10 @@
+Intro
+=====
+- Quentin gives a rough overview
+- Let Quentin figure it out
+
+-----
+
 Part 1: existing output
 =======================
 - Show what we have
@@ -25,6 +32,8 @@ Part 1: existing output
 - Extremely processing and token-intensive
 - Allows no back-and-forth or honing queries
 
+----
+
 Part 2: next directions
 =======================
 - Create network of local AIs / LLMs / GraphRAGs
@@ -41,7 +50,9 @@ Part 2: next directions
 - Allow creation of a frontend for it
 
 ### What's done?
-- Planned approach
+- Planned approach doc: `local-llm/local-ai-network-plan.md`
+
+-----
 
 What we are interested in
 =========================
@@ -49,9 +60,19 @@ What we are interested in
 2. Hone what we're doing with condition-specific researchers (related to #1)
    - Ensure the outputs make sense
 3. Help progress 2nd offshoot of the knowledge graph: the local LLM project
+   - We have a rough plan hammered out if you want to see it
+   - We've gotten started on it
+
+-----
 
 Motivation
 ==========
 - Use our experience with LLMs from our day jobs and our science backgrounds for a more meaningful and usable/practical purpose
   - Antidote to our frustration with pointless and harmful uses of AI
 - Build a valuable open-source project that helps further medical knowledge
+
+-----
+
+Git repo
+========
+https://github.com/OpenSourcePharmaFoundation/ospf-ayurveda-kg
