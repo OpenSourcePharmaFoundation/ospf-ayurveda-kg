@@ -2,8 +2,7 @@
 
 _Created: 2026-09-14 | Branch: `local-llm-subproject`_
 
-This plan turns the four-line sketch from the Duerfeldt presentation notes into a
-buildable design:
+This plan turns the sketch from the Duerfeldt presentation notes into a buildable design:
 
 > - Top-level: SLM (small language model) to take queries in
 > - Shrink the knowledge graph to discrete relevant sections (structural pruning with GNNs)
