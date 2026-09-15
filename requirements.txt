@@ -2,3 +2,8 @@ beautifulsoup4==4.12.3
 bs4==0.0.2
 pandas==2.2.3
 requests==2.32.3
+neo4j==5.26.0
+networkx==3.6.1
+scikit-learn==1.9.1
+torch==2.14.0
+torch-geometric==2.8.0.post1

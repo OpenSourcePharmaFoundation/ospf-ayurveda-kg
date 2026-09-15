@@ -1,0 +1,3 @@
+# regenerable artifacts: rebuild with export_graph.py / train_link_prediction.py
+models/
+graph/*.pt
