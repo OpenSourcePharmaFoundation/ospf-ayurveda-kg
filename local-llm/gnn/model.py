@@ -40,7 +40,9 @@ def _device_of(data: HeteroData) -> torch.device:
 class GNNEncoder(nn.Module):
     def __init__(self, hidden: int, num_layers: int = 2, dropout: float = 0.1):
         super().__init__()
-        self.convs = nn.ModuleList([SAGEConv((-1, -1), hidden) for _ in range(num_layers)])
+        self.convs = nn.ModuleList(
+            [SAGEConv((-1, -1), hidden) for _ in range(num_layers)]
+        )
         self.dropout = nn.Dropout(dropout)
 
     def forward(self, x: Tensor, edge_index: Tensor) -> Tensor:
@@ -64,7 +66,9 @@ class DotDecoder(nn.Module):
 class MLPDecoder(nn.Module):
     def __init__(self, hidden: int):
         super().__init__()
-        self.net = nn.Sequential(nn.Linear(2 * hidden, hidden), nn.ReLU(), nn.Linear(hidden, 1))
+        self.net = nn.Sequential(
+            nn.Linear(2 * hidden, hidden), nn.ReLU(), nn.Linear(hidden, 1)
+        )
 
     def forward(self, z_src: Tensor, z_dst: Tensor, edge_label_index: Tensor) -> Tensor:
         h = torch.cat([z_src[edge_label_index[0]], z_dst[edge_label_index[1]]], dim=-1)
@@ -108,11 +112,19 @@ class HeteroLinkPredictor(nn.Module):
             num_nodes=dict(num_nodes),
             in_dims=dict(in_dims),
         )
-        self.emb = nn.ModuleDict({nt: nn.Embedding(num_nodes[nt], hidden) for nt in self.node_types})
-        self.lin = nn.ModuleDict({nt: nn.Linear(d, hidden) for nt, d in in_dims.items() if d > 0})
+        self.emb = nn.ModuleDict(
+            {nt: nn.Embedding(num_nodes[nt], hidden) for nt in self.node_types}
+        )
+        self.lin = nn.ModuleDict(
+            {nt: nn.Linear(d, hidden) for nt, d in in_dims.items() if d > 0}
+        )
         if use_degree:
-            self.deg_lin = nn.ModuleDict({nt: nn.Linear(1, hidden) for nt in self.node_types})
-        self.encoder = to_hetero(GNNEncoder(hidden, num_layers, dropout), metadata, aggr="sum")
+            self.deg_lin = nn.ModuleDict(
+                {nt: nn.Linear(1, hidden) for nt in self.node_types}
+            )
+        self.encoder = to_hetero(
+            GNNEncoder(hidden, num_layers, dropout), metadata, aggr="sum"
+        )
         self.decoder = DotDecoder() if decoder == "dot" else MLPDecoder(hidden)
         for e in self.emb.values():
             nn.init.normal_(e.weight, std=0.1)
@@ -129,7 +141,12 @@ class HeteroLinkPredictor(nn.Module):
             x_dict[nt] = h
         return self.encoder(x_dict, data.edge_index_dict)
 
-    def decode(self, z: dict[str, Tensor], edge_type: tuple[str, str, str], edge_label_index: Tensor) -> Tensor:
+    def decode(
+        self,
+        z: dict[str, Tensor],
+        edge_type: tuple[str, str, str],
+        edge_label_index: Tensor,
+    ) -> Tensor:
         return self.decoder(z[edge_type[0]], z[edge_type[2]], edge_label_index)
 
     def forward(self, data: HeteroData, edge_type, edge_label_index: Tensor) -> Tensor:
