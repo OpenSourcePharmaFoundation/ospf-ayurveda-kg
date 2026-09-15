@@ -1,12 +1,34 @@
-═══════════════════════════════════════════════════════════════════
-DRUG DISCOVERY PIPELINE — CONSENSUS REPORT (ACADEMIC EDITION)
-═══════════════════════════════════════════════════════════════════
-Target Disease: Clostridioides difficile infection (CDI)
-Date: 2026-08-18
-Research Question: Evaluate possible treatments for Clostridioides difficile
-Candidates Evaluated: 15 (10 original + 5 surfaced during Phase 2)
-Agents Consulted: 17 domain agents across 4 rounds + structured debate
-Data Basis: Mixed — ~30% data-backed (ChemBL drug data), ~70% knowledge-based
+# DRUG DISCOVERY PIPELINE — CONSENSUS REPORT (ACADEMIC EDITION)
+
+- **Target Disease:** Clostridioides difficile infection (CDI)
+- **Date:** 2026-08-18
+- **Research Question:** Evaluate possible treatments for Clostridioides difficile
+- **Candidates Evaluated:** 15 (10 original + 5 surfaced during Phase 2)
+- **Agents Consulted:** 17 domain agents across 4 rounds + structured debate
+- **Data Basis:** data-backed (ChemBL drug data, IMPPAT, BSI Medicinal Plant Database), knowledge-based
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+## FINDINGS
+
+| Candidate | Score | Why |
+|-----------|-------|-----|
+| Ribaxamase † | 7.9 | Only positive human data; prevents CDI instead of treating it. Data unverified. |
+| CamSA † | 6.9 | Blocks spore germination; potent and non-absorbed by the same feature. |
+| Niclosamide | 6.4 | Blocks all three toxins; best mouse survival. Toxicity tied to mechanism. |
+| Ibezapolstat † | 5.4 | Spares commensals, but sits in the axis where 8 drugs failed. |
+| Berberine | 5.3 | Replicated mouse survival; no clean therapeutic window, cyclosporine interaction. |
+| UDCA | 4.2 | Works in vitro, failed in hamsters despite reaching the colon. |
+| Nitazoxanide | 4.0 | Human CDI data exist but on the wrong endpoint. |
+| Hydroxychloroquine | 3.7 | Long shot; cheapest experiment, novel compartment. |
+| Aprepitant | 0.9 | Evidence rests on TcdA, the toxin that failed. |
+| Ebselen † | 0.8 | Inactivated by blood; toxic selenium doses. |
+| Conessine | 0.0 | No pharmacophore match; unsafe. |
+| Bezlotoxumab | — | Withdrawn by Merck, Jan 2025. |
+
+† Novel — never approved for any indication. The rest are repurposing candidates.
+
+**Biggest gap:** barrier repair (C6) has zero candidates.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
