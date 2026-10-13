@@ -2,8 +2,7 @@
 
 _Created: 2026-09-14 | Branch: `local-llm-subproject`_
 
-This plan turns the four-line sketch from the Duerfeldt presentation notes into a
-buildable design:
+This plan turns the sketch from the Duerfeldt presentation notes into a buildable design:
 
 > - Top-level: SLM (small language model) to take queries in
 > - Shrink the knowledge graph to discrete relevant sections (structural pruning with GNNs)
@@ -454,7 +453,7 @@ ordered by dependency; several can overlap.
 
 | Phase | Deliverable | Depends on | Effort | Exit criterion |
 |---|---|---|---|---|
-| **A** GNN foundation | `export_graph.py`, `train_link_prediction.py`, predictions CSV | Full ChemBL scrape running in parallel | 1 week (the existing week plan) | AUC beats shortest-path baseline |
+| **A** GNN foundation | `export_graph.py`, `train_link_prediction.py`, predictions CSV | Full ChemBL scrape running in parallel | 1 week (the existing week plan) | AUC beats shortest-path baseline — **done 2026-09-14** (`local-llm/gnn/`; beats shortest-path, ties the degree heuristic; see `local-llm/README.md`) |
 | **B** Classical pruning | `src/subgraph/expand.py` + `prune.py` with PPR, no GNN | Neo4j export from A | 2-3 days | Known OM drug paths survive at budget 500 |
 | **C** Intake | `src/intake/` with SLM router + deterministic linker + gold set | Name index from Neo4j | 3-4 days | ≥ 90% intent accuracy on gold set |
 | **D** Ranker | `src/classical_ml/features.py` + `rank.py` with disease-held-out CV | A (embeddings), B (subgraph), full ChemBL, PubChem descriptors | 1 week | Known OM drugs in top-20 on held-out OM |
@@ -472,6 +471,10 @@ part-time work to Phase F, with G-J following.
 ---
 
 ## 11. Module layout (vertical slices)
+
+_Decision 2026-09-14: subproject code and outputs live under `local-llm/` rather
+than `src/`, so the tree below is rooted at `local-llm/` (e.g. `local-llm/gnn/`),
+and `data/` below means `local-llm/data/`. Scrapers stay in the repo-level `src/`._
 
 ```
 src/
