@@ -22,5 +22,5 @@ __pycache__
 
 docs/local_notes.md
 
-# graft's local graph cache — regenerable, not committed (run `graft build`).
-/graft/
+# Blinded holdout datasets — regenerable via src/holdout/blind_dataset.py
+data/processed-blinded-*/
