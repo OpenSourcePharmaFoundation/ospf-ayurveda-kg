@@ -24,3 +24,6 @@ docs/local_notes.md
 
 # Blinded holdout datasets — regenerable via src/holdout/blind_dataset.py
 data/processed-blinded-*/
+
+# Chain-runner state
+tmp/
