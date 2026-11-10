@@ -104,7 +104,114 @@ it needs no animal. **This displaces the aqueous-humour tap from the critical pa
 
 ---
 
-## 1. STATE OF KNOWLEDGE
+## 1. CANDIDATE RANKING
+
+**What this ranks.** Eight compounds against diabetic retinopathy, ordered by **certainty of
+engaging a named target in a named compartment** — not by potency, and not by weight of
+accumulated evidence. The disease stage is the same for all of them: mild-to-moderate
+non-proliferative disease (§9). The evidence behind every column is in §4–§8. The order is
+stated first because it is *not* what the pharmacology would suggest, and the reasons it is
+not are the substance of this report.
+
+**Read it as a ranking of experimental priority, not of assets.** Several entries are
+deliberately *instruments* — probes that measure whether a mechanism operates, and control
+arms that make a result interpretable. A poor chronic drug can be the best available probe.
+
+**How to read the margin column.** Margin is free drug concentration divided by free EC₅₀ at
+the **retinal vascular endothelium** — the compartment that faces the blood directly and is
+therefore the most favourable of the three, quoted at peak rather than average plasma
+concentration. **A margin of 1.0 means free drug sits exactly at the free EC₅₀; the reciprocal
+is the fold shortfall.** Every value in the column is below 1. Modelled **[Mod]** over 23
+inputs; bounds, the other two compartments and the average-concentration figures are in §5.7.
+
+| # | Compound | Role | Measured PPARα / PPARδ / PPARγ (pChEMBL) | Endothelial margin, Cmax | Basis |
+|---|---|---|---|---|---|
+| **1** | **Fenofibric acid** | **Lead, systemic limb only** | **4.82 median, 5.58 best** / — / 4.00 | **0.020** (51× short) | Certain hepatic engagement; the only fibrate lowering apoB particle number; the compound the DR clinical evidence actually rests on. Local engagement excluded |
+| 2 | Pemafibrate | Lead alternate — **downgraded** | **9.00** / 5.80 / 5.96 | 0.027 (37× short) | Most potent and the **worst retinal drug of the four**: most dependent on a hepatic transporter the retina lacks (required liver Kp,uu 91.6×), and its selectivity excludes the PPARδ-dominant compartments where the pathology is |
+| 3 | Elafibranor (**+ GFT1007**) | **Probe (12 wk)** | 8.00 / **8.00** / 6.76 | **0.136** (7.3× short, P = 0.147) | Closest of the PPARα three, and only because its active metabolite carries 3.2× the parent's exposure. Equal PPARδ potency makes it a **pro-angiogenic risk** in retinal vasculature |
+| 4 | **Seladelpar** | **PPARδ probe — reclassified** | 5.82 / **8.72** / — | **0.558** on PPARδ (1.8× short, P = 0.34) | **The only compound of the four within reach of a retinal receptor**, because it needs a hepatic concentration factor of only 1.5×. At PPARα it is 1,340× short. See §11.1 — this is a hazard finding as much as an opportunity |
+| 5 | Olezarsen | **Control** | — | — | Matched non-PPAR apoC-III suppression — the decisive discriminating arm |
+| 6 | Inclisiran | **Falsification arm** | — | — | 3–5× the apoB effect of any fibrate; if apoB mass is the mechanism, it should work better |
+| 7 | Fenofibrate | Prodrug of #1 | 6.00 / — / 6.24 | — | Adds an esterase step and a food effect without adding pharmacology; **42× worse ocular distribution than the acid by the systemic route [C]** |
+| 8 | Candesartan | Comparator | — | — | Engagement certain at a luminal target; blocked by background therapy |
+
+Affinities **[M]**, from 5,271 / 3,223 / 7,913 validity-filtered activities on human PPARA
+(CHEMBL239), PPARD (CHEMBL3979) and PPARG (CHEMBL235). Margins **[Mod]**, §5.7.
+
+**Bottom of the field, with the reason each fell:** quercetin (its apparent breadth is an
+artefact of study volume — §1.2); minocycline (its papilloedema risk attacks the very endpoint
+being measured); epalrestat (excellent engagement of a *falsified* target); and the dietary
+fatty acids (**not dose-movable** — plasma concentrations already sit at their own EC₅₀, so
+there is no dose that changes anything).
+
+**What is absent from this table and should not be.** No compound here accelerates lipid
+*clearance* from the retina; every one of them reduces what arrives. That gap is the largest
+uncovered module in the disease and it is treated in §11.2.
+
+### 1.1 Three measured corrections to the ranking's own logic
+
+Each of these reverses something the raw pharmacology would imply, and each is why the order
+above differs from an ordering by potency.
+
+**The lead's potency is a distribution, and its median is 15 µM.** Fenofibric acid's PPARα EC₅₀
+has a median of **15,000 nM over 13 determinations** with five further records censored at
+>10,000 nM — i.e. five laboratories reporting no activity where the most favourable single
+record sits **[M]**. Taking the minimum of that distribution as the value is worth ~5.7×. The
+ranking is unchanged — it ranks on certainty of hepatic engagement, and hepatic portal
+concentrations plus a 37× uptake factor engage a micromolar EC₅₀ — but the compound is a weak
+binder at its own receptor.
+
+**Potency does not buy engagement, and here it buys negative engagement.** Pemafibrate exceeds
+fenofibric acid by **3.4 log units best-vs-best and 4.5 log median-vs-median [M]**
+(*n = 3 for pemafibrate, all EC₅₀ — thin and not to be over-read*), and circulates at roughly
+four orders lower free concentration. Its endothelial margin is **worse** than fenofibric
+acid's at average concentration. **A more selective PPARα agonist is a worse retinal drug, not
+a better one.**
+
+**The route comparison favours the acid over the ester.** Systemic versus topical dosing of the
+same drug in the same study gives a **42× penalty for the prodrug fenofibrate but only 3.4× for
+the active metabolite fenofibric acid [C]**. *That is a route comparison, not a partition ratio
+— it carries no information about the blood-to-retina ratio, and should not be used as one.*
+
+### 1.2 Why this ranks on measured affinity rather than on target coverage
+
+The obvious way to rank compounds against a disease is to count how many of its genes each one
+is recorded as hitting. That method does not work, and the failure is large enough to invert an
+ordering: **a compound's hit count against a disease gene panel, as reported by curated
+interaction databases, is close to unrelated to its measured binding.** Quercetin illustrates
+it **[M]**:
+
+| Quercetin | Value |
+|---|---|
+| Curated interaction count, 27-gene panel | **26 of 27** |
+| ChEMBL genes bound at ≤1 µM, 43-gene panel | **3** (AKR1B1 7.83, MMP9 6.76, KDR 6.55) |
+| PPARα effector genes bound at ≤1 µM | **0** |
+
+The pattern is general: of 153 compounds in the original coverage set, **15 bind any panel gene
+at ≤1 µM and 3 bind any PPARα effector gene at ≤1 µM**; mean effector genes bound across the
+152 matched compounds is **0.046 [M]**. Catalogue size correlates with hit count at
+**r = 0.911**, and a random set of 20 compounds covers ≥26 of those 27 genes with probability
+**0.58**.
+
+**One caution that must not be dropped:** a blank is not a zero. Absence of a ChEMBL activity
+means *not measured in ChEMBL*, not *no interaction*.
+
+### 1.3 What would change this ranking
+
+One measurement, and it is cheap. **The EC₅₀ values above were determined in media whose
+protein content is mostly unstated**, which overstates them by 2.3–5.2× (§5.5), and the EC₅₀
+together with those serum conditions carries **69% of the variance in the margin column**
+(§5.9). A PPARα and PPARδ panel run across all four compounds in one assay at a stated,
+measured albumin concentration would resolve it in weeks, in cell culture, with no animal.
+
+**If the free EC₅₀s come back 10× below the corrected values here, elafibranor and seladelpar
+reach parity at the endothelium and rows 3 and 4 change meaning entirely.** Nothing else in
+this table is within a decade of moving — fenofibric acid and pemafibrate are 51× and 37×
+short, and §5.8 explains why that shortfall is mechanistic rather than a dosing problem.
+
+---
+
+## 2. STATE OF KNOWLEDGE
 
 | Question | Answer | Basis |
 |---|---|---|
@@ -124,7 +231,7 @@ it needs no animal. **This displaces the aqueous-humour tap from the critical pa
 
 ---
 
-## 2. THE SCIENTIFIC QUESTION
+## 3. THE SCIENTIFIC QUESTION
 
 PPARα is a ligand-activated nuclear receptor governing fatty-acid catabolism. The retina is the
 most metabolically active and most lipid-dense tissue per gram in the body. Photoreceptor outer
@@ -144,9 +251,9 @@ must be **supraphysiological activation of a normally expressed receptor**, whic
 different dose-response and a different safety argument than correcting a deficit.
 
 **The receptor is most abundant where a drug can least reach, and least abundant where the
-mechanisms live [M].** See §3.
+mechanisms live [M].** See §4.
 
-### 2.1 Why the lipid axis is under-served
+### 3.1 Why the lipid axis is under-served
 
 Hard exudates in DR are **not "fat."** They are retained, glycated-and-oxidised apoB
 lipoproteins deposited in Henle's layer, and that modified species is directly cytotoxic to
@@ -159,14 +266,14 @@ than cholesterol load, the relevant intervention lowers remnant supply, not LDL.
 No current therapy clears hard exudate, and subfoveal lipid causes permanent vision loss even in
 anatomically dried eyes. The lipid axis is the mechanistically neglected module of this disease.
 
-### 2.2 Four limbs, four different experiments
+### 3.2 Four limbs, four different experiments
 
 | | Limb | Drug acts at | Effect appears at | Status |
 |---|---|---|---|---|
 | **1** | Lipoprotein supply | Hepatocyte | Plasma composition → retina | **Live by elimination.** Engagement certain; clinical evidence disfavours it as the agent of benefit |
-| **2** | Humoral relay (FGF21) | Hepatocyte | FGF21 → retinal endothelium, luminal side | **Closed. Fails** — §5 |
-| **3** | Local transrepression | Retinal endothelium / microglia / RPE | NF-κB → ICAM-1 → leukostasis | **Biologically necessary, pharmacologically unreachable** — §6 |
-| **4** | Local transactivation | Neural retina | PPRE-driven fatty-acid-oxidation genes | **Excluded quantitatively**, ~600× short — §7 |
+| **2** | Humoral relay (FGF21) | Hepatocyte | FGF21 → retinal endothelium, luminal side | **Closed. Fails** — §6 |
+| **3** | Local transrepression | Retinal endothelium / microglia / RPE | NF-κB → ICAM-1 → leukostasis | **Biologically necessary, pharmacologically unreachable** — §7 |
+| **4** | Local transactivation | Neural retina | PPRE-driven fatty-acid-oxidation genes | **Excluded quantitatively**, ~600× short — §8 |
 
 **The fibrate benefit observed in FIELD and ACCORD-Eye is real and is now unexplained by any of
 the four.** That is the honest state of the mechanism question, and it is a sharper statement
@@ -174,9 +281,9 @@ than "unresolved."
 
 ---
 
-## 3. THE RECEPTOR IN HUMAN RETINA
+## 4. THE RECEPTOR IN HUMAN RETINA
 
-### 3.1 Expression, measured
+### 4.1 Expression, measured
 
 **% of cells with ≥1 UMI.** CZ CELLxGENE Discover Census LTS release `2025-11-08`;
 **4,828,235 adult non-diseased human retinal cells, 24 datasets, 16 publications**; raw counts
@@ -213,7 +320,7 @@ single-cell clustering assigns *PPARA* to a photoreceptor/phototransduction clus
 PPARA, PPARD and PPARG are present in the feature space of **24 of 24 retina datasets [M]**, so
 no zero reported here is a missing-feature artifact. Every zero is a measured non-detection.
 
-### 3.2 The apparent antibody-versus-transcriptomics conflict is a detection artifact
+### 4.2 The apparent antibody-versus-transcriptomics conflict is a detection artifact
 
 Three measured mechanisms account for the impression that retinal atlases do not show *PPARA*.
 
@@ -249,7 +356,7 @@ resource has never stained retina for PPARα** — its retina IHC panel covers 1
 includes no PPAR isoform, and it grades PPARα immunofluorescence "Uncertain" on both its
 antibodies (HPA066941, CAB075701) **[M]**.
 
-### 3.3 The isoform split follows the neural/vascular boundary
+### 4.3 The isoform split follows the neural/vascular boundary
 
 | Cell class | PPARA % | PPARD % | **PPARD : PPARA** |
 |---|---:|---:|---|
@@ -269,8 +376,8 @@ All **[M]**. In bulk, PPARA leads comfortably (4.5× in EyeGEx, 3–5× in GSE16
 ratio is dominated by rods, which are ~70% of retinal cells, and **it conceals a complete
 reversal in the vasculature.**
 
-**This converts isoform selectivity from a safety preference into a targeting constraint**, and
-§8 and §11.1 show it is now also a hazard. PPARδ is pro-angiogenic and shares the transrepression
+**This converts isoform selectivity from a safety preference into a targeting constraint** — and,
+as the ranking in §1 and the assessment in §11.1 set out, into a hazard. PPARδ is pro-angiogenic and shares the transrepression
 machinery. Every local-engagement mechanism proposed for DR is sited in endothelium, pericytes,
 Müller glia or microglia — each PPARδ-dominant or PPARα/PPARδ-balanced.
 
@@ -281,7 +388,7 @@ ranks **9th with a genetic association score of 0.750, while PPARA ranks 66th wi
 disease ontology rather than from retinopathy specifically. Resolving it is a single query and
 has not been run.
 
-### 3.4 A stoichiometric limit, offered as a hypothesis
+### 4.4 A stoichiometric limit, offered as a hypothesis
 
 PPARα cannot transactivate except as a PPARα::RXR heterodimer. The partner is scarcer than the
 receptor in exactly the cells where the receptor is most abundant **[C, from [M] detection
@@ -302,9 +409,9 @@ p = 0.003) **[M, nominal; does not survive FDR]**.
 
 ---
 
-## 4. RETINAL DRUG EXPOSURE
+## 5. RETINAL DRUG EXPOSURE
 
-### 4.1 Three compartments, not one range
+### 5.1 Three compartments, not one range
 
 The barrier is not a single hurdle, and this is the correction that changes the answer before
 any arithmetic.
@@ -343,7 +450,7 @@ a lower plateau. These drugs are taken daily for years, so time to equilibrium i
 constraint. Permeability lowers the plateau only when it competes with a route out that is not
 the way in — and for these compounds that route is the measured efflux above.
 
-### 4.2 The calibration anchor, and the unit trap inside it
+### 5.2 The calibration anchor, and the unit trap inside it
 
 **Huang et al. 2021**, *Biology (Basel)* 10(12):1328, **PMID 34943243**, Table 1. C57BL/6J mice,
 fenofibrate **2 mg/kg/day intraperitoneally for 7 days**, LC-MS 6 h after the final dose. This
@@ -380,7 +487,7 @@ Cu,plasma = M_plasma × [plasma protein] × fu,plasma
 **Result: Kp,uu (neural retina, fenofibric acid) = 0.0594 [95% CI 0.0090 – 0.3544] [Mod]** — a
 16.8× exclusion (95% CI 2.8 – 111×).
 
-### 4.3 Independent calibration
+### 5.3 Independent calibration
 
 One experiment is a point, not a calibration. The check is human studies that measured a
 systemically dosed drug in aqueous humour *and* plasma in the same patients at cataract surgery.
@@ -410,7 +517,7 @@ elimination **1.66× that of the bulk-flow marker mannitol**, efflux reduced by 
 > barriers carrying ABC and SLC transporters, but they are different tissues. This is a
 > plausibility check, not a substitute measurement.
 
-### 4.4 Ionisation, and why it matters less than expected
+### 5.4 Ionisation, and why it matters less than expected
 
 No experimental pKa exists for any of the four compounds in PubChem's experimental-properties
 record, in ChEMBL, or in the reachable literature; pKa is therefore assumed from the measured
@@ -431,7 +538,7 @@ cytosol/plasma pH-partition term is **0.50** — a factor of two, not the orders
 trapping gives a base in a lysosome — and it cancels from the final comparison, because the
 EC₅₀ assay's receptor sat in a cytosol at the same pH offset from its own medium.
 
-### 4.5 The serum correction
+### 5.5 The serum correction
 
 Comparing free drug against a nominal EC₅₀ double-counts protein binding. A cell assay reports
 the **total** concentration added to the well; albumin in the medium bound some of it. With
@@ -456,7 +563,7 @@ comparing free drug against an *uncorrected* nominal EC₅₀ gets a margin scal
 free-fraction range, so its conclusion is dominated by a parameter that should be nearly
 irrelevant.
 
-### 4.6 Potency, as a distribution
+### 5.6 Potency, as a distribution
 
 26 PPARα EC₅₀ determinations from independent laboratories. **The inter-laboratory spread is the
 uncertainty**; quoting one paper's figure hides it, and taking the minimum of a distribution as
@@ -474,7 +581,7 @@ All **[M]**.
 † GSD floored at 2.5. Three laboratories agreeing to one significant figure is agreement about
 the order of magnitude, not evidence that between-assay spread is zero.
 
-### 4.7 Margins
+### 5.7 Margins
 
 Plasma exposure is taken from FDA labels where one exists, with **Cavg,ss derived as AUC(0–τ)/τ**
 rather than taken as Cmax, because a nuclear receptor at steady state sees the average. Cmax is
@@ -507,7 +614,7 @@ Dose multiple required to reach margin 1 at the endothelium, at Cavg:
 | **Seladelpar (PPARδ)** | 10 mg/d | **4.8×** | 0.31 – 71× |
 | Seladelpar (PPARα) | 10 mg/d | 3,570× | 230 – 53,500× |
 
-### 4.8 The calibration that decides whether to believe any of this
+### 5.8 The calibration that decides whether to believe any of this
 
 A model saying free fenofibric acid sits ~100× below its free PPARα EC₅₀ has an obvious problem:
 **fenofibrate demonstrably activates hepatic PPARα — triglycerides fall 30–50%.** If the model
@@ -547,14 +654,14 @@ In retinal vascular endothelium specifically, SLCO1B1 is 0.4 nCPM and SLCO1B3 is
 > **The mechanism that makes a fibrate a drug is the mechanism that denies it the eye.** These
 > compounds are not under-dosed for the retina; they are correctly dosed for a tissue that
 > concentrates them 40–90×, and the retina is not that tissue. **Raising the dose does not fix a
-> missing transporter** — the same shape of conclusion as §5's missing co-receptor.
+> missing transporter** — the same shape of conclusion as §6's missing co-receptor.
 
 **What was not verified:** no measured hepatic Kp,uu for any fibrate was found. The 37–92×
 figures are the model's *prediction*, testable against sandwich-cultured human hepatocytes. The
 support above is the mechanism, the contrast case and the ordering — not a matching literature
 value.
 
-### 4.9 Where the variance actually is
+### 5.9 Where the variance actually is
 
 Saltelli/Jansen Sobol indices on log₁₀(margin), 23 inputs, 819,200 model evaluations per
 compound-compartment. Indexed by block, because the decision — where to spend measurement
@@ -587,7 +694,7 @@ fenofibric acid, one day of equilibrium dialysis, which tightens the calibration
 dosing** — still the only thing that settles the neural-retina barrier block, still worth doing,
 but third or fourth on variance rather than first.
 
-### 4.10 What has not been measured
+### 5.10 What has not been measured
 
 - **No fibrate concentration in any ocular compartment after oral dosing, in any species.** One
   reported oral attempt in rat found fenofibrate and fenofibric acid **below detection** in the
@@ -597,23 +704,23 @@ but third or fourth on variance rather than first.
 - **No measured free fraction in retinal tissue** for any fibrate.
 - **No measured logP, logD or pKa** for any of the four.
 - **No measured plasma protein binding for pemafibrate** anywhere accessible.
-- **No protein-level transporter measurement.** §4.1 and §4.8 are mRNA, from one consortium.
+- **No protein-level transporter measurement.** §5.1 and §5.8 are mRNA, from one consortium.
 - **GFT1007's own EC₅₀** is not separately determined; it is modelled as equipotent with the
   parent, which makes the combined elafibranor margin an upper bound.
 - The RPE's **net** anion transport direction is unmeasured, so its prior spans a hundredfold
-  and the RPE margins are the least trustworthy numbers in §4.7. **If RPE OAT1/OAT3 concentrate
+  and the RPE margins are the least trustworthy numbers in §5.7. **If RPE OAT1/OAT3 concentrate
   these acids, the compartment ordering inverts** — that is the single experiment that would
   most change the framing rather than the numbers.
 
 ---
 
-## 5. LIMB 2 — THE FGF21 RELAY FAILS
+## 6. LIMB 2 — THE FGF21 RELAY FAILS
 
 The best-evidenced-looking mechanism was a hepatic-to-retinal humoral relay: a fibrate raises
 plasma FGF21, and FGF21 protects retinal vasculature. Both halves are published. They are not
 the same concentration, and the retina cannot receive the hormone.
 
-### 5.1 A unit correction that runs against the conclusion
+### 6.1 A unit correction that runs against the conclusion
 
 Every retinal in-vitro result in this literature is reported as "ng/mL FGF21." It is not FGF21.
 It is **PF-05231023**, a CovX-body: two modified FGF21 molecules conjugated to a humanised
@@ -629,7 +736,7 @@ Reading the clinical and retinal literatures as the same analyte overstates the 
 ~5×. **Correcting it halves the apparent gap** — against the verdict below, which is why the
 verdict is trustworthy.
 
-### 5.2 Both datasets on one axis
+### 6.2 Both datasets on one axis
 
 **Achievable, human plasma [M].** Baseline in non-diabetic adults 85–235 pg/mL by study median —
 with a **250-fold range across 76 healthy individuals**, so any single "normal value" is a point
@@ -677,7 +784,7 @@ should sit relative to developer-chosen exposures; reaching the active concentra
 in type 2 diabetes already sits 41× below the adipocyte EC₅₀, which is why the retinal anchor
 carries the argument and the receptor anchor is corroboration only.
 
-### 5.3 Three constraints harder than the arithmetic
+### 6.3 Three constraints harder than the arithmetic
 
 **1. Native hormone at ~10⁴× endogenous did not work [M].** Native FGF21 at 5 mg/kg twice daily
 had **no effect** on retinal neovascularisation in mouse oxygen-induced retinopathy, while the
@@ -712,7 +819,7 @@ metabolic disease severity. **The second finding is not.** It is the within-pati
 treatment-induced change, which is the exact quantity the relay proposes is therapeutic, and in
 9,697 patients it predicted a worse outcome.
 
-### 5.4 The strongest counter-argument, and why it does not close the gap
+### 6.4 The strongest counter-argument, and why it does not close the gap
 
 Duration, not amplitude, separated success from failure in the decisive in-vivo experiment:
 half-life 0.4 h failed, half-life 28 h succeeded. A fibrate gives the *right kinetics* and the
@@ -733,7 +840,7 @@ increased neovascularisation **[M]**, which establishes that the hormone matters
 establish that a 40% increment moves a retinal endpoint — dose-response is not recoverable from
 a null allele.
 
-### 5.5 What survives: a different relay
+### 6.5 What survives: a different relay
 
 The retinal biology is real and is **adiponectin-mediated** — deleting adiponectin **completely
 abolished** FGF21's retinal protection in two separate models (**PMID 28199833**,
@@ -754,12 +861,12 @@ concentrations a fibrate cannot reach.
 
 ---
 
-## 6. LIMB 3 — NECESSARY, AND UNREACHABLE
+## 7. LIMB 3 — NECESSARY, AND UNREACHABLE
 
 This is the central finding of the report, and it is two results that point in opposite
 directions and are both solid.
 
-### 6.1 Local PPARα is necessary in endothelium and microglia
+### 7.1 Local PPARα is necessary in endothelium and microglia
 
 **Two cell-type-restricted conditional *Ppara* deletions in mouse retina have been published
 [M]**, with two different inducible Cre drivers:
@@ -782,10 +889,10 @@ adjusted. Both papers state this exclusion as their explicit purpose.
 
 **Neither paper measures ANGPTL4** (checked by full-text search; zero hits in either) **[M]**.
 
-### 6.2 No available drug reaches it
+### 7.2 No available drug reaches it
 
-§4.7: endothelial margins of 0.0084–0.031 at average plasma concentration and 0.020–0.136 at
-peak, requiring 119–290× the labelled dose. §4.8: the deficit is mechanistic, from a hepatic
+§5.7: endothelial margins of 0.0084–0.031 at average plasma concentration and 0.020–0.136 at
+peak, requiring 119–290× the labelled dose. §5.8: the deficit is mechanistic, from a hepatic
 uptake transporter the retina does not express, so it is not a dosing problem.
 
 **The two results together are the report's central finding: a local target that genetics says
@@ -804,7 +911,7 @@ Three resolutions are live and they are distinguishable by experiment:
    and the EC₅₀ distribution itself, which carries 69% of the variance in the compartments that
    matter.
 
-### 6.3 What remains open, and the inversion that makes it matter
+### 7.3 What remains open, and the inversion that makes it matter
 
 **No conditional deletion exists for RPE, Müller glia or photoreceptors [M].** Necessity is
 established for the **two lowest-PPARA compartments** (endothelium 15.4%, microglia 15.5%) and
@@ -819,7 +926,7 @@ concentration near its EC₅₀.**
 
 ---
 
-## 7. LIMB 4 — LOCAL TRANSACTIVATION, EXCLUDED QUANTITATIVELY
+## 8. LIMB 4 — LOCAL TRANSACTIVATION, EXCLUDED QUANTITATIVELY
 
 Three arguments bear on whether an orally dosed fibrate can drive PPRE-dependent gene expression
 in neural retina. One has strengthened decisively; one has weakened; one is a hypothesis.
@@ -857,85 +964,17 @@ those datasets, from a pathway that is genuinely uninvolved.
 Two of those rows are assay specifications. **HMGCS2 is RPE-specific** (23.0% of cells, ≤0.1%
 elsewhere) and a direct PPARα target, which makes it the one tractable local-transactivation
 readout in human eye. **FGF21 is flat zero in every retinal cell type**, so the humoral relay of
-§5 is necessarily hepatic-to-retinal with no local-production escape hatch.
+§6 is necessarily hepatic-to-retinal with no local-production escape hatch.
 
 One nominal hint points the right way and does not survive multiple-testing correction: *PDK4*
 falls in diabetic peripheral retina (log₂FC −0.62, p = 0.015) **[M, nominal]**.
 
-**A hypothesis — the stoichiometric ceiling.** §3.4. In rods, PPARα exceeds its obligate RXR
+**A hypothesis — the stoichiometric ceiling.** §4.4. In rods, PPARα exceeds its obligate RXR
 partner by at least 6.4 to 1, which would cap transactivation independently of drug
 concentration.
 
 **Net.** Limb 4 fails on exposure, by a margin large enough that the surviving uncertainties do
 not reach it.
-
----
-
-## 8. CANDIDATE RANKING
-
-**Read as a ranking of experimental priority, not of assets.** Several entries are deliberately
-*instruments* — probes that measure whether a mechanism operates, and control arms that make a
-result interpretable. A poor chronic drug can be the best available probe.
-
-| # | Compound | Role | Measured PPARα / PPARδ / PPARγ (pChEMBL) | Endothelial margin, Cmax | Basis |
-|---|---|---|---|---|---|
-| **1** | **Fenofibric acid** | **Lead, systemic limb only** | **4.82 median, 5.58 best** / — / 4.00 | **0.020** (51× short) | Certain hepatic engagement; the only fibrate lowering apoB particle number; the compound the DR clinical evidence actually rests on. Local engagement excluded |
-| 2 | Pemafibrate | Lead alternate — **downgraded** | **9.00** / 5.80 / 5.96 | 0.027 (37× short) | Most potent and the **worst retinal drug of the four**: most dependent on a hepatic transporter the retina lacks (required liver Kp,uu 91.6×), and its selectivity excludes the PPARδ-dominant compartments where the pathology is |
-| 3 | Elafibranor (**+ GFT1007**) | **Probe (12 wk)** | 8.00 / **8.00** / 6.76 | **0.136** (7.3× short, P = 0.147) | Closest of the PPARα three, and only because its active metabolite carries 3.2× the parent's exposure. Equal PPARδ potency makes it a **pro-angiogenic risk** in retinal vasculature |
-| 4 | **Seladelpar** | **PPARδ probe — reclassified** | 5.82 / **8.72** / — | **0.558** on PPARδ (1.8× short, P = 0.34) | **The only compound of the four within reach of a retinal receptor**, because it needs a hepatic concentration factor of only 1.5×. At PPARα it is 1,340× short. See §11.1 — this is a hazard finding as much as an opportunity |
-| 5 | Olezarsen | **Control** | — | — | Matched non-PPAR apoC-III suppression — the decisive discriminating arm |
-| 6 | Inclisiran | **Falsification arm** | — | — | 3–5× the apoB effect of any fibrate; if apoB mass is the mechanism, it should work better |
-| 7 | Fenofibrate | Prodrug of #1 | 6.00 / — / 6.24 | — | Adds an esterase step and a food effect without adding pharmacology; **42× worse ocular distribution than the acid by the systemic route [C]** |
-| 8 | Candesartan | Comparator | — | — | Engagement certain at a luminal target; blocked by background therapy |
-
-Affinities **[M]**, from 5,271 / 3,223 / 7,913 validity-filtered activities on human PPARA
-(CHEMBL239), PPARD (CHEMBL3979) and PPARG (CHEMBL235). Margins **[Mod]**, §4.7.
-
-**Bottom of the field:** quercetin, minocycline (its papilloedema risk attacks the very endpoint
-being measured), epalrestat (excellent engagement of a *falsified* target), and the dietary
-fatty acids (**not dose-movable**: plasma concentrations already sit at their own EC₅₀).
-
-### 8.1 Three measured corrections to the ranking's own logic
-
-**The lead's potency is a distribution, and its median is 15 µM.** Fenofibric acid's PPARα EC₅₀
-has a median of **15,000 nM over 13 determinations** with five further records censored at
->10,000 nM — i.e. five laboratories reporting no activity where the most favourable single
-record sits **[M]**. Taking the minimum of that distribution as the value is worth ~5.7×. The
-ranking is unchanged — it ranks on certainty of hepatic engagement, and hepatic portal
-concentrations plus a 37× uptake factor engage a micromolar EC₅₀ — but the compound is a weak
-binder at its own receptor.
-
-**Potency does not buy engagement, and here it buys negative engagement.** Pemafibrate exceeds
-fenofibric acid by **3.4 log units best-vs-best and 4.5 log median-vs-median [M]**
-(*n = 3 for pemafibrate, all EC₅₀ — thin and not to be over-read*), and circulates at roughly
-four orders lower free concentration. Its endothelial margin is **worse** than fenofibric
-acid's at average concentration. **A more selective PPARα agonist is a worse retinal drug, not
-a better one.**
-
-**The route comparison favours the acid over the ester.** Systemic versus topical dosing of the
-same drug in the same study gives a **42× penalty for the prodrug fenofibrate but only 3.4× for
-the active metabolite fenofibric acid [C]**. *That is a route comparison, not a partition ratio
-— it carries no information about the blood-to-retina ratio, and should not be used as one.*
-
-### 8.2 Target-coverage counts measure study volume, not pharmacology
-
-A compound's hit count against a disease gene panel, as reported by curated interaction
-databases, is close to unrelated to measured binding. Quercetin illustrates it **[M]**:
-
-| Quercetin | Value |
-|---|---|
-| Curated interaction count, 27-gene panel | **26 of 27** |
-| ChEMBL genes bound at ≤1 µM, 43-gene panel | **3** (AKR1B1 7.83, MMP9 6.76, KDR 6.55) |
-| PPARα effector genes bound at ≤1 µM | **0** |
-
-The pattern is general: of 153 compounds in the original coverage set, **15 bind any panel gene
-at ≤1 µM and 3 bind any PPARα effector gene at ≤1 µM**; mean effector genes bound across the
-152 matched compounds is **0.046 [M]**. Catalogue size correlates with hit count at
-**r = 0.911**, and a random set of 20 compounds covers ≥26 of those 27 genes with probability
-**0.58**.
-
-**One caution that must not be dropped:** a blank is not a zero. Absence of a ChEMBL activity
-means *not measured in ChEMBL*, not *no interaction*.
 
 ---
 
@@ -973,7 +1012,7 @@ is a bounded liability, and the measurements now locate it and largely retire it
   engagement at least as much as by PPARα — which makes equal-potency dual agonists the specific
   hazard, not PPARα selectivity. §11.1.
 - **The two objections are mutually destructive, and the exposure side is now quantified.**
-  ANGPTL4 induction requires the gene-activation machinery that §4.7 places 37–1,340× out of
+  ANGPTL4 induction requires the gene-activation machinery that §5.7 places 37–1,340× out of
   reach. **If local engagement is too weak to help, it is too weak to harm**, and that is now a
   modelled statement rather than a symmetry argument.
 - **A ceiling from already-measured data.** ANGPTL4 inhibits lipoprotein lipase, so meaningful
@@ -1004,7 +1043,7 @@ Three measured facts collide here and none of them was available a year ago.
 
 1. **PPARδ is the dominant PPAR isoform in every vascular and immune retinal compartment** —
    microglia 2.78×, amacrine 2.24×, ganglion cells 1.77×, smooth muscle 1.18×, endothelium
-   1.15×, pericytes 1.10× over PPARα **[M]**, §3.3.
+   1.15×, pericytes 1.10× over PPARα **[M]**, §4.3.
 2. **Seladelpar is the only compound of the four that gets within reach of a retinal receptor**
    — endothelial margin 0.558 [0.038–8.59] at Cmax, RPE 1.77, P(margin ≥ 1) = 0.34 at the
    endothelium and 0.62 at the RPE, 4.8× dose short **[Mod]**. It achieves this because it needs
@@ -1048,7 +1087,7 @@ with a recorded ABCA1 mechanism is **probucol, an ABCA1 *inhibitor***.
 
 **The structural opening is real and worth a number.** The PPARα pocket mandates a lipophilic
 acid; the LXR pocket does not — **802 of 1,009 potent LXR ligands are neutral (79%) [M]**. Under
-the §4 model, going neutral buys a **paired median 10–12× gain in neural-retina Kp,uu (95% CI
+the §5 model, going neutral buys a **paired median 10–12× gain in neural-retina Kp,uu (95% CI
 1.9–64×, P(gain) ≈ 0.99) [Mod]**, which converts directly into a relaxed safety requirement:
 
 | Chemotype | Kp,uu | β-selectivity needed for a 10× hepatic margin |
@@ -1099,7 +1138,7 @@ multiplies, and in combination at E = 0.02 they beat either alone.
 > **intravitreal** proposition. That is a different development path from an oral fibrate — but
 > **it is the path this disease already uses.** Intravitreal dosing is standard of care in DR.
 > The barrier that disqualifies the acceptor as a systemic drug is irrelevant to the route the
-> indication already takes, and the entire exposure problem of §4 does not arise for it.
+> indication already takes, and the entire exposure problem of §5 does not arise for it.
 
 **Not closed, and not to be claimed.** No molecule here has been shown to raise ABCA1 in a
 retinal cell, to reach the retina in any species, or to spare the liver in vivo. The strongest
@@ -1153,7 +1192,7 @@ free fraction loses only 0.45–0.70. Moving from logP 5.57 to 2.79 costs **≈2
 head and ≈350× for an acid.** The field put lipophilicity where it did because that is where the
 free-drug margin is.
 
-Five scaffolds carried end to end through the §4 model **[Mod]**:
+Five scaffolds carried end to end through the §5 model **[Mod]**:
 
 | | **OXZ-1** | **SULF-1** | **PHOS-1** | **ACID-LOW** *(control)* | **HYDX-1** |
 |---|---|---|---|---|---|
@@ -1192,7 +1231,7 @@ materialises — a programme risk larger than any chemistry risk.
 
 **What would change it:** a measured H12 closure energy ≤ 1.5 kcal/mol (raises it to ~10–15%);
 a third neutral PPARα ligand with LLE > 2.5, since the entire potency argument rests on a sample
-of two and is cheap to strengthen; a measured Kp,uu at the top of the §4 interval (0.35), which
+of two and is cheap to strengthen; a measured Kp,uu at the top of the §5 interval (0.35), which
 improves every row ~6× and brings the acid control to ~600 mg/day, which is a dose; or a geminal
 double-acceptor head with carboxylate-like basicity and no charge, which is a well-posed
 chemistry question nothing in physics forbids.
@@ -1208,7 +1247,7 @@ chemistry question nothing in physics forbids.
 
 At the endothelium and RPE — the compartments that face the blood and where the vascular lesion
 sits — **the EC₅₀ and its assay serum conditions carry 69% of the output variance; the entire
-barrier block carries 19% [Mod]**, §4.9. It is cell culture, it takes weeks, it needs no animal,
+barrier block carries 19% [Mod]**, §5.9. It is cell culture, it takes weeks, it needs no animal,
 and it decides whether elafibranor and seladelpar are live.
 
 **If the free EC₅₀s come back 10× below the corrected values here, elafibranor and seladelpar
@@ -1223,7 +1262,7 @@ for mouse fenofibric acid plasma binding** (one day; tightens the calibration an
 **Chronic oral fibrate in a diabetic rodent, reading transactivation against transrepression,
 with paired ocular LC-MS on the same animals** — so the pharmacodynamic readout is anchored to a
 measured concentration rather than an assumed one. This is the experiment that discriminates
-between the three resolutions of §6.2.
+between the three resolutions of §7.2.
 
 | Readout class | Markers |
 |---|---|
@@ -1234,10 +1273,10 @@ between the three resolutions of §6.2.
 |---|---|
 | Transrepression ↓, transactivation flat | A pharmacokinetically dissociated effect — anti-inflammatory action without gene induction, and therefore without the wrong-sign limb |
 | Transactivation robustly ↑ | The exposure model is wrong by two orders of magnitude somewhere; ANGPTL4 risk live |
-| Both flat **with confirmed ocular drug concentration** | **No achievable local engagement by oral dosing** — consistent with §4, and the local chemistry programme is unjustified |
+| Both flat **with confirmed ocular drug concentration** | **No achievable local engagement by oral dosing** — consistent with §5, and the local chemistry programme is unjustified |
 
 Three arms are essential and one is now free. A **receptor-knockout arm** is available off the
-shelf for endothelium and microglia (the *Vecad-CreERT2* and *Cx3Cr1-CreERT2* lines of §6.1). A
+shelf for endothelium and microglia (the *Vecad-CreERT2* and *Cx3Cr1-CreERT2* lines of §7.1). A
 **matched non-PPAR lipid-lowering arm** remains to be run, and without it a positive cannot be
 distinguished from "any lipid lowering would have done this". And **PPARδ must be measured
 alongside PPARα throughout** — §11.1.
@@ -1246,7 +1285,7 @@ alongside PPARα throughout** — §11.1.
 
 **Does benefit track the lipid change?** A covariate analysis, answerable from data routinely
 collected. **If benefit does not track the lipid change, the supply limb is in trouble** — and
-since §4 has now excluded the local limbs for these compounds, that result would mean the
+since §5 has now excluded the local limbs for these compounds, that result would mean the
 mechanism is none of the four. Costs nothing; discriminates directly; run first.
 
 ### 12.4 The necessity question, rescoped
@@ -1279,7 +1318,7 @@ programme here is worth running.
 - **Whether human RPE OAT1/OAT3 take up any of these four.** The RPE is the only compartment
   that can exceed plasma free concentration, its OAT3 is at 464.7 nCPM, and the model's prior on
   net direction spans a hundredfold because nobody has looked. **If the RPE concentrates these
-  acids, the compartment ordering in §4 inverts.** This is the experiment that would most change
+  acids, the compartment ordering in §5 inverts.** This is the experiment that would most change
   the framing rather than the numbers.
 - **Re-analysis of the Huang 2021 samples with retina and vitreous separated**, which removes the
   pooling inversion and narrows the calibration anchor directly. Cheaper than a new study if the
@@ -1287,7 +1326,7 @@ programme here is worth running.
 - **An efflux-substrate assay** for the four compounds against ABCB1, ABCG2, ABCC4 and ABCC5 — a
   standard vesicle assay that converts a 25-fold prior into a measurement.
 - **A measured hepatic Kp,uu for any fibrate** in sandwich-cultured human hepatocytes, which
-  would test §4.8's 37–92× prediction directly.
+  would test §5.8's 37–92× prediction directly.
 - **A DFT span calculation on the phosphonamidate head** before anyone synthesises on its 2.58 Å
   MMFF figure — the cheapest possible gate on the best neutral scaffold.
 - **HDX-MS or ¹⁹F-NMR on the PPARα H12 region**, matched agonist pair, plus a
@@ -1299,15 +1338,15 @@ programme here is worth running.
   cells are available and zero are diabetic **[M]**.
 - **Single-cell confirmation of retinal KLB**, and the PPARG ontology-propagation query.
 - **An FGF21 concentration-response on retinal endothelial cells below 50 ng/mL**, never run. If
-  protection persists at ~205 pg/mL FGF21-equivalent, §5's verdict is wrong and withdrawn.
+  protection persists at ~205 pg/mL FGF21-equivalent, §6's verdict is wrong and withdrawn.
 
 ### 12.7 The assay cascade that does not exist
 
 No PPARα programme has been run against free-drug retinal exposure, so the metrics are unbuilt.
 **A conventional cascade would make three independent errors, all optimistic, all compounding:**
 it would report a nominal EC₅₀ from a serum-containing reporter assay (double-counting protein
-binding, worth 2.3–5.2×, §4.5); a total-drug tissue concentration (uninterpretable at a barrier
-with active efflux, §4.1); and an Emax of 92% for a molecule that delivers 57% in retina
+binding, worth 2.3–5.2×, §5.5); a total-drug tissue concentration (uninterpretable at a barrier
+with active efflux, §5.1); and an Emax of 92% for a molecule that delivers 57% in retina
 (§11.3). The cascade that would be needed:
 
 | # | Assay | Gate | Why it is not standard |
@@ -1319,7 +1358,7 @@ with active efflux, §4.1); and an Emax of 92% for a molecule that delivers 57% 
 | 3 | Equilibrium dialysis in plasma **and retinal homogenate** | Both measured, same method | Kp,uu requires both; no measured retinal value exists for any fibrate |
 | 4 | PAMPA/Caco-2 with a pH gradient, bidirectional, ± MRP/BCRP inhibitor | Efflux ratio < 2 | The pH-partition advantage of a shifted-pKa head is a measured property, not a predicted one |
 | 5 | Transfected-cell uptake, **OATP1B1/1B3** | Not a substrate | The central design hypothesis — neutrality escapes OATP1B — must be tested. Digoxin and the taxanes are neutral OATP1B3 substrates |
-| 6 | **Ocular distribution in a pigmented species**, free drug by microdialysis or homogenate-corrected | **Within [0.009–0.354], or the model is wrong** | §4's Kp,uu rests on a single measured ocular concentration. Pigmented, because melanin binding changes everything |
+| 6 | **Ocular distribution in a pigmented species**, free drug by microdialysis or homogenate-corrected | **Within [0.009–0.354], or the model is wrong** | §5's Kp,uu rests on a single measured ocular concentration. Pigmented, because melanin binding changes everything |
 | 7 | PPARγ **and PPARδ** transactivation, full curves | ≥100× on both | δ is the one that matters and is routinely relegated to a secondary screen |
 | 8 | FAAH/amidase stability in **retinal** homogenate; no absorbance >320 nm | — | The target organ is continuously illuminated and expresses FAAH |
 
@@ -1359,7 +1398,7 @@ not.
 
 > **Before any of this: the route assumption deserves attacking directly.** Candidates here have
 > been ranked by oral-systemic feasibility for a disease whose standard of care is injection into
-> the target compartment. Intravitreal delivery makes the entire exposure analysis of §4 moot for
+> the target compartment. Intravitreal delivery makes the entire exposure analysis of §5 moot for
 > whatever is delivered that way. That is not a reason to prefer it uncritically — chronic
 > intravitreal dosing carries its own burden and risk — but it is a reason to stop treating oral
 > bioavailability as a precondition.
@@ -1376,7 +1415,7 @@ dying foam cells into extracellular deposits nothing removes.
    Two conditional knockouts establish necessity with the systemic confound structurally absent.
    A calibrated exposure model places every PPARα compound 37–1,340× short at the most
    favourable compartment, at peak plasma concentration. Both halves are solid and they point
-   opposite ways; §6.2 lists the three live resolutions and the experiments that separate them.
+   opposite ways; §7.2 lists the three live resolutions and the experiments that separate them.
 
 2. **The shortfall is mechanistic, not a dosing problem.** These drugs need a 37–92× hepatic
    concentration step supplied by OATP1B, which retina does not express (502.3 nTPM liver vs 0.0
@@ -1431,7 +1470,7 @@ dying foam cells into extracellular deposits nothing removes.
 
 | Path | Contents |
 |---|---|
-| `src/analysis/ocular_exposure/` | 23-input exposure model; every input a tagged `Param` with a distribution. `report.py` regenerates every number in §4 |
+| `src/analysis/ocular_exposure/` | 23-input exposure model; every input a tagged `Param` with a distribution. `report.py` regenerates every number in §5 |
 | `src/analysis/retina_expression/` | Census, HPA, EyeGEx and GSE160306 arms |
 | `src/analysis/fgf21_bridge/` | Plasma/active FGF21 comparison and the Monte-Carlo ratio |
 | `src/analysis/efflux_axis/` | LXR axis pharmacology, physicochemical filter, steatosis selectivity grid, burden model |

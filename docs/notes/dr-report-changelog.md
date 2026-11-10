@@ -174,14 +174,24 @@ Recorded so that silence is not read as revision.
 
 - **Provenance tags throughout.** Every quantitative claim carries **[M]** measured, **[C]**
   computed, **[Mod]** modelled or **[R]** reasoned. An untagged number is an error.
-- **A state-of-knowledge table leads** (§1), so the reader learns the position before any
-  argument.
+- **The candidate ranking leads the document** (§1), ahead of the evidence that justifies it,
+  so a reader learns which compound is for what before reading any argument. Everything after
+  it shifted by one: state of knowledge §1→§2, the question §2→§3, retinal expression §3→§4,
+  exposure §4→§5, the FGF21 limb §5→§6, limb 3 §6→§7, limb 4 §7→§8. §9 onward are unchanged.
+- **§1 was rewritten to stand alone**, since it no longer sits downstream of its own evidence:
+  it now states its ranking criterion (certainty of engagement at a named compartment, not
+  potency), glosses the margin column so the numbers are readable cold, gives the reason each
+  bottom-of-field compound fell, notes that nothing in the table accelerates lipid clearance,
+  and closes with §1.3 — the one cheap measurement that could change rows 3 and 4. Its
+  coverage-count subsection was reframed from a finding into the justification for ranking on
+  measured affinity at all.
+- **A state-of-knowledge table follows at §2**, as orientation before the argument begins.
 - **The method and rediscovery-benchmark sections were removed** in the previous revision and
   remain out. `BENCHMARK-RESULT.md` is unchanged and keeps the methodological retrospective.
-- **§4 was rebuilt around the exposure model** — compartment structure, calibration anchor and
+- **§5 was rebuilt around the exposure model** — compartment structure, calibration anchor and
   its unit trap, external calibration, ionisation, the serum correction, potency as a
   distribution, margins, the hepatic back-calculation, and the sensitivity decomposition.
-- **§6 was renamed "necessary, and unreachable"** and now states the central tension explicitly,
+- **§7 was renamed "necessary, and unreachable"** and now states the central tension explicitly,
   with the three live resolutions and the experiments that separate them.
 - **§11 is new**: where a drug could still act — PPARδ in the vasculature, the efflux arm, and
   the non-acidic ligand, each now a result rather than a specification.
@@ -217,3 +227,24 @@ exact and is set out in §1 and in REPORT.md §4.2.
 reconciliation arithmetic; every number is transcribed from a named source document with its
 provenance tag preserved. The three open methodological items in §6 are recorded here and
 deliberately kept out of REPORT.md, which reports the science rather than the tooling.
+
+---
+
+## Status — 2026-11-09 (later) — candidate ranking moved to the front
+
+**Done.** The candidate ranking moved from §8 to §1, immediately after the abstract, and
+sections 1–7 renumbered to 2–8. §9–§13 and the appendix are unchanged. Every cross-reference
+in the document was remapped in the same pass and verified: 0 unresolved references,
+0 malformed tables, 13 numbered sections.
+
+**Modified, not merely moved.** Leading with the ranking removes its support, so §1 now
+carries what it previously borrowed from downstream: the ranking criterion stated explicitly
+(certainty of engagement at a named compartment, not potency), a gloss on the margin column so
+a cold reader knows that 1.0 is parity and every entry is below it, inline reasons for the
+bottom-of-field compounds, a note that no compound in the table accelerates lipid clearance
+(§11.2), and a new §1.3 naming the single cheap measurement that would change rows 3 and 4.
+§1.2 was reframed from a standalone finding into the methodological justification for ranking
+on measured affinity rather than on curated target-coverage counts.
+
+**No scientific content changed.** No number, verdict, citation or provenance tag was altered
+by this edit; it is a reordering plus the connective text the new position requires.
