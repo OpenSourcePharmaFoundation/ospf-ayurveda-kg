@@ -25,8 +25,31 @@ An untagged number in this report is an error.
 
 ## ABSTRACT
 
-**The local PPARα hypothesis is necessary and unreachable, and those two findings are now
-both quantitative.**
+**Which compounds to advance against diabetic retinopathy, in what role, and with what
+expectation.** The ranking is the answer; the rest of this report is why the order is not the
+one the pharmacology implies.
+
+| # | Compound | Role | Free-drug margin at retinal endothelium, Cmax | |
+|---|---|---|---|---|
+| **1** | **Fenofibric acid** | **Lead — systemic limb only** | **0.020** · 51× short | The compound the DR clinical evidence rests on. Certain hepatic engagement; **local engagement excluded** |
+| **2** | Pemafibrate | **Downgraded** | 0.027 · 37× short | Most potent of the four and the **worst retinal drug** of them: its potency depends on a hepatic transporter the retina does not express |
+| **3** | Elafibranor **+ GFT1007** | Probe, 12 wk | **0.136** · 7.3× short | Closest of the PPARα agents, and only via its active metabolite. Equal PPARδ potency makes it a **pro-angiogenic risk** in retinal vasculature |
+| **4** | **Seladelpar** | **PPARδ probe** | **0.558** on PPARδ · 1.8× short | **The only compound within reach of a retinal receptor — and it is the wrong receptor.** A hazard finding before an opportunity |
+
+Olezarsen (matched non-PPAR apoC-III suppression) and inclisiran (3–5× the apoB effect of any
+fibrate) are carried as the **control and falsification arms** — they are what would make a
+positive result interpretable. Fenofibrate adds an esterase step to #1 without adding
+pharmacology. The stage is the same for every entry: **mild-to-moderate non-proliferative
+disease**, the most robust conclusion in this report.
+
+*Margin is free drug concentration ÷ free EC₅₀ at the compartment that faces the blood
+directly; 1.0 is parity and every value here is below it. All margins modelled **[Mod]** over
+23 inputs — §1 and §5.7.*
+
+---
+
+**Why that order, and not the ordering by potency: the local PPARα hypothesis is necessary and
+unreachable, and both halves are now quantitative.**
 
 **Necessary.** Cell-type-restricted conditional *Ppara* deletion in mouse retinal endothelium
 (PMID 41485550) and microglia (PMID 36497130) each reproduce a worsened diabetic retinal
@@ -36,37 +59,27 @@ explanation is structurally absent in those animals, not statistically adjusted.
 does something in those two compartments.
 
 **Unreachable.** A 23-input exposure model, calibrated against the only measurement of any
-fibrate in ocular tissue after systemic dosing in any species, puts free-drug margins against
-free EC₅₀ at the retinal vascular endothelium — the most favourable compartment, at peak
-rather than average plasma concentration — at **0.020 for fenofibric acid, 0.027 for
-pemafibrate, 0.136 for elafibranor plus its active metabolite [Mod]**. The dose multiples
-required to reach parity are **119×, 290× and 135×**. Neural retina is a further 5.3× worse:
-**Kp,uu = 0.059 [95% CI 0.009–0.354] [Mod]**.
+fibrate in ocular tissue after systemic dosing in any species, produces the margins in the
+table above — requiring dose multiples of **119×, 290× and 135×** for rows 1–3 to reach
+parity. Neural retina is a further 5.3× worse: **Kp,uu = 0.059 [95% CI 0.009–0.354] [Mod]**.
+The lead compound is also a weak binder at its own receptor: **median PPARα EC₅₀ 15,000 nM
+across 13 determinations (95% CI 2,490–90,400), with five further records censored at
+>10,000 nM [M]**.
 
 **And the reason is mechanistic, so dose does not fix it.** Run backwards against the observed
 clinical lipid effect, the model demands a hepatic concentration factor of **37–92×** — which
 these drugs obtain from organic-anion uptake transporters. **OATP1B1 is 502.3 nTPM in liver and
 0.0 nTPM in retina; OATP1B3 is 247.7 against 0.0 [M].** The property that makes a fibrate a
-drug is the property that denies it the eye. The model recovers the four compounds' known
+drug is the property that denies it the eye. The model recovers the four compounds'
 hepatoselectivity ordering with no hepatoselectivity parameter anywhere in it.
 
-**Compound.** For the oral systemic route, fenofibric acid remains the lead on certainty of
-hepatic engagement. Its own potency is weaker than the lead position implies: **median PPARα
-EC₅₀ 15,000 nM across 13 determinations (95% CI 2,490–90,400, GSD 2.50), with five further
-records censored at >10,000 nM [M]**.
-
-**Stage.** Mild-to-moderate non-proliferative disease. Unchanged, and the most robust
-conclusion in this report.
-
-**The one compound that reaches a retinal receptor reaches the wrong one.** Seladelpar at
-10 mg/day attains an endothelial margin of **0.558 [0.038–8.59] at Cmax — 1.8× short, P(margin
-≥ 1) = 0.34 [Mod]** — because it needs a hepatic concentration factor of only 1.5× and so does
-not depend on the missing transporter. That margin is at **PPARδ**, not PPARα. And PPARδ is the
-dominant isoform in every vascular and immune compartment of human retina — microglia 2.8×,
-smooth muscle 1.18×, ganglion cells 1.77×, endothelium 1.15×, pericytes 1.10× [M] — while being
-pro-angiogenic. **The only local receptor engagement achievable from an oral dose in this class
-is at a receptor whose engagement may worsen the disease.** That is a hazard finding first and
-an opportunity second.
+**Why row 4 is a hazard and not a lead.** Seladelpar reaches its margin because it needs a
+hepatic concentration factor of only 1.5×, so it does not depend on the missing transporter.
+That margin is at **PPARδ** — the dominant isoform in every vascular and immune compartment of
+human retina (microglia 2.8×, ganglion cells 1.77×, smooth muscle 1.18×, endothelium 1.15×,
+pericytes 1.10× over PPARα **[M]**) and a pro-angiogenic one. **The only local receptor
+engagement achievable from an oral dose in this class is at a receptor whose engagement may
+worsen the disease.**
 
 **Two mechanisms are closed.** The hepatic-to-retinal **FGF21 relay fails**: achievable plasma
 FGF21 on a fibrate sits **25× below the lowest demonstrated active concentration (95% CI
@@ -84,15 +97,16 @@ control requires 3.7 g/day and still beats every neutral by 9.7× [Mod]. **The f
 rises monotonically with logP across the whole drug-like range**, so the low-logD design
 strategy is inverted: moving from logP 5.6 to 2.8 costs ≈200–350× [Mod].
 
-**Where a drug could still act.** The reverse-cholesterol-transport arm remains the largest
-uncovered module and is the one place the arithmetic favours a new agent: **802 of 1,009 potent
-LXR ligands are neutral [M]**, which relieves the isoform-selectivity requirement by **1.16 log
-units [Mod]** relative to an acid. No public molecule yet demonstrates the required selectivity
-in a cell. And the framing that constrains all of this is itself questionable: **DR is already
-treated by injection into the target compartment**, for which the entire barrier problem does
-not arise.
+**What is missing from the table, and where a drug could still act.** No compound above
+accelerates lipid *clearance* from the retina; every one reduces what arrives. That is the
+largest uncovered module in the disease and the one place the arithmetic favours a new agent:
+**802 of 1,009 potent LXR ligands are neutral [M]**, which relieves the isoform-selectivity
+requirement by **1.16 log units [Mod]** relative to an acid. No public molecule yet
+demonstrates the required selectivity in a cell. And the framing that constrains all of this is
+itself questionable: **DR is already treated by injection into the target compartment**, for
+which the entire barrier problem does not arise.
 
-**The single measurement that would most change what is believed:**
+**The single measurement that would most change the ranking:**
 
 > **A PPARα and PPARδ EC₅₀ panel for all four compounds in one assay, at a stated and measured
 > medium albumin concentration, with a parallel arm at physiological (40 g/L) albumin.**
@@ -100,18 +114,20 @@ not arise.
 At the endothelium and RPE — the two compartments that face the blood and where the vascular
 lesion sits — **the EC₅₀ and the serum conditions it was measured in carry 69% of the output
 variance; the entire barrier block carries 19% [Mod]**. It is cell culture, it takes weeks, and
-it needs no animal. **This displaces the aqueous-humour tap from the critical path.**
+it needs no animal. **If the free EC₅₀s come back 10× below the corrected values here, rows 3
+and 4 reach parity and their verdicts are withdrawn.** This displaces the aqueous-humour tap
+from the critical path.
 
 ---
 
 ## 1. CANDIDATE RANKING
 
-**What this ranks.** Eight compounds against diabetic retinopathy, ordered by **certainty of
-engaging a named target in a named compartment** — not by potency, and not by weight of
-accumulated evidence. The disease stage is the same for all of them: mild-to-moderate
-non-proliferative disease (§9). The evidence behind every column is in §4–§8. The order is
-stated first because it is *not* what the pharmacology would suggest, and the reasons it is
-not are the substance of this report.
+**The full field.** The abstract gives the four compounds that carry a retinal margin; this is
+all eight, with measured affinity at each of the three PPAR isoforms and the basis for every
+role. The ordering criterion is **certainty of engaging a named target in a named
+compartment** — not potency, and not weight of accumulated evidence. The disease stage is the
+same for all of them: mild-to-moderate non-proliferative disease (§9). The evidence behind
+every column is in §4–§8.
 
 **Read it as a ranking of experimental priority, not of assets.** Several entries are
 deliberately *instruments* — probes that measure whether a mechanism operates, and control

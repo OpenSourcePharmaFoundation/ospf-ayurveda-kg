@@ -174,7 +174,11 @@ Recorded so that silence is not read as revision.
 
 - **Provenance tags throughout.** Every quantitative claim carries **[M]** measured, **[C]**
   computed, **[Mod]** modelled or **[R]** reasoned. An untagged number is an error.
-- **The candidate ranking leads the document** (§1), ahead of the evidence that justifies it,
+- **The abstract opens with a four-row short form of the ranking**, before any mechanism. The
+  report's purpose is which compounds to advance and in what role, so that is its first
+  content; the mechanistic findings follow as the explanation of why the order is not the
+  ordering by potency.
+- **The candidate ranking leads the body** (§1), ahead of the evidence that justifies it,
   so a reader learns which compound is for what before reading any argument. Everything after
   it shifted by one: state of knowledge §1→§2, the question §2→§3, retinal expression §3→§4,
   exposure §4→§5, the FGF21 limb §5→§6, limb 3 §6→§7, limb 4 §7→§8. §9 onward are unchanged.
@@ -248,3 +252,28 @@ on measured affinity rather than on curated target-coverage counts.
 
 **No scientific content changed.** No number, verdict, citation or provenance tag was altered
 by this edit; it is a reordering plus the connective text the new position requires.
+
+---
+
+## Status — 2026-11-09 (later still) — abstract rebuilt around the ranking
+
+**Done.** The abstract now opens with a compact four-row ranking table — the compounds that
+carry a retinal margin, their roles, the margin and fold shortfall, and a one-clause verdict
+each — followed by a line placing the control and falsification arms and the disease stage,
+and a footnote defining the margin. Everything that previously opened the abstract (the
+necessary-and-unreachable pair, the hepatoselectivity mechanism, the PPARδ hazard, the two
+closed mechanisms, the costed ligand route, the efflux opening, the decisive measurement) now
+follows under the heading *why that order, and not the ordering by potency*.
+
+**Rationale.** The report's purpose is a ranking; the mechanism is the justification for it.
+The previous abstract led with the justification and reached the compounds in its fifth
+paragraph.
+
+**§1 adjusted to avoid repeating it.** Its opening now states what it adds over the abstract
+table — all eight compounds rather than four, measured affinity at each of the three PPAR
+isoforms, and the basis for every role — rather than re-announcing the ranking criterion.
+
+**No scientific content changed.** Every number, verdict, citation and provenance tag in the
+abstract is carried over unaltered from the body; two figures previously stated only in §1 and
+§5 (the 119×/290×/135× dose multiples and the fenofibric acid EC₅₀ distribution) were promoted
+into it. Verified: 0 unresolved cross-references, 0 malformed tables, 13 numbered sections.
