@@ -1,0 +1,1411 @@
+ensembl_id	gene	cell_type	ncpm	category	is_retinal
+ENSG00000165029	ABCA1	cone photoreceptor cells	97.3	ppar_effector	True
+ENSG00000165029	ABCA1	enterocytes	0.3	ppar_effector	False
+ENSG00000165029	ABCA1	hepatocytes	324.4	ppar_effector	False
+ENSG00000165029	ABCA1	microglia	116.7	ppar_effector	True
+ENSG00000165029	ABCA1	müller glia	0.4	ppar_effector	True
+ENSG00000165029	ABCA1	proximal tubule cells	80.0	ppar_effector	False
+ENSG00000165029	ABCA1	retinal bipolar cells	61.6	ppar_effector	True
+ENSG00000165029	ABCA1	retinal ganglion cells	0.0	ppar_effector	True
+ENSG00000165029	ABCA1	retinal horizontal cells	4.0	ppar_effector	True
+ENSG00000165029	ABCA1	retinal pigment epithelial cells	204.6	ppar_effector	True
+ENSG00000165029	ABCA1	rod photoreceptor cells	21.0	ppar_effector	True
+ENSG00000165029	ABCA1	vascular endothelial cells	49.5	ppar_effector	True
+ENSG00000085563	ABCB1	cone photoreceptor cells	18.6	barrier_transport	True
+ENSG00000085563	ABCB1	enterocytes	630.7	barrier_transport	False
+ENSG00000085563	ABCB1	hepatocytes	75.2	barrier_transport	False
+ENSG00000085563	ABCB1	microglia	1.0	barrier_transport	True
+ENSG00000085563	ABCB1	müller glia	1.5	barrier_transport	True
+ENSG00000085563	ABCB1	proximal tubule cells	114.1	barrier_transport	False
+ENSG00000085563	ABCB1	retinal bipolar cells	25.3	barrier_transport	True
+ENSG00000085563	ABCB1	retinal ganglion cells	42.5	barrier_transport	True
+ENSG00000085563	ABCB1	retinal horizontal cells	6.0	barrier_transport	True
+ENSG00000085563	ABCB1	retinal pigment epithelial cells	0.0	barrier_transport	True
+ENSG00000085563	ABCB1	rod photoreceptor cells	25.7	barrier_transport	True
+ENSG00000085563	ABCB1	vascular endothelial cells	507.4	barrier_transport	True
+ENSG00000103222	ABCC1	cone photoreceptor cells	0.0	barrier_transport	True
+ENSG00000103222	ABCC1	enterocytes	0.4	barrier_transport	False
+ENSG00000103222	ABCC1	hepatocytes	0.4	barrier_transport	False
+ENSG00000103222	ABCC1	microglia	37.1	barrier_transport	True
+ENSG00000103222	ABCC1	müller glia	1.5	barrier_transport	True
+ENSG00000103222	ABCC1	proximal tubule cells	52.4	barrier_transport	False
+ENSG00000103222	ABCC1	retinal bipolar cells	3.1	barrier_transport	True
+ENSG00000103222	ABCC1	retinal ganglion cells	15.5	barrier_transport	True
+ENSG00000103222	ABCC1	retinal horizontal cells	0.0	barrier_transport	True
+ENSG00000103222	ABCC1	retinal pigment epithelial cells	12.8	barrier_transport	True
+ENSG00000103222	ABCC1	rod photoreceptor cells	8.3	barrier_transport	True
+ENSG00000103222	ABCC1	vascular endothelial cells	16.3	barrier_transport	True
+ENSG00000125257	ABCC4	cone photoreceptor cells	244.3	barrier_transport	True
+ENSG00000125257	ABCC4	enterocytes	6.3	barrier_transport	False
+ENSG00000125257	ABCC4	hepatocytes	2.4	barrier_transport	False
+ENSG00000125257	ABCC4	microglia	943.8	barrier_transport	True
+ENSG00000125257	ABCC4	müller glia	2.5	barrier_transport	True
+ENSG00000125257	ABCC4	proximal tubule cells	323.3	barrier_transport	False
+ENSG00000125257	ABCC4	retinal bipolar cells	1.7	barrier_transport	True
+ENSG00000125257	ABCC4	retinal ganglion cells	7.7	barrier_transport	True
+ENSG00000125257	ABCC4	retinal horizontal cells	0.0	barrier_transport	True
+ENSG00000125257	ABCC4	retinal pigment epithelial cells	29.8	barrier_transport	True
+ENSG00000125257	ABCC4	rod photoreceptor cells	6.6	barrier_transport	True
+ENSG00000125257	ABCC4	vascular endothelial cells	178.2	barrier_transport	True
+ENSG00000114770	ABCC5	cone photoreceptor cells	515.5	barrier_transport	True
+ENSG00000114770	ABCC5	enterocytes	17.8	barrier_transport	False
+ENSG00000114770	ABCC5	hepatocytes	4.1	barrier_transport	False
+ENSG00000114770	ABCC5	microglia	67.7	barrier_transport	True
+ENSG00000114770	ABCC5	müller glia	21.1	barrier_transport	True
+ENSG00000114770	ABCC5	proximal tubule cells	39.3	barrier_transport	False
+ENSG00000114770	ABCC5	retinal bipolar cells	80.5	barrier_transport	True
+ENSG00000114770	ABCC5	retinal ganglion cells	108.2	barrier_transport	True
+ENSG00000114770	ABCC5	retinal horizontal cells	78.1	barrier_transport	True
+ENSG00000114770	ABCC5	retinal pigment epithelial cells	822.8	barrier_transport	True
+ENSG00000114770	ABCC5	rod photoreceptor cells	403.4	barrier_transport	True
+ENSG00000114770	ABCC5	vascular endothelial cells	18.8	barrier_transport	True
+ENSG00000160179	ABCG1	cone photoreceptor cells	64.2	ppar_effector	True
+ENSG00000160179	ABCG1	enterocytes	95.5	ppar_effector	False
+ENSG00000160179	ABCG1	hepatocytes	0.3	ppar_effector	False
+ENSG00000160179	ABCG1	microglia	55.9	ppar_effector	True
+ENSG00000160179	ABCG1	müller glia	51.5	ppar_effector	True
+ENSG00000160179	ABCG1	proximal tubule cells	8.7	ppar_effector	False
+ENSG00000160179	ABCG1	retinal bipolar cells	94.5	ppar_effector	True
+ENSG00000160179	ABCG1	retinal ganglion cells	92.7	ppar_effector	True
+ENSG00000160179	ABCG1	retinal horizontal cells	44.1	ppar_effector	True
+ENSG00000160179	ABCG1	retinal pigment epithelial cells	25.6	ppar_effector	True
+ENSG00000160179	ABCG1	rod photoreceptor cells	223.2	ppar_effector	True
+ENSG00000160179	ABCG1	vascular endothelial cells	124.7	ppar_effector	True
+ENSG00000118777	ABCG2	cone photoreceptor cells	4.1	barrier_transport	True
+ENSG00000118777	ABCG2	enterocytes	267.3	barrier_transport	False
+ENSG00000118777	ABCG2	hepatocytes	32.6	barrier_transport	False
+ENSG00000118777	ABCG2	microglia	16.8	barrier_transport	True
+ENSG00000118777	ABCG2	müller glia	4.4	barrier_transport	True
+ENSG00000118777	ABCG2	proximal tubule cells	2.3	barrier_transport	False
+ENSG00000118777	ABCG2	retinal bipolar cells	1.0	barrier_transport	True
+ENSG00000118777	ABCG2	retinal ganglion cells	0.0	barrier_transport	True
+ENSG00000118777	ABCG2	retinal horizontal cells	0.0	barrier_transport	True
+ENSG00000118777	ABCG2	retinal pigment epithelial cells	0.0	barrier_transport	True
+ENSG00000118777	ABCG2	rod photoreceptor cells	0.8	barrier_transport	True
+ENSG00000118777	ABCG2	vascular endothelial cells	142.0	barrier_transport	True
+ENSG00000117054	ACADM	cone photoreceptor cells	76.6	ppar_effector	True
+ENSG00000117054	ACADM	enterocytes	107.9	ppar_effector	False
+ENSG00000117054	ACADM	hepatocytes	338.0	ppar_effector	False
+ENSG00000117054	ACADM	microglia	62.6	ppar_effector	True
+ENSG00000117054	ACADM	müller glia	57.4	ppar_effector	True
+ENSG00000117054	ACADM	proximal tubule cells	108.0	ppar_effector	False
+ENSG00000117054	ACADM	retinal bipolar cells	80.1	ppar_effector	True
+ENSG00000117054	ACADM	retinal ganglion cells	46.4	ppar_effector	True
+ENSG00000117054	ACADM	retinal horizontal cells	58.1	ppar_effector	True
+ENSG00000117054	ACADM	retinal pigment epithelial cells	63.9	ppar_effector	True
+ENSG00000117054	ACADM	rod photoreceptor cells	79.3	ppar_effector	True
+ENSG00000117054	ACADM	vascular endothelial cells	48.5	ppar_effector	True
+ENSG00000161533	ACOX1	cone photoreceptor cells	51.8	ppar_effector	True
+ENSG00000161533	ACOX1	enterocytes	347.2	ppar_effector	False
+ENSG00000161533	ACOX1	hepatocytes	433.4	ppar_effector	False
+ENSG00000161533	ACOX1	microglia	29.0	ppar_effector	True
+ENSG00000161533	ACOX1	müller glia	82.7	ppar_effector	True
+ENSG00000161533	ACOX1	proximal tubule cells	102.9	ppar_effector	False
+ENSG00000161533	ACOX1	retinal bipolar cells	43.2	ppar_effector	True
+ENSG00000161533	ACOX1	retinal ganglion cells	34.8	ppar_effector	True
+ENSG00000161533	ACOX1	retinal horizontal cells	22.0	ppar_effector	True
+ENSG00000161533	ACOX1	retinal pigment epithelial cells	98.0	ppar_effector	True
+ENSG00000161533	ACOX1	rod photoreceptor cells	59.6	ppar_effector	True
+ENSG00000161533	ACOX1	vascular endothelial cells	33.0	ppar_effector	True
+ENSG00000075624	ACTB	cone photoreceptor cells	74.5	housekeeping_high	True
+ENSG00000075624	ACTB	enterocytes	4498.5	housekeeping_high	False
+ENSG00000075624	ACTB	hepatocytes	2569.8	housekeeping_high	False
+ENSG00000075624	ACTB	microglia	484.2	housekeeping_high	True
+ENSG00000075624	ACTB	müller glia	1399.8	housekeeping_high	True
+ENSG00000075624	ACTB	proximal tubule cells	109.8	housekeeping_high	False
+ENSG00000075624	ACTB	retinal bipolar cells	75.1	housekeeping_high	True
+ENSG00000075624	ACTB	retinal ganglion cells	46.4	housekeeping_high	True
+ENSG00000075624	ACTB	retinal horizontal cells	114.2	housekeeping_high	True
+ENSG00000075624	ACTB	retinal pigment epithelial cells	605.3	housekeeping_high	True
+ENSG00000075624	ACTB	rod photoreceptor cells	44.2	housekeeping_high	True
+ENSG00000075624	ACTB	vascular endothelial cells	1614.0	housekeeping_high	True
+ENSG00000181092	ADIPOQ	cone photoreceptor cells	0.0	fgf21_receptor	True
+ENSG00000181092	ADIPOQ	enterocytes	0.1	fgf21_receptor	False
+ENSG00000181092	ADIPOQ	hepatocytes	0.0	fgf21_receptor	False
+ENSG00000181092	ADIPOQ	microglia	0.0	fgf21_receptor	True
+ENSG00000181092	ADIPOQ	müller glia	0.0	fgf21_receptor	True
+ENSG00000181092	ADIPOQ	proximal tubule cells	0.0	fgf21_receptor	False
+ENSG00000181092	ADIPOQ	retinal bipolar cells	0.2	fgf21_receptor	True
+ENSG00000181092	ADIPOQ	retinal ganglion cells	0.0	fgf21_receptor	True
+ENSG00000181092	ADIPOQ	retinal horizontal cells	0.0	fgf21_receptor	True
+ENSG00000181092	ADIPOQ	retinal pigment epithelial cells	0.0	fgf21_receptor	True
+ENSG00000181092	ADIPOQ	rod photoreceptor cells	0.0	fgf21_receptor	True
+ENSG00000181092	ADIPOQ	vascular endothelial cells	1.7	fgf21_receptor	True
+ENSG00000159346	ADIPOR1	cone photoreceptor cells	39.3	fgf21_receptor	True
+ENSG00000159346	ADIPOR1	enterocytes	65.6	fgf21_receptor	False
+ENSG00000159346	ADIPOR1	hepatocytes	67.0	fgf21_receptor	False
+ENSG00000159346	ADIPOR1	microglia	20.3	fgf21_receptor	True
+ENSG00000159346	ADIPOR1	müller glia	27.0	fgf21_receptor	True
+ENSG00000159346	ADIPOR1	proximal tubule cells	8.2	fgf21_receptor	False
+ENSG00000159346	ADIPOR1	retinal bipolar cells	18.8	fgf21_receptor	True
+ENSG00000159346	ADIPOR1	retinal ganglion cells	11.6	fgf21_receptor	True
+ENSG00000159346	ADIPOR1	retinal horizontal cells	22.0	fgf21_receptor	True
+ENSG00000159346	ADIPOR1	retinal pigment epithelial cells	38.4	fgf21_receptor	True
+ENSG00000159346	ADIPOR1	rod photoreceptor cells	48.9	fgf21_receptor	True
+ENSG00000159346	ADIPOR1	vascular endothelial cells	36.1	fgf21_receptor	True
+ENSG00000006831	ADIPOR2	cone photoreceptor cells	0.0	fgf21_receptor	True
+ENSG00000006831	ADIPOR2	enterocytes	6.2	fgf21_receptor	False
+ENSG00000006831	ADIPOR2	hepatocytes	8.5	fgf21_receptor	False
+ENSG00000006831	ADIPOR2	microglia	121.7	fgf21_receptor	True
+ENSG00000006831	ADIPOR2	müller glia	3.7	fgf21_receptor	True
+ENSG00000006831	ADIPOR2	proximal tubule cells	54.1	fgf21_receptor	False
+ENSG00000006831	ADIPOR2	retinal bipolar cells	0.9	fgf21_receptor	True
+ENSG00000006831	ADIPOR2	retinal ganglion cells	3.9	fgf21_receptor	True
+ENSG00000006831	ADIPOR2	retinal horizontal cells	2.0	fgf21_receptor	True
+ENSG00000006831	ADIPOR2	retinal pigment epithelial cells	4.3	fgf21_receptor	True
+ENSG00000006831	ADIPOR2	rod photoreceptor cells	1.4	fgf21_receptor	True
+ENSG00000006831	ADIPOR2	vascular endothelial cells	44.7	fgf21_receptor	True
+ENSG00000169252	ADRB2	cone photoreceptor cells	0.0	druggable_positive_control	True
+ENSG00000169252	ADRB2	enterocytes	0.0	druggable_positive_control	False
+ENSG00000169252	ADRB2	hepatocytes	18.5	druggable_positive_control	False
+ENSG00000169252	ADRB2	microglia	57.0	druggable_positive_control	True
+ENSG00000169252	ADRB2	müller glia	4.7	druggable_positive_control	True
+ENSG00000169252	ADRB2	proximal tubule cells	0.9	druggable_positive_control	False
+ENSG00000169252	ADRB2	retinal bipolar cells	0.0	druggable_positive_control	True
+ENSG00000169252	ADRB2	retinal ganglion cells	3.9	druggable_positive_control	True
+ENSG00000169252	ADRB2	retinal horizontal cells	0.0	druggable_positive_control	True
+ENSG00000169252	ADRB2	retinal pigment epithelial cells	0.0	druggable_positive_control	True
+ENSG00000169252	ADRB2	rod photoreceptor cells	1.5	druggable_positive_control	True
+ENSG00000169252	ADRB2	vascular endothelial cells	39.9	druggable_positive_control	True
+ENSG00000204305	AGER	cone photoreceptor cells	0.0	disease_core	True
+ENSG00000204305	AGER	enterocytes	0.1	disease_core	False
+ENSG00000204305	AGER	hepatocytes	1.0	disease_core	False
+ENSG00000204305	AGER	microglia	8.9	disease_core	True
+ENSG00000204305	AGER	müller glia	1.7	disease_core	True
+ENSG00000204305	AGER	proximal tubule cells	2.8	disease_core	False
+ENSG00000204305	AGER	retinal bipolar cells	1.7	disease_core	True
+ENSG00000204305	AGER	retinal ganglion cells	0.0	disease_core	True
+ENSG00000204305	AGER	retinal horizontal cells	0.0	disease_core	True
+ENSG00000204305	AGER	retinal pigment epithelial cells	0.0	disease_core	True
+ENSG00000204305	AGER	rod photoreceptor cells	0.7	disease_core	True
+ENSG00000204305	AGER	vascular endothelial cells	1.3	disease_core	True
+ENSG00000204472	AIF1	cone photoreceptor cells	0.0	celltype_marker	True
+ENSG00000204472	AIF1	enterocytes	0.7	celltype_marker	False
+ENSG00000204472	AIF1	hepatocytes	3.4	celltype_marker	False
+ENSG00000204472	AIF1	microglia	94.9	celltype_marker	True
+ENSG00000204472	AIF1	müller glia	0.0	celltype_marker	True
+ENSG00000204472	AIF1	proximal tubule cells	1.1	celltype_marker	False
+ENSG00000204472	AIF1	retinal bipolar cells	0.0	celltype_marker	True
+ENSG00000204472	AIF1	retinal ganglion cells	0.0	celltype_marker	True
+ENSG00000204472	AIF1	retinal horizontal cells	0.0	celltype_marker	True
+ENSG00000204472	AIF1	retinal pigment epithelial cells	4.3	celltype_marker	True
+ENSG00000204472	AIF1	rod photoreceptor cells	0.2	celltype_marker	True
+ENSG00000204472	AIF1	vascular endothelial cells	1.9	celltype_marker	True
+ENSG00000085662	AKR1B1	cone photoreceptor cells	8.3	disease_core	True
+ENSG00000085662	AKR1B1	enterocytes	0.2	disease_core	False
+ENSG00000085662	AKR1B1	hepatocytes	0.4	disease_core	False
+ENSG00000085662	AKR1B1	microglia	28.6	disease_core	True
+ENSG00000085662	AKR1B1	müller glia	39.4	disease_core	True
+ENSG00000085662	AKR1B1	proximal tubule cells	9.7	disease_core	False
+ENSG00000085662	AKR1B1	retinal bipolar cells	23.1	disease_core	True
+ENSG00000085662	AKR1B1	retinal ganglion cells	7.7	disease_core	True
+ENSG00000085662	AKR1B1	retinal horizontal cells	44.1	disease_core	True
+ENSG00000085662	AKR1B1	retinal pigment epithelial cells	21.3	disease_core	True
+ENSG00000085662	AKR1B1	rod photoreceptor cells	12.8	disease_core	True
+ENSG00000085662	AKR1B1	vascular endothelial cells	40.7	disease_core	True
+ENSG00000163631	ALB	cone photoreceptor cells	0.0	negative_control	True
+ENSG00000163631	ALB	enterocytes	0.0	negative_control	False
+ENSG00000163631	ALB	hepatocytes	81391.2	negative_control	False
+ENSG00000163631	ALB	microglia	0.2	negative_control	True
+ENSG00000163631	ALB	müller glia	1.0	negative_control	True
+ENSG00000163631	ALB	proximal tubule cells	6.4	negative_control	False
+ENSG00000163631	ALB	retinal bipolar cells	0.0	negative_control	True
+ENSG00000163631	ALB	retinal ganglion cells	0.0	negative_control	True
+ENSG00000163631	ALB	retinal horizontal cells	0.0	negative_control	True
+ENSG00000163631	ALB	retinal pigment epithelial cells	8.5	negative_control	True
+ENSG00000163631	ALB	rod photoreceptor cells	0.0	negative_control	True
+ENSG00000163631	ALB	vascular endothelial cells	19.8	negative_control	True
+ENSG00000091879	ANGPT2	cone photoreceptor cells	24.8	disease_core	True
+ENSG00000091879	ANGPT2	enterocytes	9.3	disease_core	False
+ENSG00000091879	ANGPT2	hepatocytes	1.7	disease_core	False
+ENSG00000091879	ANGPT2	microglia	33.2	disease_core	True
+ENSG00000091879	ANGPT2	müller glia	19.1	disease_core	True
+ENSG00000091879	ANGPT2	proximal tubule cells	6.2	disease_core	False
+ENSG00000091879	ANGPT2	retinal bipolar cells	21.2	disease_core	True
+ENSG00000091879	ANGPT2	retinal ganglion cells	73.4	disease_core	True
+ENSG00000091879	ANGPT2	retinal horizontal cells	74.1	disease_core	True
+ENSG00000091879	ANGPT2	retinal pigment epithelial cells	0.0	disease_core	True
+ENSG00000091879	ANGPT2	rod photoreceptor cells	22.7	disease_core	True
+ENSG00000091879	ANGPT2	vascular endothelial cells	149.6	disease_core	True
+ENSG00000167772	ANGPTL4	cone photoreceptor cells	0.0	ppar_effector	True
+ENSG00000167772	ANGPTL4	enterocytes	585.5	ppar_effector	False
+ENSG00000167772	ANGPTL4	hepatocytes	220.5	ppar_effector	False
+ENSG00000167772	ANGPTL4	microglia	1.9	ppar_effector	True
+ENSG00000167772	ANGPTL4	müller glia	8.7	ppar_effector	True
+ENSG00000167772	ANGPTL4	proximal tubule cells	64.1	ppar_effector	False
+ENSG00000167772	ANGPTL4	retinal bipolar cells	0.6	ppar_effector	True
+ENSG00000167772	ANGPTL4	retinal ganglion cells	0.0	ppar_effector	True
+ENSG00000167772	ANGPTL4	retinal horizontal cells	0.0	ppar_effector	True
+ENSG00000167772	ANGPTL4	retinal pigment epithelial cells	4.3	ppar_effector	True
+ENSG00000167772	ANGPTL4	rod photoreceptor cells	1.2	ppar_effector	True
+ENSG00000167772	ANGPTL4	vascular endothelial cells	28.9	ppar_effector	True
+ENSG00000118137	APOA1	cone photoreceptor cells	0.0	ppar_effector	True
+ENSG00000118137	APOA1	enterocytes	17976.9	ppar_effector	False
+ENSG00000118137	APOA1	hepatocytes	33105.7	ppar_effector	False
+ENSG00000118137	APOA1	microglia	1.1	ppar_effector	True
+ENSG00000118137	APOA1	müller glia	0.1	ppar_effector	True
+ENSG00000118137	APOA1	proximal tubule cells	0.2	ppar_effector	False
+ENSG00000118137	APOA1	retinal bipolar cells	0.3	ppar_effector	True
+ENSG00000118137	APOA1	retinal ganglion cells	0.0	ppar_effector	True
+ENSG00000118137	APOA1	retinal horizontal cells	0.0	ppar_effector	True
+ENSG00000118137	APOA1	retinal pigment epithelial cells	0.0	ppar_effector	True
+ENSG00000118137	APOA1	rod photoreceptor cells	0.4	ppar_effector	True
+ENSG00000118137	APOA1	vascular endothelial cells	21.2	ppar_effector	True
+ENSG00000110243	APOA5	cone photoreceptor cells	0.0	ppar_effector	True
+ENSG00000110243	APOA5	enterocytes	1.7	ppar_effector	False
+ENSG00000110243	APOA5	hepatocytes	1587.6	ppar_effector	False
+ENSG00000110243	APOA5	microglia	0.0	ppar_effector	True
+ENSG00000110243	APOA5	müller glia	0.0	ppar_effector	True
+ENSG00000110243	APOA5	retinal bipolar cells	0.0	ppar_effector	True
+ENSG00000110243	APOA5	retinal ganglion cells	0.0	ppar_effector	True
+ENSG00000110243	APOA5	retinal horizontal cells	2.0	ppar_effector	True
+ENSG00000110243	APOA5	retinal pigment epithelial cells	0.0	ppar_effector	True
+ENSG00000110243	APOA5	rod photoreceptor cells	0.0	ppar_effector	True
+ENSG00000110243	APOA5	vascular endothelial cells	0.2	ppar_effector	True
+ENSG00000120500	ARR3	cone photoreceptor cells	2322.7	celltype_marker	True
+ENSG00000120500	ARR3	enterocytes	0.0	celltype_marker	False
+ENSG00000120500	ARR3	hepatocytes	0.0	celltype_marker	False
+ENSG00000120500	ARR3	microglia	0.7	celltype_marker	True
+ENSG00000120500	ARR3	müller glia	8.9	celltype_marker	True
+ENSG00000120500	ARR3	proximal tubule cells	0.2	celltype_marker	False
+ENSG00000120500	ARR3	retinal bipolar cells	10.4	celltype_marker	True
+ENSG00000120500	ARR3	retinal ganglion cells	11.6	celltype_marker	True
+ENSG00000120500	ARR3	retinal horizontal cells	4.0	celltype_marker	True
+ENSG00000120500	ARR3	retinal pigment epithelial cells	4.3	celltype_marker	True
+ENSG00000120500	ARR3	rod photoreceptor cells	21.6	celltype_marker	True
+ENSG00000120500	ARR3	vascular endothelial cells	1.2	celltype_marker	True
+ENSG00000166710	B2M	cone photoreceptor cells	0.0	housekeeping_high	True
+ENSG00000166710	B2M	enterocytes	5902.7	housekeeping_high	False
+ENSG00000166710	B2M	hepatocytes	931.0	housekeeping_high	False
+ENSG00000166710	B2M	microglia	552.4	housekeeping_high	True
+ENSG00000166710	B2M	müller glia	14.2	housekeeping_high	True
+ENSG00000166710	B2M	proximal tubule cells	65.6	housekeeping_high	False
+ENSG00000166710	B2M	retinal bipolar cells	0.9	housekeeping_high	True
+ENSG00000166710	B2M	retinal ganglion cells	3.9	housekeeping_high	True
+ENSG00000166710	B2M	retinal horizontal cells	0.0	housekeeping_high	True
+ENSG00000166710	B2M	retinal pigment epithelial cells	98.0	housekeeping_high	True
+ENSG00000166710	B2M	rod photoreceptor cells	3.4	housekeeping_high	True
+ENSG00000166710	B2M	vascular endothelial cells	2095.8	housekeeping_high	True
+ENSG00000087088	BAX	cone photoreceptor cells	6.2	disease_core	True
+ENSG00000087088	BAX	enterocytes	197.3	disease_core	False
+ENSG00000087088	BAX	hepatocytes	30.2	disease_core	False
+ENSG00000087088	BAX	microglia	42.9	disease_core	True
+ENSG00000087088	BAX	müller glia	31.3	disease_core	True
+ENSG00000087088	BAX	proximal tubule cells	21.0	disease_core	False
+ENSG00000087088	BAX	retinal bipolar cells	16.5	disease_core	True
+ENSG00000087088	BAX	retinal ganglion cells	7.7	disease_core	True
+ENSG00000087088	BAX	retinal horizontal cells	26.0	disease_core	True
+ENSG00000087088	BAX	retinal pigment epithelial cells	0.0	disease_core	True
+ENSG00000087088	BAX	rod photoreceptor cells	10.6	disease_core	True
+ENSG00000087088	BAX	vascular endothelial cells	57.9	disease_core	True
+ENSG00000171791	BCL2	cone photoreceptor cells	0.0	disease_core	True
+ENSG00000171791	BCL2	enterocytes	3.7	disease_core	False
+ENSG00000171791	BCL2	hepatocytes	4.0	disease_core	False
+ENSG00000171791	BCL2	microglia	314.9	disease_core	True
+ENSG00000171791	BCL2	müller glia	82.9	disease_core	True
+ENSG00000171791	BCL2	proximal tubule cells	589.5	disease_core	False
+ENSG00000171791	BCL2	retinal bipolar cells	7.4	disease_core	True
+ENSG00000171791	BCL2	retinal ganglion cells	23.2	disease_core	True
+ENSG00000171791	BCL2	retinal horizontal cells	0.0	disease_core	True
+ENSG00000171791	BCL2	retinal pigment epithelial cells	34.1	disease_core	True
+ENSG00000171791	BCL2	rod photoreceptor cells	0.9	disease_core	True
+ENSG00000171791	BCL2	vascular endothelial cells	25.8	disease_core	True
+ENSG00000167995	BEST1	cone photoreceptor cells	0.0	celltype_marker	True
+ENSG00000167995	BEST1	enterocytes	6.7	celltype_marker	False
+ENSG00000167995	BEST1	hepatocytes	1.7	celltype_marker	False
+ENSG00000167995	BEST1	microglia	11.5	celltype_marker	True
+ENSG00000167995	BEST1	müller glia	9.3	celltype_marker	True
+ENSG00000167995	BEST1	proximal tubule cells	0.5	celltype_marker	False
+ENSG00000167995	BEST1	retinal bipolar cells	2.0	celltype_marker	True
+ENSG00000167995	BEST1	retinal ganglion cells	0.0	celltype_marker	True
+ENSG00000167995	BEST1	retinal horizontal cells	0.0	celltype_marker	True
+ENSG00000167995	BEST1	retinal pigment epithelial cells	2067.5	celltype_marker	True
+ENSG00000167995	BEST1	rod photoreceptor cells	8.0	celltype_marker	True
+ENSG00000167995	BEST1	vascular endothelial cells	12.8	celltype_marker	True
+ENSG00000164305	CASP3	cone photoreceptor cells	10.4	disease_core	True
+ENSG00000164305	CASP3	enterocytes	39.3	disease_core	False
+ENSG00000164305	CASP3	hepatocytes	23.2	disease_core	False
+ENSG00000164305	CASP3	microglia	17.7	disease_core	True
+ENSG00000164305	CASP3	müller glia	27.6	disease_core	True
+ENSG00000164305	CASP3	proximal tubule cells	13.6	disease_core	False
+ENSG00000164305	CASP3	retinal bipolar cells	22.8	disease_core	True
+ENSG00000164305	CASP3	retinal ganglion cells	15.5	disease_core	True
+ENSG00000164305	CASP3	retinal horizontal cells	12.0	disease_core	True
+ENSG00000164305	CASP3	retinal pigment epithelial cells	12.8	disease_core	True
+ENSG00000164305	CASP3	rod photoreceptor cells	21.4	disease_core	True
+ENSG00000164305	CASP3	vascular endothelial cells	36.1	disease_core	True
+ENSG00000121691	CAT	cone photoreceptor cells	24.8	disease_core	True
+ENSG00000121691	CAT	enterocytes	139.0	disease_core	False
+ENSG00000121691	CAT	hepatocytes	581.5	disease_core	False
+ENSG00000121691	CAT	microglia	30.8	disease_core	True
+ENSG00000121691	CAT	müller glia	21.1	disease_core	True
+ENSG00000121691	CAT	proximal tubule cells	82.5	disease_core	False
+ENSG00000121691	CAT	retinal bipolar cells	14.8	disease_core	True
+ENSG00000121691	CAT	retinal ganglion cells	11.6	disease_core	True
+ENSG00000121691	CAT	retinal horizontal cells	8.0	disease_core	True
+ENSG00000121691	CAT	retinal pigment epithelial cells	102.3	disease_core	True
+ENSG00000121691	CAT	rod photoreceptor cells	29.2	disease_core	True
+ENSG00000121691	CAT	vascular endothelial cells	44.1	disease_core	True
+ENSG00000142789	CELA3A	cone photoreceptor cells	0.0	negative_control	True
+ENSG00000142789	CELA3A	enterocytes	0.3	negative_control	False
+ENSG00000142789	CELA3A	hepatocytes	0.0	negative_control	False
+ENSG00000142789	CELA3A	microglia	0.2	negative_control	True
+ENSG00000142789	CELA3A	müller glia	0.0	negative_control	True
+ENSG00000142789	CELA3A	proximal tubule cells	0.1	negative_control	False
+ENSG00000142789	CELA3A	retinal bipolar cells	0.0	negative_control	True
+ENSG00000142789	CELA3A	retinal ganglion cells	0.0	negative_control	True
+ENSG00000142789	CELA3A	retinal horizontal cells	0.0	negative_control	True
+ENSG00000142789	CELA3A	retinal pigment epithelial cells	0.0	negative_control	True
+ENSG00000142789	CELA3A	rod photoreceptor cells	0.0	negative_control	True
+ENSG00000142789	CELA3A	vascular endothelial cells	0.1	negative_control	True
+ENSG00000184113	CLDN5	cone photoreceptor cells	4.1	celltype_marker	True
+ENSG00000184113	CLDN5	enterocytes	0.0	celltype_marker	False
+ENSG00000184113	CLDN5	hepatocytes	0.4	celltype_marker	False
+ENSG00000184113	CLDN5	microglia	0.7	celltype_marker	True
+ENSG00000184113	CLDN5	müller glia	1.3	celltype_marker	True
+ENSG00000184113	CLDN5	proximal tubule cells	2.7	celltype_marker	False
+ENSG00000184113	CLDN5	retinal bipolar cells	0.1	celltype_marker	True
+ENSG00000184113	CLDN5	retinal ganglion cells	0.0	celltype_marker	True
+ENSG00000184113	CLDN5	retinal horizontal cells	0.0	celltype_marker	True
+ENSG00000184113	CLDN5	retinal pigment epithelial cells	0.0	celltype_marker	True
+ENSG00000184113	CLDN5	rod photoreceptor cells	0.6	celltype_marker	True
+ENSG00000184113	CLDN5	vascular endothelial cells	710.8	celltype_marker	True
+ENSG00000110090	CPT1A	cone photoreceptor cells	200.8	ppar_effector	True
+ENSG00000110090	CPT1A	enterocytes	133.6	ppar_effector	False
+ENSG00000110090	CPT1A	hepatocytes	166.1	ppar_effector	False
+ENSG00000110090	CPT1A	microglia	5.6	ppar_effector	True
+ENSG00000110090	CPT1A	müller glia	24.5	ppar_effector	True
+ENSG00000110090	CPT1A	proximal tubule cells	103.2	ppar_effector	False
+ENSG00000110090	CPT1A	retinal bipolar cells	7.5	ppar_effector	True
+ENSG00000110090	CPT1A	retinal ganglion cells	42.5	ppar_effector	True
+ENSG00000110090	CPT1A	retinal horizontal cells	4.0	ppar_effector	True
+ENSG00000110090	CPT1A	retinal pigment epithelial cells	119.4	ppar_effector	True
+ENSG00000110090	CPT1A	rod photoreceptor cells	160.8	ppar_effector	True
+ENSG00000110090	CPT1A	vascular endothelial cells	79.5	ppar_effector	True
+ENSG00000078401	EDN1	cone photoreceptor cells	0.0	disease_core	True
+ENSG00000078401	EDN1	enterocytes	141.9	disease_core	False
+ENSG00000078401	EDN1	hepatocytes	0.8	disease_core	False
+ENSG00000078401	EDN1	microglia	0.4	disease_core	True
+ENSG00000078401	EDN1	müller glia	0.3	disease_core	True
+ENSG00000078401	EDN1	proximal tubule cells	12.6	disease_core	False
+ENSG00000078401	EDN1	retinal bipolar cells	0.0	disease_core	True
+ENSG00000078401	EDN1	retinal ganglion cells	0.0	disease_core	True
+ENSG00000078401	EDN1	retinal horizontal cells	2.0	disease_core	True
+ENSG00000078401	EDN1	retinal pigment epithelial cells	0.0	disease_core	True
+ENSG00000078401	EDN1	rod photoreceptor cells	0.0	disease_core	True
+ENSG00000078401	EDN1	vascular endothelial cells	182.0	disease_core	True
+ENSG00000113790	EHHADH	cone photoreceptor cells	20.7	ppar_effector	True
+ENSG00000113790	EHHADH	enterocytes	21.9	ppar_effector	False
+ENSG00000113790	EHHADH	hepatocytes	401.7	ppar_effector	False
+ENSG00000113790	EHHADH	microglia	15.1	ppar_effector	True
+ENSG00000113790	EHHADH	müller glia	11.1	ppar_effector	True
+ENSG00000113790	EHHADH	proximal tubule cells	271.5	ppar_effector	False
+ENSG00000113790	EHHADH	retinal bipolar cells	6.3	ppar_effector	True
+ENSG00000113790	EHHADH	retinal ganglion cells	7.7	ppar_effector	True
+ENSG00000113790	EHHADH	retinal horizontal cells	2.0	ppar_effector	True
+ENSG00000113790	EHHADH	retinal pigment epithelial cells	85.3	ppar_effector	True
+ENSG00000113790	EHHADH	rod photoreceptor cells	8.9	ppar_effector	True
+ENSG00000113790	EHHADH	vascular endothelial cells	10.4	ppar_effector	True
+ENSG00000173153	ESRRA	cone photoreceptor cells	22.8	nr_positive_control	True
+ENSG00000173153	ESRRA	enterocytes	212.6	nr_positive_control	False
+ENSG00000173153	ESRRA	hepatocytes	58.4	nr_positive_control	False
+ENSG00000173153	ESRRA	microglia	19.4	nr_positive_control	True
+ENSG00000173153	ESRRA	müller glia	16.0	nr_positive_control	True
+ENSG00000173153	ESRRA	proximal tubule cells	66.2	nr_positive_control	False
+ENSG00000173153	ESRRA	retinal bipolar cells	22.0	nr_positive_control	True
+ENSG00000173153	ESRRA	retinal ganglion cells	38.6	nr_positive_control	True
+ENSG00000173153	ESRRA	retinal horizontal cells	30.1	nr_positive_control	True
+ENSG00000173153	ESRRA	retinal pigment epithelial cells	0.0	nr_positive_control	True
+ENSG00000173153	ESRRA	rod photoreceptor cells	17.2	nr_positive_control	True
+ENSG00000173153	ESRRA	vascular endothelial cells	14.7	nr_positive_control	True
+ENSG00000163586	FABP1	cone photoreceptor cells	0.0	ppar_effector	True
+ENSG00000163586	FABP1	enterocytes	14089.0	ppar_effector	False
+ENSG00000163586	FABP1	hepatocytes	5907.7	ppar_effector	False
+ENSG00000163586	FABP1	microglia	0.0	ppar_effector	True
+ENSG00000163586	FABP1	müller glia	0.1	ppar_effector	True
+ENSG00000163586	FABP1	proximal tubule cells	62.2	ppar_effector	False
+ENSG00000163586	FABP1	retinal bipolar cells	0.1	ppar_effector	True
+ENSG00000163586	FABP1	retinal ganglion cells	0.0	ppar_effector	True
+ENSG00000163586	FABP1	retinal horizontal cells	0.0	ppar_effector	True
+ENSG00000163586	FABP1	retinal pigment epithelial cells	0.0	ppar_effector	True
+ENSG00000163586	FABP1	rod photoreceptor cells	0.1	ppar_effector	True
+ENSG00000163586	FABP1	vascular endothelial cells	1.6	ppar_effector	True
+ENSG00000170323	FABP4	cone photoreceptor cells	2.1	ppar_effector	True
+ENSG00000170323	FABP4	enterocytes	0.0	ppar_effector	False
+ENSG00000170323	FABP4	hepatocytes	0.3	ppar_effector	False
+ENSG00000170323	FABP4	microglia	0.1	ppar_effector	True
+ENSG00000170323	FABP4	müller glia	0.6	ppar_effector	True
+ENSG00000170323	FABP4	proximal tubule cells	0.0	ppar_effector	False
+ENSG00000170323	FABP4	retinal bipolar cells	0.3	ppar_effector	True
+ENSG00000170323	FABP4	retinal ganglion cells	0.0	ppar_effector	True
+ENSG00000170323	FABP4	retinal horizontal cells	0.0	ppar_effector	True
+ENSG00000170323	FABP4	retinal pigment epithelial cells	0.0	ppar_effector	True
+ENSG00000170323	FABP4	rod photoreceptor cells	1.7	ppar_effector	True
+ENSG00000170323	FABP4	vascular endothelial cells	1669.2	ppar_effector	True
+ENSG00000164687	FABP5	cone photoreceptor cells	6.2	ppar_effector	True
+ENSG00000164687	FABP5	enterocytes	2.5	ppar_effector	False
+ENSG00000164687	FABP5	hepatocytes	0.0	ppar_effector	False
+ENSG00000164687	FABP5	microglia	5.4	ppar_effector	True
+ENSG00000164687	FABP5	müller glia	61.1	ppar_effector	True
+ENSG00000164687	FABP5	proximal tubule cells	0.8	ppar_effector	False
+ENSG00000164687	FABP5	retinal bipolar cells	4.7	ppar_effector	True
+ENSG00000164687	FABP5	retinal ganglion cells	0.0	ppar_effector	True
+ENSG00000164687	FABP5	retinal horizontal cells	2.0	ppar_effector	True
+ENSG00000164687	FABP5	retinal pigment epithelial cells	4.3	ppar_effector	True
+ENSG00000164687	FABP5	rod photoreceptor cells	5.6	ppar_effector	True
+ENSG00000164687	FABP5	vascular endothelial cells	310.2	ppar_effector	True
+ENSG00000105550	FGF21	cone photoreceptor cells	0.0	ppar_effector	True
+ENSG00000105550	FGF21	enterocytes	0.0	ppar_effector	False
+ENSG00000105550	FGF21	hepatocytes	7.7	ppar_effector	False
+ENSG00000105550	FGF21	microglia	0.0	ppar_effector	True
+ENSG00000105550	FGF21	müller glia	0.0	ppar_effector	True
+ENSG00000105550	FGF21	retinal bipolar cells	0.0	ppar_effector	True
+ENSG00000105550	FGF21	retinal ganglion cells	0.0	ppar_effector	True
+ENSG00000105550	FGF21	retinal horizontal cells	0.0	ppar_effector	True
+ENSG00000105550	FGF21	retinal pigment epithelial cells	0.0	ppar_effector	True
+ENSG00000105550	FGF21	rod photoreceptor cells	0.0	ppar_effector	True
+ENSG00000105550	FGF21	vascular endothelial cells	0.0	ppar_effector	True
+ENSG00000077782	FGFR1	cone photoreceptor cells	6.2	fgf21_receptor	True
+ENSG00000077782	FGFR1	enterocytes	0.5	fgf21_receptor	False
+ENSG00000077782	FGFR1	hepatocytes	0.5	fgf21_receptor	False
+ENSG00000077782	FGFR1	microglia	7.4	fgf21_receptor	True
+ENSG00000077782	FGFR1	müller glia	214.4	fgf21_receptor	True
+ENSG00000077782	FGFR1	proximal tubule cells	52.7	fgf21_receptor	False
+ENSG00000077782	FGFR1	retinal bipolar cells	4.5	fgf21_receptor	True
+ENSG00000077782	FGFR1	retinal ganglion cells	11.6	fgf21_receptor	True
+ENSG00000077782	FGFR1	retinal horizontal cells	46.1	fgf21_receptor	True
+ENSG00000077782	FGFR1	retinal pigment epithelial cells	25.6	fgf21_receptor	True
+ENSG00000077782	FGFR1	rod photoreceptor cells	4.3	fgf21_receptor	True
+ENSG00000077782	FGFR1	vascular endothelial cells	116.7	fgf21_receptor	True
+ENSG00000066468	FGFR2	cone photoreceptor cells	0.0	fgf21_receptor	True
+ENSG00000066468	FGFR2	enterocytes	0.5	fgf21_receptor	False
+ENSG00000066468	FGFR2	hepatocytes	7.7	fgf21_receptor	False
+ENSG00000066468	FGFR2	microglia	7.2	fgf21_receptor	True
+ENSG00000066468	FGFR2	müller glia	10.8	fgf21_receptor	True
+ENSG00000066468	FGFR2	proximal tubule cells	109.7	fgf21_receptor	False
+ENSG00000066468	FGFR2	retinal bipolar cells	0.8	fgf21_receptor	True
+ENSG00000066468	FGFR2	retinal ganglion cells	0.0	fgf21_receptor	True
+ENSG00000066468	FGFR2	retinal horizontal cells	0.0	fgf21_receptor	True
+ENSG00000066468	FGFR2	retinal pigment epithelial cells	225.9	fgf21_receptor	True
+ENSG00000066468	FGFR2	rod photoreceptor cells	0.8	fgf21_receptor	True
+ENSG00000066468	FGFR2	vascular endothelial cells	2.7	fgf21_receptor	True
+ENSG00000068078	FGFR3	cone photoreceptor cells	0.0	fgf21_receptor	True
+ENSG00000068078	FGFR3	enterocytes	21.4	fgf21_receptor	False
+ENSG00000068078	FGFR3	hepatocytes	31.9	fgf21_receptor	False
+ENSG00000068078	FGFR3	microglia	5.6	fgf21_receptor	True
+ENSG00000068078	FGFR3	müller glia	0.4	fgf21_receptor	True
+ENSG00000068078	FGFR3	proximal tubule cells	123.8	fgf21_receptor	False
+ENSG00000068078	FGFR3	retinal bipolar cells	0.2	fgf21_receptor	True
+ENSG00000068078	FGFR3	retinal ganglion cells	0.0	fgf21_receptor	True
+ENSG00000068078	FGFR3	retinal horizontal cells	0.0	fgf21_receptor	True
+ENSG00000068078	FGFR3	retinal pigment epithelial cells	38.4	fgf21_receptor	True
+ENSG00000068078	FGFR3	rod photoreceptor cells	0.6	fgf21_receptor	True
+ENSG00000068078	FGFR3	vascular endothelial cells	5.5	fgf21_receptor	True
+ENSG00000160867	FGFR4	cone photoreceptor cells	0.0	fgf21_receptor	True
+ENSG00000160867	FGFR4	enterocytes	13.8	fgf21_receptor	False
+ENSG00000160867	FGFR4	hepatocytes	30.3	fgf21_receptor	False
+ENSG00000160867	FGFR4	microglia	0.1	fgf21_receptor	True
+ENSG00000160867	FGFR4	müller glia	1.5	fgf21_receptor	True
+ENSG00000160867	FGFR4	proximal tubule cells	40.7	fgf21_receptor	False
+ENSG00000160867	FGFR4	retinal bipolar cells	0.7	fgf21_receptor	True
+ENSG00000160867	FGFR4	retinal ganglion cells	0.0	fgf21_receptor	True
+ENSG00000160867	FGFR4	retinal horizontal cells	0.0	fgf21_receptor	True
+ENSG00000160867	FGFR4	retinal pigment epithelial cells	0.0	fgf21_receptor	True
+ENSG00000160867	FGFR4	rod photoreceptor cells	0.2	fgf21_receptor	True
+ENSG00000160867	FGFR4	vascular endothelial cells	0.6	fgf21_receptor	True
+ENSG00000102755	FLT1	cone photoreceptor cells	4.1	druggable_positive_control	True
+ENSG00000102755	FLT1	enterocytes	0.3	druggable_positive_control	False
+ENSG00000102755	FLT1	hepatocytes	0.9	druggable_positive_control	False
+ENSG00000102755	FLT1	microglia	25.7	druggable_positive_control	True
+ENSG00000102755	FLT1	müller glia	545.6	druggable_positive_control	True
+ENSG00000102755	FLT1	proximal tubule cells	9.5	druggable_positive_control	False
+ENSG00000102755	FLT1	retinal bipolar cells	84.2	druggable_positive_control	True
+ENSG00000102755	FLT1	retinal ganglion cells	0.0	druggable_positive_control	True
+ENSG00000102755	FLT1	retinal horizontal cells	0.0	druggable_positive_control	True
+ENSG00000102755	FLT1	retinal pigment epithelial cells	0.0	druggable_positive_control	True
+ENSG00000102755	FLT1	rod photoreceptor cells	3.6	druggable_positive_control	True
+ENSG00000102755	FLT1	vascular endothelial cells	1218.5	druggable_positive_control	True
+ENSG00000128683	GAD1	cone photoreceptor cells	0.0	celltype_marker	True
+ENSG00000128683	GAD1	enterocytes	0.0	celltype_marker	False
+ENSG00000128683	GAD1	hepatocytes	0.0	celltype_marker	False
+ENSG00000128683	GAD1	microglia	5.4	celltype_marker	True
+ENSG00000128683	GAD1	müller glia	5.6	celltype_marker	True
+ENSG00000128683	GAD1	proximal tubule cells	2.4	celltype_marker	False
+ENSG00000128683	GAD1	retinal bipolar cells	0.8	celltype_marker	True
+ENSG00000128683	GAD1	retinal ganglion cells	0.0	celltype_marker	True
+ENSG00000128683	GAD1	retinal horizontal cells	2.0	celltype_marker	True
+ENSG00000128683	GAD1	retinal pigment epithelial cells	0.0	celltype_marker	True
+ENSG00000128683	GAD1	rod photoreceptor cells	2.3	celltype_marker	True
+ENSG00000128683	GAD1	vascular endothelial cells	0.5	celltype_marker	True
+ENSG00000111640	GAPDH	cone photoreceptor cells	486.5	housekeeping_high	True
+ENSG00000111640	GAPDH	enterocytes	4889.5	housekeeping_high	False
+ENSG00000111640	GAPDH	hepatocytes	1825.7	housekeeping_high	False
+ENSG00000111640	GAPDH	microglia	115.5	housekeeping_high	True
+ENSG00000111640	GAPDH	müller glia	3753.2	housekeeping_high	True
+ENSG00000111640	GAPDH	proximal tubule cells	31.6	housekeeping_high	False
+ENSG00000111640	GAPDH	retinal bipolar cells	482.4	housekeeping_high	True
+ENSG00000111640	GAPDH	retinal ganglion cells	139.1	housekeeping_high	True
+ENSG00000111640	GAPDH	retinal horizontal cells	931.6	housekeeping_high	True
+ENSG00000111640	GAPDH	retinal pigment epithelial cells	737.5	housekeeping_high	True
+ENSG00000111640	GAPDH	rod photoreceptor cells	464.6	housekeeping_high	True
+ENSG00000111640	GAPDH	vascular endothelial cells	941.9	housekeeping_high	True
+ENSG00000131095	GFAP	cone photoreceptor cells	10.4	celltype_marker	True
+ENSG00000131095	GFAP	enterocytes	0.0	celltype_marker	False
+ENSG00000131095	GFAP	hepatocytes	0.0	celltype_marker	False
+ENSG00000131095	GFAP	microglia	18.5	celltype_marker	True
+ENSG00000131095	GFAP	müller glia	61.4	celltype_marker	True
+ENSG00000131095	GFAP	proximal tubule cells	0.0	celltype_marker	False
+ENSG00000131095	GFAP	retinal bipolar cells	0.5	celltype_marker	True
+ENSG00000131095	GFAP	retinal ganglion cells	0.0	celltype_marker	True
+ENSG00000131095	GFAP	retinal horizontal cells	0.0	celltype_marker	True
+ENSG00000131095	GFAP	retinal pigment epithelial cells	0.0	celltype_marker	True
+ENSG00000131095	GFAP	rod photoreceptor cells	1.8	celltype_marker	True
+ENSG00000131095	GFAP	vascular endothelial cells	1.1	celltype_marker	True
+ENSG00000135821	GLUL	cone photoreceptor cells	60.0	celltype_marker	True
+ENSG00000135821	GLUL	enterocytes	4.3	celltype_marker	False
+ENSG00000135821	GLUL	hepatocytes	814.2	celltype_marker	False
+ENSG00000135821	GLUL	microglia	117.9	celltype_marker	True
+ENSG00000135821	GLUL	müller glia	5656.4	celltype_marker	True
+ENSG00000135821	GLUL	proximal tubule cells	21.8	celltype_marker	False
+ENSG00000135821	GLUL	retinal bipolar cells	24.6	celltype_marker	True
+ENSG00000135821	GLUL	retinal ganglion cells	3.9	celltype_marker	True
+ENSG00000135821	GLUL	retinal horizontal cells	14.0	celltype_marker	True
+ENSG00000135821	GLUL	retinal pigment epithelial cells	686.3	celltype_marker	True
+ENSG00000135821	GLUL	rod photoreceptor cells	24.1	celltype_marker	True
+ENSG00000135821	GLUL	vascular endothelial cells	158.9	celltype_marker	True
+ENSG00000185974	GRK1	cone photoreceptor cells	2.1	druggable_positive_control	True
+ENSG00000185974	GRK1	enterocytes	0.0	druggable_positive_control	False
+ENSG00000185974	GRK1	hepatocytes	0.0	druggable_positive_control	False
+ENSG00000185974	GRK1	microglia	0.8	druggable_positive_control	True
+ENSG00000185974	GRK1	müller glia	0.3	druggable_positive_control	True
+ENSG00000185974	GRK1	proximal tubule cells	0.0	druggable_positive_control	False
+ENSG00000185974	GRK1	retinal bipolar cells	0.0	druggable_positive_control	True
+ENSG00000185974	GRK1	retinal ganglion cells	0.0	druggable_positive_control	True
+ENSG00000185974	GRK1	retinal horizontal cells	0.0	druggable_positive_control	True
+ENSG00000185974	GRK1	retinal pigment epithelial cells	0.0	druggable_positive_control	True
+ENSG00000185974	GRK1	rod photoreceptor cells	2.8	druggable_positive_control	True
+ENSG00000185974	GRK1	vascular endothelial cells	0.0	druggable_positive_control	True
+ENSG00000100644	HIF1A	cone photoreceptor cells	66.2	disease_core	True
+ENSG00000100644	HIF1A	enterocytes	21.5	disease_core	False
+ENSG00000100644	HIF1A	hepatocytes	17.1	disease_core	False
+ENSG00000100644	HIF1A	microglia	149.3	disease_core	True
+ENSG00000100644	HIF1A	müller glia	133.0	disease_core	True
+ENSG00000100644	HIF1A	proximal tubule cells	199.5	disease_core	False
+ENSG00000100644	HIF1A	retinal bipolar cells	60.8	disease_core	True
+ENSG00000100644	HIF1A	retinal ganglion cells	104.3	disease_core	True
+ENSG00000100644	HIF1A	retinal horizontal cells	136.2	disease_core	True
+ENSG00000100644	HIF1A	retinal pigment epithelial cells	17.1	disease_core	True
+ENSG00000100644	HIF1A	rod photoreceptor cells	96.7	disease_core	True
+ENSG00000100644	HIF1A	vascular endothelial cells	178.2	disease_core	True
+ENSG00000134240	HMGCS2	cone photoreceptor cells	0.0	ppar_effector	True
+ENSG00000134240	HMGCS2	enterocytes	6.6	ppar_effector	False
+ENSG00000134240	HMGCS2	hepatocytes	1287.8	ppar_effector	False
+ENSG00000134240	HMGCS2	microglia	0.0	ppar_effector	True
+ENSG00000134240	HMGCS2	müller glia	0.1	ppar_effector	True
+ENSG00000134240	HMGCS2	proximal tubule cells	71.8	ppar_effector	False
+ENSG00000134240	HMGCS2	retinal bipolar cells	0.2	ppar_effector	True
+ENSG00000134240	HMGCS2	retinal ganglion cells	0.0	ppar_effector	True
+ENSG00000134240	HMGCS2	retinal horizontal cells	0.0	ppar_effector	True
+ENSG00000134240	HMGCS2	retinal pigment epithelial cells	285.6	ppar_effector	True
+ENSG00000134240	HMGCS2	rod photoreceptor cells	0.0	ppar_effector	True
+ENSG00000134240	HMGCS2	vascular endothelial cells	0.6	ppar_effector	True
+ENSG00000165704	HPRT1	cone photoreceptor cells	53.8	housekeeping_low	True
+ENSG00000165704	HPRT1	enterocytes	25.3	housekeeping_low	False
+ENSG00000165704	HPRT1	hepatocytes	28.1	housekeeping_low	False
+ENSG00000165704	HPRT1	microglia	45.2	housekeeping_low	True
+ENSG00000165704	HPRT1	müller glia	21.0	housekeeping_low	True
+ENSG00000165704	HPRT1	proximal tubule cells	12.0	housekeeping_low	False
+ENSG00000165704	HPRT1	retinal bipolar cells	58.3	housekeeping_low	True
+ENSG00000165704	HPRT1	retinal ganglion cells	57.9	housekeeping_low	True
+ENSG00000165704	HPRT1	retinal horizontal cells	42.1	housekeeping_low	True
+ENSG00000165704	HPRT1	retinal pigment epithelial cells	0.0	housekeeping_low	True
+ENSG00000165704	HPRT1	rod photoreceptor cells	137.3	housekeeping_low	True
+ENSG00000165704	HPRT1	vascular endothelial cells	47.3	housekeeping_low	True
+ENSG00000090339	ICAM1	cone photoreceptor cells	0.0	disease_core	True
+ENSG00000090339	ICAM1	enterocytes	2.7	disease_core	False
+ENSG00000090339	ICAM1	hepatocytes	13.1	disease_core	False
+ENSG00000090339	ICAM1	microglia	10.6	disease_core	True
+ENSG00000090339	ICAM1	müller glia	20.1	disease_core	True
+ENSG00000090339	ICAM1	proximal tubule cells	17.5	disease_core	False
+ENSG00000090339	ICAM1	retinal bipolar cells	0.0	disease_core	True
+ENSG00000090339	ICAM1	retinal ganglion cells	0.0	disease_core	True
+ENSG00000090339	ICAM1	retinal horizontal cells	0.0	disease_core	True
+ENSG00000090339	ICAM1	retinal pigment epithelial cells	4.3	disease_core	True
+ENSG00000090339	ICAM1	rod photoreceptor cells	1.0	disease_core	True
+ENSG00000090339	ICAM1	vascular endothelial cells	507.8	disease_core	True
+ENSG00000125538	IL1B	cone photoreceptor cells	0.0	disease_core	True
+ENSG00000125538	IL1B	enterocytes	0.0	disease_core	False
+ENSG00000125538	IL1B	hepatocytes	0.0	disease_core	False
+ENSG00000125538	IL1B	microglia	18.7	disease_core	True
+ENSG00000125538	IL1B	müller glia	0.0	disease_core	True
+ENSG00000125538	IL1B	proximal tubule cells	0.0	disease_core	False
+ENSG00000125538	IL1B	retinal bipolar cells	0.0	disease_core	True
+ENSG00000125538	IL1B	retinal ganglion cells	0.0	disease_core	True
+ENSG00000125538	IL1B	retinal horizontal cells	0.0	disease_core	True
+ENSG00000125538	IL1B	retinal pigment epithelial cells	0.0	disease_core	True
+ENSG00000125538	IL1B	rod photoreceptor cells	0.1	disease_core	True
+ENSG00000125538	IL1B	vascular endothelial cells	2.2	disease_core	True
+ENSG00000136244	IL6	cone photoreceptor cells	0.0	disease_core	True
+ENSG00000136244	IL6	enterocytes	0.0	disease_core	False
+ENSG00000136244	IL6	hepatocytes	0.1	disease_core	False
+ENSG00000136244	IL6	microglia	3.1	disease_core	True
+ENSG00000136244	IL6	müller glia	0.0	disease_core	True
+ENSG00000136244	IL6	proximal tubule cells	0.3	disease_core	False
+ENSG00000136244	IL6	retinal bipolar cells	0.1	disease_core	True
+ENSG00000136244	IL6	retinal ganglion cells	0.0	disease_core	True
+ENSG00000136244	IL6	retinal horizontal cells	0.0	disease_core	True
+ENSG00000136244	IL6	retinal pigment epithelial cells	0.0	disease_core	True
+ENSG00000136244	IL6	rod photoreceptor cells	0.1	disease_core	True
+ENSG00000136244	IL6	vascular endothelial cells	221.9	disease_core	True
+ENSG00000254647	INS	cone photoreceptor cells	0.0	negative_control	True
+ENSG00000254647	INS	enterocytes	0.0	negative_control	False
+ENSG00000254647	INS	hepatocytes	0.0	negative_control	False
+ENSG00000254647	INS	microglia	0.0	negative_control	True
+ENSG00000254647	INS	müller glia	0.0	negative_control	True
+ENSG00000254647	INS	retinal bipolar cells	0.0	negative_control	True
+ENSG00000254647	INS	retinal ganglion cells	0.0	negative_control	True
+ENSG00000254647	INS	retinal horizontal cells	0.0	negative_control	True
+ENSG00000254647	INS	retinal pigment epithelial cells	0.0	negative_control	True
+ENSG00000254647	INS	rod photoreceptor cells	0.0	negative_control	True
+ENSG00000254647	INS	vascular endothelial cells	0.9	negative_control	True
+ENSG00000128052	KDR	cone photoreceptor cells	2.1	disease_core	True
+ENSG00000128052	KDR	enterocytes	0.0	disease_core	False
+ENSG00000128052	KDR	hepatocytes	0.5	disease_core	False
+ENSG00000128052	KDR	microglia	0.4	disease_core	True
+ENSG00000128052	KDR	müller glia	283.5	disease_core	True
+ENSG00000128052	KDR	proximal tubule cells	1.1	disease_core	False
+ENSG00000128052	KDR	retinal bipolar cells	9.2	disease_core	True
+ENSG00000128052	KDR	retinal ganglion cells	0.0	disease_core	True
+ENSG00000128052	KDR	retinal horizontal cells	2.0	disease_core	True
+ENSG00000128052	KDR	retinal pigment epithelial cells	0.0	disease_core	True
+ENSG00000128052	KDR	rod photoreceptor cells	1.3	disease_core	True
+ENSG00000128052	KDR	vascular endothelial cells	240.6	disease_core	True
+ENSG00000134962	KLB	cone photoreceptor cells	0.0	fgf21_receptor	True
+ENSG00000134962	KLB	enterocytes	1.6	fgf21_receptor	False
+ENSG00000134962	KLB	hepatocytes	54.1	fgf21_receptor	False
+ENSG00000134962	KLB	microglia	0.6	fgf21_receptor	True
+ENSG00000134962	KLB	müller glia	1.0	fgf21_receptor	True
+ENSG00000134962	KLB	proximal tubule cells	0.7	fgf21_receptor	False
+ENSG00000134962	KLB	retinal bipolar cells	1.6	fgf21_receptor	True
+ENSG00000134962	KLB	retinal ganglion cells	3.9	fgf21_receptor	True
+ENSG00000134962	KLB	retinal horizontal cells	4.0	fgf21_receptor	True
+ENSG00000134962	KLB	retinal pigment epithelial cells	0.0	fgf21_receptor	True
+ENSG00000134962	KLB	rod photoreceptor cells	0.8	fgf21_receptor	True
+ENSG00000134962	KLB	vascular endothelial cells	1.1	fgf21_receptor	True
+ENSG00000167768	KRT1	cone photoreceptor cells	0.0	negative_control	True
+ENSG00000167768	KRT1	enterocytes	0.0	negative_control	False
+ENSG00000167768	KRT1	hepatocytes	0.0	negative_control	False
+ENSG00000167768	KRT1	microglia	0.0	negative_control	True
+ENSG00000167768	KRT1	müller glia	0.0	negative_control	True
+ENSG00000167768	KRT1	proximal tubule cells	0.0	negative_control	False
+ENSG00000167768	KRT1	retinal bipolar cells	0.0	negative_control	True
+ENSG00000167768	KRT1	retinal ganglion cells	0.0	negative_control	True
+ENSG00000167768	KRT1	retinal horizontal cells	0.0	negative_control	True
+ENSG00000167768	KRT1	retinal pigment epithelial cells	0.0	negative_control	True
+ENSG00000167768	KRT1	rod photoreceptor cells	0.0	negative_control	True
+ENSG00000167768	KRT1	vascular endothelial cells	1.2	negative_control	True
+ENSG00000175445	LPL	cone photoreceptor cells	0.0	ppar_effector	True
+ENSG00000175445	LPL	enterocytes	0.1	ppar_effector	False
+ENSG00000175445	LPL	hepatocytes	0.3	ppar_effector	False
+ENSG00000175445	LPL	microglia	7.4	ppar_effector	True
+ENSG00000175445	LPL	müller glia	4.0	ppar_effector	True
+ENSG00000175445	LPL	proximal tubule cells	2.0	ppar_effector	False
+ENSG00000175445	LPL	retinal bipolar cells	0.7	ppar_effector	True
+ENSG00000175445	LPL	retinal ganglion cells	15.5	ppar_effector	True
+ENSG00000175445	LPL	retinal horizontal cells	140.2	ppar_effector	True
+ENSG00000175445	LPL	retinal pigment epithelial cells	17.1	ppar_effector	True
+ENSG00000175445	LPL	rod photoreceptor cells	0.6	ppar_effector	True
+ENSG00000175445	LPL	vascular endothelial cells	37.8	ppar_effector	True
+ENSG00000100985	MMP9	cone photoreceptor cells	12.4	disease_core	True
+ENSG00000100985	MMP9	enterocytes	0.0	disease_core	False
+ENSG00000100985	MMP9	hepatocytes	0.0	disease_core	False
+ENSG00000100985	MMP9	microglia	0.3	disease_core	True
+ENSG00000100985	MMP9	müller glia	0.3	disease_core	True
+ENSG00000100985	MMP9	proximal tubule cells	0.1	disease_core	False
+ENSG00000100985	MMP9	retinal bipolar cells	6.1	disease_core	True
+ENSG00000100985	MMP9	retinal ganglion cells	3.9	disease_core	True
+ENSG00000100985	MMP9	retinal horizontal cells	2.0	disease_core	True
+ENSG00000100985	MMP9	retinal pigment epithelial cells	0.0	disease_core	True
+ENSG00000100985	MMP9	rod photoreceptor cells	2.2	disease_core	True
+ENSG00000100985	MMP9	vascular endothelial cells	0.7	disease_core	True
+ENSG00000092054	MYH7	cone photoreceptor cells	0.0	negative_control	True
+ENSG00000092054	MYH7	enterocytes	0.4	negative_control	False
+ENSG00000092054	MYH7	hepatocytes	0.0	negative_control	False
+ENSG00000092054	MYH7	microglia	0.0	negative_control	True
+ENSG00000092054	MYH7	müller glia	0.0	negative_control	True
+ENSG00000092054	MYH7	proximal tubule cells	0.0	negative_control	False
+ENSG00000092054	MYH7	retinal bipolar cells	0.7	negative_control	True
+ENSG00000092054	MYH7	retinal ganglion cells	3.9	negative_control	True
+ENSG00000092054	MYH7	retinal horizontal cells	0.0	negative_control	True
+ENSG00000092054	MYH7	retinal pigment epithelial cells	0.0	negative_control	True
+ENSG00000092054	MYH7	rod photoreceptor cells	0.0	negative_control	True
+ENSG00000092054	MYH7	vascular endothelial cells	15.4	negative_control	True
+ENSG00000277586	NEFL	cone photoreceptor cells	0.0	celltype_marker	True
+ENSG00000277586	NEFL	enterocytes	0.0	celltype_marker	False
+ENSG00000277586	NEFL	hepatocytes	0.0	celltype_marker	False
+ENSG00000277586	NEFL	microglia	12.8	celltype_marker	True
+ENSG00000277586	NEFL	müller glia	9.3	celltype_marker	True
+ENSG00000277586	NEFL	proximal tubule cells	0.5	celltype_marker	False
+ENSG00000277586	NEFL	retinal bipolar cells	6.9	celltype_marker	True
+ENSG00000277586	NEFL	retinal ganglion cells	92.7	celltype_marker	True
+ENSG00000277586	NEFL	retinal horizontal cells	8.0	celltype_marker	True
+ENSG00000277586	NEFL	retinal pigment epithelial cells	0.0	celltype_marker	True
+ENSG00000277586	NEFL	rod photoreceptor cells	14.5	celltype_marker	True
+ENSG00000277586	NEFL	vascular endothelial cells	0.6	celltype_marker	True
+ENSG00000116044	NFE2L2	cone photoreceptor cells	47.6	disease_core	True
+ENSG00000116044	NFE2L2	enterocytes	174.2	disease_core	False
+ENSG00000116044	NFE2L2	hepatocytes	189.4	disease_core	False
+ENSG00000116044	NFE2L2	microglia	197.0	disease_core	True
+ENSG00000116044	NFE2L2	müller glia	215.0	disease_core	True
+ENSG00000116044	NFE2L2	proximal tubule cells	218.3	disease_core	False
+ENSG00000116044	NFE2L2	retinal bipolar cells	96.5	disease_core	True
+ENSG00000116044	NFE2L2	retinal ganglion cells	46.4	disease_core	True
+ENSG00000116044	NFE2L2	retinal horizontal cells	58.1	disease_core	True
+ENSG00000116044	NFE2L2	retinal pigment epithelial cells	144.9	disease_core	True
+ENSG00000116044	NFE2L2	rod photoreceptor cells	94.2	disease_core	True
+ENSG00000116044	NFE2L2	vascular endothelial cells	272.8	disease_core	True
+ENSG00000109320	NFKB1	cone photoreceptor cells	55.9	disease_core	True
+ENSG00000109320	NFKB1	enterocytes	81.0	disease_core	False
+ENSG00000109320	NFKB1	hepatocytes	66.6	disease_core	False
+ENSG00000109320	NFKB1	microglia	127.6	disease_core	True
+ENSG00000109320	NFKB1	müller glia	42.0	disease_core	True
+ENSG00000109320	NFKB1	proximal tubule cells	82.3	disease_core	False
+ENSG00000109320	NFKB1	retinal bipolar cells	39.3	disease_core	True
+ENSG00000109320	NFKB1	retinal ganglion cells	11.6	disease_core	True
+ENSG00000109320	NFKB1	retinal horizontal cells	126.2	disease_core	True
+ENSG00000109320	NFKB1	retinal pigment epithelial cells	29.8	disease_core	True
+ENSG00000109320	NFKB1	rod photoreceptor cells	45.9	disease_core	True
+ENSG00000109320	NFKB1	vascular endothelial cells	177.4	disease_core	True
+ENSG00000164867	NOS3	cone photoreceptor cells	0.0	disease_core	True
+ENSG00000164867	NOS3	enterocytes	0.1	disease_core	False
+ENSG00000164867	NOS3	hepatocytes	0.2	disease_core	False
+ENSG00000164867	NOS3	microglia	0.2	disease_core	True
+ENSG00000164867	NOS3	müller glia	0.0	disease_core	True
+ENSG00000164867	NOS3	proximal tubule cells	0.5	disease_core	False
+ENSG00000164867	NOS3	retinal bipolar cells	0.3	disease_core	True
+ENSG00000164867	NOS3	retinal ganglion cells	0.0	disease_core	True
+ENSG00000164867	NOS3	retinal horizontal cells	0.0	disease_core	True
+ENSG00000164867	NOS3	retinal pigment epithelial cells	0.0	disease_core	True
+ENSG00000164867	NOS3	rod photoreceptor cells	0.0	disease_core	True
+ENSG00000164867	NOS3	vascular endothelial cells	56.4	disease_core	True
+ENSG00000126368	NR1D1	cone photoreceptor cells	10.4	nr_positive_control	True
+ENSG00000126368	NR1D1	enterocytes	61.3	nr_positive_control	False
+ENSG00000126368	NR1D1	hepatocytes	40.3	nr_positive_control	False
+ENSG00000126368	NR1D1	microglia	0.9	nr_positive_control	True
+ENSG00000126368	NR1D1	müller glia	40.0	nr_positive_control	True
+ENSG00000126368	NR1D1	proximal tubule cells	3.2	nr_positive_control	False
+ENSG00000126368	NR1D1	retinal bipolar cells	47.4	nr_positive_control	True
+ENSG00000126368	NR1D1	retinal ganglion cells	23.2	nr_positive_control	True
+ENSG00000126368	NR1D1	retinal horizontal cells	24.0	nr_positive_control	True
+ENSG00000126368	NR1D1	retinal pigment epithelial cells	34.1	nr_positive_control	True
+ENSG00000126368	NR1D1	rod photoreceptor cells	13.4	nr_positive_control	True
+ENSG00000126368	NR1D1	vascular endothelial cells	16.0	nr_positive_control	True
+ENSG00000131408	NR1H2	cone photoreceptor cells	22.8	nr_positive_control	True
+ENSG00000131408	NR1H2	enterocytes	94.5	nr_positive_control	False
+ENSG00000131408	NR1H2	hepatocytes	23.5	nr_positive_control	False
+ENSG00000131408	NR1H2	microglia	26.6	nr_positive_control	True
+ENSG00000131408	NR1H2	müller glia	72.9	nr_positive_control	True
+ENSG00000131408	NR1H2	proximal tubule cells	42.2	nr_positive_control	False
+ENSG00000131408	NR1H2	retinal bipolar cells	55.1	nr_positive_control	True
+ENSG00000131408	NR1H2	retinal ganglion cells	15.5	nr_positive_control	True
+ENSG00000131408	NR1H2	retinal horizontal cells	94.2	nr_positive_control	True
+ENSG00000131408	NR1H2	retinal pigment epithelial cells	17.1	nr_positive_control	True
+ENSG00000131408	NR1H2	rod photoreceptor cells	40.6	nr_positive_control	True
+ENSG00000131408	NR1H2	vascular endothelial cells	48.0	nr_positive_control	True
+ENSG00000025434	NR1H3	cone photoreceptor cells	14.5	nr_positive_control	True
+ENSG00000025434	NR1H3	enterocytes	68.6	nr_positive_control	False
+ENSG00000025434	NR1H3	hepatocytes	72.0	nr_positive_control	False
+ENSG00000025434	NR1H3	microglia	8.2	nr_positive_control	True
+ENSG00000025434	NR1H3	müller glia	8.0	nr_positive_control	True
+ENSG00000025434	NR1H3	proximal tubule cells	29.7	nr_positive_control	False
+ENSG00000025434	NR1H3	retinal bipolar cells	10.6	nr_positive_control	True
+ENSG00000025434	NR1H3	retinal ganglion cells	11.6	nr_positive_control	True
+ENSG00000025434	NR1H3	retinal horizontal cells	12.0	nr_positive_control	True
+ENSG00000025434	NR1H3	retinal pigment epithelial cells	8.5	nr_positive_control	True
+ENSG00000025434	NR1H3	rod photoreceptor cells	9.1	nr_positive_control	True
+ENSG00000025434	NR1H3	vascular endothelial cells	13.6	nr_positive_control	True
+ENSG00000278570	NR2E3	cone photoreceptor cells	0.0	nr_positive_control	True
+ENSG00000278570	NR2E3	enterocytes	1.7	nr_positive_control	False
+ENSG00000278570	NR2E3	hepatocytes	1.3	nr_positive_control	False
+ENSG00000278570	NR2E3	microglia	0.1	nr_positive_control	True
+ENSG00000278570	NR2E3	müller glia	10.7	nr_positive_control	True
+ENSG00000278570	NR2E3	proximal tubule cells	1.2	nr_positive_control	False
+ENSG00000278570	NR2E3	retinal bipolar cells	12.9	nr_positive_control	True
+ENSG00000278570	NR2E3	retinal ganglion cells	15.5	nr_positive_control	True
+ENSG00000278570	NR2E3	retinal horizontal cells	6.0	nr_positive_control	True
+ENSG00000278570	NR2E3	retinal pigment epithelial cells	4.3	nr_positive_control	True
+ENSG00000278570	NR2E3	rod photoreceptor cells	861.9	nr_positive_control	True
+ENSG00000278570	NR2E3	vascular endothelial cells	2.5	nr_positive_control	True
+ENSG00000175745	NR2F1	cone photoreceptor cells	33.1	nr_positive_control	True
+ENSG00000175745	NR2F1	enterocytes	0.2	nr_positive_control	False
+ENSG00000175745	NR2F1	hepatocytes	2.6	nr_positive_control	False
+ENSG00000175745	NR2F1	microglia	2.2	nr_positive_control	True
+ENSG00000175745	NR2F1	müller glia	72.8	nr_positive_control	True
+ENSG00000175745	NR2F1	proximal tubule cells	18.7	nr_positive_control	False
+ENSG00000175745	NR2F1	retinal bipolar cells	29.7	nr_positive_control	True
+ENSG00000175745	NR2F1	retinal ganglion cells	0.0	nr_positive_control	True
+ENSG00000175745	NR2F1	retinal horizontal cells	0.0	nr_positive_control	True
+ENSG00000175745	NR2F1	retinal pigment epithelial cells	25.6	nr_positive_control	True
+ENSG00000175745	NR2F1	rod photoreceptor cells	1.0	nr_positive_control	True
+ENSG00000175745	NR2F1	vascular endothelial cells	27.6	nr_positive_control	True
+ENSG00000185551	NR2F2	cone photoreceptor cells	10.4	nr_positive_control	True
+ENSG00000185551	NR2F2	enterocytes	15.2	nr_positive_control	False
+ENSG00000185551	NR2F2	hepatocytes	66.7	nr_positive_control	False
+ENSG00000185551	NR2F2	microglia	0.9	nr_positive_control	True
+ENSG00000185551	NR2F2	müller glia	33.6	nr_positive_control	True
+ENSG00000185551	NR2F2	proximal tubule cells	42.8	nr_positive_control	False
+ENSG00000185551	NR2F2	retinal bipolar cells	5.1	nr_positive_control	True
+ENSG00000185551	NR2F2	retinal ganglion cells	0.0	nr_positive_control	True
+ENSG00000185551	NR2F2	retinal horizontal cells	6.0	nr_positive_control	True
+ENSG00000185551	NR2F2	retinal pigment epithelial cells	34.1	nr_positive_control	True
+ENSG00000185551	NR2F2	rod photoreceptor cells	7.8	nr_positive_control	True
+ENSG00000185551	NR2F2	vascular endothelial cells	168.2	nr_positive_control	True
+ENSG00000169856	ONECUT1	cone photoreceptor cells	0.0	celltype_marker	True
+ENSG00000169856	ONECUT1	enterocytes	0.1	celltype_marker	False
+ENSG00000169856	ONECUT1	hepatocytes	116.3	celltype_marker	False
+ENSG00000169856	ONECUT1	microglia	0.2	celltype_marker	True
+ENSG00000169856	ONECUT1	müller glia	1.3	celltype_marker	True
+ENSG00000169856	ONECUT1	proximal tubule cells	0.2	celltype_marker	False
+ENSG00000169856	ONECUT1	retinal bipolar cells	0.5	celltype_marker	True
+ENSG00000169856	ONECUT1	retinal ganglion cells	100.4	celltype_marker	True
+ENSG00000169856	ONECUT1	retinal horizontal cells	1041.8	celltype_marker	True
+ENSG00000169856	ONECUT1	retinal pigment epithelial cells	0.0	celltype_marker	True
+ENSG00000169856	ONECUT1	rod photoreceptor cells	1.0	celltype_marker	True
+ENSG00000169856	ONECUT1	vascular endothelial cells	0.1	celltype_marker	True
+ENSG00000169313	P2RY12	cone photoreceptor cells	2.1	celltype_marker	True
+ENSG00000169313	P2RY12	enterocytes	0.1	celltype_marker	False
+ENSG00000169313	P2RY12	hepatocytes	0.0	celltype_marker	False
+ENSG00000169313	P2RY12	microglia	1602.7	celltype_marker	True
+ENSG00000169313	P2RY12	müller glia	24.3	celltype_marker	True
+ENSG00000169313	P2RY12	proximal tubule cells	0.3	celltype_marker	False
+ENSG00000169313	P2RY12	retinal bipolar cells	9.3	celltype_marker	True
+ENSG00000169313	P2RY12	retinal ganglion cells	7.7	celltype_marker	True
+ENSG00000169313	P2RY12	retinal horizontal cells	26.0	celltype_marker	True
+ENSG00000169313	P2RY12	retinal pigment epithelial cells	4.3	celltype_marker	True
+ENSG00000169313	P2RY12	rod photoreceptor cells	0.2	celltype_marker	True
+ENSG00000169313	P2RY12	vascular endothelial cells	0.4	celltype_marker	True
+ENSG00000139053	PDE6H	cone photoreceptor cells	2260.6	celltype_marker	True
+ENSG00000139053	PDE6H	enterocytes	0.0	celltype_marker	False
+ENSG00000139053	PDE6H	hepatocytes	0.0	celltype_marker	False
+ENSG00000139053	PDE6H	microglia	0.1	celltype_marker	True
+ENSG00000139053	PDE6H	müller glia	7.9	celltype_marker	True
+ENSG00000139053	PDE6H	proximal tubule cells	0.0	celltype_marker	False
+ENSG00000139053	PDE6H	retinal bipolar cells	11.1	celltype_marker	True
+ENSG00000139053	PDE6H	retinal ganglion cells	0.0	celltype_marker	True
+ENSG00000139053	PDE6H	retinal horizontal cells	0.0	celltype_marker	True
+ENSG00000139053	PDE6H	retinal pigment epithelial cells	0.0	celltype_marker	True
+ENSG00000139053	PDE6H	rod photoreceptor cells	34.6	celltype_marker	True
+ENSG00000139053	PDE6H	vascular endothelial cells	0.0	celltype_marker	True
+ENSG00000004799	PDK4	cone photoreceptor cells	0.0	ppar_effector	True
+ENSG00000004799	PDK4	enterocytes	1814.4	ppar_effector	False
+ENSG00000004799	PDK4	hepatocytes	211.9	ppar_effector	False
+ENSG00000004799	PDK4	microglia	23.9	ppar_effector	True
+ENSG00000004799	PDK4	müller glia	32.9	ppar_effector	True
+ENSG00000004799	PDK4	proximal tubule cells	506.3	ppar_effector	False
+ENSG00000004799	PDK4	retinal bipolar cells	0.0	ppar_effector	True
+ENSG00000004799	PDK4	retinal ganglion cells	0.0	ppar_effector	True
+ENSG00000004799	PDK4	retinal horizontal cells	0.0	ppar_effector	True
+ENSG00000004799	PDK4	retinal pigment epithelial cells	29.8	ppar_effector	True
+ENSG00000004799	PDK4	rod photoreceptor cells	0.1	ppar_effector	True
+ENSG00000004799	PDK4	vascular endothelial cells	255.6	ppar_effector	True
+ENSG00000261371	PECAM1	cone photoreceptor cells	0.0	celltype_marker	True
+ENSG00000261371	PECAM1	enterocytes	0.2	celltype_marker	False
+ENSG00000261371	PECAM1	hepatocytes	1.6	celltype_marker	False
+ENSG00000261371	PECAM1	microglia	103.5	celltype_marker	True
+ENSG00000261371	PECAM1	müller glia	0.1	celltype_marker	True
+ENSG00000261371	PECAM1	proximal tubule cells	6.4	celltype_marker	False
+ENSG00000261371	PECAM1	retinal bipolar cells	1.6	celltype_marker	True
+ENSG00000261371	PECAM1	retinal ganglion cells	0.0	celltype_marker	True
+ENSG00000261371	PECAM1	retinal horizontal cells	2.0	celltype_marker	True
+ENSG00000261371	PECAM1	retinal pigment epithelial cells	0.0	celltype_marker	True
+ENSG00000261371	PECAM1	rod photoreceptor cells	0.8	celltype_marker	True
+ENSG00000261371	PECAM1	vascular endothelial cells	1148.4	celltype_marker	True
+ENSG00000181222	POLR2A	cone photoreceptor cells	4.1	housekeeping_low	True
+ENSG00000181222	POLR2A	enterocytes	2.7	housekeeping_low	False
+ENSG00000181222	POLR2A	hepatocytes	0.5	housekeeping_low	False
+ENSG00000181222	POLR2A	microglia	31.8	housekeeping_low	True
+ENSG00000181222	POLR2A	müller glia	2.3	housekeeping_low	True
+ENSG00000181222	POLR2A	proximal tubule cells	48.6	housekeeping_low	False
+ENSG00000181222	POLR2A	retinal bipolar cells	3.1	housekeeping_low	True
+ENSG00000181222	POLR2A	retinal ganglion cells	3.9	housekeeping_low	True
+ENSG00000181222	POLR2A	retinal horizontal cells	0.0	housekeeping_low	True
+ENSG00000181222	POLR2A	retinal pigment epithelial cells	8.5	housekeeping_low	True
+ENSG00000181222	POLR2A	rod photoreceptor cells	5.4	housekeeping_low	True
+ENSG00000181222	POLR2A	vascular endothelial cells	9.8	housekeeping_low	True
+ENSG00000186951	PPARA	cone photoreceptor cells	207.0	receptor	True
+ENSG00000186951	PPARA	enterocytes	313.3	receptor	False
+ENSG00000186951	PPARA	hepatocytes	326.6	receptor	False
+ENSG00000186951	PPARA	microglia	44.5	receptor	True
+ENSG00000186951	PPARA	müller glia	48.0	receptor	True
+ENSG00000186951	PPARA	proximal tubule cells	571.0	receptor	False
+ENSG00000186951	PPARA	retinal bipolar cells	40.7	receptor	True
+ENSG00000186951	PPARA	retinal ganglion cells	30.9	receptor	True
+ENSG00000186951	PPARA	retinal horizontal cells	48.1	receptor	True
+ENSG00000186951	PPARA	retinal pigment epithelial cells	247.3	receptor	True
+ENSG00000186951	PPARA	rod photoreceptor cells	680.1	receptor	True
+ENSG00000186951	PPARA	vascular endothelial cells	33.5	receptor	True
+ENSG00000112033	PPARD	cone photoreceptor cells	31.1	receptor	True
+ENSG00000112033	PPARD	enterocytes	73.0	receptor	False
+ENSG00000112033	PPARD	hepatocytes	23.0	receptor	False
+ENSG00000112033	PPARD	microglia	157.0	receptor	True
+ENSG00000112033	PPARD	müller glia	38.7	receptor	True
+ENSG00000112033	PPARD	proximal tubule cells	46.2	receptor	False
+ENSG00000112033	PPARD	retinal bipolar cells	19.5	receptor	True
+ENSG00000112033	PPARD	retinal ganglion cells	11.6	receptor	True
+ENSG00000112033	PPARD	retinal horizontal cells	34.1	receptor	True
+ENSG00000112033	PPARD	retinal pigment epithelial cells	17.1	receptor	True
+ENSG00000112033	PPARD	rod photoreceptor cells	42.5	receptor	True
+ENSG00000112033	PPARD	vascular endothelial cells	74.5	receptor	True
+ENSG00000132170	PPARG	cone photoreceptor cells	4.1	receptor	True
+ENSG00000132170	PPARG	enterocytes	144.0	receptor	False
+ENSG00000132170	PPARG	hepatocytes	35.4	receptor	False
+ENSG00000132170	PPARG	microglia	106.1	receptor	True
+ENSG00000132170	PPARG	müller glia	1.9	receptor	True
+ENSG00000132170	PPARG	proximal tubule cells	204.9	receptor	False
+ENSG00000132170	PPARG	retinal bipolar cells	15.9	receptor	True
+ENSG00000132170	PPARG	retinal ganglion cells	85.0	receptor	True
+ENSG00000132170	PPARG	retinal horizontal cells	4.0	receptor	True
+ENSG00000132170	PPARG	retinal pigment epithelial cells	0.0	receptor	True
+ENSG00000132170	PPARG	rod photoreceptor cells	0.5	receptor	True
+ENSG00000132170	PPARG	vascular endothelial cells	205.9	receptor	True
+ENSG00000196262	PPIA	cone photoreceptor cells	29.0	housekeeping_mid	True
+ENSG00000196262	PPIA	enterocytes	605.8	housekeeping_mid	False
+ENSG00000196262	PPIA	hepatocytes	323.5	housekeeping_mid	False
+ENSG00000196262	PPIA	microglia	37.9	housekeeping_mid	True
+ENSG00000196262	PPIA	müller glia	94.6	housekeeping_mid	True
+ENSG00000196262	PPIA	proximal tubule cells	31.8	housekeeping_mid	False
+ENSG00000196262	PPIA	retinal bipolar cells	37.0	housekeeping_mid	True
+ENSG00000196262	PPIA	retinal ganglion cells	42.5	housekeeping_mid	True
+ENSG00000196262	PPIA	retinal horizontal cells	44.1	housekeeping_mid	True
+ENSG00000196262	PPIA	retinal pigment epithelial cells	204.6	housekeeping_mid	True
+ENSG00000196262	PPIA	rod photoreceptor cells	57.5	housekeeping_mid	True
+ENSG00000196262	PPIA	vascular endothelial cells	292.5	housekeeping_mid	True
+ENSG00000166501	PRKCB	cone photoreceptor cells	2.1	disease_core	True
+ENSG00000166501	PRKCB	enterocytes	30.2	disease_core	False
+ENSG00000166501	PRKCB	hepatocytes	1.5	disease_core	False
+ENSG00000166501	PRKCB	microglia	360.0	disease_core	True
+ENSG00000166501	PRKCB	müller glia	33.3	disease_core	True
+ENSG00000166501	PRKCB	proximal tubule cells	8.4	disease_core	False
+ENSG00000166501	PRKCB	retinal bipolar cells	614.3	disease_core	True
+ENSG00000166501	PRKCB	retinal ganglion cells	455.8	disease_core	True
+ENSG00000166501	PRKCB	retinal horizontal cells	164.3	disease_core	True
+ENSG00000166501	PRKCB	retinal pigment epithelial cells	422.0	disease_core	True
+ENSG00000166501	PRKCB	rod photoreceptor cells	4.4	disease_core	True
+ENSG00000166501	PRKCB	vascular endothelial cells	12.6	disease_core	True
+ENSG00000175646	PRM1	cone photoreceptor cells	0.0	negative_control	True
+ENSG00000175646	PRM1	enterocytes	0.0	negative_control	False
+ENSG00000175646	PRM1	hepatocytes	0.0	negative_control	False
+ENSG00000175646	PRM1	microglia	0.0	negative_control	True
+ENSG00000175646	PRM1	müller glia	0.0	negative_control	True
+ENSG00000175646	PRM1	retinal bipolar cells	0.0	negative_control	True
+ENSG00000175646	PRM1	retinal ganglion cells	0.0	negative_control	True
+ENSG00000175646	PRM1	retinal horizontal cells	0.0	negative_control	True
+ENSG00000175646	PRM1	retinal pigment epithelial cells	0.0	negative_control	True
+ENSG00000175646	PRM1	rod photoreceptor cells	0.0	negative_control	True
+ENSG00000175646	PRM1	vascular endothelial cells	17.8	negative_control	True
+ENSG00000131759	RARA	cone photoreceptor cells	37.3	nr_positive_control	True
+ENSG00000131759	RARA	enterocytes	80.6	nr_positive_control	False
+ENSG00000131759	RARA	hepatocytes	30.3	nr_positive_control	False
+ENSG00000131759	RARA	microglia	0.4	nr_positive_control	True
+ENSG00000131759	RARA	müller glia	21.8	nr_positive_control	True
+ENSG00000131759	RARA	proximal tubule cells	17.9	nr_positive_control	False
+ENSG00000131759	RARA	retinal bipolar cells	33.2	nr_positive_control	True
+ENSG00000131759	RARA	retinal ganglion cells	19.3	nr_positive_control	True
+ENSG00000131759	RARA	retinal horizontal cells	12.0	nr_positive_control	True
+ENSG00000131759	RARA	retinal pigment epithelial cells	12.8	nr_positive_control	True
+ENSG00000131759	RARA	rod photoreceptor cells	21.6	nr_positive_control	True
+ENSG00000131759	RARA	vascular endothelial cells	40.5	nr_positive_control	True
+ENSG00000077092	RARB	cone photoreceptor cells	302.2	nr_positive_control	True
+ENSG00000077092	RARB	enterocytes	4.4	nr_positive_control	False
+ENSG00000077092	RARB	hepatocytes	9.0	nr_positive_control	False
+ENSG00000077092	RARB	microglia	1.3	nr_positive_control	True
+ENSG00000077092	RARB	müller glia	680.2	nr_positive_control	True
+ENSG00000077092	RARB	proximal tubule cells	17.7	nr_positive_control	False
+ENSG00000077092	RARB	retinal bipolar cells	32.6	nr_positive_control	True
+ENSG00000077092	RARB	retinal ganglion cells	61.8	nr_positive_control	True
+ENSG00000077092	RARB	retinal horizontal cells	24.0	nr_positive_control	True
+ENSG00000077092	RARB	retinal pigment epithelial cells	21.3	nr_positive_control	True
+ENSG00000077092	RARB	rod photoreceptor cells	34.9	nr_positive_control	True
+ENSG00000077092	RARB	vascular endothelial cells	101.8	nr_positive_control	True
+ENSG00000157110	RBPMS	cone photoreceptor cells	22.8	celltype_marker	True
+ENSG00000157110	RBPMS	enterocytes	3.0	celltype_marker	False
+ENSG00000157110	RBPMS	hepatocytes	309.2	celltype_marker	False
+ENSG00000157110	RBPMS	microglia	1.6	celltype_marker	True
+ENSG00000157110	RBPMS	müller glia	12.4	celltype_marker	True
+ENSG00000157110	RBPMS	proximal tubule cells	1140.6	celltype_marker	False
+ENSG00000157110	RBPMS	retinal bipolar cells	22.0	celltype_marker	True
+ENSG00000157110	RBPMS	retinal ganglion cells	965.7	celltype_marker	True
+ENSG00000157110	RBPMS	retinal horizontal cells	18.0	celltype_marker	True
+ENSG00000157110	RBPMS	retinal pigment epithelial cells	25.6	celltype_marker	True
+ENSG00000157110	RBPMS	rod photoreceptor cells	10.3	celltype_marker	True
+ENSG00000157110	RBPMS	vascular endothelial cells	316.0	celltype_marker	True
+ENSG00000163914	RHO	cone photoreceptor cells	4.1	druggable_positive_control	True
+ENSG00000163914	RHO	enterocytes	0.0	druggable_positive_control	False
+ENSG00000163914	RHO	hepatocytes	0.0	druggable_positive_control	False
+ENSG00000163914	RHO	microglia	0.0	druggable_positive_control	True
+ENSG00000163914	RHO	müller glia	108.0	druggable_positive_control	True
+ENSG00000163914	RHO	proximal tubule cells	0.0	druggable_positive_control	False
+ENSG00000163914	RHO	retinal bipolar cells	63.5	druggable_positive_control	True
+ENSG00000163914	RHO	retinal ganglion cells	0.0	druggable_positive_control	True
+ENSG00000163914	RHO	retinal horizontal cells	44.1	druggable_positive_control	True
+ENSG00000163914	RHO	retinal pigment epithelial cells	17.1	druggable_positive_control	True
+ENSG00000163914	RHO	rod photoreceptor cells	2478.4	druggable_positive_control	True
+ENSG00000163914	RHO	vascular endothelial cells	0.1	druggable_positive_control	True
+ENSG00000140522	RLBP1	cone photoreceptor cells	2.1	celltype_marker	True
+ENSG00000140522	RLBP1	enterocytes	0.0	celltype_marker	False
+ENSG00000140522	RLBP1	hepatocytes	0.0	celltype_marker	False
+ENSG00000140522	RLBP1	microglia	0.3	celltype_marker	True
+ENSG00000140522	RLBP1	müller glia	2970.2	celltype_marker	True
+ENSG00000140522	RLBP1	proximal tubule cells	0.1	celltype_marker	False
+ENSG00000140522	RLBP1	retinal bipolar cells	9.9	celltype_marker	True
+ENSG00000140522	RLBP1	retinal ganglion cells	0.0	celltype_marker	True
+ENSG00000140522	RLBP1	retinal horizontal cells	10.0	celltype_marker	True
+ENSG00000140522	RLBP1	retinal pigment epithelial cells	2510.9	celltype_marker	True
+ENSG00000140522	RLBP1	rod photoreceptor cells	13.3	celltype_marker	True
+ENSG00000140522	RLBP1	vascular endothelial cells	0.2	celltype_marker	True
+ENSG00000198963	RORB	cone photoreceptor cells	275.3	nr_positive_control	True
+ENSG00000198963	RORB	enterocytes	0.5	nr_positive_control	False
+ENSG00000198963	RORB	hepatocytes	0.2	nr_positive_control	False
+ENSG00000198963	RORB	microglia	3.1	nr_positive_control	True
+ENSG00000198963	RORB	müller glia	736.2	nr_positive_control	True
+ENSG00000198963	RORB	proximal tubule cells	8.2	nr_positive_control	False
+ENSG00000198963	RORB	retinal bipolar cells	201.5	nr_positive_control	True
+ENSG00000198963	RORB	retinal ganglion cells	189.3	nr_positive_control	True
+ENSG00000198963	RORB	retinal horizontal cells	1869.2	nr_positive_control	True
+ENSG00000198963	RORB	retinal pigment epithelial cells	686.3	nr_positive_control	True
+ENSG00000198963	RORB	rod photoreceptor cells	297.6	nr_positive_control	True
+ENSG00000198963	RORB	vascular endothelial cells	3.2	nr_positive_control	True
+ENSG00000116745	RPE65	cone photoreceptor cells	12.4	celltype_marker	True
+ENSG00000116745	RPE65	enterocytes	0.0	celltype_marker	False
+ENSG00000116745	RPE65	hepatocytes	0.0	celltype_marker	False
+ENSG00000116745	RPE65	microglia	0.1	celltype_marker	True
+ENSG00000116745	RPE65	müller glia	1.0	celltype_marker	True
+ENSG00000116745	RPE65	proximal tubule cells	0.1	celltype_marker	False
+ENSG00000116745	RPE65	retinal bipolar cells	1.6	celltype_marker	True
+ENSG00000116745	RPE65	retinal ganglion cells	0.0	celltype_marker	True
+ENSG00000116745	RPE65	retinal horizontal cells	0.0	celltype_marker	True
+ENSG00000116745	RPE65	retinal pigment epithelial cells	7170.3	celltype_marker	True
+ENSG00000116745	RPE65	rod photoreceptor cells	47.8	celltype_marker	True
+ENSG00000116745	RPE65	vascular endothelial cells	0.1	celltype_marker	True
+ENSG00000142541	RPL13A	cone photoreceptor cells	167.7	housekeeping_high	True
+ENSG00000142541	RPL13A	enterocytes	4733.3	housekeeping_high	False
+ENSG00000142541	RPL13A	hepatocytes	4659.1	housekeeping_high	False
+ENSG00000142541	RPL13A	microglia	95.7	housekeeping_high	True
+ENSG00000142541	RPL13A	müller glia	547.2	housekeeping_high	True
+ENSG00000142541	RPL13A	proximal tubule cells	42.6	housekeeping_high	False
+ENSG00000142541	RPL13A	retinal bipolar cells	240.4	housekeeping_high	True
+ENSG00000142541	RPL13A	retinal ganglion cells	23.2	housekeeping_high	True
+ENSG00000142541	RPL13A	retinal horizontal cells	84.1	housekeeping_high	True
+ENSG00000142541	RPL13A	retinal pigment epithelial cells	430.6	housekeeping_high	True
+ENSG00000142541	RPL13A	rod photoreceptor cells	296.5	housekeeping_high	True
+ENSG00000142541	RPL13A	vascular endothelial cells	2286.4	housekeeping_high	True
+ENSG00000186350	RXRA	cone photoreceptor cells	14.5	heterodimer_partner	True
+ENSG00000186350	RXRA	enterocytes	64.0	heterodimer_partner	False
+ENSG00000186350	RXRA	hepatocytes	248.8	heterodimer_partner	False
+ENSG00000186350	RXRA	microglia	22.8	heterodimer_partner	True
+ENSG00000186350	RXRA	müller glia	48.6	heterodimer_partner	True
+ENSG00000186350	RXRA	proximal tubule cells	74.8	heterodimer_partner	False
+ENSG00000186350	RXRA	retinal bipolar cells	5.3	heterodimer_partner	True
+ENSG00000186350	RXRA	retinal ganglion cells	3.9	heterodimer_partner	True
+ENSG00000186350	RXRA	retinal horizontal cells	28.0	heterodimer_partner	True
+ENSG00000186350	RXRA	retinal pigment epithelial cells	29.8	heterodimer_partner	True
+ENSG00000186350	RXRA	rod photoreceptor cells	12.4	heterodimer_partner	True
+ENSG00000186350	RXRA	vascular endothelial cells	32.1	heterodimer_partner	True
+ENSG00000204231	RXRB	cone photoreceptor cells	0.0	heterodimer_partner	True
+ENSG00000204231	RXRB	enterocytes	0.5	heterodimer_partner	False
+ENSG00000204231	RXRB	hepatocytes	0.0	heterodimer_partner	False
+ENSG00000204231	RXRB	microglia	14.3	heterodimer_partner	True
+ENSG00000204231	RXRB	müller glia	0.0	heterodimer_partner	True
+ENSG00000204231	RXRB	proximal tubule cells	15.9	heterodimer_partner	False
+ENSG00000204231	RXRB	retinal bipolar cells	0.5	heterodimer_partner	True
+ENSG00000204231	RXRB	retinal ganglion cells	0.0	heterodimer_partner	True
+ENSG00000204231	RXRB	retinal horizontal cells	0.0	heterodimer_partner	True
+ENSG00000204231	RXRB	retinal pigment epithelial cells	0.0	heterodimer_partner	True
+ENSG00000204231	RXRB	rod photoreceptor cells	0.2	heterodimer_partner	True
+ENSG00000204231	RXRB	vascular endothelial cells	1.4	heterodimer_partner	True
+ENSG00000143171	RXRG	cone photoreceptor cells	134.6	heterodimer_partner	True
+ENSG00000143171	RXRG	enterocytes	0.0	heterodimer_partner	False
+ENSG00000143171	RXRG	hepatocytes	0.2	heterodimer_partner	False
+ENSG00000143171	RXRG	microglia	0.2	heterodimer_partner	True
+ENSG00000143171	RXRG	müller glia	12.6	heterodimer_partner	True
+ENSG00000143171	RXRG	proximal tubule cells	0.1	heterodimer_partner	False
+ENSG00000143171	RXRG	retinal bipolar cells	0.6	heterodimer_partner	True
+ENSG00000143171	RXRG	retinal ganglion cells	54.1	heterodimer_partner	True
+ENSG00000143171	RXRG	retinal horizontal cells	2.0	heterodimer_partner	True
+ENSG00000143171	RXRG	retinal pigment epithelial cells	4.3	heterodimer_partner	True
+ENSG00000143171	RXRG	rod photoreceptor cells	1.0	heterodimer_partner	True
+ENSG00000143171	RXRG	vascular endothelial cells	0.8	heterodimer_partner	True
+ENSG00000073578	SDHA	cone photoreceptor cells	0.0	housekeeping_mid	True
+ENSG00000073578	SDHA	enterocytes	14.6	housekeeping_mid	False
+ENSG00000073578	SDHA	hepatocytes	0.1	housekeeping_mid	False
+ENSG00000073578	SDHA	microglia	28.5	housekeeping_mid	True
+ENSG00000073578	SDHA	müller glia	0.1	housekeeping_mid	True
+ENSG00000073578	SDHA	proximal tubule cells	55.6	housekeeping_mid	False
+ENSG00000073578	SDHA	retinal bipolar cells	0.0	housekeeping_mid	True
+ENSG00000073578	SDHA	retinal ganglion cells	0.0	housekeeping_mid	True
+ENSG00000073578	SDHA	retinal horizontal cells	0.0	housekeeping_mid	True
+ENSG00000073578	SDHA	retinal pigment epithelial cells	0.0	housekeeping_mid	True
+ENSG00000073578	SDHA	rod photoreceptor cells	0.4	housekeeping_mid	True
+ENSG00000073578	SDHA	vascular endothelial cells	3.7	housekeeping_mid	True
+ENSG00000106366	SERPINE1	cone photoreceptor cells	0.0	disease_core	True
+ENSG00000106366	SERPINE1	enterocytes	1.2	disease_core	False
+ENSG00000106366	SERPINE1	hepatocytes	349.1	disease_core	False
+ENSG00000106366	SERPINE1	microglia	73.9	disease_core	True
+ENSG00000106366	SERPINE1	müller glia	1.4	disease_core	True
+ENSG00000106366	SERPINE1	proximal tubule cells	14.4	disease_core	False
+ENSG00000106366	SERPINE1	retinal bipolar cells	0.8	disease_core	True
+ENSG00000106366	SERPINE1	retinal ganglion cells	0.0	disease_core	True
+ENSG00000106366	SERPINE1	retinal horizontal cells	8.0	disease_core	True
+ENSG00000106366	SERPINE1	retinal pigment epithelial cells	4.3	disease_core	True
+ENSG00000106366	SERPINE1	rod photoreceptor cells	0.8	disease_core	True
+ENSG00000106366	SERPINE1	vascular endothelial cells	374.4	disease_core	True
+ENSG00000155380	SLC16A1	cone photoreceptor cells	10.4	barrier_transport	True
+ENSG00000155380	SLC16A1	enterocytes	1.3	barrier_transport	False
+ENSG00000155380	SLC16A1	hepatocytes	4.7	barrier_transport	False
+ENSG00000155380	SLC16A1	microglia	16.9	barrier_transport	True
+ENSG00000155380	SLC16A1	müller glia	56.0	barrier_transport	True
+ENSG00000155380	SLC16A1	proximal tubule cells	30.4	barrier_transport	False
+ENSG00000155380	SLC16A1	retinal bipolar cells	0.7	barrier_transport	True
+ENSG00000155380	SLC16A1	retinal ganglion cells	3.9	barrier_transport	True
+ENSG00000155380	SLC16A1	retinal horizontal cells	0.0	barrier_transport	True
+ENSG00000155380	SLC16A1	retinal pigment epithelial cells	38.4	barrier_transport	True
+ENSG00000155380	SLC16A1	rod photoreceptor cells	27.5	barrier_transport	True
+ENSG00000155380	SLC16A1	vascular endothelial cells	8.8	barrier_transport	True
+ENSG00000168065	SLC22A11	cone photoreceptor cells	0.0	barrier_transport	True
+ENSG00000168065	SLC22A11	enterocytes	0.0	barrier_transport	False
+ENSG00000168065	SLC22A11	hepatocytes	0.2	barrier_transport	False
+ENSG00000168065	SLC22A11	microglia	0.0	barrier_transport	True
+ENSG00000168065	SLC22A11	müller glia	0.2	barrier_transport	True
+ENSG00000168065	SLC22A11	proximal tubule cells	84.8	barrier_transport	False
+ENSG00000168065	SLC22A11	retinal bipolar cells	0.0	barrier_transport	True
+ENSG00000168065	SLC22A11	retinal ganglion cells	0.0	barrier_transport	True
+ENSG00000168065	SLC22A11	retinal horizontal cells	0.0	barrier_transport	True
+ENSG00000168065	SLC22A11	retinal pigment epithelial cells	0.0	barrier_transport	True
+ENSG00000168065	SLC22A11	rod photoreceptor cells	0.0	barrier_transport	True
+ENSG00000168065	SLC22A11	vascular endothelial cells	0.3	barrier_transport	True
+ENSG00000197901	SLC22A6	cone photoreceptor cells	2.1	barrier_transport	True
+ENSG00000197901	SLC22A6	enterocytes	0.3	barrier_transport	False
+ENSG00000197901	SLC22A6	hepatocytes	0.1	barrier_transport	False
+ENSG00000197901	SLC22A6	microglia	0.2	barrier_transport	True
+ENSG00000197901	SLC22A6	müller glia	0.1	barrier_transport	True
+ENSG00000197901	SLC22A6	proximal tubule cells	365.4	barrier_transport	False
+ENSG00000197901	SLC22A6	retinal bipolar cells	1.8	barrier_transport	True
+ENSG00000197901	SLC22A6	retinal ganglion cells	0.0	barrier_transport	True
+ENSG00000197901	SLC22A6	retinal horizontal cells	0.0	barrier_transport	True
+ENSG00000197901	SLC22A6	retinal pigment epithelial cells	63.9	barrier_transport	True
+ENSG00000197901	SLC22A6	rod photoreceptor cells	0.2	barrier_transport	True
+ENSG00000197901	SLC22A6	vascular endothelial cells	1.2	barrier_transport	True
+ENSG00000149452	SLC22A8	cone photoreceptor cells	0.0	barrier_transport	True
+ENSG00000149452	SLC22A8	enterocytes	0.0	barrier_transport	False
+ENSG00000149452	SLC22A8	hepatocytes	0.2	barrier_transport	False
+ENSG00000149452	SLC22A8	microglia	0.1	barrier_transport	True
+ENSG00000149452	SLC22A8	müller glia	0.0	barrier_transport	True
+ENSG00000149452	SLC22A8	proximal tubule cells	148.4	barrier_transport	False
+ENSG00000149452	SLC22A8	retinal bipolar cells	15.9	barrier_transport	True
+ENSG00000149452	SLC22A8	retinal ganglion cells	0.0	barrier_transport	True
+ENSG00000149452	SLC22A8	retinal horizontal cells	0.0	barrier_transport	True
+ENSG00000149452	SLC22A8	retinal pigment epithelial cells	464.7	barrier_transport	True
+ENSG00000149452	SLC22A8	rod photoreceptor cells	0.5	barrier_transport	True
+ENSG00000149452	SLC22A8	vascular endothelial cells	0.5	barrier_transport	True
+ENSG00000117394	SLC2A1	cone photoreceptor cells	70.4	disease_core	True
+ENSG00000117394	SLC2A1	enterocytes	2.1	disease_core	False
+ENSG00000117394	SLC2A1	hepatocytes	2.2	disease_core	False
+ENSG00000117394	SLC2A1	microglia	1.9	disease_core	True
+ENSG00000117394	SLC2A1	müller glia	484.8	disease_core	True
+ENSG00000117394	SLC2A1	proximal tubule cells	4.1	disease_core	False
+ENSG00000117394	SLC2A1	retinal bipolar cells	12.0	disease_core	True
+ENSG00000117394	SLC2A1	retinal ganglion cells	19.3	disease_core	True
+ENSG00000117394	SLC2A1	retinal horizontal cells	6.0	disease_core	True
+ENSG00000117394	SLC2A1	retinal pigment epithelial cells	362.4	disease_core	True
+ENSG00000117394	SLC2A1	rod photoreceptor cells	27.6	disease_core	True
+ENSG00000117394	SLC2A1	vascular endothelial cells	78.8	disease_core	True
+ENSG00000084453	SLCO1A2	cone photoreceptor cells	0.0	barrier_transport	True
+ENSG00000084453	SLCO1A2	enterocytes	0.2	barrier_transport	False
+ENSG00000084453	SLCO1A2	hepatocytes	2.4	barrier_transport	False
+ENSG00000084453	SLCO1A2	microglia	4.5	barrier_transport	True
+ENSG00000084453	SLCO1A2	müller glia	0.1	barrier_transport	True
+ENSG00000084453	SLCO1A2	proximal tubule cells	10.0	barrier_transport	False
+ENSG00000084453	SLCO1A2	retinal bipolar cells	0.9	barrier_transport	True
+ENSG00000084453	SLCO1A2	retinal ganglion cells	0.0	barrier_transport	True
+ENSG00000084453	SLCO1A2	retinal horizontal cells	4.0	barrier_transport	True
+ENSG00000084453	SLCO1A2	retinal pigment epithelial cells	225.9	barrier_transport	True
+ENSG00000084453	SLCO1A2	rod photoreceptor cells	0.5	barrier_transport	True
+ENSG00000084453	SLCO1A2	vascular endothelial cells	27.6	barrier_transport	True
+ENSG00000134538	SLCO1B1	cone photoreceptor cells	0.0	barrier_transport	True
+ENSG00000134538	SLCO1B1	enterocytes	0.1	barrier_transport	False
+ENSG00000134538	SLCO1B1	hepatocytes	247.1	barrier_transport	False
+ENSG00000134538	SLCO1B1	microglia	0.1	barrier_transport	True
+ENSG00000134538	SLCO1B1	müller glia	0.0	barrier_transport	True
+ENSG00000134538	SLCO1B1	proximal tubule cells	0.8	barrier_transport	False
+ENSG00000134538	SLCO1B1	retinal bipolar cells	0.0	barrier_transport	True
+ENSG00000134538	SLCO1B1	retinal ganglion cells	0.0	barrier_transport	True
+ENSG00000134538	SLCO1B1	retinal horizontal cells	0.0	barrier_transport	True
+ENSG00000134538	SLCO1B1	retinal pigment epithelial cells	0.0	barrier_transport	True
+ENSG00000134538	SLCO1B1	rod photoreceptor cells	0.2	barrier_transport	True
+ENSG00000134538	SLCO1B1	vascular endothelial cells	0.4	barrier_transport	True
+ENSG00000111700	SLCO1B3	cone photoreceptor cells	0.0	barrier_transport	True
+ENSG00000111700	SLCO1B3	enterocytes	0.0	barrier_transport	False
+ENSG00000111700	SLCO1B3	hepatocytes	66.3	barrier_transport	False
+ENSG00000111700	SLCO1B3	microglia	0.0	barrier_transport	True
+ENSG00000111700	SLCO1B3	müller glia	0.0	barrier_transport	True
+ENSG00000111700	SLCO1B3	proximal tubule cells	0.0	barrier_transport	False
+ENSG00000111700	SLCO1B3	retinal bipolar cells	0.1	barrier_transport	True
+ENSG00000111700	SLCO1B3	retinal ganglion cells	0.0	barrier_transport	True
+ENSG00000111700	SLCO1B3	retinal horizontal cells	0.0	barrier_transport	True
+ENSG00000111700	SLCO1B3	retinal pigment epithelial cells	0.0	barrier_transport	True
+ENSG00000111700	SLCO1B3	rod photoreceptor cells	0.0	barrier_transport	True
+ENSG00000111700	SLCO1B3	vascular endothelial cells	0.0	barrier_transport	True
+ENSG00000137491	SLCO2B1	cone photoreceptor cells	6.2	barrier_transport	True
+ENSG00000137491	SLCO2B1	enterocytes	87.5	barrier_transport	False
+ENSG00000137491	SLCO2B1	hepatocytes	263.8	barrier_transport	False
+ENSG00000137491	SLCO2B1	microglia	659.0	barrier_transport	True
+ENSG00000137491	SLCO2B1	müller glia	0.9	barrier_transport	True
+ENSG00000137491	SLCO2B1	proximal tubule cells	36.1	barrier_transport	False
+ENSG00000137491	SLCO2B1	retinal bipolar cells	16.2	barrier_transport	True
+ENSG00000137491	SLCO2B1	retinal ganglion cells	0.0	barrier_transport	True
+ENSG00000137491	SLCO2B1	retinal horizontal cells	0.0	barrier_transport	True
+ENSG00000137491	SLCO2B1	retinal pigment epithelial cells	0.0	barrier_transport	True
+ENSG00000137491	SLCO2B1	rod photoreceptor cells	0.5	barrier_transport	True
+ENSG00000137491	SLCO2B1	vascular endothelial cells	43.5	barrier_transport	True
+ENSG00000176463	SLCO3A1	cone photoreceptor cells	8.3	barrier_transport	True
+ENSG00000176463	SLCO3A1	enterocytes	1.9	barrier_transport	False
+ENSG00000176463	SLCO3A1	hepatocytes	3.0	barrier_transport	False
+ENSG00000176463	SLCO3A1	microglia	10.4	barrier_transport	True
+ENSG00000176463	SLCO3A1	müller glia	19.3	barrier_transport	True
+ENSG00000176463	SLCO3A1	proximal tubule cells	89.0	barrier_transport	False
+ENSG00000176463	SLCO3A1	retinal bipolar cells	107.5	barrier_transport	True
+ENSG00000176463	SLCO3A1	retinal ganglion cells	166.1	barrier_transport	True
+ENSG00000176463	SLCO3A1	retinal horizontal cells	0.0	barrier_transport	True
+ENSG00000176463	SLCO3A1	retinal pigment epithelial cells	123.6	barrier_transport	True
+ENSG00000176463	SLCO3A1	rod photoreceptor cells	4.3	barrier_transport	True
+ENSG00000176463	SLCO3A1	vascular endothelial cells	172.7	barrier_transport	True
+ENSG00000101187	SLCO4A1	cone photoreceptor cells	37.3	barrier_transport	True
+ENSG00000101187	SLCO4A1	enterocytes	4.5	barrier_transport	False
+ENSG00000101187	SLCO4A1	hepatocytes	0.0	barrier_transport	False
+ENSG00000101187	SLCO4A1	microglia	0.3	barrier_transport	True
+ENSG00000101187	SLCO4A1	müller glia	7.3	barrier_transport	True
+ENSG00000101187	SLCO4A1	proximal tubule cells	18.2	barrier_transport	False
+ENSG00000101187	SLCO4A1	retinal bipolar cells	23.7	barrier_transport	True
+ENSG00000101187	SLCO4A1	retinal ganglion cells	0.0	barrier_transport	True
+ENSG00000101187	SLCO4A1	retinal horizontal cells	0.0	barrier_transport	True
+ENSG00000101187	SLCO4A1	retinal pigment epithelial cells	29.8	barrier_transport	True
+ENSG00000101187	SLCO4A1	rod photoreceptor cells	54.6	barrier_transport	True
+ENSG00000101187	SLCO4A1	vascular endothelial cells	83.4	barrier_transport	True
+ENSG00000291237	SOD2	cone photoreceptor cells	120.1	disease_core	True
+ENSG00000291237	SOD2	enterocytes	175.0	disease_core	False
+ENSG00000291237	SOD2	hepatocytes	550.1	disease_core	False
+ENSG00000291237	SOD2	müller glia	102.2	disease_core	True
+ENSG00000291237	SOD2	retinal bipolar cells	109.3	disease_core	True
+ENSG00000291237	SOD2	retinal ganglion cells	85.0	disease_core	True
+ENSG00000291237	SOD2	retinal horizontal cells	106.2	disease_core	True
+ENSG00000291237	SOD2	retinal pigment epithelial cells	170.5	disease_core	True
+ENSG00000291237	SOD2	rod photoreceptor cells	145.3	disease_core	True
+ENSG00000291237	SOD2	vascular endothelial cells	657.9	disease_core	True
+ENSG00000112592	TBP	cone photoreceptor cells	12.4	housekeeping_low	True
+ENSG00000112592	TBP	enterocytes	15.8	housekeeping_low	False
+ENSG00000112592	TBP	hepatocytes	13.5	housekeeping_low	False
+ENSG00000112592	TBP	microglia	22.2	housekeeping_low	True
+ENSG00000112592	TBP	müller glia	12.9	housekeeping_low	True
+ENSG00000112592	TBP	proximal tubule cells	11.7	housekeeping_low	False
+ENSG00000112592	TBP	retinal bipolar cells	15.8	housekeeping_low	True
+ENSG00000112592	TBP	retinal ganglion cells	7.7	housekeeping_low	True
+ENSG00000112592	TBP	retinal horizontal cells	16.0	housekeeping_low	True
+ENSG00000112592	TBP	retinal pigment epithelial cells	8.5	housekeeping_low	True
+ENSG00000112592	TBP	rod photoreceptor cells	16.9	housekeeping_low	True
+ENSG00000112592	TBP	vascular endothelial cells	16.1	housekeeping_low	True
+ENSG00000105329	TGFB1	cone photoreceptor cells	33.1	disease_core	True
+ENSG00000105329	TGFB1	enterocytes	10.3	disease_core	False
+ENSG00000105329	TGFB1	hepatocytes	6.1	disease_core	False
+ENSG00000105329	TGFB1	microglia	164.3	disease_core	True
+ENSG00000105329	TGFB1	müller glia	30.1	disease_core	True
+ENSG00000105329	TGFB1	proximal tubule cells	18.3	disease_core	False
+ENSG00000105329	TGFB1	retinal bipolar cells	32.9	disease_core	True
+ENSG00000105329	TGFB1	retinal ganglion cells	15.5	disease_core	True
+ENSG00000105329	TGFB1	retinal horizontal cells	26.0	disease_core	True
+ENSG00000105329	TGFB1	retinal pigment epithelial cells	17.1	disease_core	True
+ENSG00000105329	TGFB1	rod photoreceptor cells	52.2	disease_core	True
+ENSG00000105329	TGFB1	vascular endothelial cells	89.5	disease_core	True
+ENSG00000151090	THRB	cone photoreceptor cells	875.7	nr_positive_control	True
+ENSG00000151090	THRB	enterocytes	39.1	nr_positive_control	False
+ENSG00000151090	THRB	hepatocytes	266.8	nr_positive_control	False
+ENSG00000151090	THRB	microglia	23.4	nr_positive_control	True
+ENSG00000151090	THRB	müller glia	130.2	nr_positive_control	True
+ENSG00000151090	THRB	proximal tubule cells	248.1	nr_positive_control	False
+ENSG00000151090	THRB	retinal bipolar cells	223.3	nr_positive_control	True
+ENSG00000151090	THRB	retinal ganglion cells	185.4	nr_positive_control	True
+ENSG00000151090	THRB	retinal horizontal cells	10.0	nr_positive_control	True
+ENSG00000151090	THRB	retinal pigment epithelial cells	63.9	nr_positive_control	True
+ENSG00000151090	THRB	rod photoreceptor cells	313.1	nr_positive_control	True
+ENSG00000151090	THRB	vascular endothelial cells	75.4	nr_positive_control	True
+ENSG00000232810	TNF	cone photoreceptor cells	0.0	disease_core	True
+ENSG00000232810	TNF	enterocytes	0.0	disease_core	False
+ENSG00000232810	TNF	hepatocytes	0.0	disease_core	False
+ENSG00000232810	TNF	microglia	7.8	disease_core	True
+ENSG00000232810	TNF	müller glia	0.0	disease_core	True
+ENSG00000232810	TNF	proximal tubule cells	1.0	disease_core	False
+ENSG00000232810	TNF	retinal bipolar cells	0.0	disease_core	True
+ENSG00000232810	TNF	retinal ganglion cells	0.0	disease_core	True
+ENSG00000232810	TNF	retinal horizontal cells	0.0	disease_core	True
+ENSG00000232810	TNF	retinal pigment epithelial cells	0.0	disease_core	True
+ENSG00000232810	TNF	rod photoreceptor cells	0.0	disease_core	True
+ENSG00000232810	TNF	vascular endothelial cells	0.1	disease_core	True
+ENSG00000118271	TTR	cone photoreceptor cells	527.9	celltype_marker	True
+ENSG00000118271	TTR	enterocytes	1.5	celltype_marker	False
+ENSG00000118271	TTR	hepatocytes	31024.8	celltype_marker	False
+ENSG00000118271	TTR	microglia	241.1	celltype_marker	True
+ENSG00000118271	TTR	müller glia	3.2	celltype_marker	True
+ENSG00000118271	TTR	proximal tubule cells	0.1	celltype_marker	False
+ENSG00000118271	TTR	retinal bipolar cells	45.7	celltype_marker	True
+ENSG00000118271	TTR	retinal ganglion cells	0.0	celltype_marker	True
+ENSG00000118271	TTR	retinal horizontal cells	8.0	celltype_marker	True
+ENSG00000118271	TTR	retinal pigment epithelial cells	61787.5	celltype_marker	True
+ENSG00000118271	TTR	rod photoreceptor cells	12.0	celltype_marker	True
+ENSG00000118271	TTR	vascular endothelial cells	13.1	celltype_marker	True
+ENSG00000150991	UBC	cone photoreceptor cells	198.7	housekeeping_mid	True
+ENSG00000150991	UBC	enterocytes	1631.6	housekeeping_mid	False
+ENSG00000150991	UBC	hepatocytes	446.4	housekeeping_mid	False
+ENSG00000150991	UBC	microglia	253.4	housekeeping_mid	True
+ENSG00000150991	UBC	müller glia	1375.0	housekeeping_mid	True
+ENSG00000150991	UBC	proximal tubule cells	62.7	housekeeping_mid	False
+ENSG00000150991	UBC	retinal bipolar cells	256.8	housekeeping_mid	True
+ENSG00000150991	UBC	retinal ganglion cells	85.0	housekeeping_mid	True
+ENSG00000150991	UBC	retinal horizontal cells	198.3	housekeeping_mid	True
+ENSG00000150991	UBC	retinal pigment epithelial cells	358.1	housekeeping_mid	True
+ENSG00000150991	UBC	rod photoreceptor cells	422.2	housekeeping_mid	True
+ENSG00000150991	UBC	vascular endothelial cells	973.9	housekeeping_mid	True
+ENSG00000111424	VDR	cone photoreceptor cells	0.0	nr_positive_control	True
+ENSG00000111424	VDR	enterocytes	159.5	nr_positive_control	False
+ENSG00000111424	VDR	hepatocytes	1.5	nr_positive_control	False
+ENSG00000111424	VDR	microglia	0.6	nr_positive_control	True
+ENSG00000111424	VDR	müller glia	0.7	nr_positive_control	True
+ENSG00000111424	VDR	proximal tubule cells	113.0	nr_positive_control	False
+ENSG00000111424	VDR	retinal bipolar cells	1.0	nr_positive_control	True
+ENSG00000111424	VDR	retinal ganglion cells	0.0	nr_positive_control	True
+ENSG00000111424	VDR	retinal horizontal cells	0.0	nr_positive_control	True
+ENSG00000111424	VDR	retinal pigment epithelial cells	0.0	nr_positive_control	True
+ENSG00000111424	VDR	rod photoreceptor cells	1.4	nr_positive_control	True
+ENSG00000111424	VDR	vascular endothelial cells	2.1	nr_positive_control	True
+ENSG00000112715	VEGFA	cone photoreceptor cells	20.7	disease_core	True
+ENSG00000112715	VEGFA	enterocytes	64.1	disease_core	False
+ENSG00000112715	VEGFA	hepatocytes	116.3	disease_core	False
+ENSG00000112715	VEGFA	microglia	5.5	disease_core	True
+ENSG00000112715	VEGFA	müller glia	301.1	disease_core	True
+ENSG00000112715	VEGFA	proximal tubule cells	62.1	disease_core	False
+ENSG00000112715	VEGFA	retinal bipolar cells	16.7	disease_core	True
+ENSG00000112715	VEGFA	retinal ganglion cells	11.6	disease_core	True
+ENSG00000112715	VEGFA	retinal horizontal cells	104.2	disease_core	True
+ENSG00000112715	VEGFA	retinal pigment epithelial cells	217.4	disease_core	True
+ENSG00000112715	VEGFA	rod photoreceptor cells	20.5	disease_core	True
+ENSG00000112715	VEGFA	vascular endothelial cells	17.6	disease_core	True
+ENSG00000110799	VWF	cone photoreceptor cells	2.1	celltype_marker	True
+ENSG00000110799	VWF	enterocytes	1.2	celltype_marker	False
+ENSG00000110799	VWF	hepatocytes	1.6	celltype_marker	False
+ENSG00000110799	VWF	microglia	1.7	celltype_marker	True
+ENSG00000110799	VWF	müller glia	2.0	celltype_marker	True
+ENSG00000110799	VWF	proximal tubule cells	2.7	celltype_marker	False
+ENSG00000110799	VWF	retinal bipolar cells	1.6	celltype_marker	True
+ENSG00000110799	VWF	retinal ganglion cells	3.9	celltype_marker	True
+ENSG00000110799	VWF	retinal horizontal cells	4.0	celltype_marker	True
+ENSG00000110799	VWF	retinal pigment epithelial cells	0.0	celltype_marker	True
+ENSG00000110799	VWF	rod photoreceptor cells	0.8	celltype_marker	True
+ENSG00000110799	VWF	vascular endothelial cells	1630.6	celltype_marker	True

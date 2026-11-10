@@ -254,13 +254,50 @@ class ChemBLScraper:
 
         return filtered
 
+    def get_metabolism_unfiltered_total(self) -> Optional[int]:
+        """
+        Fetch the unfiltered total_count of the /metabolism endpoint.
+        Used as a regression guard: if a filtered query returns this same
+        total, the API is silently ignoring the filter (see get_metabolism).
+        """
+        url = f"{BASE_URL}/metabolism?limit=1"
+        data = self.make_request(url)
+        if not data:
+            return None
+        return data.get("page_meta", {}).get("total_count")
+
     def get_metabolism(self, chembl_id: str) -> List[Dict]:
         """
-        Get drug metabolism data for a molecule
+        Get drug metabolism data for a molecule.
+
+        NOTE: the ChEMBL /metabolism endpoint does NOT support
+        molecule_chembl_id as a filter - it silently ignores unknown
+        filters and returns the unfiltered table. The correct filter is
+        drug_chembl_id. We additionally verify every returned record
+        actually matches the requested id, since a bug here previously
+        corrupted the entire metabolism dataset.
         """
-        url = f"{BASE_URL}/metabolism?molecule_chembl_id={chembl_id}&limit=1000"
-        data = self.make_request(url)
-        return data.get("metabolisms", []) if data else []
+        url = f"{BASE_URL}/metabolism?drug_chembl_id={chembl_id}&limit=1000"
+        records = self.get_paginated_results(url, "metabolisms")
+
+        matched = [r for r in records if r.get("drug_chembl_id") == chembl_id]
+        dropped = len(records) - len(matched)
+
+        if dropped > 0:
+            print(f"⚠️  WARNING: {dropped}/{len(records)} metabolism records "
+                  f"for requested drug_chembl_id={chembl_id} had a mismatching "
+                  f"drug_chembl_id and were dropped.")
+
+        if records and dropped > len(records) / 2:
+            raise RuntimeError(
+                f"More than half of the metabolism records returned for "
+                f"{chembl_id} did not match the requested drug_chembl_id "
+                f"({dropped}/{len(records)} mismatched). This is the "
+                f"signature of the API silently ignoring the filter - "
+                f"stop and investigate."
+            )
+
+        return matched
 
     def get_toxicity_assays(self, chembl_id: str) -> List[Dict]:
         """
@@ -853,9 +890,16 @@ class ChemBLScraper:
 
         output_file = os.path.join(DATA_DIR, "chembl_drug_metabolism.csv")
 
+        unfiltered_total = self.get_metabolism_unfiltered_total()
+        print(f"ℹ️  Unfiltered /metabolism total_count sentinel: {unfiltered_total}")
+
+        total_rows = 0
+        checked_sentinel = False
+
         with open(output_file, "w", newline="", encoding="utf-8") as f:
             fieldnames = [
-                "drug_chembl_id", "drug_name", "substrate_chembl_id", "substrate_name",
+                "drug_chembl_id", "requested_chembl_id", "drug_name",
+                "substrate_chembl_id", "substrate_name",
                 "metabolite_chembl_id", "metabolite_name", "enzyme_name", "enzyme_tid",
                 "organism", "pathway_id", "pathway_key", "met_conversion",
                 "met_comment", "references"
@@ -874,6 +918,18 @@ class ChemBLScraper:
 
                 metabolisms = self.get_metabolism(chembl_id)
 
+                if not checked_sentinel:
+                    checked_sentinel = True
+                    if (unfiltered_total is not None
+                            and self._get_metabolism_raw_total(chembl_id) == unfiltered_total):
+                        raise RuntimeError(
+                            f"Metabolism filter regression detected: the filtered "
+                            f"total_count for drug_chembl_id={chembl_id} equals the "
+                            f"unfiltered /metabolism total_count ({unfiltered_total}). "
+                            f"The API is silently ignoring the drug_chembl_id filter "
+                            f"again - re-check the filter field name before proceeding."
+                        )
+
                 for metab in metabolisms:
                     # Handle references which might be dict objects
                     refs = metab.get("metabolism_refs", [])
@@ -885,25 +941,173 @@ class ChemBLScraper:
                             ref_strings.append(str(ref))
 
                     row = {
-                        "drug_chembl_id": metab.get("drug_chembl_id", chembl_id),
+                        "drug_chembl_id": metab.get("drug_chembl_id", ""),
+                        "requested_chembl_id": chembl_id,
                         "drug_name": drug_name,
                         "substrate_chembl_id": metab.get("substrate_chembl_id", ""),
-                        "substrate_name": self.escape_csv_field(metab.get("substrate_name", "")),
+                        "substrate_name": metab.get("substrate_name", ""),
                         "metabolite_chembl_id": metab.get("metabolite_chembl_id", ""),
-                        "metabolite_name": self.escape_csv_field(metab.get("metabolite_name", "")),
-                        "enzyme_name": self.escape_csv_field(metab.get("enzyme_name", "")),
+                        "metabolite_name": metab.get("metabolite_name", ""),
+                        "enzyme_name": metab.get("enzyme_name", ""),
                         "enzyme_tid": metab.get("target_chembl_id", ""),
                         "organism": metab.get("organism", ""),
                         "pathway_id": metab.get("pathway_id", ""),
                         "pathway_key": metab.get("pathway_key", ""),
-                        "met_conversion": self.escape_csv_field(metab.get("met_conversion", "")),
-                        "met_comment": self.escape_csv_field(metab.get("met_comment", "")),
-                        "references": self.escape_csv_field("; ".join(ref_strings))
+                        "met_conversion": metab.get("met_conversion", ""),
+                        "met_comment": metab.get("met_comment", ""),
+                        "references": "; ".join(ref_strings)
                     }
 
                     writer.writerow(row)
+                    total_rows += 1
 
-        print(f"✅ Saved drug metabolism to {output_file}")
+        print(f"✅ Saved {total_rows} drug metabolism rows to {output_file}")
+
+        self._post_write_check_metabolism(output_file)
+
+    def _get_metabolism_raw_total(self, chembl_id: str) -> Optional[int]:
+        """
+        Fetch just the page_meta.total_count for a drug_chembl_id-filtered
+        metabolism query, used by the startup sentinel check.
+        """
+        url = f"{BASE_URL}/metabolism?drug_chembl_id={chembl_id}&limit=1"
+        data = self.make_request(url)
+        if not data:
+            return None
+        return data.get("page_meta", {}).get("total_count")
+
+    def _get_molecule_parents(self, chembl_ids: List[str]) -> Dict[str, Optional[str]]:
+        """
+        Resolve molecule_hierarchy.parent_chembl_id for a batch of molecule
+        ids via /molecule.json?molecule_chembl_id__in=... (batched in groups
+        of 20, matching the ChEMBL batch-lookup convention).
+        """
+        parents: Dict[str, Optional[str]] = {cid: None for cid in chembl_ids}
+        for i in range(0, len(chembl_ids), 20):
+            batch = chembl_ids[i:i + 20]
+            url = f"{BASE_URL}/molecule.json?molecule_chembl_id__in={','.join(batch)}&limit=20"
+            data = self.make_request(url)
+            if not data:
+                continue
+            for mol in data.get("molecules", []):
+                mol_id = mol.get("molecule_chembl_id")
+                hierarchy = mol.get("molecule_hierarchy") or {}
+                parents[mol_id] = hierarchy.get("parent_chembl_id")
+        return parents
+
+    def _post_write_check_metabolism(self, output_file: str):
+        """
+        Post-write sanity check for the metabolism CSV: guards against the
+        duplicate-page corruption signature (distinct requested ids mapping
+        to identical core record sets) and against low core-record diversity.
+
+        Collision groups (2+ requested ids sharing an identical non-empty
+        core-record set) are parent-aware: if every id in a group shares a
+        single ChEMBL molecule_hierarchy.parent_chembl_id, that is a
+        legitimate salt/ester-form sibling set (e.g. diclofenac vs
+        diclofenac sodium) correctly citing the same metabolism studies, and
+        is logged as a warning rather than failed. Any group of 10+ ids is
+        always a hard failure regardless of parentage - that scale is the
+        original bug's signature (near-every id collapsing onto one page),
+        not a plausible salt-family size.
+        """
+        df = pd.read_csv(output_file, dtype=str, keep_default_na=False)
+
+        core_cols = [c for c in df.columns
+                     if c not in ("drug_chembl_id", "requested_chembl_id", "drug_name")]
+
+        total_rows = len(df)
+        distinct_requested = df["requested_chembl_id"].nunique()
+
+        core_tuples = list(df[core_cols].itertuples(index=False, name=None))
+        distinct_core_records = len(set(core_tuples))
+        distinct_pathway_ids = df["pathway_id"].nunique() if "pathway_id" in df.columns else "n/a"
+
+        print("\n📋 Post-write metabolism check:")
+        print(f"   total rows: {total_rows}")
+        print(f"   distinct requested ids: {distinct_requested}")
+        print(f"   distinct core records: {distinct_core_records}")
+        print(f"   distinct pathway_ids: {distinct_pathway_ids}")
+
+        if total_rows == 0:
+            return
+
+        # Map each requested_chembl_id to its (non-empty) set of core records
+        groups: Dict[str, set] = {}
+        for req_id, core in zip(df["requested_chembl_id"], core_tuples):
+            if any(v != "" for v in core):
+                groups.setdefault(req_id, set()).add(core)
+
+        # drug_name lookup for warning messages
+        name_by_id = dict(zip(df["requested_chembl_id"], df["drug_name"]))
+
+        # Collect collision groups: core-record-set -> list of requested ids
+        by_core_set: Dict[frozenset, List[str]] = {}
+        for req_id, core_set in groups.items():
+            fs = frozenset(core_set)
+            by_core_set.setdefault(fs, []).append(req_id)
+
+        collision_groups = {fs: ids for fs, ids in by_core_set.items() if len(ids) > 1}
+
+        warning_count = 0
+        for fs, ids in collision_groups.items():
+            if len(ids) >= 10:
+                raise RuntimeError(
+                    f"Duplicate-page signature detected: {len(ids)} distinct "
+                    f"requested ids ({sorted(ids)}) map to an identical "
+                    f"non-empty core record set. A collision group this "
+                    f"large is the signature of the API filter being "
+                    f"ignored again, regardless of parentage."
+                )
+
+            parents = self._get_molecule_parents(ids)
+            resolved_parents = {parents.get(i) for i in ids}
+
+            # Distinguish "could not verify" from "verified bad". An
+            # unreachable API must never be reported as data corruption -
+            # this check exists precisely to be trustworthy about that.
+            unresolved = sorted(i for i in ids if parents.get(i) is None)
+            if unresolved:
+                raise RuntimeError(
+                    f"INCONCLUSIVE - metabolism check could not be completed. "
+                    f"Requested ids {sorted(ids)} share an identical core "
+                    f"record set, which is expected for salt/ester forms of "
+                    f"one drug, but the molecule_hierarchy parent lookup "
+                    f"failed for {unresolved} so this could not be confirmed. "
+                    f"This is NOT evidence of corruption - it means the "
+                    f"ChEMBL API was unreachable or returned no hierarchy. "
+                    f"Re-run when the API is reachable before drawing any "
+                    f"conclusion about the data."
+                )
+
+            if len(resolved_parents) == 1:
+                shared_parent = next(iter(resolved_parents))
+                names = ", ".join(f"{i} ({name_by_id.get(i, '')})" for i in sorted(ids))
+                print(
+                    f"⚠️  WARNING: salt/ester-form sibling group sharing parent "
+                    f"{shared_parent}: {names}. These legitimately share "
+                    f"identical metabolism study citations - not a filter bug."
+                )
+                warning_count += 1
+            else:
+                raise RuntimeError(
+                    f"Duplicate-page signature detected: requested ids "
+                    f"{sorted(ids)} map to identical non-empty core record "
+                    f"sets but do NOT share a single resolvable "
+                    f"molecule_hierarchy.parent_chembl_id (resolved: "
+                    f"{parents}). This indicates the API filter is being "
+                    f"ignored again."
+                )
+
+        print(f"   collision groups: {len(collision_groups)} ({warning_count} salt-sibling warnings)")
+
+        if distinct_core_records / total_rows < 0.5:
+            raise RuntimeError(
+                f"unique_core_records / total_rows = "
+                f"{distinct_core_records}/{total_rows} = "
+                f"{distinct_core_records / total_rows:.3f} < 0.5 - "
+                f"this is the duplicate-page corruption signature."
+            )
 
     def process_bioactivities(self, use_cached_drugs=True):
         """
@@ -1116,6 +1320,11 @@ def main():
         help="Only fetch metabolism data"
     )
     parser.add_argument(
+        "--check-metabolism-only",
+        action="store_true",
+        help="Run the metabolism post-write check against the existing CSV and exit, with no scraping"
+    )
+    parser.add_argument(
         "--targets-only",
         action="store_true",
         help="Only fetch target data"
@@ -1179,7 +1388,10 @@ def main():
     )
 
     # Run appropriate scraping mode
-    if args.approved_drugs_only:
+    if args.check_metabolism_only:
+        output_file = os.path.join(DATA_DIR, "chembl_drug_metabolism.csv")
+        scraper._post_write_check_metabolism(output_file)
+    elif args.approved_drugs_only:
         scraper.process_approved_drugs()
     elif args.natural_products_only:
         scraper.process_natural_products()

@@ -1,0 +1,59 @@
+# dr_panel_coverage_summary.tsv - per-gene ChEMBL pharmacology coverage (DR 43-gene panel)
+# WHAT THE NUMBERS MEAN:
+#   - n_activities_raw: the ChEMBL API's raw total_count for target_chembl_id + standard_type__in=IC50,EC50,Ki,Kd + standard_units=nM - i.e. everything ChEMBL holds for this target under that type/unit filter.
+#   - n_activities_filtered: the subset of n_activities_raw that survives the additional standard_value-not-null and data_validity_comment-null filter - this is what was actually written to chembl_panel_bioactivities.csv and what every downstream number (including this file's own n_distinct_compounds and max_pchembl) is computed from.
+#   - n_distinct_compounds: number of distinct ChEMBL molecules with a qualifying (filtered) activity against this gene's target, AT ANY POTENCY.
+#   - n_distinct_compounds_pchembl_ge6: the same count gated to pchembl_value >= 6 (<= 1 uM), the conventional 'active' cut.
+#   - max_pchembl: the single highest pchembl_value observed for this gene.
+#   - in_original_27_panel: whether this gene was part of the original CTD-based 27-gene panel (yes/no).
+# WHAT THEY DO NOT MEAN:
+#   - An empty chembl_target_id or zero n_activities_filtered means this gene's pharmacology has not been resolved or measured in ChEMBL - it is a real finding, not an error, and does not mean the gene is not druggable.
+#   - n_activities_raw > 0 with n_activities_filtered == 0 does NOT mean ChEMBL has no data for this gene - it means every raw record was flagged invalid or had no usable value (e.g. ACADM: 1 raw record, a 185,710 nM Kd flagged 'Outside typical range', correctly dropped).
+#   - An UNGATED n_distinct_compounds can be driven entirely by weak (>100 uM) binders - use n_distinct_compounds_pchembl_ge6 for potency-aware coverage.
+# SOURCE: ChEMBL REST API (https://www.ebi.ac.uk/chembl/api/data), live pull.
+# GENERATED: 2026-11-02
+# WARNING: absence of a ChEMBL activity for a gene/compound pair means "not measured in ChEMBL", NOT "no interaction".
+gene	role	axis	chembl_target_id	n_activities_raw	n_activities_filtered	n_distinct_compounds	n_distinct_compounds_pchembl_ge6	max_pchembl	in_original_27_panel
+PPARA	receptor	ppar_receptor	CHEMBL239	5485	5271	3622	1644	10.59	yes
+PPARD	receptor	ppar_receptor	CHEMBL3979	3379	3223	2293	1264	10.99	yes
+PPARG	receptor	ppar_receptor	CHEMBL235	8129	7913	5223	2590	10.74	yes
+VEGFA	disease_core	angiogenesis	CHEMBL1783	541	521	294	176	10.60	yes
+KDR	disease_core	angiogenesis	CHEMBL279	18749	18528	13295	8343	10.70	yes
+ANGPT2	disease_core	angiogenesis	CHEMBL3580489	0	0	0	0		yes
+HIF1A	disease_core	hypoxia	CHEMBL4261	765	763	618	120	9.85	yes
+EDN1	disease_core	vascular_tone				0	0		yes
+NOS3	disease_core	vascular_tone				0	0		yes
+SERPINE1	disease_core	vascular_tone	CHEMBL3475	361	330	297	72	8.51	yes
+ICAM1	disease_core	leukostasis	CHEMBL3070	208	208	190	142	9.00	yes
+NFKB1	disease_core	leukostasis	CHEMBL3251	151	117	112	17	7.55	yes
+TNF	disease_core	inflammation	CHEMBL1825	3004	2959	2404	1407	10.52	yes
+IL1B	disease_core	inflammation	CHEMBL1909490	473	468	317	275	9.40	yes
+IL6	disease_core	inflammation	CHEMBL1795129	148	148	128	117	8.96	yes
+MMP9	disease_core	barrier_breakdown	CHEMBL321	4270	4118	3557	2020	11.00	yes
+AGER	disease_core	age_rage	CHEMBL2176846	132	128	104	33	10.00	yes
+AKR1B1	disease_core	polyol	CHEMBL1900	1256	1179	917	542	9.89	yes
+SLC2A1	disease_core	glucose_transport	CHEMBL2535	1444	1439	1388	193	9.52	yes
+PRKCB	disease_core	pkc	CHEMBL3045	1547	1516	1090	612	10.00	yes
+TGFB1	disease_core	fibrosis	CHEMBL1795178	5	5	5	3	7.89	yes
+NFE2L2	disease_core	oxidative_stress	CHEMBL1075094	754	753	717	249	8.04	yes
+SOD2	disease_core	oxidative_stress	CHEMBL4105776	0	0	0	0		yes
+CAT	disease_core	oxidative_stress	CHEMBL3627594	7	7	7	1	7.24	yes
+BAX	disease_core	apoptosis	CHEMBL5318	49	49	44	19	7.37	yes
+BCL2	disease_core	apoptosis	CHEMBL4860	7525	7411	3812	2737	11.00	yes
+CASP3	disease_core	apoptosis	CHEMBL2334	2964	2873	2419	886	10.10	yes
+ANGPTL4	ppar_effector	lipoprotein_handling				0	0		no
+FGF21	ppar_effector	humoral_relay				0	0		no
+LPL	ppar_effector	lipoprotein_handling	CHEMBL2060	76	73	51	2	7.18	no
+APOA1	ppar_effector	lipoprotein_handling	CHEMBL5984	0	0	0	0		no
+APOA5	ppar_effector	lipoprotein_handling				0	0		no
+ABCA1	ppar_effector	reverse_cholesterol	CHEMBL2362986	3	3	3	0		no
+ABCG1	ppar_effector	reverse_cholesterol				0	0		no
+CPT1A	ppar_effector	fatty_acid_oxidation	CHEMBL1293194	509	504	495	476	8.85	no
+ACOX1	ppar_effector	fatty_acid_oxidation	CHEMBL4105748	197	197	197	3	7.85	no
+ACADM	ppar_effector	fatty_acid_oxidation	CHEMBL4295713	1	0	0	0		no
+EHHADH	ppar_effector	fatty_acid_oxidation				0	0		no
+HMGCS2	ppar_effector	ketogenesis				0	0		no
+PDK4	ppar_effector	fuel_switching	CHEMBL4141	122	120	110	44	8.30	no
+FABP1	ppar_effector	lipid_transport	CHEMBL5421	48	47	44	1	6.70	no
+FABP4	ppar_effector	lipid_transport	CHEMBL2083	822	817	665	398	10.00	no
+FABP5	ppar_effector	lipid_transport	CHEMBL3674	533	531	494	275	8.70	no

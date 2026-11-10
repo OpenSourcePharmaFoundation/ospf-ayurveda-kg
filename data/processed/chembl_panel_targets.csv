@@ -1,0 +1,44 @@
+gene,uniprot_accession,chembl_target_id,target_pref_name,target_type,organism,n_activities_raw,n_activities_filtered,n_mechanisms,resolution_status
+PPARA,Q07869,CHEMBL239,Peroxisome proliferator-activated receptor alpha,SINGLE PROTEIN,Homo sapiens,5485,5271,22,resolved
+PPARD,Q03181,CHEMBL3979,Peroxisome proliferator-activated receptor delta,SINGLE PROTEIN,Homo sapiens,3379,3223,9,resolved
+PPARG,P37231,CHEMBL235,Peroxisome proliferator-activated receptor gamma,SINGLE PROTEIN,Homo sapiens,8129,7913,31,resolved
+VEGFA,P15692,CHEMBL1783,"Vascular endothelial growth factor A, long form",SINGLE PROTEIN,Homo sapiens,541,521,13,resolved
+KDR,P35968,CHEMBL279,Vascular endothelial growth factor receptor 2,SINGLE PROTEIN,Homo sapiens,18749,18528,33,resolved
+ANGPT2,O15123,CHEMBL3580489,Angiopoietin-2,SINGLE PROTEIN,Homo sapiens,0,0,8,no_activities
+HIF1A,Q16665,CHEMBL4261,Hypoxia-inducible factor 1-alpha,SINGLE PROTEIN,Homo sapiens,765,763,0,resolved
+EDN1,P05305,,,,,,,,no_chembl_target
+NOS3,P60323,,,,,,,,no_chembl_target
+SERPINE1,P05121,CHEMBL3475,Plasminogen activator inhibitor 1,SINGLE PROTEIN,Homo sapiens,361,330,1,resolved
+ICAM1,P05362,CHEMBL3070,Intercellular adhesion molecule 1,SINGLE PROTEIN,Homo sapiens,208,208,3,resolved
+NFKB1,P19838,CHEMBL3251,Nuclear factor NF-kappa-B p105 subunit,SINGLE PROTEIN,Homo sapiens,151,117,0,resolved
+TNF,P01375,CHEMBL1825,Tumor necrosis factor,SINGLE PROTEIN,Homo sapiens,3004,2959,15,resolved
+IL1B,P01584,CHEMBL1909490,Interleukin-1 beta,SINGLE PROTEIN,Homo sapiens,473,468,5,resolved
+IL6,P05231,CHEMBL1795129,Interleukin-6,SINGLE PROTEIN,Homo sapiens,148,148,9,resolved
+MMP9,P14780,CHEMBL321,Matrix metalloproteinase-9,SINGLE PROTEIN,Homo sapiens,4270,4118,5,resolved
+AGER,Q15109,CHEMBL2176846,Advanced glycosylation end product-specific receptor,SINGLE PROTEIN,Homo sapiens,132,128,1,resolved
+AKR1B1,P15121,CHEMBL1900,Aldo-keto reductase family 1 member B1,SINGLE PROTEIN,Homo sapiens,1256,1179,4,resolved
+SLC2A1,P11166,CHEMBL2535,"Solute carrier family 2, facilitated glucose transporter member 1",SINGLE PROTEIN,Homo sapiens,1444,1439,0,resolved
+PRKCB,P05771,CHEMBL3045,Protein kinase C beta type,SINGLE PROTEIN,Homo sapiens,1547,1516,2,resolved
+TGFB1,P01137,CHEMBL1795178,Transforming growth factor beta-1 proprotein,SINGLE PROTEIN,Homo sapiens,5,5,3,resolved
+NFE2L2,Q16236,CHEMBL1075094,Nuclear factor erythroid 2-related factor 2,SINGLE PROTEIN,Homo sapiens,754,753,1,resolved
+SOD2,P04179,CHEMBL4105776,"Superoxide dismutase [Mn], mitochondrial",SINGLE PROTEIN,Homo sapiens,0,0,0,no_activities
+CAT,P04040,CHEMBL3627594,Catalase,SINGLE PROTEIN,Homo sapiens,7,7,0,resolved
+BAX,Q07812,CHEMBL5318,Apoptosis regulator BAX,SINGLE PROTEIN,Homo sapiens,49,49,0,resolved
+BCL2,P10415,CHEMBL4860,Apoptosis regulator Bcl-2,SINGLE PROTEIN,Homo sapiens,7525,7411,4,resolved
+CASP3,P42574,CHEMBL2334,Caspase-3,SINGLE PROTEIN,Homo sapiens,2964,2873,0,resolved
+ANGPTL4,Q9BY76,,,,,,,,no_chembl_target
+FGF21,Q9NSA1,,,,,,,,no_chembl_target
+LPL,P06858,CHEMBL2060,Lipoprotein lipase,SINGLE PROTEIN,Homo sapiens,76,73,0,resolved
+APOA1,P02647,CHEMBL5984,Apolipoprotein A-I,SINGLE PROTEIN,Homo sapiens,0,0,0,no_activities
+APOA5,Q6Q788,,,,,,,,no_chembl_target
+ABCA1,O95477,CHEMBL2362986,Phospholipid-transporting ATPase ABCA1,SINGLE PROTEIN,Homo sapiens,3,3,1,resolved
+ABCG1,P45844,,,,,,,,no_chembl_target
+CPT1A,P50416,CHEMBL1293194,"Carnitine O-palmitoyltransferase 1, liver isoform",SINGLE PROTEIN,Homo sapiens,509,504,0,resolved
+ACOX1,Q15067,CHEMBL4105748,Peroxisomal acyl-coenzyme A oxidase 1,SINGLE PROTEIN,Homo sapiens,197,197,0,resolved
+ACADM,P11310,CHEMBL4295713,"Medium-chain specific acyl-CoA dehydrogenase, mitochondrial",SINGLE PROTEIN,Homo sapiens,1,0,0,no_activities
+EHHADH,Q08426,,,,,,,,no_chembl_target
+HMGCS2,P54868,,,,,,,,no_chembl_target
+PDK4,Q16654,CHEMBL4141,"[Pyruvate dehydrogenase (acetyl-transferring)] kinase isozyme 4, mitochondrial",SINGLE PROTEIN,Homo sapiens,122,120,0,resolved
+FABP1,P07148,CHEMBL5421,"Fatty acid-binding protein, liver",SINGLE PROTEIN,Homo sapiens,48,47,0,resolved
+FABP4,P15090,CHEMBL2083,"Fatty acid-binding protein, adipocyte",SINGLE PROTEIN,Homo sapiens,822,817,0,resolved
+FABP5,Q01469,CHEMBL3674,Fatty acid-binding protein 5,SINGLE PROTEIN,Homo sapiens,533,531,0,resolved
