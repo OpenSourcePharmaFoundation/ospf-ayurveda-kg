@@ -579,3 +579,62 @@ measurement still decides the rest.
 **Deliverable.** The rewritten `REPORT.md` at the same path, plus a short
 `docs/notes/dr-report-changelog.md` listing every claim that changed and what changed it. Do not
 modify the other files in that report directory.
+
+-----
+
+## Status — 2026-11-09 — step 6: Find an agent for the uncovered efflux arm
+
+**Done.** `docs/notes/retinal-lipid-efflux-candidates.md`; code in
+`src/analysis/efflux_axis/` (`axis`, `gnn_rank`, `chembl_axis`, `candidates`,
+`physchem`, `steatosis`, `acceptor`, `run`); nine CSVs at
+`data/processed/efflux_axis_*.csv`. Reproduce with
+`python -m src.analysis.efflux_axis.run`.
+
+**Verified.**
+- Axis defined as nine genes in three evidence classes. The ligandable /
+  non-ligandable split was *confirmed by data*, not asserted: of 3,732
+  qualifying ChEMBL activities, **3,729 are at LXR-α/LXR-β and 0 at ABCA1,
+  ABCG1, APOA1, APOE**. The only ABCA1 mechanism record is probucol, an
+  *inhibitor*.
+- **The GNN was run and its output must not be used.** Ranking compounds for a
+  gene, it places its own training positives at mean percentile rank 0.123
+  (random 0.500); compound degree alone scores 0.970. Scoring path validated
+  against the model card (MRR 0.216 vs 0.232 published), so the model is not
+  broken — it is the *transpose* of the direction its benchmark evaluates
+  (corr(gene degree, column score) +0.957; corr(compound degree, row score)
+  −0.509). Benchmark reproducible via
+  `gnn_rank.benchmark_axis_retrieval`.
+- Step 5's model reused directly, not reimplemented: the fenofibric-acid
+  reference reproduces at K<sub>p,uu</sub> 0.0594 against Step 5's published
+  0.0586. Neutral ligands gain a **paired median 10–12× (95% CI 1.9–64×)**.
+- Steatosis expressed as a requirement: **≥2.73 log β-selectivity for an acid
+  vs ≈1.55 for a neutral ligand.** Of 797 dual-measured ligands, **0 of 83
+  acids clear the acid bar**; 8 clear the neutral bar, 5 also reach the retina,
+  4 survive worst-case.
+- Acceptor vs inducer solved: at E = 0 a **1000× inducer gives infinite burden**
+  and an acceptor at 0.1× healthy clearance gives 10. Inversion boundary
+  `E* = k_a·A/(k_t·(F−1))`.
+
+**What the next step needs to know.**
+1. **Do not cite GNN-ranked compound-target predictions.** Anything in
+   `REPORT.md` resting on them inherits §2 of the note. Fix: evaluate link
+   prediction in both directions and report the degree-only baseline.
+2. **The five candidates are one chemical series from one 2018 patent
+   (CHEMBL5725956), on cell-free coactivator-recruitment data.** In the
+   cell-based tier the best β-selectivity across 106 molecules is 1.37 log —
+   below requirement; **not one clears it.** Rank candidate 2 (CHEMBL5938562)
+   above candidate 1: candidate 1's two LXR-α EC50s differ 57-fold and it fails
+   on the lower one.
+3. **The acceptor arm is intravitreal, and that is not a disqualification** —
+   DR is already treated by intravitreal injection. The analysis ranked
+   candidates by oral-systemic feasibility for a disease dosed into the target
+   compartment. This is the most consequential reframing in the note.
+4. **The decisive unmeasured number is `E`** — ABCA1/ABCG1 activity in human
+   diabetic retina relative to healthy. It decides acceptor versus inducer
+   outright and does not exist in any species.
+
+**Note on chain state.** The runner recorded step 5 as `failed`, but its
+artefacts (`docs/notes/retinal-exposure-model.md`,
+`src/analysis/ocular_exposure/`, `data/processed/ocular_exposure_margins.tsv`)
+were present and complete at run time and were used as the brief directs. Step
+6 had also been recorded `failed` with no artefacts; this is its completed run.

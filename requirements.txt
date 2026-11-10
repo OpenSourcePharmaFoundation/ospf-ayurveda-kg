@@ -8,3 +8,4 @@ networkx==3.6.1
 scikit-learn==1.9.1
 torch==2.14.0
 torch-geometric==2.8.0.post1
+rdkit==2026.09.1
