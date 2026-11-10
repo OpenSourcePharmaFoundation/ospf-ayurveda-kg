@@ -1,0 +1,11 @@
+pdb_id	isoform	state	ligand	chain	n_cage_contacts	acceptor_pair_span_A	head_free_volume_A3	d_H3-H5_A	d_H3-H11_A	d_H3-H12_A	d_H5-H11_A	d_H5-H12_A	d_H11-H12_A
+1K7L	PPARA	agonist	GW409544	A	3	2.19	48.9	4.27	7.10	6.33	6.92	3.53	4.44
+1I7G	PPARA	agonist	tesaglitazar (AZ 242)	A	4	2.23	31.6	4.49	6.20	6.31	5.65	3.24	3.48
+2P54	PPARA	agonist	GW590735	A	4	2.13	45.4	4.16	6.58	6.52	5.75	3.73	3.17
+3VI8	PPARA	agonist	pemafibrate analogue (K-877 series)	A	4	2.27	35.6	3.95	6.39	6.24	5.41	3.32	3.22
+4BCR	PPARA	agonist	WY-14643 / pirinixic acid	A	4	2.29	42.4	4.38	6.81	6.64	5.28	2.92	3.72
+1KKQ	PPARA	antagonist	GW6471	A	1		131.5	6.45	8.32	14.86	6.95	13.96	20.21
+2PRG	PPARG	agonist	rosiglitazone	A	4	4.47	39.4	4.29	7.84	6.14	5.64	2.84	3.37
+4EMA	PPARG	agonist	rosiglitazone	A	4	4.44	37.8	4.92	7.21	5.98	6.04	3.07	3.35
+3TKM	PPARD	agonist	GW0742	A	3	2.10	57.9	11.83	12.01	13.22	4.83	3.00	3.09
+2XYW	PPARD	agonist	sulfonylthiadiazole	A	1		41.5	12.04	12.97	12.32	3.41	3.39	3.37

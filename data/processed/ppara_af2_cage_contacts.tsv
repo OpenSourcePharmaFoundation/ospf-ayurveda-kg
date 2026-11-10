@@ -1,0 +1,33 @@
+pdb_id	isoform	state	ligand	helix	cage_residue	ligand_atom	distance_A
+1K7L	PPARA	agonist	GW409544	H12	TYR464.OH	O1	2.60
+1K7L	PPARA	agonist	GW409544	H3	SER280.OG	O2	2.72
+1K7L	PPARA	agonist	GW409544	H5	TYR314.OH	O2	2.69
+1I7G	PPARA	agonist	tesaglitazar (AZ 242)	H11	HIS440.NE2	O18	2.91
+1I7G	PPARA	agonist	tesaglitazar (AZ 242)	H12	TYR464.OH	O18	2.45
+1I7G	PPARA	agonist	tesaglitazar (AZ 242)	H3	SER280.OG	O16	2.68
+1I7G	PPARA	agonist	tesaglitazar (AZ 242)	H5	TYR314.OH	O16	2.59
+2P54	PPARA	agonist	GW590735	H11	HIS440.NE2	O21	2.80
+2P54	PPARA	agonist	GW590735	H12	TYR464.OH	O21	2.56
+2P54	PPARA	agonist	GW590735	H3	SER280.OG	O20	2.88
+2P54	PPARA	agonist	GW590735	H5	TYR314.OH	O20	2.53
+3VI8	PPARA	agonist	pemafibrate analogue (K-877 series)	H11	HIS440.NE2	O1	2.70
+3VI8	PPARA	agonist	pemafibrate analogue (K-877 series)	H12	TYR464.OH	O1	2.70
+3VI8	PPARA	agonist	pemafibrate analogue (K-877 series)	H3	SER280.OG	O2	2.54
+3VI8	PPARA	agonist	pemafibrate analogue (K-877 series)	H5	TYR314.OH	O2	2.69
+4BCR	PPARA	agonist	WY-14643 / pirinixic acid	H11	HIS440.NE2	OAD	3.21
+4BCR	PPARA	agonist	WY-14643 / pirinixic acid	H12	TYR464.OH	OAD	2.89
+4BCR	PPARA	agonist	WY-14643 / pirinixic acid	H3	SER280.OG	OAC	2.49
+4BCR	PPARA	agonist	WY-14643 / pirinixic acid	H5	TYR314.OH	OAC	2.86
+1KKQ	PPARA	antagonist	GW6471	H5	TYR314.OH	N4B	3.34
+2PRG	PPARG	agonist	rosiglitazone	H11	HIS449.NE2	O2	2.97
+2PRG	PPARG	agonist	rosiglitazone	H12	TYR473.OH	N3	3.04
+2PRG	PPARG	agonist	rosiglitazone	H3	SER289.OG	O4	2.77
+2PRG	PPARG	agonist	rosiglitazone	H5	HIS323.NE2	O4	2.77
+4EMA	PPARG	agonist	rosiglitazone	H11	HIS449.NE2	O2	2.71
+4EMA	PPARG	agonist	rosiglitazone	H12	TYR473.OH	N3	2.59
+4EMA	PPARG	agonist	rosiglitazone	H3	SER289.OG	O4	2.58
+4EMA	PPARG	agonist	rosiglitazone	H5	HIS323.NE2	O4	2.89
+3TKM	PPARD	agonist	GW0742	H11	HIS413.NE2	OAD	2.70
+3TKM	PPARD	agonist	GW0742	H12	TYR437.OH	OAD	2.61
+3TKM	PPARD	agonist	GW0742	H5	HIS287.NE2	OAC	2.81
+2XYW	PPARD	agonist	sulfonylthiadiazole	H3	THR252.OG1	O27	3.30
