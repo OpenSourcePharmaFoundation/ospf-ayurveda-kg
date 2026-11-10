@@ -27,3 +27,6 @@ data/processed-blinded-*/
 
 # Chain-runner state
 tmp/
+
+# PDB structure cache — regenerable from RCSB via src/analysis/ppara_ligand_design/af2_cage.py
+data/raw/pdb/
