@@ -1,0 +1,11 @@
+compound_name,pubchem_cid,source_plant,traditional_use_context
+Curcumin,969516,Curcuma longa (turmeric),"Ayurveda - anti-inflammatory, retinal neuroprotection"
+Berberine,2353,Berberis aristata / Coptis chinensis,"Ayurveda/TCM - AMPK activation, microvascular protection"
+Piperine,638024,Piper nigrum (black pepper),"Ayurveda - bioenhancer, anti-inflammatory"
+Puerarin,5281807,Pueraria lobata (kudzu),"TCM - microcirculation, antioxidant"
+Tanshinone IIA,164676,Salvia miltiorrhiza (Danshen),"TCM - microcirculation, anti-fibrotic"
+Salvianolic acid B,11629084,Salvia miltiorrhiza (Danshen),"TCM - antioxidant, anti-fibrotic"
+Astragaloside IV,13943297,Astragalus membranaceus,"TCM - anti-inflammatory, VEGF modulation"
+Crocin,5281233,Crocus sativus (saffron),Persian/traditional medicine - retinal antioxidant
+Resveratrol,445154,Vaccinium myrtillus (bilberry) / Vitis vinifera,"Traditional - antioxidant, SIRT1 activation"
+Cyanidin-3-glucoside,441667,Vaccinium myrtillus (bilberry); representative anthocyanin,"Traditional - retinal antioxidant, microvascular protection"

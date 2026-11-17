@@ -44,26 +44,47 @@ session = requests.Session()
 session.headers.update(HEADERS)
 
 
+MAX_RETRIES = 4
+RETRY_BACKOFF = [2, 5, 15, 30]
+
+
 def make_request(url):
-    try:
-        response = session.get(url, timeout=30)
-        sleep(RATE_LIMIT_DELAY)
-        if response.status_code == 200:
-            return response.json()
-        print(f"❌ Error {response.status_code} for URL: {url}")
-        return None
-    except requests.exceptions.RequestException as e:
-        print(f"❌ Request failed: {e}")
-        return None
+    for attempt in range(MAX_RETRIES + 1):
+        try:
+            response = session.get(url, timeout=60)
+            sleep(RATE_LIMIT_DELAY)
+            if response.status_code == 200:
+                return response.json()
+            if response.status_code >= 500 and attempt < MAX_RETRIES:
+                wait = RETRY_BACKOFF[attempt]
+                print(f"⚠️  {response.status_code} on attempt {attempt + 1}, retrying in {wait}s...")
+                sleep(wait)
+                continue
+            print(f"❌ Error {response.status_code} for URL: {url}")
+            return None
+        except requests.exceptions.RequestException as e:
+            if attempt < MAX_RETRIES:
+                wait = RETRY_BACKOFF[attempt]
+                print(f"⚠️  {type(e).__name__} on attempt {attempt + 1}, retrying in {wait}s...")
+                sleep(wait)
+                continue
+            print(f"❌ Request failed after {MAX_RETRIES + 1} attempts: {e}")
+            return None
 
 
 def get_paginated_results(initial_url, data_key):
     results = []
     url = initial_url
+    page_failures = 0
     while url:
         data = make_request(url)
         if not data:
-            break
+            page_failures += 1
+            if page_failures >= 2:
+                print(f"⚠️  Two consecutive page failures, returning {len(results)} records collected so far")
+                break
+            continue
+        page_failures = 0
         results.extend(data.get(data_key, []))
         page_meta = data.get("page_meta", {})
         url = page_meta.get("next")
@@ -187,6 +208,7 @@ def fetch_missing(missing_drugs):
         checked_sentinel = False
 
         total = len(missing_drugs)
+        total_rows = 0
         for i, drug in enumerate(missing_drugs):
             chembl_id = drug["chembl_id"]
             drug_name = drug.get("pref_name", "")
@@ -207,13 +229,14 @@ def fetch_missing(missing_drugs):
 
             for metab in metabolisms:
                 writer.writerow(row_from_metabolism(metab, chembl_id, drug_name))
+            total_rows += len(metabolisms)
             bf.flush()
 
             pf.write(chembl_id + "\n")
             pf.flush()
 
-            if (i + 1) % 100 == 0 or (i + 1) == total:
-                print(f"  [{i + 1}/{total}] Processing {chembl_id}... {len(metabolisms)} metabolism records")
+            if (i + 1) % 50 == 0 or (i + 1) == total:
+                print(f"  [{i + 1}/{total}] {chembl_id}: {len(metabolisms)} records ({total_rows} total rows so far)")
 
 
 def merge_backfill_into_main():
