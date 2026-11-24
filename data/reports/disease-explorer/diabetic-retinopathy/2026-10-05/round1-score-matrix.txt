@@ -1,0 +1,27 @@
+candidate                 admet  chemist clinical  disease    ethno   target   mean  spread   n
+-----------------------------------------------------------------------------------------------
+Pemafibrate                 6.0      5.0      5.0      7.0       NA      7.5   6.10     2.5   5
+Fenofibric acid             4.0      6.0      7.0      6.5       NA      7.0   6.10     3.0   5
+Candesartan cilexetil       6.0      5.0      5.0      6.0       NA      6.0   5.60     1.0   5
+Fenofibrate                 4.0      4.0      7.0      6.0       NA      6.5   5.50     3.0   5
+Icosapent ethyl             3.0      4.0      6.0      6.0      5.0      5.5   4.92     3.0   6
+Melatonin                   5.0      5.0      5.0      5.5      4.0      4.5   4.83     1.5   6
+Dimethyl fumarate           5.0      4.0      3.0      7.0       NA      5.0   4.80     4.0   5
+Elafibranor                 7.0      4.0      3.0      5.5       NA      4.0   4.70     4.0   5
+Epalrestat                  6.0      3.0      4.0      4.0       NA      2.0   3.80     4.0   5
+Minocycline                 3.0      3.0      3.0      5.5       NA      3.5   3.60     2.5   5
+Seladelpar                  5.0      3.0      2.0      4.0       NA      2.5   3.30     3.0   5
+Alpha-linolenic acid        2.0      2.0      1.0      3.5      2.0      4.5   2.50     3.5   6
+Linalool                     NA      2.0      1.0      3.5      3.0      3.0   2.50     2.5   5
+Linoleic acid               2.0      2.0      1.0      2.0      2.0      3.0   2.00     2.0   6
+Quercetin                   1.0      2.0      2.0      2.5      2.0      2.0   1.92     1.5   6
+
+LARGEST DISAGREEMENTS (spread >= 3.0) — these drive the debate round:
+  Dimethyl fumarate        spread  4.0  disease 7.0 vs clinical 3.0
+  Elafibranor              spread  4.0  admet 7.0 vs clinical 3.0
+  Epalrestat               spread  4.0  admet 6.0 vs target 2.0
+  Alpha-linolenic acid     spread  3.5  target 4.5 vs clinical 1.0
+  Fenofibric acid          spread  3.0  clinical 7.0 vs admet 4.0
+  Fenofibrate              spread  3.0  clinical 7.0 vs admet 4.0
+  Icosapent ethyl          spread  3.0  clinical 6.0 vs admet 3.0
+  Seladelpar               spread  3.0  admet 5.0 vs clinical 2.0

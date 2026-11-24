@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+# Dispatcher for utility scripts in scripts/.
+# Usage: ./ospf <command> [args...]
+#
+# Any scripts/<name>.sh or scripts/<name>.py becomes `./ospf <name>`. The
+# one-line description shown by `./ospf help` is the first comment line after
+# the shebang (.sh) or the first line of the module docstring (.py).
+
+set -euo pipefail
+
+# Where the user ran us from, so scripts can resolve relative paths they were
+# given even though we cd to the repo root below.
+export OSPF_CALLER_PWD="$PWD"
+
+cd "$(dirname "${BASH_SOURCE[0]}")"
+
+list_commands() {
+  local f name
+  for f in scripts/*.py scripts/*.sh; do
+    [ -e "$f" ] || continue
+    name="${f##*/}"
+    echo "${name%.*}"
+  done | sort -u
+}
+
+# One-line description of a command, taken from its script header.
+describe_command() {
+  local cmd="$1"
+  if [ -f "scripts/$cmd.sh" ]; then
+    awk 'NR > 1 && NR <= 5 && /^# / { sub(/^# /, ""); print; exit }' "scripts/$cmd.sh"
+  elif [ -f "scripts/$cmd.py" ]; then
+    awk 'NR <= 5 && /^"""/ { sub(/^"""/, ""); sub(/"""$/, ""); print; exit }' "scripts/$cmd.py"
+  fi
+}
+
+usage() {
+  local cmd desc
+  echo "Usage: ./ospf <command> [args...]"
+  echo
+  echo "Commands:"
+  while IFS= read -r cmd; do
+    desc="$(describe_command "$cmd")"
+    if [ -n "$desc" ]; then
+      printf '  %-14s %s\n' "$cmd" "$desc"
+    else
+      printf '  %s\n' "$cmd"
+    fi
+  done < <(list_commands)
+  echo
+  echo "Run './ospf <command> --help' for a command's own options."
+}
+
+cmd="${1:-help}"
+
+case "$cmd" in
+  help|--help|-h)
+    usage
+    exit 0
+    ;;
+  --list)
+    list_commands
+    exit 0
+    ;;
+esac
+
+shift
+
+# Reject names with path separators so only files directly in scripts/ run.
+case "$cmd" in
+  */*|.*)
+    echo "ospf: invalid command '$cmd'" >&2
+    exit 1
+    ;;
+esac
+
+if [ -f "scripts/$cmd.py" ]; then
+  exec python3 "scripts/$cmd.py" "$@"
+elif [ -f "scripts/$cmd.sh" ]; then
+  exec bash "scripts/$cmd.sh" "$@"
+fi
+
+echo "ospf: unknown command '$cmd'" >&2
+echo "Run './ospf help' to see available commands." >&2
+exit 1

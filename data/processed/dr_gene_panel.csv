@@ -1,0 +1,44 @@
+gene,role,axis,limbs_tested,in_2026_10_05_panel,rationale
+PPARA,receptor,ppar_receptor,1;2;3;4,yes,PPARalpha - the receptor under study
+PPARD,receptor,ppar_receptor,,yes,PPARdelta - isoform selectivity control
+PPARG,receptor,ppar_receptor,,yes,PPARgamma - isoform selectivity control
+VEGFA,disease_core,angiogenesis,,yes,Principal DR drug target; anti-VEGF standard of care
+KDR,disease_core,angiogenesis,,yes,VEGFR2 - VEGFA receptor
+ANGPT2,disease_core,angiogenesis,,yes,Pericyte dropout and vessel destabilisation; faricimab target
+HIF1A,disease_core,hypoxia,,yes,Hypoxia sensor upstream of VEGFA in ischaemic retina
+EDN1,disease_core,vascular_tone,,yes,Endothelin-1 - retinal blood flow dysregulation
+NOS3,disease_core,vascular_tone,,yes,eNOS - endothelial dysfunction
+SERPINE1,disease_core,vascular_tone,,yes,PAI-1 - fibrinolysis and capillary occlusion
+ICAM1,disease_core,leukostasis,3,yes,Leukostasis effector; the NF-kB transrepression readout
+NFKB1,disease_core,leukostasis,3,yes,NF-kB - the transrepression node of limb 3
+TNF,disease_core,inflammation,,yes,Generic inflammatory stress marker
+IL1B,disease_core,inflammation,,yes,Generic inflammatory stress marker
+IL6,disease_core,inflammation,,yes,Generic inflammatory stress marker
+MMP9,disease_core,barrier_breakdown,,yes,Tight-junction proteolysis; blood-retinal barrier failure
+AGER,disease_core,age_rage,,yes,RAGE - advanced glycation endproduct receptor
+AKR1B1,disease_core,polyol,,yes,Aldose reductase - polyol pathway; epalrestat target
+SLC2A1,disease_core,glucose_transport,,yes,GLUT1 - retinal glucose entry
+PRKCB,disease_core,pkc,,yes,PKC-beta - ruboxistaurin target
+TGFB1,disease_core,fibrosis,,yes,Fibrosis and basement membrane thickening
+NFE2L2,disease_core,oxidative_stress,,yes,NRF2 - antioxidant response
+SOD2,disease_core,oxidative_stress,,yes,Mitochondrial superoxide dismutase
+CAT,disease_core,oxidative_stress,,yes,Catalase
+BAX,disease_core,apoptosis,,yes,Pro-apoptotic; pericyte and neuronal loss
+BCL2,disease_core,apoptosis,,yes,Anti-apoptotic
+CASP3,disease_core,apoptosis,,yes,Executioner caspase
+ANGPTL4,ppar_effector,lipoprotein_handling,1;2;4,no,"Direct PPARA target gene; LPL inhibitor; pro-permeability in ischaemic retina. The wrong-sign risk of REPORT.md 5.4 and the mandatory plasma biomarker"
+FGF21,ppar_effector,humoral_relay,2,no,"Direct PPARA target gene; the hepatic-to-retinal relay of REPORT.md 5.5 that requires no barrier crossing"
+LPL,ppar_effector,lipoprotein_handling,1,no,Lipoprotein lipase - the enzyme ANGPTL4 inhibits; remnant clearance
+APOA1,ppar_effector,lipoprotein_handling,1,no,Direct PPARA target gene; HDL apolipoprotein
+APOA5,ppar_effector,lipoprotein_handling,1,no,Direct PPARA target gene; triglyceride-rich lipoprotein clearance
+ABCA1,ppar_effector,reverse_cholesterol,1,no,Cholesterol efflux; hard-exudate clearance limb
+ABCG1,ppar_effector,reverse_cholesterol,1,no,Cholesterol efflux; hard-exudate clearance limb
+CPT1A,ppar_effector,fatty_acid_oxidation,4,no,Rate-limiting step of mitochondrial FAO; the canonical PPARA transactivation readout
+ACOX1,ppar_effector,fatty_acid_oxidation,4,no,Peroxisomal beta-oxidation rate-limiting enzyme; direct PPRE target
+ACADM,ppar_effector,fatty_acid_oxidation,4,no,MCAD - medium-chain acyl-CoA dehydrogenase; direct PPRE target
+EHHADH,ppar_effector,fatty_acid_oxidation,4,no,Peroxisomal bifunctional enzyme; the archetypal PPRE-driven gene
+HMGCS2,ppar_effector,ketogenesis,4,no,Rate-limiting ketogenic enzyme; direct PPARA target
+PDK4,ppar_effector,fuel_switching,4,no,Pyruvate dehydrogenase kinase 4; glucose-to-fat fuel switch; direct PPARA target
+FABP1,ppar_effector,lipid_transport,1;4,no,Liver FABP; direct PPARA target gene
+FABP4,ppar_effector,lipid_transport,4,no,Adipocyte FABP; PPAR-responsive
+FABP5,ppar_effector,lipid_transport,4,no,Epidermal FABP; expressed in RPE; shuttles ligand to PPARD/PPARA

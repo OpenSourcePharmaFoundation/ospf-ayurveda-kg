@@ -1,0 +1,13 @@
+chemotype,kpuu_neural_retina,hepatic_safety_factor,hepatic_free_multiple,required_beta_selectivity_log
+neutral LXR ligand,0.9119,3.0,1.0,0.52
+neutral LXR ligand,0.9119,3.0,10.0,1.52
+neutral LXR ligand,0.9119,10.0,1.0,1.04
+neutral LXR ligand,0.9119,10.0,10.0,2.04
+neutral LXR ligand,0.9119,30.0,1.0,1.52
+neutral LXR ligand,0.9119,30.0,10.0,2.52
+fibrate-like acid,0.0594,3.0,1.0,1.7
+fibrate-like acid,0.0594,3.0,10.0,2.7
+fibrate-like acid,0.0594,10.0,1.0,2.23
+fibrate-like acid,0.0594,10.0,10.0,3.23
+fibrate-like acid,0.0594,30.0,1.0,2.7
+fibrate-like acid,0.0594,30.0,10.0,3.7

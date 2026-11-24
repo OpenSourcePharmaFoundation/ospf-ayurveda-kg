@@ -1,0 +1,168 @@
+# dr_matrix_legacy_compound_comparison.tsv - CTD vs ChEMBL ranking comparison
+# WHAT THE NUMBERS MEAN:
+#   - ctd_n_targets_27panel: the original CTD study-volume count (27-gene panel) from the 2026-10-05 compound-dr-target-matrix.tsv (read-only, not modified).
+#   - chembl_n_genes_bound_43panel / chembl_n_effectors_bound / chembl_best_pchembl: measured ChEMBL binding evidence for the matched compound against the extended 43-gene panel, AT ANY POTENCY.
+#   - chembl_n_genes_bound_pchembl_ge6 / chembl_n_effectors_bound_pchembl_ge6: the same counts gated to pchembl_value >= 6 (<= 1 uM), the conventional 'active' cut.
+#   - match_method: how the compound name was resolved to a ChEMBL molecule id (exact_pref_name, chembl_search, or unmatched).
+# WHAT THEY DO NOT MEAN:
+#   - Empty numeric fields mean the compound could NOT be matched to a ChEMBL molecule id - this is absence of a match, not a measured zero. Do not treat blank as 0.
+#   - A low chembl_n_genes_bound_43panel does not mean the compound lacks pharmacological activity - it means ChEMBL has not measured it against these specific targets.
+#   - An UNGATED chembl_n_genes_bound_43panel can be as weak as >100 uM - use the pchembl_ge6 columns for potency-aware comparison.
+#   - Rows lacking a pchembl_value for a gene are EXCLUDED from the gated counts - this is missing/unconverted unit data, not evidence of weak binding.
+# SOURCE: ChEMBL REST API (https://www.ebi.ac.uk/chembl/api/data), live pull.
+# GENERATED: 2026-11-02
+# WARNING: absence of a ChEMBL activity for a gene/compound pair means "not measured in ChEMBL", NOT "no interaction".
+compound	ctd_n_targets_27panel	chembl_n_genes_bound_43panel	chembl_n_effectors_bound	chembl_n_genes_bound_pchembl_ge6	chembl_n_effectors_bound_pchembl_ge6	chembl_best_pchembl	matched_chembl_id	match_method
+Quercetin	26	4	0	3	0	7.83	CHEMBL50	exact_pref_name
+Genistein	23	2	0	1	0	6.26	CHEMBL44	exact_pref_name
+Ascorbic Acid	23	0	0	0	0		CHEMBL196	chembl_search
+Dibutyl Phthalate	22	0	0	0	0		CHEMBL272485	chembl_search
+D-Fructose	21	0	0	0	0		CHEMBL2325229	chembl_search
+Apigenin	21	1	0	0	0	4.92	CHEMBL28	exact_pref_name
+Palmitic Acid	21	5	2	2	2	6.47	CHEMBL82293	exact_pref_name
+Kaempferol	20	4	0	0	0	5.40	CHEMBL150	exact_pref_name
+Alpha-Tocopherol	19	0	0	0	0		CHEMBL47	chembl_search
+Melatonin	19	0	0	0	0		CHEMBL45	chembl_search
+Rutin	19	0	0	0	0		CHEMBL226335	chembl_search
+Oleic Acid	19	6	3	4	3	6.73	CHEMBL8659	exact_pref_name
+Luteolin	19	2	0	1	0	6.22	CHEMBL151	exact_pref_name
+Naringenin	18	1	0	0	0	4.54	CHEMBL9352	exact_pref_name
+Linoleic Acid	18	4	1	2	1	8.32	CHEMBL267476	exact_pref_name
+Cholesterol	18	0	0	0	0		CHEMBL3184306	chembl_search
+Geraniol	18	0	0	0	0		CHEMBL25719	chembl_search
+Ellagic Acid	17	2	0	2	0	6.70	CHEMBL6246	exact_pref_name
+Acetovanillone	17	0	0	0	0		CHEMBL346919	chembl_search
+Butyric Acid	16	0	0	0	0		CHEMBL14227	chembl_search
+Nicotinic acid	16	0	0	0	0		CHEMBL573	chembl_search
+Emodin	16	1	0	0	0	5.67	CHEMBL289277	exact_pref_name
+Gallic Acid	16	0	0	0	0		CHEMBL288114	chembl_search
+Cianidanol	16	0	0	0	0		CHEMBL311498	chembl_search
+2,3,5,6-Tetramethylpyrazine	15	0	0	0	0		CHEMBL303697	chembl_search
+D-Galactose	15	0	0	0	0		CHEMBL195923	chembl_search
+Eugenol	15	0	0	0	0		CHEMBL42710	chembl_search
+Sucrose	15	0	0	0	0		CHEMBL1200823	chembl_search
+Oleanolic Acid	14	1	0	0	0		CHEMBL168	chembl_search
+Niacinamide	14	0	0	0	0		CHEMBL1140	chembl_search
+Coumarin	14	0	0	0	0		CHEMBL6466	chembl_search
+3,4-Dihydroxybenzoic acid	14	0	0	0	0		CHEMBL37537	chembl_search
+beta-D-glucopyranose	14	0	0	0	0		CHEMBL438446	chembl_search
+Isorhamnetin	13	1	0	0	0	5.46	CHEMBL379064	exact_pref_name
+Celastrol	13	2	0	1	0	6.60	CHEMBL301982	exact_pref_name
+Myricetin	13	1	0	1	0	6.21	CHEMBL164	exact_pref_name
+Retinol	13	0	0	0	0		CHEMBL986	chembl_search
+p-Coumaric acid	12	0	0	0	0		CHEMBL1800225	chembl_search
+Caryophyllene	12	1	0	0	0	5.02	CHEMBL445740	chembl_search
+Linalool, (+/-)-	12	0	0	0	0		CHEMBL25306	chembl_search
+Galangin	12	1	0	0	0	5.25	CHEMBL309490	exact_pref_name
+Trihydroxychalcone	12	0	0	0	0		CHEMBL496842	chembl_search
+Ferulic acid	11	0	0	0	0		CHEMBL32749	chembl_search
+18alpha-Glycyrrhetinic acid	11	0	0	0	0		CHEMBL454067	chembl_search
+alpha-PINENE	11	0	0	0	0		CHEMBL442565	chembl_search
+Magnolol	11	3	0	1	0	6.34	CHEMBL180920	exact_pref_name
+Procyanidin	11	0	0	0	0		CHEMBL504937	chembl_search
+Chlorogenic Acid	11	1	0	1	0	6.52	CHEMBL284616	exact_pref_name
+1-Methyl-3-nitro-1-nitrosoguanidine	10	0	0	0	0		CHEMBL440287	chembl_search
+Betulinic Acid	10	1	0	0	0	4.96	CHEMBL269277	exact_pref_name
+Paeonol	10	0	0	0	0		CHEMBL1079227	chembl_search
+Procyanidin B2, (+)-	10	0	0	0	0		CHEMBL38714	chembl_search
+Cinnamic Acid	10	0	0	0	0		CHEMBL27246	chembl_search
+Anethole	10	0	0	0	0		CHEMBL452630	chembl_search
+Caffeic Acid	10	2	0	1	0	8.00	CHEMBL145	exact_pref_name
+Umbelliferone	10	1	0	0	0	4.64	CHEMBL51628	exact_pref_name
+Rhein	10	0	0	0	0		CHEMBL418068	chembl_search
+Stearic Acid	10	4	1	0	0	5.96	CHEMBL46403	exact_pref_name
+Glycerin	10	0	0	0	0		CHEMBL692	chembl_search
+Guaiacol	10	0	0	0	0		CHEMBL13766	chembl_search
+Esculetin	10	1	0	0	0	4.17	CHEMBL244743	exact_pref_name
+Beta-Carotene	10	0	0	0	0		CHEMBL1293	chembl_search
+Thymol	10	0	0	0	0		CHEMBL29411	chembl_search
+Prasterone	10	0	0	0	0		CHEMBL3039094	chembl_search
+trans-Nerolidol	9	0	0	0	0		CHEMBL25424	chembl_search
+Betulin	9	0	0	0	0		CHEMBL23236	chembl_search
+Glycyrrhizin	9	0	0	0	0		CHEMBL441687	chembl_search
+1-Butanol	9	0	0	0	0		CHEMBL45462	chembl_search
+Flavylium	9							unmatched
+Thiamine	9	0	0	0	0		CHEMBL1547	chembl_search
+Sinapinic acid	9	0	0	0	0		CHEMBL109341	chembl_search
+Formononetin	9	1	0	1	0	8.00	CHEMBL242341	exact_pref_name
+Riboflavin	8	0	0	0	0		CHEMBL1534	chembl_search
+Enoxolone	8	0	0	0	0		CHEMBL1863561	chembl_search
+Pyrazole	8	0	0	0	0		CHEMBL15967	chembl_search
+Scoparone	8	0	0	0	0		CHEMBL325864	chembl_search
+Propionic Acid	8	0	0	0	0		CHEMBL14021	chembl_search
+trans,trans-Farnesol	8	0	0	0	0		CHEMBL25308	chembl_search
+Serotonin	8	1	0	0	0		CHEMBL535832	chembl_search
+Linolenic Acid	8	3	0	1	0	8.10	CHEMBL8739	exact_pref_name
+Methyleugenol	8	3	0	0	0	4.40	CHEMBL108861	exact_pref_name
+Inositol	7	0	0	0	0		CHEMBL1222251	chembl_search
+Bergapten	7	0	0	0	0		CHEMBL24171	chembl_search
+Isoflavone	7	0	0	0	0		CHEMBL250439	chembl_search
+Squalene	7	0	0	0	0		CHEMBL458402	chembl_search
+Benzoic Acid	7	0	0	0	0		CHEMBL3544877	chembl_search
+Carvacrol	7	0	0	0	0		CHEMBL281202	chembl_search
+Quercitrin	7	1	0	1	0	6.82	CHEMBL82242	exact_pref_name
+Salicylic Acid	7	0	0	0	0		CHEMBL424	chembl_search
+Lupeol	7	0	0	0	0		CHEMBL289191	chembl_search
+Reserpine	7	0	0	0	0		CHEMBL772	chembl_search
+Citric Acid	7	0	0	0	0		CHEMBL1261	chembl_search
+Syringic acid	6	0	0	0	0		CHEMBL1414	chembl_search
+Catechol	6	1	0	0	0	4.63	CHEMBL280998	exact_pref_name
+P-Cresol	6	0	0	0	0		CHEMBL16645	chembl_search
+Beta-Elemene	6	0	0	0	0		CHEMBL448502	chembl_search
+Isoelemicin	6	0	0	0	0		CHEMBL121548	chembl_search
+Licochalcone B	6	0	0	0	0		CHEMBL1644932	chembl_search
+Hyperoside	6	1	0	0	0	5.52	CHEMBL251254	exact_pref_name
+D-Glucose	6	0	0	0	0		CHEMBL448805	chembl_search
+Eucalyptol	6	0	0	0	0		CHEMBL485259	chembl_search
+Aloe emodin	6	0	0	0	0		CHEMBL40275	chembl_search
+Phytol	5	0	0	0	0		CHEMBL3039479	chembl_search
+Azadirachtin	5	0	0	0	0		CHEMBL506084	chembl_search
+Liquiritin	5	0	0	0	0		CHEMBL511995	chembl_search
+Vanillin	5	0	0	0	0		CHEMBL13883	chembl_search
+beta-Ionone	5	0	0	0	0		CHEMBL559945	chembl_search
+Astragalin	5	1	0	0	0	4.22	CHEMBL233930	exact_pref_name
+Oxalic Acid	5	0	0	0	0		CHEMBL146755	chembl_search
+Octanoic Acid	5	0	0	0	0		CHEMBL324846	chembl_search
+Methoxsalen	5	0	0	0	0		CHEMBL416	chembl_search
+Arjunolic acid	5	0	0	0	0		CHEMBL464466	chembl_search
+Licochalcone a	5	0	0	0	0		CHEMBL4303304	chembl_search
+Lutein	5	0	0	0	0		CHEMBL173929	chembl_search
+Corosolic acid	5	0	0	0	0		CHEMBL391533	chembl_search
+Pentagalloylglucose	4	0	0	0	0		CHEMBL2303843	chembl_search
+Methyl Salicylate	4	0	0	0	0		CHEMBL108545	chembl_search
+1,3,6-tri-O-galloyl-beta-D-glucose	4	0	0	0	0		CHEMBL389895	chembl_search
+Vanillic Acid	4	0	0	0	0		CHEMBL120568	chembl_search
+O-Xylene	4	0	0	0	0		CHEMBL45005	chembl_search
+Gallotannin	4	0	0	0	0		CHEMBL506247	chembl_search
+Carvone, (+/-)-	4	0	0	0	0		CHEMBL2229268	chembl_search
+2-Undecanone	4	0	0	0	0		CHEMBL1236582	chembl_search
+Triterpenoid	4	0	0	0	0		CHEMBL103742	chembl_search
+Safrole	4	0	0	0	0		CHEMBL242273	chembl_search
+Fraxinellone	4	0	0	0	0		CHEMBL257170	chembl_search
+beta-Patchoulene	4	0	0	0	0		CHEMBL221542	chembl_search
+Phloroglucinol	4	0	0	0	0		CHEMBL473159	chembl_search
+Citral	4	0	0	0	0		CHEMBL1080997	chembl_search
+Beta-Amyrin	4	0	0	0	0		CHEMBL455098	chembl_search
+Anthraquinone	4	0	0	0	0		CHEMBL55659	chembl_search
+Nonanoic acid	4	0	0	0	0		CHEMBL76612	chembl_search
+Pyrogallol	4	1	0	0	0	5.15	CHEMBL307145	exact_pref_name
+beta-CITRONELLOL, (+/-)-	4	0	0	0	0		CHEMBL395827	chembl_search
+Scopoletin	4	1	0	0	0	4.13	CHEMBL71851	exact_pref_name
+Ethylbenzene	4	0	0	0	0		CHEMBL371561	chembl_search
+o-Cresol	3	0	0	0	0		CHEMBL46931	chembl_search
+Isovitexin	3	0	0	0	0		CHEMBL465360	chembl_search
+Undecane	3	0	0	0	0		CHEMBL132474	chembl_search
+Liquiritigenin	3	0	0	0	0		CHEMBL252642	chembl_search
+Hexanal	3	0	0	0	0		CHEMBL280331	chembl_search
+Lupiwighteone	3	0	0	0	0		CHEMBL3616491	chembl_search
+Myrtenol	3	0	0	0	0		CHEMBL443408	chembl_search
+Aureusidin	3	0	0	0	0		CHEMBL593229	chembl_search
+Glabridin	3	0	0	0	0		CHEMBL480477	chembl_search
+Flavanone	3	0	0	0	0		CHEMBL274318	chembl_search
+Sterol	3	0	0	0	0		CHEMBL299307	chembl_search
+1,2,4-Trimethylbenzene	3	0	0	0	0		CHEMBL113056	chembl_search
+Isoangustone A	3	0	0	0	0		CHEMBL3809403	chembl_search
+beta-EUDESMOL	3	0	0	0	0		CHEMBL88244	chembl_search
+Soyasaponin I	3	0	0	0	0		CHEMBL511016	chembl_search
+Stigmasterol	3	0	0	0	0		CHEMBL400247	chembl_search
+Prunetin	3	0	0	0	0		CHEMBL491174	chembl_search

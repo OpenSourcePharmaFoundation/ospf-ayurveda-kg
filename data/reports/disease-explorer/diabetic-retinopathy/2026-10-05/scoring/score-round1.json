@@ -1,0 +1,74 @@
+{
+  "disease": "diabetic-retinopathy",
+  "n_predictions": 15,
+  "n_truth_tier1": 15,
+  "n_truth_total": 75,
+  "hits": [
+    {
+      "rank": 1,
+      "predicted": "Pemafibrate",
+      "truth": "PEMAFIBRATE",
+      "tier": 1,
+      "moiety_equivalent": false,
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "diabetic retinopathy"
+      ]
+    },
+    {
+      "rank": 2,
+      "predicted": "Fenofibric acid",
+      "truth": "FENOFIBRATE",
+      "tier": 1,
+      "moiety_equivalent": true,
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "diabetic retinopathy"
+      ]
+    },
+    {
+      "rank": 4,
+      "predicted": "Fenofibrate",
+      "truth": "FENOFIBRATE",
+      "tier": 1,
+      "moiety_equivalent": false,
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "diabetic retinopathy"
+      ]
+    },
+    {
+      "rank": 10,
+      "predicted": "Minocycline",
+      "truth": "MINOCYCLINE",
+      "tier": 2,
+      "moiety_equivalent": false,
+      "removed_terms": [
+        "Macular Degeneration",
+        "Macular Edema",
+        "Retinal Vein Occlusion",
+        "age-related macular degeneration",
+        "cystoid macular edema",
+        "retinal vein occlusion"
+      ]
+    }
+  ],
+  "precision_at_k": {
+    "P@1": 1.0,
+    "P@3": 0.667,
+    "P@5": 0.6,
+    "P@10": 0.4
+  },
+  "tier1_hit_at_k": {
+    "hit@1": true,
+    "hit@3": true,
+    "hit@5": true,
+    "hit@10": true
+  },
+  "first_tier1_rank": 1,
+  "strict_no_moiety": {
+    "hits": 3,
+    "tier1_hits": 2,
+    "first_tier1_rank": 1
+  }
+}

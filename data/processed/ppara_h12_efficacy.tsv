@@ -1,0 +1,10 @@
+key	name	reaches_h12	ddg_h12_kcal_med	ddg_h12_kcal_lo	ddg_h12_kcal_hi	emax_assay_med	emax_assay_lo	emax_assay_hi	emax_tissue_med	emax_tissue_lo	emax_tissue_hi	txn_output_tissue_med	txn_output_tissue_lo	txn_output_tissue_hi	note
+carboxylate	Carboxylate (reference full agonist)	1	0.00	0.00	0.66	1.000	0.996	1.000	1.000	0.970	1.000	1.000	0.967	1.000	the incumbent
+oxazolidinone	Oxazolidin-2-one	1	2.66	1.56	3.79	0.937	0.449	0.996	0.614	0.115	0.952	0.599	0.077	0.952	neutral, geometrically competent, carbonyl distal acceptor
+sulfone	Sulfone	1	2.75	1.56	3.93	0.924	0.361	0.996	0.566	0.082	0.952	0.551	0.049	0.952	neutral, geometrically competent, weak S=O acceptors
+sulfonamide	Sulfonamide	1	2.75	1.56	3.93	0.924	0.361	0.996	0.566	0.082	0.952	0.551	0.049	0.952	neutral, geometrically competent, weak S=O acceptors
+phosphonamidate	Phosphonamidate	1	1.97	1.36	2.97	0.976	0.750	0.997	0.815	0.338	0.969	0.806	0.284	0.969	strongest neutral acceptor pair; span is marginal (2.58 A)
+hydroxamic_acid	Hydroxamic acid	0	2.75	1.56	3.94	0.924	0.360	0.996	0.566	0.082	0.952	0.551	0.049	0.952	span 2.64 A - outside the window, contact treated as lost
+nae_head	N-acylethanolamine (OEA)	0	2.75	1.56	3.94	0.924	0.360	0.996	0.566	0.082	0.952	0.551	0.049	0.952	span 2.67 A - the empirical anchor for a lost H12 contact
+oxadiazolone	1,2,4-Oxadiazol-5(4H)-one	0	2.75	1.56	3.94	0.924	0.360	0.996	0.566	0.082	0.952	0.551	0.049	0.952	one competent acceptor only; cannot serve His440 and Tyr464
+tetrazole	Tetrazole	0	2.75	1.56	3.94	0.924	0.360	0.996	0.566	0.082	0.952	0.551	0.049	0.952	no acceptor atom can take two H-bonds

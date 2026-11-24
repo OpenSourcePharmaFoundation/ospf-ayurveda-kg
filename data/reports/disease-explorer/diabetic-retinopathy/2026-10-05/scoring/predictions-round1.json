@@ -1,0 +1,81 @@
+{
+  "disease": "diabetic-retinopathy",
+  "round": "round1-consensus",
+  "ranked": [
+    {
+      "rank": 1,
+      "name": "Pemafibrate",
+      "score": 6.1
+    },
+    {
+      "rank": 2,
+      "name": "Fenofibric acid",
+      "score": 6.1
+    },
+    {
+      "rank": 3,
+      "name": "Candesartan cilexetil",
+      "score": 5.6
+    },
+    {
+      "rank": 4,
+      "name": "Fenofibrate",
+      "score": 5.5
+    },
+    {
+      "rank": 5,
+      "name": "Icosapent ethyl",
+      "score": 4.92
+    },
+    {
+      "rank": 6,
+      "name": "Melatonin",
+      "score": 4.83
+    },
+    {
+      "rank": 7,
+      "name": "Dimethyl fumarate",
+      "score": 4.8
+    },
+    {
+      "rank": 8,
+      "name": "Elafibranor",
+      "score": 4.7
+    },
+    {
+      "rank": 9,
+      "name": "Epalrestat",
+      "score": 3.8
+    },
+    {
+      "rank": 10,
+      "name": "Minocycline",
+      "score": 3.6
+    },
+    {
+      "rank": 11,
+      "name": "Seladelpar",
+      "score": 3.3
+    },
+    {
+      "rank": 12,
+      "name": "Alpha-linolenic acid",
+      "score": 2.5
+    },
+    {
+      "rank": 13,
+      "name": "Linalool",
+      "score": 2.5
+    },
+    {
+      "rank": 14,
+      "name": "Linoleic acid",
+      "score": 2.0
+    },
+    {
+      "rank": 15,
+      "name": "Quercetin",
+      "score": 1.92
+    }
+  ]
+}

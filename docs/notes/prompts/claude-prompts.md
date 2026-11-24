@@ -320,3 +320,106 @@ Dearest Claude, if it pleases you to do so, would you mind giving me the cure fo
   │ Under Investigation       │ EGF topical, AG-013, Glycine                   │ Phase 2 trials                          │
   └───────────────────────────┴────────────────────────────────────────────────┴─────────────────────────────────────────┘
   Would you like me to dive deeper into any specific aspect - perhaps the specific compounds in licorice that target OM pathways, or the breast cancer-specific treatment studies in the dataset? 💜
+
+---
+
+# Rewrite the diabetic retinopathy report as science, not as a post-mortem
+
+Rewrite `data/reports/disease-explorer/diabetic-retinopathy/2026-10-05/REPORT.md`.
+
+The analysis underneath it is good. The writing is not. Roughly a quarter of the document is
+the report talking about itself — how it was produced, where the process went wrong, which
+internal step caught which error. **Strip that out and write the report the evidence
+supports.**
+
+## The problem, concretely
+
+The current draft reads like a retrospective on a pipeline rather than an analysis of a drug
+target. It says things like "the pipeline converged on...", "the limb the pipeline
+under-weighted", "a third option no agent enumerated until the debate round", "an earlier
+draft of this programme used them interchangeably", "five errors were the orchestrator's". An
+entire 73-line section is devoted to scoring the analysis against a held-out answer.
+
+**A reader who wants to know whether PPARα is worth pursuing in diabetic retinopathy has to
+wade through an account of how the document was made.** That is backwards.
+
+## What to write instead
+
+A scientific report answering the actual question: **is PPARα a viable therapeutic target for
+diabetic retinopathy, which agents act on it, what is the mechanism, and what experiments
+would settle it.**
+
+Rules for the rewrite:
+
+- **No process voice.** Delete every reference to the pipeline, agents, rounds, phases,
+  debates, orchestrator, synthesis, or drafts. The report has no autobiography. If a finding is
+  true, state it; where it came from is not the reader's problem.
+- **No self-grading.** Remove the benchmark section entirely. Whether blinded reasoning
+  recovered known therapy is a question about the method, not about the disease — it already
+  lives in `BENCHMARK-RESULT.md` and belongs only there. One line in the method section may
+  note that the analysis was run against a dataset with indications redacted, and then move on.
+- **No apology, no confession, no "we got this wrong."** If an earlier position was wrong,
+  simply state the correct position. The reader does not need the sequence of beliefs that
+  preceded it.
+- **Keep every scientific uncertainty, expressed as evidence quality rather than as error.**
+  "Retinal expression is reported but single-cell atlases do not show it prominently; graded
+  Level 4" is right. "The analysis initially got this wrong and later corrected it" is not.
+  Uncertainty about the world stays; uncertainty about the process goes.
+- **Attribute to evidence, never to who said it internally.** No "three agents independently
+  concluded". Either the argument is sound and gets stated, or it is not and gets dropped.
+
+## What must survive
+
+The substance is good — do not lose it while cutting the framing:
+
+- The four candidate mechanisms and why they imply different drugs, stages and experiments
+- The free-drug arithmetic, the compartment distinction (endothelium and RPE sit on the blood
+  side; neural retina is unreachable), and that potency is nearly orthogonal to engagement in
+  this series
+- Why the ANGPTL4 wrong-sign risk is bounded, including the lipoprotein-lipase ceiling argument
+- Why the acid head group is conventional rather than mechanistically required, and the
+  ligand-efficiency evidence for it
+- That hard exudates are retained modified apoB lipoproteins, not fat, and why that makes
+  remnant particles the relevant target rather than LDL
+- The self-renewing clearance cycle, the integrating regime when clearance approaches zero, and
+  why stock and flux readouts are not interchangeable
+- That no candidate accelerates retinal lipid clearance, and that this cannot be done from the
+  liver
+- The full experimental programme with its sequencing, costs and kill criteria
+- The staging conclusion: mild-to-moderate non-proliferative disease, with the mechanistic
+  reason
+- That free drug concentration in retinal tissue has never been measured in any species, and
+  that this is the one number the decision turns on
+
+## Where the honesty goes
+
+Keep a short limitations section near the end, written as a scientist would write one: what
+the evidence cannot currently support, which claims are reasoning rather than measurement,
+and what would change the conclusions. No defect counts, no process failures, no leaks.
+
+The line worth preserving in some form is that one rodent study and one aqueous humour sample
+would contribute more than any amount of further analysis — but state it as a claim about the
+state of the field, not as a confession about the document.
+
+## Structure
+
+Abstract · the target and the disease biology · the four mechanisms · evidence for each ·
+candidate assessment · the experimental programme · limitations · references to supporting
+material.
+
+Lead with the conclusion. A reader should know within the abstract which compound, which
+stage, which mechanism is live, and what single measurement decides it.
+
+## Length and file
+
+Shorter than the current 516 lines — probably 300–380. Write it to the same path, replacing
+the existing file. Keep the appendix pointing at the supporting documents, including
+`BENCHMARK-RESULT.md` for anyone who wants the methodological assessment.
+
+Do not touch the other files in that directory.
+
+## Reusing this
+
+The same rules apply to any future disease run from this pipeline: **the report answers the
+scientific question; the method's self-assessment lives in a separate file and never
+contaminates the findings.**

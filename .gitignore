@@ -22,5 +22,11 @@ __pycache__
 
 docs/local_notes.md
 
-# graft's local graph cache — regenerable, not committed (run `graft build`).
-/graft/
+# Blinded holdout datasets — regenerable via src/holdout/blind_dataset.py
+data/processed-blinded-*/
+
+# Chain-runner state
+tmp/
+
+# PDB structure cache — regenerable from RCSB via src/analysis/ppara_ligand_design/af2_cage.py
+data/raw/pdb/

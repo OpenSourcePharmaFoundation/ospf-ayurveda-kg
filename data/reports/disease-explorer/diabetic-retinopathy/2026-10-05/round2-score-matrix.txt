@@ -1,0 +1,43 @@
+candidate              literatu  pathway repurpos   safety      sar   mean  spread   n
+--------------------------------------------------------------------------------------
+Berotralstat                  -        -      7.0        -        -   7.00     0.0   1
+Inclisiran                    -        -      6.0        -        -   6.00     0.0   1
+Fenofibric acid             6.5      7.0      6.0      5.5      4.0   5.80     3.0   5
+Pemafibrate                 6.0      7.0      7.0      7.0      2.0   5.80     5.0   5
+Candesartan cilexetil       6.0      6.5      6.0      6.0      3.0   5.50     3.5   5
+Fenofibrate                 6.5      6.5      5.0      5.0      2.0   5.00     4.5   5
+Olezarsen                     -        -      5.0        -        -   5.00     0.0   1
+Lanadelumab                   -        -      5.0        -        -   5.00     0.0   1
+Evolocumab                    -        -      5.0        -        -   5.00     0.0   1
+Ezetimibe                   4.5      4.0      5.0      8.0      3.0   4.90     5.0   5
+Icosapent ethyl             3.5      6.0      5.0      5.5      4.0   4.80     2.5   5
+Melatonin                   3.5      4.0      4.0      6.0      6.0   4.70     2.5   5
+Dimethyl fumarate           6.0      7.0      4.0      2.5      3.0   4.50     4.5   5
+Elafibranor                 4.5      5.0      4.0      3.5      3.0   4.00     2.0   5
+Bempedoic acid                -        -      4.0        -        -   4.00     0.0   1
+Palmitoylethanolamide         -        -      4.0        -        -   4.00     0.0   1
+Doxycycline                   -        -      4.0        -        -   4.00     0.0   1
+Alpha-linolenic acid        2.5      2.5      2.0      6.5      4.0   3.50     4.5   5
+Linalool                    2.5      2.5      1.0      3.0      7.0   3.20     6.0   5
+Linoleic acid               2.0      1.5      1.0      6.0      5.0   3.10     5.0   5
+Oleoylethanolamide            -        -      3.0        -        -   3.00     0.0   1
+Lanifibranor                  -        -      3.0        -        -   3.00     0.0   1
+Saroglitazar                  -        -      3.0        -        -   3.00     0.0   1
+Minocycline                 3.0      4.0      4.0      1.0      2.0   2.80     3.0   5
+Seladelpar                  3.0      3.0      2.0      2.5      2.0   2.50     1.0   5
+Epalrestat                  2.0      2.0      2.0      3.0      2.0   2.20     1.0   5
+Evinacumab                    -        -      2.0        -        -   2.00     0.0   1
+Quercetin                   1.5      1.5      1.0      3.0      1.0   1.60     2.0   5
+Bexarotene                    -        -      1.0        -        -   1.00     0.0   1
+
+LARGEST DISAGREEMENTS (spread >= 3.0) — these drive the debate round:
+  Linalool                 spread  6.0  sar 7.0 vs repurpos 1.0
+  Pemafibrate              spread  5.0  pathway 7.0 vs sar 2.0
+  Ezetimibe                spread  5.0  safety 8.0 vs sar 3.0
+  Linoleic acid            spread  5.0  safety 6.0 vs repurpos 1.0
+  Fenofibrate              spread  4.5  literatu 6.5 vs sar 2.0
+  Dimethyl fumarate        spread  4.5  pathway 7.0 vs safety 2.5
+  Alpha-linolenic acid     spread  4.5  safety 6.5 vs repurpos 2.0
+  Candesartan cilexetil    spread  3.5  pathway 6.5 vs sar 3.0
+  Fenofibric acid          spread  3.0  pathway 7.0 vs sar 4.0
+  Minocycline              spread  3.0  pathway 4.0 vs safety 1.0

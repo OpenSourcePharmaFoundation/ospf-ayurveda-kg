@@ -1,0 +1,10 @@
+gene,uniprot,chembl_id,pref_name,target_type,status,gene_class,arm,ligandable,n_activities,n_mechanisms
+NR1H3,Q13133,CHEMBL2808,Oxysterols receptor LXR-alpha,SINGLE PROTEIN,resolved,RECEPTOR,efflux,True,1715,4
+NR1H2,P55055,CHEMBL4093,Oxysterols receptor LXR-beta,SINGLE PROTEIN,resolved,RECEPTOR,efflux,True,2014,5
+ABCA1,O95477,CHEMBL2362986,Phospholipid-transporting ATPase ABCA1,SINGLE PROTEIN,resolved,EFFECTOR,efflux,False,0,1
+ABCG1,P45844,,,,unresolved,EFFECTOR,efflux,False,0,0
+APOA1,P02647,CHEMBL5984,Apolipoprotein A-I,SINGLE PROTEIN,resolved,EFFECTOR,efflux,False,0,0
+APOE,P02649,,,,unresolved,EFFECTOR,efflux,False,0,0
+CD36,P16671,CHEMBL1744526,Platelet glycoprotein 4,SINGLE PROTEIN,resolved,SCAVENGER,uptake,True,1,0
+OLR1,P78380,CHEMBL3421522,Oxidized low-density lipoprotein receptor 1,SINGLE PROTEIN,resolved,SCAVENGER,uptake,False,0,0
+MSR1,P21757,CHEMBL5811,Macrophage scavenger receptor types I and II,SINGLE PROTEIN,resolved,SCAVENGER,uptake,False,2,0

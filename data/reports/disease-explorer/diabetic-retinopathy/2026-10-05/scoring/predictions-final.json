@@ -1,0 +1,151 @@
+{
+  "disease": "diabetic-retinopathy",
+  "round": "p3-final",
+  "ranked": [
+    {
+      "rank": 1,
+      "name": "Fenofibric acid",
+      "score": 6.5
+    },
+    {
+      "rank": 2,
+      "name": "Pemafibrate",
+      "score": 6.0
+    },
+    {
+      "rank": 3,
+      "name": "Fenofibrate",
+      "score": 5.5
+    },
+    {
+      "rank": 4,
+      "name": "Elafibranor",
+      "score": 5.5
+    },
+    {
+      "rank": 5,
+      "name": "Olezarsen",
+      "score": 5.0
+    },
+    {
+      "rank": 6,
+      "name": "Inclisiran",
+      "score": 5.0
+    },
+    {
+      "rank": 7,
+      "name": "Candesartan cilexetil",
+      "score": 5.0
+    },
+    {
+      "rank": 8,
+      "name": "Seladelpar",
+      "score": 4.5
+    },
+    {
+      "rank": 9,
+      "name": "Ezetimibe",
+      "score": 4.0
+    },
+    {
+      "rank": 10,
+      "name": "Melatonin",
+      "score": 3.5
+    },
+    {
+      "rank": 11,
+      "name": "Icosapent ethyl",
+      "score": 3.5
+    },
+    {
+      "rank": 12,
+      "name": "Evolocumab",
+      "score": 3.5
+    },
+    {
+      "rank": 13,
+      "name": "Berotralstat",
+      "score": 3.5
+    },
+    {
+      "rank": 14,
+      "name": "Bempedoic acid",
+      "score": 3.0
+    },
+    {
+      "rank": 15,
+      "name": "Doxycycline",
+      "score": 3.0
+    },
+    {
+      "rank": 16,
+      "name": "Palmitoylethanolamide",
+      "score": 3.0
+    },
+    {
+      "rank": 17,
+      "name": "Dimethyl fumarate",
+      "score": 2.5
+    },
+    {
+      "rank": 18,
+      "name": "Oleoylethanolamide",
+      "score": 2.5
+    },
+    {
+      "rank": 19,
+      "name": "Alpha-linolenic acid",
+      "score": 2.5
+    },
+    {
+      "rank": 20,
+      "name": "Linalool",
+      "score": 2.5
+    },
+    {
+      "rank": 21,
+      "name": "Epalrestat",
+      "score": 2.0
+    },
+    {
+      "rank": 22,
+      "name": "Linoleic acid",
+      "score": 2.0
+    },
+    {
+      "rank": 23,
+      "name": "Lanifibranor",
+      "score": 2.0
+    },
+    {
+      "rank": 24,
+      "name": "Saroglitazar",
+      "score": 2.0
+    },
+    {
+      "rank": 25,
+      "name": "Lanadelumab",
+      "score": 2.0
+    },
+    {
+      "rank": 26,
+      "name": "Minocycline",
+      "score": 1.5
+    },
+    {
+      "rank": 27,
+      "name": "Evinacumab",
+      "score": 1.5
+    },
+    {
+      "rank": 28,
+      "name": "Bexarotene",
+      "score": 1.0
+    },
+    {
+      "rank": 29,
+      "name": "Quercetin",
+      "score": 1.0
+    }
+  ]
+}

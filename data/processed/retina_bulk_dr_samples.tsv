@@ -1,0 +1,80 @@
+sample	gsm	disease_group_detailed	sample_site	donor	dr_severity_score	dme	age	gender	rin	post_mortem_interval	duration_diabetis
+sample_09	GSM4871190	Control	Macula	06_056	0	FALSE	70	male	5	279	n/a
+sample_16	GSM4871119	Control	Periphery	06_055	0	FALSE	63	male	8.1	343	n/a
+sample_43	GSM4871149	NPDR	Macula	09_023	20	FALSE	89	male	8.2	321	>25 yrs
+sample_65	GSM4871172	NPDR + DME	Macula	05_049	35	TRUE	76	female	7.2	330	23 years, DR 7 years
+sample_07	GSM4871177	Control	Macula	06_055	0	FALSE	63	male	7.8	343	n/a
+sample_64	GSM4871171	PDR + DME	Macula	05_011	65	TRUE	73	female	4.7	340	34 years
+sample_51	GSM4871157	NPDR	Periphery	06_016	53	FALSE	65	female	7.6	331	unkown
+sample_19	GSM4871122	Control	Periphery	12_021	0	FALSE	80	male	7	356	n/a
+sample_80	GSM4871189	NPDR + DME	Periphery	17_037	35	TRUE	82	female	7.9	348	unkown, but >8 years
+sample_62	GSM4871169	NPDR + DME	Macula	13_030	43	TRUE	77	female	7.3	149	>15 years
+sample_27	GSM4871131	Diabetic	Macula	16_005	10	FALSE	97	female	5.4	348	>15 years
+sample_15	GSM4871118	Control	Periphery	06_043	0	FALSE	84	female	4.7	325	n/a
+sample_29	GSM4871133	Diabetic	Macula	17_020	10	FALSE	54	female	8.6	321	7 yrs
+sample_59	GSM4871165	NPDR	Periphery	17_069	35	FALSE	78	male	6.2	309	>10 years
+sample_41	GSM4871147	NPDR	Macula	06_016	53	FALSE	65	female	6.9	331	unkown
+sample_71	GSM4871179	NPDR + DME	Periphery	13_030	43	TRUE	77	female	4.7	174	>15 years
+sample_35	GSM4871140	Diabetic	Periphery	16_005	10	FALSE	97	female	8.1	314	>15 years
+sample_78	GSM4871186	PDR + DME	Periphery	16_055	65	TRUE	61	female	7.4	345	>17 years
+sample_33	GSM4871138	Diabetic	Periphery	06_013	10	FALSE	77	male	8.3	331	>25 years
+sample_01	GSM4871112	Control	Macula	04_014	0	FALSE	80	female	6.2	285	n/a
+sample_60	GSM4871167	NPDR	Periphery	17_071	53	FALSE	90	male	7.5	297	unknown
+sample_25	GSM4871129	Diabetic	Macula	14_090	10	FALSE	74	female	8.3	314	7 yrs
+sample_76	GSM4871184	NPDR + DME	Periphery	05_049	35	TRUE	76	female	8	350	23 years, DR 7 years
+sample_14	GSM4871117	Control	Periphery	06_025	0	FALSE	82	female	6.5	305	n/a
+sample_40	GSM4871146	Diabetic	Periphery	17_030	10	FALSE	86	male	7	322	16 years
+sample_58	GSM4871164	NPDR	Periphery	16_063	43	FALSE	62	male	8.2	329	19 years
+sample_52	GSM4871158	NPDR	Periphery	08_027	35	FALSE	84	male	8.2	355	>12 years
+sample_31	GSM4871136	Diabetic	Periphery	04_031	10	FALSE	88	female	6.6	348	10 yrs
+sample_20	GSM4871124	Control	Periphery	16_044	0	FALSE	78	female	5.5	283	n/a
+sample_04	GSM4871145	Control	Macula	05_044	0	FALSE	81	male	7.4	331	n/a
+sample_75	GSM4871183	NPDR + DME	Periphery	05_049	35	TRUE	76	female	8.2	330	23 years, DR 7 years
+sample_48	GSM4871153	NPDR	Macula	16_063	43	FALSE	62	male	8.7	329	19 years
+sample_72	GSM4871180	NPDR + DME	Periphery	04_028	43	TRUE	69	male	7.6	295	>25 years
+sample_77	GSM4871185	NPDR + DME	Periphery	13_059	35	TRUE	84	female	4	230	7 years
+sample_12	GSM4871115	Control	Periphery	06_056	0	FALSE	70	male	8.1	279	n/a
+sample_53	GSM4871159	NPDR	Periphery	09_023	20	FALSE	89	male	9.1	321	>25 yrs
+sample_56	GSM4871162	NPDR	Periphery	15_048	20	FALSE	97	male	7.1	348	5 yrs
+sample_70	GSM4871178	NPDR + DME	Macula	17_037	35	TRUE	82	female	7.9	348	unkown, but >8 years
+sample_67	GSM4871174	NPDR + DME	Macula	10_005	35	TRUE	59	male	7.7	280	unkown
+sample_57	GSM4871163	NPDR	Periphery	15_076	20	FALSE	81	male	7.1	358	40 yrs
+sample_02	GSM4871123	Control	Macula	05_014	0	FALSE	73	male	6.3	354	n/a
+sample_73	GSM4871181	PDR + DME	Periphery	05_011	65	TRUE	73	female	6.7	312	34 years
+sample_74	GSM4871182	NPDR + DME	Periphery	13_030	43	TRUE	77	female	7.5	149	>15 years
+sample_38	GSM4871143	Diabetic	Periphery	16_025	10	FALSE	90	female	8.6	350	unknown
+sample_79	GSM4871187	NPDR + DME	Periphery	17_037	43	TRUE	82	female	7.3	316	unkown, but >8 years
+sample_42	GSM4871148	NPDR	Macula	08_027	35	FALSE	84	male	7.4	355	>12 years
+sample_13	GSM4871116	Control	Periphery	05_044	0	FALSE	81	male	6.2	331	n/a
+sample_05	GSM4871155	Control	Macula	06_025	0	FALSE	82	female	8.3	305	n/a
+sample_32	GSM4871137	Diabetic	Periphery	05_024	10	FALSE	84	male	4.8	360	>12 years
+sample_69	GSM4871176	NPDR + DME	Macula	17_037	43	TRUE	82	female	7.9	316	unkown, but >8 years
+sample_36	GSM4871141	Diabetic	Periphery	14_097	10	FALSE	79	female	9.2	356	>12 yrs
+sample_21	GSM4871125	Diabetic	Macula	04_031	10	FALSE	88	female	5.9	348	10 yrs
+sample_30	GSM4871135	Diabetic	Macula	17_030	10	FALSE	86	male	5.9	322	16 years
+sample_26	GSM4871130	Diabetic	Macula	07_020	10	FALSE	84	female	8.1	343	8 years
+sample_10	GSM4871113	Control	Macula	16_044	0	FALSE	78	female	5.7	283	n/a
+sample_24	GSM4871128	Diabetic	Macula	08_021	10	FALSE	80	male	8.5	293	9 years
+sample_66	GSM4871173	NPDR + DME	Macula	05_049	35	TRUE	76	female	7.5	350	23 years, DR 7 years
+sample_39	GSM4871144	Diabetic	Periphery	16_005	10	FALSE	97	female	7.8	321	>15 years
+sample_06	GSM4871166	Control	Macula	06_043	0	FALSE	84	female	7.8	325	n/a
+sample_22	GSM4871126	Diabetic	Macula	05_024	10	FALSE	84	male	6.6	360	>12 years
+sample_28	GSM4871132	Diabetic	Macula	16_025	10	FALSE	90	female	6.2	350	unknown
+sample_08	GSM4871188	Control	Macula	08_049	0	FALSE	80	female	7.8	280	n/a
+sample_17	GSM4871120	Control	Periphery	08_049	0	FALSE	80	female	8.1	280	n/a
+sample_63	GSM4871170	PDR + DME	Macula	05_011	65	TRUE	73	female	7.6	312	34 years
+sample_37	GSM4871142	Diabetic	Periphery	17_020	10	FALSE	54	female	8.2	348	7 yrs
+sample_50	GSM4871156	NPDR	Macula	17_071	53	FALSE	90	male	6.2	297	unknown
+sample_61	GSM4871168	NPDR + DME	Macula	04_028	43	TRUE	69	male	4.7	320	>25 years
+sample_11	GSM4871114	Control	Periphery	04_014	0	FALSE	80	female	8.6	285	n/a
+sample_55	GSM4871161	NPDR	Periphery	12_004	20	FALSE	85	male	7.5	326	17 yrs
+sample_18	GSM4871121	Control	Periphery	17_040	0	FALSE	70	female	7.6	295	n/a
+sample_54	GSM4871160	NPDR	Periphery	09_024	35	FALSE	69	male	7	360	13 yrs
+sample_03	GSM4871134	Control	Macula	05_035	0	FALSE	73	female	4.7	320	n/a
+sample_46	GSM4871151	NPDR	Macula	15_048	20	FALSE	97	male	7.3	348	5 yrs
+sample_34	GSM4871139	Diabetic	Periphery	14_081	10	FALSE	77	male	7	331	unknown
+sample_49	GSM4871154	NPDR	Macula	17_093	53	FALSE	66	female	8.1	286	>15 years
+sample_23	GSM4871127	Diabetic	Macula	06_013	10	FALSE	77	male	8.4	331	>25 years
+sample_68	GSM4871175	PDR + DME	Macula	16_055	65	TRUE	61	female	5.3	345	>17 years
+sample_44	GSM4871150	NPDR	Macula	09_024	35	FALSE	69	male	7.9	360	13 yrs
+sample_47	GSM4871152	NPDR	Macula	15_076	20	FALSE	81	male	5.4	358	40 yrs

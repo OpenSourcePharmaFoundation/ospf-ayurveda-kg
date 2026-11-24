@@ -1,0 +1,854 @@
+{
+  "disease": "diabetic-retinopathy",
+  "generated": "2026-10-05",
+  "source_dir": "data/processed",
+  "blinded_dir": "data/processed-blinded-diabetic-retinopathy",
+  "patterns": [
+    "retinopath",
+    "macular\\s+(o)?edema",
+    "macular\\s+retinal\\s+edema",
+    "macular\\s+degeneration",
+    "vitreoretinopath",
+    "choroidal\\s+neovascular",
+    "retinal\\s+neovascular",
+    "diabetic\\s+macular",
+    "retinal\\s+vein\\s+occlusion",
+    "wet\\s+mac"
+  ],
+  "redacted_drugs": [
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL267936",
+      "name": "MECAMYLAMINE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration",
+        "macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL413",
+      "name": "SIROLIMUS",
+      "removed_terms": [
+        "Choroidal Neovascularization",
+        "Diabetic Retinopathy",
+        "Macular Degeneration",
+        "age-related macular degeneration",
+        "atrophic macular degeneration",
+        "choroidal neovascularization",
+        "diabetic retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL269732",
+      "name": "TACROLIMUS ANHYDROUS",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL20",
+      "name": "ACETAZOLAMIDE",
+      "removed_terms": [
+        "Macular Edema",
+        "macular retinal edema"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL22",
+      "name": "TRIMETHOPRIM",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL25",
+      "name": "ASPIRIN",
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "Macular Degeneration",
+        "Retinal Vein Occlusion",
+        "age-related macular degeneration",
+        "diabetic retinopathy",
+        "macular degeneration",
+        "retinal vein occlusion"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL27",
+      "name": "PROPRANOLOL",
+      "removed_terms": [
+        "Macular Degeneration",
+        "Retinopathy of Prematurity",
+        "age-related macular degeneration",
+        "retinopathy of prematurity"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL443",
+      "name": "SULFAMETHOXAZOLE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL469",
+      "name": "KETOROLAC",
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "Retinopathy of Prematurity",
+        "diabetic retinopathy",
+        "retinopathy of prematurity"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL79",
+      "name": "LIDOCAINE",
+      "removed_terms": [
+        "atrophic macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL495",
+      "name": "ALPROSTADIL",
+      "removed_terms": [
+        "Macular Degeneration",
+        "macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL499",
+      "name": "TIMOLOL",
+      "removed_terms": [
+        "Macular Degeneration",
+        "Wet Macular Degeneration",
+        "age-related macular degeneration",
+        "wet macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL521",
+      "name": "IBUPROFEN",
+      "removed_terms": [
+        "Retinopathy of Prematurity",
+        "retinopathy of prematurity"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL107",
+      "name": "COLCHICINE",
+      "removed_terms": [
+        "Vitreoretinopathy, Proliferative",
+        "proliferative vitreoretinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL573",
+      "name": "NIACIN",
+      "removed_terms": [
+        "Retinal Vein Occlusion",
+        "retinal vein occlusion"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL118",
+      "name": "CELECOXIB",
+      "removed_terms": [
+        "Macular Degeneration",
+        "macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL600",
+      "name": "ACETYLCYSTEINE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL632",
+      "name": "BETAMETHASONE",
+      "removed_terms": [
+        "Macular Edema",
+        "Retinal Vein Occlusion",
+        "macular retinal edema",
+        "retinal vein occlusion"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL635",
+      "name": "PREDNISONE",
+      "removed_terms": [
+        "atrophic macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL131",
+      "name": "PREDNISOLONE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL137",
+      "name": "METRONIDAZOLE",
+      "removed_terms": [
+        "Central Serous Chorioretinopathy",
+        "central serous retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL672",
+      "name": "FENOFIBRATE",
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "diabetic retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL710",
+      "name": "FINASTERIDE",
+      "removed_terms": [
+        "retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL778",
+      "name": "DEXMEDETOMIDINE",
+      "removed_terms": [
+        "Retinopathy of Prematurity",
+        "retinopathy of prematurity"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL34259",
+      "name": "METHOTREXATE",
+      "removed_terms": [
+        "Central Serous Chorioretinopathy",
+        "Macular Edema",
+        "Vitreoretinopathy, Proliferative",
+        "central serous retinopathy",
+        "macular retinal edema",
+        "proliferative vitreoretinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL844",
+      "name": "BRIMONIDINE",
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "diabetic retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL989",
+      "name": "FLUOCINOLONE ACETONIDE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "Macular Edema",
+        "age-related macular degeneration",
+        "macular degeneration",
+        "macular retinal edema",
+        "retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1009",
+      "name": "LEVODOPA",
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "Macular Degeneration",
+        "age-related macular degeneration",
+        "diabetic retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1021",
+      "name": "NEPAFENAC",
+      "removed_terms": [
+        "Macular Edema",
+        "macular retinal edema"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1064",
+      "name": "SIMVASTATIN",
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "diabetic retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1077",
+      "name": "BROMFENAC",
+      "removed_terms": [
+        "Macular Degeneration",
+        "Macular Edema",
+        "age-related macular degeneration",
+        "cystoid macular edema"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1082",
+      "name": "AMOXICILLIN",
+      "removed_terms": [
+        "Central Serous Chorioretinopathy",
+        "central serous retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1152",
+      "name": "PREDNISOLONE ACETATE",
+      "removed_terms": [
+        "Macular Edema",
+        "Retinal Vein Occlusion",
+        "macular retinal edema",
+        "retinal vein occlusion"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1293",
+      "name": "BETA CAROTENE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1308",
+      "name": "FOMEPIZOLE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1393",
+      "name": "SPIRONOLACTONE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL384467",
+      "name": "DEXAMETHASONE",
+      "removed_terms": [
+        "Choroidal Neovascularization",
+        "Diabetic Retinopathy",
+        "Macular Degeneration",
+        "Macular Edema",
+        "Retinal Vein Occlusion",
+        "Retinopathy of Prematurity",
+        "Vitreoretinopathy, Proliferative",
+        "Wet Macular Degeneration",
+        "age-related macular degeneration",
+        "choroidal neovascularization",
+        "cystoid macular edema",
+        "diabetic retinopathy",
+        "macular retinal edema",
+        "proliferative vitreoretinopathy",
+        "retinal vein occlusion",
+        "retinopathy of prematurity",
+        "wet macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL218490",
+      "name": "DORZOLAMIDE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "Wet Macular Degeneration",
+        "age-related macular degeneration",
+        "wet macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL220491",
+      "name": "BRINZOLAMIDE",
+      "removed_terms": [
+        "Central Serous Chorioretinopathy",
+        "central serous retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL185",
+      "name": "FLUOROURACIL",
+      "removed_terms": [
+        "Vitreoretinopathy, Proliferative",
+        "proliferative vitreoretinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1431",
+      "name": "METFORMIN",
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "atrophic macular degeneration",
+        "diabetic retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1434",
+      "name": "MINOCYCLINE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "Macular Edema",
+        "Retinal Vein Occlusion",
+        "age-related macular degeneration",
+        "cystoid macular edema",
+        "retinal vein occlusion"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1451",
+      "name": "TRIAMCINOLONE",
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "Macular Degeneration",
+        "Macular Edema",
+        "Retinal Vein Occlusion",
+        "Wet Macular Degeneration",
+        "age-related macular degeneration",
+        "atrophic macular degeneration",
+        "diabetic retinopathy",
+        "macular retinal edema",
+        "retinal vein occlusion",
+        "wet macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1456",
+      "name": "MYCOPHENOLATE MOFETIL",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL247951",
+      "name": "PEMAFIBRATE",
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "diabetic retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1487",
+      "name": "ATORVASTATIN",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1503",
+      "name": "OMEPRAZOLE",
+      "removed_terms": [
+        "Central Serous Chorioretinopathy",
+        "central serous retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1504",
+      "name": "TRIAMCINOLONE ACETONIDE",
+      "removed_terms": [
+        "Choroidal Neovascularization",
+        "Diabetic Retinopathy",
+        "Macular Degeneration",
+        "Macular Edema",
+        "Retinal Vein Occlusion",
+        "Vitreoretinopathy, Proliferative",
+        "Wet Macular Degeneration",
+        "age-related macular degeneration",
+        "choroidal neovascularization",
+        "cystoid macular edema",
+        "diabetic retinopathy",
+        "macular degeneration",
+        "macular retinal edema",
+        "proliferative vitreoretinopathy",
+        "retinal vein occlusion",
+        "wet macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL429910",
+      "name": "DAPAGLIFLOZIN",
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "diabetic retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL196",
+      "name": "ASCORBIC ACID",
+      "removed_terms": [
+        "Macular Degeneration",
+        "macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1560",
+      "name": "CAPTOPRIL",
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "diabetic retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1642",
+      "name": "IMATINIB MESYLATE",
+      "removed_terms": [
+        "Choroidal Neovascularization",
+        "choroidal neovascularization"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL477772",
+      "name": "PAZOPANIB",
+      "removed_terms": [
+        "Macular Degeneration",
+        "macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1675",
+      "name": "VITAMIN A PALMITATE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL542541",
+      "name": "HYDRALAZINE HYDROCHLORIDE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1737",
+      "name": "SILDENAFIL CITRATE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1095097",
+      "name": "EPLERENONE",
+      "removed_terms": [
+        "Central Serous Chorioretinopathy",
+        "central serous retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1200380",
+      "name": "ACYCLOVIR SODIUM",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1200569",
+      "name": "CAFFEINE CITRATE",
+      "removed_terms": [
+        "Retinopathy of Prematurity",
+        "retinopathy of prematurity"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1200574",
+      "name": "SODIUM CHLORIDE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "Retinopathy of Prematurity",
+        "age-related macular degeneration",
+        "macular degeneration",
+        "retinopathy of prematurity"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1200654",
+      "name": "BENOXINATE HYDROCHLORIDE",
+      "removed_terms": [
+        "Retinopathy of Prematurity",
+        "retinopathy of prematurity"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1200661",
+      "name": "UNOPROSTONE ISOPROPYL",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1200699",
+      "name": "DOXYCYCLINE",
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "diabetic retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1200748",
+      "name": "CARBIDOPA",
+      "removed_terms": [
+        "Diabetic Retinopathy",
+        "Macular Degeneration",
+        "age-related macular degeneration",
+        "diabetic retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1201124",
+      "name": "KETOROLAC TROMETHAMINE",
+      "removed_terms": [
+        "Macular Edema",
+        "macular retinal edema"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1201302",
+      "name": "DEXAMETHASONE PHOSPHORIC ACID",
+      "removed_terms": [
+        "Macular Edema",
+        "macular retinal edema"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1201421",
+      "name": "PEGAPTANIB SODIUM",
+      "removed_terms": [
+        "Choroidal Neovascularization",
+        "Macular Degeneration",
+        "Macular Edema",
+        "Retinal Vein Occlusion",
+        "Wet Macular Degeneration",
+        "age-related macular degeneration",
+        "choroidal neovascularization",
+        "cystoid macular edema",
+        "macular degeneration",
+        "macular retinal edema",
+        "retinal vein occlusion",
+        "wet macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1201507",
+      "name": "GLATIRAMER ACETATE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1234886",
+      "name": "OXYGEN",
+      "removed_terms": [
+        "Retinopathy of Prematurity",
+        "retinopathy of prematurity"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1276308",
+      "name": "MIFEPRISTONE",
+      "removed_terms": [
+        "Central Serous Chorioretinopathy",
+        "central serous retinopathy"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1908360",
+      "name": "EVEROLIMUS",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL1946170",
+      "name": "REGORAFENIB",
+      "removed_terms": [
+        "Macular Degeneration",
+        "macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL3989740",
+      "name": "DOXYCYCLINE HYCLATE",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL3989777",
+      "name": "TRIENTINE HYDROCHLORIDE",
+      "removed_terms": [
+        "Macular Edema",
+        "macular retinal edema"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL4250860",
+      "name": "DANICOPAN",
+      "removed_terms": [
+        "atrophic macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL4303669",
+      "name": "ZOLEDRONIC ACID",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL4594448",
+      "name": "IPTACOPAN",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL5314346",
+      "name": "VERTEPORFIN",
+      "removed_terms": [
+        "Choroidal Neovascularization",
+        "Macular Degeneration",
+        "Retinal Neovascularization",
+        "Wet Macular Degeneration",
+        "age-related macular degeneration",
+        "choroidal neovascularization",
+        "macular degeneration",
+        "wet macular degeneration"
+      ]
+    },
+    {
+      "file": "chembl_approved_drugs.csv",
+      "chembl_id": "CHEMBL6067961",
+      "name": "POLIDOCANOL",
+      "removed_terms": [
+        "Macular Degeneration",
+        "age-related macular degeneration"
+      ]
+    }
+  ],
+  "files_scrubbed": {
+    "chembl_approved_drugs.csv": {
+      "columns": [
+        "indication_class",
+        "therapeutic_areas"
+      ],
+      "cells_redacted": 154
+    },
+    "chembl_drug_indications.csv": {
+      "columns": [
+        "mesh_heading",
+        "efo_term"
+      ],
+      "cells_redacted": 0
+    },
+    "chembl_drug_warnings.csv": {
+      "columns": [
+        "warning_description"
+      ],
+      "cells_redacted": 0
+    },
+    "chembl_bioactivities.csv": {
+      "columns": [
+        "assay_description"
+      ],
+      "cells_redacted": 0
+    }
+  }
+}

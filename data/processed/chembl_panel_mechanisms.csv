@@ -1,0 +1,171 @@
+gene,chembl_target_id,molecule_chembl_id,molecule_pref_name,mechanism_of_action,action_type,direct_interaction,mechanism_comment,max_phase
+PPARA,CHEMBL239,CHEMBL1201745,CHOLINE FENOFIBRATE,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,,4.0
+PPARA,CHEMBL239,CHEMBL457,GEMFIBROZIL,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,,4.0
+PPARA,CHEMBL239,CHEMBL672,FENOFIBRATE,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,,4.0
+PPARA,CHEMBL239,CHEMBL565,CLOFIBRATE,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,,4.0
+PPARA,CHEMBL239,CHEMBL981,FENOFIBRIC ACID,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,,4.0
+PPARA,CHEMBL239,CHEMBL3545093,ZYH7,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,,2.0
+PPARA,CHEMBL239,CHEMBL5314385,CP-778875,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,"Status last updated May 2009, discontinued?",2.0
+PPARA,CHEMBL239,CHEMBL424133,LY-518674,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,Compound failed to show an advantage over marketed fenofibrate in Ph2 trial. Also potential adverse effects on kidney function (http://www.firstwordpharma.com/node/110221#axzz3Oj1URprS). Developement on hold or discontinued?,2.0
+PPARA,CHEMBL239,CHEMBL3545394,DRF-10945,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,"Report about Ph2 trial in Canada 2007, no trial ID or references found. Compound may have been discontinued.",2.0
+PPARA,CHEMBL239,CHEMBL219586,GW590735,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,"Not in pipeline, development discontinued?",2.0
+PPARA,CHEMBL239,CHEMBL3545334,AVE8134,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,Development discontinued (http://fr.reuters.com/article/idUKL04616509200804042),2.0
+PPARA,CHEMBL239,CHEMBL181954,NAVEGLITAZAR,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,"Development stopped (PMID:20932114). There are reports of adverse events associated with PPARalfa/gamma dual agonist, for example weight gain, increased risk of bladder cancer and hyperplasia.",2.0
+PPARA,CHEMBL239,CHEMBL3545412,K-877,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,Selective PPAR alpha modulator (SPPAR?M) properties. Ph3 in Japan,3.0
+PPARA,CHEMBL239,CHEMBL592054,IMIGLITAZAR,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,Development discontinued after Ph3 in 2005 due to abnormalities in liver enzyme tests (http://www.firstwordpharma.com/node/218757#axzz3OLRFCbFS3).,3.0
+PPARA,CHEMBL239,CHEMBL519504,ALEGLITAZAR,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,Development stopped due to safety concerns and lack of efficacy (http://www.roche.com/media/media_releases/med-cor-2013-07-10.htm),3.0
+PPARA,CHEMBL239,CHEMBL186179,MURAGLITAZAR,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,Discontinueddue to safety concerns,3.0
+PPARA,CHEMBL239,CHEMBL282686,TESAGLITAZAR,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,"All Ph3 trials terminated, discontinued due to safety concerns (http://en.wikipedia.org/wiki/Tesaglitazar)",3.0
+PPARA,CHEMBL239,CHEMBL557555,CIPROFIBRATE,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,"Ciprofibrate, a PPARα activator, is used to treat hyperlipidaemia and was found to be beneficial in the prevention of ischemic heart disease in individuals with elevated levels of LDL cholesterol. In addition ciprofibrate is also found to modestly decrease elevated fibrinogen and plasminogen activator inhibitor-1 levels and elevate level of plasma HDL cholesterol.",4.0
+PPARA,CHEMBL239,CHEMBL247951,PEMAFIBRATE,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,,4.0
+PPARA,CHEMBL239,CHEMBL4297530,SAROGLITAZAR,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,,3.0
+PPARA,CHEMBL239,CHEMBL3707395,ELAFIBRANOR,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,,4.0
+PPARA,CHEMBL239,CHEMBL4297404,MK-0767,Peroxisome proliferator-activated receptor alpha agonist,AGONIST,1,,3.0
+PPARD,CHEMBL3979,CHEMBL3545295,AVE0847,Peroxisome proliferator-activated receptor delta agonist,AGONIST,1,Development discontinued (http://fr.reuters.com/article/idUKL0461650920080404),1.0
+PPARD,CHEMBL3979,CHEMBL3544958,CER-002,Peroxisome proliferator-activated receptor delta agonist,AGONIST,1,A Ph1 trial was completed in 2008 but can't find trial ID or any further planned trials (http://www.drugs.com/clinical_trials/cerenis-therapeutics-announces-successful-completion-phase-clinical-trial-cer-002-cardiovascular-4272.html). Compound still in the company pipeline.,1.0
+PPARD,CHEMBL3979,CHEMBL3545114,KD3010,Peroxisome proliferator-activated receptor delta agonist,AGONIST,1,"Ph1 trial completed in 2006, no new trials reported. Development discontinued?",1.0
+PPARD,CHEMBL3979,CHEMBL3545176,DB959,Peroxisome proliferator-activated receptor delta agonist,AGONIST,1,Ph1b study completed in 2011 (no trial ID). Compound outlicensed to T3D Therapeutics Inc in 2013.,2.0
+PPARD,CHEMBL3979,CHEMBL230158,SELADELPAR,Peroxisome proliferator-activated receptor delta agonist,AGONIST,1,,4.0
+PPARD,CHEMBL3979,CHEMBL38943,GW501516,Peroxisome proliferator-activated receptor delta agonist,AGONIST,1,,2.0
+PPARD,CHEMBL3979,CHEMBL3707395,ELAFIBRANOR,Peroxisome proliferator-activated receptor delta agonist,AGONIST,1,,4.0
+PPARD,CHEMBL3979,CHEMBL3545186,FONADELPAR,Peroxisome proliferator-activated receptor delta agonist,AGONIST,1,,3.0
+PPARD,CHEMBL3979,CHEMBL3989960,SELADELPAR LYSINE,Peroxisome proliferator-activated receptor delta agonist,AGONIST,1,,4.0
+PPARG,CHEMBL235,CHEMBL1715,PIOGLITAZONE HYDROCHLORIDE,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,,4.0
+PPARG,CHEMBL235,CHEMBL843,ROSIGLITAZONE MALEATE,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,,4.0
+PPARG,CHEMBL235,CHEMBL408,TROGLITAZONE,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,,4.0
+PPARG,CHEMBL235,CHEMBL1200760,BALSALAZIDE DISODIUM,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,,4.0
+PPARG,CHEMBL235,CHEMBL704,MESALAMINE,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,,4.0
+PPARG,CHEMBL235,CHEMBL1201013,OLSALAZINE SODIUM,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,,4.0
+PPARG,CHEMBL235,CHEMBL3545295,AVE0847,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,Development discontinued (http://fr.reuters.com/article/idUKL0461650920080404),1.0
+PPARG,CHEMBL235,CHEMBL3545176,DB959,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,Ph1b study completed in 2011 (no trial ID). Compound outlicensed to T3D Therapeutics Inc in 2013.,2.0
+PPARG,CHEMBL235,CHEMBL5314405,CLX-0921,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,"According to reports, Ph1 trial was completed but can't find trial ID or any further planned trials. Discontinued",1.0
+PPARG,CHEMBL235,CHEMBL93747,NETOGLITAZONE,Peroxisome proliferator-activated receptor gamma modulator,MODULATOR,1,Drug in Ph1 or 2? Development status unknown.,2.0
+PPARG,CHEMBL235,CHEMBL107367,FARGLITAZAR,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,"1000-fold less potent at PPARA. Last updated November 2009, discontinued?",2.0
+PPARG,CHEMBL235,CHEMBL181954,NAVEGLITAZAR,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,"Development stopped (PMID:20932114). There are reports of adverse events associated with PPARalfa/gamma dual agonist, for example weight gain, increased risk of bladder cancer and hyperplasia.",2.0
+PPARG,CHEMBL235,CHEMBL5095027,OMS405,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,,2.0
+PPARG,CHEMBL235,CHEMBL490029,MK-0533,Peroxisome proliferator-activated receptor gamma modulator,MODULATOR,1,"Ph2 study terminated, compound development discontinued. Selective PPAR gamma modulator (SPPAR?M)",2.0
+PPARG,CHEMBL235,CHEMBL3545020,MBX-2044,Peroxisome proliferator-activated receptor gamma modulator,MODULATOR,1,Selective PPAR gamma modulator (SPPAR?M),2.0
+PPARG,CHEMBL235,CHEMBL1236924,INT131,Peroxisome proliferator-activated receptor gamma modulator,MODULATOR,1,Selective PPAR gamma modulator (SPPAR?M),2.0
+PPARG,CHEMBL235,CHEMBL3545278,ATX08-001,Peroxisome proliferator-activated receptor gamma modulator,MODULATOR,1,Selective PPAR gamma modulator (SPPAR?M) properties. Discontinued no advantage was demonstrated in clinical trials compared existing peroxisome proliferator activated receptor (PPAR) agonists,2.0
+PPARG,CHEMBL235,CHEMBL3545279,EFATUTAZONE HYDROCHLORIDE,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,"Daichii Sankyo has suspended inhouse development in jan 2013, supports external development of the compound.",2.0
+PPARG,CHEMBL235,CHEMBL2103824,ARHALOFENATE,Peroxisome proliferator-activated receptor gamma modulator,MODULATOR,1,"Selective PPAR gamma modulator (SPPAR?M), SLC22A12 inhibitor",2.0
+PPARG,CHEMBL235,CHEMBL329123,ETALOCIB,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,,2.0
+PPARG,CHEMBL235,CHEMBL592054,IMIGLITAZAR,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,Development discontinued after Ph3 in 2005 due to abnormalities in liver enzyme tests (http://www.firstwordpharma.com/node/218757#axzz3OLRFCbFS3).,3.0
+PPARG,CHEMBL235,CHEMBL519504,ALEGLITAZAR,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,Development stopped due to safety concerns and lack of efficacy (http://www.roche.com/media/media_releases/med-cor-2013-07-10.htm),3.0
+PPARG,CHEMBL235,CHEMBL186179,MURAGLITAZAR,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,Discontinueddue to safety concerns,3.0
+PPARG,CHEMBL235,CHEMBL282686,TESAGLITAZAR,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,"All Ph3 trials terminated, discontinued due to safety concerns (http://en.wikipedia.org/wiki/Tesaglitazar)",3.0
+PPARG,CHEMBL235,CHEMBL2103991,BALAGLITAZONE,Peroxisome proliferator-activated receptor gamma partial agonist,PARTIAL AGONIST,1,Discontinueddue to safety concerns,3.0
+PPARG,CHEMBL235,CHEMBL2104753,RIVOGLITAZONE,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,"Development discontinued in 2009, not sufficiently differentiate from existing product",3.0
+PPARG,CHEMBL235,CHEMBL1762621,BARDOXOLONE METHYL,Peroxisome proliferator-activated receptor gamma antagonist,ANTAGONIST,1,"Ph3 study terminated, safety and efficacy to be re-evaluated in new Ph2 study in 2014/2015. Activates KEAP1-Nrf2 pathway (http://en.wikipedia.org/wiki/Bardoxolone_methyl, http://www.kyowa-kirin.com/news_releases/2014/e20140702_01.html)",3.0
+PPARG,CHEMBL235,CHEMBL4297404,MK-0767,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,,3.0
+PPARG,CHEMBL235,CHEMBL4297530,SAROGLITAZAR,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,,3.0
+PPARG,CHEMBL235,CHEMBL1267,LERIGLITAZONE,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,,3.0
+PPARG,CHEMBL235,CHEMBL121,ROSIGLITAZONE,Peroxisome proliferator-activated receptor gamma agonist,AGONIST,1,,4.0
+VEGFA,CHEMBL1783,CHEMBL1201421,PEGAPTANIB SODIUM,Vascular endothelial growth factor A antagonist,ANTAGONIST,1,"It's an aptamer, a pegylated modified oligonucleotide",4.0
+VEGFA,CHEMBL1783,CHEMBL1201825,RANIBIZUMAB,Vascular endothelial growth factor A inhibitor,INHIBITOR,1,,4.0
+VEGFA,CHEMBL1783,CHEMBL1742982,AFLIBERCEPT,Vascular endothelial growth factor A inhibitor,INHIBITOR,1,,4.0
+VEGFA,CHEMBL1783,CHEMBL1201583,BEVACIZUMAB,Vascular endothelial growth factor A inhibitor,INHIBITOR,1,,4.0
+VEGFA,CHEMBL1783,CHEMBL3707253,BEVACIZUMAB 111IN,Vascular endothelial growth factor A binding agent,BINDING AGENT,1,"Binds to VEGFA, allowing the detection of VEGFA distribution using gamma scintigraphy.",-1.0
+VEGFA,CHEMBL1783,CHEMBL4297163,MUPARFOSTAT,Vascular endothelial growth factor A inhibitor,INHIBITOR,1,,3.0
+VEGFA,CHEMBL1783,CHEMBL2108313,CONBERCEPT,Vascular endothelial growth factor A inhibitor,INHIBITOR,1,Soluble receptor decoy which has a high binding affinity to VEGF and a long half-life in vitreous.,3.0
+VEGFA,CHEMBL1783,CHEMBL3707357,BROLUCIZUMAB,Vascular endothelial growth factor A inhibitor,INHIBITOR,1,,4.0
+VEGFA,CHEMBL1783,CHEMBL3545259,VANUCIZUMAB,Vascular endothelial growth factor A inhibitor,INHIBITOR,1,,2.0
+VEGFA,CHEMBL1783,CHEMBL4297750,FARICIMAB,Vascular endothelial growth factor A inhibitor,INHIBITOR,1,,4.0
+VEGFA,CHEMBL1783,CHEMBL4297684,ABICIPAR PEGOL,Vascular endothelial growth factor A inhibitor,INHIBITOR,1,,3.0
+VEGFA,CHEMBL1783,CHEMBL2108752,PEGAPTANIB OCTASODIUM,Vascular endothelial growth factor A inhibitor,INHIBITOR,1,,3.0
+VEGFA,CHEMBL1783,CHEMBL5314727,BEVACIZUMAB GAMMA,Vascular endothelial growth factor A binding agent,BINDING AGENT,1,,4.0
+KDR,CHEMBL279,CHEMBL2103868,CABOZANTINIB S-MALATE,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,"Multi-kinase inhibitor; Cabozantinib (XL184) is a potent inhibitor of MET and VEGFR2 that also inhibits RET, KIT, AXL, and FLT3, all of which have been implicated in tumor pathogenesis (PMID: 21926191)",4.0
+KDR,CHEMBL279,CHEMBL1743062,RAMUCIRUMAB,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,4.0
+KDR,CHEMBL279,CHEMBL52885,ENMD-981693,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,2.0
+KDR,CHEMBL279,CHEMBL2143592,BMS-794833,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,1.0
+KDR,CHEMBL279,CHEMBL3545050,BMS-817378,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,1.0
+KDR,CHEMBL279,CHEMBL3545427,CM-082,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,3.0
+KDR,CHEMBL279,CHEMBL482967,CYC-116,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,Pan-Aurora kinase inhibitor,1.0
+KDR,CHEMBL279,CHEMBL3545365,ALTIRATINIB,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,2.0
+KDR,CHEMBL279,CHEMBL1738697,PF-00337210,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,1.0
+KDR,CHEMBL279,CHEMBL3764045,TAS-115,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,1.0
+KDR,CHEMBL279,CHEMBL3544937,ZD-4190,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,"Also shown to inhibit EGFR, FLT4 and RET (PMID:15928657)",1.0
+KDR,CHEMBL279,CHEMBL4545915,PUQUITINIB MESYLATE DIHYDRATE,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,"Compound is most potent against PIK3CD, low potency against EGFR, KDR and PDGFRB",1.0
+KDR,CHEMBL279,CHEMBL1277072,HENATINIB,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,1.0
+KDR,CHEMBL279,CHEMBL587723,AEE-788,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,"Also potent inhibitor of SRC, ABL1 and CSF1R",2.0
+KDR,CHEMBL279,CHEMBL4303201,CATEQUENTINIB,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,Multi-targeted receptor tyrosine kinase inhibitor,3.0
+KDR,CHEMBL279,CHEMBL2079588,TELATINIB,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,2.0
+KDR,CHEMBL279,CHEMBL3039525,GOLVATINIB,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,2.0
+KDR,CHEMBL279,CHEMBL482968,ENMD-2076,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,Tartrate salt of ENMD-981693,2.0
+KDR,CHEMBL279,CHEMBL3545155,JI-101,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,2.0
+KDR,CHEMBL279,CHEMBL253969,OSI-632,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,2.0
+KDR,CHEMBL279,CHEMBL558752,RAF-265,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,2.0
+KDR,CHEMBL279,CHEMBL1278146,FAMITINIB,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,Multi-targeted receptor tyrosine kinase inhibitor,3.0
+KDR,CHEMBL279,CHEMBL403989,TG100-801,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,Prodrug - active metabolite is TG-100-572 (HY-10184),2.0
+KDR,CHEMBL279,CHEMBL608533,MIDOSTAURIN,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,Multi-kinase inhibitor,4.0
+KDR,CHEMBL279,CHEMBL274654,ORANTINIB,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,"Ph 3 trial discontinued, compound on hold?",3.0
+KDR,CHEMBL279,CHEMBL3545414,RIVOCERANIB MESYLATE,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,3.0
+KDR,CHEMBL279,CHEMBL1742983,ALACIZUMAB PEGOL,Vascular endothelial growth factor receptor 2 antagonist,ANTAGONIST,1,"CDP791 binds specifically to VEGFR-2, inhibiting activation by its ligands VEGF-A, VEGF-C, VEGF-D and therefore, blocking all signaling through this receptor. ",2.0
+KDR,CHEMBL279,CHEMBL2109257,IMC-1C11,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,1.0
+KDR,CHEMBL279,CHEMBL2108356,PEGDINETANIB,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,2.0
+KDR,CHEMBL279,CHEMBL4298119,OLINVACIMAB,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,2.0
+KDR,CHEMBL279,CHEMBL3984441,NINGETINIB,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,2.0
+KDR,CHEMBL279,CHEMBL4080062,BFH-772,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,2.0
+KDR,CHEMBL279,CHEMBL535,SUNITINIB,Vascular endothelial growth factor receptor 2 inhibitor,INHIBITOR,1,,4.0
+ANGPT2,CHEMBL3580489,CHEMBL2108568,TREBANANIB,Angiopoietin-2 inhibitor,INHIBITOR,1,Inhibits the interaction between the ligands angiopoietin-1 and angiopoietin-2 with the Tie-2 receptor.,3.0
+ANGPT2,CHEMBL3580489,CHEMBL2108678,NESVACUMAB,Angiopoietin-2 inhibitor,INHIBITOR,1,"It blocks the binding of Ang2 (an important regulator of tumor angiogenesis and growth) to Tie 2 (with an IC50 of approximately 60 pmol/L)  decreasing its activity,  which causes inhibition of tumor growth. Ang2 expression is upregulated in a range of human cancers,  and high levels of circulating Ang2 are associated with a poor prognosis.",2.0
+ANGPT2,CHEMBL3580489,CHEMBL3545259,VANUCIZUMAB,Angiopoietin-2 inhibitor,INHIBITOR,1,,2.0
+ANGPT2,CHEMBL3580489,CHEMBL2109586,AMG-780,Angiopoietin-2 inhibitor,INHIBITOR,1,,1.0
+ANGPT2,CHEMBL3580489,CHEMBL2109298,MEDI-3617,Angiopoietin-2 inhibitor,INHIBITOR,1,,1.0
+ANGPT2,CHEMBL3580489,CHEMBL4594470,CVX-060,Angiopoietin-2 inhibitor,INHIBITOR,1,,2.0
+ANGPT2,CHEMBL3580489,CHEMBL4297750,FARICIMAB,Angiopoietin-2 inhibitor,INHIBITOR,1,,4.0
+ANGPT2,CHEMBL3580489,CHEMBL4650486,ZANSECIMAB,Angiopoietin-2 inhibitor,INHIBITOR,1,,2.0
+SERPINE1,CHEMBL3475,CHEMBL325424,ALEPLASININ,Plasminogen activator inhibitor-1 inhibitor,INHIBITOR,1,,2.0
+ICAM1,CHEMBL3070,CHEMBL2108401,ENLIMOMAB PEGOL,Intercellular adhesion molecule-1 antagonist,ANTAGONIST,1,It attenuates T cell and neutrophil emigration and tissue effector functions by blocking their adhesion to the vascular endothelium through ICAM1.,2.0
+ICAM1,CHEMBL3070,CHEMBL2109482,BI-505,Intercellular adhesion molecule-1 antagonist,ANTAGONIST,1,,2.0
+ICAM1,CHEMBL3070,CHEMBL2109090,ENLIMOMAB,Intercellular adhesion molecule-1 inhibitor,INHIBITOR,1,,2.0
+TNF,CHEMBL1825,CHEMBL1201581,INFLIXIMAB,TNF-alpha inhibitor,INHIBITOR,1,,4.0
+TNF,CHEMBL1825,CHEMBL1201831,CERTOLIZUMAB PEGOL,TNF-alpha inhibitor,INHIBITOR,1,,4.0
+TNF,CHEMBL1825,CHEMBL1201580,ADALIMUMAB,TNF-alpha inhibitor,INHIBITOR,1,,4.0
+TNF,CHEMBL1825,CHEMBL1201572,ETANERCEPT,TNF-alpha inhibitor,INHIBITOR,1,,4.0
+TNF,CHEMBL1825,CHEMBL1201833,GOLIMUMAB,TNF-alpha inhibitor,INHIBITOR,1,,4.0
+TNF,CHEMBL1825,CHEMBL2108208,LENERCEPT,TNF-alpha inhibitor,INHIBITOR,1,Gene fusion of the extracellular portion of human type 1 TNFR with the constant domains of human IgG heavy chain (TNFR-IgG).,3.0
+TNF,CHEMBL1825,CHEMBL2108566,NERELIMOMAB,TNF-alpha inhibitor,INHIBITOR,1,,3.0
+TNF,CHEMBL1825,CHEMBL2108887,AFELIMOMAB,TNF-alpha inhibitor,INHIBITOR,1,Reduces the concentration of interleukin-6 in serum.,2.0
+TNF,CHEMBL1825,CHEMBL2107911,ONERCEPT,TNF-alpha inhibitor,INHIBITOR,1,,3.0
+TNF,CHEMBL1825,CHEMBL1743054,OZORALIZUMAB,TNF-alpha inhibitor,INHIBITOR,1,Trivalent albumin-binding nanobody that neutralizes the pro-inflammatory tumor necrosis factor alpha (TNF-alpha) as a causative agent for exacerbating rheumatoid arthritis.  It binds to serum to increase its in vivo half-life.,2.0
+TNF,CHEMBL1825,CHEMBL1743057,PEGSUNERCEPT,TNF-alpha inhibitor,INHIBITOR,1,,2.0
+TNF,CHEMBL1825,CHEMBL2108739,PLACULUMAB,TNF-alpha inhibitor,INHIBITOR,1,,2.0
+TNF,CHEMBL1825,CHEMBL2109587,AZ9773,TNF-alpha inhibitor,INHIBITOR,1,,2.0
+TNF,CHEMBL1825,CHEMBL4297863,REMTOLUMAB,TNF-alpha inhibitor,INHIBITOR,1,,2.0
+TNF,CHEMBL1825,CHEMBL4297572,ABBV-3373,TNF-alpha binding agent,BINDING AGENT,1,,2.0
+IL1B,CHEMBL1909490,CHEMBL1201834,CANAKINUMAB,Interleukin-1 beta inhibitor,INHIBITOR,1,,4.0
+IL1B,CHEMBL1909490,CHEMBL1201830,RILONACEPT,Interleukin-1 beta inhibitor,INHIBITOR,1,,4.0
+IL1B,CHEMBL1909490,CHEMBL1743026,GEVOKIZUMAB,Interleukin-1 beta negative allosteric modulator,NEGATIVE ALLOSTERIC MODULATOR,1,"Potent anti-IL-1ß neutralizing antibody. Binds to a unique IL-1ß epitope that is proximal to, but does not overlap with the receptor/ligand interface.",3.0
+IL1B,CHEMBL1909490,CHEMBL2109459,CDP-484,Interleukin-1 beta inhibitor,INHIBITOR,1,,1.0
+IL1B,CHEMBL1909490,CHEMBL4594518,LUTIKIZUMAB,Interleukin-1 beta inhibitor,INHIBITOR,1,,3.0
+IL6,CHEMBL1795129,CHEMBL1743070,SILTUXIMAB,Interleukin-6 antagonist,ANTAGONIST,1,,4.0
+IL6,CHEMBL1795129,CHEMBL1743071,SIRUKUMAB,Interleukin-6 inhibitor,INHIBITOR,1,It binds to soluble IL-6 and inhibits IL-6-mediated signal transducers and activation of transcription-3 phosphorylation (STAT-3).,3.0
+IL6,CHEMBL1795129,CHEMBL1743050,OLOKIZUMAB,Interleukin-6 inhibitor,INHIBITOR,1,"Binds to IL-6 at Site 3 and neutralizes biological activity through blocking hexamer (of two molecules each of IL6, IL6R and IL6ST/gp130) formation on the IL6ST/gp130 signaling axis.",3.0
+IL6,CHEMBL1795129,CHEMBL2108589,CLAZAKIZUMAB,Interleukin-6 inhibitor,INHIBITOR,1,"It binds circulating IL-6 cytokine rather than the IL-6 receptor, blocking both classic signaling and trans-signaling.",3.0
+IL6,CHEMBL1795129,CHEMBL2108591,ELSILIMOMAB,Interleukin-6 inhibitor,INHIBITOR,1,,2.0
+IL6,CHEMBL1795129,CHEMBL6068160,PACIBEKITUG,Interleukin-6 inhibitor,INHIBITOR,1,,2.0
+IL6,CHEMBL1795129,CHEMBL2109615,MRA 003 US,Interleukin-6 inhibitor,INHIBITOR,1,,1.0
+IL6,CHEMBL1795129,CHEMBL4297732,ZILTIVEKIMAB,Interleukin-6 inhibitor,INHIBITOR,1,,3.0
+IL6,CHEMBL1795129,CHEMBL4297732,ZILTIVEKIMAB,Interleukin-6 binding agent,BINDING AGENT,1,,3.0
+MMP9,CHEMBL321,CHEMBL279785,MARIMASTAT,Matrix metalloproteinase 9 inhibitor,INHIBITOR,1,Inhibits matrix metalloproteinase (MMP) activity by specifically interacting with the Zn2+ in their catalytic site. This compound inhibits MMPs potently and specifically with 50% inhibitory concentrations (IC50S) against most members of the MMP family in the nanomolar range.,3.0
+MMP9,CHEMBL321,CHEMBL3833374,ANDECALIXIMAB,Matrix metalloproteinase 9 inhibitor,INHIBITOR,1,"GS-5745 inhibits MMP9 by two mechanisms: 1) inhibiting the catalytic activity of MMP9 by sterically interfering with proteolysis of substrates 2) inhibiting the processing of MMP9 to an active form by sterically preventing accessibility of activating proteases. This results in an inhibition of extracellular matrix protein degradation and, potentially, the inhibition of angiogenesis, tumor growth, invasion, and metastasis. ",3.0
+MMP9,CHEMBL321,CHEMBL4297352,AZD-1236,Matrix metalloproteinase 9 inhibitor,INHIBITOR,1,,2.0
+MMP9,CHEMBL321,CHEMBL76222,REBIMASTAT,Matrix metalloproteinase 9 inhibitor,INHIBITOR,1,,2.0
+MMP9,CHEMBL321,CHEMBL440498,CTS-1027,Matrix metalloproteinase 9 inhibitor,INHIBITOR,1,,2.0
+AGER,CHEMBL2176846,CHEMBL3989929,AZELIRAGON,Advanced glycosylation end product-specific receptor antagonist,ANTAGONIST,1,,3.0
+AKR1B1,CHEMBL1900,CHEMBL436,TOLRESTAT,Aldose reductase inhibitor,INHIBITOR,1,"It reduces the flux of glucose through the polyol pathway, inhibiting tissue accumulation of sorbitol and fructose and preventing reduction of redox potentials.",4.0
+AKR1B1,CHEMBL1900,CHEMBL56337,EPALRESTAT,Aldose reductase inhibitor,INHIBITOR,1,,4.0
+AKR1B1,CHEMBL1900,CHEMBL4297455,CAFICRESTAT,Aldose reductase inhibitor,INHIBITOR,1,,3.0
+AKR1B1,CHEMBL1900,CHEMBL266497,SORBINIL,Aldose reductase inhibitor,INHIBITOR,1,,3.0
+PRKCB,CHEMBL3045,CHEMBL300138,ENZASTAURIN,Protein kinase C beta inhibitor,INHIBITOR,1,,3.0
+PRKCB,CHEMBL3045,CHEMBL91829,RUBOXISTAURIN,Protein kinase C beta inhibitor,INHIBITOR,1,,3.0
+TGFB1,CHEMBL1795178,CHEMBL1743022,FRESOLIMUMAB,Transforming growth factor beta-1 inhibitor,INHIBITOR,1,,2.0
+TGFB1,CHEMBL1795178,CHEMBL2108431,METELIMUMAB,Transforming growth factor beta-1 inhibitor,INHIBITOR,1,,2.0
+TGFB1,CHEMBL1795178,CHEMBL2109585,LY-2382770,Transforming growth factor beta-1 inhibitor,INHIBITOR,1,,2.0
+NFE2L2,CHEMBL1075094,CHEMBL4303525,OMAVELOXOLONE,Nuclear factor erythroid 2-related factor 2 activator,ACTIVATOR,1,,4.0
+BCL2,CHEMBL4860,CHEMBL3137309,VENETOCLAX,Apoptosis regulator Bcl-2 inhibitor,INHIBITOR,1,,4.0
+BCL2,CHEMBL4860,CHEMBL2107358,OBATOCLAX MESYLATE,Apoptosis regulator Bcl-2 inhibitor,INHIBITOR,1,,3.0
+BCL2,CHEMBL4860,CHEMBL443684,NAVITOCLAX,Apoptosis regulator Bcl-2 inhibitor,INHIBITOR,1,,3.0
+BCL2,CHEMBL4860,CHEMBL4650374,APG-2575,Apoptosis regulator Bcl-2 inhibitor,INHIBITOR,1,,2.0
+ABCA1,CHEMBL2362986,CHEMBL608,PROBUCOL,ATP-binding cassette sub-family A member 1 inhibitor,INHIBITOR,1,,4.0
